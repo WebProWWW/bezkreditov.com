@@ -1,0 +1,2 @@
+
+#=include lib/MyClass.coffee

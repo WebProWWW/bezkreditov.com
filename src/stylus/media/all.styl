@@ -1,0 +1,122 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+pcolor = #FFC951
+
+bgcolor = #F0F3F6
+
+
+html, body
+	font-size 14px
+
+
+body
+	font-family 'Raleway',  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, p, .p
+	mpd(0 0 15px)
+	font-weight 700
+
+h1, .h1
+	font-size 2em
+
+p, .p
+	font-size 1rem
+	font-weight 400
+
+.header, .section
+	mpd(0, 25px 0 10px)
+	
+
+
+.header-top
+	mpd(-25px 0 0, 15px 0 1px)
+	background bgcolor
+
+
+.header-body
+	mpd(0, 25px 0 10px)
+
+
+.bg
+	background bgcolor
+
+
+.i-circle-dblue-ln
+.i-circle-blue-ln
+	mpd(0 0 15px, 0, flex)
+	resetLn(white, white)
+	align-items center
+	justify-content center
+	width 30px
+	height @width
+	border-radius 50%
+	line-height 1
+	font-size 18px
+	overflow hidden
+
+
+.i-circle-blue-ln
+	background #407FBF
+
+.i-circle-dblue-ln
+	background #395895
+
+
+.logo
+	mpd(0 0 15px)
+	resetLn(black, black)
+	text-align center
+
+.logo-txt
+	mpd(0 0 5px, 12px)
+	border 8px solid pcolor
+	font-weight 700
+	font-size 32px
+	line-height 1
+
+.logo-stxt
+	mpd(0, 0 8px)
+
+.logo-icon
+	mpd(0 0 0 30px)
+	font-size 120px
+	color pcolor
+	
+
+.nav
+	mpd(0 -10px, 0, flex)
+	flex-wrap wrap
+
+.nav-ln
+	mpd(0 0 15px, 0 10px, flex)
+	resetLn(black, black)
+	align-items center
+.nav-ln:hover > .nav-txt
+	color darken(pcolor, 30%)
+.nav-ln:hover > .nav-i
+	color white
+	background darken(pcolor, 30%)
+
+.nav-i
+	mpd(0 10px 0 0, 0, flex)
+	trans()
+	flex 0 0 auto
+	justify-content center
+	align-items center
+	width 36px
+	height @width
+	border-radius 50%
+	background pcolor
+	font-size 18px
+
+.nav-txt
+	mpd()
+	trans()
+	width 100%
+
+
+.center
+	text-align center
+
