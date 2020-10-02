@@ -1,1 +1,21 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+.wall.arrow-md
+    position relative
+
+.wall.arrow-md:after
+    mpd()
+    // b(1, red)
+    content ''
+    position absolute
+    width 70px
+    height @width
+    top 30px
+    left @width * -1
+    background url('../img/arrow.svg') 100% 0 no-repeat
+
+
+
+
+
