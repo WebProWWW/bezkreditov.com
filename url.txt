@@ -1,5 +1,12 @@
 
+
 https://webprowww.github.io/projects/bez-dolgov/index.html
+
+https://webprowww.github.io/projects/bez-dolgov/kompaniya.html
+
+https://webprowww.github.io/projects/bez-dolgov/kompaniya-1.html
+
+https://webprowww.github.io/projects/bez-dolgov/rating.html
 
 https://webprowww.github.io/projects/bez-dolgov/konsult.html
 
@@ -15,13 +22,18 @@ https://webprowww.github.io/projects/bez-dolgov/o-proekte.html
 
 https://webprowww.github.io/projects/bez-dolgov/otzivi.html
 
+https://webprowww.github.io/projects/bez-dolgov/ufssp.html
+
 https://webprowww.github.io/projects/bez-dolgov/uznat.html
 
 https://webprowww.github.io/projects/bez-dolgov/zakon.html
 
-https://webprowww.github.io/projects/bez-dolgov/kompaniya.html
+https://webprowww.github.io/projects/bez-dolgov/faq.html
 
-https://webprowww.github.io/projects/bez-dolgov/ufssp.html
+https://webprowww.github.io/projects/bez-dolgov/faq-1.html
+
+
+
 
 
 
