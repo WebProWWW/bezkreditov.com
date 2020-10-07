@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Url;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $content string */
@@ -16,10 +17,12 @@ use yii\helpers\Url;
     <meta name="format-detection" content="address=no">
     <meta name="format-detection" content="email=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <?php $this->registerCsrfMetaTags() ?>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.depends.css?v=011">
-    <link rel="stylesheet" href="css/main.css?v=012">
+    <link rel="stylesheet" href="css/main.css?v=013">
     <title>Без кредитов</title>
+    <?php $this->head() ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -74,6 +77,29 @@ use yii\helpers\Url;
         </div><!-- .container -->
     </div><!-- .header-body -->
 </header>
+
+<?php if ($breadcrumbs = ArrayHelper::getValue($this->params, 'breadcrumbs', [])): ?>
+    <section class="section">
+        <div class="container">
+            <nav class="breadcrubmbs">
+                <a class="breadcrubmbs-ln" href="<?= Url::home() ?>">
+                    <i class="i-home"></i> Главная
+                </a>
+                <?php foreach ($breadcrumbs as $breadcrumb): ?>
+                    <?php if (is_array($breadcrumb)):?>
+                        <a class="breadcrubmbs-ln" href="<?= Url::to($breadcrumb['url']) ?>">
+                            <?= $breadcrumb['label'] ?>
+                        </a>
+                    <?php elseif (is_string($breadcrumb)): ?>
+                        <span class="breadcrubmbs-ln">
+                            <?= $breadcrumb ?>
+                        </span>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </nav>
+        </div><!-- .container -->
+    </section><!-- .section -->
+<?php endif; ?>
 
 <?= $content ?>
 

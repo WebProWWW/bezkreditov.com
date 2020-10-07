@@ -1,3 +1,12 @@
+<?php
+
+/* @var $this yii\web\View */
+
+$this->params['breadcrumbs'] = [
+    'Бесплатная юридическая консультация. г.&nbsp;Москва',
+];
+
+?>
 <section class="section bg">
     <div class="container">
         <div class="row">

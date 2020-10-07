@@ -1,6 +1,19 @@
+<?php
+
+/* @var $this yii\web\View */
+
+$this->params['breadcrumbs'] = [
+    [
+        'url' => ['site/index', 'view' => 'novosti-po-bankrotstvu'],
+        'label' => 'Новости по банкротству физических лиц г. Москва',
+    ],
+    'Приставы приостановили деятельность детских садов в Москве',
+];
+
+?>
 <section class="section">
     <div class="container">
-        <h1 class="">Приставы приостановили деятельность детских садов в Кузбассе</h1>
+        <h1 class="">Приставы приостановили деятельность детских садов в Москве</h1>
         <p><span class="date-bg">11 сентября 2020</span></p>
         <div class="editor">
             <img width="300" height="150" style="margin: 0 15px 15px 0; float: left;" src="img/new.jpg">

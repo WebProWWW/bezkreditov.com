@@ -8,6 +8,10 @@ return [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'request' => [
+            'cookieValidationKey' => 'YQZrWHI8giRkeAmrQ4ZvdIXvczvU_ijT',
+            'parsers' => [ 'application/json' => 'yii\web\JsonParser' ],
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,

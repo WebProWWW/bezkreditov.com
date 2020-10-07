@@ -1,3 +1,12 @@
+<?php
+
+/* @var $this yii\web\View */
+
+$this->params['breadcrumbs'] = [
+    'О проекте',
+];
+
+?>
 <div class="block-divider bg"></div>
 
 <section class="section">

@@ -508,9 +508,32 @@ a
 	img
 		max-width 100%
 
+
+
+
+.list
+	mpd(0 0 15px)
+
+.list-item
+	mpd(0 -15px, 15px 0 0, flex)
+	resetLn(black, black)
+	trans()
+	flex-wrap wrap
+
+.list-item:hover
+	box-shadow 0 0 13px 0 alpha(black, .3)
+	position relative
+
+.list-item:nth-child(even)
+	background bgcolor
+
+
+
+
 .ln-black-primary
 	trans()
 	resetLn(black, pcolor)
+
 
 
 .td-line

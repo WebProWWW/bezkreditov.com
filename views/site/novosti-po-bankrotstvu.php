@@ -2,6 +2,12 @@
 
 use yii\helpers\Url;
 
+/* @var $this yii\web\View */
+
+$this->params['breadcrumbs'] = [
+    'Новости по банкротству физических лиц г.&nbsp;Москва'
+];
+
 ?>
 <section class="section bg">
     <div class="container">

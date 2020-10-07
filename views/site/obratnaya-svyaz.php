@@ -1,3 +1,12 @@
+<?php
+
+/* @var $this yii\web\View */
+
+$this->params['breadcrumbs'] = [
+    'Обратная связь'
+];
+
+?>
 <section class="section bg">
     <div class="container">
         <h1 class="center">Обратная связь</h1>

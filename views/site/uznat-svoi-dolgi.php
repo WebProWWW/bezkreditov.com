@@ -1,3 +1,12 @@
+<?php
+
+/* @var $this yii\web\View */
+
+$this->params['breadcrumbs'] = [
+    'Узнать свои долги'
+];
+
+?>
 <section class="section bg">
     <div class="container">
         <h1 class="center">Проверка задолженности перед ФССП</h1>

@@ -1,3 +1,16 @@
+<?php
+
+/* @var $this yii\web\View */
+
+$this->params['breadcrumbs'] = [
+    [
+        'url' => ['site/index', 'view' => 'poleznye-materialy-po-bankrotstvu'],
+        'label' => 'Полезные материалы по банкротству в&nbsp;Москве',
+    ],
+    'Приставы приостановили деятельность детских садов в Москве',
+];
+
+?>
 <section class="section bg">
     <div class="container">
         <h1 class="center">Приставы приостановили деятельность детских садов в Москве</h1>

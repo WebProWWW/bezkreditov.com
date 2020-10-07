@@ -1,4 +1,11 @@
 <?php
+
+/* @var $this yii\web\View */
+
+$this->params['breadcrumbs'] = [
+    'УФССП России по Москве',
+];
+
 ?>
 <section class="section bg">
     <div class="container">

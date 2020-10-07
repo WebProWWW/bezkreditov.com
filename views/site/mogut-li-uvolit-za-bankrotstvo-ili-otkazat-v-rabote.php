@@ -2,6 +2,16 @@
 
 use yii\helpers\Url;
 
+/* @var $this yii\web\View */
+
+$this->params['breadcrumbs'] = [
+    [
+        'url' => ['site/index', 'view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic'],
+        'label' => 'Вопрос - ответ',
+    ],
+    'Могут ли уволить за банкротство или отказать в работе?',
+];
+
 ?>
 <section class="section bg">
     <div class="container">

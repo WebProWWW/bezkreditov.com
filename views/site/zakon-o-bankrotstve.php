@@ -1,4 +1,11 @@
 <?php
+
+/* @var $this yii\web\View */
+
+$this->params['breadcrumbs'] = [
+    'Закон о банкротстве',
+];
+
 ?>
 <section class="section">
     <div class="container">

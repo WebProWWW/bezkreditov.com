@@ -2,6 +2,12 @@
 
 use yii\helpers\Url;
 
+/* @var $this yii\web\View */
+
+$this->params['breadcrumbs'] = [
+    'Вопрос - ответ',
+];
+
 ?>
 <section class="section bg">
     <div class="container">
