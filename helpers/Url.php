@@ -23,6 +23,9 @@ class Url extends YiiHelperUrl
         return $http . $name . $domain;
     }
 
+    /**
+     * @return string
+     */
     public static function rootDomain()
     {
         $domain = Yii::$app->request->hostName;
