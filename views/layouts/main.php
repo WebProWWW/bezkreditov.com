@@ -113,8 +113,6 @@ use yii\helpers\ArrayHelper;
     </section><!-- .section -->
 <?php endif; ?>
 
-<p><?= dump(Url::toSubdomain('asdasd')) ?></p>
-
 <?= $content ?>
 
 <footer class="section">
