@@ -1,0 +1,22 @@
+{
+  "name": "webprowww/pro-bez-dolgov",
+  "description": "Сайт «Без долгов»",
+  "minimum-stability": "stable",
+  "license": "BSD-3-Clause ",
+  "authors": [
+    {
+      "name": "timur",
+      "email": "v.timur8484@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "yiisoft/yii2": "~2.0.38"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}

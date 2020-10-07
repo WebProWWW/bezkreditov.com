@@ -134,7 +134,7 @@ function reloadPage(done) {
     livereload.listen()
     watch(conf.stylusWatch, compileStylus)
     watch(conf.coffeeWatch, compileCoffee)
-    watch(conf.htmlWatch, includeHtml)
+    // watch(conf.htmlWatch, includeHtml)
     watch(conf.dependsJsWatch, dependsJs)
     watch(conf.dependsCssWatch, dependsCss)
     watch(conf.watcher, reloadPage)
