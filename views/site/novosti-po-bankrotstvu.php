@@ -148,11 +148,5 @@ $this->params['breadcrumbs'] = [
 
         </div><!-- .row -->
 
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-8 col-md-5 col-lg-3">
-                <a class="btn btn-default" href="">Все новости</a>
-            </div><!-- .col -->
-        </div><!-- .row -->
-
     </div><!-- .container -->
 </section><!-- .section -->

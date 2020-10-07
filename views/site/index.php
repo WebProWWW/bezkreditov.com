@@ -1,3 +1,10 @@
+<?php
+
+use yii\helpers\Url;
+
+/* @var $this yii\web\View */
+
+?>
 <section class="section bg">
     <div class="container">
         <h2 class="h1 center">Бесплатный онлайн тест на списание долгов от портала&nbsp;«Без&nbsp;Кредитов»</h2>
@@ -8,7 +15,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md-6 col-lg-auto">
-                <img class="img-a" width="450" src="img/man-c.png?v=1">
+                <img class="img-a" width="450" src="/img/man-c.png?v=1">
             </div><!-- .col -->
             <div class="col-12 col-md offset-md-1">
                 <h2 class="center">Хватит гадать пора действовать!</h2>
@@ -34,7 +41,7 @@
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
                     <div class="cart-img-header">
-                        <img class="cart-img" src="img/cart.jpg">
+                        <img class="cart-img" src="/img/cart.jpg">
                     </div>
                     <div class="cart-body">
                         <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
@@ -46,7 +53,7 @@
                                 <p class="mutted">13:14 11.07.2020</p>
                             </div>
                             <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="">Читать</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'pristavy-priostanovili-deyatelnost-detskih-sadov-v-kuzbasse']) ?>">Читать</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -56,7 +63,7 @@
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
                     <div class="cart-img-header">
-                        <img class="cart-img" src="img/cart.jpg">
+                        <img class="cart-img" src="/img/cart.jpg">
                     </div>
                     <div class="cart-body">
                         <h4>Должник выплатил алиментный долг после привлечения...</h4>
@@ -68,7 +75,7 @@
                                 <p class="mutted">13:14 11.07.2020</p>
                             </div>
                             <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="">Читать</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'pristavy-priostanovili-deyatelnost-detskih-sadov-v-kuzbasse']) ?>">Читать</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -78,7 +85,7 @@
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
                     <div class="cart-img-header">
-                        <img class="cart-img" src="img/cart.jpg">
+                        <img class="cart-img" src="/img/cart.jpg">
                     </div>
                     <div class="cart-body">
                         <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
@@ -90,7 +97,7 @@
                                 <p class="mutted">13:14 11.07.2020</p>
                             </div>
                             <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="">Читать</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'pristavy-priostanovili-deyatelnost-detskih-sadov-v-kuzbasse']) ?>">Читать</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -100,7 +107,7 @@
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
                     <div class="cart-img-header">
-                        <img class="cart-img" src="img/cart.jpg">
+                        <img class="cart-img" src="/img/cart.jpg">
                     </div>
                     <div class="cart-body">
                         <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
@@ -112,7 +119,7 @@
                                 <p class="mutted">13:14 11.07.2020</p>
                             </div>
                             <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="">Читать</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'pristavy-priostanovili-deyatelnost-detskih-sadov-v-kuzbasse']) ?>">Читать</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -122,7 +129,7 @@
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
                     <div class="cart-img-header">
-                        <img class="cart-img" src="img/cart.jpg">
+                        <img class="cart-img" src="/img/cart.jpg">
                     </div>
                     <div class="cart-body">
                         <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
@@ -134,7 +141,7 @@
                                 <p class="mutted">13:14 11.07.2020</p>
                             </div>
                             <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="">Читать</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'pristavy-priostanovili-deyatelnost-detskih-sadov-v-kuzbasse']) ?>">Читать</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -144,7 +151,7 @@
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
                     <div class="cart-img-header">
-                        <img class="cart-img" src="img/cart.jpg">
+                        <img class="cart-img" src="/img/cart.jpg">
                     </div>
                     <div class="cart-body">
                         <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
@@ -156,7 +163,7 @@
                                 <p class="mutted">13:14 11.07.2020</p>
                             </div>
                             <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="">Читать</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'pristavy-priostanovili-deyatelnost-detskih-sadov-v-kuzbasse']) ?>">Читать</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -167,7 +174,7 @@
 
         <div class="row justify-content-center">
             <div class="col-auto">
-                <a class="btn btn-default" href="">Все новости</a>
+                <a class="btn btn-default" href="<?= Url::to(['site/index', 'view' => 'novosti-po-bankrotstvu']) ?>">Все новости</a>
             </div><!-- .col -->
         </div><!-- .row -->
 
@@ -179,7 +186,7 @@
         <div class="row align-items-center">
             <div class="col-auto mx-auto m-md-0">
                 <div class="img-wrap-circle">
-                    <img width="250" height="250" src="img/bull.png">
+                    <img width="250" height="250" src="/img/bull.png">
                 </div>
             </div><!-- .col -->
             <div class="col-12 col-md offset-md-1">
@@ -198,7 +205,7 @@
                 </div><!-- .wall -->
                 <div class="row justify-content-center">
                     <div class="col-auto">
-                        <a class="btn btn-default" href="">Написать в редакцию портала</a>
+                        <a class="btn btn-default" href="<?= Url::to(['site/index', 'view' => 'obratnaya-svyaz']) ?>">Написать в редакцию портала</a>
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div><!-- .col -->
@@ -238,11 +245,11 @@
                         <div class="row align-items-end mt-auto">
                             <div class="col-auto">
                                 <p>
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
                                 </p>
                             </div><!-- .col -->
                             <div class="col">
@@ -278,11 +285,11 @@
                         <div class="row align-items-end mt-auto">
                             <div class="col-auto">
                                 <p>
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
                                 </p>
                             </div><!-- .col -->
                             <div class="col">
@@ -318,11 +325,11 @@
                         <div class="row align-items-end mt-auto">
                             <div class="col-auto">
                                 <p>
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
                                 </p>
                             </div><!-- .col -->
                             <div class="col">
@@ -358,11 +365,11 @@
                         <div class="row align-items-end mt-auto">
                             <div class="col-auto">
                                 <p>
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
                                 </p>
                             </div><!-- .col -->
                             <div class="col">
@@ -398,11 +405,11 @@
                         <div class="row align-items-end mt-auto">
                             <div class="col-auto">
                                 <p>
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
                                 </p>
                             </div><!-- .col -->
                             <div class="col">
@@ -469,11 +476,11 @@
                         <div class="row align-items-end mt-auto">
                             <div class="col-auto">
                                 <p>
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
                                 </p>
                             </div><!-- .col -->
                         </div>
@@ -504,11 +511,11 @@
                         <div class="row align-items-end mt-auto">
                             <div class="col-auto">
                                 <p>
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
                                 </p>
                             </div><!-- .col -->
                         </div>
@@ -539,11 +546,11 @@
                         <div class="row align-items-end mt-auto">
                             <div class="col-auto">
                                 <p>
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
                                 </p>
                             </div><!-- .col -->
                         </div>
@@ -574,11 +581,11 @@
                         <div class="row align-items-end mt-auto">
                             <div class="col-auto">
                                 <p>
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
                                 </p>
                             </div><!-- .col -->
                         </div>
@@ -609,11 +616,11 @@
                         <div class="row align-items-end mt-auto">
                             <div class="col-auto">
                                 <p>
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
-                                    <img width="14" height="14" src="img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
+                                    <img width="14" height="14" src="/img/star-a.svg">
                                 </p>
                             </div><!-- .col -->
                         </div>
@@ -650,7 +657,7 @@
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                 <div class="cart">
                     <div class="cart-img-header">
-                        <img class="cart-img" src="img/cart.jpg">
+                        <img class="cart-img" src="/img/cart.jpg">
                     </div>
                     <div class="cart-body">
                         <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
@@ -662,7 +669,7 @@
                                 <p class="mutted">13:14 11.07.2020</p>
                             </div>
                             <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="">Читать</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'dolzhnik-vyplatil-alimentnyj-dolg']) ?>">Читать</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -672,7 +679,7 @@
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                 <div class="cart">
                     <div class="cart-img-header">
-                        <img class="cart-img" src="img/cart.jpg">
+                        <img class="cart-img" src="/img/cart.jpg">
                     </div>
                     <div class="cart-body">
                         <h4>Должник выплатил алиментный долг после...</h4>
@@ -684,7 +691,7 @@
                                 <p class="mutted">13:14 11.07.2020</p>
                             </div>
                             <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="">Читать</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'dolzhnik-vyplatil-alimentnyj-dolg']) ?>">Читать</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -694,7 +701,7 @@
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                 <div class="cart">
                     <div class="cart-img-header">
-                        <img class="cart-img" src="img/cart.jpg">
+                        <img class="cart-img" src="/img/cart.jpg">
                     </div>
                     <div class="cart-body">
                         <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
@@ -706,7 +713,7 @@
                                 <p class="mutted">13:14 11.07.2020</p>
                             </div>
                             <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="">Читать</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'dolzhnik-vyplatil-alimentnyj-dolg']) ?>">Читать</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -716,7 +723,7 @@
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                 <div class="cart">
                     <div class="cart-img-header">
-                        <img class="cart-img" src="img/cart.jpg">
+                        <img class="cart-img" src="/img/cart.jpg">
                     </div>
                     <div class="cart-body">
                         <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
@@ -728,7 +735,7 @@
                                 <p class="mutted">13:14 11.07.2020</p>
                             </div>
                             <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="">Читать</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'dolzhnik-vyplatil-alimentnyj-dolg']) ?>">Читать</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -738,7 +745,7 @@
 
         <div class="row justify-content-center">
             <div class="col-auto">
-                <a class="btn btn-default" href="">Читать все материалы</a>
+                <a class="btn btn-default" href="<?= Url::to(['site/index', 'view' => 'poleznye-materialy-po-bankrotstvu']) ?>">Читать все материалы</a>
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
@@ -755,7 +762,7 @@
         <div class="row align-items-center">
             <div class="col-auto mx-auto m-md-0">
                 <div class="img-wrap-circle">
-                    <img width="300" height="300" src="img/man.png">
+                    <img width="300" height="300" src="/img/man.png">
                 </div>
             </div><!-- .col -->
             <div class="col-12 col-md offset-md-1">
@@ -769,7 +776,7 @@
                 </div><!-- .wall -->
                 <div class="row justify-content-center">
                     <div class="col-auto">
-                        <a class="btn btn-default" href="">Проверить долги</a>
+                        <a class="btn btn-default" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">Проверить долги</a>
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div><!-- .col -->
