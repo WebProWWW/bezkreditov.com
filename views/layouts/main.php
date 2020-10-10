@@ -24,8 +24,8 @@ $city = $this->params['city'];
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <?php $this->registerCsrfMetaTags() ?>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.depends.css?v=011">
-    <link rel="stylesheet" href="css/main.css?v=015">
+    <link rel="stylesheet" href="css/main.depends.css?v=012">
+    <link rel="stylesheet" href="css/main.css?v=016">
     <title>Без кредитов</title>
     <?php $this->head() ?>
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?= Yii::$app->request->hostInfo ?>/apple-touch-icon-57x57.png">
@@ -192,8 +192,8 @@ $city = $this->params['city'];
 </div><!-- .d-none -->
 <!-- / МОДАЛЬНЫЕ ОКНА -->
 
-<script src="js/main.depends.js?v=011"></script>
-<script src="js/main.js?v=012"></script>
+<script src="js/main.depends.js?v=012"></script>
+<script src="js/main.js?v=013"></script>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
 <script>if ("function"==typeof window.isCity) { window.isCity() };</script>
