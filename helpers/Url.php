@@ -15,9 +15,9 @@ class Url extends YiiHelperUrl
      * @param $name string
      * @return string
      */
-    public static function toSubdomain($name='')
+    public static function toSubdomain($name='index')
     {
-        $name = ($name !== '') ? $name.'.' : $name;
+        $name = ($name === 'index' or $name === '') ? '' : $name.'.';
         $domain = self::rootDomain();
         $http = Yii::$app->request->isSecureConnection ? 'https://' : 'http://';
         return $http . $name . $domain;
