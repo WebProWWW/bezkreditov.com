@@ -141,12 +141,22 @@ $city = $this->params['city'];
 <!-- МОДАЛЬНЫЕ ОКНА -->
 <div class="d-none">
 
+
+<div class="modal modal-sm" id="is-city">
+    <p>Ваш регион — <?= $city->name ?>?</p>
+    <div class="row">
+        <div class="col-12 col-sm-6">
+            <span class="btn-sm btn-default" data-fancybox-close>Всё верно</span>
+        </div>
+        <div class="col-12 col-sm-6">
+            <a class="btn-sm btn-trsp" data-fancybox href="#cities" data-options='{"closeExisting" : true}'>Выбрать другой</a>
+        </div>
+    </div>
+</div><!-- .modal -->
+
+
 <!-- СПИСОК ГОРОДОВ -->
 <div class="modal em-9" id="cities">
-
-    <!-- ОЧИСТКА КЭША -->
-    <?php //Yii::$app->cache->flush() ?>
-
     <!-- КЭШИРОВАНИЕ МЕНЮ СТРАН -->
     <?php if ($this->beginCache('main-city-list', ['duration' => 3600 * 24 * 365 ])): ?>
         <?php if ($cities = City::find()->all()): ?>
@@ -176,18 +186,6 @@ $city = $this->params['city'];
     <?php endif; ?>
 </div><!-- .modal -->
 <!-- / СПИСОК ГОРОДОВ -->
-
-<div class="modal modal-sm" id="is-city">
-    <p>Ваш регион — <?= $city->name ?>?</p>
-    <div class="row">
-        <div class="col-12 col-sm-6">
-            <span class="btn-sm btn-default" data-fancybox-close>Всё верно</span>
-        </div>
-        <div class="col-12 col-sm-6">
-            <a class="btn-sm btn-trsp" data-fancybox href="#cities" data-options='{"closeExisting" : true}'>Выбрать другой</a>
-        </div>
-    </div>
-</div><!-- .modal -->
 
 </div><!-- .d-none -->
 <!-- / МОДАЛЬНЫЕ ОКНА -->
