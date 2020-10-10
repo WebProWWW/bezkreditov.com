@@ -9,9 +9,9 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=127.0.0.1;dbname=dbname',
-            'username' => 'username',
-            'password' => 'password',
+            'dsn' => 'mysql:host=178.250.156.86;dbname=bezkreditov',
+            'username' => 'public_root',
+            'password' => 'ppbz4uXW',
             'charset' => 'utf8',
             // Schema cache options (for production environment)
             //'enableSchemaCache' => true,

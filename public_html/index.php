@@ -13,6 +13,6 @@ require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
 require __DIR__ . '/../config/bootstrap.php';
 
 (new Application(ArrayHelper::merge(
-    require __DIR__ . '/../config/common.php',
+    require __DIR__ . '/../config/common-local.php',
     require __DIR__ . '/../config/web-local.php'
 )))->run();
