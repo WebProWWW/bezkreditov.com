@@ -46,6 +46,6 @@ class Url extends YiiHelperUrl
         if (count($domainArr) === 3) {
             return $domainArr[0];
         }
-        return '';
+        return 'index';
     }
 }

@@ -602,7 +602,7 @@ class m201008_125442_table_city extends Migration
         ['Морозовск', 'morozovsk'],
         ['Моршанск', 'morshansk'],
         ['Мосальск', 'mosalsk'],
-        ['Москва', ''],
+        ['Москва', 'index'],
         ['Муравленко', 'muravlenko'],
         ['Мураши', 'murashi'],
         ['Мурино', 'murino'],
