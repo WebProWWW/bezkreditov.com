@@ -11,7 +11,11 @@
   ],
   "require": {
     "php": ">=7.0",
+    "ext-mbstring": "*",
     "yiisoft/yii2": "~2.0.38"
+  },
+  "require-dev": {
+    "yiisoft/yii2-gii": "~2.2.1"
   },
   "repositories": [
     {

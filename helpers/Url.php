@@ -35,4 +35,17 @@ class Url extends YiiHelperUrl
         }
         return $domain;
     }
+
+    /**
+     * @return string
+     */
+    public static function subdomain()
+    {
+        $domain = Yii::$app->request->hostName;
+        $domainArr = explode('.', $domain);
+        if (count($domainArr) === 3) {
+            return $domainArr[0];
+        }
+        return '';
+    }
 }

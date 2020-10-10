@@ -3,15 +3,16 @@
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
+/* @var $city app\models\City */
 
 $this->params['breadcrumbs'] = [
-    'Компании по банкротству физических лиц г.&nbsp;Москва'
+    'Компании по банкротству физических лиц г.&nbsp;'.$city->name,
 ];
 
 ?>
 <section class="section">
     <div class="container">
-        <h1>Компании по банкротству физических лиц г.&nbsp;Москва</h1>
+        <h1>Компании по банкротству физических лиц г.&nbsp;<?= $city->name ?></h1>
     </div><!-- .container -->
 </section><!-- .section -->
 

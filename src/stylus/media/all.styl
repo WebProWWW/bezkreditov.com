@@ -154,6 +154,7 @@ a
 
 .btn
 .btn-default
+.btn-trsp
 	mpd(0 0 15px, 10px 20px)
 	resetLn(black, black)
 	trans()
@@ -165,13 +166,26 @@ a
 	user-select none
 	cursor pointer
 
+.btn-trsp:hover
 .btn-default:hover
 	box-shadow 1px 1px 3px 0 alpha(black, .5)
+
+
+.btn-trsp
+	b(1, pcolor)
+	padding 8px 18px
+	background transparent
+
+.btn-trsp:hover
+	background pcolor
 
 
 .btn-sm
 	padding 5px 20px
 
+
+.btn-trsp.btn-sm
+	padding 4px 19px
 
 
 .wall-divider
@@ -576,6 +590,13 @@ a
 	width 100%
 	min-height 100%
 	max-width 1250px
+
+
+.modal-sm
+	padding 40px 25px 10px
+	max-width 450px
+	min-height auto
+	height auto
 
 
 for num in (1..100)

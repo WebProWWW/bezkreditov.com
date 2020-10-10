@@ -38,3 +38,6 @@ $('.js-search').each (i, el) ->
     new JsSearch el
 
 
+window.isCity = () ->
+    $.fancybox.open src: '#is-city'
+    on

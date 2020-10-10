@@ -1,15 +1,16 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $city app\models\City */
 
 $this->params['breadcrumbs'] = [
-    'Отзывы людей прошедших процедуру банкротства г.&nbsp;Москва',
+    'Отзывы людей прошедших процедуру банкротства г.&nbsp;'.$city->name,
 ];
 
 ?>
 <section class="section bg">
     <div class="container">
-        <h1 class="center">Отзывы людей прошедших процедуру банкротства г.&nbsp;Москва</h1>
+        <h1 class="center">Отзывы людей прошедших процедуру банкротства г.&nbsp;<?= $city->name ?></h1>
     </div><!-- .container -->
 </section><!-- .section -->
 

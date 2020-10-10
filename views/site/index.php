@@ -3,6 +3,7 @@
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
+/* @var $city app\models\City */
 
 ?>
 <section class="section bg">
@@ -35,7 +36,7 @@ use yii\helpers\Url;
 
 <section class="section bg">
     <div class="container">
-        <h1 class="center">Актуальные новости по банкротству физических лиц г. Москва</h1>
+        <h1 class="center">Актуальные новости по банкротству физических лиц г.&nbsp;<?= $city->name ?></h1>
         <div class="row">
 
             <div class="col-12 col-md-6 col-lg-4 mb-4">
@@ -215,7 +216,7 @@ use yii\helpers\Url;
 
 <section class="section bg">
     <div class="container">
-        <h2 class="h1 center">Отзывы людей прошедших процедуру банкротства <br>в Москве и Московской области</h2>
+        <h2 class="h1 center">Отзывы людей прошедших процедуру банкротства в&nbsp;г.&nbsp;<?= $city->name ?></h2>
         <div class="row">
 
             <div class="col-12 col-md-6 col-lg-4 mb-4">
@@ -443,7 +444,7 @@ use yii\helpers\Url;
 
 <section class="section bg">
     <div class="container">
-        <h2 class="h1 center">Часто обсуждаемые компании по банкроству в городе Москва</h2>
+        <h2 class="h1 center">Часто обсуждаемые компании по банкроству в&nbsp;г.&nbsp;<?= $city->name ?></h2>
         <div class="row">
 
             <div class="col-12 col-md-6 col-lg-4 mb-4">
@@ -652,7 +653,7 @@ use yii\helpers\Url;
 
 <section class="section">
     <div class="container">
-        <h2 class="h1 center">Полезные материалы по банкротству физических лиц г. Москва</h2>
+        <h2 class="h1 center">Полезные материалы по банкротству физических лиц г.&nbsp;<?= $city->name ?></h2>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                 <div class="cart">
@@ -766,7 +767,7 @@ use yii\helpers\Url;
                 </div>
             </div><!-- .col -->
             <div class="col-12 col-md offset-md-1">
-                <h2 class="center">Жители Москвы и Московской области могут бесплатно проверить долги у судебных приставов по фамилии прямо у нас на портале</h2>
+                <h2 class="center">Жители г.&nbsp;<?= $city->name ?> могут бесплатно проверить долги у судебных приставов по фамилии прямо у нас на портале</h2>
                 <div class="wall arrow-md">
                     <p class="center">
                         Вы можете в режиме онлайн проверить любое физическое или юридическое лицо

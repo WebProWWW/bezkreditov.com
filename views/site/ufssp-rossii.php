@@ -1,15 +1,17 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $city app\models\City */
+
 
 $this->params['breadcrumbs'] = [
-    'УФССП России по Москве',
+    'УФССП России по&nbsp;г.&nbsp;'.$city->name,
 ];
 
 ?>
 <section class="section bg">
     <div class="container">
-        <h1 class="center">Управление Федеральной службы судебных приставов по Москве</h1>
+        <h1 class="center">Управление Федеральной службы судебных приставов по г.&nbsp;<?= $city->name ?></h1>
         <div class="cart">
             <div class="cart-body">
                 <div class="row">

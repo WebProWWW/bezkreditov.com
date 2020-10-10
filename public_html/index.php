@@ -1,6 +1,8 @@
 <?php
 
 use yii\web\Application;
+use yii\helpers\ArrayHelper;
+
 
 // comment out the following two lines when deployed to production
 defined('YII_DEBUG') or define('YII_DEBUG', true);
@@ -10,6 +12,7 @@ require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
 require __DIR__ . '/../config/bootstrap.php';
 
-$config = require __DIR__ . '/../config/web.php';
-
-(new Application($config))->run();
+(new Application(ArrayHelper::merge(
+    require __DIR__ . '/../config/common.php',
+    require __DIR__ . '/../config/web-local.php'
+)))->run();

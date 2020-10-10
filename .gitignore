@@ -8,4 +8,6 @@ node_modules
 
 /public_html/index.php
 
+/config/web-local.php
+
 /public_html/robots.txt

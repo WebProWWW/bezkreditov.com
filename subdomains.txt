@@ -1,322 +1,1117 @@
-abakan => Абакан
-azov => Азов
-aleksandrov => Александров
-aleksin => Алексин
-almetevsk => Альметьевск
-anapa => Анапа
-angarsk => Ангарск
-anzhero-sudzhensk => Анжеро-Судженск
-apatity => Апатиты
-arzamas => Арзамас
-armavir => Армавир
-arsenev => Арсеньев
-artem => Артем
-arhangelsk => Архангельск
-asbest => Асбест
-astrahan => Астрахань
-achinsk => Ачинск
-balakovo => Балаково
-balahna => Балахна
-balashiha => Балашиха
-balashov => Балашов
-barnaul => Барнаул
-bataysk => Батайск
-belgorod => Белгород
-belebey => Белебей
-belovo => Белово
-belogorsk-amurskaya-oblast => Белогорск (Амурская область)
-beloretsk => Белорецк
-belorechensk => Белореченск
-berdsk => Бердск
-berezniki => Березники
-berezovskiy-sverdlovskaya-oblast => Березовский (Свердловская область)
-biysk => Бийск
-birobidzhan => Биробиджан
-blagoveschensk-amurskaya-oblast => Благовещенск (Амурская область)
-bor => Бор
-borisoglebsk => Борисоглебск
-borovichi => Боровичи
-bratsk => Братск
-bryansk => Брянск
-bugulma => Бугульма
-budennovsk => Буденновск
-buzuluk => Бузулук
-buynaksk => Буйнакск
-velikie-luki => Великие Луки
-velikiy-novgorod => Великий Новгород
-verhnyaya-pyshma => Верхняя Пышма
-vidnoe => Видное
-vladivostok => Владивосток
-vladikavkaz => Владикавказ
-vladimir => Владимир
-volgograd => Волгоград
-volgodonsk => Волгодонск
-volzhsk => Волжск
-volzhskiy => Волжский
-vologda => Вологда
-volsk => Вольск
-vorkuta => Воркута
-voronezh => Воронеж
-voskresensk => Воскресенск
-votkinsk => Воткинск
-vsevolozhsk => Всеволожск
-vyborg => Выборг
-vyksa => Выкса
-vyazma => Вязьма
-gatchina => Гатчина
-gelendzhik => Геленджик
-georgievsk => Георгиевск
-glazov => Глазов
-gorno-altaysk => Горно-Алтайск
-groznyy => Грозный
-gubkin => Губкин
-gudermes => Гудермес
-gukovo => Гуково
-gus-hrustalnyy => Гусь-Хрустальный
-derbent => Дербент
-dzerzhinsk => Дзержинск
-dimitrovgrad => Димитровград
-dmitrov => Дмитров
-dolgoprudnyy => Долгопрудный
-domodedovo => Домодедово
-donskoy => Донской
-dubna => Дубна
-evpatoriya => Евпатория
-egorevsk => Егорьевск
-eysk => Ейск
-ekaterinburg => Екатеринбург
-elabuga => Елабуга
-elets => Елец
-essentuki => Ессентуки
-zheleznogorsk-krasnoyarskiy-kray => Железногорск (Красноярский край)
-zheleznogorsk-kurskaya-oblast => Железногорск (Курская область)
-zhigulevsk => Жигулевск
-zhukovskiy => Жуковский
-zarechnyy => Заречный
-zelenogorsk => Зеленогорск
-zelenodolsk => Зеленодольск
-zlatoust => Златоуст
-ivanovo => Иваново
-ivanteevka => Ивантеевка
-izhevsk => Ижевск
-izberbash => Избербаш
-irkutsk => Иркутск
-iskitim => Искитим
-ishim => Ишим
-ishimbay => Ишимбай
-yoshkar-ola => Йошкар-Ола
-kazan => Казань
-kaliningrad => Калининград
-kaluga => Калуга
-kamensk-uralskiy => Каменск-Уральский
-kamensk-shahtinskiy => Каменск-Шахтинский
-kamyshin => Камышин
-kansk => Канск
-kaspiysk => Каспийск
-kemerovo => Кемерово
-kerch => Керчь
-kineshma => Кинешма
-kirishi => Кириши
-kirov-kirovskaya-oblast => Киров (Кировская область)
-kirovo-chepetsk => Кирово-Чепецк
-kiselevsk => Киселевск
-kislovodsk => Кисловодск
-klin => Клин
-klintsy => Клинцы
-kovrov => Ковров
-kogalym => Когалым
-kolomna => Коломна
-komsomolsk-na-amure => Комсомольск-на-Амуре
-kopeysk => Копейск
-korolev => Королев
-kostroma => Кострома
-kotlas => Котлас
-krasnogorsk => Красногорск
-krasnodar => Краснодар
-krasnokamensk => Краснокаменск
-krasnokamsk => Краснокамск
-krasnoturinsk => Краснотурьинск
-krasnoyarsk => Красноярск
-kropotkin => Кропоткин
-krymsk => Крымск
-kstovo => Кстово
-kuznetsk => Кузнецк
-kumertau => Кумертау
-kungur => Кунгур
-kurgan => Курган
-kursk => Курск
-kyzyl => Кызыл
-labinsk => Лабинск
-leninogorsk => Лениногорск
-leninsk-kuznetskiy => Ленинск-Кузнецкий
-lesosibirsk => Лесосибирск
-lipetsk => Липецк
-liski => Лиски
-lobnya => Лобня
-lysva => Лысьва
-lytkarino => Лыткарино
-lyubertsy => Люберцы
-magadan => Магадан
-magnitogorsk => Магнитогорск
-maykop => Майкоп
-mahachkala => Махачкала
-mezhdurechensk => Междуреченск
-meleuz => Мелеуз
-miass => Миасс
-mineralnye-vody => Минеральные Воды
-minusinsk => Минусинск
-mihaylovka => Михайловка
-mihaylovsk-stavropolskiy-kray => Михайловск (Ставропольский край)
-michurinsk => Мичуринск
- ?>">Москва</a></div>
-murmansk => Мурманск
-murom => Муром
-mytischi => Мытищи
-naberezhnye-chelny => Набережные Челны
-nazarovo => Назарово
-nazran => Назрань
-nalchik => Нальчик
-naro-fominsk => Наро-Фоминск
-nahodka => Находка
-nevinnomyssk => Невинномысск
-neryungri => Нерюнгри
-neftekamsk => Нефтекамск
-nefteyugansk => Нефтеюганск
-nizhnevartovsk => Нижневартовск
-nizhnekamsk => Нижнекамск
-nizhniy-novgorod => Нижний Новгород
-nizhniy-tagil => Нижний Тагил
-novoaltaysk => Новоалтайск
-novokuznetsk => Новокузнецк
-novokuybyshevsk => Новокуйбышевск
-novomoskovsk => Новомосковск
-novorossiysk => Новороссийск
-novosibirsk => Новосибирск
-novotroitsk => Новотроицк
-novouralsk => Новоуральск
-novocheboksarsk => Новочебоксарск
-novocherkassk => Новочеркасск
-novoshahtinsk => Новошахтинск
-novyy-urengoy => Новый Уренгой
-noginsk => Ногинск
-norilsk => Норильск
-noyabrsk => Ноябрьск
-nyagan => Нягань
-obninsk => Обнинск
-odintsovo => Одинцово
-ozersk-chelyabinskaya-oblast => Озерск (Челябинская область)
-oktyabrskiy => Октябрьский
-omsk => Омск
-orel => Орел
-orenburg => Оренбург
-orekhovo-zuevo => Орехово-Зуево
-orsk => Орск
-pavlovo => Павлово
-pavlovskiy-posad => Павловский Посад
-penza => Пенза
-pervouralsk => Первоуральск
-perm => Пермь
-petrozavodsk => Петрозаводск
-petropavlovsk-kamchatskiy => Петропавловск-Камчатский
-podolsk => Подольск
-polevskoy => Полевской
-prokopevsk => Прокопьевск
-prohladnyy => Прохладный
-pskov => Псков
-pushkino => Пушкино
-pyatigorsk => Пятигорск
-ramenskoe => Раменское
-revda => Ревда
-reutov => Реутов
-rzhev => Ржев
-roslavl => Рославль
-rossosh => Россошь
-rostov-na-donu => Ростов-на-Дону
-rubtsovsk => Рубцовск
-rybinsk => Рыбинск
-ryazan => Рязань
-salavat => Салават
-salsk => Сальск
-samara => Самара
-sankt-peterburg => Санкт-Петербург
-saransk => Саранск
-sarapul => Сарапул
-saratov => Саратов
-sarov => Саров
-svobodnyy => Свободный
-sevastopol => Севастополь
-severodvinsk => Северодвинск
-seversk => Северск
-sergiev-posad => Сергиев Посад
-serov => Серов
-serpuhov => Серпухов
-sertolovo => Сертолово
-sibay => Сибай
-simferopol => Симферополь
-slavyansk-na-kubani => Славянск-на-Кубани
-smolensk => Смоленск
-solikamsk => Соликамск
-solnechnogorsk => Солнечногорск
-sosnovyy-bor => Сосновый Бор
-sochi => Сочи
-stavropol => Ставрополь
-staryy-oskol => Старый Оскол
-sterlitamak => Стерлитамак
-stupino => Ступино
-surgut => Сургут
-syzran => Сызрань
-syktyvkar => Сыктывкар
-taganrog => Таганрог
-tambov => Тамбов
-tver => Тверь
-timashevsk => Тимашевск
-tihvin => Тихвин
-tihoretsk => Тихорецк
-tobolsk => Тобольск
-tolyatti => Тольятти
-tomsk => Томск
-troitsk => Троицк
-tuapse => Туапсе
-tuymazy => Туймазы
-tula => Тула
-tyumen => Тюмень
-uzlovaya => Узловая
-ulan-ude => Улан-Удэ
-ulyanovsk => Ульяновск
-urus-martan => Урус-Мартан
-usole-sibirskoe => Усолье-Сибирское
-ussuriysk => Уссурийск
-ust-ilimsk => Усть-Илимск
-ufa => Уфа
-uhta => Ухта
-feodosiya => Феодосия
-fryazino => Фрязино
-habarovsk => Хабаровск
-hanty-mansiysk => Ханты-Мансийск
-hasavyurt => Хасавюрт
-himki => Химки
-chaykovskiy => Чайковский
-chapaevsk => Чапаевск
-cheboksary => Чебоксары
-chelyabinsk => Челябинск
-cheremhovo => Черемхово
-cherepovets => Череповец
-cherkessk => Черкесск
-chernogorsk => Черногорск
-chekhov => Чехов
-chistopol => Чистополь
-chita => Чита
-shadrinsk => Шадринск
-shali => Шали
-shahty => Шахты
-shuya => Шуя
-schekino => Щекино
-schelkovo => Щелково
-elektrostal => Электросталь
-elista => Элиста
-engels => Энгельс
-yuzhno-sahalinsk => Южно-Сахалинск
-yurga => Юрга
-yakutsk => Якутск
-yalta => Ялта
-yaroslavl => Ярославль
+[Абаза', 'abaza']
+[Абакан', 'abakan']
+[Абдулино', 'abdulino']
+[Абинск', 'abinsk']
+[Агидель', 'agidel']
+[Агрыз', 'agryz']
+[Адыгейск', 'adygeysk']
+[Азнакаево', 'aznakaevo']
+[Азов', 'azov']
+[Ак-Довурак', 'ak-dovurak']
+[Аксай', 'aksay']
+[Алагир', 'alagir']
+[Алапаевск', 'alapaevsk']
+[Алатырь', 'alatyr']
+[Алдан', 'aldan']
+[Алейск', 'aleysk']
+[Александров', 'aleksandrov']
+[Александровск', 'aleksandrovsk']
+[Александровск-Сахалинский', 'aleksandrovsk-sahalinskiy']
+[Алексеевка', 'alekseevka']
+[Алексин', 'aleksin']
+[Алзамай', 'alzamay']
+[Алупка', 'alupka']
+[Алушта', 'alushta']
+[Альметьевск', 'almetevsk']
+[Амурск', 'amursk']
+[Анадырь', 'anadyr']
+[Анапа', 'anapa']
+[Ангарск', 'angarsk']
+[Андреаполь', 'andreapol']
+[Анжеро-Судженск', 'anzhero-sudzhensk']
+[Анива', 'aniva']
+[Апатиты', 'apatity']
+[Апрелевка', 'aprelevka']
+[Апшеронск', 'apsheronsk']
+[Арамиль', 'aramil']
+[Аргун', 'argun']
+[Ардатов', 'ardatov']
+[Ардон', 'ardon']
+[Арзамас', 'arzamas']
+[Аркадак', 'arkadak']
+[Армавир', 'armavir']
+[Армянск', 'armyansk']
+[Арсеньев', 'arsenev']
+[Арск', 'arsk']
+[Артём', 'artem']
+[Артёмовск', 'artemovsk']
+[Артёмовский', 'artemovskiy']
+[Архангельск', 'arhangelsk']
+[Асбест', 'asbest']
+[Асино', 'asino']
+[Астрахань', 'astrahan']
+[Аткарск', 'atkarsk']
+[Ахтубинск', 'ahtubinsk']
+[Ачинск', 'achinsk']
+[Аша', 'asha']
+[Бабаево', 'babaevo']
+[Бабушкин', 'babushkin']
+[Бавлы', 'bavly']
+[Багратионовск', 'bagrationovsk']
+[Байкальск', 'baykalsk']
+[Баймак', 'baymak']
+[Бакал', 'bakal']
+[Баксан', 'baksan']
+[Балабаново', 'balabanovo']
+[Балаково', 'balakovo']
+[Балахна', 'balahna']
+[Балашиха', 'balashiha']
+[Балашов', 'balashov']
+[Балей', 'baley']
+[Балтийск', 'baltiysk']
+[Барабинск', 'barabinsk']
+[Барнаул', 'barnaul']
+[Барыш', 'barysh']
+[Батайск', 'bataysk']
+[Бахчисарай', 'bahchisaray']
+[Бежецк', 'bezhetsk']
+[Белая Калитва', 'belaya-kalitva']
+[Белая Холуница', 'belaya-holunitsa']
+[Белгород', 'belgorod']
+[Белебей', 'belebey']
+[Белёв', 'belev']
+[Белинский', 'belinskiy']
+[Белово', 'belovo']
+[Белогорск', 'belogorsk']
+[Белогорск', 'belogorsk']
+[Белозерск', 'belozersk']
+[Белокуриха', 'belokuriha']
+[Беломорск', 'belomorsk']
+[Белоозёрский', 'beloozerskiy']
+[Белорецк', 'beloretsk']
+[Белореченск', 'belorechensk']
+[Белоусово', 'belousovo']
+[Белоярский', 'beloyarskiy']
+[Белый', 'belyy']
+[Бердск', 'berdsk']
+[Березники', 'berezniki']
+[Берёзовский', 'berezovskiy']
+[Берёзовский', 'berezovskiy']
+[Беслан', 'beslan']
+[Бийск', 'biysk']
+[Бикин', 'bikin']
+[Билибино', 'bilibino']
+[Биробиджан', 'birobidzhan']
+[Бирск', 'birsk']
+[Бирюсинск', 'biryusinsk']
+[Бирюч', 'biryuch']
+[Благовещенск', 'blagoveschensk']
+[Благовещенск', 'blagoveschensk']
+[Благодарный', 'blagodarnyy']
+[Бобров', 'bobrov']
+[Богданович', 'bogdanovich']
+[Богородицк', 'bogoroditsk']
+[Богородск', 'bogorodsk']
+[Боготол', 'bogotol']
+[Богучар', 'boguchar']
+[Бодайбо', 'bodaybo']
+[Бокситогорск', 'boksitogorsk']
+[Болгар', 'bolgar']
+[Бологое', 'bologoe']
+[Болотное', 'bolotnoe']
+[Болохово', 'bolohovo']
+[Болхов', 'bolhov']
+[Большой Камень', 'bolshoy-kamen']
+[Бор', 'bor']
+[Борзя', 'borzya']
+[Борисоглебск', 'borisoglebsk']
+[Боровичи', 'borovichi']
+[Боровск', 'borovsk']
+[Бородино', 'borodino']
+[Братск', 'bratsk']
+[Бронницы', 'bronnitsy']
+[Брянск', 'bryansk']
+[Бугульма', 'bugulma']
+[Бугуруслан', 'buguruslan']
+[Будённовск', 'budennovsk']
+[Бузулук', 'buzuluk']
+[Буинск', 'buinsk']
+[Буй', 'buy']
+[Буйнакск', 'buynaksk']
+[Бутурлиновка', 'buturlinovka']
+[Валдай', 'valday']
+[Валуйки', 'valuyki']
+[Велиж', 'velizh']
+[Великие Луки', 'velikie-luki']
+[Великий Новгород', 'velikiy-novgorod']
+[Великий Устюг', 'velikiy-ustyug']
+[Вельск', 'velsk']
+[Венёв', 'venev']
+[Верещагино', 'vereschagino']
+[Верея', 'vereya']
+[Верхнеуральск', 'verhneuralsk']
+[Верхний Тагил', 'verhniy-tagil']
+[Верхний Уфалей', 'verhniy-ufaley']
+[Верхняя Пышма', 'verhnyaya-pyshma']
+[Верхняя Салда', 'verhnyaya-salda']
+[Верхняя Тура', 'verhnyaya-tura']
+[Верхотурье', 'verhoture']
+[Верхоянск', 'verhoyansk']
+[Весьегонск', 'vesegonsk']
+[Ветлуга', 'vetluga']
+[Видное', 'vidnoe']
+[Вилюйск', 'vilyuysk']
+[Вилючинск', 'vilyuchinsk']
+[Вихоревка', 'vihorevka']
+[Вичуга', 'vichuga']
+[Владивосток', 'vladivostok']
+[Владикавказ', 'vladikavkaz']
+[Владимир', 'vladimir']
+[Волгоград', 'volgograd']
+[Волгодонск', 'volgodonsk']
+[Волгореченск', 'volgorechensk']
+[Волжск', 'volzhsk']
+[Волжский', 'volzhskiy']
+[Вологда', 'vologda']
+[Володарск', 'volodarsk']
+[Волоколамск', 'volokolamsk']
+[Волосово', 'volosovo']
+[Волхов', 'volhov']
+[Волчанск', 'volchansk']
+[Вольск', 'volsk']
+[Воркута', 'vorkuta']
+[Воронеж', 'voronezh']
+[Ворсма', 'vorsma']
+[Воскресенск', 'voskresensk']
+[Воткинск', 'votkinsk']
+[Всеволожск', 'vsevolozhsk']
+[Вуктыл', 'vuktyl']
+[Выборг', 'vyborg']
+[Выкса', 'vyksa']
+[Высоковск', 'vysokovsk']
+[Высоцк', 'vysotsk']
+[Вытегра', 'vytegra']
+[Вышний Волочёк', 'vyshniy-volochek']
+[Вяземский', 'vyazemskiy']
+[Вязники', 'vyazniki']
+[Вязьма', 'vyazma']
+[Вятские Поляны', 'vyatskie-polyany']
+[Гаврилов Посад', 'gavrilov-posad']
+[Гаврилов-Ям', 'gavrilov-yam']
+[Гагарин', 'gagarin']
+[Гаджиево', 'gadzhievo']
+[Гай', 'gay']
+[Галич', 'galich']
+[Гатчина', 'gatchina']
+[Гвардейск', 'gvardeysk']
+[Гдов', 'gdov']
+[Геленджик', 'gelendzhik']
+[Георгиевск', 'georgievsk']
+[Глазов', 'glazov']
+[Голицыно', 'golitsyno']
+[Горбатов', 'gorbatov']
+[Горно-Алтайск', 'gorno-altaysk']
+[Горнозаводск', 'gornozavodsk']
+[Горняк', 'gornyak']
+[Городец', 'gorodets']
+[Городище', 'gorodische']
+[Городовиковск', 'gorodovikovsk']
+[Гороховец', 'gorohovets']
+[Горячий Ключ', 'goryachiy-klyuch']
+[Грайворон', 'grayvoron']
+[Гремячинск', 'gremyachinsk']
+[Грозный', 'groznyy']
+[Грязи', 'gryazi']
+[Грязовец', 'gryazovets']
+[Губаха', 'gubaha']
+[Губкин', 'gubkin']
+[Губкинский', 'gubkinskiy']
+[Гудермес', 'gudermes']
+[Гуково', 'gukovo']
+[Гулькевичи', 'gulkevichi']
+[Гурьевск', 'gurevsk']
+[Гурьевск', 'gurevsk']
+[Гусев', 'gusev']
+[Гусиноозёрск', 'gusinoozersk']
+[Гусь-Хрустальный', 'gus-hrustalnyy']
+[Давлеканово', 'davlekanovo']
+[Дагестанские Огни', 'dagestanskie-ogni']
+[Далматово', 'dalmatovo']
+[Дальнегорск', 'dalnegorsk']
+[Дальнереченск', 'dalnerechensk']
+[Данилов', 'danilov']
+[Данков', 'dankov']
+[Дегтярск', 'degtyarsk']
+[Дедовск', 'dedovsk']
+[Демидов', 'demidov']
+[Дербент', 'derbent']
+[Десногорск', 'desnogorsk']
+[Джанкой', 'dzhankoy']
+[Дзержинск', 'dzerzhinsk']
+[Дзержинский', 'dzerzhinskiy']
+[Дивногорск', 'divnogorsk']
+[Дигора', 'digora']
+[Димитровград', 'dimitrovgrad']
+[Дмитриев', 'dmitriev']
+[Дмитров', 'dmitrov']
+[Дмитровск', 'dmitrovsk']
+[Дно', 'dno']
+[Добрянка', 'dobryanka']
+[Долгопрудный', 'dolgoprudnyy']
+[Долинск', 'dolinsk']
+[Домодедово', 'domodedovo']
+[Донецк', 'donetsk']
+[Донской', 'donskoy']
+[Дорогобуж', 'dorogobuzh']
+[Дрезна', 'drezna']
+[Дубна', 'dubna']
+[Дубовка', 'dubovka']
+[Дудинка', 'dudinka']
+[Духовщина', 'duhovschina']
+[Дюртюли', 'dyurtyuli']
+[Дятьково', 'dyatkovo']
+[Евпатория', 'evpatoriya']
+[Егорьевск', 'egorevsk']
+[Ейск', 'eysk']
+[Екатеринбург', 'ekaterinburg']
+[Елабуга', 'elabuga']
+[Елец', 'elets']
+[Елизово', 'elizovo']
+[Ельня', 'elnya']
+[Еманжелинск', 'emanzhelinsk']
+[Емва', 'emva']
+[Енисейск', 'eniseysk']
+[Ермолино', 'ermolino']
+[Ершов', 'ershov']
+[Ессентуки', 'essentuki']
+[Ефремов', 'efremov']
+[Железноводск', 'zheleznovodsk']
+[Железногорск', 'zheleznogorsk']
+[Железногорск', 'zheleznogorsk']
+[Железногорск-Илимский', 'zheleznogorsk-ilimskiy']
+[Жердевка', 'zherdevka']
+[Жигулёвск', 'zhigulevsk']
+[Жиздра', 'zhizdra']
+[Жирновск', 'zhirnovsk']
+[Жуков', 'zhukov']
+[Жуковка', 'zhukovka']
+[Жуковский', 'zhukovskiy']
+[Завитинск', 'zavitinsk']
+[Заводоуковск', 'zavodoukovsk']
+[Заволжск', 'zavolzhsk']
+[Заволжье', 'zavolzhe']
+[Задонск', 'zadonsk']
+[Заинск', 'zainsk']
+[Закаменск', 'zakamensk']
+[Заозёрный', 'zaozernyy']
+[Заозёрск', 'zaozersk']
+[Западная Двина', 'zapadnaya-dvina']
+[Заполярный', 'zapolyarnyy']
+[Зарайск', 'zaraysk']
+[Заречный', 'zarechnyy']
+[Заречный', 'zarechnyy']
+[Заринск', 'zarinsk']
+[Звенигово', 'zvenigovo']
+[Звенигород', 'zvenigorod']
+[Зверево', 'zverevo']
+[Зеленогорск', 'zelenogorsk']
+[Зеленоградск', 'zelenogradsk']
+[Зеленодольск', 'zelenodolsk']
+[Зеленокумск', 'zelenokumsk']
+[Зерноград', 'zernograd']
+[Зея', 'zeya']
+[Зима', 'zima']
+[Златоуст', 'zlatoust']
+[Злынка', 'zlynka']
+[Змеиногорск', 'zmeinogorsk']
+[Знаменск', 'znamensk']
+[Зубцов', 'zubtsov']
+[Зуевка', 'zuevka']
+[Ивангород', 'ivangorod']
+[Иваново', 'ivanovo']
+[Ивантеевка', 'ivanteevka']
+[Ивдель', 'ivdel']
+[Игарка', 'igarka']
+[Ижевск', 'izhevsk']
+[Избербаш', 'izberbash']
+[Изобильный', 'izobilnyy']
+[Иланский', 'ilanskiy']
+[Инза', 'inza']
+[Иннополис', 'innopolis']
+[Инсар', 'insar']
+[Инта', 'inta']
+[Ипатово', 'ipatovo']
+[Ирбит', 'irbit']
+[Иркутск', 'irkutsk']
+[Исилькуль', 'isilkul']
+[Искитим', 'iskitim']
+[Истра', 'istra']
+[Ишим', 'ishim']
+[Ишимбай', 'ishimbay']
+[Йошкар-Ола', 'yoshkar-ola']
+[Кадников', 'kadnikov']
+[Казань', 'kazan']
+[Калач', 'kalach']
+[Калач-на-Дону', 'kalach-na-donu']
+[Калачинск', 'kalachinsk']
+[Калининград', 'kaliningrad']
+[Калининск', 'kalininsk']
+[Калтан', 'kaltan']
+[Калуга', 'kaluga']
+[Калязин', 'kalyazin']
+[Камбарка', 'kambarka']
+[Каменка', 'kamenka']
+[Каменногорск', 'kamennogorsk']
+[Каменск-Уральский', 'kamensk-uralskiy']
+[Каменск-Шахтинский', 'kamensk-shahtinskiy']
+[Камень-на-Оби', 'kamen-na-obi']
+[Камешково', 'kameshkovo']
+[Камызяк', 'kamyzyak']
+[Камышин', 'kamyshin']
+[Камышлов', 'kamyshlov']
+[Канаш', 'kanash']
+[Кандалакша', 'kandalaksha']
+[Канск', 'kansk']
+[Карабаново', 'karabanovo']
+[Карабаш', 'karabash']
+[Карабулак', 'karabulak']
+[Карасук', 'karasuk']
+[Карачаевск', 'karachaevsk']
+[Карачев', 'karachev']
+[Каргат', 'kargat']
+[Каргополь', 'kargopol']
+[Карпинск', 'karpinsk']
+[Карталы', 'kartaly']
+[Касимов', 'kasimov']
+[Касли', 'kasli']
+[Каспийск', 'kaspiysk']
+[Катав-Ивановск', 'katav-ivanovsk']
+[Катайск', 'kataysk']
+[Качканар', 'kachkanar']
+[Кашин', 'kashin']
+[Кашира', 'kashira']
+[Кедровый', 'kedrovyy']
+[Кемерово', 'kemerovo']
+[Кемь', 'kem']
+[Керчь', 'kerch']
+[Кизел', 'kizel']
+[Кизилюрт', 'kizilyurt']
+[Кизляр', 'kizlyar']
+[Кимовск', 'kimovsk']
+[Кимры', 'kimry']
+[Кингисепп', 'kingisepp']
+[Кинель', 'kinel']
+[Кинешма', 'kineshma']
+[Киреевск', 'kireevsk']
+[Киренск', 'kirensk']
+[Киржач', 'kirzhach']
+[Кириллов', 'kirillov']
+[Кириши', 'kirishi']
+[Киров', 'kirov']
+[Киров', 'kirov']
+[Кировград', 'kirovgrad']
+[Кирово-Чепецк', 'kirovo-chepetsk']
+[Кировск', 'kirovsk']
+[Кировск', 'kirovsk']
+[Кирс', 'kirs']
+[Кирсанов', 'kirsanov']
+[Киселёвск', 'kiselevsk']
+[Кисловодск', 'kislovodsk']
+[Клин', 'klin']
+[Клинцы', 'klintsy']
+[Княгинино', 'knyaginino']
+[Ковдор', 'kovdor']
+[Ковров', 'kovrov']
+[Ковылкино', 'kovylkino']
+[Когалым', 'kogalym']
+[Кодинск', 'kodinsk']
+[Козельск', 'kozelsk']
+[Козловка', 'kozlovka']
+[Козьмодемьянск', 'kozmodemyansk']
+[Кола', 'kola']
+[Кологрив', 'kologriv']
+[Коломна', 'kolomna']
+[Колпашево', 'kolpashevo']
+[Кольчугино', 'kolchugino']
+[Коммунар', 'kommunar']
+[Комсомольск', 'komsomolsk']
+[Комсомольск-на-Амуре', 'komsomolsk-na-amure']
+[Конаково', 'konakovo']
+[Кондопога', 'kondopoga']
+[Кондрово', 'kondrovo']
+[Константиновск', 'konstantinovsk']
+[Копейск', 'kopeysk']
+[Кораблино', 'korablino']
+[Кореновск', 'korenovsk']
+[Коркино', 'korkino']
+[Королёв', 'korolev']
+[Короча', 'korocha']
+[Корсаков', 'korsakov']
+[Коряжма', 'koryazhma']
+[Костерёво', 'kosterevo']
+[Костомукша', 'kostomuksha']
+[Кострома', 'kostroma']
+[Котельники', 'kotelniki']
+[Котельниково', 'kotelnikovo']
+[Котельнич', 'kotelnich']
+[Котлас', 'kotlas']
+[Котово', 'kotovo']
+[Котовск', 'kotovsk']
+[Кохма', 'kohma']
+[Красавино', 'krasavino']
+[Красноармейск', 'krasnoarmeysk']
+[Красноармейск', 'krasnoarmeysk']
+[Красновишерск', 'krasnovishersk']
+[Красногорск', 'krasnogorsk']
+[Краснодар', 'krasnodar']
+[Краснозаводск', 'krasnozavodsk']
+[Краснознаменск', 'krasnoznamensk']
+[Краснознаменск', 'krasnoznamensk']
+[Краснокаменск', 'krasnokamensk']
+[Краснокамск', 'krasnokamsk']
+[Красноперекопск', 'krasnoperekopsk']
+[Краснослободск', 'krasnoslobodsk']
+[Краснослободск', 'krasnoslobodsk']
+[Краснотурьинск', 'krasnoturinsk']
+[Красноуральск', 'krasnouralsk']
+[Красноуфимск', 'krasnoufimsk']
+[Красноярск', 'krasnoyarsk']
+[Красный Кут', 'krasnyy-kut']
+[Красный Сулин', 'krasnyy-sulin']
+[Красный Холм', 'krasnyy-holm']
+[Кремёнки', 'kremenki']
+[Кропоткин', 'kropotkin']
+[Крымск', 'krymsk']
+[Кстово', 'kstovo']
+[Кубинка', 'kubinka']
+[Кувандык', 'kuvandyk']
+[Кувшиново', 'kuvshinovo']
+[Кудрово', 'kudrovo']
+[Кудымкар', 'kudymkar']
+[Кузнецк', 'kuznetsk']
+[Куйбышев', 'kuybyshev']
+[Кукмор', 'kukmor']
+[Кулебаки', 'kulebaki']
+[Кумертау', 'kumertau']
+[Кунгур', 'kungur']
+[Купино', 'kupino']
+[Курган', 'kurgan']
+[Курганинск', 'kurganinsk']
+[Курильск', 'kurilsk']
+[Курлово', 'kurlovo']
+[Куровское', 'kurovskoe']
+[Курск', 'kursk']
+[Куртамыш', 'kurtamysh']
+[Курчалой', 'kurchaloy']
+[Курчатов', 'kurchatov']
+[Куса', 'kusa']
+[Кушва', 'kushva']
+[Кызыл', 'kyzyl']
+[Кыштым', 'kyshtym']
+[Кяхта', 'kyahta']
+[Лабинск', 'labinsk']
+[Лабытнанги', 'labytnangi']
+[Лагань', 'lagan']
+[Ладушкин', 'ladushkin']
+[Лаишево', 'laishevo']
+[Лакинск', 'lakinsk']
+[Лангепас', 'langepas']
+[Лахденпохья', 'lahdenpohya']
+[Лебедянь', 'lebedyan']
+[Лениногорск', 'leninogorsk']
+[Ленинск', 'leninsk']
+[Ленинск-Кузнецкий', 'leninsk-kuznetskiy']
+[Ленск', 'lensk']
+[Лермонтов', 'lermontov']
+[Лесной', 'lesnoy']
+[Лесозаводск', 'lesozavodsk']
+[Лесосибирск', 'lesosibirsk']
+[Ливны', 'livny']
+[Ликино-Дулёво', 'likino-dulevo']
+[Липецк', 'lipetsk']
+[Липки', 'lipki']
+[Лиски', 'liski']
+[Лихославль', 'lihoslavl']
+[Лобня', 'lobnya']
+[Лодейное Поле', 'lodeynoe-pole']
+[Лосино-Петровский', 'losino-petrovskiy']
+[Луга', 'luga']
+[Луза', 'luza']
+[Лукоянов', 'lukoyanov']
+[Луховицы', 'luhovitsy']
+[Лысково', 'lyskovo']
+[Лысьва', 'lysva']
+[Лыткарино', 'lytkarino']
+[Льгов', 'lgov']
+[Любань', 'lyuban']
+[Люберцы', 'lyubertsy']
+[Любим', 'lyubim']
+[Людиново', 'lyudinovo']
+[Лянтор', 'lyantor']
+[Магадан', 'magadan']
+[Магас', 'magas']
+[Магнитогорск', 'magnitogorsk']
+[Майкоп', 'maykop']
+[Майский', 'mayskiy']
+[Макаров', 'makarov']
+[Макарьев', 'makarev']
+[Макушино', 'makushino']
+[Малая Вишера', 'malaya-vishera']
+[Малгобек', 'malgobek']
+[Малмыж', 'malmyzh']
+[Малоархангельск', 'maloarhangelsk']
+[Малоярославец', 'maloyaroslavets']
+[Мамадыш', 'mamadysh']
+[Мамоново', 'mamonovo']
+[Мантурово', 'manturovo']
+[Мариинск', 'mariinsk']
+[Мариинский Посад', 'mariinskiy-posad']
+[Маркс', 'marks']
+[Махачкала', 'mahachkala']
+[Мглин', 'mglin']
+[Мегион', 'megion']
+[Медвежьегорск', 'medvezhegorsk']
+[Медногорск', 'mednogorsk']
+[Медынь', 'medyn']
+[Межгорье', 'mezhgore']
+[Междуреченск', 'mezhdurechensk']
+[Мезень', 'mezen']
+[Меленки', 'melenki']
+[Мелеуз', 'meleuz']
+[Менделеевск', 'mendeleevsk']
+[Мензелинск', 'menzelinsk']
+[Мещовск', 'meschovsk']
+[Миасс', 'miass']
+[Микунь', 'mikun']
+[Миллерово', 'millerovo']
+[Минеральные Воды', 'mineralnye-vody']
+[Минусинск', 'minusinsk']
+[Миньяр', 'minyar']
+[Мирный', 'mirnyy']
+[Мирный', 'mirnyy']
+[Михайлов', 'mihaylov']
+[Михайловка', 'mihaylovka']
+[Михайловск', 'mihaylovsk']
+[Михайловск', 'mihaylovsk']
+[Мичуринск', 'michurinsk']
+[Могоча', 'mogocha']
+[Можайск', 'mozhaysk']
+[Можга', 'mozhga']
+[Моздок', 'mozdok']
+[Мончегорск', 'monchegorsk']
+[Морозовск', 'morozovsk']
+[Моршанск', 'morshansk']
+[Мосальск', 'mosalsk']
+[Москва', 'moskva']
+[Муравленко', 'muravlenko']
+[Мураши', 'murashi']
+[Мурино', 'murino']
+[Мурманск', 'murmansk']
+[Муром', 'murom']
+[Мценск', 'mtsensk']
+[Мыски', 'myski']
+[Мытищи', 'mytischi']
+[Мышкин', 'myshkin']
+[Набережные Челны', 'naberezhnye-chelny']
+[Навашино', 'navashino']
+[Наволоки', 'navoloki']
+[Надым', 'nadym']
+[Назарово', 'nazarovo']
+[Назрань', 'nazran']
+[Называевск', 'nazyvaevsk']
+[Нальчик', 'nalchik']
+[Нариманов', 'narimanov']
+[Наро-Фоминск', 'naro-fominsk']
+[Нарткала', 'nartkala']
+[Нарьян-Мар', 'naryan-mar']
+[Находка', 'nahodka']
+[Невель', 'nevel']
+[Невельск', 'nevelsk']
+[Невинномысск', 'nevinnomyssk']
+[Невьянск', 'nevyansk']
+[Нелидово', 'nelidovo']
+[Неман', 'neman']
+[Нерехта', 'nerekhta']
+[Нерчинск', 'nerchinsk']
+[Нерюнгри', 'neryungri']
+[Нестеров', 'nesterov']
+[Нефтегорск', 'neftegorsk']
+[Нефтекамск', 'neftekamsk']
+[Нефтекумск', 'neftekumsk']
+[Нефтеюганск', 'nefteyugansk']
+[Нея', 'neya']
+[Нижневартовск', 'nizhnevartovsk']
+[Нижнекамск', 'nizhnekamsk']
+[Нижнеудинск', 'nizhneudinsk']
+[Нижние Серги', 'nizhnie-sergi']
+[Нижний Ломов', 'nizhniy-lomov']
+[Нижний Новгород', 'nizhniy-novgorod']
+[Нижний Тагил', 'nizhniy-tagil']
+[Нижняя Салда', 'nizhnyaya-salda']
+[Нижняя Тура', 'nizhnyaya-tura']
+[Николаевск', 'nikolaevsk']
+[Николаевск-на-Амуре', 'nikolaevsk-na-amure']
+[Никольск', 'nikolsk']
+[Никольск', 'nikolsk']
+[Никольское', 'nikolskoe']
+[Новая Ладога', 'novaya-ladoga']
+[Новая Ляля', 'novaya-lyalya']
+[Новоалександровск', 'novoaleksandrovsk']
+[Новоалтайск', 'novoaltaysk']
+[Новоаннинский', 'novoanninskiy']
+[Нововоронеж', 'novovoronezh']
+[Новодвинск', 'novodvinsk']
+[Новозыбков', 'novozybkov']
+[Новокубанск', 'novokubansk']
+[Новокузнецк', 'novokuznetsk']
+[Новокуйбышевск', 'novokuybyshevsk']
+[Новомичуринск', 'novomichurinsk']
+[Новомосковск', 'novomoskovsk']
+[Новопавловск', 'novopavlovsk']
+[Новоржев', 'novorzhev']
+[Новороссийск', 'novorossiysk']
+[Новосибирск', 'novosibirsk']
+[Новосиль', 'novosil']
+[Новосокольники', 'novosokolniki']
+[Новотроицк', 'novotroitsk']
+[Новоузенск', 'novouzensk']
+[Новоульяновск', 'novoulyanovsk']
+[Новоуральск', 'novouralsk']
+[Новохопёрск', 'novohopersk']
+[Новочебоксарск', 'novocheboksarsk']
+[Новочеркасск', 'novocherkassk']
+[Новошахтинск', 'novoshahtinsk']
+[Новый Оскол', 'novyy-oskol']
+[Новый Уренгой', 'novyy-urengoy']
+[Ногинск', 'noginsk']
+[Нолинск', 'nolinsk']
+[Норильск', 'norilsk']
+[Ноябрьск', 'noyabrsk']
+[Нурлат', 'nurlat']
+[Нытва', 'nytva']
+[Нюрба', 'nyurba']
+[Нягань', 'nyagan']
+[Нязепетровск', 'nyazepetrovsk']
+[Няндома', 'nyandoma']
+[Облучье', 'obluche']
+[Обнинск', 'obninsk']
+[Обоянь', 'oboyan']
+[Обь', 'ob']
+[Одинцово', 'odintsovo']
+[Озёрск', 'ozersk']
+[Озёрск', 'ozersk']
+[Озёры', 'ozery']
+[Октябрьск', 'oktyabrsk']
+[Октябрьский', 'oktyabrskiy']
+[Окуловка', 'okulovka']
+[Олёкминск', 'olekminsk']
+[Оленегорск', 'olenegorsk']
+[Олонец', 'olonets']
+[Омск', 'omsk']
+[Омутнинск', 'omutninsk']
+[Онега', 'onega']
+[Опочка', 'opochka']
+[Орёл', 'orel']
+[Оренбург', 'orenburg']
+[Орехово-Зуево', 'orekhovo-zuevo']
+[Орлов', 'orlov']
+[Орск', 'orsk']
+[Оса', 'osa']
+[Осинники', 'osinniki']
+[Осташков', 'ostashkov']
+[Остров', 'ostrov']
+[Островной', 'ostrovnoy']
+[Острогожск', 'ostrogozhsk']
+[Отрадное', 'otradnoe']
+[Отрадный', 'otradnyy']
+[Оха', 'oha']
+[Оханск', 'ohansk']
+[Очёр', 'ocher']
+[Павлово', 'pavlovo']
+[Павловск', 'pavlovsk']
+[Павловский Посад', 'pavlovskiy-posad']
+[Палласовка', 'pallasovka']
+[Партизанск', 'partizansk']
+[Певек', 'pevek']
+[Пенза', 'penza']
+[Первомайск', 'pervomaysk']
+[Первоуральск', 'pervouralsk']
+[Перевоз', 'perevoz']
+[Пересвет', 'peresvet']
+[Переславль-Залесский', 'pereslavl-zalesskiy']
+[Пермь', 'perm']
+[Пестово', 'pestovo']
+[Петров Вал', 'petrov-val']
+[Петровск', 'petrovsk']
+[Петровск-Забайкальский', 'petrovsk-zabaykalskiy']
+[Петрозаводск', 'petrozavodsk']
+[Петропавловск-Камчатский', 'petropavlovsk-kamchatskiy']
+[Петухово', 'petuhovo']
+[Петушки', 'petushki']
+[Печора', 'pechora']
+[Печоры', 'pechory']
+[Пикалёво', 'pikalevo']
+[Пионерский', 'pionerskiy']
+[Питкяранта', 'pitkyaranta']
+[Плавск', 'plavsk']
+[Пласт', 'plast']
+[Плёс', 'ples']
+[Поворино', 'povorino']
+[Подольск', 'podolsk']
+[Подпорожье', 'podporozhe']
+[Покачи', 'pokachi']
+[Покров', 'pokrov']
+[Покровск', 'pokrovsk']
+[Полевской', 'polevskoy']
+[Полесск', 'polessk']
+[Полысаево', 'polysaevo']
+[Полярные Зори', 'polyarnye-zori']
+[Полярный', 'polyarnyy']
+[Поронайск', 'poronaysk']
+[Порхов', 'porhov']
+[Похвистнево', 'pohvistnevo']
+[Почеп', 'pochep']
+[Починок', 'pochinok']
+[Пошехонье', 'poshekhone']
+[Правдинск', 'pravdinsk']
+[Приволжск', 'privolzhsk']
+[Приморск', 'primorsk']
+[Приморск', 'primorsk']
+[Приморско-Ахтарск', 'primorsko-ahtarsk']
+[Приозерск', 'priozersk']
+[Прокопьевск', 'prokopevsk']
+[Пролетарск', 'proletarsk']
+[Протвино', 'protvino']
+[Прохладный', 'prohladnyy']
+[Псков', 'pskov']
+[Пугачёв', 'pugachev']
+[Пудож', 'pudozh']
+[Пустошка', 'pustoshka']
+[Пучеж', 'puchezh']
+[Пушкино', 'pushkino']
+[Пущино', 'puschino']
+[Пыталово', 'pytalovo']
+[Пыть-Ях', 'pyt-yah']
+[Пятигорск', 'pyatigorsk']
+[Радужный', 'raduzhnyy']
+[Радужный', 'raduzhnyy']
+[Райчихинск', 'raychihinsk']
+[Раменское', 'ramenskoe']
+[Рассказово', 'rasskazovo']
+[Ревда', 'revda']
+[Реж', 'rezh']
+[Реутов', 'reutov']
+[Ржев', 'rzhev']
+[Родники', 'rodniki']
+[Рославль', 'roslavl']
+[Россошь', 'rossosh']
+[Ростов-на-Дону', 'rostov-na-donu']
+[Ростов', 'rostov']
+[Рошаль', 'roshal']
+[Ртищево', 'rtischevo']
+[Рубцовск', 'rubtsovsk']
+[Рудня', 'rudnya']
+[Руза', 'ruza']
+[Рузаевка', 'ruzaevka']
+[Рыбинск', 'rybinsk']
+[Рыбное', 'rybnoe']
+[Рыльск', 'rylsk']
+[Ряжск', 'ryazhsk']
+[Рязань', 'ryazan']
+[Саки', 'saki']
+[Салават', 'salavat']
+[Салаир', 'salair']
+[Салехард', 'salekhard']
+[Сальск', 'salsk']
+[Самара', 'samara']
+[Санкт-Петербург', 'sankt-peterburg']
+[Саранск', 'saransk']
+[Сарапул', 'sarapul']
+[Саратов', 'saratov']
+[Саров', 'sarov']
+[Сасово', 'sasovo']
+[Сатка', 'satka']
+[Сафоново', 'safonovo']
+[Саяногорск', 'sayanogorsk']
+[Саянск', 'sayansk']
+[Светлогорск', 'svetlogorsk']
+[Светлоград', 'svetlograd']
+[Светлый', 'svetlyy']
+[Светогорск', 'svetogorsk']
+[Свирск', 'svirsk']
+[Свободный', 'svobodnyy']
+[Себеж', 'sebezh']
+[Севастополь', 'sevastopol']
+[Северо-Курильск', 'severo-kurilsk']
+[Северобайкальск', 'severobaykalsk']
+[Северодвинск', 'severodvinsk']
+[Североморск', 'severomorsk']
+[Североуральск', 'severouralsk']
+[Северск', 'seversk']
+[Севск', 'sevsk']
+[Сегежа', 'segezha']
+[Сельцо', 'seltso']
+[Семёнов', 'semenov']
+[Семикаракорск', 'semikarakorsk']
+[Семилуки', 'semiluki']
+[Сенгилей', 'sengiley']
+[Серафимович', 'serafimovich']
+[Сергач', 'sergach']
+[Сергиев Посад', 'sergiev-posad']
+[Сердобск', 'serdobsk']
+[Серов', 'serov']
+[Серпухов', 'serpuhov']
+[Сертолово', 'sertolovo']
+[Сибай', 'sibay']
+[Сим', 'sim']
+[Симферополь', 'simferopol']
+[Сковородино', 'skovorodino']
+[Скопин', 'skopin']
+[Славгород', 'slavgorod']
+[Славск', 'slavsk']
+[Славянск-на-Кубани', 'slavyansk-na-kubani']
+[Сланцы', 'slantsy']
+[Слободской', 'slobodskoy']
+[Слюдянка', 'slyudyanka']
+[Смоленск', 'smolensk']
+[Снежинск', 'snezhinsk']
+[Снежногорск', 'snezhnogorsk']
+[Собинка', 'sobinka']
+[Советск', 'sovetsk']
+[Советск', 'sovetsk']
+[Советск', 'sovetsk']
+[Советская Гавань', 'sovetskaya-gavan']
+[Советский', 'sovetskiy']
+[Сокол', 'sokol']
+[Солигалич', 'soligalich']
+[Соликамск', 'solikamsk']
+[Солнечногорск', 'solnechnogorsk']
+[Соль-Илецк', 'sol-iletsk']
+[Сольвычегодск', 'solvychegodsk']
+[Сольцы', 'soltsy']
+[Сорочинск', 'sorochinsk']
+[Сорск', 'sorsk']
+[Сортавала', 'sortavala']
+[Сосенский', 'sosenskiy']
+[Сосновка', 'sosnovka']
+[Сосновоборск', 'sosnovoborsk']
+[Сосновый Бор', 'sosnovyy-bor']
+[Сосногорск', 'sosnogorsk']
+[Сочи', 'sochi']
+[Спас-Деменск', 'spas-demensk']
+[Спас-Клепики', 'spas-klepiki']
+[Спасск', 'spassk']
+[Спасск-Дальний', 'spassk-dalniy']
+[Спасск-Рязанский', 'spassk-ryazanskiy']
+[Среднеколымск', 'srednekolymsk']
+[Среднеуральск', 'sredneuralsk']
+[Сретенск', 'sretensk']
+[Ставрополь', 'stavropol']
+[Старая Купавна', 'staraya-kupavna']
+[Старая Русса', 'staraya-russa']
+[Старица', 'staritsa']
+[Стародуб', 'starodub']
+[Старый Крым', 'staryy-krym']
+[Старый Оскол', 'staryy-oskol']
+[Стерлитамак', 'sterlitamak']
+[Стрежевой', 'strezhevoy']
+[Строитель', 'stroitel']
+[Струнино', 'strunino']
+[Ступино', 'stupino']
+[Суворов', 'suvorov']
+[Судак', 'sudak']
+[Суджа', 'sudzha']
+[Судогда', 'sudogda']
+[Суздаль', 'suzdal']
+[Сунжа', 'sunzha']
+[Суоярви', 'suoyarvi']
+[Сураж', 'surazh']
+[Сургут', 'surgut']
+[Суровикино', 'surovikino']
+[Сурск', 'sursk']
+[Сусуман', 'susuman']
+[Сухиничи', 'suhinichi']
+[Сухой Лог', 'suhoy-log']
+[Сызрань', 'syzran']
+[Сыктывкар', 'syktyvkar']
+[Сысерть', 'sysert']
+[Сычёвка', 'sychevka']
+[Сясьстрой', 'syasstroy']
+[Тавда', 'tavda']
+[Таганрог', 'taganrog']
+[Тайга', 'tayga']
+[Тайшет', 'tayshet']
+[Талдом', 'taldom']
+[Талица', 'talitsa']
+[Тамбов', 'tambov']
+[Тара', 'tara']
+[Тарко-Сале', 'tarko-sale']
+[Таруса', 'tarusa']
+[Татарск', 'tatarsk']
+[Таштагол', 'tashtagol']
+[Тверь', 'tver']
+[Теберда', 'teberda']
+[Тейково', 'teykovo']
+[Темников', 'temnikov']
+[Темрюк', 'temryuk']
+[Терек', 'terek']
+[Тетюши', 'tetyushi']
+[Тимашёвск', 'timashevsk']
+[Тихвин', 'tihvin']
+[Тихорецк', 'tihoretsk']
+[Тобольск', 'tobolsk']
+[Тогучин', 'toguchin']
+[Тольятти', 'tolyatti']
+[Томари', 'tomari']
+[Томмот', 'tommot']
+[Томск', 'tomsk']
+[Топки', 'topki']
+[Торжок', 'torzhok']
+[Торопец', 'toropets']
+[Тосно', 'tosno']
+[Тотьма', 'totma']
+[Трёхгорный', 'trekhgornyy']
+[Троицк', 'troitsk']
+[Трубчевск', 'trubchevsk']
+[Туапсе', 'tuapse']
+[Туймазы', 'tuymazy']
+[Тула', 'tula']
+[Тулун', 'tulun']
+[Туран', 'turan']
+[Туринск', 'turinsk']
+[Тутаев', 'tutaev']
+[Тында', 'tynda']
+[Тырныауз', 'tyrnyauz']
+[Тюкалинск', 'tyukalinsk']
+[Тюмень', 'tyumen']
+[Уварово', 'uvarovo']
+[Углегорск', 'uglegorsk']
+[Углич', 'uglich']
+[Удачный', 'udachnyy']
+[Удомля', 'udomlya']
+[Ужур', 'uzhur']
+[Узловая', 'uzlovaya']
+[Улан-Удэ', 'ulan-ude']
+[Ульяновск', 'ulyanovsk']
+[Унеча', 'unecha']
+[Урай', 'uray']
+[Урень', 'uren']
+[Уржум', 'urzhum']
+[Урус-Мартан', 'urus-martan']
+[Урюпинск', 'uryupinsk']
+[Усинск', 'usinsk']
+[Усмань', 'usman']
+[Усолье-Сибирское', 'usole-sibirskoe']
+[Усолье', 'usole']
+[Уссурийск', 'ussuriysk']
+[Усть-Джегута', 'ust-dzheguta']
+[Усть-Илимск', 'ust-ilimsk']
+[Усть-Катав', 'ust-katav']
+[Усть-Кут', 'ust-kut']
+[Усть-Лабинск', 'ust-labinsk']
+[Устюжна', 'ustyuzhna']
+[Уфа', 'ufa']
+[Ухта', 'uhta']
+[Учалы', 'uchaly']
+[Уяр', 'uyar']
+[Фатеж', 'fatezh']
+[Феодосия', 'feodosiya']
+[Фокино', 'fokino']
+[Фокино', 'fokino']
+[Фролово', 'frolovo']
+[Фрязино', 'fryazino']
+[Фурманов', 'furmanov']
+[Хабаровск', 'habarovsk']
+[Хадыженск', 'hadyzhensk']
+[Ханты-Мансийск', 'hanty-mansiysk']
+[Харабали', 'harabali']
+[Харовск', 'harovsk']
+[Хасавюрт', 'hasavyurt']
+[Хвалынск', 'hvalynsk']
+[Хилок', 'hilok']
+[Химки', 'himki']
+[Холм', 'holm']
+[Холмск', 'holmsk']
+[Хотьково', 'hotkovo']
+[Цивильск', 'tsivilsk']
+[Цимлянск', 'tsimlyansk']
+[Циолковский', 'tsiolkovskiy']
+[Чадан', 'chadan']
+[Чайковский', 'chaykovskiy']
+[Чапаевск', 'chapaevsk']
+[Чаплыгин', 'chaplygin']
+[Чебаркуль', 'chebarkul']
+[Чебоксары', 'cheboksary']
+[Чегем', 'chegem']
+[Чекалин', 'chekalin']
+[Челябинск', 'chelyabinsk']
+[Чердынь', 'cherdyn']
+[Черемхово', 'cheremhovo']
+[Черепаново', 'cherepanovo']
+[Череповец', 'cherepovets']
+[Черкесск', 'cherkessk']
+[Чёрмоз', 'chermoz']
+[Черноголовка', 'chernogolovka']
+[Черногорск', 'chernogorsk']
+[Чернушка', 'chernushka']
+[Черняховск', 'chernyahovsk']
+[Чехов', 'chekhov']
+[Чистополь', 'chistopol']
+[Чита', 'chita']
+[Чкаловск', 'chkalovsk']
+[Чудово', 'chudovo']
+[Чулым', 'chulym']
+[Чусовой', 'chusovoy']
+[Чухлома', 'chuhloma']
+[Шагонар', 'shagonar']
+[Шадринск', 'shadrinsk']
+[Шали', 'shali']
+[Шарыпово', 'sharypovo']
+[Шарья', 'sharya']
+[Шатура', 'shatura']
+[Шахты', 'shahty']
+[Шахунья', 'shahunya']
+[Шацк', 'shatsk']
+[Шебекино', 'shebekino']
+[Шелехов', 'shelekhov']
+[Шенкурск', 'shenkursk']
+[Шилка', 'shilka']
+[Шимановск', 'shimanovsk']
+[Шиханы', 'shihany']
+[Шлиссельбург', 'shlisselburg']
+[Шумерля', 'shumerlya']
+[Шумиха', 'shumiha']
+[Шуя', 'shuya']
+[Щёкино', 'schekino']
+[Щёлкино', 'schelkino']
+[Щёлково', 'schelkovo']
+[Щигры', 'schigry']
+[Щучье', 'schuche']
+[Электрогорск', 'elektrogorsk']
+[Электросталь', 'elektrostal']
+[Электроугли', 'elektrougli']
+[Элиста', 'elista']
+[Энгельс', 'engels']
+[Эртиль', 'ertil']
+[Югорск', 'yugorsk']
+[Южа', 'yuzha']
+[Южно-Сахалинск', 'yuzhno-sahalinsk']
+[Южно-Сухокумск', 'yuzhno-suhokumsk']
+[Южноуральск', 'yuzhnouralsk']
+[Юрга', 'yurga']
+[Юрьев-Польский', 'yurev-polskiy']
+[Юрьевец', 'yurevets']
+[Юрюзань', 'yuryuzan']
+[Юхнов', 'yuhnov']
+[Ядрин', 'yadrin']
+[Якутск', 'yakutsk']
+[Ялта', 'yalta']
+[Ялуторовск', 'yalutorovsk']
+[Янаул', 'yanaul']
+[Яранск', 'yaransk']
+[Яровое', 'yarovoe']
+[Ярославль', 'yaroslavl']
+[Ярцево', 'yartsevo']
+[Ясногорск', 'yasnogorsk']
+[Ясный', 'yasnyy']
+[Яхрома', 'yahroma']
