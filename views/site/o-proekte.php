@@ -1,6 +1,12 @@
 <?php
 
+use app\helpers\Url;
+
 /* @var $this yii\web\View */
+
+$this->title = 'О проекте';
+
+$this->params['description'] = 'Городской портал Без Кредитов - помогает жителям Москвы и Московской области выбрать правильную компанию по банкротству физических лиц и избавиться от долгов и начать свою жизнь с чистого лица.';
 
 $this->params['breadcrumbs'] = [
     'О проекте',
@@ -13,7 +19,7 @@ $this->params['breadcrumbs'] = [
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-auto">
-                <a class="logo logo-lg" href="">
+                <a class="logo logo-lg" href="<?= Url::home() ?>">
                     <span class="logo-txt">Без кредитов</span>
                 </a>
             </div>

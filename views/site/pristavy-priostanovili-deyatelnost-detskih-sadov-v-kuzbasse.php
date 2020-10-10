@@ -1,19 +1,22 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $city app\models\City */
+
+$this->title = 'Приставы приостановили деятельность детских садов в '.$city->name;
 
 $this->params['breadcrumbs'] = [
     [
         'url' => ['site/index', 'view' => 'novosti-po-bankrotstvu'],
-        'label' => 'Новости по банкротству физических лиц г. Москва',
+        'label' => 'Новости по банкротству физических лиц г. '.$city->name,
     ],
-    'Приставы приостановили деятельность детских садов в Москве',
+    'Приставы приостановили деятельность детских садов в '.$city->name,
 ];
 
 ?>
 <section class="section">
     <div class="container">
-        <h1 class="">Приставы приостановили деятельность детских садов в Москве</h1>
+        <h1 class="">Приставы приостановили деятельность детских садов в&nbsp;<?= $city->name ?></h1>
         <p><span class="date-bg">11 сентября 2020</span></p>
         <div class="editor">
             <img width="300" height="150" style="margin: 0 15px 15px 0; float: left;" src="img/new.jpg">
@@ -27,7 +30,7 @@ $this->params['breadcrumbs'] = [
 
 <section class="section bg">
     <div class="container">
-        <h2 class="h1 center">Актуальные новости по банкротству физических лиц г. Москва</h2>
+        <h2 class="h1 center">Актуальные новости по банкротству физических лиц г.&nbsp;<?= $city->name ?></h2>
         <div class="row">
 
             <div class="col-12 col-md-6 col-lg-4 mb-4">

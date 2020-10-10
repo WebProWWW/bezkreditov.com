@@ -4,6 +4,10 @@ use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 
+$this->title = 'Могут ли уволить за банкротство или отказать в работе?';
+
+$this->params['description'] = 'Я работала начальником отдела продаж в небольшой компании, в подчинении было у меня 7 сотрудников. Но компания после смены руководства быстро начала идти в упадок, и это закончилось в итоге банкрот- ством.';
+
 $this->params['breadcrumbs'] = [
     [
         'url' => ['site/index', 'view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic'],

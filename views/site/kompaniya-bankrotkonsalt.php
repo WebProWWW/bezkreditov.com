@@ -1,11 +1,16 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $city app\models\City */
+
+$this->title = 'Компания «БанкротКонсалт»';
+
+$this->params['description'] = 'Спасибо самой замечательной компании за проделанную работу! Мое дело в суде (А41-60610/2019). Специалисты очень грамотные, терпеливые, вежливые.';
 
 $this->params['breadcrumbs'] = [
     [
         'url' => ['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu'],
-        'label' => 'Компании по банкротству физических лиц г.&nbsp;Москва',
+        'label' => 'Компании по банкротству физических лиц г.&nbsp;'.$city->name,
     ],
     'Компания «БанкротКонсалт»',
 ];

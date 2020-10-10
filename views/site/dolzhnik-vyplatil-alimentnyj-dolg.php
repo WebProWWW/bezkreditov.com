@@ -1,19 +1,24 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $city app\models\City */
+
+$this->title = 'Приставы приостановили деятельность детских садов в '.$city->name;
+
+$this->params['description'] = 'В городе Мариинске была приостановлена деятельность двух дошкольных учреждений из-за нарушения санитарно-эпидемиологических требований к особому режиму работы в условиях распространения коронавируса.';
 
 $this->params['breadcrumbs'] = [
     [
         'url' => ['site/index', 'view' => 'poleznye-materialy-po-bankrotstvu'],
-        'label' => 'Полезные материалы по банкротству в&nbsp;Москве',
+        'label' => 'Полезные материалы по банкротству в&nbsp;'.$city->name,
     ],
-    'Приставы приостановили деятельность детских садов в Москве',
+    'Приставы приостановили деятельность детских садов в '.$city->name,
 ];
 
 ?>
 <section class="section bg">
     <div class="container">
-        <h1 class="center">Приставы приостановили деятельность детских садов в Москве</h1>
+        <h1 class="center">Приставы приостановили деятельность детских садов в&nbsp;<?= $city->name ?></h1>
     </div><!-- .container -->
 </section><!-- .section -->
 
@@ -32,7 +37,7 @@ $this->params['breadcrumbs'] = [
 
 <section class="section bg">
     <div class="container">
-        <h2 class="h1 center">Другие материалы по банкротству физических лиц г. Москва</h2>
+        <h2 class="h1 center">Другие материалы по банкротству физических лиц г.&nbsp;<?= $city->name ?></h2>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                 <div class="cart">

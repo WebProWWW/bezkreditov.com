@@ -2,6 +2,10 @@
 
 /* @var $this yii\web\View */
 
+$this->title = 'Обратная связь';
+
+$this->params['description'] = $this->title;
+
 $this->params['breadcrumbs'] = [
     'Обратная связь'
 ];

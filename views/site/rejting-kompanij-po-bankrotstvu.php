@@ -5,9 +5,13 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
 
+$this->title = 'Компании по банкротству физических лиц г. '.$city->name;
+
 $this->params['breadcrumbs'] = [
     'Компании по банкротству физических лиц г.&nbsp;'.$city->name,
 ];
+
+$this->params['description'] = $this->title;
 
 ?>
 <section class="section">

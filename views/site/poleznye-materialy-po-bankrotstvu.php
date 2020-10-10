@@ -5,6 +5,10 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
 
+$this->title = 'Полезные материалы по банкротству в г. '.$city->name;
+
+$this->params['description'] = $this->title;
+
 $this->params['breadcrumbs'] = [
     'Полезные материалы по банкротству в&nbsp;г.&nbsp;'.$city->name,
 ];

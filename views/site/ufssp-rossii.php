@@ -3,6 +3,9 @@
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
 
+$this->title = 'Управление Федеральной службы судебных приставов по г. '.$city->name;
+
+$this->params['description'] = 'Управления службы приставов действуют в каждом регионе и городе федерального значения. Они координируют деятельность районных и межрайонных отделов, являются вышестоящими органами для рассмотрения жалоб, осуществляют иные функции.';
 
 $this->params['breadcrumbs'] = [
     'УФССП России по&nbsp;г.&nbsp;'.$city->name,
@@ -61,7 +64,7 @@ $this->params['breadcrumbs'] = [
 
 <section class="section bg">
     <div class="container">
-        <h2 class="h1 center">Руководство УФССП России по Москве</h2>
+        <h2 class="h1 center">Руководство УФССП России по г.&nbsp;<?= $city->name ?></h2>
         <div class="row">
             <div class="col-12 mb-4 col-md-4">
                 <div class="cart">

@@ -3,15 +3,18 @@
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
+/* @var $city app\models\City */
 
+$this->title = 'Новости по банкротству физических лиц г. '.$city->name;
+$this->params['description'] = $this->title;
 $this->params['breadcrumbs'] = [
-    'Новости по банкротству физических лиц г.&nbsp;Москва'
+    'Новости по банкротству физических лиц г.&nbsp;'.$city->name,
 ];
 
 ?>
 <section class="section bg">
     <div class="container">
-        <h1 class="center">Новости по банкротству физических лиц г.&nbsp;Москва</h1>
+        <h1 class="center">Новости по банкротству физических лиц г.&nbsp;<?= $city->name ?></h1>
         <div class="row">
 
             <div class="col-12 col-md-6 col-lg-4 mb-4">

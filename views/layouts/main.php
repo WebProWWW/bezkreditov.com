@@ -2,7 +2,9 @@
 
 use app\helpers\Url;
 use app\models\City;
+
 use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $content string */
@@ -10,6 +12,7 @@ use yii\helpers\ArrayHelper;
 /* @var $city City */
 
 $city = $this->params['city'];
+$description = ArrayHelper::getValue($this->params, 'description', '');
 
 ?>
 <?php $this->beginPage() ?>
@@ -26,7 +29,8 @@ $city = $this->params['city'];
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.depends.css?v=012">
     <link rel="stylesheet" href="css/main.css?v=016">
-    <title>Без кредитов</title>
+    <title><?= $this->title ? Html::encode($this->title) : 'Без кредитов' ?></title>
+    <meta name="description" content="<?= $description ?>">
     <?php $this->head() ?>
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?= Yii::$app->request->hostInfo ?>/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?= Yii::$app->request->hostInfo ?>/apple-touch-icon-114x114.png">
