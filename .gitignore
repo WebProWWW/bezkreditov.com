@@ -10,6 +10,4 @@ node_modules
 
 /config/web-local.php
 
-/config/common-local.php
-
 /public_html/robots.txt
