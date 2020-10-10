@@ -18,6 +18,7 @@ class SiteController extends Controller
     public function actionIndex($view='index')
     {
         $city = City::findOne(['alias' => Url::subdomain()]);
+        if ($city === null) $city = City::findOne(['alias' => 'index']);
         Yii::$app->view->params['city'] = $city;
         if (!Yii::$app->request->cookies->has('is-city')) {
             Yii::$app->response->cookies->add(new Cookie([
