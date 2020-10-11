@@ -6,12 +6,9 @@ use app\helpers\Url;
 /* @var $city app\models\City */
 
 $this->title = 'О проекте';
-
 $this->params['description'] = 'Городской портал Без Кредитов - помогает жителям Москвы и Московской области выбрать правильную компанию по банкротству физических лиц и избавиться от долгов и начать свою жизнь с чистого лица.';
-
-$this->params['breadcrumbs'] = [
-    'О проекте',
-];
+$this->params['breadcrumbs'] = ['О проекте'];
+$this->params['is-footer-logo'] = false;
 
 ?>
 <div class="block-divider bg"></div>
@@ -33,5 +30,3 @@ $this->params['breadcrumbs'] = [
         </div>
     </div><!-- .container -->
 </section><!-- .section -->
-
-<div class="block-divider bg"></div>

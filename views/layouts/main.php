@@ -28,7 +28,7 @@ $description = ArrayHelper::getValue($this->params, 'description', '');
     <?php $this->registerCsrfMetaTags() ?>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.depends.css?v=012">
-    <link rel="stylesheet" href="css/main.css?v=016">
+    <link rel="stylesheet" href="css/main.css?v=017">
     <title><?= $this->title ? Html::encode($this->title) : 'Без кредитов' ?></title>
     <meta name="description" content="<?= $description ?>">
     <?php $this->head() ?>
@@ -78,7 +78,7 @@ $description = ArrayHelper::getValue($this->params, 'description', '');
                 <div class="col-auto mx-auto">
                     <a class="logo" href="<?= Url::home() ?>">
                         <span class="logo-txt">Без кредитов</span>
-                        <span class="logo-stxt">Портал города <?= $city->name ?> по банкротству <br>физических лиц</span>
+                        <span class="logo-stxt">Портал города <?= $city->name ?> по банкротству физических лиц</span>
                     </a>
                     <p class="center em-9">
                     <span class="row justify-content-center no-gutters">
@@ -127,12 +127,14 @@ $description = ArrayHelper::getValue($this->params, 'description', '');
 <footer class="section">
     <div class="container">
         <div class="row">
-            <div class="col-auto mx-auto">
-                <a class="logo" href="<?= Url::home() ?>">
-                    <span class="logo-txt">Без кредитов</span>
-                    <span class="logo-stxt">Портал города <?= $city->name ?> по банкротству <br>физических лиц</span>
-                </a>
-            </div><!-- .col -->
+            <?php if (ArrayHelper::getValue($this->params, 'is-footer-logo', true)): ?>
+                <div class="col-auto mx-auto">
+                    <a class="logo" href="<?= Url::home() ?>">
+                        <span class="logo-txt">Без кредитов</span>
+                        <span class="logo-stxt">Портал города <?= $city->name ?> по банкротству <br>физических лиц</span>
+                    </a>
+                </div><!-- .col -->
+            <?php endif; ?>
             <div class="col-12 col-lg">
                 <?= $this->render('-nav', ['city' => $city]) ?>
             </div><!-- .col -->
