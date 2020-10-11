@@ -78,7 +78,7 @@ $description = ArrayHelper::getValue($this->params, 'description', '');
                 <div class="col-auto mx-auto">
                     <a class="logo" href="<?= Url::home() ?>">
                         <span class="logo-txt">Без кредитов</span>
-                        <span class="logo-stxt">Портал города Москвы по банкротству <br>физических лиц</span>
+                        <span class="logo-stxt">Портал города <?= $city->name ?> по банкротству <br>физических лиц</span>
                     </a>
                     <p class="center em-9">
                     <span class="row justify-content-center no-gutters">
@@ -130,7 +130,7 @@ $description = ArrayHelper::getValue($this->params, 'description', '');
             <div class="col-auto mx-auto">
                 <a class="logo" href="<?= Url::home() ?>">
                     <span class="logo-txt">Без кредитов</span>
-                    <span class="logo-stxt">Портал города Москвы по банкротству <br>физических лиц</span>
+                    <span class="logo-stxt">Портал города <?= $city->name ?> по банкротству <br>физических лиц</span>
                 </a>
             </div><!-- .col -->
             <div class="col-12 col-lg">
