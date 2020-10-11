@@ -10,7 +10,7 @@ function dump($expression, $return=true)
     if ($expression === null) $expression = 'NULL';
     if ($expression === true) $expression = 'TRUE';
     if ($expression === false) $expression = 'FALSE';
-    $html = '<pre>'.print_r($expression, $return).'</pre>';
+    $html = '<pre>'.print_r($expression, true).'</pre>';
     if ($return) return $html;
     echo $html;
 }
