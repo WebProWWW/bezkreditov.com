@@ -16,7 +16,7 @@ return [
                     'suffix' => '.html',
                 ],
                 [
-                    'pattern' => '<alias:[\w\-]+>',
+                    'pattern' => 'novosti-po-bankrotstvu/<alias:[\w\-]+>',
                     'route' => 'site/news-item',
                     'suffix' => '.html',
                 ],
