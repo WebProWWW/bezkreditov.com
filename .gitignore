@@ -15,3 +15,5 @@ node_modules
 /config/common.php
 
 /public_html/robots.txt
+
+/yii
