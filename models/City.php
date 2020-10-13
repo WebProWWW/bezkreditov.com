@@ -11,6 +11,7 @@ use yii\db\ActiveRecord;
  * @property int $id
  * @property string $alias
  * @property string $name
+ * @property News[] $news
  */
 class City extends ActiveRecord
 {
@@ -44,5 +45,15 @@ class City extends ActiveRecord
             'alias' => 'Поддомен',
             'name' => 'Город',
         ];
+    }
+
+    /**
+     * @return yii\db\ActiveQuery
+     */
+    public function getNews()
+    {
+        return $this
+            ->hasMany(News::class, ['city_id' => 'id'])
+            ->limit(6);
     }
 }

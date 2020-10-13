@@ -1,11 +1,9 @@
 <?php
 
-use yii\db\Migration;
-use yii\db\Exception as ExceptionDataBase;
+use app\migrations\Migration;
 
 /**
  * Class m201008_125442_table_city
- * @property string $options
  */
 class m201008_125442_table_city extends Migration
 {
@@ -1121,22 +1119,12 @@ class m201008_125442_table_city extends Migration
     }
 
     /**
-     * @return string
-     */
-    public function getOptions()
-    {
-        if ($this->db->driverName === 'mysql') {
-            return 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
-
-        }
-        return '';
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
+        echo "\nOFF m201008_125442_table_city\n";
+        /*
         $this->safeDown();
         $this->createTable('city', [
             'id' => $this->primaryKey(),
@@ -1144,6 +1132,7 @@ class m201008_125442_table_city extends Migration
             'name' => $this->string(255)->notNull(),
         ], $this->options);
         $this->batchInsert('city', ['name', 'alias'], $this->citiesUnique());
+        */
     }
 
     /**
@@ -1151,18 +1140,9 @@ class m201008_125442_table_city extends Migration
      */
     public function safeDown()
     {
-        $db = $this->db;
-        try {
-            $db->createCommand('SET foreign_key_checks = 0')->execute();
-            $tableName = $db->tablePrefix . 'city';
-            if ($db->getTableSchema($tableName, true) !== null) {
-                $this->dropTable($tableName);
-            }
-            $db->createCommand('SET foreign_key_checks = 1')->execute();
-            return true;
-        } catch (ExceptionDataBase $exception) {
-            return 'error: ' . $exception->getMessage();
-        }
+        echo "\nOFF m201008_125442_table_city\n";
+        return false;
+        // return $this->removeTable('city');
     }
 
     /**
@@ -1178,7 +1158,6 @@ class m201008_125442_table_city extends Migration
         }
         return $unique;
     }
-
 
     private function isDouble($city, $startIndex=0)
     {

@@ -1,5 +1,15 @@
 
-#=include lib/MyClass.coffee
+
+Vue.config.productionTip = off
+#=require ./vue/Fssp.coffee
+
+$('.js-vue-app-fssp').each (i, el) ->
+    new Vue
+        render: (h) -> h Fssp
+    .$mount el
+
+
+
 
 class JsSearch
 

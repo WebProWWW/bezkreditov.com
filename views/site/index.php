@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Url;
+use yii\helpers\StringHelper;
 
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
@@ -37,143 +38,37 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
     </div><!-- .container -->
 </section><!-- .section -->
 
-<section class="section bg">
+<?php if ($news = $city->news): ?>
+    <section class="section bg">
     <div class="container">
         <h1 class="center">Актуальные новости по банкротству физических лиц г.&nbsp;<?= $city->name ?></h1>
         <div class="row">
-
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <?php foreach ($news as $newsItem): ?>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
                     <div class="cart-img-header">
-                        <img class="cart-img" src="/img/cart.jpg">
+                        <img class="cart-img" src="<?= $newsItem->image ?>">
                     </div>
                     <div class="cart-body">
-                        <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
-                        <p>«Не думал что меня когда-нибудь коснется эта проблема. Когда брал потребительский кредит, было все безоблачно. Платил исправно. ...»</p>
+                        <h4><?= StringHelper::truncate($newsItem->title, 100) ?></h4>
+                        <p><?= StringHelper::truncate($newsItem->description, 160) ?></p>
                     </div><!-- .cart-body -->
                     <div class="cart-footer">
                         <div class="d-flex no-gutters align-items-center">
                             <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
+                                <p class="mutted em-9"><?= $newsItem->date ?></p>
                             </div>
                             <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'pristavy-priostanovili-deyatelnost-detskih-sadov-v-kuzbasse']) ?>">Читать</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to([
+                                    'site/news-item',
+                                    'alias' => $newsItem->alias
+                                ]) ?>">Читать</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
                 </div><!-- .cart -->
             </div><!-- .col -->
-
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-img-header">
-                        <img class="cart-img" src="/img/cart.jpg">
-                    </div>
-                    <div class="cart-body">
-                        <h4>Должник выплатил алиментный долг после привлечения...</h4>
-                        <p>«Не думал что меня когда-нибудь коснется эта проблема. Когда брал потребительский кредит...»</p>
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
-                            </div>
-                            <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'pristavy-priostanovili-deyatelnost-detskih-sadov-v-kuzbasse']) ?>">Читать</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-img-header">
-                        <img class="cart-img" src="/img/cart.jpg">
-                    </div>
-                    <div class="cart-body">
-                        <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
-                        <p>«Не думал что меня когда-нибудь коснется эта проблема. Когда брал потребительский кредит, было все безоблачно. Платил исправно. ...»</p>
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
-                            </div>
-                            <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'pristavy-priostanovili-deyatelnost-detskih-sadov-v-kuzbasse']) ?>">Читать</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-img-header">
-                        <img class="cart-img" src="/img/cart.jpg">
-                    </div>
-                    <div class="cart-body">
-                        <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
-                        <p>«Не думал что меня когда-нибудь коснется эта проблема. Когда брал потребительский кредит, было все безоблачно. Платил исправно. ...»</p>
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
-                            </div>
-                            <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'pristavy-priostanovili-deyatelnost-detskih-sadov-v-kuzbasse']) ?>">Читать</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-img-header">
-                        <img class="cart-img" src="/img/cart.jpg">
-                    </div>
-                    <div class="cart-body">
-                        <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
-                        <p>«Не думал что меня когда-нибудь коснется эта проблема. Когда брал потребительский кредит, было все безоблачно. Платил исправно. ...»</p>
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
-                            </div>
-                            <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'pristavy-priostanovili-deyatelnost-detskih-sadov-v-kuzbasse']) ?>">Читать</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-img-header">
-                        <img class="cart-img" src="/img/cart.jpg">
-                    </div>
-                    <div class="cart-body">
-                        <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
-                        <p>«Не думал что меня когда-нибудь коснется эта проблема. Когда брал потребительский кредит, было все безоблачно. Платил исправно. ...»</p>
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
-                            </div>
-                            <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'pristavy-priostanovili-deyatelnost-detskih-sadov-v-kuzbasse']) ?>">Читать</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-
+            <?php endforeach; ?>
         </div><!-- .row -->
 
         <div class="row justify-content-center">
@@ -184,6 +79,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 
     </div><!-- .container -->
 </section><!-- .section -->
+<?php endif; ?>
 
 <section class="section">
     <div class="container">

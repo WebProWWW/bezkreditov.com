@@ -15,6 +15,11 @@ return [
                     'route' => 'site/index',
                     'suffix' => '.html',
                 ],
+                [
+                    'pattern' => '<alias:[\w\-]+>',
+                    'route' => 'site/news-item',
+                    'suffix' => '.html',
+                ],
                 '' => 'site/index',
             ],
         ],
