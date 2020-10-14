@@ -13,7 +13,7 @@ class NewsController extends Controller
 {
     public function actionAfterParser()
     {
-        echo "news after parser command\n";
+        echo "news after parser command OK\n";
         return ExitCode::OK;
     }
 }
