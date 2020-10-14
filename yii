@@ -11,7 +11,7 @@ require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/vendor/yiisoft/yii2/Yii.php';
 
 $application = new Application(ArrayHelper::merge(
-    require __DIR__ . '/config/common-local.php',
+    require __DIR__ . '/config/common.php',
     require __DIR__ . '/config/console.php'
 ));
 
