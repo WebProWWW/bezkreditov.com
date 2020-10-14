@@ -14,6 +14,8 @@ node_modules
 
 /config/common.php
 
+/config/console.php
+
 /public_html/robots.txt
 
 /yii
