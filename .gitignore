@@ -4,18 +4,18 @@
 
 node_modules
 
-/vendor
+vendor
 
-/public_html/index.php
+public_html/index.php
 
-/config/web-local.php
+config/web-local.php
 
-/config/common-local.php
+config/common-local.php
 
-/config/common.php
+config/common.php
 
-/config/console.php
+config/console.php
 
-/public_html/robots.txt
+public_html/robots.txt
 
-/yii
+yii
