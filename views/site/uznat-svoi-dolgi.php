@@ -26,51 +26,7 @@ $this->params['description'] = 'Даже контролируя оплату п�
 <section class="section bg">
     <div class="container">
         <h2 class="h1">Задайте вопрос юристу бесплатно</h2>
-        <div class="cart">
-            <div class="cart-body">
-                <div class="row align-items-center no-gutters">
-                    <div class="col-auto mr-3">
-                        <div class="yur">
-                            <img class="yur-img" src="img/yur.jpg">
-                        </div>
-                    </div><!-- .col -->
-                    <div class="col">
-                        <p>
-                            <strong>Задайте вопрос юристу</strong>
-                            <br>
-                            и получите бесплатную консультацию в течении 5 минут.
-                        </p>
-                    </div><!-- .col -->
-                </div><!-- .row -->
-                <textarea class="input" rows="5" placeholder="Текст вашего вопроса"></textarea>
-            </div><!-- .cart-body -->
-            <div class="carg-body-bg">
-                <p> Пример: Недвано оказал посредническую услугу как физическо лицо. Но все пошло не так. Я пытался вернуть всвои деньги, но меня обвинили в мошенничестве, и теперь грозят подать иск в суд или в прокуратуру. Как мне быть в данной ситуации?</p>
-            </div>
-            <div class="cart-body">
-                <div class="row align-items-center">
-                    <div class="col-12 col-md-4 col-xl-3">
-                        <button class="btn btn-default">Задать вопрос</button>
-                    </div><!-- .col -->
-                    <div class="col-12 col-md-4 col-xl">
-                        <p>
-                            <strong>Быстро</strong>
-                            <br>
-                            Заполните форму и уже через 5 минут с вами свяжется юрист.
-                        </p>
-                    </div><!-- .col -->
-                    <div class="col-12 col-md-4 col-xl">
-                        <p>
-                            <strong>Конфидениально</strong>
-                            <br>
-                            Все данные будут переданны по защищенному каналу
-                        </p>
-                    </div><!-- .col -->
-                </div><!-- .row -->
-            </div><!-- .cart-body -->
-        </div><!-- .cart -->
-        <div class="my-4"></div>
-
+        <?= $this->render('-form-consult') ?>
     </div><!-- .container -->
 </section><!-- .section -->
 
