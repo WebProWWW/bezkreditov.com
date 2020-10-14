@@ -1,9 +1,11 @@
 <?php
 
 use yii\helpers\Url;
+use app\models\City;
 
 /* @var $this yii\web\View */
-/* @var $city app\models\City */
+/* @var $city City */
+/* @var $cities City[] */
 
 $this->title = 'Компании по банкротству физических лиц г. '.$city->name;
 
@@ -25,9 +27,25 @@ $this->params['description'] = $this->title;
         <div class="row">
             <div class="col-12 col-lg">
                 <select class="input">
-                    <option>Все...</option>
-                    <option>Банкрот Консалт</option>
-                    <option>2Лекс</option>
+                    <?php if ($this->beginCache('rating-city-options', ['duration' => 3600 * 24 * 365 ])): ?>
+                        <?php if ($cities = City::find()->all()): ?>
+                            <?php $letter = '' ?>
+                            <?php foreach ($cities as $optCity): ?>
+                                <?php $cityLetter = mb_substr($optCity->name, 0, 1, 'utf-8') ?>
+                                <?php if ($cityLetter !== $letter): ?>
+                                    <?php $letter = $cityLetter ?>
+                                    <option disabled>
+                                        <?= $letter ?>
+                                    </option>
+                                <?php endif; ?>
+                                <?php $selected = ($city->alias === $optCity->alias) ? 'selected' : '' ?>
+                                <option value="<?= $optCity->alias ?>" <?= $selected ?>>
+                                    <?= $optCity->name ?>
+                                </option>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                        <?php $this->endCache() ?>
+                    <?php endif; ?>
                 </select>
             </div><!-- .col -->
             <div class="col-12 col-lg">
