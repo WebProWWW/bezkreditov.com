@@ -412,4 +412,8 @@ $this->params['breadcrumbs'] = [
     </div><!-- .container -->
 </section><!-- .section -->
 
-<div class="block-divider bg"></div>
+<div class="section bg">
+    <div class="container">
+        <?= $this->render('-form-consult') ?>
+    </div>
+</div>

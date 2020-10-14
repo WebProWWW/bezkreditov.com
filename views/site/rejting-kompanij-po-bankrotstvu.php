@@ -344,3 +344,9 @@ $this->params['description'] = $this->title;
 
     </div><!-- .container -->
 </section><!-- .section -->
+
+<div class="section bg">
+    <div class="container">
+        <?= $this->render('-form-consult') ?>
+    </div>
+</div>

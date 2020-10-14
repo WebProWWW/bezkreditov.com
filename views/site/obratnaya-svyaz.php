@@ -40,8 +40,18 @@ $this->params['breadcrumbs'] = [
                     <label class="label">Ваше сообщение <span class="red">*</span></label>
                     <textarea class="input" rows="5"></textarea>
 
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-6 col-lg-5">
+                    <div class="row">
+                        <div class="col-12 col-md order-md-2">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <p class="em-9 right">Прекрипить файл к сообщению</p>
+                                </div>
+                                <div class="col-auto">
+                                    <span class="btn-sm btn-default">Прекрипить</span>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-12 col-md-auto order-md-1">
                             <button class="btn btn-default">Отправить сообщение</button>
                         </div><!-- .col -->
                     </div><!-- .row -->
