@@ -544,6 +544,32 @@ a
 
 
 
+.pagination
+	mpd(0 -8px 15px, 0, flex)
+	list-style none
+
+.pagination > li
+	mpd()
+	list-style none
+	font-weight 400
+	font-size 18px
+	line-height 1
+
+.pagination > li > a
+	mpd(0, 0 8px)
+	trans()
+	resetLn(black, pcolor)
+
+.pagination > li.disabled
+	padding 0 8px
+	opacity .5
+
+.pagination > li.active > a
+	color pcolor
+
+.pagination > li i
+	font-size .8em
+
 
 .ln-black-primary
 	trans()

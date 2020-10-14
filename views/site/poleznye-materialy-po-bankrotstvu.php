@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Url;
+use app\widgets\LinkPager;
 
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
@@ -17,6 +18,7 @@ $this->params['breadcrumbs'] = [
 <section class="section bg">
     <div class="container">
         <h1 class="center">Полезные материалы по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></h1>
+
         <div class="row">
 
             <div class="col-12 col-md-6 col-lg-4 mb-4">
@@ -153,11 +155,13 @@ $this->params['breadcrumbs'] = [
 
         </div><!-- .row -->
 
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-8 col-md-5 col-lg-3">
-                <a class="btn btn-default" href="">Все новости</a>
-            </div><!-- .col -->
-        </div><!-- .row -->
+        <div class="row justify-content-center my-3">
+            <div class="col-auto">
+                <?= LinkPager::widget([
+                    'pagination' => new yii\data\Pagination(['totalCount' => 100]),
+                ]) ?>
+            </div>
+        </div>
 
     </div><!-- .container -->
 </section><!-- .section -->
