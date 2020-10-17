@@ -349,6 +349,12 @@ a
 .input:focus
 	b(1, pcolor)
 
+.input.error
+	b(1, red)
+
+
+.gj-icon
+	margin 5px 3px 0 0
 
 
 .radio
@@ -379,6 +385,12 @@ a
 
 .radio:checked:before
 	background pcolor
+
+.input-error
+	mpd(-13px 0 15px)
+	font-weight 400
+	font-size .8rem
+	color red
 
 
 .yur
@@ -624,6 +636,14 @@ a
 	max-width 450px
 	min-height auto
 	height auto
+
+
+.fade-enter-active, .fade-leave-active
+	transition opacity .3s ease
+
+.fade-enter, .fade-leave-to
+	// .component-fade-leave-active до версии 2.1.8
+	opacity 0
 
 
 for num in (1..100)

@@ -1,5 +1,7 @@
 <?php
 
+use app\helpers\Url;
+
 /* @var $this yii\web\View */
 
 $this->params['breadcrumbs'] = [
@@ -19,7 +21,10 @@ $this->params['description'] = 'Даже контролируя оплату п�
 
 <section class="section">
     <div class="container">
-        <div class="js-vue-app-fssp"></div>
+        <div
+            class="js-vue-app-fssp"
+            data-action-search="<?= Url::to(['site/fssp-search']) ?>"
+        ></div>
     </div><!-- .container -->
 </section><!-- .section -->
 

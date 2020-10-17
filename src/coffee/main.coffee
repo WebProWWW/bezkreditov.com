@@ -4,6 +4,7 @@ Vue.config.productionTip = off
 #=require ./vue/Fssp.coffee
 
 $('.js-vue-app-fssp').each (i, el) ->
+    Vue.prototype.actionSearch = $(el).data 'action-search'
     new Vue
         render: (h) -> h Fssp
     .$mount el

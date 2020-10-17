@@ -1,72 +1,87 @@
 <?php
-/**
- * Author: Timur Valiev
- * Site: https://webprowww.github.io
- * 05/12/2019 04:44
- */
 
 namespace app\models;
 
 use linslin\yii2\curl\Curl;
-use yii\base\Model;
+use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 use yii\web\NotFoundHttpException;
+use Yii;
 use Exception;
+use Throwable;
 
 /**
  * Class Fssp
  * @package app\models
+ *
+ * @property integer $id
+ * @property integer $created
+ * @property integer $status
+ * @property string $search_scenario
+ * @property string $task
+ * @property integer $region Номер региона
+ * @property string $firstname Имя физического лица
+ * @property string $secondname Отчество физического лица
+ * @property string $lastname Фамилия физического лица
+ * @property string $birthdate Дата рождения физического лица, в формате dd.mm.YYYY
+ * @property string $name Имя юридического лица
+ * @property string $address Адрес юридического лица
+ * @property string $number Номер исполнительного производства в формате n…n/yy/dd/rr или n…n/yy/ddddd-ИП
+ * @property string $email
+ * @property string $phone
+ *
+ * @property string $regionName getRegionName
+ *
  */
-class Fssp extends Model
+class Fssp extends ActiveRecord
 {
-    const SCENARIO_SEARCH = 'search';
-    const SCENARIO_RESULT = 'result';
-    const SCENARIO_STATUS = 'status';
-
-    public $region;
-    public $firstname;
-    public $lastname;
-    public $secondname;
-    public $birthdate;
-    public $response;
-    public $task;
-    public $email;
-    public $phone;
-
-    // токен Роман
-    // private $token = 'WMglCqPhp9yH';
-    // токен Мой
-    private $token = 'wOSgYJigqTC2';
-    private $api = 'https://api-ip.fssprus.ru/api/v1.0';
+    const SCENARIO_A = 'searchTypeA';
+    const SCENARIO_B = 'searchTypeB';
+    const SCENARIO_C = 'searchTypeC';
+    public $searchType; // A | B | C
+    private $_token = 'WMglCqPhp9yH'; // токен Роман
+    //private $_token = 'wOSgYJigqTC2'; // токен Мой
+    private $_api = 'https://api-ip.fssprus.ru/api/v1.0';
 
     /**
      * @inheritDoc
      */
-    public function formName()
+    public static function tableName()
     {
-        return '';
+        return 'fssp';
     }
 
+    /**
+     * @inheritDoc
+     */
     public function scenarios()
     {
         $scenarios = parent::scenarios();
         return ArrayHelper::merge($scenarios, [
-            self::SCENARIO_SEARCH => ['region', 'lastname', 'firstname', 'secondname'],
-            self::SCENARIO_RESULT => ['task'],
-            self::SCENARIO_STATUS => ['task'],
+            self::SCENARIO_A => ['searchType','region','firstname','secondname','lastname','birthdate','email','phone'],
+            self::SCENARIO_B => ['searchType','region','name','address','email','phone'],
+            self::SCENARIO_C => ['searchType','number','email','phone'],
         ]);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function attributeLabels()
     {
         return [
+            'searchType' => 'База поиска',
             'region' => 'Регион',
-            'lastname' => 'Фамилия',
             'firstname' => 'Имя',
             'secondname' => 'Отчество',
+            'lastname' => 'Фамилия',
             'birthdate' => 'Дата рождения',
-            'task' => 'Задача'
+            'name' => 'Наименование предприятия',
+            'address' => 'Адрес предприятия - должника',
+            'number' => 'Номер исполнительного производства',
+            'email' => 'E-mail',
+            'phone' => 'Телефон',
         ];
     }
 
@@ -76,80 +91,127 @@ class Fssp extends Model
     public function rules()
     {
         return [
-
-            [['region', 'firstname', 'lastname', 'birthdate'], 'required', 'on' => self::SCENARIO_SEARCH],
-            [['task'], 'required', 'on' => self::SCENARIO_RESULT],
-            [['task'], 'required', 'on' => self::SCENARIO_STATUS],
-            [['firstname', 'lastname', 'secondname', 'birthdate', 'email', 'phone', 'task'], 'string'],
-            [['firstname', 'lastname', 'secondname', 'birthdate', 'email', 'phone'], 'trim'],
+            [['searchType','region','firstname','lastname','name','number','email'], 'required'],
+            [['searchType','region','firstname','secondname','lastname','birthdate','name','address','number','email','phone'], 'trim'],
+            [['searchType','firstname','secondname','lastname','birthdate','name','address','number','phone'], 'string'],
             [['region'], 'integer'],
+            [['email'], 'email'],
         ];
     }
 
-    public function sendMail()
-    {
-
-    }
-
     /**
      * @return bool
      * @throws NotFoundHttpException
      */
-    public function searchPhysical()
+    public function createTask()
     {
-        $this->scenario = self::SCENARIO_SEARCH;
-        if ($this->validate()) {
-            $this->response = $this->apiGet('/search/physical', [
-                'token' => $this->token,
-//                'region' => 34,
-//                'firstname' => 'АЛЕКСЕЙ',
-//                'lastname' => 'СОНИН',
-//                'secondname' => 'ВИКТОРОВИЧ',
-//                'birthdate' => '21.12.1985',
-
-                'region'      => $this->region,
-                'firstname'   => $this->firstname,
-                'lastname'    => $this->lastname,
-                'secondname'  => $this->secondname,
-                'birthdate'   => $this->birthdate,
-            ]);
-            return true;
-        }
-        return false;
+        if (!$this->validate()) return false;
+        $this->task = $this->search();
+        $this->search_scenario = $this->scenario;
+        $this->created = time();
+        return $this->save();
     }
 
     /**
-     * @return bool
+     * @return string
      * @throws NotFoundHttpException
      */
-    public function result()
+    private function search()
     {
-        $this->scenario = self::SCENARIO_RESULT;
-        if ($this->validate()) {
-            $this->response = $this->apiGet('/result', [
-                'token' => $this->token,
-                'task' => $this->task,
-            ]);
-            return true;
+        $response = [];
+        if ($this->scenario === self::SCENARIO_A) {
+            $query = [
+                'region' => $this->region,
+                'firstname' => $this->firstname,
+                'lastname' => $this->lastname,
+            ];
+            if ($this->secondname) $query['secondname'] = $this->secondname;
+            if ($this->birthdate) $query['birthdate'] = $this->birthdate;
+            $response = $this->apiGet('/search/physical', $query);
         }
-        return false;
+        elseif ($this->scenario === self::SCENARIO_B) {
+            $query = [
+                'region' => $this->region,
+                'name' => $this->name,
+            ];
+            if ($this->address) $query['address'] = $this->address;
+            $response = $this->apiGet('/search/legal', $query);
+        }
+        elseif ($this->scenario === self::SCENARIO_C) {
+            $response = $this->apiGet('/search/ip', [
+                'number' => $this->number,
+            ]);
+        }
+        if ($task = ArrayHelper::getValue($response, 'response.task', false)) {
+            return $task;
+        }
+        throw new NotFoundHttpException();
     }
 
     /**
-     * @return bool
+     * @return string
+     */
+    public function getRegionName()
+    {
+        return ArrayHelper::getValue(self::regions(), $this->region, '-');
+    }
+
+    /**
+     * @return string
      * @throws NotFoundHttpException
      */
-    public function status()
+    public function doTask()
     {
-        $this->scenario = self::SCENARIO_STATUS;
-        if ($this->validate()) {
-            $this->response = $this->apiGet('/status', [
-                'token' => $this->token,
-                'task' => $this->task,
-            ]);
-            return true;
+        $response = $this->apiGet('/status', ['task' => $this->task]);
+        $status = ArrayHelper::getValue($response, 'response.status');
+        if ($status === 0 || $status === 3) {
+            return $this->sendResult();
         }
-        return false;
+        return "PROGRESS: " . $this->task;
+    }
+
+    /**
+     * @return string
+     */
+    private function sendResult()
+    {
+        $response = $this->apiGet('/result', [ 'task' => $this->task ]);
+        $status = ArrayHelper::getValue($response, 'response.status');
+        if ($status === 0 || $status === 3) {
+            $isSent = Yii::$app->mailer->compose('fssp', [
+                'model' => $this,
+                'result' => ArrayHelper::getValue($response, 'response.result', []),
+            ])
+                ->setFrom(['noreply@bezkreditov.com' => 'Без Кредитов'])
+                ->setTo($this->email)
+                ->setSubject('Отчёт о проверке задолженности перед ФССП')
+                ->send();
+            if ($isSent) $this->delete();
+            return "OK: " . $this->task;
+        }
+        return "ERR: " . $this->task;
+    }
+
+    /**
+     * @return string
+     */
+    public static function doTasks()
+    {
+        /* @var $items Fssp[] */
+        /* @var $newItems Fssp[] */
+        $out = '';
+        self::deleteAll([ '<=', 'created', time()-(3600*23) ]);
+        if ($items = self::find()->where(['not',['task' => null]])->all()) {
+            foreach ($items as $item) {
+                try {
+                    $out .= "\n" . $item->doTask();
+                }
+                catch (NotFoundHttpException $e) {
+                    $out .= "\n" . $e->getMessage();
+                }
+            }
+        }
+        return $out;
     }
 
     /**
@@ -158,9 +220,10 @@ class Fssp extends Model
      * @return array
      * @throws NotFoundHttpException
      */
-    private function apiGet($action='', $params=[])
+    private function apiGet(string $action, $params=[])
     {
-        $action = $this->api . $action;
+        $params = ArrayHelper::merge(['token' => $this->_token], $params);
+        $action = $this->_api . $action;
         $curl = new Curl();
         $curl->setGetParams($params);
         try {
@@ -181,6 +244,107 @@ class Fssp extends Model
         }
         return $response;
     }
+
+    /**
+     * @param int $code
+     * @return string
+     */
+    public static function regionName(int $code)
+    {
+        return ArrayHelper::getValue(self::regions(), $code, '-');
+    }
+
+    /**
+     * @return string[]
+     */
+    public static function regions()
+    {
+        return [
+            1 => 'Республике Адыгея',
+            2 => 'Республике Башкортостан',
+            3 => 'Республике Бурятия',
+            4 => 'Республике Алтай',
+            5 => 'Республике Дагестан',
+            6 => 'Республике Ингушетия',
+            7 => 'Кабардино-Балкарской Республике',
+            8 => 'Республике Калмыкия',
+            9 => 'Карачаево-Черкесской Республике ',
+            10 => 'Республике Карелия',
+            11 => 'Республике Коми',
+            12 => 'Республике Марий Эл',
+            13 => 'Республике Мордовия',
+            14 => 'Республике Саха (Якутия)',
+            15 => 'Республике Северная Осетия – Алания',
+            16 => 'Республике Татарстан',
+            17 => 'Республике Тыва',
+            18 => 'Удмуртской Республике',
+            19 => 'Республике Хакасия',
+            20 => 'Чеченской Республике',
+            21 => 'Чувашской Республике',
+            22 => 'Алтайскому краю',
+            23 => 'Краснодарскому краю',
+            24 => 'Красноярскому краю',
+            25 => 'Приморскому краю',
+            26 => 'Ставропольскому краю',
+            27 => 'Хабаровскому краю и Еврейской АО',
+            28 => 'Амурской области',
+            29 => 'Архангельской области и Ненецкому АО',
+            30 => 'Астраханской области',
+            31 => 'Белгородской области',
+            32 => 'Брянской области',
+            33 => 'Владимирской области',
+            34 => 'Волгоградской области',
+            35 => 'Вологодской области',
+            36 => 'Воронежской области',
+            37 => 'Ивановской области',
+            38 => 'Иркутской области',
+            39 => 'Калининградской области',
+            40 => 'Калужской области',
+            41 => 'Камчатскому краю и Чукотскому АО',
+            42 => 'Кемеровской области',
+            43 => 'Кировской области',
+            44 => 'Костромской области',
+            45 => 'Курганской области',
+            46 => 'Курской области',
+            47 => 'Ленинградской области',
+            48 => 'Липецкой области',
+            49 => 'Магаданской области',
+            50 => 'Московской области',
+            51 => 'Мурманской области',
+            52 => 'Нижегородской области',
+            53 => 'Новгородской области',
+            54 => 'Новосибирской области',
+            55 => 'Омской области',
+            56 => 'Оренбургской области',
+            57 => 'Орловской области',
+            58 => 'Пензенской области',
+            59 => 'Пермскому краю',
+            60 => 'Псковской области',
+            61 => 'Ростовской области',
+            62 => 'Рязанской области',
+            63 => 'Самарской области',
+            64 => 'Саратовской области',
+            65 => 'Сахалинской области',
+            66 => 'Свердловской области',
+            67 => 'Смоленской области',
+            68 => 'Тамбовской области',
+            69 => 'Тверской области',
+            70 => 'Томской области',
+            71 => 'Тульской области',
+            72 => 'Тюменской области',
+            73 => 'Ульяновской области',
+            74 => 'Челябинской области',
+            75 => 'Забайкальскому краю',
+            76 => 'Ярославской области',
+            77 => 'Москве',
+            78 => 'Санкт-Петербургу',
+            82 => 'Республике Крым',
+            86 => 'Ханты-Мансийскому АО – Югре',
+            89 => 'Ямало-Ненецкому АО',
+            92 => 'Севастополю',
+        ];
+    }
+
 }
 
 /**/

@@ -4,11 +4,16 @@ namespace app\controllers;
 
 use app\models\City;
 use app\helpers\Url;
-
+use app\models\Fssp;
 use app\models\News;
+
 use Yii;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\Cookie;
+use yii\web\NotFoundHttpException;
+use yii\web\Response;
+use yii\widgets\ActiveForm;
 
 class SiteController extends Controller
 {
@@ -62,5 +67,25 @@ class SiteController extends Controller
             'model' => $model,
             'city' => $this->_city,
         ]);
+    }
+
+    /**
+     * @return array
+     * @throws NotFoundHttpException
+     */
+    public function actionFsspSearch()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $req = Yii::$app->request;
+        $searchType = ArrayHelper::getValue($req->post(), 'Fssp.searchType', false);
+        if (!$searchType) throw new NotFoundHttpException();
+        $model = new Fssp();
+        if ($searchType === 'A') $model->scenario = Fssp::SCENARIO_A;
+        if ($searchType === 'B') $model->scenario = Fssp::SCENARIO_B;
+        if ($searchType === 'C') $model->scenario = Fssp::SCENARIO_C;
+        if ($model->load($req->post()) and $model->createTask()) {
+            return ['success' => 1];
+        }
+        return ActiveForm::validate($model);
     }
 }

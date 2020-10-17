@@ -27,8 +27,8 @@ $description = ArrayHelper::getValue($this->params, 'description', '');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <?php $this->registerCsrfMetaTags() ?>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.depends.css?v=015">
-    <link rel="stylesheet" href="/css/main.css?v=020">
+    <link rel="stylesheet" href="/css/main.depends.css?v=016">
+    <link rel="stylesheet" href="/css/main.css?v=021">
     <title><?= $this->title ? Html::encode($this->title) : 'Без кредитов' ?></title>
     <meta name="description" content="<?= $description ?>">
     <?php $this->head() ?>
@@ -196,8 +196,8 @@ $description = ArrayHelper::getValue($this->params, 'description', '');
 </div><!-- .d-none -->
 <!-- / МОДАЛЬНЫЕ ОКНА -->
 
-<script src="/js/main.depends.js?v=013"></script>
-<script src="/js/main.js?v=015"></script>
+<script src="/js/main.depends.js?v=015"></script>
+<script src="/js/main.js?v=016"></script>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
 <script>if ("function"==typeof window.isCity) { window.isCity() };</script>

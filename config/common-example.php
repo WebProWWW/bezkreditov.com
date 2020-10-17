@@ -1,6 +1,11 @@
 <?php
+
 return [
     'id' => 'yii2-cms',
+    'charset' => 'utf-8',
+    'language' => 'ru-RU',
+    'sourceLanguage' => 'ru-RU',
+    'timeZone' => 'Europe/Moscow',
     'basePath' => dirname(__DIR__),
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -21,5 +26,17 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.host.host',
+                'username' => 'username@username.com',
+                'password' => 'password',
+                'port' => '465',
+                'encryption' => 'ssl',
+            ],
+        ],
     ],
+
 ];
