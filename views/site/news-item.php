@@ -35,7 +35,7 @@ $this->params['breadcrumbs'] = [
 <?php if ($news = $model->lastNews): ?>
 <section class="section bg">
     <div class="container">
-        <h2 class="h1 center">Актуальные новости по банкротству физических лиц г.&nbsp;<?= $city->name ?></h2>
+        <h2 class="h1 center">Другие новости по банкротству физических лиц г.&nbsp;<?= $city->name ?></h2>
         <div class="row">
         <?php foreach ($news as $newsItem): ?>
             <div class="col-12 col-md-6 col-lg-4 mb-4">

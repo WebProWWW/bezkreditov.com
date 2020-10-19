@@ -7,10 +7,10 @@ use app\models\City;
 /* @var $city City */
 /* @var $cities City[] */
 
-$this->title = 'Компании по банкротству физических лиц г. '.$city->name;
+$this->title = 'Рейтинг компаний по банкротству физических лиц г. ' . $city->name;
 
 $this->params['breadcrumbs'] = [
-    'Компании по банкротству физических лиц г.&nbsp;'.$city->name,
+    'Рейтинг компаний по банкротству физических лиц г.&nbsp;' . $city->name,
 ];
 
 $this->params['description'] = $this->title;
@@ -18,7 +18,7 @@ $this->params['description'] = $this->title;
 ?>
 <section class="section">
     <div class="container">
-        <h1>Компании по банкротству физических лиц г.&nbsp;<?= $city->name ?></h1>
+        <h1>Рейтинг компаний по банкротству физических лиц г.&nbsp;<?= $city->name ?></h1>
     </div><!-- .container -->
 </section><!-- .section -->
 
@@ -65,7 +65,7 @@ $this->params['description'] = $this->title;
         <div class="list">
 
             <div class="d-none d-xl-block">
-                <div class="row bg-eo botder-header-xl">
+                <div class="row bg-eo border-header-xl">
                     <div class="col-5">
                         <p class="fw-600 em-9">Название компании</p>
                     </div><!-- .col -->

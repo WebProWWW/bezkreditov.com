@@ -193,7 +193,7 @@ $this->params['breadcrumbs'] = [
 <section class="section">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-auto">
                 <a class="btn btn-default" href="">Показать еще </a>
             </div>
         </div>

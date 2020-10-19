@@ -48,6 +48,9 @@ $description = ArrayHelper::getValue($this->params, 'description', '');
 <body>
 <?php $this->beginBody() ?>
 
+<div class="full-height">
+
+<?php if (ArrayHelper::getValue($this->params, 'is-header', true)): ?>
 <header class="header">
     <div class="header-top">
         <div class="container">
@@ -98,6 +101,7 @@ $description = ArrayHelper::getValue($this->params, 'description', '');
         </div><!-- .container -->
     </div><!-- .header-body -->
 </header>
+<?php endif; ?>
 
 <?php if ($breadcrumbs = ArrayHelper::getValue($this->params, 'breadcrumbs', [])): ?>
     <section class="section">
@@ -124,17 +128,17 @@ $description = ArrayHelper::getValue($this->params, 'description', '');
 
 <?= $content ?>
 
+<?php if (ArrayHelper::getValue($this->params, 'is-footer', true)): ?>
 <footer class="section">
     <div class="container">
         <div class="row">
-            <?php if (ArrayHelper::getValue($this->params, 'is-footer-logo', true)): ?>
+
                 <div class="col-12 col-sm-8 col-md-6 col-lg-4 mx-auto">
                     <a class="logo" href="<?= Url::home() ?>">
                         <span class="logo-txt">Без кредитов</span>
                         <span class="logo-stxt">Портал города <?= $city->name ?> по банкротству физических&nbsp;лиц</span>
                     </a>
                 </div><!-- .col -->
-            <?php endif; ?>
             <div class="col-12 col-lg">
                 <?= $this->render('-nav', ['city' => $city]) ?>
             </div><!-- .col -->
@@ -143,6 +147,9 @@ $description = ArrayHelper::getValue($this->params, 'description', '');
         <p class="center"><small>&copy; Без кредитов. При воспроизведении редакционных материалов сайта обязательна установка активной гиперссылки на источник - страницу с этой публикацией на безкредитов.рф</small></p>
     </div><!-- .container -->
 </footer><!-- .section -->
+<?php endif; ?>
+
+</div><!-- .full-height -->
 
 <!-- МОДАЛЬНЫЕ ОКНА -->
 <div class="d-none">
