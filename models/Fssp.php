@@ -2,7 +2,6 @@
 
 namespace app\models;
 
-use linslin\yii2\curl\Curl;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
@@ -10,6 +9,10 @@ use yii\web\NotFoundHttpException;
 use Yii;
 use Exception;
 use Throwable;
+
+use linslin\yii2\curl\Curl;
+use Sendpulse\RestApi\ApiClient;
+use Sendpulse\RestApi\Storage\FileStorage;
 
 /**
  * Class Fssp
@@ -43,6 +46,10 @@ class Fssp extends ActiveRecord
     private $_token = 'WMglCqPhp9yH'; // токен Роман
     //private $_token = 'wOSgYJigqTC2'; // токен Мой
     private $_api = 'https://api-ip.fssprus.ru/api/v1.0';
+    // SendPulse
+    private $_spId = 'dbfac1281991f1e3e4f6a069ed592d27';
+    private $_spSecret = '2de1513fb979132484cad375f018e67c';
+    private $_spBookId = 1075435;
 
     /**
      * @inheritDoc
@@ -150,6 +157,7 @@ class Fssp extends ActiveRecord
 
     /**
      * @return string
+     * @throws Exception
      */
     public function getRegionName()
     {
@@ -172,24 +180,64 @@ class Fssp extends ActiveRecord
 
     /**
      * @return string
+     * @throws NotFoundHttpException
      */
     private function sendResult()
     {
         $response = $this->apiGet('/result', [ 'task' => $this->task ]);
         $status = ArrayHelper::getValue($response, 'response.status');
         if ($status === 0 || $status === 3) {
+            $result = ArrayHelper::getValue($response, 'response.result', []);
             $isSent = Yii::$app->mailer->compose('fssp', [
                 'model' => $this,
-                'result' => ArrayHelper::getValue($response, 'response.result', []),
+                'result' => $result,
             ])
                 ->setFrom(['noreply@bezkreditov.com' => 'Без Кредитов'])
                 ->setTo($this->email)
                 ->setSubject('Отчёт о проверке задолженности перед ФССП')
                 ->send();
-            if ($isSent) $this->delete();
+            if ($isSent) {
+                try {
+                    $sp = new ApiClient($this->_spId, $this->_spSecret, new FileStorage());
+                    $sp->addEmails($this->_spBookId, [[
+                        'email' => $this->email,
+                        'variables' => [
+                            'Phone' => $this->phone,
+                            'имя' => $this->firstname,
+                            'Регион' => $this->regionName,
+                            'Отчество' => $this->secondname,
+                            'Фамилия' => $this->lastname,
+                            'Дата рождения' => $this->birthdate,
+                            'Наименование предприятия' => $this->name,
+                            'Адрес предприятия - должника' => $this->address,
+                            'Номер исполнительного производства' => $this->number,
+                            'Результат ФССП' => $this->concatResult($result),
+                        ],
+                    ]]);
+                } catch (Exception $e) {}
+                try {
+                    $this->delete();
+                } catch (Throwable $e) {}
+            }
             return "OK: " . $this->task;
         }
         return "ERR: " . $this->task;
+    }
+
+    /**
+     * @param array $result
+     * @return string
+     */
+    private function concatResult(array &$result)
+    {
+        $out = '';
+        foreach ($result as $item) {
+            $itemResult = ArrayHelper::getValue($item, 'result', []);
+            foreach ($itemResult as $ri) {
+                $out .= ' ::: ' . ArrayHelper::getValue($ri, 'subject', '-');
+            }
+        }
+        return $out;
     }
 
     /**
