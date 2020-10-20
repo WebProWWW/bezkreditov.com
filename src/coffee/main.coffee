@@ -49,6 +49,14 @@ $('.js-search').each (i, el) ->
     new JsSearch el
 
 
+$('*[data-toggle]').on 'click', (e) ->
+    e.preventDefault()
+    $this = $ this
+    $targetBlock = $ "#{$this.attr('data-toggle')}"
+    $targetBlock.slideToggle()
+    off
+
+
 window.isCity = () ->
     $.fancybox.open src: '#is-city'
     on
