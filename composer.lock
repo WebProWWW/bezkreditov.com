@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "37ce7342da15bd53fc9c920af6ac98f2",
+    "content-hash": "7617273d58d074d3956956af079835d1",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -422,6 +422,51 @@
                 "random"
             ],
             "time": "2020-10-15T08:29:30+00:00"
+        },
+        {
+            "name": "sendpulse/rest-api",
+            "version": "10.0.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sendpulse/sendpulse-rest-api-php.git",
+                "reference": "c55b90401be3b7ce2299398ec5fcb33927282be7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sendpulse/sendpulse-rest-api-php/zipball/c55b90401be3b7ce2299398ec5fcb33927282be7",
+                "reference": "c55b90401be3b7ce2299398ec5fcb33927282be7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sendpulse\\RestApi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maksym Ustymenko",
+                    "email": "m.ustymenko@sendpulse.com"
+                },
+                {
+                    "name": "Alexey Moroz",
+                    "email": "a.moroz@sendpulse.com"
+                }
+            ],
+            "description": "Sendpulse REST API client library",
+            "keywords": [
+                "api",
+                "rest",
+                "sendpulse"
+            ],
+            "time": "2020-04-23T09:33:17+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
