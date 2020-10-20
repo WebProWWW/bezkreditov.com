@@ -88,4 +88,5 @@ class SiteController extends Controller
         }
         return ActiveForm::validate($model);
     }
+
 }
