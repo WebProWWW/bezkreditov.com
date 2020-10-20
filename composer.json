@@ -14,7 +14,8 @@
     "ext-mbstring": "*",
     "yiisoft/yii2": "~2.0.38",
     "yiisoft/yii2-swiftmailer": "~2.1.2",
-    "linslin/yii2-curl": "~1.4.0"
+    "linslin/yii2-curl": "~1.4.0",
+    "sendpulse/rest-api": "~10.0.15"
   },
   "require-dev": {
     "yiisoft/yii2-gii": "~2.2.1"
