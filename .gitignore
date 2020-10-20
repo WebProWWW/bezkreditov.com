@@ -2,6 +2,8 @@
 
 .DS_Store
 
+/controllers/TestController.php
+
 /node_modules
 
 /vendor
