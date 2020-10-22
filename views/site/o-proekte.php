@@ -14,6 +14,7 @@ $this->params['is-header'] = false;
 ?>
 
 <section class="section mt-auto">
+    <h1 class="center mb-5">О проекте</h1>
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-auto">
