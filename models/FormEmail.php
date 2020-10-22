@@ -75,6 +75,8 @@ class FormEmail extends Model
             ->attach(Yii::getAlias('@app').'/mail/attachments/example.pdf')
             ->send();
         if ($isSent) {
+            //TODO sendpulse на сайте не работает. Локально работает. WTF?
+            /*
             try {
                 $sp = new ApiClient($this->_spId, $this->_spSecret, new FileStorage());
                 $sp->addEmails($this->_spBookId, [[
@@ -85,6 +87,7 @@ class FormEmail extends Model
                 $this->_sendError = true;
                 return false;
             }
+            */
             return true;
         }
         $this->_sendError = true;
