@@ -8,7 +8,12 @@ use yii\helpers\Url;
 
 <div class="row d-lg-none">
     <div class="col-auto mx-auto">
-        <span data-toggle="#main-nav"><i class="i-bars nav-i"></i></span>
+        <div class="d-flex align-items-center">
+            <div class="toggle-btn" data-toggle="#main-nav">
+                <i class="i-bars toggle-i"></i>
+                <p class="toggle-txt">Меню</p>
+            </div>
+        </div>
     </div>
 </div>
 

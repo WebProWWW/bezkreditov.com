@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use app\models\City;
 use app\helpers\Url;
+use app\models\FormCallback;
+use app\models\FormEmail;
 use app\models\Fssp;
 use app\models\News;
 
@@ -84,6 +86,26 @@ class SiteController extends Controller
         if ($searchType === 'B') $model->scenario = Fssp::SCENARIO_B;
         if ($searchType === 'C') $model->scenario = Fssp::SCENARIO_C;
         if ($model->load($req->post()) and $model->createTask()) {
+            return ['success' => 1];
+        }
+        return ActiveForm::validate($model);
+    }
+
+    public function actionCallback()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $model = new FormCallback();
+        if ($model->load(Yii::$app->request->post()) and $model->send()) {
+            return ['success' => 1];
+        }
+        return ActiveForm::validate($model);
+    }
+
+    public function actionSendFile()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $model = new FormEmail();
+        if ($model->load(Yii::$app->request->post()) and $model->sendFile()) {
             return ['success' => 1];
         }
         return ActiveForm::validate($model);

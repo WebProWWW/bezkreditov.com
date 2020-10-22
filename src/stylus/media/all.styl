@@ -161,13 +161,27 @@ a
 
 
 
-*[data-toggle]
-	mpd(0 0 15px)
+.toggle-btn
+	mpd(0 0 15px, 0, flex)
+	flex-direction column
+	align-items center
+	user-select none
 	cursor pointer
 
+.toggle-i
+	mpd(0, 0, flex)
+	b(3, pcolor)
+	align-items center
+	justify-content center
+	border-radius 50%
+	width 50px
+	height @width
+	font-size 28px
 
-*[data-toggle] > i
-	margin 0
+.toggle-txt
+	mpd()
+	font-weight 600
+	font-size 16px
 
 
 .toggle
@@ -362,6 +376,7 @@ a
 	outline none
 	mpd(0 0 15px, 8px 15px)
 	b(1, #C7C9CC)
+	trans()
 	box-sizing border-box
 	border-radius 5px
 	width 100%
@@ -380,6 +395,7 @@ a
 
 .radio
 	appearance none
+	outline none
 	mpd(0 10px 0 0, 0, flex)
 	b(1, #C7C9CC)
 	trans()
@@ -657,6 +673,25 @@ a
 	max-width 450px
 	min-height auto
 	height auto
+
+
+.test-modal
+	width 100%
+	max-width 700px
+
+.test-header
+	mpd(0 0 10px, 0 0 10px)
+	position relative
+
+
+.test-progress
+	mpd()
+	trans()
+	position absolute
+	height 3px
+	left 0
+	bottom 0
+	background pcolor
 
 
 .fade-enter-active, .fade-leave-active

@@ -27,6 +27,16 @@ return ArrayHelper::merge([
                     'route' => 'site/fssp-search',
                     'suffix' => '.json',
                 ],
+                [
+                    'pattern' => '/callback',
+                    'route' => 'site/callback',
+                    'suffix' => '.json',
+                ],
+                [
+                    'pattern' => '/send-file',
+                    'route' => 'site/send-file',
+                    'suffix' => '.json',
+                ],
                 '' => 'site/index',
             ],
         ],

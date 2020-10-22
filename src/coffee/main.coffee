@@ -1,7 +1,8 @@
 
+#=require ./vue/Fssp.coffee
+#=require ./vue/Test.coffee
 
 Vue.config.productionTip = off
-#=require ./vue/Fssp.coffee
 
 $('.js-vue-app-fssp').each (i, el) ->
     Vue.prototype.actionSearch = $(el).data 'action-search'
@@ -10,6 +11,15 @@ $('.js-vue-app-fssp').each (i, el) ->
     .$mount el
 
 
+$('.js-test').each (i, el) ->
+    $el = $ el
+    Vue.prototype.testCallback = $el.data 'action-callback'
+    Vue.prototype.testSend = $el.data 'action-send'
+    new Vue
+        render: (h) -> h Test
+    .$mount el
+
+# $.fancybox.open src: '#test'
 
 
 class JsSearch

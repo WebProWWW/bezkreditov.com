@@ -203,7 +203,7 @@ do ->
 
                 <div class="col-12 col-md-6">
                     <label>Телефон</label>
-                    <input class="input" :class="{error: input.phone.error}" type="text" v-model="input.phone.val" @focus="input.phone.error=''" :disabled="loading">
+                    <input ref="inputPhone" class="input" :class="{error: input.phone.error}" type="text" v-model="input.phone.val" @focus="input.phone.error=''" :disabled="loading">
                     <span class="input-error" v-if="input.phone.error">{{input.phone.error}}</span>
                 </div><!-- .col -->
             </div><!-- .row -->
@@ -231,6 +231,11 @@ do ->
             input: Object
 
         mounted: ->
+            $(@$refs.inputPhone).inputmask '+7-999-999-99-99',
+                greedy: false
+                oncomplete: (e) =>
+                    @input.phone.val = $(e.target).val()
+                    on
             $(@$refs.date).datepicker
                 locale: 'ru-ru'
                 format: 'dd.mm.yyyy'

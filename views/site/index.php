@@ -12,7 +12,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 ?>
 <section class="section bg">
     <div class="container">
-        <h2 class="h1 center">Бесплатный онлайн тест на списание долгов от портала&nbsp;«Без&nbsp;Кредитов»</h2>
+        <h2 class="h1 center">Бесплатный онлайн тест на списание долгов от портала «Без&nbsp;Кредитов»</h2>
     </div><!-- .container -->
 </section><!-- .section -->
 
@@ -29,7 +29,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                 </div><!-- .wall -->
                 <div class="row justify-content-center">
                     <div class="col-auto">
-                        <a class="btn btn-default" href="">Пройти тест</a>
+                        <a class="btn btn-default" data-fancybox href="#test">Пройти тест</a>
                     </div><!-- .col -->
                 </div><!-- .row -->
                 <p>*<small> По 127 Федеральному закону «О банкротстве» можно списать следующие долги: Кредиты и займы. Просрочки по кредитам и кредитными картам. Административные штрафы, долги за коммунальные услуги. Задолженность и пени по налогам.</small></p>
