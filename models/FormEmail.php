@@ -96,7 +96,7 @@ class FormEmail extends Model
         $isSent = Yii::$app->mailer->compose('pdf', [ 'model' => $this ])
             ->setFrom(['noreply@bezkreditov.com' => 'Без Кредитов'])
             ->setTo($this->email)
-            ->setSubject('Как общаться с коллекторами')
+            ->setSubject('Предварительное решение о возможности списания всех ваших долгов')
             ->attach(Yii::getAlias('@app').'/mail/attachments/example.pdf')
             ->send();
         if ($isSent) {
