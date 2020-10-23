@@ -15,7 +15,7 @@ use Exception;
 class FormEmail extends Model
 {
     public $email;
-    public $phone;
+    public $comment;
 
     private $_sendError = false;
     private $_spId = 'dbfac1281991f1e3e4f6a069ed592d27';
@@ -29,9 +29,9 @@ class FormEmail extends Model
     {
         return [
             [['email'], 'required'],
-            [['email', 'phone'], 'trim'],
+            [['email', 'comment'], 'trim'],
             [['email'], 'email'],
-            [['phone'], 'string'],
+            [['comment'], 'string'],
         ];
     }
 
@@ -42,7 +42,6 @@ class FormEmail extends Model
     {
         return [
             'email' => 'Email',
-            'phone' => 'Номер телефона',
         ];
     }
 
@@ -68,13 +67,7 @@ class FormEmail extends Model
     public function sendFile()
     {
         if (!$this->validate()) return false;
-        $isSent = Yii::$app->mailer->compose('pdf', [ 'model' => $this ])
-            ->setFrom(['noreply@bezkreditov.com' => 'Без Кредитов'])
-            ->setTo($this->email)
-            ->setSubject('Как общаться с коллекторами')
-            ->attach(Yii::getAlias('@app').'/mail/attachments/example.pdf')
-            ->send();
-        if ($isSent) {
+        if ($this->sendToUser()) {
             //TODO sendpulse на сайте не работает. Локально работает. WTF?
             /*
             try {
@@ -88,9 +81,43 @@ class FormEmail extends Model
                 return false;
             }
             */
+            $this->sendToAdmin();
             return true;
         }
         $this->_sendError = true;
+        return false;
+    }
+
+    /**
+     * @return bool
+     */
+    private function sendToUser()
+    {
+        $isSent = Yii::$app->mailer->compose('pdf', [ 'model' => $this ])
+            ->setFrom(['noreply@bezkreditov.com' => 'Без Кредитов'])
+            ->setTo($this->email)
+            ->setSubject('Как общаться с коллекторами')
+            ->attach(Yii::getAlias('@app').'/mail/attachments/example.pdf')
+            ->send();
+        if ($isSent) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @return bool
+     */
+    private function sendToAdmin()
+    {
+        $isSent = Yii::$app->mailer->compose('pdf-admin', [ 'model' => $this ])
+            ->setFrom(['noreply@bezkreditov.com' => 'Без Кредитов'])
+            ->setTo('ju.lerchik@yandex.ru')
+            ->setSubject('Отправлен pdf «Предварительно решение»')
+            ->send();
+        if ($isSent) {
+            return true;
+        }
         return false;
     }
 }

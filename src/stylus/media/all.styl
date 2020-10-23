@@ -49,6 +49,11 @@ a
 	cursor pointer
 
 
+label
+	user-select none
+	cursor pointer
+
+
 .full-height
 	mpd(0, 0, flex)
 	flex-direction column
@@ -423,6 +428,41 @@ a
 .radio:checked:before
 	background pcolor
 
+
+.checkbox
+	appearance none
+	outline none
+	mpd(0 10px 0 0, 0, flex)
+	b(1, #C7C9CC)
+	trans()
+	align-items center
+	justify-content center
+	width 36px
+	height @width
+	border-radius 50%
+	background white
+	vertical-align middle
+	user-select none
+	cursor pointer
+
+.checkbox:before
+	trans()
+	content ''
+	width 23px
+	height @width
+	background url('../img/check.svg') 50% 50% no-repeat
+	transform scale(0)
+
+.checkbox:checked
+	b(1, pcolor)
+
+.checkbox:checked:before
+	transform scale(1)
+
+
+.checkbox.error
+	b(1, red)
+
 .input-error
 	mpd(-13px 0 15px)
 	font-weight 400
@@ -679,10 +719,19 @@ a
 	width 100%
 	max-width 700px
 
-.test-header
-	mpd(0 0 10px, 0 0 10px)
-	position relative
+// .test-header
+// 	mpd(0 0 15px)
+// 	position relative
 
+.test-title
+	mpd(0 0 15px)
+	text-align center
+
+.test-title:after
+	mpd(15px 0 0)
+	content ''
+	height 3px
+	background pcolor
 
 .test-progress
 	mpd()
@@ -700,6 +749,10 @@ a
 .fade-enter, .fade-leave-to
 	// .component-fade-leave-active до версии 2.1.8
 	opacity 0
+
+
+.relative
+	position relative
 
 
 for num in (1..100)

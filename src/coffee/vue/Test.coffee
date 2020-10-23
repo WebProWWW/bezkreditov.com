@@ -2,22 +2,34 @@
 
 Test = {}
 
-# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 do ->
+
+    # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
     TestQuestions =
         template: '''
         <div class="test">
             <div class="test-header">
                 <div class="row">
-                    <div class="col">
-                        <p class="m-0">Узнайте 3 варианта полного списания Ваших долгов.</p>
+                    <div class="col-12">
+                        <h3 class="test-title">
+                            Ответьте на 5 простых вопросов и получите
+                            <br>
+                            предварительное решение по списаниею ваших долгов.
+                        </h3>
                     </div>
+                    <!--
                     <div class="col-auto">
                         <p class="m-0">{{ steep }} / {{ steepTotal }}</p>
                     </div>
+                    -->
                 </div>
+                <!--
                 <span class="test-progress" :style="{ right: progress }"></span>
+                -->
             </div>
+
+            <p><em class="em-11">Вопрос {{ steep }}</em></p>
 
             <h3 class="mb-1">{{ item.title }}</h3>
             <p class="popup-desc">{{ item.desc }}</p>
@@ -33,14 +45,18 @@ do ->
 
             <div class="row no-gutters mt-4">
                 <div class="col-12 col-sm-auto order-2 order-sm-1">
-                    <span class="btn" @click.prevent="back">
-                        <span v-if="(steep === 1)">ЗАКРЫТЬ</span>
-                        <span v-else> <i class="i-left em-9"></i> НАЗАД</span>
+                    <span class="btn btn-sm" @click.prevent="back">
+                        <span v-if="(steep === 1)">Закрыть</span>
+                        <span v-else>
+                            <i class="i-left em-8"></i>
+                            Назад
+                        </span>
                     </span>
                 </div><!-- /.col -->
                 <div class="col-12 col-sm-auto ml-auto order-1 order-sm-2">
-                    <span class="btn" @click.prevent="next">
-                        ДАЛЕЕ <i class="i-right em-9"></i>
+                    <span class="btn btn-sm" @click.prevent="next">
+                        Далее
+                        <i class="i-right em-8"></i>
                     </span>
                 </div><!-- /.col -->
             </div>
@@ -60,6 +76,7 @@ do ->
                         '200 000 - 400 000'
                         '400 000 - 1 000 000'
                         '1 000 000 - 3 000 000'
+                        'Более 3 000 000'
                     ]
                 }
                 {
@@ -70,6 +87,7 @@ do ->
                         '2 месяца'
                         '3 месяца'
                         '4 месяца и более'
+                        'Нет'
                     ]
                 }
                 {
@@ -207,21 +225,40 @@ do ->
     TestEmail =
         template:'''
         <div>
-            <h3 class="">Введите свой Email и мы отправим чек лист на почту</h3>
+            <h3 class="test-title">
+                <span class="em-11">Поздравляем!</span>
+                <br>
+                Вы успешно прошли онлайн - тест на списание всех ваших долгов!
+            </h3>
+            <p class="center">Предварительное решение о возможности списания всех ваших логов мы пришлем вам на почту, для этого заполните поле ввода почты и нажмите кнопку «Получить мое решение»</p>
             <input
                 v-model="email"
+                :disabled="loading"
                 :class="{error: error}"
                 @click="$emit('error-clear')"
                 class="input"
                 type="text"
-                placeholder="Email"
+                placeholder="Ваша электронная почта"
             >
             <span class="input-error" v-if="error">{{ error }}</span>
-            <p class="em-9">Даю согласие на обработку своих персональных данных в соответствии с политикой конфиденциальности компании «Без Кредитов»</p>
+            <label class="label d-flex align-items-center mb-4">
+                <span class="d-block">
+                    <input
+                        class="checkbox"
+                        type="checkbox"
+                        :class="{error: acceptError}"
+                        :disabled="loading"
+                        v-model="accept"
+                        @change="acceptError = false"
+                    >
+                </span>
+                <span class="d-block em-9">Даю согласие на обработку своих персональных данных в соответствии с политикой конфиденциальности портала «Без Кредитов»</span>
+            </label>
+            <span class="input-error" v-if="acceptError">Подтвердите согласие на обработку своих персональных данных</span>
             <div class="row mt-4">
-                <div class="col-12 col-sm-6 ml-auto">
+                <div class="col-12 col-sm-6 mx-auto">
                     <span class="btn" @click.prevent="submit">
-                        <span v-if="!loading">ОТПРАВИТЬ</span>
+                        <span v-if="!loading">Получить мое решение</span>
                         <span v-else><img height="8" src="/img/loader.svg"></span>
                     </span>
                 </div><!-- /.col -->
@@ -239,20 +276,67 @@ do ->
 
         data: ->
             email: ''
+            accept: off
+            acceptError: off
 
         methods:
             submit: ->
+                unless @accept
+                    @acceptError = yes
+                    return off
                 @$emit 'submit', @email
-                # if @validate
-                #     @$emit 'submit', @email
-                # else
-                #     @error = yes
                 off
 
-        # computed:
-        #     validate: ->
-        #         emailRe = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        #         emailRe.test @email
+
+    # TestEmail =
+    #     template:'''
+    #     <div>
+    #         <h3 class="">Введите свой Email и мы отправим чек лист на почту</h3>
+    #         <input
+    #             v-model="email"
+    #             :class="{error: error}"
+    #             @click="$emit('error-clear')"
+    #             class="input"
+    #             type="text"
+    #             placeholder="Email"
+    #         >
+    #         <span class="input-error" v-if="error">{{ error }}</span>
+    #         <p class="em-9">Даю согласие на обработку своих персональных данных в соответствии с политикой конфиденциальности компании «Без Кредитов»</p>
+    #         <div class="row mt-4">
+    #             <div class="col-12 col-sm-6 ml-auto">
+    #                 <span class="btn" @click.prevent="submit">
+    #                     <span v-if="!loading">ОТПРАВИТЬ</span>
+    #                     <span v-else><img height="8" src="/img/loader.svg"></span>
+    #                 </span>
+    #             </div><!-- /.col -->
+    #         </div>
+    #     </div>
+    #     '''
+
+    #     props:
+    #         loading:
+    #             type: Object
+    #             default: off
+    #         error:
+    #             tyoe: String
+    #             default: ''
+
+    #     data: ->
+    #         email: ''
+
+    #     methods:
+    #         submit: ->
+    #             @$emit 'submit', @email
+    #             # if @validate
+    #             #     @$emit 'submit', @email
+    #             # else
+    #             #     @error = yes
+    #             off
+
+    #     # computed:
+    #     #     validate: ->
+    #     #         emailRe = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    #     #         emailRe.test @email
 
 
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -260,11 +344,16 @@ do ->
 
     TestEmailSucess =
         template:'''
-        <div>
+        <div class="center">
             <h3 class="">Данные успешно получены!</h3>
-            <p class="">В ближайшее время мы вышлем подарочные материалы.</p>
+            <p class="">Предварительное решение о возможности списания всех ваших логов мы пришлем вам на почту {{ email }}</p>
         </div>
         '''
+
+        props:
+            email:
+                type: String
+                default: ''
 
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
@@ -298,6 +387,7 @@ do ->
             />
             <esuccess
                 v-if="state === 5"
+                :email="email"
                 @close="close(true)"
             />
         </div>
@@ -323,7 +413,7 @@ do ->
             delay: (ms, cb) -> setTimeout cb, ms
             questionsComplete: (items) ->
                 @comment += "<p>#{item.title}<br>#{item.value}</p>" for item in items
-                @state = 2
+                @state = 4
                 on
             phoneSubmit: (@phone) ->
                 return on if @process
@@ -356,7 +446,7 @@ do ->
                 @process = on
                 sendData = {}
                 sendData['FormEmail[email]'] = @email
-                sendData['FormEmail[phone]'] = @phone
+                sendData['FormEmail[comment]'] = @comment
                 csrfParam = $('meta[name="csrf-param"]').attr 'content'
                 csrfToken = $('meta[name="csrf-token"]').attr 'content'
                 @csrf = "#{csrfParam}": csrfToken
