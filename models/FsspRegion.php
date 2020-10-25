@@ -62,6 +62,11 @@ class FsspRegion extends ActiveRecord
 
     public static function findAllRegions()
     {
-        return self::find()->all();
+        $regions = Yii::$app->cache->get('fssp-all-regions');
+        if ($regions === false) {
+            $regions = self::find()->all();
+            Yii::$app->cache->set('fssp-all-regions', $regions, 3600 * 24 * 365);
+        }
+        return $regions;
     }
 }
