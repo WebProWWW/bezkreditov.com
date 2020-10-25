@@ -24,16 +24,19 @@ $this->params['description'] = 'Даже контролируя оплату п�
 
 <section class="section">
     <div class="container">
-        <!-- VUE-APP-FSSP TODO Cache data -->
-        <div
-            class="js-vue-app-fssp"
-            data-action-search="<?= Url::to(['site/fssp-search']) ?>"
-            data-region='<?= Json::encode([
-                'options' => FsspRegion::findAllRegions(),
-                'current' => $city->fsspRegion,
-            ]) ?>'
-        ></div>
-        <!-- / VUE-APP-FSSP -->
+        <?php if ($this->beginCache('vue-app-fssp', ['duration' => 3600 * 24 * 365 ])): ?>
+            <!-- VUE-APP-FSSP -->
+            <div
+                class="js-vue-app-fssp"
+                data-action-search="<?= Url::to(['site/fssp-search']) ?>"
+                data-region='<?= Json::encode([
+                    'options' => FsspRegion::findAllRegions(),
+                    'current' => $city->fsspRegion,
+                ]) ?>'
+            ></div>
+            <!-- / VUE-APP-FSSP -->
+            <?php $this->endCache() ?>
+        <?php endif; ?>
     </div><!-- .container -->
 </section><!-- .section -->
 
