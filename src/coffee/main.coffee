@@ -5,7 +5,11 @@
 Vue.config.productionTip = off
 
 $('.js-vue-app-fssp').each (i, el) ->
-    Vue.prototype.actionSearch = $(el).data 'action-search'
+    $el = $ el
+    region = $el.data 'region'
+    actionSearch = $el.data 'action-search'
+    Vue.prototype.actionSearch = actionSearch ? ''
+    Vue.prototype.$region = region ? { city:{}, options:[] }
     new Vue
         render: (h) -> h Fssp
     .$mount el
