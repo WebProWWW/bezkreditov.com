@@ -17,7 +17,6 @@ $this->params['breadcrumbs'] = [
         'url' => ['site/index', 'view' => Material::ALIAS],
         'label' => Material::title($city),
     ],
-    $model->title,
 ];
 
 ?>
@@ -31,10 +30,11 @@ $this->params['breadcrumbs'] = [
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10 col-xl-9">
-                <p><span class="date-bg"><?= Yii::$app->formatter->asDate($model->created_at) ?></span></p>
-                <img class="img-center" src="<?= $model->img ?>" alt="<?= $model->title ?>">
-                <p><?= $model->description ?></p>
+                <p><span class="date-bg"><?= date('d.m.Y', $model->created_at) ?></span></p>
+                <img class="img" style="width: 100%" src="<?= $model->img ?>" alt="<?= $model->title ?>">
                 <div class="editor">
+                    <div class="js-h-hash-nav"></div>
+                    <?= $model->content ?>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@ $this->params['breadcrumbs'] = [
                             <div class="cart-footer">
                                 <div class="d-flex no-gutters align-items-center">
                                     <div class="col">
-                                        <p class="mutted"><?= Yii::$app->formatter->asDate($lastMaterial->created_at) ?></p>
+                                        <p class="mutted"><?= date('d.m.Y', $lastMaterial->created_at) ?></p>
                                     </div>
                                     <div class="col-auto col-sm-3 col-md-4 col-lg-5">
                                         <a class="btn btn-sm btn-default" href="<?= Url::to(['site/material', 'alias' => $lastMaterial->alias]) ?>">Читать</a>

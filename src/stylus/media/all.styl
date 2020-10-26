@@ -613,6 +613,50 @@ label
 .editor
 	img
 		max-width 100%
+	blockquote
+		mpd(0 0 15px, 15px 15px 1px)
+		background bgcolor
+		border-left 3px solid pcolor
+	ul
+		mpd(0 0 10px, 0 0 1px)
+		li
+			mpd(0 0 5px, 0 0 0 1.1em)
+			list-style none
+		li:before
+			mpd(.5em 0 0 -1.1em)
+			content ''
+			width .5em
+			height @width
+			border-radius 50%
+			background pcolor
+			float left
+		li:after
+			mpd()
+			content ''
+			height 1px
+			clear both
+	ol
+		margin-bottom 5px
+		padding-bottom 1px
+		li
+			margin-bottom 10px
+			a
+				mpd(0, 0, inline-block)
+				trans()
+				resetLn(black, pcolor)
+				border-bottom 1px dotted #B8B8B8
+				&:hover
+					border-bottom 1px dotted pcolor
+		ol
+			margin-bottom 0
+			padding-bottom 0
+			margin-top 10px
+	// ol
+	// 	mpd(0 0 10px, 0 0 1px)
+	// 	li
+	// 		mpd(0 0 5px)
+	// 	ol
+	// 		mpd(5px 0 0)
 
 
 

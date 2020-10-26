@@ -71,6 +71,33 @@ $('*[data-toggle]').on 'click', (e) ->
     off
 
 
+hashScroll = (e) ->
+    e.preventDefault()
+    $this = $ this
+    offsetTop = $("#{$this.attr('href')}").offset().top
+    $('html:not(:animated),body:not(:animated)').animate scrollTop: offsetTop
+    off
+
+$('.js-h-hash-nav').each (i, el) ->
+    $el = $ el
+    $headers = $el.parent().find(':header')
+    $blockquote = $ '<blockquote></blockquote>'
+    $headers.each (hi, hel) ->
+        $hel = $ hel
+        id = "h-hash-nav-#{i}-#{hi}"
+        $hel.attr 'id', id
+        hNum = Number $hel.prop('tagName')[1]
+        pl = (hNum - 2) * 2
+        pl = 0 if pl < 0
+        $a = $ """<a href="##{id}">#{$hel.text()}</a>"""
+        $a.on 'click', hashScroll
+        $p = $ """<p class="fw-600" style="padding-left:#{pl}em"></p>"""
+        $p.append $a
+        $blockquote.append $p
+    $blockquote = '' unless $headers.length
+    $el.parent().prepend $blockquote
+    on
+
 window.isCity = () ->
     $.fancybox.open src: '#is-city'
     on

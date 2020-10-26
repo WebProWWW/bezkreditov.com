@@ -23,6 +23,7 @@ use yii\web\NotFoundHttpException;
  * @property string $title
  * @property string|null $description
  * @property string|null $img
+ * @property string|null $content
  *
  * @property MaterialContent[] $contents
  *
@@ -55,7 +56,8 @@ class Material extends ActiveRecord
         return [
             [['created_at', 'updated_at'], 'integer'],
             [['alias', 'title'], 'required'],
-            [['alias', 'title', 'description', 'img'], 'string', 'max' => 255],
+            [['description', 'content'], 'string'],
+            [['alias', 'title', 'img'], 'string', 'max' => 255],
         ];
     }
 
@@ -72,6 +74,7 @@ class Material extends ActiveRecord
             'title' => 'Title',
             'description' => 'Description',
             'img' => 'Img',
+            'content' => 'Content',
         ];
     }
 
