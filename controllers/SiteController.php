@@ -7,9 +7,11 @@ use app\helpers\Url;
 use app\models\FormCallback;
 use app\models\FormEmail;
 use app\models\Fssp;
+use app\models\Material;
 use app\models\News;
 
 use Yii;
+use yii\data\Pagination;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\Cookie;
@@ -66,6 +68,15 @@ class SiteController extends Controller
     {
         $model = News::findByAlias($alias);
         return $this->render('news-item', [
+            'model' => $model,
+            'city' => $this->_city,
+        ]);
+    }
+
+    public function actionMaterial(string $alias = '')
+    {
+        $model = Material::findByAlias($alias);
+        return $this->render('material', [
             'model' => $model,
             'city' => $this->_city,
         ]);

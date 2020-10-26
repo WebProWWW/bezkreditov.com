@@ -4,7 +4,7 @@
             <div class="row align-items-center no-gutters">
                 <div class="col-auto mr-3">
                     <div class="yur">
-                        <img class="yur-img" src="img/yur.jpg">
+                        <img class="yur-img" src="/img/yur.jpg">
                     </div>
                 </div><!-- .col -->
                 <div class="col">

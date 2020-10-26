@@ -23,6 +23,11 @@ return ArrayHelper::merge([
                     'suffix' => '.html',
                 ],
                 [
+                    'pattern' => '/poleznye-materialy-po-bankrotstvu/<alias:[\w\-]+>',
+                    'route' => 'site/material',
+                    'suffix' => '.html',
+                ],
+                [
                     'pattern' => '/fssp-search',
                     'route' => 'site/fssp-search',
                     'suffix' => '.json',
