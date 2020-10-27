@@ -3,12 +3,10 @@
 namespace app\models;
 
 use Yii;
-use yii\caching\FileCache;
 use yii\db\ActiveRecord;
 use yii\data\ActiveDataProvider;
 use yii\behaviors\TimestampBehavior;
 use yii\helpers\ArrayHelper;
-use yii\helpers\FileHelper;
 use yii\helpers\StringHelper;
 use yii\imagine\Image;
 use yii\web\NotFoundHttpException;
@@ -24,8 +22,6 @@ use yii\web\NotFoundHttpException;
  * @property string|null $description
  * @property string|null $img
  * @property string|null $content
- *
- * @property MaterialContent[] $contents
  *
  * @property string $thumb
  * @property Material[] $lastMaterials
@@ -79,16 +75,6 @@ class Material extends ActiveRecord
     }
 
     /**
-     * Gets query for [[MaterialContents]].
-     *
-     * @return yii\db\ActiveQuery
-     */
-    public function getContents()
-    {
-        return $this->hasMany(MaterialContent::class, ['material_id' => 'id']);
-    }
-
-    /**
      * @return string|null
      */
     public function getThumb()
@@ -124,6 +110,18 @@ class Material extends ActiveRecord
     }
 
     /**
+     * @param int $limit
+     * @return Material[]
+     */
+    public static function lastMaterials(int $limit = 3)
+    {
+        return self::find()
+            ->orderBy(['created_at' => SORT_DESC])
+            ->limit($limit)
+            ->all();
+    }
+
+    /**
      * @param string $alias
      * @return Material
      * @throws NotFoundHttpException
@@ -149,6 +147,9 @@ class Material extends ActiveRecord
         return self::TITLE . ' в&nbsp;г.&nbsp;' . $city->name;
     }
 
+    /**
+     * @return Material[]
+     */
     public function getLastMaterials()
     {
         return self::find()

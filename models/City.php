@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\data\ActiveDataProvider;
+use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 
 
@@ -12,10 +14,10 @@ use yii\db\ActiveRecord;
  * @property int $id
  * @property string $alias
  * @property string $name
- * @property int|null $fssp_region_id
+ * @property int|null $region_code
  *
- * @property News[] $news
- * @property FsspRegion $fsspRegion
+ * @property ActiveDataProvider $news
+ * @property Region $region
  */
 class City extends ActiveRecord
 {
@@ -34,10 +36,10 @@ class City extends ActiveRecord
     {
         return [
             [['alias', 'name'], 'required'],
-            [['fssp_region_id'], 'integer'],
+            [['region_code'], 'integer'],
             [['alias', 'name'], 'string', 'max' => 255],
             [['alias'], 'unique'],
-            [['fssp_region_id'], 'exist', 'skipOnError' => true, 'targetClass' => FsspRegion::class, 'targetAttribute' => ['fssp_region_id' => 'id']],
+            [['region_code'], 'exist', 'skipOnError' => true, 'targetClass' => Region::class, 'targetAttribute' => ['region_code' => 'code']],
         ];
     }
 
@@ -50,27 +52,23 @@ class City extends ActiveRecord
             'id' => 'ID',
             'alias' => 'Поддомен',
             'name' => 'Город',
-            'fssp_region_id' => 'Fssp Region ID',
+            'region_code' => 'Region Code',
         ];
     }
 
     /**
-     * @return yii\db\ActiveQuery
+     * @return ActiveDataProvider
      */
     public function getNews()
     {
-        return $this
-            ->hasMany(News::class, ['city_id' => 'id'])
-            ->limit(6);
+        return $this->region->news;
     }
 
     /**
-     * Gets query for [[FsspRegion]].
-     *
-     * @return FsspRegion|null
+     * @return ActiveQuery|Region
      */
-    public function getFsspRegion()
+    public function getRegion()
     {
-        return $this->hasOne(FsspRegion::class, ['id' => 'fssp_region_id']);
+        return $this->hasOne(Region::class, ['code' => 'region_code']);
     }
 }

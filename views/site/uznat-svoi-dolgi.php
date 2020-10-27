@@ -2,7 +2,7 @@
 
 use app\helpers\Url;
 use yii\helpers\Json;
-use app\models\FsspRegion;
+use app\models\Region;
 
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
@@ -29,8 +29,8 @@ $this->params['description'] = 'Даже контролируя оплату п�
             class="js-vue-app-fssp"
             data-action-search="<?= Url::to(['site/fssp-search']) ?>"
             data-region='<?= Json::encode([
-                'options' => FsspRegion::findAllRegions(),
-                'current' => $city->fsspRegion,
+                'options' => Region::findAllRegions(),
+                'current' => $city->region,
             ]) ?>'
         ></div>
         <!-- / VUE-APP-FSSP -->

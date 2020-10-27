@@ -310,8 +310,8 @@ do ->
             for option in @$region.options
                 @input.region.options.push
                     val: option.code
-                    txt: option.name
-                @input.region.val = option.code if @$region.current.id is option.id
+                    txt: option.region_name
+                @input.region.val = option.code if @$region.current.code is option.code
             on
 
         data: ->

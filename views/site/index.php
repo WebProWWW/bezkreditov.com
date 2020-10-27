@@ -2,6 +2,7 @@
 
 use yii\helpers\Url;
 use yii\helpers\StringHelper;
+use app\models\Material;
 
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
@@ -38,16 +39,16 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
     </div><!-- .container -->
 </section><!-- .section -->
 
-<?php if ($news = $city->news): ?>
+<?php if ($news = $city->region->lastNews): ?>
     <section class="section bg">
     <div class="container">
-        <h1 class="center">Актуальные новости по банкротству физических лиц г.&nbsp;<?= $city->name ?></h1>
+        <h1 class="center">Актуальные новости по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h1>
         <div class="row">
             <?php foreach ($news as $newsItem): ?>
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
                     <div class="cart-img-header">
-                        <img class="cart-img" src="<?= $newsItem->image ?>">
+                        <img class="cart-img" src="<?= $newsItem->thumb ?>">
                     </div>
                     <div class="cart-body">
                         <h4><?= StringHelper::truncate($newsItem->title, 100) ?></h4>
@@ -56,7 +57,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                     <div class="cart-footer">
                         <div class="d-flex no-gutters align-items-center">
                             <div class="col">
-                                <p class="mutted em-9"><?= $newsItem->date ?></p>
+                                <p class="mutted em-9"><?= date('d.m.Y', $newsItem->date) ?></p>
                             </div>
                             <div class="col-auto col-sm-3 col-md-4 col-lg-5">
                                 <a class="btn btn-sm btn-default" href="<?= Url::to([
@@ -537,8 +538,6 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                     </div><!-- .cart-footer -->
                 </div><!-- .cart -->
             </div><!-- .col -->
-
-
         </div><!-- .row -->
 
         <div class="row justify-content-center">
@@ -550,106 +549,45 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
     </div><!-- .container -->
 </section><!-- .section -->
 
+<?php if ($materials = Material::lastMaterials()): ?>
 <section class="section">
     <div class="container">
-        <h2 class="h1 center">Полезные материалы по банкротству физических лиц г.&nbsp;<?= $city->name ?></h2>
+        <h2 class="h1 center">Полезные материалы по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h2>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-                <div class="cart">
-                    <div class="cart-img-header">
-                        <img class="cart-img" src="/img/cart.jpg">
-                    </div>
-                    <div class="cart-body">
-                        <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
-                        <p>«Не думал что меня когда-нибудь коснется эта проблема. Когда брал потребительский кредит, было все безоблачно. Платил исправно. ...»</p>
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
-                            </div>
-                            <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'dolzhnik-vyplatil-alimentnyj-dolg']) ?>">Читать</a>
-                            </div>
+            <?php foreach ($materials as $material): ?>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="cart">
+                        <div class="cart-img-header">
+                            <img class="cart-img" src="<?= $material->thumb ?>">
                         </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-                <div class="cart">
-                    <div class="cart-img-header">
-                        <img class="cart-img" src="/img/cart.jpg">
-                    </div>
-                    <div class="cart-body">
-                        <h4>Должник выплатил алиментный долг после...</h4>
-                        <p>«Не думал что меня когда-нибудь коснется эта проблема. Когда брал потребительский кредит...»</p>
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
+                        <div class="cart-body">
+                            <h4><?= StringHelper::truncate($material->title, 100) ?></h4>
+                            <p><?= StringHelper::truncate($material->description, 100) ?></p>
+                        </div><!-- .cart-body -->
+                        <div class="cart-footer">
+                            <div class="d-flex no-gutters align-items-center">
+                                <div class="col">
+                                    <p class="mutted"><?= date('d.m.Y', $material->created_at) ?></p>
+                                </div>
+                                <div class="col-auto col-sm-3 col-md-4 col-lg-5">
+                                    <a class="btn btn-sm btn-default" href="<?= Url::to(['site/material', 'alias' => $material->alias]) ?>">Читать</a>
+                                </div>
                             </div>
-                            <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'dolzhnik-vyplatil-alimentnyj-dolg']) ?>">Читать</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-                <div class="cart">
-                    <div class="cart-img-header">
-                        <img class="cart-img" src="/img/cart.jpg">
-                    </div>
-                    <div class="cart-body">
-                        <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
-                        <p>«Не думал что меня когда-нибудь коснется эта проблема. Когда брал потребительский кредит, было все безоблачно. Платил исправно. ...»</p>
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
-                            </div>
-                            <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'dolzhnik-vyplatil-alimentnyj-dolg']) ?>">Читать</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-                <div class="cart">
-                    <div class="cart-img-header">
-                        <img class="cart-img" src="/img/cart.jpg">
-                    </div>
-                    <div class="cart-body">
-                        <h4>Должник выплатил алиментный долг после привлечения к административной...</h4>
-                        <p>«Не думал что меня когда-нибудь коснется эта проблема. Когда брал потребительский кредит, было все безоблачно. Платил исправно. ...»</p>
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
-                            </div>
-                            <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'dolzhnik-vyplatil-alimentnyj-dolg']) ?>">Читать</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
+                        </div><!-- .cart-footer -->
+                    </div><!-- .cart -->
+                </div><!-- .col -->
+            <?php endforeach; ?>
         </div><!-- .row -->
-
         <div class="row justify-content-center">
             <div class="col-auto">
-                <a class="btn btn-default" href="<?= Url::to(['site/index', 'view' => 'poleznye-materialy-po-bankrotstvu']) ?>">Читать все материалы</a>
+                <a class="btn btn-default" href="<?= Url::to(
+                    ['site/index', 'view' => Material::ALIAS
+                ]) ?>">Читать все материалы</a>
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
 </section><!-- .section -->
+<?php endif; ?>
 
 <section class="section bg">
     <div class="container">

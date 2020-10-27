@@ -161,7 +161,7 @@ class Fssp extends ActiveRecord
      */
     public function getRegionName()
     {
-        $region = FsspRegion::findOne(['code' => $this->region]);
+        $region = Region::findOne(['code' => $this->region]);
         if ($region === null) {
             return '-';
         }
@@ -303,21 +303,12 @@ class Fssp extends ActiveRecord
      */
     public static function regionName(int $code)
     {
-        $region = FsspRegion::findOne(['code' => $code]);
+        $region = Region::findOne(['code' => $code]);
         if ($region === null) {
             return '-';
         }
-        return $region->name;
+        return $region->region_name;
     }
-
-    /**
-     * @return FsspRegion[]
-     */
-    public static function regions()
-    {
-        return FsspRegion::find()->all();
-    }
-
 }
 
 /**/
