@@ -23,12 +23,11 @@ $this->params['breadcrumbs'] = [
     <div class="container">
         <h1 class=""><?= $model->title ?></h1>
         <p><span class="date-bg"><?= date('d.m.Y', $model->date) ?></span></p>
+        <img class="news-img" src="<?= $model->img ?>">
         <div class="editor">
-            <img width="300" height="240" style="margin: 0 15px 15px 0; float: left;" src="<?= $model->image ?>">
-            <div>
-                <?= $model->content ?>
-            </div>
+            <?= $model->content ?>
         </div>
+        <div style="clear: both"></div>
     </div><!-- .container -->
 </section><!-- .section -->
 

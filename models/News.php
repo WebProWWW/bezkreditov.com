@@ -21,6 +21,7 @@ use yii\web\NotFoundHttpException;
  * @property string|null $description
  * @property string|null $content
  *
+ * @property string|null $img
  * @property string|null $thumb
  *
  */
@@ -78,19 +79,26 @@ class News extends ActiveRecord
     /**
      * @return string|null
      */
+    public function getImg()
+    {
+        return '/img/news/' . $this->image;
+    }
+
+    /**
+     * @return string|null
+     */
     public function getThumb()
     {
-        return null;
-//        $webroot = Yii::getAlias('@webroot');
-//        $img = $webroot . $this->img;
-//        if ($this->img === null or !file_exists($img)) return null;
-//        $name = StringHelper::basename($img);
-//        $dirname = StringHelper::dirname($img);
-//        $thumb = $dirname . '/thumb-' . $name;
-//        if (!file_exists($thumb)) {
-//            Image::thumbnail($img, 500, 400)->save($thumb);
-//        }
-//        return str_replace($webroot, '', $thumb);
+        $webroot = Yii::getAlias('@webroot');
+        $img = $webroot . $this->img;
+        if ($this->img === null or !file_exists($img)) return null;
+        $name = StringHelper::basename($img);
+        $dirname = StringHelper::dirname($img);
+        $thumb = $dirname . '/thumb-' . $name;
+        if (!file_exists($thumb)) {
+            Image::thumbnail($img, 500, 400)->save($thumb);
+        }
+        return str_replace($webroot, '', $thumb);
     }
 
     public static function updateColumns()
