@@ -5,6 +5,7 @@ namespace app\models;
 use Yii;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
+use yii\helpers\FileHelper;
 use yii\helpers\StringHelper;
 use yii\imagine\Image;
 use yii\web\NotFoundHttpException;
@@ -94,12 +95,16 @@ class News extends ActiveRecord
 
     public static function updateColumns()
     {
-        /* @var $item News */
-        $news = self::find()->all();
-        foreach ($news as $item) {
-            $item->alias = Yii::$app->security->generateRandomString();//self::cyrLat($item->title);
-            $item->update(false, ['alias']);
-        }
+//        /* @var $item News */
+//        $news = self::find()->all();
+//        $path = '/home/parser/fssp-news-scraper/feed/images';
+//        foreach ($news as $item) {
+//            $img = $path . '/' . $item->image;
+//            $name = StringHelper::basename($img);
+//            move_uploaded_file($img, '/var/www/public_html/img/news/'.$name);
+//            //$item->alias = Yii::$app->security->generateRandomString();//self::cyrLat($item->title);
+//            //$item->update(false, ['alias']);
+//        }
     }
 
     /**

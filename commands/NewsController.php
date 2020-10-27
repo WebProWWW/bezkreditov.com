@@ -15,7 +15,6 @@ class NewsController extends Controller
 {
     public function actionAfterParser()
     {
-        News::updateColumns();
         echo "news after parser command OK\n";
         return ExitCode::OK;
     }
