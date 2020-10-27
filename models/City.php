@@ -71,4 +71,11 @@ class City extends ActiveRecord
     {
         return $this->hasOne(Region::class, ['code' => 'region_code']);
     }
+
+    public static function allCities()
+    {
+        return self::getDb()->cache(function ($db) {
+            return self::find()->all();
+        });
+    }
 }

@@ -27,24 +27,21 @@ $this->params['description'] = $this->title;
         <div class="row">
             <div class="col-12 col-lg">
                 <select class="input">
-                    <?php if ($this->beginCache('rating-city-options', ['duration' => 3600 * 24 * 365 ])): ?>
-                        <?php if ($cities = City::find()->all()): ?>
-                            <?php $letter = '' ?>
-                            <?php foreach ($cities as $optCity): ?>
-                                <?php $cityLetter = mb_substr($optCity->name, 0, 1, 'utf-8') ?>
-                                <?php if ($cityLetter !== $letter): ?>
-                                    <?php $letter = $cityLetter ?>
-                                    <option disabled>
-                                        <?= $letter ?>
-                                    </option>
-                                <?php endif; ?>
-                                <?php $selected = ($city->alias === $optCity->alias) ? 'selected' : '' ?>
-                                <option value="<?= $optCity->alias ?>" <?= $selected ?>>
-                                    <?= $optCity->name ?>
+                    <?php if ($cities = City::allCities()): ?>
+                        <?php $letter = '' ?>
+                        <?php foreach ($cities as $optCity): ?>
+                            <?php $cityLetter = mb_substr($optCity->name, 0, 1, 'utf-8') ?>
+                            <?php if ($cityLetter !== $letter): ?>
+                                <?php $letter = $cityLetter ?>
+                                <option disabled>
+                                    <?= $letter ?>
                                 </option>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                        <?php $this->endCache() ?>
+                            <?php endif; ?>
+                            <?php $selected = ($city->alias === $optCity->alias) ? 'selected' : '' ?>
+                            <option value="<?= $optCity->alias ?>" <?= $selected ?>>
+                                <?= $optCity->name ?>
+                            </option>
+                        <?php endforeach; ?>
                     <?php endif; ?>
                 </select>
             </div><!-- .col -->
