@@ -8,6 +8,9 @@ return ArrayHelper::merge([
             'cookieValidationKey' => 'YQZrWHI8giRkeAmrQ4ZvdIXvczvU_ijT',
             'parsers' => [ 'application/json' => 'yii\web\JsonParser' ],
         ],
+        'errorHandler' => [
+            'errorAction' => 'site/error',
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,

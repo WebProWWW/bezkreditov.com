@@ -15,6 +15,7 @@ use yii\data\Pagination;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\Cookie;
+use yii\web\ErrorAction;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
@@ -44,6 +45,18 @@ class SiteController extends Controller
             ]));
             Yii::$app->session->setFlash('is-city', true);
         }
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => ErrorAction::class
+            ],
+        ];
     }
 
     /**
