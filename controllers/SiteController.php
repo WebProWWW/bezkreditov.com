@@ -11,11 +11,9 @@ use app\models\Material;
 use app\models\News;
 
 use Yii;
-use yii\data\Pagination;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\Cookie;
-use yii\web\ErrorAction;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
@@ -48,15 +46,13 @@ class SiteController extends Controller
     }
 
     /**
-     * @inheritDoc
+     * @return string
      */
-    public function actions()
+    public function actionError()
     {
-        return [
-            'error' => [
-                'class' => ErrorAction::class
-            ],
-        ];
+        return $this->render('error', [
+            'city' => $this->_city,
+        ]);
     }
 
     /**
