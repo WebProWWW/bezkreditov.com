@@ -378,6 +378,55 @@ label
 	mpd(0 0 3px)
 	font-size .9rem
 
+
+.sselect
+	mpd()
+	position relative
+
+
+.sselect-options
+	mpd(15px 0 0, 12px 15px)
+	top 100%
+	left 0
+	right 0
+	max-height 350px
+	position absolute
+	border-radius 5px
+	background white
+	z-index 100
+	box-shadow 1px 1px 6px 0 alpha(black, .3)
+	overflow-y auto
+	display none
+
+.sselect-options.active
+	display block
+
+.sselect-option
+	mpd(0, 3px 0)
+	trans()
+	font-size .9em
+	user-select none
+	cursor pointer
+
+.sselect-option:hover
+.sselect-option.selected
+	color pcolor
+
+.sselect-option.selected:before
+	mpd(.5em .5em 0 0)
+	content ''
+	float left
+	width .4em
+	height @width
+	border-radius 50%
+	background black
+
+.sselect-option.disabled
+	cursor default
+	font-weight 600
+	font-size 1.1em
+
+
 .input
 	appearance none
 	outline none
@@ -387,6 +436,7 @@ label
 	box-sizing border-box
 	border-radius 5px
 	width 100%
+	background white
 	font-size 1rem
 
 .input:focus

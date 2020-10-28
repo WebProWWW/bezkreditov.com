@@ -3,9 +3,8 @@
 use yii\helpers\Url;
 use app\models\City;
 
-/* @var $this yii\web\View */
 /* @var $city City */
-/* @var $cities City[] */
+/* @var $this yii\web\View */
 
 $this->title = 'Рейтинг компаний по банкротству физических лиц г. ' . $city->name;
 
@@ -26,16 +25,14 @@ $this->params['description'] = $this->title;
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg">
-                <select class="input">
+                <select class="input js-select-search">
                     <?php if ($cities = City::allCities()): ?>
                         <?php $letter = '' ?>
                         <?php foreach ($cities as $optCity): ?>
                             <?php $cityLetter = mb_substr($optCity->name, 0, 1, 'utf-8') ?>
                             <?php if ($cityLetter !== $letter): ?>
                                 <?php $letter = $cityLetter ?>
-                                <option disabled>
-                                    <?= $letter ?>
-                                </option>
+                                <option disabled><?= $letter ?></option>
                             <?php endif; ?>
                             <?php $selected = ($city->alias === $optCity->alias) ? 'selected' : '' ?>
                             <option value="<?= $optCity->alias ?>" <?= $selected ?>>

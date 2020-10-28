@@ -63,6 +63,79 @@ $('.js-search').each (i, el) ->
     new JsSearch el
 
 
+class SelectSearch
+
+    constructor: (select) ->
+        $select = $ select
+        @$root = $ '<div class="sselect"></div>'
+        @$input = $ "<input class=\"input\" type=\"text\" placeholder=\"Введите название своего города\">"
+        @$options = $ '<div class="sselect-options"></div>'
+        $select.find('option').each (i, option) =>
+            $option = $ option
+            optionText = $option.text().trim()
+            if $option.is ':disabled'
+                disabled = ' disabled'
+            else
+                disabled = ''
+            if $option.is ':selected'
+                @$input.val optionText
+                selected = ' selected'
+            else
+                selected = ''
+            $ssOption = $ "<div class=\"sselect-option#{disabled}#{selected}\">#{optionText}</div>"
+            @$options.append $ssOption
+            # $ssOption.on 'click', (e) =>
+            #     e.preventDefault()
+            #     $target = $ e.target
+            #     @$input.val $target.text().trim()
+            #     @$options.removeClass 'active selected'
+            #     @$options.find('.sselect-option').removeClass 'd-none'
+            #     off
+            on
+
+        @$root.append @$input
+        @$root.append @$options
+        $select.replaceWith @$root
+        # EVENT
+        $('body').on 'click', (e) =>
+            $target = $ e.target
+            $ssOption = @$options.find '.sselect-option'
+            $ssOption.each (i, option) =>
+                if $target.is $ option
+                    $ssOption.removeClass 'selected'
+                    $target.addClass 'selected'
+                on
+            unless $target.is @$input
+                @$input.val @$options.find('.selected').text().trim()
+                @$options.removeClass 'active'
+                @$options.find('.sselect-option').removeClass 'd-none'
+            on
+        @$input.on 'focusin', (e) =>
+            e.preventDefault()
+            @$options.addClass 'active'
+            @$options.scrollTop 0
+            offsetTop = @$options.find('.selected').position().top - 30
+            @$options.stop().animate scrollTop: offsetTop
+        @$input.on 'input', (e) =>
+            @filterData()
+            on
+
+    filterData: () ->
+        val =  @$input.val().trim()
+        $options = @$options.find '.sselect-option'
+        $options.removeClass 'd-none'
+        return on unless val.length
+        $options.each (i, option) =>
+            $option = $ option
+            optionText = $option.text().trim()
+            $option.addClass 'd-none' if optionText.search(///#{val}///i) < 0
+        on
+
+
+
+$('.js-select-search').each (i, el) ->
+    new SelectSearch el
+
 $('*[data-toggle]').on 'click', (e) ->
     e.preventDefault()
     $this = $ this

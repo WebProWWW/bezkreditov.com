@@ -1,11 +1,11 @@
 <?php
 
-/* @var $city app\models\City */
-
 use yii\helpers\Url;
 
-?>
+/* @var $city app\models\City */
+/* @var $this yii\web\View */
 
+?>
 <div class="row d-lg-none">
     <div class="col-auto mx-auto">
         <div class="d-flex align-items-center">
