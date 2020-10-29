@@ -39,10 +39,310 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
     </div><!-- .container -->
 </section><!-- .section -->
 
+<section class="section bg">
+    <div class="container">
+        <h2 class="h1 center">Лучшие компании по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h2>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="cart">
+                    <div class="cart-body">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-auto">
+                                <div style="padding: 0 5px">
+                                    <img class="klogo" width="50" src="img/logo/bk-2.svg">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h3 class="fw-600">Банкрот Консалт</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img class="img mx-auto" width="60" src="img/rating-1.svg">
+                                    </div>
+                                    <div class="col">
+                                        <p>Количество<br>успешных&nbsp;дел</p>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
+                                    </div>
+                                    <div class="col">
+                                        <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .cart-body -->
+                    <div class="cart-footer">
+                        <div class="d-flex no-gutters align-items-center">
+                            <div class="col">
+                                <p class="em-9">3455 - всего дел</p>
+                            </div>
+                            <div class="col-auto">
+                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
+                            </div>
+                        </div>
+                    </div><!-- .cart-footer -->
+                </div><!-- .cart -->
+            </div><!-- .col -->
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="cart">
+                    <div class="cart-body">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-auto">
+                                <div style="padding: 0 5px">
+                                    <img class="klogo" width="50" src="img/logo/bk-2.svg">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h3 class="fw-600">Банкрот Консалт</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
+                                    </div>
+                                    <div class="col">
+                                        <p>Количество<br>успешных&nbsp;дел</p>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img class="img mx-auto" width="60" src="img/rating-1.svg">
+                                    </div>
+                                    <div class="col">
+                                        <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .cart-body -->
+                    <div class="cart-footer">
+                        <div class="d-flex no-gutters align-items-center">
+                            <div class="col">
+                                <p class="em-9">3455 - всего дел</p>
+                            </div>
+                            <div class="col-auto">
+                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
+                            </div>
+                        </div>
+                    </div><!-- .cart-footer -->
+                </div><!-- .cart -->
+            </div><!-- .col -->
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="cart">
+                    <div class="cart-body">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-auto">
+                                <div style="padding: 0 5px">
+                                    <img class="klogo" width="50" src="img/logo/bk-2.svg">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h3 class="fw-600">Банкрот Консалт</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
+                                    </div>
+                                    <div class="col">
+                                        <p>Количество<br>успешных&nbsp;дел</p>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
+                                    </div>
+                                    <div class="col">
+                                        <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .cart-body -->
+                    <div class="cart-footer">
+                        <div class="d-flex no-gutters align-items-center">
+                            <div class="col">
+                                <p class="em-9">3455 - всего дел</p>
+                            </div>
+                            <div class="col-auto">
+                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
+                            </div>
+                        </div>
+                    </div><!-- .cart-footer -->
+                </div><!-- .cart -->
+            </div><!-- .col -->
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="cart">
+                    <div class="cart-body">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-auto">
+                                <div style="padding: 0 5px">
+                                    <img class="klogo" width="50" src="img/logo/bk-2.svg">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h3 class="fw-600">Банкрот Консалт</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img class="img mx-auto" width="60" src="img/rating-1.svg">
+                                    </div>
+                                    <div class="col">
+                                        <p>Количество<br>успешных&nbsp;дел</p>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
+                                    </div>
+                                    <div class="col">
+                                        <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .cart-body -->
+                    <div class="cart-footer">
+                        <div class="d-flex no-gutters align-items-center">
+                            <div class="col">
+                                <p class="em-9">3455 - всего дел</p>
+                            </div>
+                            <div class="col-auto">
+                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
+                            </div>
+                        </div>
+                    </div><!-- .cart-footer -->
+                </div><!-- .cart -->
+            </div><!-- .col -->
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="cart">
+                    <div class="cart-body">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-auto">
+                                <div style="padding: 0 5px">
+                                    <img class="klogo" width="50" src="img/logo/bk-2.svg">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h3 class="fw-600">Банкрот Консалт</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
+                                    </div>
+                                    <div class="col">
+                                        <p>Количество<br>успешных&nbsp;дел</p>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img class="img mx-auto" width="60" src="img/rating-1.svg">
+                                    </div>
+                                    <div class="col">
+                                        <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .cart-body -->
+                    <div class="cart-footer">
+                        <div class="d-flex no-gutters align-items-center">
+                            <div class="col">
+                                <p class="em-9">3455 - всего дел</p>
+                            </div>
+                            <div class="col-auto">
+                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
+                            </div>
+                        </div>
+                    </div><!-- .cart-footer -->
+                </div><!-- .cart -->
+            </div><!-- .col -->
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="cart">
+                    <div class="cart-body">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-auto">
+                                <div style="padding: 0 5px">
+                                    <img class="klogo" width="50" src="img/logo/bk-2.svg">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h3 class="fw-600">Банкрот Консалт</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
+                                    </div>
+                                    <div class="col">
+                                        <p>Количество<br>успешных&nbsp;дел</p>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
+                                    </div>
+                                    <div class="col">
+                                        <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .cart-body -->
+                    <div class="cart-footer">
+                        <div class="d-flex no-gutters align-items-center">
+                            <div class="col">
+                                <p class="em-9">3455 - всего дел</p>
+                            </div>
+                            <div class="col-auto">
+                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
+                            </div>
+                        </div>
+                    </div><!-- .cart-footer -->
+                </div><!-- .cart -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+</section><!-- .section -->
+
 <?php if ($news = $city->region->lastNews): ?>
+    <section class="section">
+        <div class="container">
+            <h1 class="center">Актуальные новости по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h1>
+        </div><!-- .container -->
+    </section><!-- .section -->
     <section class="section bg">
     <div class="container">
-        <h1 class="center">Актуальные новости по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h1>
         <div class="row">
             <?php foreach ($news as $newsItem): ?>
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
@@ -342,9 +642,14 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
     </div><!-- .container -->
 </section><!-- .section -->
 
-<section class="section bg">
+<section class="section">
     <div class="container">
         <h2 class="h1 center">Часто обсуждаемые компании по банкроству в&nbsp;г.&nbsp;<?= $city->name ?></h2>
+    </div><!-- .container -->
+</section><!-- .section -->
+
+<section class="section bg">
+    <div class="container">
         <div class="row">
 
             <div class="col-12 col-md-6 col-lg-4 mb-4">
