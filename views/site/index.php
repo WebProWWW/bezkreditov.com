@@ -85,7 +85,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                 <p class="em-9">3455 - всего дел</p>
                             </div>
                             <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -133,7 +133,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                 <p class="em-9">3455 - всего дел</p>
                             </div>
                             <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -181,7 +181,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                 <p class="em-9">3455 - всего дел</p>
                             </div>
                             <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -229,7 +229,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                 <p class="em-9">3455 - всего дел</p>
                             </div>
                             <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -277,7 +277,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                 <p class="em-9">3455 - всего дел</p>
                             </div>
                             <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -325,7 +325,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                 <p class="em-9">3455 - всего дел</p>
                             </div>
                             <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
+                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
