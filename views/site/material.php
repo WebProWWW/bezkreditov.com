@@ -19,7 +19,7 @@ $this->params['breadcrumbs'] = [
     ],
 ];
 
-$srcUrl = Yii::$app->urlManager->createAbsoluteUrl(['site/material', 'alias' => $material->alias]);
+$srcUrl = Yii::$app->urlManager->createAbsoluteUrl(['site/material', 'alias' => $model->alias]);
 
 ?>
 <section class="section bg">
@@ -64,13 +64,13 @@ $srcUrl = Yii::$app->urlManager->createAbsoluteUrl(['site/material', 'alias' => 
                                 <a class="ln-black-primary mr-2" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?= $srcUrl ?>">
                                     <i class="i-f"></i>
                                 </a>
-                                <a class="ln-black-primary mr-2" target="_blank" href="https://connect.ok.ru/offer?url=<?= $srcUrl ?>&title=<?= $page->title ?>">
+                                <a class="ln-black-primary mr-2" target="_blank" href="https://connect.ok.ru/offer?url=<?= $srcUrl ?>&title=<?= $model->title ?>">
                                     <i class="i-ok"></i>
                                 </a>
-                                <a class="ln-black-primary mr-2" target="_blank" href="https://twitter.com/intent/tweet?text=<?= $page->title ?>&url=<?= $srcUrl ?>">
+                                <a class="ln-black-primary mr-2" target="_blank" href="https://twitter.com/intent/tweet?text=<?= $model->title ?>&url=<?= $srcUrl ?>">
                                     <i class="i-tw"></i>
                                 </a>
-                                <a class="ln-black-primary" target="_blank" href="https://telegram.me/share/url?url=<?= $srcUrl ?>&text=<?= $page->title ?>">
+                                <a class="ln-black-primary" target="_blank" href="https://telegram.me/share/url?url=<?= $srcUrl ?>&text=<?= $model->title ?>">
                                     <i class="i-telegram"></i>
                                 </a>
                             </span>
