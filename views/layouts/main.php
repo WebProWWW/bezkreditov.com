@@ -5,6 +5,7 @@ use app\models\City;
 
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\helpers\StringHelper;
 
 /* @var $this yii\web\View */
 /* @var $content string */
@@ -12,7 +13,14 @@ use yii\helpers\Html;
 /* @var $city City */
 
 $city = $this->params['city'];
+
 $description = ArrayHelper::getValue($this->params, 'description', '');
+$description = StringHelper::truncate($description, 160);
+
+$title = $this->title ? Html::encode($this->title) : 'Без кредитов';
+
+$urlBase = Url::base(true);
+$currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
 
 ?>
 <?php $this->beginPage() ?>
@@ -27,10 +35,16 @@ $description = ArrayHelper::getValue($this->params, 'description', '');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <?php $this->registerCsrfMetaTags() ?>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.depends.css?v=020">
-    <link rel="stylesheet" href="/css/main.css?v=033">
-    <title><?= $this->title ? Html::encode($this->title) : 'Без кредитов' ?></title>
+    <link rel="stylesheet" href="/css/main.depends.css?v=021">
+    <link rel="stylesheet" href="/css/main.css?v=034">
+    <title><?= $title ?></title>
     <meta name="description" content="<?= $description ?>">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:url" content="<?= $currentUrl ?>">
+    <meta property="og:title" content="<?= $title ?>">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Без кредитов">
+    <meta property="og:description" content="<?= $description ?>">
     <?php $this->head() ?>
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?= Yii::$app->request->hostInfo ?>/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?= Yii::$app->request->hostInfo ?>/apple-touch-icon-114x114.png">
@@ -213,8 +227,8 @@ $description = ArrayHelper::getValue($this->params, 'description', '');
 </div><!-- .d-none -->
 <!-- / МОДАЛЬНЫЕ ОКНА -->
 
-<script src="/js/main.depends.js?v=019"></script>
-<script src="/js/main.js?v=028"></script>
+<script src="/js/main.depends.js?v=020"></script>
+<script src="/js/main.js?v=029"></script>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
 <script>if ("function"==typeof window.isCity) { window.isCity() };</script>

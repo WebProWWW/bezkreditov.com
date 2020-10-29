@@ -22,7 +22,10 @@ use yii\web\NotFoundHttpException;
  * @property string|null $description
  * @property string|null $img
  * @property string|null $content
+ * @property int $view_count
+ * @property int $viewCount
  *
+ * @property string $readTime
  * @property string $thumb
  * @property Material[] $lastMaterials
  */
@@ -157,6 +160,27 @@ class Material extends ActiveRecord
             ->limit(3)
             ->orderBy(['created_at' => SORT_DESC])
             ->all();
+    }
+
+    /**
+     * @return string
+     */
+    public function getReadTime()
+    {
+        $wordCount = (int) str_word_count($this->content);
+        $wordCount = ceil($wordCount / 60);
+        if ($wordCount < 1) $wordCount = 1;
+        return "{$wordCount} мин.";
+
+    }
+
+    public function getViewCount()
+    {
+        $count = (float) $this->view_count;
+        if ($count >= 1000000000) return round($count / 1000000000, 1) . 'G';
+        if ($count >= 1000000) return round($count / 10000000, 1) . 'M';
+        if ($count >= 1000) return round($count / 1000, 1) . 'K';
+        return $count;
     }
 
 }
