@@ -45,17 +45,18 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
-                    <div class="cart-body">
+                    <div class="cart-body px-xl-5">
                         <div class="row align-items-center justify-content-center">
                             <div class="col-auto">
-                                <div style="padding: 0 5px">
-                                    <img class="klogo" width="50" src="img/logo/bk-2.svg">
+                                <div style="padding: 0 7px 0 7px">
+                                    <img class="klogo" width="46" src="img/logo/bk-2.svg">
                                 </div>
                             </div>
                             <div class="col">
-                                <h3 class="fw-600">Банкрот Консалт</h3>
+                                <h4 class="fw-600">Банкрот Консалт</h4>
                             </div>
                         </div>
+                        <div class="cart-divider"></div>
                         <div class="row">
                             <div class="col-12 col-sm-6 col-md-12">
                                 <div class="row align-items-center">
@@ -82,7 +83,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                     <div class="cart-footer">
                         <div class="d-flex no-gutters align-items-center">
                             <div class="col">
-                                <p class="em-9">3455 - всего дел</p>
+                                <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
                             </div>
                             <div class="col-auto">
                                 <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
@@ -93,17 +94,18 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
             </div><!-- .col -->
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
-                    <div class="cart-body">
+                    <div class="cart-body px-xl-5">
                         <div class="row align-items-center justify-content-center">
                             <div class="col-auto">
-                                <div style="padding: 0 5px">
-                                    <img class="klogo" width="50" src="img/logo/bk-2.svg">
+                                <div style="padding: 0 7px 0 7px">
+                                    <img class="klogo" width="46" src="img/logo/bk-2.svg">
                                 </div>
                             </div>
                             <div class="col">
-                                <h3 class="fw-600">Банкрот Консалт</h3>
+                                <h4 class="fw-600">Гребнева и Партнеры</h4>
                             </div>
                         </div>
+                        <div class="cart-divider"></div>
                         <div class="row">
                             <div class="col-12 col-sm-6 col-md-12">
                                 <div class="row align-items-center">
@@ -130,7 +132,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                     <div class="cart-footer">
                         <div class="d-flex no-gutters align-items-center">
                             <div class="col">
-                                <p class="em-9">3455 - всего дел</p>
+                                <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
                             </div>
                             <div class="col-auto">
                                 <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
@@ -141,17 +143,18 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
             </div><!-- .col -->
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
-                    <div class="cart-body">
+                    <div class="cart-body px-xl-5">
                         <div class="row align-items-center justify-content-center">
                             <div class="col-auto">
-                                <div style="padding: 0 5px">
-                                    <img class="klogo" width="50" src="img/logo/bk-2.svg">
+                                <div style="padding: 0 7px 0 7px">
+                                    <img class="klogo" width="46" src="img/logo/bk-2.svg">
                                 </div>
                             </div>
                             <div class="col">
-                                <h3 class="fw-600">Банкрот Консалт</h3>
+                                <h4 class="fw-600">Юридическая компания «Июль»</h4>
                             </div>
                         </div>
+                        <div class="cart-divider"></div>
                         <div class="row">
                             <div class="col-12 col-sm-6 col-md-12">
                                 <div class="row align-items-center">
@@ -178,7 +181,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                     <div class="cart-footer">
                         <div class="d-flex no-gutters align-items-center">
                             <div class="col">
-                                <p class="em-9">3455 - всего дел</p>
+                                <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
                             </div>
                             <div class="col-auto">
                                 <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
@@ -189,17 +192,18 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
             </div><!-- .col -->
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
-                    <div class="cart-body">
+                    <div class="cart-body px-xl-5">
                         <div class="row align-items-center justify-content-center">
                             <div class="col-auto">
-                                <div style="padding: 0 5px">
-                                    <img class="klogo" width="50" src="img/logo/bk-2.svg">
+                                <div style="padding: 0 7px 0 7px">
+                                    <img class="klogo" width="46" src="img/logo/bk-2.svg">
                                 </div>
                             </div>
                             <div class="col">
-                                <h3 class="fw-600">Банкрот Консалт</h3>
+                                <h4 class="fw-600">Апелляционный Центр</h4>
                             </div>
                         </div>
+                        <div class="cart-divider"></div>
                         <div class="row">
                             <div class="col-12 col-sm-6 col-md-12">
                                 <div class="row align-items-center">
@@ -226,7 +230,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                     <div class="cart-footer">
                         <div class="d-flex no-gutters align-items-center">
                             <div class="col">
-                                <p class="em-9">3455 - всего дел</p>
+                                <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
                             </div>
                             <div class="col-auto">
                                 <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
@@ -237,17 +241,18 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
             </div><!-- .col -->
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
-                    <div class="cart-body">
+                    <div class="cart-body px-xl-5">
                         <div class="row align-items-center justify-content-center">
                             <div class="col-auto">
-                                <div style="padding: 0 5px">
-                                    <img class="klogo" width="50" src="img/logo/bk-2.svg">
+                                <div style="padding: 0 7px 0 7px">
+                                    <img class="klogo" width="46" src="img/logo/bk-2.svg">
                                 </div>
                             </div>
                             <div class="col">
-                                <h3 class="fw-600">Банкрот Консалт</h3>
+                                <h4 class="fw-600">Аспект-М</h4>
                             </div>
                         </div>
+                        <div class="cart-divider"></div>
                         <div class="row">
                             <div class="col-12 col-sm-6 col-md-12">
                                 <div class="row align-items-center">
@@ -274,7 +279,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                     <div class="cart-footer">
                         <div class="d-flex no-gutters align-items-center">
                             <div class="col">
-                                <p class="em-9">3455 - всего дел</p>
+                                <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
                             </div>
                             <div class="col-auto">
                                 <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
@@ -285,17 +290,18 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
             </div><!-- .col -->
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
-                    <div class="cart-body">
+                    <div class="cart-body px-xl-5">
                         <div class="row align-items-center justify-content-center">
                             <div class="col-auto">
-                                <div style="padding: 0 5px">
-                                    <img class="klogo" width="50" src="img/logo/bk-2.svg">
+                                <div style="padding: 0 7px 0 7px">
+                                    <img class="klogo" width="46" src="img/logo/bk-2.svg">
                                 </div>
                             </div>
                             <div class="col">
-                                <h3 class="fw-600">Банкрот Консалт</h3>
+                                <h4 class="fw-600">Егоров, Пугинский, Афанасьев и Партнеры</h4>
                             </div>
                         </div>
+                        <div class="cart-divider"></div>
                         <div class="row">
                             <div class="col-12 col-sm-6 col-md-12">
                                 <div class="row align-items-center">
@@ -322,7 +328,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                     <div class="cart-footer">
                         <div class="d-flex no-gutters align-items-center">
                             <div class="col">
-                                <p class="em-9">3455 - всего дел</p>
+                                <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
                             </div>
                             <div class="col-auto">
                                 <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
