@@ -32,6 +32,7 @@ $this->params['breadcrumbs'] = [
             <div class="col-12 col-lg-10 col-xl-9">
                 <p><span class="date-bg"><?= date('d.m.Y', $model->created_at) ?></span></p>
                 <img class="img" style="width: 100%" src="<?= $model->img ?>" alt="<?= $model->title ?>">
+                <p><?= $model->description ?></p>
                 <div class="editor">
                     <div class="js-h-hash-nav"></div>
                     <?= $model->content ?>

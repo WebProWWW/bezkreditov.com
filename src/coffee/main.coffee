@@ -84,13 +84,6 @@ class SelectSearch
                 selected = ''
             $ssOption = $ "<div class=\"sselect-option#{disabled}#{selected}\">#{optionText}</div>"
             @$options.append $ssOption
-            # $ssOption.on 'click', (e) =>
-            #     e.preventDefault()
-            #     $target = $ e.target
-            #     @$input.val $target.text().trim()
-            #     @$options.removeClass 'active selected'
-            #     @$options.find('.sselect-option').removeClass 'd-none'
-            #     off
             on
 
         @$root.append @$input
@@ -151,25 +144,90 @@ hashScroll = (e) ->
     $('html:not(:animated),body:not(:animated)').animate scrollTop: offsetTop
     off
 
+hHashNav = (index, $headers) ->
+    $out = $ '<blockquote></blockquote>'
+    level = 0
+    hPrev = 0
+    numH2 = numH3 = numH4 = 0
+    $headers.each (i, el) ->
+        $el = $ el
+        id = "h-hash-nav-#{index}-#{i}"
+        $el.attr 'id', id
+        h = Number $el.prop('tagName')[1]
+        $p = $ "<p class=\"fw-600\" style=\"padding-left:#{(h-2) * 2}em\"></p>"
+        $a = $ "<a href=\"##{id}\">#{$el.text()}</a>"
+        $n = $ '<span class="fw-300 mr-2"></span>'
+        $n.text switch h
+            when 2
+                numH3 = 0
+                numH4 = 0
+                "#{++numH2}."
+            when 3
+                numH4 = 0
+                "#{numH2}.#{++numH3}."
+            when 4
+                "#{numH2}.#{numH3}.#{++numH4}."
+            else ''
+        
+        $p.append $n
+        $p.append $a
+        $out.append $p
+
+        # level++ if h > hPrev
+        # level-- if h < hPrev
+        # level = 0 if level < 0
+        # hPrev = h
+
+        $a.on 'click', hashScroll
+    $out
+
 $('.js-h-hash-nav').each (i, el) ->
     $el = $ el
-    $headers = $el.parent().find(':header')
-    $blockquote = $ '<blockquote></blockquote>'
-    $headers.each (hi, hel) ->
-        $hel = $ hel
-        id = "h-hash-nav-#{i}-#{hi}"
-        $hel.attr 'id', id
-        hNum = Number $hel.prop('tagName')[1]
-        pl = (hNum - 2) * 2
-        pl = 0 if pl < 0
-        $a = $ """<a href="##{id}">#{$hel.text()}</a>"""
-        $a.on 'click', hashScroll
-        $p = $ """<p class="fw-600" style="padding-left:#{pl}em"></p>"""
-        $p.append $a
-        $blockquote.append $p
-    $blockquote = '' unless $headers.length
-    $el.parent().prepend $blockquote
+    $headers = $el.parent().find 'h2, h3, h4'
+    return on unless $headers.length
+    $root = $ '<div></div>'
+    $root.append '<p class="fw-600 em-12">Оглавление</p>'
+    $root.append hHashNav(i, $headers)
+    $el.replaceWith $root
     on
+    # $out = $ ''
+    # $blockquote = $ ''
+    # numH1 = numH2 = numH3 = numH4 = 0
+    # $headers.each (hi, hel) ->
+    #     $hel = $ hel
+    #     id = "h-hash-nav-#{i}-#{hi}"
+    #     $hel.attr 'id', id
+    #     h = Number $hel.prop('tagName')[1]
+    #     pl = (h - 2) * 2
+    #     pl = 0 if pl < 0
+    #     # $num = $ '<span class="fw-400 mr-2"></span>'
+    #     # $num.text switch hNum
+    #     #     when 1 then '1.'
+    #     # # if hNum is 1
+    #     # #     numH2 = numH3 = numH4 = 0
+    #     # #     numH1++
+    #     # #     $num.text "#{numH1}."
+    #     # # if hNum is 2
+    #     # #     numH3 = numH4 = 0
+    #     # #     numH2++
+    #     # #     $num.text "#{numH1}.#{numH2}."
+    #     # # if hNum is 3
+    #     # #     numH4 = 0
+    #     # #     numH3++
+    #     # #     $num.text "#{numH1}.#{numH2}.#{numH3}."
+    #     # # if hNum is 4
+    #     # #     numH4++
+    #     # #     $num.text "#{numH1}.#{numH2}.#{numH3}.#{numH4}."
+    #     # $a = $ "<a href=\"##{id}\">#{$hel.text()}</a>"
+    #     # $a.on 'click', hashScroll
+    #     # $p = $ "<p class=\"fw-600\" style=\"padding-left:#{pl}em\"></p>"
+    #     # $p.append $num
+    #     # $p.append $a
+    #     # $blockquote.append $p
+    # $out.append $blockquote
+    # $out = '' unless $headers.length
+    # $el.replaceWith $out
+    # on
 
 window.isCity = () ->
     $.fancybox.open src: '#is-city'
