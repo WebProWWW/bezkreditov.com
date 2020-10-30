@@ -56,10 +56,10 @@ class SiteController extends Controller
     }
 
     /**
+     * ГЛАВНАЯ
      * @param string $view
-     * @return string
      */
-    public function actionIndex($view='index')
+    public function actionIndex(string $view = 'index')
     {
         return $this->render($view, [
             'city' => $this->_city,
@@ -68,12 +68,9 @@ class SiteController extends Controller
 
     /**
      * НОВОСТИ
-     *
      * @param string $alias
-     * @return string
-     * @throws yii\web\NotFoundHttpException
      */
-    public function actionNewsItem($alias = '')
+    public function actionNewsItem(string $alias = '')
     {
         $model = News::findByAlias($alias);
         return $this->render('news-item', [
@@ -82,6 +79,10 @@ class SiteController extends Controller
         ]);
     }
 
+    /**
+     * ПОЛЕЗНЫЕ МАТЕРИАЛЫ
+     * @param string $alias
+     */
     public function actionMaterial(string $alias = '')
     {
         $model = Material::findByAlias($alias);
@@ -89,6 +90,15 @@ class SiteController extends Controller
             'model' => $model,
             'city' => $this->_city,
         ]);
+    }
+
+    /**
+     * ЗАКОН О БАНКРОТСТВЕ
+     * @param string $alias
+     */
+    public function actionLaw(string $alias = '')
+    {
+        return $this->render('law');
     }
 
     /**

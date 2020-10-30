@@ -856,6 +856,25 @@ label
 	position relative
 
 
+
+.news-img
+	mpd(0 30px 15px 0)
+	width 100%
+	height auto
+
+
+
+.nav-block
+	mpd(0, 0 0 0 25px)
+
+.nav-block > a
+	mpd(0 0 15px)
+
+.nav-block > h3
+	font-size 1rem
+
+
+
 for num in (1..100)
 	.em-{num}
 		font-size (num * .1em)
@@ -865,10 +884,3 @@ for fw in 300 400 600 700
 	.fw-{fw}
 		font-weight fw
 
-
-
-
-.news-img
-	mpd(0 30px 15px 0)
-	width 100%
-	height auto

@@ -31,6 +31,11 @@ return ArrayHelper::merge([
                     'suffix' => '.html',
                 ],
                 [
+                    'pattern' => '/zakon-o-bankrotstve/<alias:[\w\-]+>',
+                    'route' => 'site/law',
+                    'suffix' => '.html',
+                ],
+                [
                     'pattern' => '/fssp-search',
                     'route' => 'site/fssp-search',
                     'suffix' => '.json',
