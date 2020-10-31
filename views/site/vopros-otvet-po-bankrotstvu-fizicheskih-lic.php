@@ -14,11 +14,40 @@ $this->params['breadcrumbs'] = [
 ];
 
 ?>
+
+<section class="section bg">
+    <div class="container">
+        <h1 class="center">Вопросы и ответы по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h1>
+    </div><!-- .container -->
+</section><!-- .section -->
+
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-auto">
+                <img class="img-a" width="450" src="/img/man-d.png">
+            </div><!-- .col -->
+            <div class="col-12 col-lg offset-lg-1">
+                <div class="wall arrow-lg">
+                    <p>На этой странице вы можете получить консультацию по банкротству физических лиц от юриста, специализирующегося на проведение процедур банкротства физических лиц в&nbsp;г.&nbsp;<?= $city->name ?>. Задайте вопрос ниже в форме и в течение дня вы получите ответ на свой вопрос.</p>
+                    <p>Ваш контактный Email не публикуется, а используется только для уведомления о получении ответа на ваш вопрос.</p>
+                    <p>Консультация по вопросам банкротства физических лиц полностью бесплатна</p>
+                </div><!-- .wall -->
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <a class="btn btn-default js-hash-nav" href="#faq-form">Задать вопрос</a>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+</section><!-- .section -->
+
 <section class="section bg">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-xl-7 mb-4">
-                <h1>Ваши вопросы и ответы</h1>
+            <div class="col-12 col-xl-7 mb-4 order-xl-1">
+                <h2>Ваши вопросы и ответы</h2>
                 <div>
                     <div class="cart">
                         <div class="cart-body">
@@ -133,17 +162,45 @@ $this->params['breadcrumbs'] = [
                                 </div><!-- .col -->
                             </div><!-- .row -->
                         </div><!-- .cart-body -->
-                        <div class="cart-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <a class="btn btn-default" href="">Задать вопрос</a>
-                                </div>
-                            </div>
-                        </div><!-- .cart-body -->
                     </div><!-- .cart -->
                 </div><!-- cart wrapper -->
             </div><!-- .col -->
-            <div class="col-12 col-lg">
+            <div class="col-12 order-xl-3" id="faq-form">
+                <div class="cart">
+                    <div class="cart-body">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <label class="label">Ваше имя <span class="red">*</span></label>
+                                <input class="input" type="text">
+                            </div><!-- .col -->
+                            <div class="col-12 col-md-6">
+                                <label class="label">Ваш Email <span class="red">*</span></label>
+                                <input class="input" type="text">
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+
+                        <label class="label">Ваш вопрос <span class="red">*</span></label>
+                        <textarea class="input" rows="5"></textarea>
+
+                        <div class="row">
+                            <div class="col-12 col-md order-md-2">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <p class="em-9 right">Прекрипить файл к сообщению</p>
+                                    </div>
+                                    <div class="col-auto">
+                                        <span class="btn-sm btn-default">Прекрипить</span>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-12 col-md-auto order-md-1">
+                                <button class="btn btn-default">Отправить ваш вопрос</button>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div>
+                </div>
+            </div><!-- .col -->
+            <div class="col-12 col-lg order-xl-2">
                 <h2 class="h1">Статьи о банкротстве</h2>
                 <div class="row">
                     <div class="col-12 col-lg-6 col-xl-12">

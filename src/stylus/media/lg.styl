@@ -24,3 +24,21 @@
 
 .news-img
     width 40%
+
+
+
+.wall.arrow-lg
+    position relative
+
+.wall.arrow-lg:after
+    mpd()
+    // b(1, red)
+    content ''
+    position absolute
+    width 70px
+    height @width
+    top 30px
+    left @width * -1
+    background url('../img/arrow.svg') 100% 0 no-repeat
+
+

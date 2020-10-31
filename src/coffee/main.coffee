@@ -181,6 +181,10 @@ hHashNav = (index, $headers) ->
         $a.on 'click', hashScroll
     $out
 
+
+$('.js-hash-nav').on 'click', hashScroll
+
+
 $('.js-h-hash-nav').each (i, el) ->
     $el = $ el
     $headers = $el.parent().find 'h2, h3, h4'
