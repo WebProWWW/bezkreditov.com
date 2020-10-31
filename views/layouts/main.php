@@ -68,22 +68,17 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
     <div class="header-top">
         <div class="container">
             <div class="row align-items-center no-gutters">
-                <div class="col-auto">
-                    <div class="d-flex">
-                        <div class="mr-2">
-                            <a class="i-circle-blue-ln" href="">
-                                <i class="i-vk"></i>
-                            </a>
-                        </div>
-                        <div>
-                            <a class="i-circle-dblue-ln" href="">
-                                <i class="i-f"></i>
-                            </a>
-                        </div>
-                    </div>
+                <div class="col-12 col-md-auto">
+                    <img class="img" width="130" src="/img/logo/spishudolgi.svg">
                 </div><!-- .col -->
-                <div class="col pl-3">
-                    <p>Отзывы людей прошедших банкротство физических лиц - каждый день!</p>
+                <div class="col-12 col-md px-md-3">
+                    <p class="em-9">
+                        Банкротство физических лиц со скидкой 25% по промокоду «Без кредитов»
+                        <a target="blank" href="https://spishudolgi.ru">Заказать банкротство</a>
+                    </p>
+                </div><!-- .col -->
+                <div class="col-auto ml-auto">
+                    <a class="btn btn-sm" href="">Вход</a>
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
