@@ -13,6 +13,7 @@ use yii\db\ActiveQuery;
  * @property int $code
  * @property string $region_name
  *
+ * @property Department $department
  * @property News[] $lastNews
  * @property ActiveDataProvider $news
  * @property NewsRegion[] $newsRegions
@@ -52,6 +53,14 @@ class Region extends ActiveRecord
     }
 
     /**
+     * @return Department|ActiveQuery
+     */
+    public function getDepartment()
+    {
+        return $this->hasOne(Department::class, ['region_code' => 'code']);
+    }
+
+    /**
      * @return ActiveDataProvider
      */
     public function getNews()
@@ -69,10 +78,6 @@ class Region extends ActiveRecord
                 ]
             ],
         ]);
-//        return $this->hasMany(News::class, ['id' => 'news_id'])
-//            ->viaTable('news_region', ['region_code' => 'code'])
-//            ->orderBy(['date' => SORT_DESC])
-//            ->limit(6);
     }
 
     public function getLastNews()

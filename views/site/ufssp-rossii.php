@@ -1,7 +1,7 @@
 <?php
 
-/* @var $this yii\web\View */
 /* @var $city app\models\City */
+/* @var $this yii\web\View */
 
 $this->title = 'Управление Федеральной службы судебных приставов по г. '.$city->name;
 
@@ -11,43 +11,37 @@ $this->params['breadcrumbs'] = [
     'УФССП России по&nbsp;г.&nbsp;'.$city->name,
 ];
 
+$department = $city->region->department;
+
+$mapLonLat = $department->longitude . ',' . $department->latitude;
+
 ?>
+
 <section class="section bg">
     <div class="container">
-        <h1 class="center">Управление Федеральной службы судебных приставов по г.&nbsp;<?= $city->name ?></h1>
+        <h1 class="center"><?= $department->title ?></h1>
         <div class="cart">
             <div class="cart-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <img class="img mx-auto" width="100%" src="https://static-maps.yandex.ru/1.x/?ll=37.58523697622683,55.77715798963918&size=525,400&z=16&l=map&pt=37.58523697622683,55.77715798963918,pm2rdm">
+                        <a target="_blank" href="https://yandex.ru/maps/?ll=<?= $mapLonLat ?>&z=17&l=map&pt=<?= $mapLonLat ?>">
+                            <img class="img mx-auto" width="100%" src="https://static-maps.yandex.ru/1.x/?ll=<?= $mapLonLat ?>&size=525,400&z=16&l=map&pt=<?= $mapLonLat ?>,pm2rdm">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-lg">
                         <p>
-                            <strong>Адрес:</strong> 125047, г. Москва, ул. Бутырский вал, д.5
+                            <strong>Адрес:</strong>
+                            <?= $department->postal_code ?>,
+                            <?= $department->city ?>,
+                            <?= $department->street ?>
                         </p>
+                        <div class="ch-p-bold ch-p-span-normal">
+                            <?= $department->phone ?>
+                        </div>
                         <p>
-                            <strong>Время работы:</strong> Пн.-Чт.: с 09.00 до 18.00;
+                            <strong>Сайт:</strong> <a class="ln-black-primary" target="_blank" href="<?= $department->website ?>"><?= $department->website ?></a>
                             <br>
-                            <strong>Пт.:</strong> с 09.00 до 16.45;
-                            <br>
-                            <strong>Обед:</strong> с 13.00 до 13.45;
-                            <br>
-                            <strong>Технический перерыв</strong> с 10.45 до 11.00; с 15.45 до 16.00;
-                        </p>
-                        <p>
-                            <strong>Call-центр:</strong> <a class="ln-black-primary" href="tel:880025039 2">8 (800) 250 39 32</a>
-                            <br>
-                            <strong>Телефон дежурной части:</strong> <a class="ln-black-primary" href="tel:84995580402">(499) 558-04-02</a>
-                            <br>
-                            <strong>Телефон доверия:</strong> <a class="ln-black-primary" href="tel:84995580408">(499) 558-04-08</a>
-                            <br>
-                            <strong>Канцелярия:</strong> <a class="ln-black-primary" href="tel:84995580422">(499) 558-04-22</a>
-                            <br>
-                            <strong>Факс:</strong> <a class="ln-black-primary" href="tel:84959816754">(495) 981-67-54</a>
-                            <br>
-                            <strong>Сайт:</strong> <a class="ln-black-primary" href="http://www.r77.fssprus.ru">r77.fssprus.ru</a>
-                            <br>
-                            <strong>E-mail:</strong> <a class="ln-black-primary" href="mailto:mail@r77.fssprus.ru">mail@r77.fssprus.ru</a>
+                            <strong>E-mail:</strong> <a class="ln-black-primary" href="mailto:<?= $department->email ?>"><?= $department->email ?></a>
                         </p>
                     </div><!-- .col -->
                 </div><!-- .row -->
