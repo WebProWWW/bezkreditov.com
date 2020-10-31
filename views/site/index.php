@@ -81,12 +81,12 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                         </div><!-- .row -->
                     </div><!-- .cart-body -->
                     <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
                                 <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
                             </div>
-                            <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
+                            <div class="col-auto ml-auto">
+                                <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -130,12 +130,12 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                         </div><!-- .row -->
                     </div><!-- .cart-body -->
                     <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
                                 <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
                             </div>
-                            <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
+                            <div class="col-auto ml-auto">
+                                <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -179,12 +179,12 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                         </div><!-- .row -->
                     </div><!-- .cart-body -->
                     <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
                                 <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
                             </div>
-                            <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
+                            <div class="col-auto ml-auto">
+                                <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -228,12 +228,12 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                         </div><!-- .row -->
                     </div><!-- .cart-body -->
                     <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
                                 <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
                             </div>
-                            <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
+                            <div class="col-auto ml-auto">
+                                <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -277,12 +277,12 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                         </div><!-- .row -->
                     </div><!-- .cart-body -->
                     <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
                                 <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
                             </div>
-                            <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
+                            <div class="col-auto ml-auto">
+                                <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
@@ -326,12 +326,12 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                         </div><!-- .row -->
                     </div><!-- .cart-body -->
                     <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
                                 <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
                             </div>
-                            <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
+                            <div class="col-auto ml-auto">
+                                <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
                             </div>
                         </div>
                     </div><!-- .cart-footer -->
