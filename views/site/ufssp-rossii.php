@@ -24,8 +24,14 @@ $mapLonLat = $department->longitude . ',' . $department->latitude;
             <div class="cart-body">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <a target="_blank" href="https://yandex.ru/maps/?ll=<?= $mapLonLat ?>&z=17&l=map&pt=<?= $mapLonLat ?>">
-                            <img class="img mx-auto" width="100%" src="https://static-maps.yandex.ru/1.x/?ll=<?= $mapLonLat ?>&size=525,400&z=16&l=map&pt=<?= $mapLonLat ?>,pm2rdm">
+                        <a target="_blank" href="<?=
+                            'https://yandex.ru/maps/?'
+                            .'ll='.$mapLonLat
+                            .'&pt='.$mapLonLat
+                            .'&z=17'
+                            .'&l=map'
+                        ?>">
+                            <img class="img mx-auto" width="100%" src="<?= $department->mapCache($mapLonLat) ?>">
                         </a>
                     </div><!-- .col -->
                     <div class="col-12 col-lg">

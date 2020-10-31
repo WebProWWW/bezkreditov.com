@@ -74,4 +74,29 @@ class Department extends ActiveRecord
     {
         return $this->hasOne(Region::class, ['code' => 'region_code']);
     }
+
+    /**
+     * @param string $lonLat
+     * @return null|string
+     */
+    public function mapCache(string $lonLat='')
+    {
+        if ($lonLat === '') return null;
+        $webroot = Yii::getAlias('@webroot');
+        $name = 'cache' . md5($lonLat);
+        $mapDest = $webroot . '/img/fssp/' . $name . '.png';
+        if (!file_exists($mapDest)) {
+            $mapSrc = ''
+                .'https://static-maps.yandex.ru/1.x/?'
+                .'ll='.$lonLat
+                .'&pt='.$lonLat.',pm2rdm'
+                .'&size=525,400'
+                .'&z=16'
+                .'&l=map'
+            .'';
+            copy($mapSrc, $mapDest);
+        }
+        if (!file_exists($mapDest)) return null;
+        return '/img/fssp/' . $name . '.png';
+    }
 }
