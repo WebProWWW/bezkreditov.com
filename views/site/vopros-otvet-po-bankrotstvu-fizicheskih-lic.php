@@ -18,7 +18,7 @@ $this->params['breadcrumbs'] = [
     <div class="container">
         <div class="row">
             <div class="col-12 col-xl-7 mb-4">
-                <h1>Вопрос - ответ</h1>
+                <h1>Ваши вопросы и ответы</h1>
                 <div>
                     <div class="cart">
                         <div class="cart-body">
