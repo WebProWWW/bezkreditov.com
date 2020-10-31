@@ -36,7 +36,7 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
     <?php $this->registerCsrfMetaTags() ?>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.depends.css?v=021">
-    <link rel="stylesheet" href="/css/main.css?v=036">
+    <link rel="stylesheet" href="/css/main.css?v=037">
     <title><?= $title ?></title>
     <meta name="description" content="<?= $description ?>">
     <meta property="og:locale" content="ru_RU">
@@ -223,7 +223,7 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
 <!-- / МОДАЛЬНЫЕ ОКНА -->
 
 <script src="/js/main.depends.js?v=020"></script>
-<script src="/js/main.js?v=029"></script>
+<script src="/js/main.js?v=030"></script>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
 <script>if ("function"==typeof window.isCity) { window.isCity() };</script>
