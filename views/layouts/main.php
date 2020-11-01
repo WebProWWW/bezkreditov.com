@@ -36,7 +36,7 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
     <?php $this->registerCsrfMetaTags() ?>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.depends.css?v=023">
-    <link rel="stylesheet" href="/css/main.css?v=039">
+    <link rel="stylesheet" href="/css/main.css?v=040">
     <title><?= $title ?></title>
     <meta name="description" content="<?= $description ?>">
     <meta property="og:locale" content="ru_RU">
@@ -74,11 +74,11 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
                 <div class="col-12 col-md px-md-3">
                     <p class="em-9">
                         Банкротство физических лиц со скидкой 25% по промокоду «Без кредитов»
-                        <a target="blank" href="https://spishudolgi.ru">Заказать банкротство</a>
+                        <a class="btn-trsp btn-sm" style="display: inline-block; margin: 5px 0; width: auto;" target="blank" href="https://spishudolgi.ru">Заказать&nbsp;банкротство</a>
                     </p>
                 </div><!-- .col -->
                 <div class="col-auto ml-auto">
-                    <a class="btn btn-sm btn-default" href="">Вход</a>
+                    <a class="btn-sm btn-default" href="">Вход</a>
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
@@ -150,12 +150,21 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
 <footer class="section">
     <div class="container">
         <div class="row">
-
                 <div class="col-12 col-sm-8 col-md-6 col-lg-4 mx-auto">
                     <a class="logo" href="<?= Url::home() ?>">
                         <span class="logo-txt">Без кредитов</span>
                         <span class="logo-stxt">Портал города <?= $city->name ?> по банкротству физических&nbsp;лиц</span>
                     </a>
+                    <div class="row">
+                        <div class="col-auto mx-auto">
+                            <a class="btn-bordered">
+                                <span class="row no-gutters justify-content-center align-items-center">
+                                    <span class="col-auto em-28 mr-2"><i class="i-calc"></i></span>
+                                    <span class="col-auto">Онлайн калькулятор <br> банкротства</span>
+                                </span>
+                            </a>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
                 </div><!-- .col -->
             <div class="col-12 col-lg">
                 <?= $this->render('-nav', ['city' => $city]) ?>
