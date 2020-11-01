@@ -1,6 +1,8 @@
 <?php
 
 use yii\helpers\Url;
+use yii\helpers\StringHelper;
+use app\models\Material;
 
 /* @var $this yii\web\View */
 
@@ -13,7 +15,6 @@ $this->params['breadcrumbs'] = [
         'url' => ['site/index', 'view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic'],
         'label' => 'Вопрос - ответ',
     ],
-    'Могут ли уволить за банкротство или отказать в работе?',
 ];
 
 ?>
@@ -21,11 +22,10 @@ $this->params['breadcrumbs'] = [
     <div class="container">
         <div class="row">
             <div class="col-12 col-xl-7 mb-4 order-xl-1">
-                <h1>Вопрос - ответ</h1>
+                <h1 class="h2">Могут ли уволить за банкротство или отказать в работе?</h1>
                 <div>
                     <div class="cart">
                         <div class="cart-body">
-                            <h4>Могут ли уволить за банкротство или отказать в работе?</h4>
                             <p class="row">
                                 <span class="col-12 col-lg-auto"><span class="bg-primary px-1">вопрос</span></span>
                                 <span class="col-12 col-lg-auto">Задает: Алиса Нагиева, г. Томск</span>
@@ -64,7 +64,7 @@ $this->params['breadcrumbs'] = [
                 </div><!-- cart wrapper -->
             </div><!-- .col -->
             <div class="col-12 mb-4 order-xl-3">
-                <h2 class="h1">Другие вопросы по теме</h2>
+                <h2>Другие вопросы по теме</h2>
                 <div>
                     <div class="cart">
                         <div class="cart-body">
@@ -179,119 +179,43 @@ $this->params['breadcrumbs'] = [
                                 </div><!-- .col -->
                             </div><!-- .row -->
                         </div><!-- .cart-body -->
-                        <div class="cart-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <a class="btn btn-default" href="">Задать вопрос</a>
-                                </div>
-                            </div>
-                        </div><!-- .cart-body -->
                     </div><!-- .cart -->
                 </div><!-- cart wrapper -->
             </div><!-- .col -->
+            <div class="col-12 order-xl-4">
+                <h2>Задать вопрос</h2>
+                <?= $this->render('-form-faq') ?>
+            </div><!-- .col -->
             <div class="col-12 col-xl order-xl-2">
-                <h2 class="h1">Статьи о банкротстве</h2>
+                <h2>Статьи о банкротстве</h2>
                 <div class="row">
-                    <div class="col-12 col-lg-6 col-xl-12">
-                        <div class="mb-4">
-                            <div class="cart">
-                                <div class="cart-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <img class="img" width="100" height="100" src="img/post-th.jpg">
-                                        </div>
-                                        <div class="col">
-                                            <h4>Признаки банкротства, и кому гарантированно не спишут долги</h4>
-                                            <div class="wall-divider"></div>
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <p class="mutted em-9">13:14 11.07.2020</p>
-                                                </div>
-                                                <div class="col-auto ml-auto">
-                                                    <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'dolzhnik-vyplatil-alimentnyj-dolg']) ?>">Читать</a>
+                    <?php foreach (Material::lastMaterials(4) as $material): ?>
+                        <div class="col-12 col-lg-6 col-xl-12">
+                            <div class="mb-4">
+                                <div class="cart">
+                                    <div class="cart-body">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <img class="img" width="100" src="<?= $material->cropImg(300, 320) ?>">
+                                            </div>
+                                            <div class="col">
+                                                <h4><?= StringHelper::truncate($material->title, 60) ?></h4>
+                                                <div class="wall-divider"></div>
+                                                <div class="row align-items-center">
+                                                    <div class="col">
+                                                        <p class="mutted em-9"><?= date('d.m.Y', $material->created_at) ?></p>
+                                                    </div>
+                                                    <div class="col-auto ml-auto">
+                                                        <a class="btn btn-sm btn-default" href="<?= Url::to(['site/material', 'alias' => $material->alias]) ?>">Читать</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div><!-- .cart-body -->
-                            </div><!-- .cart -->
-                        </div><!-- cart wrapper -->
-                    </div><!-- .col -->
-                    <div class="col-12 col-lg-6 col-xl-12">
-                        <div class="mb-4">
-                            <div class="cart">
-                                <div class="cart-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <img class="img" width="100" height="100" src="img/post-th.jpg">
-                                        </div>
-                                        <div class="col">
-                                            <h4>Признаки банкротства, и кому гарантированно не спишут долги</h4>
-                                            <div class="wall-divider"></div>
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <p class="mutted em-9">13:14 11.07.2020</p>
-                                                </div>
-                                                <div class="col-auto ml-auto">
-                                                    <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'dolzhnik-vyplatil-alimentnyj-dolg']) ?>">Читать</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- .cart-body -->
-                            </div><!-- .cart -->
-                        </div><!-- cart wrapper -->
-                    </div><!-- .col -->
-                    <div class="col-12 col-lg-6 col-xl-12">
-                        <div class="mb-4">
-                            <div class="cart">
-                                <div class="cart-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <img class="img" width="100" height="100" src="img/post-th.jpg">
-                                        </div>
-                                        <div class="col">
-                                            <h4>Признаки банкротства, и кому гарантированно не спишут долги</h4>
-                                            <div class="wall-divider"></div>
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <p class="mutted em-9">13:14 11.07.2020</p>
-                                                </div>
-                                                <div class="col-auto ml-auto">
-                                                    <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'dolzhnik-vyplatil-alimentnyj-dolg']) ?>">Читать</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- .cart-body -->
-                            </div><!-- .cart -->
-                        </div><!-- cart wrapper -->
-                    </div><!-- .col -->
-                    <div class="col-12 col-lg-6 col-xl-12">
-                        <div class="mb-4">
-                            <div class="cart">
-                                <div class="cart-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <img class="img" width="100" height="100" src="img/post-th.jpg">
-                                        </div>
-                                        <div class="col">
-                                            <h4>Признаки банкротства, и кому гарантированно не спишут долги</h4>
-                                            <div class="wall-divider"></div>
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                    <p class="mutted em-9">13:14 11.07.2020</p>
-                                                </div>
-                                                <div class="col-auto ml-auto">
-                                                    <a class="btn btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'dolzhnik-vyplatil-alimentnyj-dolg']) ?>">Читать</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- .cart-body -->
-                            </div><!-- .cart -->
-                        </div><!-- cart wrapper -->
-                    </div><!-- .col -->
+                                    </div><!-- .cart-body -->
+                                </div><!-- .cart -->
+                            </div><!-- cart wrapper -->
+                        </div><!-- .col -->
+                    <?php endforeach; ?>
                 </div><!-- .row -->
             </div><!-- .col -->
         </div><!-- .row -->

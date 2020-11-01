@@ -35,8 +35,8 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <?php $this->registerCsrfMetaTags() ?>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.depends.css?v=021">
-    <link rel="stylesheet" href="/css/main.css?v=038">
+    <link rel="stylesheet" href="/css/main.depends.css?v=023">
+    <link rel="stylesheet" href="/css/main.css?v=039">
     <title><?= $title ?></title>
     <meta name="description" content="<?= $description ?>">
     <meta property="og:locale" content="ru_RU">
@@ -78,7 +78,7 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
                     </p>
                 </div><!-- .col -->
                 <div class="col-auto ml-auto">
-                    <a class="btn btn-sm" href="">Вход</a>
+                    <a class="btn btn-sm btn-default" href="">Вход</a>
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
@@ -101,6 +101,16 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
                             </span>
                         </span>
                     </p>
+                    <div class="row">
+                        <div class="col-auto mx-auto">
+                            <a class="btn-bordered">
+                                <span class="row no-gutters justify-content-center align-items-center">
+                                    <span class="col-auto em-28 mr-2"><i class="i-calc"></i></span>
+                                    <span class="col-auto">Онлайн калькулятор <br> банкротства</span>
+                                </span>
+                            </a>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
                 </div><!-- .col -->
                 <div class="col-12 col-lg">
                     <?= $this->render('-nav', ['city' => $city]) ?>

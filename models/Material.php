@@ -95,6 +95,26 @@ class Material extends ActiveRecord
     }
 
     /**
+     * @param int $w
+     * @param int $h
+     * @return string|null
+     */
+    public function cropImg(int $w, int $h)
+    {
+        $webroot = Yii::getAlias('@webroot');
+        $src = $webroot . $this->img;
+        if ($this->img === null or !file_exists($src)) return null;
+        $name = StringHelper::basename($src);
+        $dirname = StringHelper::dirname($src);
+        $dest = $dirname . '/th-' . $w . '-' . $h. '-' . $name;
+        if (!file_exists($dest)) {
+            Image::thumbnail($src, $w, $h)->save($dest);
+        }
+        if (!file_exists($dest)) return null;
+        return str_replace($webroot, '', $dest);
+    }
+
+    /**
      * @return ActiveDataProvider
      */
     public static function dataProvider()

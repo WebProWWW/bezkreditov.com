@@ -29,7 +29,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, p, .p
 	font-weight 600
 
 h1, .h1
-	font-size 2em
+	font-size 1.4em
 	font-weight 600
 
 h2, .h2
@@ -196,6 +196,7 @@ label
 .btn
 .btn-default
 .btn-trsp
+.btn-bordered
 	mpd(0 0 15px, 10px 20px)
 	resetLn(black, black)
 	trans()
@@ -217,6 +218,7 @@ label
 	padding 8px 18px
 	background transparent
 
+
 .btn-trsp:hover
 	background pcolor
 
@@ -227,6 +229,15 @@ label
 
 .btn-trsp.btn-sm
 	padding 4px 19px
+
+
+.btn-bordered
+	b(3, pcolor)
+	padding 5px 15px
+	background transparent
+
+.btn-bordered:hover
+	background pcolor
 
 
 .wall-divider

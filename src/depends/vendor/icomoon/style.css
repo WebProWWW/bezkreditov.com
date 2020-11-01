@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('fonts/icomoon.ttf?cw84wh') format('truetype'),
-    url('fonts/icomoon.woff?cw84wh') format('woff'),
-    url('fonts/icomoon.svg?cw84wh#icomoon') format('svg');
+    url('fonts/icomoon.ttf?orzisa') format('truetype'),
+    url('fonts/icomoon.woff?orzisa') format('woff'),
+    url('fonts/icomoon.svg?orzisa#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,6 +24,9 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.i-calc:before {
+  content: "\e91b";
+}
 .i-eye-a:before {
   content: "\e917";
 }
