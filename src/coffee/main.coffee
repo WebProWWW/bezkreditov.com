@@ -168,16 +168,9 @@ hHashNav = (index, $headers) ->
             when 4
                 "#{numH2}.#{numH3}.#{++numH4}."
             else ''
-        
         $p.append $n
         $p.append $a
         $out.append $p
-
-        # level++ if h > hPrev
-        # level-- if h < hPrev
-        # level = 0 if level < 0
-        # hPrev = h
-
         $a.on 'click', hashScroll
     $out
 
@@ -194,44 +187,50 @@ $('.js-h-hash-nav').each (i, el) ->
     $root.append hHashNav(i, $headers)
     $el.replaceWith $root
     on
-    # $out = $ ''
-    # $blockquote = $ ''
-    # numH1 = numH2 = numH3 = numH4 = 0
-    # $headers.each (hi, hel) ->
-    #     $hel = $ hel
-    #     id = "h-hash-nav-#{i}-#{hi}"
-    #     $hel.attr 'id', id
-    #     h = Number $hel.prop('tagName')[1]
-    #     pl = (h - 2) * 2
-    #     pl = 0 if pl < 0
-    #     # $num = $ '<span class="fw-400 mr-2"></span>'
-    #     # $num.text switch hNum
-    #     #     when 1 then '1.'
-    #     # # if hNum is 1
-    #     # #     numH2 = numH3 = numH4 = 0
-    #     # #     numH1++
-    #     # #     $num.text "#{numH1}."
-    #     # # if hNum is 2
-    #     # #     numH3 = numH4 = 0
-    #     # #     numH2++
-    #     # #     $num.text "#{numH1}.#{numH2}."
-    #     # # if hNum is 3
-    #     # #     numH4 = 0
-    #     # #     numH3++
-    #     # #     $num.text "#{numH1}.#{numH2}.#{numH3}."
-    #     # # if hNum is 4
-    #     # #     numH4++
-    #     # #     $num.text "#{numH1}.#{numH2}.#{numH3}.#{numH4}."
-    #     # $a = $ "<a href=\"##{id}\">#{$hel.text()}</a>"
-    #     # $a.on 'click', hashScroll
-    #     # $p = $ "<p class=\"fw-600\" style=\"padding-left:#{pl}em\"></p>"
-    #     # $p.append $num
-    #     # $p.append $a
-    #     # $blockquote.append $p
-    # $out.append $blockquote
-    # $out = '' unless $headers.length
-    # $el.replaceWith $out
-    # on
+
+
+class CirclePercent
+
+    constructor: (el) ->
+        @$el = $ el
+        percent = Number @$el.data 'circle-percent'
+        @rect = SVG()
+        @rect.viewbox 0, 0, 130, 130
+        @text "#{percent}%"
+        @arc (percent * 359.99999 / 100)
+        @$el.replaceWith @rect.node
+
+    arcPoint: (deg) ->
+        angle = (deg - 90) * Math.PI / 180
+        x = 65 + (60 * Math.cos angle)
+        y = 65 + (60 * Math.sin angle)
+        { x, y }
+
+    arc: (deg=0) ->
+        start = @arcPoint deg
+        end = @arcPoint 0
+        sweep = if deg <= 180 then "0" else "1"
+        circle = @rect.path "M #{start.x} #{start.y} A 60 60 0 #{sweep} 0 #{end.x} #{end.y}"
+        circle.fill 'none'
+        circle.stroke
+            color: '#5ab031'
+            width: 10
+
+    text: (str='') ->
+        text = @rect.text str
+            .font
+                family: 'sans-serif'
+                size: 30
+                anchor: 'middle'
+            .attr
+                'alignment-baseline': 'central'
+                x: '50%'
+                y: '75'
+
+
+
+$('*[data-circle-percent]').each (i, el) -> new CirclePercent el
+
 
 window.isCity = () ->
     $.fancybox.open src: '#is-city'

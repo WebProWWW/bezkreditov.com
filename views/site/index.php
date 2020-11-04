@@ -3,6 +3,7 @@
 use yii\helpers\Url;
 use yii\helpers\StringHelper;
 use app\models\Material;
+use app\models\Company;
 
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
@@ -43,300 +44,61 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
     <div class="container">
         <h2 class="h1 center">Лучшие компании по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h2>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body px-xl-5">
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-auto">
-                                <div style="padding: 0 7px 0 7px">
-                                    <img class="klogo" width="46" src="img/logo/bk-2.svg">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <h4 class="fw-600">Банкрот Консалт</h4>
-                            </div>
-                        </div>
-                        <div class="cart-divider"></div>
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-12">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <img class="img mx-auto" width="60" src="img/rating-1.svg">
-                                    </div>
-                                    <div class="col">
-                                        <p>Количество<br>успешных&nbsp;дел</p>
+            <?php foreach (Company::findTop() as $company): ?>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="cart">
+                        <div class="cart-body px-xl-5">
+                            <div class="row align-items-center justify-content-center">
+                                <div class="col-auto">
+                                    <div style="padding: 0 12px">
+                                        <img class="klogo" width="46" src="<?= $company->logoImg ?>">
                                     </div>
                                 </div>
-                            </div><!-- .col -->
-                            <div class="col-12 col-sm-6 col-md-12">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
-                                    </div>
-                                    <div class="col">
-                                        <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="row align-items-center no-gutters">
-                            <div class="col-auto">
-                                <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
-                            </div>
-                            <div class="col-auto ml-auto">
-                                <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body px-xl-5">
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-auto">
-                                <div style="padding: 0 7px 0 7px">
-                                    <img class="klogo" width="46" src="img/logo/bk-2.svg">
+                                <div class="col">
+                                    <h4 class="fw-600"><?= $company->name ?></h4>
                                 </div>
                             </div>
-                            <div class="col">
-                                <h4 class="fw-600">Гребнева и Партнеры</h4>
-                            </div>
-                        </div>
-                        <div class="cart-divider"></div>
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-12">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
+                            <div class="cart-divider"></div>
+                            <div class="row">
+                                <div class="col-12 col-sm-6 col-md-12">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <div class="percent-circle" style="padding: 0 7px">
+                                                <span data-circle-percent="<?= $company->percent ?>"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <p>Количество<br>успешных&nbsp;дел</p>
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <p>Количество<br>успешных&nbsp;дел</p>
+                                </div><!-- .col -->
+                                <div class="col-12 col-sm-6 col-md-12">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <div class="percent-circle" style="padding: 0 7px">
+                                                <span data-circle-percent="<?= $company->percent ?>"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
+                                        </div>
                                     </div>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                        </div><!-- .cart-body -->
+                        <div class="cart-footer">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col-auto">
+                                    <p class="em-9"><span class="date-bg"><?= $company->cases ?></span> - всего дел</p>
                                 </div>
-                            </div><!-- .col -->
-                            <div class="col-12 col-sm-6 col-md-12">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <img class="img mx-auto" width="60" src="img/rating-1.svg">
-                                    </div>
-                                    <div class="col">
-                                        <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="row align-items-center no-gutters">
-                            <div class="col-auto">
-                                <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
-                            </div>
-                            <div class="col-auto ml-auto">
-                                <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body px-xl-5">
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-auto">
-                                <div style="padding: 0 7px 0 7px">
-                                    <img class="klogo" width="46" src="img/logo/bk-2.svg">
+                                <div class="col-auto ml-auto">
+                                    <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
                                 </div>
                             </div>
-                            <div class="col">
-                                <h4 class="fw-600">Юридическая компания «Июль»</h4>
-                            </div>
-                        </div>
-                        <div class="cart-divider"></div>
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-12">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
-                                    </div>
-                                    <div class="col">
-                                        <p>Количество<br>успешных&nbsp;дел</p>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-12 col-sm-6 col-md-12">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
-                                    </div>
-                                    <div class="col">
-                                        <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="row align-items-center no-gutters">
-                            <div class="col-auto">
-                                <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
-                            </div>
-                            <div class="col-auto ml-auto">
-                                <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body px-xl-5">
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-auto">
-                                <div style="padding: 0 7px 0 7px">
-                                    <img class="klogo" width="46" src="img/logo/bk-2.svg">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <h4 class="fw-600">Апелляционный Центр</h4>
-                            </div>
-                        </div>
-                        <div class="cart-divider"></div>
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-12">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <img class="img mx-auto" width="60" src="img/rating-1.svg">
-                                    </div>
-                                    <div class="col">
-                                        <p>Количество<br>успешных&nbsp;дел</p>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-12 col-sm-6 col-md-12">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
-                                    </div>
-                                    <div class="col">
-                                        <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="row align-items-center no-gutters">
-                            <div class="col-auto">
-                                <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
-                            </div>
-                            <div class="col-auto ml-auto">
-                                <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body px-xl-5">
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-auto">
-                                <div style="padding: 0 7px 0 7px">
-                                    <img class="klogo" width="46" src="img/logo/bk-2.svg">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <h4 class="fw-600">Аспект-М</h4>
-                            </div>
-                        </div>
-                        <div class="cart-divider"></div>
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-12">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
-                                    </div>
-                                    <div class="col">
-                                        <p>Количество<br>успешных&nbsp;дел</p>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-12 col-sm-6 col-md-12">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <img class="img mx-auto" width="60" src="img/rating-1.svg">
-                                    </div>
-                                    <div class="col">
-                                        <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="row align-items-center no-gutters">
-                            <div class="col-auto">
-                                <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
-                            </div>
-                            <div class="col-auto ml-auto">
-                                <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body px-xl-5">
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-auto">
-                                <div style="padding: 0 7px 0 7px">
-                                    <img class="klogo" width="46" src="img/logo/bk-2.svg">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <h4 class="fw-600">Егоров, Пугинский, Афанасьев и Партнеры</h4>
-                            </div>
-                        </div>
-                        <div class="cart-divider"></div>
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-12">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
-                                    </div>
-                                    <div class="col">
-                                        <p>Количество<br>успешных&nbsp;дел</p>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                            <div class="col-12 col-sm-6 col-md-12">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <img class="img mx-auto" width="60" src="img/rating-2.svg">
-                                    </div>
-                                    <div class="col">
-                                        <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
-                                    </div>
-                                </div>
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="row align-items-center no-gutters">
-                            <div class="col-auto">
-                                <p class="em-9"><span class="date-bg">3455</span> - всего дел</p>
-                            </div>
-                            <div class="col-auto ml-auto">
-                                <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
+                        </div><!-- .cart-footer -->
+                    </div><!-- .cart -->
+                </div><!-- .col -->
+            <?php endforeach; ?>
         </div><!-- .row -->
     </div><!-- .container -->
 </section><!-- .section -->

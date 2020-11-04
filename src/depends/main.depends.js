@@ -5,3 +5,4 @@
 //=require vendor/gijgo/gijgo.min.js
 //=require vendor/gijgo/messages.ru-ru.min.js
 //=require vendor/Inputmask/jquery.inputmask.min.js
+//=require vendor/svg.js/svg.min.js

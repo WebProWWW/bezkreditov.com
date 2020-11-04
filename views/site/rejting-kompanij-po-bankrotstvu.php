@@ -2,28 +2,33 @@
 
 use yii\helpers\Url;
 use app\models\City;
+use app\models\Company;
 
 /* @var $city City */
 /* @var $this yii\web\View */
+/* @var $company Company */
 
-$this->title = 'Рейтинг компаний по банкротству физических лиц г. ' . $city->name;
+$this->title = 'Рейтинг компаний по банкротству физических лиц';
 
 $this->params['breadcrumbs'] = [
-    'Рейтинг компаний по банкротству физических лиц г.&nbsp;' . $city->name,
+    'Рейтинг компаний по банкротству физических лиц',
 ];
 
 $this->params['description'] = $this->title;
 
+$companyDataProvider = Company::dataProvider();
+
 ?>
 <section class="section">
     <div class="container">
-        <h1>Рейтинг компаний по банкротству физических лиц г.&nbsp;<?= $city->name ?></h1>
+        <h1>Рейтинг компаний по банкротству физических лиц</h1>
     </div><!-- .container -->
 </section><!-- .section -->
 
 <section class="section bg">
     <div class="container">
         <div class="row">
+            <?php /*
             <div class="col-12 col-lg">
                 <select class="input js-select-search">
                     <?php if ($cities = City::allCities()): ?>
@@ -42,6 +47,7 @@ $this->params['description'] = $this->title;
                     <?php endif; ?>
                 </select>
             </div><!-- .col -->
+            */ ?>
             <div class="col-12 col-lg">
                 <input class="input" type="text" placeholder="Название компании">
             </div><!-- .col -->
@@ -81,257 +87,49 @@ $this->params['description'] = $this->title;
                 </div><!-- .row -->
             </div>
 
-            <a class="list-item" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">
-                <div class="col-auto col-sm-12 col-xl-5 mx-auto mx-sm-0">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-auto mr-3">
-                            <img class="klogo" width="50" height="50" src="img/logo/bk-2.svg">
+            <?php foreach ($companyDataProvider->models as $company): ?>
+                <a class="list-item" href="<?= Url::to(['site/index', 'view' => $company->alias]) ?>">
+                    <div class="col-auto col-sm-12 col-xl-5 mx-auto mx-sm-0">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-auto mr-3">
+                                <img class="klogo" width="60" src="<?= $company->logoImg ?>">
+                            </div>
+                            <div class="col">
+                                <p class="mb-1 fw-600"><?= $company->name ?></p>
+                                <p class="em-8"><?= $company->address ?></p>
+                            </div>
                         </div>
-                        <div class="col">
-                            <p class="mb-1 fw-600">Банкрот Консалт</p>
-                            <p class="em-8">119021, РФ, г. Москва, Комсомольский проспект, д. 16/2, с. 3</p>
+                    </div><!-- .col -->
+                    <div class="col-12 col-sm-6 col-md-auto col-xl-1 center">
+                        <p class="fw-600 em-9 d-xl-none">Успешных дел:</p>
+                        <div class="percent-circle">
+                            <span data-circle-percent="<?= $company->percent ?>"></span>
                         </div>
-                    </div>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-6 col-md-auto col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Успешных дел:</p>
-                    <img class="img mx-auto" width="70" src="img/rating-1.svg">
-                </div><!-- .col -->
-                <div class="col-12 col-sm-6 col-md-4 col-xl-3">
-                    <p class="fw-600 em-9 center d-xl-none">Текущие дела:</p>
-                    <p class="center sm-left">
-                        3455 - всего дел
-                        <br>
-                        3430 - списание долгов
-                        <br>
-                        43 - в работе
-                        <br>
-                        25 - отказ в списании
-                    </p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Год основания:</p>
-                    <p>2002 г.</p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Отзывов:</p>
-                    <p><i class="i-mgs-a"></i> 7</p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Рейтинг:</p>
-                    <p class="em-16"><i class="i-star primary"></i> 10</p>
-                </div><!-- .col -->
-            </a>
+                    </div><!-- .col -->
+                    <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+                        <p class="fw-600 em-9 center d-xl-none">Текущие дела:</p>
+                        <p class="center sm-left">
+                            <?= $company->cases ? $company->cases . ' - всего дел<br>' : '' ?>
+                            <?= $company->written_off ? $company->written_off . ' - списание долгов<br>' : '' ?>
+                            <?= $company->in_work ? $company->in_work . ' - в работе<br>' : '' ?>
+                            <?= $company->in_work ? $company->refusals . ' - отказ в списании' : '' ?>
+                        </p>
+                    </div><!-- .col -->
+                    <div class="col-12 col-sm-4 col-md col-xl-1 center">
+                        <p class="fw-600 em-9 d-xl-none">Год основания:</p>
+                        <p><?= $company->year_of_foundation ?> г.</p>
+                    </div><!-- .col -->
+                    <div class="col-12 col-sm-4 col-md col-xl-1 center">
+                        <p class="fw-600 em-9 d-xl-none">Отзывов:</p>
+                        <p><i class="i-mgs-a"></i> <?= $company->getComments()->count() ?></p>
+                    </div><!-- .col -->
+                    <div class="col-12 col-sm-4 col-md col-xl-1 center">
+                        <p class="fw-600 em-9 d-xl-none">Рейтинг:</p>
+                        <p class="em-16"><i class="i-star primary"></i> <?= $company->rate ?></p>
+                    </div><!-- .col -->
+                </a>
+            <?php endforeach; ?>
 
-            <a class="list-item" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">
-                <div class="col-auto col-sm-12 col-xl-5 mx-auto mx-sm-0">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-auto mr-3">
-                            <img class="klogo" width="50" height="50" src="img/logo/bk-2.svg">
-                        </div>
-                        <div class="col">
-                            <p class="mb-1 fw-600">Банкрот Консалт</p>
-                            <p class="em-8">119021, РФ, г. Москва, Комсомольский проспект, д. 16/2, с. 3</p>
-                        </div>
-                    </div>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-6 col-md-auto col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Успешных дел:</p>
-                    <img class="img mx-auto" width="70" src="img/rating-2.svg">
-                </div><!-- .col -->
-                <div class="col-12 col-sm-6 col-md-4 col-xl-3">
-                    <p class="fw-600 em-9 center d-xl-none">Текущие дела:</p>
-                    <p class="center sm-left">
-                        3455 - всего дел
-                        <br>
-                        3430 - списание долгов
-                        <br>
-                        43 - в работе
-                        <br>
-                        25 - отказ в списании
-                    </p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Год основания:</p>
-                    <p>2002 г.</p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Отзывов:</p>
-                    <p><i class="i-mgs-a"></i> 7</p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Рейтинг:</p>
-                    <p class="em-16"><i class="i-star primary"></i> 9.6</p>
-                </div><!-- .col -->
-            </a>
-
-            <a class="list-item" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">
-                <div class="col-auto col-sm-12 col-xl-5 mx-auto mx-sm-0">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-auto mr-3">
-                            <img class="klogo" width="50" height="50" src="img/logo/bk-2.svg">
-                        </div>
-                        <div class="col">
-                            <p class="mb-1 fw-600">Банкрот Консалт</p>
-                            <p class="em-8">119021, РФ, г. Москва, Комсомольский проспект, д. 16/2, с. 3</p>
-                        </div>
-                    </div>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-6 col-md-auto col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Успешных дел:</p>
-                    <img class="img mx-auto" width="70" src="img/rating-2.svg">
-                </div><!-- .col -->
-                <div class="col-12 col-sm-6 col-md-4 col-xl-3">
-                    <p class="fw-600 em-9 center d-xl-none">Текущие дела:</p>
-                    <p class="center sm-left">
-                        3455 - всего дел
-                        <br>
-                        3430 - списание долгов
-                        <br>
-                        43 - в работе
-                        <br>
-                        25 - отказ в списании
-                    </p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Год основания:</p>
-                    <p>2002 г.</p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Отзывов:</p>
-                    <p><i class="i-mgs-a"></i> 7</p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Рейтинг:</p>
-                    <p class="em-16"><i class="i-star primary"></i> 9.6</p>
-                </div><!-- .col -->
-            </a>
-
-            <a class="list-item" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">
-                <div class="col-auto col-sm-12 col-xl-5 mx-auto mx-sm-0">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-auto mr-3">
-                            <img class="klogo" width="50" height="50" src="img/logo/bk-2.svg">
-                        </div>
-                        <div class="col">
-                            <p class="mb-1 fw-600">Банкрот Консалт</p>
-                            <p class="em-8">119021, РФ, г. Москва, Комсомольский проспект, д. 16/2, с. 3</p>
-                        </div>
-                    </div>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-6 col-md-auto col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Успешных дел:</p>
-                    <img class="img mx-auto" width="70" src="img/rating-2.svg">
-                </div><!-- .col -->
-                <div class="col-12 col-sm-6 col-md-4 col-xl-3">
-                    <p class="fw-600 em-9 center d-xl-none">Текущие дела:</p>
-                    <p class="center sm-left">
-                        3455 - всего дел
-                        <br>
-                        3430 - списание долгов
-                        <br>
-                        43 - в работе
-                        <br>
-                        25 - отказ в списании
-                    </p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Год основания:</p>
-                    <p>2002 г.</p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Отзывов:</p>
-                    <p><i class="i-mgs-a"></i> 7</p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Рейтинг:</p>
-                    <p class="em-16"><i class="i-star primary"></i> 9.6</p>
-                </div><!-- .col -->
-            </a>
-
-            <a class="list-item" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">
-                <div class="col-auto col-sm-12 col-xl-5 mx-auto mx-sm-0">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-auto mr-3">
-                            <img class="klogo" width="50" height="50" src="img/logo/bk-2.svg">
-                        </div>
-                        <div class="col">
-                            <p class="mb-1 fw-600">Банкрот Консалт</p>
-                            <p class="em-8">119021, РФ, г. Москва, Комсомольский проспект, д. 16/2, с. 3</p>
-                        </div>
-                    </div>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-6 col-md-auto col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Успешных дел:</p>
-                    <img class="img mx-auto" width="70" src="img/rating-2.svg">
-                </div><!-- .col -->
-                <div class="col-12 col-sm-6 col-md-4 col-xl-3">
-                    <p class="fw-600 em-9 center d-xl-none">Текущие дела:</p>
-                    <p class="center sm-left">
-                        3455 - всего дел
-                        <br>
-                        3430 - списание долгов
-                        <br>
-                        43 - в работе
-                        <br>
-                        25 - отказ в списании
-                    </p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Год основания:</p>
-                    <p>2002 г.</p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Отзывов:</p>
-                    <p><i class="i-mgs-a"></i> 7</p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Рейтинг:</p>
-                    <p class="em-16"><i class="i-star primary"></i> 9.6</p>
-                </div><!-- .col -->
-            </a>
-
-            <a class="list-item" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">
-                <div class="col-auto col-sm-12 col-xl-5 mx-auto mx-sm-0">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col-auto mr-3">
-                            <img class="klogo" width="50" height="50" src="img/logo/bk-2.svg">
-                        </div>
-                        <div class="col">
-                            <p class="mb-1 fw-600">Банкрот Консалт</p>
-                            <p class="em-8">119021, РФ, г. Москва, Комсомольский проспект, д. 16/2, с. 3</p>
-                        </div>
-                    </div>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-6 col-md-auto col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Успешных дел:</p>
-                    <img class="img mx-auto" width="70" src="img/rating-2.svg">
-                </div><!-- .col -->
-                <div class="col-12 col-sm-6 col-md-4 col-xl-3">
-                    <p class="fw-600 em-9 center d-xl-none">Текущие дела:</p>
-                    <p class="center sm-left">
-                        3455 - всего дел
-                        <br>
-                        3430 - списание долгов
-                        <br>
-                        43 - в работе
-                        <br>
-                        25 - отказ в списании
-                    </p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Год основания:</p>
-                    <p>2002 г.</p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Отзывов:</p>
-                    <p><i class="i-mgs-a"></i> 7</p>
-                </div><!-- .col -->
-                <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                    <p class="fw-600 em-9 d-xl-none">Рейтинг:</p>
-                    <p class="em-16"><i class="i-star primary"></i> 9.6</p>
-                </div><!-- .col -->
-            </a>
         </div><!-- .list -->
 
 
