@@ -249,7 +249,7 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
 <!-- / МОДАЛЬНЫЕ ОКНА -->
 
 <script src="/js/main.depends.js?v=023"></script>
-<script src="/js/main.js?v=033"></script>
+<script src="/js/main.js?v=034"></script>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
 <script>if ("function"==typeof window.isCity) { window.isCity() };</script>
