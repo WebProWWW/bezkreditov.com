@@ -168,7 +168,7 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
                             <a class="btn-trsp">
                                 <span class="row no-gutters justify-content-center align-items-center">
                                     <span class="col-auto em-26 mr-2"><i class="i-like"></i></span>
-                                    <span class="col-auto">Онлайн калькулятор <br> банкротства</span>
+                                    <span class="col-auto em-9">Полезные сервисы от<br>портала «Без кредитов»</span>
                                 </span>
                             </a>
                         </div><!-- .col -->
