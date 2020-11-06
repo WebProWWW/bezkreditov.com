@@ -70,10 +70,11 @@ class SiteController extends Controller
     /**
      * НОВОСТИ
      * @param string $alias
+     * @param int $id
      */
-    public function actionNewsItem(string $alias = '')
+    public function actionNewsItem(string $alias = '', int $id = null)
     {
-        $model = News::findByAlias($alias);
+        $model = News::findByAlias($alias, $id);
         return $this->render('news-item', [
             'model' => $model,
             'city' => $this->_city,

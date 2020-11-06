@@ -21,7 +21,7 @@ return ArrayHelper::merge([
                     'suffix' => '.html',
                 ],
                 [
-                    'pattern' => '/novosti-po-bankrotstvu/<alias:[\w\-]+>',
+                    'pattern' => '/novosti-po-bankrotstvu/<alias:[\w\-]+>-<id:[\w\-]+>',
                     'route' => 'site/news-item',
                     'suffix' => '.html',
                 ],

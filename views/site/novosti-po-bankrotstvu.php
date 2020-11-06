@@ -6,6 +6,7 @@ use app\widgets\LinkPager;
 
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
+/* @var $news app\models\News */
 
 $this->title = 'Новости по банкротству физических лиц в г. '.$city->name;
 $this->params['description'] = $this->title;
@@ -35,7 +36,8 @@ $this->params['breadcrumbs'] = [ 'Новости по банкротству ф�
                                     <div class="col-auto col-sm-3 col-md-4 col-lg-5">
                                         <a class="btn btn-sm btn-default" href="<?= Url::to([
                                             'site/news-item',
-                                            'alias' => $news->alias
+                                            'alias' => $news->alias,
+                                            'id' => $news->id,
                                         ]) ?>">Читать</a>
                                     </div>
                                 </div>

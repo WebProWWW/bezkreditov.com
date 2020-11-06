@@ -64,12 +64,14 @@ class News extends ActiveRecord
 
     /**
      * @param string $alias
+     * @param int $id
      * @return News
      * @throws NotFoundHttpException
      */
-    public static function findByAlias(string $alias)
+    public static function findByAlias(string $alias, int $id = null)
     {
-        $item = self::findOne(['alias' => $alias]);
+        $cond = array_merge(['alias' => $alias], $id ? ['id' => $id] : []);
+        $item = self::findOne($cond);
         if ($item === null) {
             throw new NotFoundHttpException();
         }

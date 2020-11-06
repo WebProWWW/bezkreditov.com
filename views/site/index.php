@@ -130,7 +130,8 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                             <div class="col-auto col-sm-3 col-md-4 col-lg-5">
                                 <a class="btn btn-sm btn-default" href="<?= Url::to([
                                     'site/news-item',
-                                    'alias' => $newsItem->alias
+                                    'alias' => $newsItem->alias,
+                                    'id' => $newsItem->id,
                                 ]) ?>">Читать</a>
                             </div>
                         </div>
