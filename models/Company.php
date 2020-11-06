@@ -6,6 +6,7 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
 use yii\db\ActiveQuery;
+use yii\web\NotFoundHttpException;
 
 /**
  * This is the model class for table "company_rate".
@@ -27,8 +28,9 @@ use yii\db\ActiveQuery;
  *
  * @property string|null $logoImg
  * @property int $percent
+ * @property array $reviewsCountByRate
  *
- * @property CompanyPhone[] $companyPhones
+ * @property CompanyPhone[] $phones
  * @property CompanyComment[] $comments
  */
 class Company extends ActiveRecord
@@ -79,11 +81,9 @@ class Company extends ActiveRecord
     }
 
     /**
-     * Gets query for [[CompanyPhones]].
-     *
-     * @return ActiveQuery
+     * @return CompanyPhone[]|ActiveQuery
      */
-    public function getCompanyPhones()
+    public function getPhones()
     {
         return $this->hasMany(CompanyPhone::class, ['company_rate_id' => 'company_rate_id']);
     }
@@ -146,5 +146,35 @@ class Company extends ActiveRecord
         $success = (int) $this->written_off;
         $percent = $success * 100 / $total;
         return floor($percent);
+    }
+
+    /**
+     * @return array
+     */
+    public function getReviewsCountByRate()
+    {
+        $query = $this->getComments();
+        return [
+            $query->where(['<', 'rate', 1])->count(),
+            $query->where(['<', 'rate', 2])->count(),
+            $query->where(['<', 'rate', 3])->count(),
+            $query->where(['<', 'rate', 4])->count(),
+            $query->where(['<', 'rate', 5])->count(),
+            $query->where(['<', 'rate', 6])->count(),
+        ];
+    }
+
+    /**
+     * @param string $alias
+     * @return Company
+     * @throws NotFoundHttpException
+     */
+    public static function findByAlias(string $alias='')
+    {
+        $item = self::findOne(['alias' => $alias]);
+        if ($item === null) {
+            throw new NotFoundHttpException();
+        }
+        return $item;
     }
 }

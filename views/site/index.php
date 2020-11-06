@@ -42,7 +42,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 
 <section class="section bg">
     <div class="container">
-        <h2 class="h1 center">Лучшие компании по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h2>
+        <h2 class="h1 center">Лучшие компании по банкротству физических лиц</h2>
         <div class="row">
             <?php foreach (Company::findTop() as $company): ?>
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
@@ -92,7 +92,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                     <p class="em-9"><span class="date-bg"><?= $company->cases ?></span> - всего дел</p>
                                 </div>
                                 <div class="col-auto ml-auto">
-                                    <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/index', 'view' => 'kompaniya-bankrotkonsalt']) ?>">Подробнее</a>
+                                    <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/company', 'alias' => $company->alias]) ?>">Подробнее</a>
                                 </div>
                             </div>
                         </div><!-- .cart-footer -->

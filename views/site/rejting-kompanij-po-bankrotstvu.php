@@ -88,7 +88,7 @@ $companyDataProvider = Company::dataProvider();
             </div>
 
             <?php foreach ($companyDataProvider->models as $company): ?>
-                <a class="list-item" href="<?= Url::to(['site/index', 'view' => $company->alias]) ?>">
+                <a class="list-item" href="<?= Url::to(['site/company', 'alias' => $company->alias]) ?>">
                     <div class="col-auto col-sm-12 col-xl-5 mx-auto mx-sm-0">
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto mr-3">

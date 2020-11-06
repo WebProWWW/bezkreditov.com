@@ -53,6 +53,7 @@ const conf = {
         './public_html/**/*.svg',
         './public_html/**/*.png',
         './public_html/**/*.jpg',
+        './public_html/**/*.html',
         '!./node_modules/**',
         '!./runtime/**',
         '!./vendor/**',

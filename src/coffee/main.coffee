@@ -191,14 +191,16 @@ $('.js-h-hash-nav').each (i, el) ->
 
 class CirclePercent
 
+    duration: 800
+
     constructor: (el) ->
         @$el = $ el
-        percent = Number @$el.data 'circle-percent'
-        @rect = SVG()
-        @rect.viewbox 0, 0, 130, 130
-        @text "#{percent}%"
-        @arc (percent * 359.99999 / 100)
-        @$el.replaceWith @rect.node
+        percentNum = Number @$el.data 'circle-percent'
+        @svg = SVG()
+        @svg.viewbox 0, 0, 130, 130
+        @$el.replaceWith @svg.node
+        @arc (percentNum * 359.99999 / 100)
+        @percent percentNum
 
     arcPoint: (deg) ->
         angle = (deg - 90) * Math.PI / 180
@@ -207,25 +209,37 @@ class CirclePercent
         { x, y }
 
     arc: (deg=0) ->
-        start = @arcPoint deg
-        end = @arcPoint 0
-        sweep = if deg <= 180 then "0" else "1"
-        circle = @rect.path "M #{start.x} #{start.y} A 60 60 0 #{sweep} 0 #{end.x} #{end.y}"
-        circle.fill 'none'
-        circle.stroke
-            color: '#5ab031'
-            width: 10
+        deg = 359.9999999 if deg >= 360
+        # start = @arcPoint deg
+        pointStart = @arcPoint 0
+        circle = @svg.group()
+            .fill 'none'
+            .stroke
+                color: "rgba(255 202 95)"
+                width: 10
+        $({ deg: 0 }).animate { deg: deg },
+            duration: @duration
+            step: (now) =>
+                circle.clear()
+                .stroke "rgba( #{(255 - 180/360*now).toFixed()} #{(202 - 25/360*now).toFixed()} #{(95 - 32/360*now).toFixed()} )"
+                point = @arcPoint now
+                sweep = if now <= 180 then "0" else "1"
+                circle.path("M #{point.x} #{point.y} A 60 60 0 #{sweep} 0 #{pointStart.x} #{pointStart.y}")
 
-    text: (str='') ->
-        text = @rect.text str
+    percent: (num=0) ->
+        text = @svg.group().text('')
             .font
                 family: 'sans-serif'
                 size: 30
                 anchor: 'middle'
             .attr
-                'alignment-baseline': 'central'
                 x: '50%'
-                y: '75'
+                y: '36'
+        $({ percent: 0 }).animate { percent: num },
+            duration: @duration
+            step: (now) =>
+                # text.clear()
+                text.text "#{now.toFixed()}%"
 
 
 

@@ -9,6 +9,7 @@ use app\models\FormEmail;
 use app\models\Fssp;
 use app\models\Material;
 use app\models\News;
+use app\models\Company;
 
 use Yii;
 use yii\helpers\ArrayHelper;
@@ -101,6 +102,14 @@ class SiteController extends Controller
         return $this->render('law');
     }
 
+    public function actionCompany(string $alias = '')
+    {
+        return $this->render('company', [
+            'model' => Company::findByAlias($alias),
+            'city' => $this->_city,
+        ]);
+    }
+
     /**
      * @return array
      * @throws NotFoundHttpException
@@ -121,6 +130,9 @@ class SiteController extends Controller
         return ActiveForm::validate($model);
     }
 
+    /**
+     * @return array|int[]
+     */
     public function actionCallback()
     {
         Yii::$app->response->format = Response::FORMAT_JSON;
@@ -131,6 +143,9 @@ class SiteController extends Controller
         return ActiveForm::validate($model);
     }
 
+    /**
+     * @return array|int[]
+     */
     public function actionSendFile()
     {
         Yii::$app->response->format = Response::FORMAT_JSON;

@@ -36,6 +36,11 @@ return ArrayHelper::merge([
                     'suffix' => '.html',
                 ],
                 [
+                    'pattern' => '/rejting-kompanij-po-bankrotstvu/<alias:[\w\-]+>',
+                    'route' => 'site/company',
+                    'suffix' => '.html',
+                ],
+                [
                     'pattern' => '/fssp-search',
                     'route' => 'site/fssp-search',
                     'suffix' => '.json',
