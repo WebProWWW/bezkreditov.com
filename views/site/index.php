@@ -196,7 +196,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                             <p>Поделитесь информацией о прохождении процедуры банкротства</p>
                         </div>
                     </div><!-- .cart-body -->
-                    <a class="btn cart-full-btn" href="">
+                    <a class="btn cart-full-btn">
                         <i class="i-plus cart-full-btn-i"></i>
                         Добавить отзыв
                     </a>
@@ -429,7 +429,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                             <p>Поделитесь информацией о компании, которая поможет определиться людям с выбором.</p>
                         </div>
                     </div><!-- .cart-body -->
-                    <a class="btn cart-full-btn" href="">
+                    <a class="btn cart-full-btn">
                         <i class="i-plus cart-full-btn-i"></i>
                         Добавить отзыв<br>о компании
                     </a>

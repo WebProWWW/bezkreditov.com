@@ -192,10 +192,8 @@ class Fssp extends ActiveRecord
         $status = ArrayHelper::getValue($response, 'response.status');
         if ($status === 0 || $status === 3) {
             $result = ArrayHelper::getValue($response, 'response.result', []);
-            $isSent = Yii::$app->mailer->compose('fssp', [
-                'model' => $this,
-                'result' => $result,
-            ])
+            $isSent = Yii::$app->mailer
+                ->compose('fssp', [ 'model' => $this, 'result' => $result ])
                 ->setFrom(['noreply@bezkreditov.com' => 'Без Кредитов'])
                 ->setTo($this->email)
                 ->setSubject('Отчёт о проверке задолженности перед ФССП')

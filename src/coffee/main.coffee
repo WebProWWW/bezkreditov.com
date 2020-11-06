@@ -8,7 +8,7 @@ $('.js-vue-app-fssp').each (i, el) ->
     $el = $ el
     region = $el.data 'region'
     actionSearch = $el.data 'action-search'
-    Vue.prototype.actionSearch = actionSearch ? ''
+    Vue.prototype.$fsspAction = actionSearch ? ''
     Vue.prototype.$region = region ? { city:{}, options:[] }
     new Vue
         render: (h) -> h Fssp

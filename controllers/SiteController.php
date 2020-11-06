@@ -120,7 +120,7 @@ class SiteController extends Controller
      */
     public function actionFsspSearch()
     {
-        Yii::$app->response->format = Response::FORMAT_JSON;
+        $this->jsonFormat();
         $req = Yii::$app->request;
         $searchType = ArrayHelper::getValue($req->post(), 'Fssp.searchType', false);
         if (!$searchType) throw new NotFoundHttpException();

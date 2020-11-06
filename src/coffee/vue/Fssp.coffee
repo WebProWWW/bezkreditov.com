@@ -256,7 +256,7 @@ do ->
                     data = new Object
                     data["Fssp[#{name}]"] = input.val for name, input of @input
                     loader
-                        .load(@actionSearch, data)
+                        .load(@$fsspAction, data)
                         .done (data) =>
                             if data?.success? and data.success is 1
                                 email = @input.email.val
