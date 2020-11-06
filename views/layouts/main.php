@@ -194,8 +194,7 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
 <div class="test-modal" id="test">
     <div
         class="js-test"
-        data-action-callback="<?= Url::to(['site/callback']) ?>"
-        data-action-send="<?= Url::to(['site/send-file']) ?>"
+        data-action="<?= Url::to(['site/send-test']) ?>"
     ></div>
 </div><!-- .modal -->
 
@@ -250,7 +249,7 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
 <!-- / МОДАЛЬНЫЕ ОКНА -->
 
 <script src="/js/main.depends.js?v=023"></script>
-<script src="/js/main.js?v=032"></script>
+<script src="/js/main.js?v=033"></script>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
 <script>if ("function"==typeof window.isCity) { window.isCity() };</script>

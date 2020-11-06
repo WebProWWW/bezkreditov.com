@@ -15,44 +15,40 @@ return ArrayHelper::merge([
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                [
+                [   // КОРНЕВЫЕ СТРАНИЦЫ
                     'pattern' => '/<view:[\w\-]+>',
                     'route' => 'site/index',
                     'suffix' => '.html',
                 ],
-                [
+                [   // НОВОСТЬ
                     'pattern' => '/novosti-po-bankrotstvu/<alias:[\w\-]+>-<id:[\w\-]+>',
                     'route' => 'site/news-item',
                     'suffix' => '.html',
                 ],
-                [
+                [   // ПОЛЕЗНЫЙ МАТЕРИАЛ
                     'pattern' => '/poleznye-materialy-po-bankrotstvu/<alias:[\w\-]+>',
                     'route' => 'site/material',
                     'suffix' => '.html',
                 ],
-                [
+                [   // ЗАКОН О БАНКРОТСТВЕ
                     'pattern' => '/zakon-o-bankrotstve/<alias:[\w\-]+>',
                     'route' => 'site/law',
                     'suffix' => '.html',
                 ],
-                [
+                [   // РЕЙТИНГ КОМПАНИИ
                     'pattern' => '/rejting-kompanij-po-bankrotstvu/<alias:[\w\-]+>',
                     'route' => 'site/company',
                     'suffix' => '.html',
                 ],
-                [
+                // JSON
+                [   // ПОИСК ДОЛГОВ ФССП
                     'pattern' => '/fssp-search',
                     'route' => 'site/fssp-search',
                     'suffix' => '.json',
                 ],
-                [
-                    'pattern' => '/callback',
-                    'route' => 'site/callback',
-                    'suffix' => '.json',
-                ],
-                [
-                    'pattern' => '/send-file',
-                    'route' => 'site/send-file',
+                [   // ПРОЙТИ ТЕСТ
+                    'pattern' => '/send-test',
+                    'route' => 'site/send-test',
                     'suffix' => '.json',
                 ],
                 '' => 'site/index',

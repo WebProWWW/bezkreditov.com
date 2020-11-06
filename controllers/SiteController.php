@@ -5,7 +5,7 @@ namespace app\controllers;
 use app\models\City;
 use app\helpers\Url;
 use app\models\FormCallback;
-use app\models\FormEmail;
+use app\models\FormTest;
 use app\models\Fssp;
 use app\models\Material;
 use app\models\News;
@@ -57,7 +57,7 @@ class SiteController extends Controller
     }
 
     /**
-     * ГЛАВНАЯ
+     * КОРНЕВЫЕ СТРАНИЦЫ (views/site)
      * @param string $view
      */
     public function actionIndex(string $view = 'index')
@@ -103,6 +103,10 @@ class SiteController extends Controller
         return $this->render('law');
     }
 
+    /**
+     * РЕЙТИНГ КОМПАНИЙ
+     * @param string $alias
+     */
     public function actionCompany(string $alias = '')
     {
         return $this->render('company', [
@@ -112,8 +116,7 @@ class SiteController extends Controller
     }
 
     /**
-     * @return array
-     * @throws NotFoundHttpException
+     * ПОИСК ДОЛГОВ ФССП
      */
     public function actionFsspSearch()
     {
@@ -145,16 +148,25 @@ class SiteController extends Controller
     }
 
     /**
-     * @return array|int[]
+     * /send-test.json
+     * ПРОЙТИ ТЕСТ
      */
-    public function actionSendFile()
+    public function actionSendTest()
     {
-        Yii::$app->response->format = Response::FORMAT_JSON;
-        $model = new FormEmail();
-        if ($model->load(Yii::$app->request->post()) and $model->sendFile()) {
+        $this->jsonFormat();
+        $model = new FormTest();
+        if ($model->load(Yii::$app->request->post()) and $model->send()) {
             return ['success' => 1];
         }
         return ActiveForm::validate($model);
+    }
+
+    /**
+     * SET JSON FORMAT
+     */
+    private function jsonFormat()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
     }
 
 }

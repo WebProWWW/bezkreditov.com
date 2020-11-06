@@ -287,56 +287,57 @@ do ->
                 @$emit 'submit', @email
                 off
 
+    ###
+    TestEmail =
+        template:'''
+        <div>
+            <h3 class="">Введите свой Email и мы отправим чек лист на почту</h3>
+            <input
+                v-model="email"
+                :class="{error: error}"
+                @click="$emit('error-clear')"
+                class="input"
+                type="text"
+                placeholder="Email"
+            >
+            <span class="input-error" v-if="error">{{ error }}</span>
+            <p class="em-9">Даю согласие на обработку своих персональных данных в соответствии с политикой конфиденциальности компании «Без Кредитов»</p>
+            <div class="row mt-4">
+                <div class="col-12 col-sm-6 ml-auto">
+                    <span class="btn" @click.prevent="submit">
+                        <span v-if="!loading">ОТПРАВИТЬ</span>
+                        <span v-else><img height="8" src="/img/loader.svg"></span>
+                    </span>
+                </div><!-- /.col -->
+            </div>
+        </div>
+        '''
 
-    # TestEmail =
-    #     template:'''
-    #     <div>
-    #         <h3 class="">Введите свой Email и мы отправим чек лист на почту</h3>
-    #         <input
-    #             v-model="email"
-    #             :class="{error: error}"
-    #             @click="$emit('error-clear')"
-    #             class="input"
-    #             type="text"
-    #             placeholder="Email"
-    #         >
-    #         <span class="input-error" v-if="error">{{ error }}</span>
-    #         <p class="em-9">Даю согласие на обработку своих персональных данных в соответствии с политикой конфиденциальности компании «Без Кредитов»</p>
-    #         <div class="row mt-4">
-    #             <div class="col-12 col-sm-6 ml-auto">
-    #                 <span class="btn" @click.prevent="submit">
-    #                     <span v-if="!loading">ОТПРАВИТЬ</span>
-    #                     <span v-else><img height="8" src="/img/loader.svg"></span>
-    #                 </span>
-    #             </div><!-- /.col -->
-    #         </div>
-    #     </div>
-    #     '''
+        props:
+            loading:
+                type: Object
+                default: off
+            error:
+                tyoe: String
+                default: ''
 
-    #     props:
-    #         loading:
-    #             type: Object
-    #             default: off
-    #         error:
-    #             tyoe: String
-    #             default: ''
+        data: ->
+            email: ''
 
-    #     data: ->
-    #         email: ''
+        methods:
+            submit: ->
+                @$emit 'submit', @email
+                # if @validate
+                #     @$emit 'submit', @email
+                # else
+                #     @error = yes
+                off
 
-    #     methods:
-    #         submit: ->
-    #             @$emit 'submit', @email
-    #             # if @validate
-    #             #     @$emit 'submit', @email
-    #             # else
-    #             #     @error = yes
-    #             off
-
-    #     # computed:
-    #     #     validate: ->
-    #     #         emailRe = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    #     #         emailRe.test @email
+        # computed:
+        #     validate: ->
+        #         emailRe = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        #         emailRe.test @email
+    ###
 
 
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -445,15 +446,15 @@ do ->
                 return on if @process
                 @process = on
                 sendData = {}
-                sendData['FormEmail[email]'] = @email
-                sendData['FormEmail[comment]'] = @comment
+                sendData['FormTest[email]'] = @email
+                sendData['FormTest[comment]'] = @comment
                 csrfParam = $('meta[name="csrf-param"]').attr 'content'
                 csrfToken = $('meta[name="csrf-token"]').attr 'content'
                 @csrf = "#{csrfParam}": csrfToken
                 sendData = $.extend {}, @csrf, sendData
                 $.ajax
                     method: 'post'
-                    url: @testSend
+                    url: @$action
                     data: sendData
                 .done (data) =>
                     if data?.success? and data.success is 1

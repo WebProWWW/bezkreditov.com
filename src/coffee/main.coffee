@@ -17,8 +17,7 @@ $('.js-vue-app-fssp').each (i, el) ->
 
 $('.js-test').each (i, el) ->
     $el = $ el
-    Vue.prototype.testCallback = $el.data 'action-callback'
-    Vue.prototype.testSend = $el.data 'action-send'
+    Vue.prototype.$action = $el.data 'action'
     new Vue
         render: (h) -> h Test
     .$mount el

@@ -1,9 +1,10 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model app\models\FormEmail */
+/* @var $title string */
+/* @var $model app\models\FormTest */
 
-$this->title = 'Как общаться с коллекторами';
+$this->title = $title;
 
 ?>
-<p><strong>Предварительное решение о возможности списания всех ваших долгов</strong></p>
+<p><strong><?= $title ?></strong></p>
