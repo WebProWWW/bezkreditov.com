@@ -11,7 +11,7 @@ use app\models\Company;
 $this->title = 'Рейтинг компаний по банкротству физических лиц';
 
 $this->params['breadcrumbs'] = [
-    'Рейтинг компаний по банкротству физических лиц',
+    $this->title,
 ];
 
 $this->params['description'] = $this->title;
@@ -19,11 +19,9 @@ $this->params['description'] = $this->title;
 $companyDataProvider = Company::dataProvider();
 
 ?>
-<section class="section">
-    <div class="container">
-        <h1>Рейтинг компаний по банкротству физических лиц</h1>
-    </div><!-- .container -->
-</section><!-- .section -->
+<div class="container pb-1">
+    <h1><?= $this->title ?></h1>
+</div>
 
 <section class="section bg">
     <div class="container">
@@ -89,7 +87,7 @@ $companyDataProvider = Company::dataProvider();
 
             <?php foreach ($companyDataProvider->models as $company): ?>
                 <a class="list-item" href="<?= Url::to(['site/company', 'alias' => $company->alias]) ?>">
-                    <div class="col-auto col-sm-12 col-xl-5 mx-auto mx-sm-0">
+                    <div class="col-12 col-xl-5 mx-auto mx-sm-0">
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto mr-3">
                                 <img class="klogo" width="60" src="<?= $company->logoImg ?>">
@@ -100,31 +98,32 @@ $companyDataProvider = Company::dataProvider();
                             </div>
                         </div>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-6 col-md-auto col-xl-1 center">
-                        <p class="fw-600 em-9 d-xl-none">Успешных дел:</p>
+                    <div class="col-auto col-sm-6 col-md-auto col-xl-1 mx-auto center">
+                        <p class="fw-600 em-9 d-xl-none">Успешных дел</p>
                         <div class="percent-circle">
                             <span data-circle-percent="<?= $company->percent ?>"></span>
                         </div>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-6 col-md-4 col-xl-3">
-                        <p class="fw-600 em-9 center d-xl-none">Текущие дела:</p>
-                        <p class="center sm-left">
+                    <div class="col-auto col-sm-6 col-md-4 col-xl-3 mx-auto">
+                        <p class="fw-600 em-9 center d-xl-none">Текущие дела</p>
+                        <p class="em-9">
                             <?= $company->cases ? $company->cases . ' - всего дел<br>' : '' ?>
                             <?= $company->written_off ? $company->written_off . ' - списание долгов<br>' : '' ?>
                             <?= $company->in_work ? $company->in_work . ' - в работе<br>' : '' ?>
                             <?= $company->in_work ? $company->refusals . ' - отказ в списании' : '' ?>
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                        <p class="fw-600 em-9 d-xl-none">Год основания:</p>
+                    <div class="col-12 d-md-none"><span class="divider-dark"></span></div>
+                    <div class="col-auto col-sm-4 col-md col-xl-1 mx-auto center">
+                        <p class="fw-600 em-9 d-xl-none">Год основания</p>
                         <p><?= $company->year_of_foundation ?> г.</p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                        <p class="fw-600 em-9 d-xl-none">Отзывов:</p>
+                    <div class="col-auto col-sm-4 col-md col-xl-1 mx-auto center">
+                        <p class="fw-600 em-9 d-xl-none">Отзывов</p>
                         <p><i class="i-mgs-a"></i> <?= $company->getComments()->count() ?></p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-md col-xl-1 center">
-                        <p class="fw-600 em-9 d-xl-none">Рейтинг:</p>
+                    <div class="col-auto col-sm-4 col-md col-xl-1 mx-auto center">
+                        <p class="fw-600 em-9 d-xl-none">Рейтинг</p>
                         <p class="em-16"><i class="i-star primary"></i> <?= $company->rate ?></p>
                     </div><!-- .col -->
                 </a>

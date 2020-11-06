@@ -36,7 +36,7 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
     <?php $this->registerCsrfMetaTags() ?>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.depends.css?v=026">
-    <link rel="stylesheet" href="/css/main.css?v=042">
+    <link rel="stylesheet" href="/css/main.css?v=043">
     <title><?= $title ?></title>
     <meta name="description" content="<?= $description ?>">
     <meta property="og:locale" content="ru_RU">
@@ -101,12 +101,20 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
                             </span>
                         </span>
                     </p>
-                    <div class="row">
-                        <div class="col-auto mx-auto">
+                    <div class="row justify-content-center no-gutters">
+                        <div class="col-auto mr-3 d-lg-none">
+                            <div class="d-flex align-items-center">
+                                <div class="toggle-btn" data-toggle="#main-nav">
+                                    <i class="i-bars toggle-i"></i>
+                                    <p class="toggle-txt">Меню</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
                             <a class="btn-trsp">
                                 <span class="row no-gutters justify-content-center align-items-center">
-                                    <span class="col-auto em-26 mr-2"><i class="i-like"></i></span>
-                                    <span class="col-auto">Полезные сервисы от<br>портала «Без кредитов»</span>
+                                    <span class="col-auto em-24 mr-2"><i class="i-like"></i></span>
+                                    <span class="col-auto em-9">Полезные сервисы от<br>портала «Без кредитов»</span>
                                 </span>
                             </a>
                         </div><!-- .col -->

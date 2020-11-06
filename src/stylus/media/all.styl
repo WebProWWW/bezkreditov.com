@@ -175,18 +175,18 @@ label
 
 .toggle-i
 	mpd(0, 0, flex)
-	b(3, pcolor)
+	b(1, pcolor)
 	align-items center
 	justify-content center
 	border-radius 50%
 	width 50px
 	height @width
-	font-size 28px
+	font-size 23px
 
 .toggle-txt
 	mpd()
 	font-weight 600
-	font-size 16px
+	font-size 15px
 
 
 .toggle
@@ -339,9 +339,6 @@ label
 
 
 
-
-
-
 .img-center
 	mpd(0 auto 15px)
 	max-width 100%
@@ -362,29 +359,34 @@ label
 
 
 .breadcrubmbs
-	mpd(0 0 15px, 0, flex)
+	mpd(0 0 15px, 0)
 	flex-wrap wrap
 	font-size 13px
 
 
 .breadcrubmbs-ln
-	mpd()
+	mpd(0, 0, inline)
 	resetLn(black, black)
 	trans()
 
+
 .breadcrubmbs-ln:after
 	content '/'
-	margin 0 8px
+	margin 0 5px
+
 
 .breadcrubmbs-ln:hover
 	color pcolor
 
+
 .breadcrubmbs-ln:hover:after
 	color black
+
 
 .breadcrubmbs-ln > i
 	color pcolor
 	font-size 1.1em
+
 
 .breadcrubmbs-ln:last-child:after
 	display none
@@ -895,7 +897,6 @@ label
 .percent-circle
 	mpd(0 auto)
 	width 70px
-	height @width
 
 .percent-circle svg
 	mpd(0 auto 15px)

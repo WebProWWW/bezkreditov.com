@@ -6,17 +6,6 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 
 ?>
-<div class="row d-lg-none">
-    <div class="col-auto mx-auto">
-        <div class="d-flex align-items-center">
-            <div class="toggle-btn" data-toggle="#main-nav">
-                <i class="i-bars toggle-i"></i>
-                <p class="toggle-txt">Меню</p>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="toggle toggle-lg-disable" id="main-nav">
     <nav class="nav">
         <a class="nav-ln col-12 col-sm-6 col-xl-4" href="<?= Url::to(['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu']) ?>">
