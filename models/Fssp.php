@@ -9,10 +9,8 @@ use yii\web\NotFoundHttpException;
 use Yii;
 use Exception;
 use Throwable;
-
 use linslin\yii2\curl\Curl;
-use Sendpulse\RestApi\ApiClient;
-use Sendpulse\RestApi\Storage\FileStorage;
+use app\components\SendpulseApi;
 
 /**
  * Class Fssp
@@ -46,10 +44,6 @@ class Fssp extends ActiveRecord
     private $_token = 'WMglCqPhp9yH'; // токен Роман
     //private $_token = 'wOSgYJigqTC2'; // токен Мой
     private $_api = 'https://api-ip.fssprus.ru/api/v1.0';
-    // SendPulse
-    private $_spId = 'dbfac1281991f1e3e4f6a069ed592d27';
-    private $_spSecret = '2de1513fb979132484cad375f018e67c';
-    private $_spBookId = 1075435;
 
     /**
      * @inheritDoc
@@ -200,21 +194,11 @@ class Fssp extends ActiveRecord
                 ->send();
             if ($isSent) {
                 try {
-                    $sp = new ApiClient($this->_spId, $this->_spSecret, new FileStorage());
-                    $sp->addEmails($this->_spBookId, [[
+                    (new SendpulseApi())->addEmails(SendpulseApi::BOOK, [[
                         'email' => $this->email,
-                        'variables' => [
-                            'Phone' => $this->phone,
-                            'имя' => $this->firstname,
-                            'Регион' => $this->regionName,
-                            'Отчество' => $this->secondname,
-                            'Фамилия' => $this->lastname,
-                            'Дата рождения' => $this->birthdate,
-                            'Наименование предприятия' => $this->name,
-                            'Адрес предприятия - должника' => $this->address,
-                            'Номер исполнительного производства' => $this->number,
-                            'Результат ФССП' => $this->concatResult($result),
-                        ],
+                        'variables' => $this->phone ? [
+                            'Phone' => $this->phone
+                        ] : [],
                     ]]);
                 } catch (Exception $e) {}
                 try {
@@ -224,22 +208,6 @@ class Fssp extends ActiveRecord
             return "OK: " . $this->task;
         }
         return "ERR: " . $this->task;
-    }
-
-    /**
-     * @param array $result
-     * @return string
-     */
-    private function concatResult(array &$result)
-    {
-        $out = '';
-        foreach ($result as $item) {
-            $itemResult = ArrayHelper::getValue($item, 'result', []);
-            foreach ($itemResult as $ri) {
-                $out .= ' ::: ' . ArrayHelper::getValue($ri, 'subject', '-');
-            }
-        }
-        return $out;
     }
 
     /**

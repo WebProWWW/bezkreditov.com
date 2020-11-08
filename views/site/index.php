@@ -42,13 +42,13 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 
 <section class="section bg">
     <div class="container">
-        <h2 class="h1 center">Лучшие компании по банкротству физических лиц</h2>
+        <h2 class="h1 center">Лучшие компании по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h2>
         <div class="row">
             <?php foreach (Company::findTop() as $company): ?>
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
                     <div class="cart">
                         <div class="cart-body px-xl-5">
-                            <div class="row align-items-center justify-content-center">
+                            <div class="row align-items-center justify-content-center my-auto">
                                 <div class="col-auto">
                                     <div style="padding: 0 12px">
                                         <img class="klogo" width="46" src="<?= $company->logoImg ?>">
@@ -63,7 +63,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                 <div class="col-12 col-sm-6 col-md-12">
                                     <div class="row align-items-center">
                                         <div class="col-auto">
-                                            <div class="percent-circle" style="padding: 0 7px">
+                                            <div class="percent-circle">
                                                 <span data-circle-percent="<?= $company->percent ?>"></span>
                                             </div>
                                         </div>
@@ -75,9 +75,9 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                 <div class="col-12 col-sm-6 col-md-12">
                                     <div class="row align-items-center">
                                         <div class="col-auto">
-                                            <div class="percent-circle" style="padding: 0 7px">
-                                                <span data-circle-percent="<?= $company->percent ?>"></span>
-                                            </div>
+                                            <p class="em-16 center" style="width: 70px">
+                                                <i class="i-star primary"></i> <?= $company->rate ?>
+                                            </p>
                                         </div>
                                         <div class="col">
                                             <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>

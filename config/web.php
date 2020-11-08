@@ -51,6 +51,16 @@ return ArrayHelper::merge([
                     'route' => 'site/send-test',
                     'suffix' => '.json',
                 ],
+                [   // ЗАДАТЬ ВОПРОС ЮРИСТУ
+                    'pattern' => '/consult',
+                    'route' => 'site/consult',
+                    'suffix' => '.json',
+                ],
+                [   // ОБРАТНАЯ СВЯЗЬ
+                    'pattern' => '/contact',
+                    'route' => 'site/contact',
+                    'suffix' => '.json',
+                ],
                 '' => 'site/index',
             ],
         ],

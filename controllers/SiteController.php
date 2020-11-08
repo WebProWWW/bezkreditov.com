@@ -4,7 +4,8 @@ namespace app\controllers;
 
 use app\models\City;
 use app\helpers\Url;
-use app\models\FormCallback;
+use app\models\FormConsult;
+use app\models\FormContact;
 use app\models\FormTest;
 use app\models\Fssp;
 use app\models\Material;
@@ -135,12 +136,27 @@ class SiteController extends Controller
     }
 
     /**
-     * @return array|int[]
+     * /contact.json
+     * ОБРАТНАЯ СВЯЗЬ (КОНТАКТ)
      */
-    public function actionCallback()
+    public function actionContact()
     {
-        Yii::$app->response->format = Response::FORMAT_JSON;
-        $model = new FormCallback();
+        $this->jsonFormat();
+        $model = new FormContact();
+        if ($model->load(Yii::$app->request->post()) and $model->send()) {
+            return ['success' => 1, $model->userFile];
+        }
+        return ActiveForm::validate($model);
+    }
+
+    /**
+     * /consult.json
+     * ЗАДАТЬ ВОПРОС ЮРИСТУ
+     */
+    public function actionConsult()
+    {
+        $this->jsonFormat();
+        $model = new FormConsult();
         if ($model->load(Yii::$app->request->post()) and $model->send()) {
             return ['success' => 1];
         }

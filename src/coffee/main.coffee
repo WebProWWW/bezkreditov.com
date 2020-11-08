@@ -245,6 +245,101 @@ class CirclePercent
 $('*[data-circle-percent]').each (i, el) -> new CirclePercent el
 
 
+$('input[data-mask]').each (i, input) ->
+    $input = $ input
+    $input.inputmask $input.data 'mask'
+    on
+
+
+class AjaxForm
+
+    loaderHtml: ''
+    loaderImg: '<img height="8" src="/img/loader.svg">'
+    progress: off
+
+    constructor: (form) ->
+        $form = $ form
+        @$successMsg = $form.find '.js-form-ajax-success-message'
+        @$loader = $form.find '.js-form-ajax-loader'
+        @action = $form.data 'action'
+        $form.on 'submit', (e) =>
+            e.preventDefault()
+            @send new FormData form
+            off
+    send: (data) ->
+        return on if @progress
+        @progress = on
+        @loaderHtml = @$loader.html()
+        @$loader.html @loaderImg
+        $.ajax
+            method: 'post'
+            url: @action
+            data: data
+            dataType: 'json'
+            processData: off
+            contentType: off
+            cache: off
+        .done ( data ) =>
+            if data?.success? and data.success is 1
+                @success data
+                return on
+            @error data
+            on
+        .fail ( error ) =>
+            console.log  error
+            on
+        .always () =>
+            @progress = off
+            @$loader.text @loaderHtml
+            on
+        on
+    success: (data) ->
+        @$successMsg.removeClass 'd-none'
+        @delay 4000, =>
+            @$successMsg.addClass 'd-none'
+    error: (error) ->
+        for attr, errArr of error
+            $("#form-ajax-input-#{attr}")
+                .addClass 'error'
+                .on 'focusin', (e) =>
+                    $input = $ e.target
+                    $input.removeClass 'error'
+                    errorId = String($input.attr 'id').replace 'form-ajax-input-', 'form-ajax-error-'
+                    $("##{errorId}")
+                        .text ''
+                        .addClass 'd-none'
+            $("#form-ajax-error-#{attr}")
+                .text errArr[0]
+                .removeClass 'd-none'
+        on
+    delay: (ms, cb) ->
+        setTimeout cb, ms
+
+
+$('.js-form-ajax').each (i, form) -> new AjaxForm form
+
+
+$('input[data-file-label]').on 'change', (e) ->
+    $input = $ this
+    $label = $ $input.attr 'data-file-label'
+    files = this.files
+    if files.length
+        fileName = String files[0].name
+        fileName = "#{fileName.slice 0, 23}..." if fileName.length > 25
+        $label.text fileName
+    else
+        $label.text $label.attr 'data-placeholder'
+    on
+
+
+$('*[data-file-input]').on 'click', (e) ->
+    e.preventDefault()
+    $this = $ this
+    $input = $ $this.attr 'data-file-input'
+    $input.trigger 'click'
+    off
+
+
 window.isCity = () ->
     $.fancybox.open src: '#is-city'
     on

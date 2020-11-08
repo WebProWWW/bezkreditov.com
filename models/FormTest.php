@@ -2,11 +2,10 @@
 
 namespace app\models;
 
-use Sendpulse\RestApi\ApiClient;
-use Sendpulse\RestApi\Storage\FileStorage;
 use Yii;
 use yii\base\Model;
 use Exception;
+use app\components\SendpulseApi;
 
 /**
  * Class FormTest
@@ -16,10 +15,6 @@ class FormTest extends Model
 {
     public $email;
     public $comment;
-
-    private $_spId = 'dbfac1281991f1e3e4f6a069ed592d27';
-    private $_spSecret = '2de1513fb979132484cad375f018e67c';
-    private $_spBookId = 1075435;
 
     private $_mailFrom = ['noreply@bezkreditov.com' => 'Без Кредитов'];
 
@@ -102,8 +97,8 @@ class FormTest extends Model
     private function sendPulse()
     {
         try {
-            $sp = new ApiClient($this->_spId, $this->_spSecret, new FileStorage());
-            $sp->addEmails($this->_spBookId, [[ 'email' => $this->email ]]);
+            (new SendpulseApi())
+                ->addEmails(SendpulseApi::BOOK, [[ 'email' => $this->email ]]);
             return true;
         } catch (Exception $e) {}
         return false;

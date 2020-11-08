@@ -8,10 +8,12 @@ use app\models\Company;
 /* @var $this yii\web\View */
 /* @var $company Company */
 
-$this->title = 'Рейтинг компаний по банкротству физических лиц';
+$this->title = 'Рейтинг компаний по банкротству физических лиц в г. ' . $city->name;
+
+$titleHtml = 'Рейтинг компаний по банкротству физических лиц в&nbsp;г.&nbsp;'.$city->name;
 
 $this->params['breadcrumbs'] = [
-    $this->title,
+    $titleHtml,
 ];
 
 $this->params['description'] = $this->title;
@@ -20,7 +22,7 @@ $companyDataProvider = Company::dataProvider();
 
 ?>
 <div class="container pb-1">
-    <h1><?= $this->title ?></h1>
+    <h1><?= $titleHtml ?></h1>
 </div>
 
 <section class="section bg">

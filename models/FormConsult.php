@@ -6,15 +6,16 @@ use Yii;
 use yii\base\Model;
 
 /**
- * Class FormCallback
+ * Class FormConsult
  * @package app\models
  */
-class FormCallback extends Model
+class FormConsult extends Model
 {
+    public $name;
     public $phone;
-    public $comment;
+    public $message;
 
-    private $_sendError = false;
+    private $_isComposeError = false;
 
     /**
      * @inheritDoc
@@ -22,10 +23,9 @@ class FormCallback extends Model
     public function rules()
     {
         return [
-            [['phone'], 'required'],
-            [['phone', 'comment'], 'trim'],
-            [['phone'], 'string'],
-            [['comment'], 'string'],
+            [['name','phone','message'], 'required'],
+            [['name','phone','message'], 'trim'],
+            [['name','phone','message'], 'string'],
         ];
     }
 
@@ -35,7 +35,9 @@ class FormCallback extends Model
     public function attributeLabels()
     {
         return [
-            'phone' => 'Номер телефона',
+            'name' => 'Ваше Имя',
+            'phone' => 'Ваш номер телефона',
+            'message' => 'Текст вашего вопроса',
         ];
     }
 
@@ -45,14 +47,13 @@ class FormCallback extends Model
     public function validate($attributeNames = null, $clearErrors = true)
     {
         if (parent::validate($attributeNames, $clearErrors)) {
-            if ($this->_sendError) {
-                $this->addError('phone', 'Произошла ошибка, попробуйте еще раз');
+            if ($this->_isComposeError) {
+                $this->addError('message', 'Произошла ошибка, попробуйте еще раз');
                 return false;
             }
             return true;
         }
         return false;
-
     }
 
     /**
@@ -61,15 +62,15 @@ class FormCallback extends Model
     public function send()
     {
         if (!$this->validate()) return false;
-        $isSent = Yii::$app->mailer->compose('callback', [ 'model' => $this ])
+        $title = 'Вопрос юристу по банкротству';
+        $isSent = Yii::$app->mailer
+            ->compose('consult', [ 'model' => $this, 'title' => $title ])
             ->setFrom(['noreply@bezkreditov.com' => 'Без Кредитов'])
             ->setTo('ju.lerchik@yandex.ru')
-            ->setSubject('Заявка на расчет стоимости')
+            ->setSubject($title)
             ->send();
-        if ($isSent) {
-            return true;
-        }
-        $this->_sendError = true;
+        if ($isSent) return true;
+        $this->_isComposeError = true;
         return false;
     }
 }
