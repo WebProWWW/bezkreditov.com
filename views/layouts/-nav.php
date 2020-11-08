@@ -10,7 +10,7 @@ use yii\helpers\Url;
     <nav class="nav">
         <a class="nav-ln col-12 col-sm-6 col-xl-4" href="<?= Url::to(['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu']) ?>">
             <i class="i-stat nav-i"></i>
-            <span class="nav-txt">Рейтинг компаний по банкротству</span>
+            <span class="nav-txt">Рейтинг компаний по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
         </a>
         <a class="nav-ln col-12 col-sm-6 col-xl" href="<?= Url::to(['site/index', 'view' => 'onlajn-konsultaciya-yurista-po-bankrotstvu']) ?>">
             <i class="i-msg-b nav-i"></i>
