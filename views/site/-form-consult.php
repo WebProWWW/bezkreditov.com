@@ -10,6 +10,7 @@ use app\widgets\FormAjax;
         <?php $form = FormAjax::begin([
             'formName' => 'FormConsult',
             'action' => ['site/consult'],
+            'success' => '<strong>Мы получили ваш вопрос.</strong><br>В течении 5 минут наш юрист свяжется с Вами.',
         ]) ?>
             <div class="cart-body">
                 <div class="row align-items-center no-gutters">
@@ -35,7 +36,6 @@ use app\widgets\FormAjax;
                     </div>
                 </div>
                 <?= $form->textarea('message', null, 'Текст вашего вопроса') ?>
-                <?= $form->successMessage('Мы получили ваш вопрос. В течении 5 минут наш юрист свяжется с Вами.') ?>
             </div><!-- .cart-body -->
             <div class="carg-body-bg">
                 <p> Пример: При каких обстоятельствах гражданин должен сам подать заявление о своем банкротстве?</p>

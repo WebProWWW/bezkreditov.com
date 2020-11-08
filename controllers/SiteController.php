@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\City;
 use app\helpers\Url;
+use app\models\Faq;
 use app\models\FormConsult;
 use app\models\FormContact;
 use app\models\FormTest;
@@ -172,6 +173,21 @@ class SiteController extends Controller
         $this->jsonFormat();
         $model = new FormTest();
         if ($model->load(Yii::$app->request->post()) and $model->send()) {
+            return ['success' => 1];
+        }
+        return ActiveForm::validate($model);
+    }
+
+    /**
+     * /send-faq.json
+     * FAQ ЗАДАТЬ ВОПРОС
+     */
+    public function actionSendFaq()
+    {
+        $this->jsonFormat();
+        $model = new Faq();
+        $model->scenario = Faq::SCENARIO_ADD;
+        if ($model->load(Yii::$app->request->post()) and $model->addFaq()) {
             return ['success' => 1];
         }
         return ActiveForm::validate($model);

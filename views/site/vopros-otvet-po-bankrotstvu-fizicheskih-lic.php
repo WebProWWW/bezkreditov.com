@@ -7,7 +7,9 @@ use app\models\Material;
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
 
-$this->title = 'Вопрос - ответ';
+
+
+$this->title = 'Вопрос-ответ по банкротству физических лиц в г. '.$city->name;
 
 $this->params['description'] = 'Вопрос-ответ по банкротству физических лиц в г. '.$city->name;
 

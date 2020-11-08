@@ -256,11 +256,12 @@ class AjaxForm
     loaderHtml: ''
     loaderImg: '<img height="8" src="/img/loader.svg">'
     progress: off
+    id: ''
 
     constructor: (form) ->
         $form = $ form
-        @$successMsg = $form.find '.js-form-ajax-success-message'
-        @$loader = $form.find '.js-form-ajax-loader'
+        @id = $form.attr 'id'
+        @$loader = $ "##{@id}-button"
         @action = $form.data 'action'
         $form.on 'submit', (e) =>
             e.preventDefault()
@@ -287,6 +288,7 @@ class AjaxForm
             on
         .fail ( error ) =>
             console.log  error
+            $.fancybox.open src: "##{@id}-modal-error"
             on
         .always () =>
             @progress = off
@@ -294,21 +296,19 @@ class AjaxForm
             on
         on
     success: (data) ->
-        @$successMsg.removeClass 'd-none'
-        @delay 4000, =>
-            @$successMsg.addClass 'd-none'
+        $.fancybox.open src: "##{@id}-modal-success"
+        on
     error: (error) ->
         for attr, errArr of error
-            $("#form-ajax-input-#{attr}")
+            $ "##{@id}-input-#{attr}"
                 .addClass 'error'
-                .on 'focusin', (e) =>
+                .one 'focusin', (e) =>
                     $input = $ e.target
                     $input.removeClass 'error'
-                    errorId = String($input.attr 'id').replace 'form-ajax-input-', 'form-ajax-error-'
-                    $("##{errorId}")
+                    $ "##{String($input.attr 'id').replace('-input-', '-error-')}"
                         .text ''
                         .addClass 'd-none'
-            $("#form-ajax-error-#{attr}")
+            $ "##{@id}-error-#{attr}"
                 .text errArr[0]
                 .removeClass 'd-none'
         on
@@ -319,16 +319,14 @@ class AjaxForm
 $('.js-form-ajax').each (i, form) -> new AjaxForm form
 
 
-$('input[data-file-label]').on 'change', (e) ->
-    $input = $ this
-    $label = $ $input.attr 'data-file-label'
+fileInputChanged = (e) ->
     files = this.files
+    $input = $ this
+    $label = $ "##{$input.attr 'id'}-label"
     if files.length
         fileName = String files[0].name
         fileName = "#{fileName.slice 0, 23}..." if fileName.length > 25
-        $label.text fileName
-    else
-        $label.text $label.attr 'data-placeholder'
+        $label.html fileName
     on
 
 
@@ -336,6 +334,7 @@ $('*[data-file-input]').on 'click', (e) ->
     e.preventDefault()
     $this = $ this
     $input = $ $this.attr 'data-file-input'
+    $input.one 'change', fileInputChanged
     $input.trigger 'click'
     off
 

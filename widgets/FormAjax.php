@@ -2,11 +2,12 @@
 
 namespace app\widgets;
 
+use Yii;
+use yii\base\Event;
 use yii\base\Widget;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
-use Yii;
 
 /**
  * Class FormAjax
@@ -14,11 +15,20 @@ use Yii;
  *
  * @property string $formName
  * @property string $action
+ * @property string $success
+ * @property string $error
+ * @property string $_id
  */
 class FormAjax extends Widget
 {
+    const EVENT_NOTIFY_MODALS = 'EventAjaxNotifyModals';
+
     public $formName = '';
     public $action = '';
+    public $success = 'Сообщение успешно отправлено.';
+    public $error = '<strong>Произошла ошибка.</strong><br>Попробуйте позже';
+
+    private $_id = '';
 
     /**
      * @inheritDoc
@@ -26,6 +36,8 @@ class FormAjax extends Widget
     public function init()
     {
         parent::init();
+        $this->_id = Yii::$app->security->generateRandomString(13);
+        Yii::$app->view->on(self::EVENT_NOTIFY_MODALS, [ $this, 'notifyModals' ]);
         ob_start();
     }
 
@@ -38,6 +50,7 @@ class FormAjax extends Widget
             .Html::beginForm(null, 'post', [
                 'data-action' => Url::to($this->action),
                 'class' => 'js-form-ajax',
+                'id' => $this->_id,
             ])
                 .ob_get_clean()
             .Html::endForm()
@@ -45,27 +58,36 @@ class FormAjax extends Widget
     }
 
     /**
-     * @param string $content
-     * @param array $opt
-     * @return string
+     * @param Event $event
      */
-    public function submit(string $content, $opt = [])
+    protected function notifyModals(Event $event)
     {
-        return Html::submitButton($content, ArrayHelper::merge([
-            'class' => 'btn btn-default js-form-ajax-loader',
-        ], $opt));
+        Yii::$app->view->off(self::EVENT_NOTIFY_MODALS, [ $this, 'notifyModals' ]);
+        echo ''
+        .'<div class="modal modal-sm" id="' . $this->_id . '-modal-success">'
+            .'<p class="center">' . $this->success . '</p>'
+        .'</div>'
+        .'<div class="modal modal-sm" id="' . $this->_id . '-modal-error">'
+            .'<p class="center">' . $this->error . '</p>'
+        .'</div>'
+        .'';
     }
 
-    public function successMessage(string $content)
+    /**
+     * @param string $content
+     * @return string
+     */
+    public function submit(string $content)
     {
-        return Html::tag('div', $content, [
-            'class' => 'p fw-600 d-none js-form-ajax-success-message'
+        return Html::submitButton($content, [
+            'class' => 'btn btn-default',
+            'id' => $this->_id . '-button',
         ]);
     }
 
     /**
      * @param string $name
-     * @param string|null $label
+     * @param string $label
      * @param string $placeholder
      * @param string $mask
      * @return string
@@ -73,16 +95,22 @@ class FormAjax extends Widget
     public function inputText(string $name, string $label = null, string $placeholder = null, string $mask = null)
     {
         $label = $label ? $this->label($label, $name) : '';
-        $options = [ 'class' => 'input', 'id' => $this->id('input', $name) ];
-        if ($placeholder) $options['placeholder'] = $placeholder;
+        if ($placeholder) $options[] = $placeholder;
         if ($mask) $options['data-mask'] = $mask;
-        $input = Html::input('text', $this->name($name), null, $options);
+        $input = Html::input('text', $this->name($name), null, ArrayHelper::merge([
+            'class' => 'input',
+            'id' => $this->id('input', $name),
+        ], $placeholder ? [
+            'placeholder' => $placeholder,
+        ] : [], $mask ? [
+            'data-mask' => $mask,
+        ] : []));
         return $label . $input . $this->error($name);
     }
 
     /**
      * @param string $name
-     * @param string|null $label
+     * @param string $label
      * @param string $placeholder
      * @param int $rows
      * @return string
@@ -99,20 +127,24 @@ class FormAjax extends Widget
         return $label . $input . $this->error($name);
     }
 
+    /**
+     * @param string $name
+     * @param string $label
+     * @return string
+     */
     public function inputFile(string $name, string $label = null)
     {
-        $inputId = Yii::$app->security->generateRandomString(13);
+        $inputId = $this->id('file', $name);
         $labelId = Yii::$app->security->generateRandomString(13);
         $input = Html::input('file', $this->name($name), null, [
             'class' => 'd-none',
             'id' => $inputId,
-            'data-file-label' => '#' . $labelId,
         ]);
         return ''
         .'<div class="row align-items-center">'
             .$input
             .'<div class="col">'
-                .'<p class="em-9 right" id="' . $labelId . '" data-placeholder="' . $label . '">'
+                .'<p class="em-9 right" id="' . $inputId . '-label">'
                     .$label
                 .'</p>'
             .'</div>'
@@ -131,8 +163,7 @@ class FormAjax extends Widget
      */
     public function label(string $content, string $name)
     {
-        $for = $this->id('input', $name);
-        return Html::label($content, $for, ['class' => 'label']);
+        return Html::label($content, $this->id('input', $name), ['class' => 'label']);
     }
 
     /**
@@ -154,7 +185,7 @@ class FormAjax extends Widget
      */
     private function id(string $type, string $name)
     {
-        return 'form-ajax-' . $type . '-' . strtolower($this->formName) . '-' . $name;
+        return $this->_id . '-' . $type . '-' . strtolower($this->formName) . '-' . $name;
     }
 
     /**

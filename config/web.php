@@ -61,6 +61,11 @@ return ArrayHelper::merge([
                     'route' => 'site/contact',
                     'suffix' => '.json',
                 ],
+                [   // FAQ ЗАДАТЬ ВОПРОС
+                    'pattern' => '/send-faq',
+                    'route' => 'site/send-faq',
+                    'suffix' => '.json',
+                ],
                 '' => 'site/index',
             ],
         ],

@@ -30,6 +30,7 @@ $this->params['breadcrumbs'] = [
                     <?php $form = FormAjax::begin([
                         'formName' => 'FormContact',
                         'action' => ['site/contact'],
+                        'success' => '<strong>Мы получили ваше сообщение.</strong><br>В течении 5 минут мы ответим на Ваш Email.',
                     ]) ?>
                         <div class="row">
                             <div class="col-12 col-md-6">
@@ -41,8 +42,6 @@ $this->params['breadcrumbs'] = [
                         </div><!-- .row -->
                         <?= $form->inputText('subject', 'Тема <span class="red">*</span>') ?>
                         <?= $form->textarea('message', 'Ваше сообщение <span class="red">*</span>') ?>
-                        <?= $form->successMessage('Мы получили ваше сообщение. В течении 5 минут мы ответим на Ваш Email.') ?>
-
                         <div class="row">
                             <div class="col-12 col-md order-md-2">
                                 <?= $form->inputFile('userFile', 'Прекрипить файл к сообщению') ?>

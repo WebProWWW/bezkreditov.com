@@ -2,6 +2,7 @@
 
 use app\helpers\Url;
 use app\models\City;
+use app\widgets\FormAjax;
 
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -245,11 +246,13 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
 </div><!-- .modal -->
 <!-- / СПИСОК ГОРОДОВ -->
 
+<?php $this->trigger(FormAjax::EVENT_NOTIFY_MODALS) ?>
+
 </div><!-- .d-none -->
 <!-- / МОДАЛЬНЫЕ ОКНА -->
 
 <script src="/js/main.depends.js?v=023"></script>
-<script src="/js/main.js?v=035"></script>
+<script src="/js/main.js?v=036"></script>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
 <script>if ("function"==typeof window.isCity) { window.isCity() };</script>

@@ -42,6 +42,9 @@ class Material extends ActiveRecord
         return 'material';
     }
 
+    /**
+     * @inheritDoc
+     */
     public function behaviors()
     {
         return ArrayHelper::merge(parent::behaviors(), [ TimestampBehavior::class ]);

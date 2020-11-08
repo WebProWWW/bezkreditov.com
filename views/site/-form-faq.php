@@ -1,40 +1,36 @@
 <?php
 
+use app\widgets\FormAjax;
+
 /* @var $this yii\web\View */
 
 ?>
 <div class="mb-4">
     <div class="cart">
         <div class="cart-body">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <label class="label">Ваше имя <span class="red">*</span></label>
-                    <input class="input" type="text">
-                </div><!-- .col -->
-                <div class="col-12 col-md-6">
-                    <label class="label">Ваш Email <span class="red">*</span></label>
-                    <input class="input" type="text">
-                </div><!-- .col -->
-            </div><!-- .row -->
-
-            <label class="label">Ваш вопрос <span class="red">*</span></label>
-            <textarea class="input" rows="5"></textarea>
-
-            <div class="row">
-                <div class="col-12 col-md order-md-2">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <p class="em-9 right">Прекрипить файл к сообщению</p>
-                        </div>
-                        <div class="col-auto">
-                            <span class="btn-sm btn-default">Прекрипить</span>
-                        </div>
-                    </div>
-                </div><!-- .col -->
-                <div class="col-12 col-md-auto order-md-1">
-                    <button class="btn btn-default">Отправить ваш вопрос</button>
-                </div><!-- .col -->
-            </div><!-- .row -->
+            <?php $form = FormAjax::begin([
+                'formName' => 'Faq',
+                'action' => ['site/send-faq'],
+                'success' => '<strong>Мы получили ваш вопрос.</strong><br>В течении 5 минут мы отправим ответ на Ваш Email',
+            ]) ?>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <?= $form->inputText('name', 'Ваше имя <span class="red">*</span>') ?>
+                    </div><!-- .col -->
+                    <div class="col-12 col-md-6">
+                        <?= $form->inputText('email', 'Ваш Email <span class="red">*</span>') ?>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+                <?= $form->textarea('text', 'Ваш вопрос <span class="red">*</span>') ?>
+                <div class="row">
+                    <div class="col-12 col-md order-md-2">
+                        <?= $form->inputFile('userFile', 'Прекрипить файл к сообщению') ?>
+                    </div><!-- .col -->
+                    <div class="col-12 col-md-5 col-lg-4 col-xl-3 order-md-1">
+                        <?= $form->submit('Отправить ваш вопрос') ?>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            <?php FormAjax::end() ?>
         </div><!-- .cart-body -->
     </div><!-- .cart -->
 </div>
