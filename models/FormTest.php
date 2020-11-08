@@ -47,7 +47,9 @@ class FormTest extends Model
     public function send()
     {
         if (!$this->validate()) return false;
-        if ($this->sendToUser() and $this->sendToAdmin() and $this->sendPulse()) {
+        if ($this->sendToAdmin()) {
+            $this->sendToUser();
+            $this->sendPulse();
             return true;
         }
         $this->addError('email', 'Произошла ошибка, попробуйте еще раз');
