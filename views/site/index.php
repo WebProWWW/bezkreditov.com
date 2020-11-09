@@ -21,13 +21,17 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 <section class="section">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-12 col-md-6 col-lg-auto">
-                <img class="img-a" width="450" src="/img/man-c.png?v=1">
-            </div><!-- .col -->
-            <div class="col-12 col-md offset-md-1">
-                <h2 class="center">Хватит гадать пора действовать!</h2>
-                <div class="wall arrow-md">
-                    <p>Пройдите бесплатный онлайн тест и получите предварительное решение о списании ваших долгов* прямо на почту</p>
+            <div class="col-12 col-lg order-lg-2 z-2">
+                <h2 class="h2 fw-400 center">
+                    <em>
+                        - Смогу ли я списать свои долги через банкротство?
+                        <br>
+                        - А долги все спишут или частично?
+                    </em>
+                </h2>
+                <h3 class="center h2">Хватит гадать пора действовать!</h3>
+                <div class="wall arrow-lg">
+                    <p>Пройдите бесплатный онлайн тест и получите предварительное решение о&nbsp;списании ваших долгов* прямо на почту</p>
                 </div><!-- .wall -->
                 <div class="row justify-content-center">
                     <div class="col-auto">
@@ -35,6 +39,9 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                     </div><!-- .col -->
                 </div><!-- .row -->
                 <p>*<small> По 127 Федеральному закону «О банкротстве» можно списать следующие долги: Кредиты и займы. Просрочки по кредитам и кредитными картам. Административные штрафы, долги за коммунальные услуги. Задолженность и пени по налогам.</small></p>
+            </div><!-- .col -->
+            <div class="col-12 col-lg-auto align-self-end order-md-1 z-1">
+                <img class="img-center" width="480" style="margin-bottom: -10px" src="/img/block-img-1.jpg">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
@@ -672,25 +679,23 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 <section class="section">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-auto mx-auto m-md-0">
-                <div class="img-wrap-circle">
-                    <img width="300" height="300" src="/img/man.png">
-                </div>
-            </div><!-- .col -->
-            <div class="col-12 col-md offset-md-1">
-                <h2 class="center">Жители г.&nbsp;<?= $city->name ?> могут бесплатно проверить долги у судебных приставов по фамилии прямо у нас на портале</h2>
-                <div class="wall arrow-md">
-                    <p class="center">
-                        Вы можете в режиме онлайн проверить любое физическое или юридическое лицо
-                        <br>
-                        на предмет просуженных задолженностей
-                    </p>
-                </div><!-- .wall -->
+            <div class="col-12 col-lg order-lg-2 z-2">
+                <h2 class="center">Жители г.&nbsp;<?= $city->name ?> могут бесплатно проверить долги у&nbsp;судебных приставов по фамилии прямо у нас на портале</h2>
+                <div class="row">
+                    <div class="col-12 col-xl-10 mx-auto">
+                        <div class="wall arrow-lg">
+                            <p>Вы можете в режиме онлайн проверить любое физическое или юридическое лицо на предмет просуженных задолженностей</p>
+                        </div><!-- .wall -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
                 <div class="row justify-content-center">
                     <div class="col-auto">
                         <a class="btn btn-default" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">Проверить долги</a>
                     </div><!-- .col -->
                 </div><!-- .row -->
+            </div><!-- .col -->
+            <div class="col-12 col-lg-auto align-self-end order-lg-1 z-1">
+                <img class="img-center" width="400" style="margin-bottom: -10px" src="/img/block-img-2.jpg">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->

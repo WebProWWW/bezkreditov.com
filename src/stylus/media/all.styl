@@ -21,7 +21,8 @@ html, body
 
 
 body
-	font-family 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+	//font-family 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+	font-family 'Montserrat', sans-serif
 
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, p, .p
@@ -33,7 +34,7 @@ h1, .h1
 	font-weight 600
 
 h2, .h2
-	font-size 1.4em
+	font-size 1.2em
 	font-weight 600
 
 h4, .h4
@@ -865,10 +866,6 @@ label
 	opacity 0
 
 
-.relative
-	position relative
-
-
 
 .news-img
 	mpd(0 30px 15px 0)
@@ -905,6 +902,35 @@ label
 
 .bb-primary
 	border-bottom .2em solid pcolor
+
+
+
+.dialog
+	mpd(0, 0 0 0 1em)
+
+
+.dialog:before
+	content '-'
+	display block
+	margin-left -1em
+	float left
+
+
+.dialog:after
+	content ''
+	display block
+	height 1px
+	clear both
+
+
+
+.relative
+	position relative
+
+
+for zi in (1..100)
+	.z-{zi}
+		z-index zi
 
 
 for num in (1..100)

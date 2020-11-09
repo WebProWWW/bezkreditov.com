@@ -28,15 +28,20 @@ $this->params['breadcrumbs'] = [
 <section class="section">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-12 col-lg-auto">
-                <img class="img-a" width="450" src="/img/man-d.png">
-            </div><!-- .col -->
-            <div class="col-12 col-lg offset-lg-1">
+            <div class="col-12 col-lg order-lg-2 z-2">
+                <h2 class="fw-400">
+                    <span class="dialog">Пострадает ли имущество супруги, если я признаю себя банкротом?</span>
+                    <span class="dialog">А что будет с моим единственным жильем?</span>
+                </h2>
                 <div class="wall arrow-lg">
                     <p>На этой странице вы можете получить консультацию по банкротству физических лиц от юриста, специализирующегося на проведение процедур банкротства физических лиц в&nbsp;г.&nbsp;<?= $city->name ?>. Задайте вопрос ниже в форме и в течение дня вы получите ответ на свой вопрос.</p>
                     <p>Ваш контактный Email не публикуется, а используется только для уведомления о получении ответа на ваш вопрос.</p>
                     <p>Консультация по вопросам банкротства физических лиц полностью бесплатна</p>
                 </div><!-- .wall -->
+                <h3 class="h2 center">Задайте свой вопрос в форме ниже</h3>
+            </div><!-- .col -->
+            <div class="col-12 col-lg-auto align-self-end order-lg-1 z-1">
+                <img class="img-center" width="480" style="margin-bottom: -10px" src="/img/block-img-3.jpg">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
