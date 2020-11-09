@@ -29,9 +29,11 @@ $this->params['breadcrumbs'] = [
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-lg order-lg-2 z-2">
-                <h2 class="fw-400">
-                    <span class="dialog">Пострадает ли имущество супруги, если я признаю себя банкротом?</span>
-                    <span class="dialog">А что будет с моим единственным жильем?</span>
+                <h2 class="fw-400" style="margin-bottom: 30px">
+                    <em>
+                        <span class="dialog">Пострадает ли имущество супруги, если я признаю себя банкротом?</span>
+                        <span class="dialog">А что будет с моим единственным жильем?</span>
+                    </em>
                 </h2>
                 <div class="wall arrow-lg">
                     <p>На этой странице вы можете получить консультацию по банкротству физических лиц от юриста, специализирующегося на проведение процедур банкротства физических лиц в&nbsp;г.&nbsp;<?= $city->name ?>. Задайте вопрос ниже в форме и в течение дня вы получите ответ на свой вопрос.</p>
