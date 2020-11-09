@@ -41,7 +41,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                 <p>*<small> По 127 Федеральному закону «О банкротстве» можно списать следующие долги: Кредиты и займы. Просрочки по кредитам и кредитными картам. Административные штрафы, долги за коммунальные услуги. Задолженность и пени по налогам.</small></p>
             </div><!-- .col -->
             <div class="col-12 col-lg-auto align-self-end order-md-1 z-1">
-                <img class="img-center" width="480" style="margin-bottom: -10px" src="/img/block-img-1.jpg">
+                <img class="img-center" width="480" style="margin-bottom: -10px" src="/img/block-img-4.jpg">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
