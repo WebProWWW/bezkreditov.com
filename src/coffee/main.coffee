@@ -251,19 +251,22 @@ $('input[data-mask]').each (i, input) ->
     on
 
 
+
 class AjaxForm
 
     loaderHtml: ''
     loaderImg: '<img height="8" src="/img/loader.svg">'
     progress: off
     id: ''
+    $form: $ {}
 
     constructor: (form) ->
-        $form = $ form
-        @id = $form.attr 'id'
+        @$form = $ form
+        @id = @$form.attr 'id'
         @$loader = $ "##{@id}-button"
-        @action = $form.data 'action'
-        $form.on 'submit', (e) =>
+        @action = @$form.data 'action'
+        @$form.on 'error', (e, data) => @error data
+        @$form.on 'submit', (e) =>
             e.preventDefault()
             @send new FormData form
             off
@@ -284,11 +287,11 @@ class AjaxForm
             if data?.success? and data.success is 1
                 @success data
                 return on
-            @error data
+            @$form.trigger 'error', data
             on
         .fail ( error ) =>
-            console.log  error
-            $.fancybox.open src: "##{@id}-modal-error"
+            # //console.log error
+            @$form.trigger 'fail'
             on
         .always () =>
             @progress = off
@@ -296,9 +299,10 @@ class AjaxForm
             on
         on
     success: (data) ->
-        $.fancybox.open src: "##{@id}-modal-success"
+        @$form.trigger 'success'
         on
     error: (error) ->
+        console.log error
         for attr, errArr of error
             $ "##{@id}-input-#{attr}"
                 .addClass 'error'
@@ -306,17 +310,50 @@ class AjaxForm
                     $input = $ e.target
                     $input.removeClass 'error'
                     $ "##{String($input.attr 'id').replace('-input-', '-error-')}"
-                        .text ''
+                        .html ''
                         .addClass 'd-none'
             $ "##{@id}-error-#{attr}"
-                .text errArr[0]
+                .html errArr[0]
                 .removeClass 'd-none'
         on
     delay: (ms, cb) ->
         setTimeout cb, ms
 
 
-$('.js-form-ajax').each (i, form) -> new AjaxForm form
+
+# $.fancybox.open src: '#register'
+
+$('#main-user-form-login').on 'success', (e) ->
+    e.preventDefault()
+    e.stopImmediatePropagation()
+    window.document.location.reload();
+    off
+
+$('#main-user-form-register').on 'success', (e) ->
+    e.preventDefault()
+    e.stopImmediatePropagation()
+    off
+
+$('#main-user-form-register').on 'fail', (e) ->
+    e.preventDefault()
+    e.stopImmediatePropagation()
+    off
+
+
+$('.js-form-ajax').each (i, form) ->
+    ajaxForm = new AjaxForm form
+    ajaxForm.$form
+        .on 'success', ->
+            $.fancybox.close()
+            $.fancybox.open src: "##{@id}-modal-success"
+            on
+        .on 'fail', (e) ->
+            $.fancybox.close()
+            $.fancybox.open src: "##{@id}-modal-error"
+            on
+
+
+
 
 
 fileInputChanged = (e) ->

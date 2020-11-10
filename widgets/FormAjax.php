@@ -18,6 +18,7 @@ use yii\helpers\ArrayHelper;
  * @property string $success
  * @property string $error
  * @property string $_id
+ * @property string $formId
  */
 class FormAjax extends Widget
 {
@@ -27,8 +28,9 @@ class FormAjax extends Widget
     public $action = '';
     public $success = 'Сообщение успешно отправлено.';
     public $error = '<strong>Произошла ошибка.</strong><br>Попробуйте позже';
+    public $formId;
 
-    private $_id = '';
+    private $_id;
 
     /**
      * @inheritDoc
@@ -36,7 +38,8 @@ class FormAjax extends Widget
     public function init()
     {
         parent::init();
-        $this->_id = Yii::$app->security->generateRandomString(13);
+        $this->_id = $this->formId;
+        if ($this->_id === null) $this->_id = Yii::$app->security->generateRandomString(13);
         Yii::$app->view->on(self::EVENT_NOTIFY_MODALS, [ $this, 'notifyModals' ]);
         ob_start();
     }
@@ -112,6 +115,29 @@ class FormAjax extends Widget
      * @param string $name
      * @param string $label
      * @param string $placeholder
+     * @param string $mask
+     * @return string
+     */
+    public function inputPassword(string $name, string $label = null, string $placeholder = null, string $mask = null)
+    {
+        $label = $label ? $this->label($label, $name) : '';
+        if ($placeholder) $options[] = $placeholder;
+        if ($mask) $options['data-mask'] = $mask;
+        $input = Html::input('password', $this->name($name), null, ArrayHelper::merge([
+            'class' => 'input',
+            'id' => $this->id('input', $name),
+        ], $placeholder ? [
+            'placeholder' => $placeholder,
+        ] : [], $mask ? [
+            'data-mask' => $mask,
+        ] : []));
+        return $label . $input . $this->error($name);
+    }
+
+    /**
+     * @param string $name
+     * @param string $label
+     * @param string $placeholder
      * @param int $rows
      * @return string
      */
@@ -135,7 +161,6 @@ class FormAjax extends Widget
     public function inputFile(string $name, string $label = null)
     {
         $inputId = $this->id('file', $name);
-        $labelId = Yii::$app->security->generateRandomString(13);
         $input = Html::input('file', $this->name($name), null, [
             'class' => 'd-none',
             'id' => $inputId,
@@ -154,6 +179,27 @@ class FormAjax extends Widget
                 .'</span>'
             .'</div>'
         .'</div>';
+    }
+
+    /**
+     * @param string $name
+     * @param string $label
+     * @param bool $checked
+     * @return string
+     */
+    public function checkbox(string $name, bool $checked = false, string $label='')
+    {
+        return ''
+        .'<label class="label d-flex align-items-center mb-4">'
+            .'<span class="d-block">'
+                .Html::input('hidden', $this->name($name), 0)
+                .Html::input('checkbox', $this->name($name), 1, [
+                    'class' => "checkbox",
+                    'checked' => $checked,
+                ])
+            .'</span>'
+            .'<span class="d-block">' . $label . '</span>'
+        .'</label>';
     }
 
     /**

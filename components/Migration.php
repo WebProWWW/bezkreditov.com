@@ -1,7 +1,8 @@
 <?php
 
-namespace app\migrations;
+namespace app\components;
 
+use yii\console\ExitCode;
 use yii\db\Migration as YiiMigration;
 use yii\db\Exception as ExceptionDataBase;
 use yii\db\ColumnSchemaBuilder;
@@ -14,6 +15,8 @@ use yii\db\ColumnSchemaBuilder;
  */
 class Migration extends YiiMigration
 {
+    const OK = ExitCode::OK;
+    const UNAVAILABLE = ExitCode::UNAVAILABLE;
     /**
      * @return string
      */

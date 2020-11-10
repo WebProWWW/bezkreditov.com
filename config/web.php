@@ -66,6 +66,24 @@ return ArrayHelper::merge([
                     'route' => 'site/send-faq',
                     'suffix' => '.json',
                 ],
+                [   // ВЫЙТИ
+                    'pattern' => '/logout',
+                    'route' => 'site/logout',
+                ],
+                [   // ВХОД
+                    'pattern' => '/login',
+                    'route' => 'site/login',
+                    'suffix' => '.json',
+                ],
+                [   // РЕГИСТРАЦИЯ
+                    'pattern' => '/register',
+                    'route' => 'site/register',
+                    'suffix' => '.json',
+                ],
+                [   // АКТИВАЦИЯ (EMAIL)
+                    'pattern' => '/activate',
+                    'route' => 'site/activate',
+                ],
                 '' => 'site/index',
             ],
         ],

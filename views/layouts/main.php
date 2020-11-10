@@ -3,6 +3,7 @@
 use app\helpers\Url;
 use app\models\City;
 use app\widgets\FormAjax;
+use app\models\User;
 
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -12,6 +13,7 @@ use yii\helpers\StringHelper;
 /* @var $content string */
 /* @var $cities City[] */
 /* @var $city City */
+/* @var $user User */
 
 $city = $this->params['city'];
 
@@ -22,6 +24,8 @@ $title = $this->title ? Html::encode($this->title) : 'Без кредитов';
 
 $urlBase = Url::base(true);
 $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
+
+$user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 
 ?>
 <?php $this->beginPage() ?>
@@ -36,8 +40,8 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <?php $this->registerCsrfMetaTags() ?>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap">
-    <link rel="stylesheet" href="/css/main.depends.css?v=026">
-    <link rel="stylesheet" href="/css/main.css?v=046">
+    <link rel="stylesheet" href="/css/main.depends.css?v=027">
+    <link rel="stylesheet" href="/css/main.css?v=047">
     <title><?= $title ?></title>
     <meta name="description" content="<?= $description ?>">
     <meta property="og:locale" content="ru_RU">
@@ -79,7 +83,14 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
                     </p>
                 </div><!-- .col -->
                 <div class="col-auto ml-auto">
-                    <a class="btn-sm btn-default" href="">Вход</a>
+                    <?php if ($user): ?>
+                        <a class="btn-sm btn-default" href="<?= Url::to(['site/logout']) ?>">
+                            <i class="i-out"></i>
+                            Выйти
+                        </a>
+                    <?php else: ?>
+                        <a class="btn-sm btn-default" data-fancybox href="#login">Вход</a>
+                    <?php endif; ?>
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
@@ -246,16 +257,74 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
 </div><!-- .modal -->
 <!-- / СПИСОК ГОРОДОВ -->
 
+<div class="modal modal-sm" id="login">
+    <?php $formLogin = FormAjax::begin([
+        'formName' => 'FormLogin',
+        'action' => ['site/login'],
+        'formId' => 'main-user-form-login'
+    ]) ?>
+        <?= $formLogin->inputText('email', 'Email') ?>
+        <?= $formLogin->inputPassword('password', 'Пароль') ?>
+        <?= $formLogin->checkbox('remember', 1, 'Запомнить меня') ?>
+        <?= $formLogin->submit('Войти') ?>
+    <?php FormAjax::end() ?>
+    <div class="inwith">
+        <span class="inwith-icon"><i class="i-f"></i></span>
+        <span class="inwith-icon"><i class="i-vk"></i></span>
+        <span class="inwith-icon"><i class="i-g"></i></span>
+    </div>
+    <p class="right em-9">
+        <a data-fancybox onclick="$.fancybox.close();" href="#register">Зарегистрироваться</a>
+    </p>
+</div>
+
+<div class="modal modal-sm" id="register">
+    <?php $formRegister = FormAjax::begin([
+        'formName' => 'FormRegister',
+        'action' => ['site/register'],
+        'success' => '<strong>Регистрация прошла успешно!</strong><br>На Ваш e-mail отправлено сообщение, содержащее ссылку для подтверждения правильности e-mail адреса. Пожалуйста, перейдите по ссылке для активации аккаунта.'
+    ]) ?>
+        <?= $formRegister->inputText('username', 'Имя') ?>
+        <?= $formRegister->inputText('email', 'Email') ?>
+        <?= $formRegister->inputPassword('password', 'Пароль') ?>
+        <?= $formRegister->inputPassword('password_repeat', 'Подтвердите пароль') ?>
+        <?= $formRegister->checkbox('subscribe', 1, 'Подписаться на рассылку') ?>
+        <?= $formRegister->submit('Зарегистрироваться') ?>
+        <?= YII_ENV_DEV ? $formRegister->error('user') : '' ?>
+    <?php FormAjax::end() ?>
+    <p><small>При регистрации вы соглашаетесь с нашими Условиями пользования , а также Политикой Конфиденциальности и Cookie</small></p>
+    <p class="right em-9">
+        <a data-fancybox onclick="$.fancybox.close();" href="#login">Войти</a>
+    </p>
+</div>
+
+<div class="modal modal-sm" id="activate-success">
+    <p class="center">
+        <strong>Ваш аккаунт успешно активирован!</strong>
+        <br>
+        Теперь Вы можете использовать логин (email) и пароль для входа в Личный кабинет.
+    </p>
+    <div class="row">
+        <div class="col-auto mx-auto">
+            <a class="btn btn-sm" data-fancybox onclick="$.fancybox.close();" href="#login">Войти</a>
+        </div>
+    </div>
+</div>
+
 <?php $this->trigger(FormAjax::EVENT_NOTIFY_MODALS) ?>
 
 </div><!-- .d-none -->
 <!-- / МОДАЛЬНЫЕ ОКНА -->
 
 <script src="/js/main.depends.js?v=023"></script>
-<script src="/js/main.js?v=036"></script>
+<script src="/js/main.js?v=037"></script>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
 <script>if ("function"==typeof window.isCity) { window.isCity() };</script>
+<?php endif; ?>
+
+<?php if (Yii::$app->session->getFlash('is-activated')): ?>
+<script>$.fancybox.open({ src: '#activate-success'});</script>
 <?php endif; ?>
 
 <?php $this->endBody() ?>

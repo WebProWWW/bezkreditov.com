@@ -12,6 +12,18 @@ return [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'formatter' => [
+            'dateFormat' => 'dd.MM.Y',
+            'timeFormat' => 'HH:mm',
+            'datetimeFormat' => 'dd.MM.Y HH:mm',
+        ],
+        'authManager' => [
+            'class' => 'app\components\AuthManager',
+        ],
+        'user' => [
+            'identityClass' => 'app\models\User',
+            'enableAutoLogin' => true,
+        ],
         'db' => [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=127.0.0.1;dbname=dbname',

@@ -10,6 +10,10 @@ use app\components\SendpulseApi;
 /**
  * Class FormTest
  * @package app\models
+ *
+ * @property string $email
+ * @property string $comment
+ * @property array $_mailFrom
  */
 class FormTest extends Model
 {

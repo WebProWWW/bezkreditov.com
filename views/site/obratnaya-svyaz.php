@@ -25,7 +25,7 @@ $this->params['breadcrumbs'] = [
     <div class="container">
 
         <div class="row justify-content-center">
-            <div class="col-12 col-xl-10">
+            <div class="col-12">
                 <div class="bg px-4 pt-3 px-sm-5 pt-sm-4 pb-sm-2">
                     <?php $form = FormAjax::begin([
                         'formName' => 'FormContact',

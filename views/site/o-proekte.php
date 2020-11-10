@@ -22,26 +22,22 @@ $this->params['is-header'] = false;
                     <span class="logo-txt">Без кредитов</span>
                 </a>
             </div>
-            <div class="col-12 col-lg col-xl-7 my-5 my-lg-0">
+            <div class="col-12 col-lg my-5 my-lg-0">
                 <h3 class="fw-400 center">
                     Городской портал Без Кредитов - помогает жителям г.&nbsp;<?= $city->name ?> выбрать правильную компанию по банкротству
                     физических лиц и избавиться от долгов и начать свою жизнь с чистого лица.
                 </h3>
             </div>
         </div>
-        <div class="row justify-content-xl-center">
-            <div class="col-12 col-xl-11">
-                <div class="row">
-                    <div class="col-12 col-md-auto">
-                        <p class="fw-600 em-12">
-                            <span class="bb-primary pb-1">Наша миссия:</span>
-                        </p>
-                    </div><!-- .col -->
-                    <div class="col-12 col-md">
-                        <p class="em-12">Изменить страну к лучшему помогая людям и их семьям, попавшим в тяжёлое финансовое положение, вновь начать радоваться жизни освободившись от долгов.</p>
-                    </div>
-                </div><!-- .row -->
+        <div class="row">
+            <div class="col-12 col-md-auto">
+                <p class="fw-600 em-12">
+                    <span class="bb-primary pb-1">Наша миссия:</span>
+                </p>
             </div><!-- .col -->
+            <div class="col-12 col-md">
+                <p class="em-12">Изменить страну к лучшему помогая людям и их семьям, попавшим в тяжёлое финансовое положение, вновь начать радоваться жизни освободившись от долгов.</p>
+            </div>
         </div><!-- .row -->
     </div><!-- .container -->
 </section><!-- .section -->
