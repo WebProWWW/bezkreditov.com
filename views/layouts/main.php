@@ -73,15 +73,17 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
     <div class="header-top">
         <div class="container">
             <div class="row align-items-center no-gutters">
+                <!--
                 <div class="col-12 col-md-auto">
                     <img class="img" width="130" src="/img/logo/spishudolgi.svg">
-                </div><!-- .col -->
+                </div>
                 <div class="col-12 col-md px-md-3">
                     <p class="em-9">
                         Банкротство физических лиц со скидкой 25% по промокоду «Без кредитов»
                         <a class="btn-trsp btn-sm" style="display: inline-block; margin: 5px 0; width: auto;" target="blank" href="https://spishudolgi.ru">Заказать&nbsp;банкротство</a>
                     </p>
-                </div><!-- .col -->
+                </div>
+                -->
                 <div class="col-auto ml-auto">
                     <?php if ($user): ?>
                         <a class="btn-sm btn-default" href="<?= Url::to(['site/logout']) ?>">
@@ -98,12 +100,16 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
     <div class="header-body">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-12 col-sm-8 col-md-6 col-lg-4 mx-auto">
-                    <a class="logo" href="<?= Url::home() ?>">
-                        <span class="logo-txt">Без кредитов</span>
-                        <span class="logo-stxt">Портал города <?= $city->name ?> по банкротству физических&nbsp;лиц</span>
-                    </a>
-                    <p class="center em-9">
+                <div class="col-12 col-sm-10 col-md-8 col-lg-4 mx-auto">
+                    <div class="row">
+                        <div class="col-auto mx-auto">
+                            <a class="logo" href="<?= Url::home() ?>">
+                                <span class="logo-txt">Без кредитов</span>
+                                <span class="logo-stxt">Помогаем избавиться от долгов</span>
+                            </a>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                    <p class="center mb-4 em-9">
                         <span class="row justify-content-center no-gutters">
                             <span class="col-12 col-sm-auto mr-2">
                                 <span class="fw-600">Выберите свой город:</span>
@@ -170,22 +176,26 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 <footer class="section">
     <div class="container">
         <div class="row">
-                <div class="col-12 col-sm-8 col-md-6 col-lg-4 mx-auto">
-                    <a class="logo" href="<?= Url::home() ?>">
-                        <span class="logo-txt">Без кредитов</span>
-                        <span class="logo-stxt">Портал города <?= $city->name ?> по банкротству физических&nbsp;лиц</span>
-                    </a>
-                    <div class="row">
-                        <div class="col-auto mx-auto">
-                            <a class="btn-trsp">
-                                <span class="row no-gutters justify-content-center align-items-center">
-                                    <span class="col-auto em-26 mr-2"><i class="i-like"></i></span>
-                                    <span class="col-auto em-9">Полезные сервисы от<br>портала «Без кредитов»</span>
-                                </span>
-                            </a>
-                        </div><!-- .col -->
-                    </div><!-- .row -->
-                </div><!-- .col -->
+            <div class="col-12 col-sm-10 col-md-8 col-lg-4 mx-auto">
+                <div class="row">
+                    <div class="col-auto mx-auto">
+                        <a class="logo" href="<?= Url::home() ?>">
+                            <span class="logo-txt">Без кредитов</span>
+                            <span class="logo-stxt">Помогаем избавиться от долгов</span>
+                        </a>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+                <div class="row">
+                    <div class="col-auto mx-auto">
+                        <a class="btn-trsp">
+                            <span class="row no-gutters justify-content-center align-items-center">
+                                <span class="col-auto em-26 mr-2"><i class="i-like"></i></span>
+                                <span class="col-auto em-9">Полезные сервисы от<br>портала «Без кредитов»</span>
+                            </span>
+                        </a>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .col -->
             <div class="col-12 col-lg">
                 <?= $this->render('-nav', ['city' => $city]) ?>
             </div><!-- .col -->

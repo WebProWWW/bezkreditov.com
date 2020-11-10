@@ -39,6 +39,11 @@ $this->params['is-header'] = false;
                 <p class="em-12">Изменить страну к лучшему помогая людям и их семьям, попавшим в тяжёлое финансовое положение, вновь начать радоваться жизни освободившись от долгов.</p>
             </div>
         </div><!-- .row -->
+        <div class="row mt-3">
+            <div class="col-auto mx-auto">
+                <a class="btn-default" href="<?= Url::home() ?>">На главную</a>
+            </div>
+        </div>
     </div><!-- .container -->
 </section><!-- .section -->
 
