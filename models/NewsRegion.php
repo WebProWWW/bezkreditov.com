@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveQuery;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "news_region".
@@ -13,7 +15,7 @@ use Yii;
  * @property News $news
  * @property Region $regionCode
  */
-class NewsRegion extends \yii\db\ActiveRecord
+class NewsRegion extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -32,39 +34,24 @@ class NewsRegion extends \yii\db\ActiveRecord
             [['region_code', 'news_id'], 'required'],
             [['region_code', 'news_id'], 'integer'],
             [['region_code', 'news_id'], 'unique', 'targetAttribute' => ['region_code', 'news_id']],
-            [['region_code'], 'exist', 'skipOnError' => true, 'targetClass' => Region::className(), 'targetAttribute' => ['region_code' => 'code']],
-            [['news_id'], 'exist', 'skipOnError' => true, 'targetClass' => News::className(), 'targetAttribute' => ['news_id' => 'id']],
+            [['region_code'], 'exist', 'skipOnError' => true, 'targetClass' => Region::class, 'targetAttribute' => ['region_code' => 'code']],
+            [['news_id'], 'exist', 'skipOnError' => true, 'targetClass' => News::class, 'targetAttribute' => ['news_id' => 'id']],
         ];
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'region_code' => 'Region Code',
-            'news_id' => 'News ID',
-        ];
-    }
-
-    /**
-     * Gets query for [[News]].
-     *
-     * @return \yii\db\ActiveQuery
+     * @return News|ActiveQuery
      */
     public function getNews()
     {
-        return $this->hasOne(News::className(), ['id' => 'news_id']);
+        return $this->hasOne(News::class, ['id' => 'news_id']);
     }
 
     /**
-     * Gets query for [[RegionCode]].
-     *
-     * @return \yii\db\ActiveQuery
+     * @return Region|ActiveQuery
      */
     public function getRegionCode()
     {
-        return $this->hasOne(Region::className(), ['code' => 'region_code']);
+        return $this->hasOne(Region::class, ['code' => 'region_code']);
     }
 }

@@ -23,7 +23,7 @@ $this->params['breadcrumbs'] = [
     <div class="container">
         <h1 class=""><?= $model->title ?></h1>
         <p><span class="date-bg"><?= date('d.m.Y', $model->date) ?></span></p>
-        <img class="news-img" src="<?= $model->img ?>">
+        <img class="news-img" src="<?= $model->image ?>">
         <div class="editor">
             <?= $model->content ?>
         </div>

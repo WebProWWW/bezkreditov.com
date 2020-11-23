@@ -15,7 +15,8 @@ use yii\db\ActiveQuery;
  *
  * @property Department $department
  * @property News[] $lastNews
- * @property ActiveDataProvider $news
+ * @property ActiveDataProvider $newsProvider
+ * @property ActiveQuery $news
  * @property NewsRegion[] $newsRegions
  */
 class Region extends ActiveRecord
@@ -63,10 +64,9 @@ class Region extends ActiveRecord
     /**
      * @return ActiveDataProvider
      */
-    public function getNews()
+    public function getNewsProvider()
     {
-        $query = $this->hasMany(News::class, ['id' => 'news_id'])
-            ->viaTable('news_region', ['region_code' => 'code']);
+        $query = $this->getNews();
         return new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
@@ -78,39 +78,51 @@ class Region extends ActiveRecord
                 ]
             ],
         ]);
+
     }
 
+    /**
+     * @return News[]|ActiveQuery
+     */
+    public function getNews()
+    {
+        return $this->hasMany(News::class, ['id' => 'news_id'])
+            ->via('newsRegions');
+    }
+
+    /**
+     * @return NewsRegion[]|ActiveQuery
+     */
+    public function getNewsRegions()
+    {
+        return $this
+            ->hasMany(NewsRegion::class, ['region_code' => 'code'])
+        ;
+    }
+
+    /**
+     * @return News[]|ActiveQuery
+     */
     public function getLastNews()
     {
         return $this->hasMany(News::class, ['id' => 'news_id'])
-            ->viaTable('news_region', ['region_code' => 'code'])
+            ->via('newsRegions')
             ->orderBy(['date' => SORT_DESC])
-            ->limit(3)
-            ->all();
+            ->limit(3);
     }
 
     /**
      * @param int $currentNewsId
-     * @return array|News[]
+     * @return News[]|ActiveQuery
      */
     public function lastNews(int $currentNewsId)
     {
         return $this->hasMany(News::class, ['id' => 'news_id'])
-            ->viaTable('news_region', ['region_code' => 'code'])
+            ->via('newsRegions')
             ->where(['!=', 'id', $currentNewsId])
             ->orderBy(['date' => SORT_DESC])
             ->limit(3)
             ->all();
-    }
-
-    /**
-     * Gets query for [[NewsRegions]].
-     *
-     * @return ActiveQuery
-     */
-    public function getNewsRegions()
-    {
-        return $this->hasMany(NewsRegion::class, ['region_code' => 'code']);
     }
 
     /**
@@ -120,7 +132,7 @@ class Region extends ActiveRecord
     {
         $regions = Yii::$app->cache->get('all-regions');
         if ($regions === false) {
-            $regions = self::find()->all();
+            $regions = self::find()->where(['not', ['code' => 99]])->all();
             Yii::$app->cache->set('all-regions', $regions, 3600 * 24 * 365);
         }
         return $regions;

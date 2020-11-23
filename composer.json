@@ -16,6 +16,7 @@
     "yiisoft/yii2-swiftmailer": "~2.1.2",
     "linslin/yii2-curl": "~1.4.0",
     "yiisoft/yii2-imagine": "~2.2.0",
+    "symfony/dotenv": "~v3.4.46",
     "sendpulse/rest-api": "~10.0.15"
   },
   "require-dev": {

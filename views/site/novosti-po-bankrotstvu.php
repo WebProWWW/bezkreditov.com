@@ -15,7 +15,7 @@ $this->params['breadcrumbs'] = [ 'Новости по банкротству ф�
 ?>
 <section class="section bg">
     <div class="container">
-        <?php if ($newsDataProvider = $city->news): ?>
+        <?php if ($newsDataProvider = $city->region->newsProvider): ?>
             <h1 class="center">Новости по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h1>
             <div class="row">
                 <?php foreach ($newsDataProvider->models as $news): ?>

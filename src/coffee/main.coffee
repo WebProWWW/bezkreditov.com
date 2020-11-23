@@ -326,7 +326,7 @@ class AjaxForm
 $('#main-user-form-login').on 'success', (e) ->
     e.preventDefault()
     e.stopImmediatePropagation()
-    window.document.location.reload();
+    window.document.location.reload()
     off
 
 $('#main-user-form-register').on 'success', (e) ->

@@ -66,6 +66,9 @@ return ArrayHelper::merge([
                     'route' => 'site/send-faq',
                     'suffix' => '.json',
                 ],
+                /**
+                 * ПОЛЬЗОВАТЕЛЬ
+                 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
                 [   // ВЫЙТИ
                     'pattern' => '/logout',
                     'route' => 'site/logout',
@@ -83,6 +86,29 @@ return ArrayHelper::merge([
                 [   // АКТИВАЦИЯ (EMAIL)
                     'pattern' => '/activate',
                     'route' => 'site/activate',
+                ],
+                /**
+                 * АДМИНИСТРАТОР
+                 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+                [   // LIST
+                    'pattern' => '/admin/<model:[\w\-]+>',
+                    'route' => 'admin/list',
+                    'suffix' => '.json',
+                ],
+                [   // UPDATE
+                    'pattern' => '/admin/<model:[\w\-]+>/update/<id:[\w\-]+>',
+                    'route' => 'admin/update',
+                    'suffix' => '.json',
+                ],
+                [   // CREATE
+                    'pattern' => '/admin/<model:[\w\-]+>/create',
+                    'route' => 'admin/create',
+                    'suffix' => '.json',
+                ],
+                [   // REMOVE
+                    'pattern' => '/admin/<model:[\w\-]+>/remove/<id:[\w\-]+>',
+                    'route' => 'admin/remove',
+                    'suffix' => '.json',
                 ],
                 '' => 'site/index',
             ],

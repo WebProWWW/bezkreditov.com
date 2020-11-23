@@ -2,14 +2,20 @@
 
 namespace app\models;
 
+use app\dashboard\Input;
 use Yii;
+use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 use yii\data\ActiveDataProvider;
 use yii\behaviors\TimestampBehavior;
 use yii\helpers\ArrayHelper;
+use yii\helpers\FileHelper;
 use yii\helpers\StringHelper;
 use yii\imagine\Image;
 use yii\web\NotFoundHttpException;
+
+use app\dashboard\ModelInterface;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "material".
@@ -29,10 +35,12 @@ use yii\web\NotFoundHttpException;
  * @property string $thumb
  * @property Material[] $lastMaterials
  */
-class Material extends ActiveRecord
+class Material extends ActiveRecord implements ModelInterface
 {
     const TITLE = 'Полезные материалы по банкротству';
     const ALIAS = 'poleznye-materialy-po-bankrotstvu';
+
+    //public $imgUploaded;
 
     /**
      * {@inheritdoc}
@@ -60,6 +68,7 @@ class Material extends ActiveRecord
             [['alias', 'title'], 'required'],
             [['description', 'content'], 'string'],
             [['alias', 'title', 'img'], 'string', 'max' => 255],
+            //[['imgUploaded'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, gif, jpeg'],
         ];
     }
 
@@ -70,14 +79,47 @@ class Material extends ActiveRecord
     {
         return [
             'id' => 'ID',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'alias' => 'Alias',
-            'title' => 'Title',
-            'description' => 'Description',
-            'img' => 'Img',
-            'content' => 'Content',
+            'created_at' => 'Создан',
+            'updated_at' => 'Обновлен',
+            'alias' => 'Псевдоним URL',
+            'title' => 'Заголовок',
+            'description' => 'Описание',
+            'img' => 'Изображение <small class="text-muted">900 x auto px</small>',
+            'content' => 'Содержимое',
         ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function beforeSave($insert)
+    {
+        if ($file = UploadedFile::getInstanceByName('imgUploaded')) {
+            $webroot = Yii::getAlias('@webroot');
+            $name = Yii::$app->security->generateRandomString(8);
+            $url = '/img/material/' . $name . '.jpg';
+            $path = $webroot . $url;
+            $file->saveAs($path);
+            Image::resize($path, 900, null, false, true)
+                ->save($path, ['quality' => 80]);
+            $this->img = $url;
+        }
+        if ($insert) {
+            $this->view_count = 10;
+        }
+        return parent::beforeSave($insert);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function beforeDelete()
+    {
+        if (parent::beforeDelete()) {
+            $this->removeAllImages();
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -85,35 +127,25 @@ class Material extends ActiveRecord
      */
     public function getThumb()
     {
-        $webroot = Yii::getAlias('@webroot');
-        $img = $webroot . $this->img;
-        if ($this->img === null or !file_exists($img)) return null;
-        $name = StringHelper::basename($img);
-        $dirname = StringHelper::dirname($img);
-        $thumb = $dirname . '/thumb-' . $name;
-        if (!file_exists($thumb)) {
-            Image::thumbnail($img, 500, 400)->save($thumb);
-        }
-        return str_replace($webroot, '', $thumb);
+        return $this->cropImg(500, 400);
     }
 
     /**
      * @param int $w
      * @param int $h
+     * @param string $default
      * @return string|null
      */
-    public function cropImg(int $w, int $h)
+    public function cropImg(int $w, int $h, string $default='/img/image.svg')
     {
         $webroot = Yii::getAlias('@webroot');
         $src = $webroot . $this->img;
-        if ($this->img === null or !file_exists($src)) return null;
+        if ($this->img === null or $this->img === '' or !file_exists($src)) return $default;
         $name = StringHelper::basename($src);
         $dirname = StringHelper::dirname($src);
-        $dest = $dirname . '/th-' . $w . '-' . $h. '-' . $name;
-        if (!file_exists($dest)) {
-            Image::thumbnail($src, $w, $h)->save($dest);
-        }
-        if (!file_exists($dest)) return null;
+        $dest = $dirname . "/{$w}x{$h}-th-{$name}";
+        if (!file_exists($dest)) Image::thumbnail($src, $w, $h)->save($dest);
+        if (!file_exists($dest)) return $default;
         return str_replace($webroot, '', $dest);
     }
 
@@ -206,4 +238,75 @@ class Material extends ActiveRecord
         return $count;
     }
 
+    /**
+     * REMOVE THIS IMAGES
+     */
+    private function removeAllImages()
+    {
+        $webroot = Yii::getAlias('@webroot');
+        $img = $webroot . $this->img;
+        if ($this->img === null or $this->img === '' or !file_exists($img)) return;
+        $name = StringHelper::basename($img);
+        $dirname = StringHelper::dirname($img);
+        $files = FileHelper::findFiles($dirname, ['only' => ['*'.$name]]);
+        foreach ($files as $file) {
+            if (file_exists($file)) FileHelper::unlink($file);
+        }
+    }
+
+    /**
+     * ADMIN DASHBOARD
+     * *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * /
+
+    /**
+     * @inheritDoc
+     */
+    public function input()
+    {
+        return [
+            Input::image($this, 'img'),
+            Input::translate($this, 'title', 'alias'),
+            Input::textarea($this, 'description'),
+            Input::editor($this, 'content'),
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public static function pageTitle()
+    {
+        return 'Полезные материалы';
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public static function listSort()
+    {
+        return [
+            'created_at' => SORT_DESC,
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public static function listSearchIn()
+    {
+        return [
+            'title',
+            'description',
+            'alias',
+        ];
+    }
+
+    public static function listAttributes()
+    {
+        return [
+            'id' => 'id',
+            'title' => 'title',
+            'description' => 'description',
+        ];
+    }
 }

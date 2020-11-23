@@ -2,15 +2,17 @@
 
 namespace app\models;
 
-use Exception;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\db\ActiveQuery;
 use yii\helpers\ArrayHelper;
 use yii\web\UploadedFile;
+use Exception;
 
 use app\components\SendpulseApi;
+use app\dashboard\ModelInterface;
+use app\dashboard\Input;
 
 /**
  * This is the model class for table "faq".
@@ -31,7 +33,7 @@ use app\components\SendpulseApi;
  *
  * @property City $city
  */
-class Faq extends ActiveRecord
+class Faq extends ActiveRecord implements ModelInterface
 {
     const SCENARIO_ADD = 'UserAddFaq';
 
@@ -171,5 +173,64 @@ class Faq extends ActiveRecord
             return true;
         } catch (Exception $e) {}
         return false;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function input()
+    {
+        return [
+            'email' => Input::text($this, 'email'),
+            'title' =>  Input::text($this, 'title'),
+            'alias' =>  [
+                'type' => 'translate',
+                'value' => $this->alias,
+                'label' => $this->getAttributeLabel('alias'),
+                'error' => $this->getFirstError('alias'),
+            ],
+            'text' => Input::editor($this, 'text'),
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public static function pageTitle()
+    {
+        return 'Вопрос-ответ';
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public static function listSort()
+    {
+        return [
+            'created_at' => SORT_ASC,
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public static function listSearchIn()
+    {
+        return [
+            'title',
+            'text',
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public static function listAttributes()
+    {
+        return [
+            'id' => 'id',
+            'title' => 'title',
+            'description' => 'text'
+        ];
     }
 }

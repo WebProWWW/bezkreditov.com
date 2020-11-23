@@ -6,6 +6,7 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
+use Throwable;
 
 
 /**
@@ -52,16 +53,8 @@ class City extends ActiveRecord
             'id' => 'ID',
             'alias' => 'Поддомен',
             'name' => 'Город',
-            'region_code' => 'Region Code',
+            'region_code' => 'Регион',
         ];
-    }
-
-    /**
-     * @return ActiveDataProvider
-     */
-    public function getNews()
-    {
-        return $this->region->news;
     }
 
     /**
@@ -77,8 +70,11 @@ class City extends ActiveRecord
      */
     public static function allCities()
     {
-        return self::getDb()->cache(function ($db) {
-            return self::find()->all();
-        });
+        try {
+            return self::getDb()->cache(function ($db) {
+                return self::find()->all();
+            });
+        } catch (Throwable $e) {}
+        return [];
     }
 }
