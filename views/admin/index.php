@@ -4,6 +4,10 @@
 /* @var $view string */
 /* @var $formLogin app\models\FormLoginAdmin */
 
+$params = [];
+
+if ($formLogin !== null) $params['formLogin'] = $formLogin;
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -22,7 +26,7 @@
 <body>
 <?php $this->beginBody() ?>
 
-<?= $this->render($view, ['formLogin' => $formLogin]) ?>
+<?= $this->render($view, $params) ?>
 
 <?php $this->endBody() ?>
 </body>
