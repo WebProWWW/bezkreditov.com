@@ -6,7 +6,7 @@
 
 $params = [];
 
-if ($formLogin !== null) $params['formLogin'] = $formLogin;
+if ($formLogin) $params['formLogin'] = $formLogin;
 
 ?>
 <?php $this->beginPage() ?>
