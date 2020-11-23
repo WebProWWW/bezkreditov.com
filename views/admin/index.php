@@ -5,7 +5,7 @@
 /* @var $formLogin app\models\FormLoginAdmin */
 
 $params = [];
-$params['formLogin'] = $formLogin OR $formLogin = null;
+if (isset($formLogin)) $params['formLogin'] = $formLogin;
 
 ?>
 <?php $this->beginPage() ?>
