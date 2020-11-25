@@ -14,7 +14,7 @@ $this->params['description'] = 'Спасибо самой замечательн
 $this->params['breadcrumbs'] = [
     [
         'url' => ['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu'],
-        'label' => 'Рейтинг компаний по банкротству',
+        'label' => 'Рейтинг компаний по банкротству г.&nbsp;' . $city->name,
     ],
 ];
 

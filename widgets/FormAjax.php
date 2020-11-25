@@ -194,7 +194,7 @@ class FormAjax extends Widget
             .'<span class="d-block">'
                 .Html::input('hidden', $this->name($name), 0)
                 .Html::input('checkbox', $this->name($name), 1, [
-                    'class' => "checkbox",
+                    'class' => "checkbox checkbox-sm",
                     'checked' => $checked,
                 ])
             .'</span>'

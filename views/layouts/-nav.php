@@ -4,9 +4,12 @@ use yii\helpers\Url;
 
 /* @var $city app\models\City */
 /* @var $this yii\web\View */
+/* @var $id string */
+
+if (!isset($id)) $id = Yii::$app->security->generateRandomString(8);
 
 ?>
-<div class="toggle toggle-lg-disable" id="main-nav">
+<div class="toggle toggle-lg-disable" id="<?= $id ?>">
     <nav class="nav">
         <a class="nav-ln col-12 col-sm-6 col-xl-4" href="<?= Url::to(['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu']) ?>">
             <i class="i-stat nav-i"></i>
@@ -33,7 +36,7 @@ use yii\helpers\Url;
         </a>
         <a class="nav-ln col-12 col-sm-6 col-xl-3" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">
             <i class="i-hph nav-i"></i>
-            <span class="nav-txt">Узнать свои долги</span>
+            <span class="nav-txt">Узнать свои долги г.&nbsp;<?= $city->name ?></span>
         </a>
 
         <!-- ROW -->

@@ -41,7 +41,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
     <?php $this->registerCsrfMetaTags() ?>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap">
     <link rel="stylesheet" href="/css/main.depends.css?v=028">
-    <link rel="stylesheet" href="/css/main.css?v=047">
+    <link rel="stylesheet" href="/css/main.css?v=048">
     <title><?= $title ?></title>
     <meta name="description" content="<?= $description ?>">
     <meta property="og:locale" content="ru_RU">
@@ -122,7 +122,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
                     <div class="row justify-content-center no-gutters">
                         <div class="col-auto mr-3 d-lg-none">
                             <div class="d-flex align-items-center">
-                                <div class="toggle-btn" data-toggle="#main-nav">
+                                <div class="toggle-btn" data-toggle="#header-nav">
                                     <i class="i-bars toggle-i"></i>
                                     <p class="toggle-txt">Меню</p>
                                 </div>
@@ -139,7 +139,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
                     </div><!-- .row -->
                 </div><!-- .col -->
                 <div class="col-12 col-lg">
-                    <?= $this->render('-nav', ['city' => $city]) ?>
+                    <?= $this->render('-nav', ['city' => $city, 'id' => 'header-nav']) ?>
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
@@ -176,7 +176,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 <footer class="section">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-10 col-md-8 col-lg-4 mx-auto">
+            <div class="col-12 col-lg-auto">
                 <div class="row">
                     <div class="col-auto mx-auto">
                         <a class="logo" href="<?= Url::home() ?>">
@@ -185,11 +185,19 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
                         </a>
                     </div><!-- .col -->
                 </div><!-- .row -->
-                <div class="row">
-                    <div class="col-auto mx-auto">
+                <div class="row justify-content-center no-gutters">
+                    <div class="col-auto mr-3 d-lg-none">
+                        <div class="d-flex align-items-center">
+                            <div class="toggle-btn" data-toggle="#footer-nav">
+                                <i class="i-bars toggle-i"></i>
+                                <p class="toggle-txt">Меню</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
                         <a class="btn-trsp">
                             <span class="row no-gutters justify-content-center align-items-center">
-                                <span class="col-auto em-26 mr-2"><i class="i-like"></i></span>
+                                <span class="col-auto em-24 mr-2"><i class="i-like"></i></span>
                                 <span class="col-auto em-9">Полезные сервисы от<br>портала «Без кредитов»</span>
                             </span>
                         </a>
@@ -197,7 +205,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
                 </div><!-- .row -->
             </div><!-- .col -->
             <div class="col-12 col-lg">
-                <?= $this->render('-nav', ['city' => $city]) ?>
+                <?= $this->render('-nav', ['city' => $city, 'id' => 'footer-nav']) ?>
             </div><!-- .col -->
         </div><!-- .row -->
         <br>
@@ -267,6 +275,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 </div><!-- .modal -->
 <!-- / СПИСОК ГОРОДОВ -->
 
+<!-- ВХОД РЕГИСТРАЦИЯ -->
 <div class="modal modal-sm" id="login">
     <?php $formLogin = FormAjax::begin([
         'formName' => 'FormLogin',
@@ -276,18 +285,35 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
         <?= $formLogin->inputText('email', 'Email') ?>
         <?= $formLogin->inputPassword('password', 'Пароль') ?>
         <?= $formLogin->checkbox('remember', 1, 'Запомнить меня') ?>
-        <?= $formLogin->submit('Войти') ?>
+        <div class="row">
+            <div class="col-auto mx-auto">
+                <?= $formLogin->submit('Войти') ?>
+            </div>
+        </div>
     <?php FormAjax::end() ?>
+    <p class="center em-9">Войти с помощью соцсетей</p>
     <div class="inwith">
         <span class="inwith-icon"><i class="i-f"></i></span>
         <span class="inwith-icon"><i class="i-vk"></i></span>
         <span class="inwith-icon"><i class="i-g"></i></span>
     </div>
-    <p class="right em-9">
-        <a data-fancybox onclick="$.fancybox.close();" href="#register">Зарегистрироваться</a>
-    </p>
+    <div class="row">
+        <div class="col-12 col-sm-auto">
+            <p class="em-9 center">
+                Впервые у нас?
+                <br>
+                <a data-fancybox onclick="$.fancybox.close();" href="#register">Зарегистрироваться</a>
+            </p>
+        </div>
+        <div class="col-12 col-sm-auto ml-auto">
+            <p class="em-9 center">
+                Забыли пароль?
+                <br>
+                <a data-fancybox onclick="$.fancybox.close();" href="#register">Восстановить</a>
+            </p>
+        </div>
+    </div>
 </div>
-
 <div class="modal modal-sm" id="register">
     <?php $formRegister = FormAjax::begin([
         'formName' => 'FormRegister',
@@ -303,10 +329,13 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
         <?= YII_ENV_DEV ? $formRegister->error('user') : '' ?>
     <?php FormAjax::end() ?>
     <p><small>При регистрации вы соглашаетесь с нашими Условиями пользования , а также Политикой Конфиденциальности и Cookie</small></p>
-    <p class="right em-9">
+    <p class="center em-9">
+        Уже есть аккаунт?
+        <br>
         <a data-fancybox onclick="$.fancybox.close();" href="#login">Войти</a>
     </p>
 </div>
+<!-- / ВХОД РЕГИСТРАЦИЯ -->
 
 <div class="modal modal-sm" id="activate-success">
     <p class="center">
@@ -327,7 +356,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 <!-- / МОДАЛЬНЫЕ ОКНА -->
 
 <script src="/js/main.depends.js?v=025"></script>
-<script src="/js/main.js?v=037"></script>
+<script src="/js/main.js?v=038"></script>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
 <script>if ("function"==typeof window.isCity) { window.isCity() };</script>

@@ -524,6 +524,7 @@ label
 	background url('../img/check.svg') 50% 50% no-repeat
 	transform scale(0)
 
+
 .checkbox:checked
 	b(1, pcolor)
 
@@ -533,6 +534,17 @@ label
 
 .checkbox.error
 	b(1, red)
+
+
+.checkbox-sm
+	width 26px
+	height @width
+
+.checkbox:before
+	trans()
+	width 14px
+	height @width
+
 
 .input-error
 	mpd(-13px 0 15px)

@@ -15,35 +15,31 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 <section class="section bg">
     <div class="container">
         <h2 class="h1 center">Бесплатный онлайн тест на списание долгов от портала «Без&nbsp;Кредитов»</h2>
-    </div><!-- .container -->
-</section><!-- .section -->
-
-<section class="section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg order-lg-2 z-2">
-                <h2 class="h2 fw-400 center" style="margin-bottom: 30px">
-                    <em>
-                        - Смогу ли я списать свои долги через банкротство?
-                        <br>
-                        - А долги все спишут или частично?
-                    </em>
-                </h2>
-                <h3 class="center h2">Хватит гадать пора действовать!</h3>
-                <div class="wall arrow-lg">
-                    <p>Пройдите бесплатный онлайн тест и получите предварительное решение о&nbsp;списании ваших долгов* прямо на почту</p>
-                </div><!-- .wall -->
-                <div class="row justify-content-center">
-                    <div class="col-auto">
-                        <a class="btn btn-default" data-fancybox href="#test">Пройти тест</a>
+        <div class="cart pr-lg-3">
+            <div class="cart-body">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg order-lg-2 z-2">
+                        <h2 class="h2 fw-400" style="margin-bottom: 30px">
+                            <em>
+                                <span class="dialog">Смогу ли я списать свои долги через банкротство?</span>
+                                <span class="dialog">А долги все спишут или частично?</span>
+                            </em>
+                        </h2>
+                        <h3 class="h2">Хватит гадать пора действовать!</h3>
+                        <p class="em-11">Пройдите бесплатный онлайн тест и получите предварительное решение о&nbsp;списании ваших долгов* прямо на почту</p>
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <a class="btn btn-default" data-fancybox href="#test">Пройти тест</a>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                        <p>*<small> По 127 Федеральному закону «О банкротстве» можно списать следующие долги: Кредиты и займы. Просрочки по кредитам и кредитными картам. Административные штрафы, долги за коммунальные услуги. Задолженность и пени по налогам.</small></p>
+                    </div><!-- .col -->
+                    <div class="col-12 col-lg align-self-end order-md-1 z-1">
+                        <img class="img-center" width="480" style="margin-bottom: -3px" src="/img/block-img-1.jpg">
                     </div><!-- .col -->
                 </div><!-- .row -->
-                <p>*<small> По 127 Федеральному закону «О банкротстве» можно списать следующие долги: Кредиты и займы. Просрочки по кредитам и кредитными картам. Административные штрафы, долги за коммунальные услуги. Задолженность и пени по налогам.</small></p>
-            </div><!-- .col -->
-            <div class="col-12 col-lg-auto align-self-end order-md-1 z-1">
-                <img class="img-center" width="480" style="margin-bottom: -10px" src="/img/block-img-1.jpg">
-            </div><!-- .col -->
-        </div><!-- .row -->
+            </div>
+        </div>
     </div><!-- .container -->
 </section><!-- .section -->
 
@@ -107,16 +103,23 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                 </div><!-- .col -->
             <?php endforeach; ?>
         </div><!-- .row -->
+
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a class="btn btn-default" href="<?= Url::to(['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu']) ?>">Все компании</a>
+            </div><!-- .col -->
+        </div><!-- .row -->
+
     </div><!-- .container -->
 </section><!-- .section -->
 
 <?php if ($news = $city->region->lastNews): ?>
-    <section class="section">
+<section class="section">
         <div class="container">
             <h1 class="center">Актуальные новости по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h1>
         </div><!-- .container -->
     </section><!-- .section -->
-    <section class="section bg">
+<section class="section bg">
     <div class="container">
         <div class="row">
             <?php foreach ($news as $newsItem): ?>
@@ -158,35 +161,39 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 </section><!-- .section -->
 <?php endif; ?>
 
-<section class="section">
+<section class="section bg">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-auto mx-auto m-md-0">
-                <div class="img-wrap-circle">
-                    <img width="250" height="250" src="/img/bull.png">
-                </div>
-            </div><!-- .col -->
-            <div class="col-12 col-md offset-md-1">
-                <h2 class="center">Раскажи всё, что знаешь о банкростве физического лица, компании, юристах по банкроству!</h2>
-                <div class="wall arrow-md">
-                    <p>
-                        Если при прохождении процедуры банкротства Ваши права были ущемлены, то всегда можно
-                        оставить отзыв о компании, юристах и адвокатов на нашем сайте. Предупредите других людей о том,
-                        что их ждет, если они обратятся в эту компанию по банкротству, которая ведет свою деятельность
-                        с нарушениями законодательства.
-                    </p>
-                    <p>
-                        Расскажите о Вашем опыте прохождения процедуры банкротства, о юристах по банкротству
-                        физических лиц и или читайте отзывы об интересующих Вас компаниях!
-                    </p>
-                </div><!-- .wall -->
-                <div class="row justify-content-center">
-                    <div class="col-auto">
-                        <a class="btn btn-default" href="<?= Url::to(['site/index', 'view' => 'obratnaya-svyaz']) ?>">Написать в редакцию портала</a>
+        <div class="cart p-xl-3">
+            <div class="cart-body">
+                <div class="row align-items-center">
+                    <div class="col-auto mx-auto m-md-0">
+                        <div class="img-wrap-circle">
+                            <img width="250" height="250" src="/img/bull.png">
+                        </div>
+                    </div><!-- .col -->
+                    <div class="col-12 col-md offset-md-1">
+                        <h2 class="center">Раскажи всё, что знаешь о банкростве физического лица, компании, юристах по банкроству!</h2>
+                        <div class="wall arrow-md">
+                            <p>
+                                Если при прохождении процедуры банкротства Ваши права были ущемлены, то всегда можно
+                                оставить отзыв о компании, юристах и адвокатов на нашем сайте. Предупредите других людей о том,
+                                что их ждет, если они обратятся в эту компанию по банкротству, которая ведет свою деятельность
+                                с нарушениями законодательства.
+                            </p>
+                            <p>
+                                Расскажите о Вашем опыте прохождения процедуры банкротства, о юристах по банкротству
+                                физических лиц и или читайте отзывы об интересующих Вас компаниях!
+                            </p>
+                        </div><!-- .wall -->
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <a class="btn btn-default" href="<?= Url::to(['site/index', 'view' => 'obratnaya-svyaz']) ?>">Написать в редакцию портала</a>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
                     </div><!-- .col -->
                 </div><!-- .row -->
-            </div><!-- .col -->
-        </div><!-- .row -->
+            </div>
+        </div>
     </div><!-- .container -->
 </section><!-- .section -->
 
@@ -647,10 +654,16 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                         </div><!-- .cart-body -->
                         <div class="cart-footer">
                             <div class="d-flex no-gutters align-items-center">
-                                <div class="col">
+                                <div class="col-auto">
                                     <p class="mutted"><?= date('d.m.Y', $material->created_at) ?></p>
                                 </div>
-                                <div class="col-auto col-sm-3 col-md-4 col-lg-5">
+                                <div class="col-auto mx-auto">
+                                    <p class="mutted">
+                                        <i class="i-eye-a"></i>
+                                        <?= $material->viewCount ?>
+                                    </p>
+                                </div>
+                                <div class="col-auto">
                                     <a class="btn btn-sm btn-default" href="<?= Url::to(['site/material', 'alias' => $material->alias]) ?>">Читать</a>
                                 </div>
                             </div>
@@ -671,34 +684,29 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 <?php endif; ?>
 
 <section class="section bg">
-    <div class="container">
-        <h2 class="h1 center">Проверьте свои долги, штрафы в режиме реального&nbsp;времени!</h2>
-    </div><!-- .container -->
-</section><!-- .section -->
-
-<section class="section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-lg order-lg-2 z-2">
-                <h2 class="center">Жители г.&nbsp;<?= $city->name ?> могут бесплатно проверить долги у&nbsp;судебных приставов по фамилии прямо у нас на портале</h2>
-                <div class="row">
-                    <div class="col-12 col-xl-10 mx-auto">
-                        <div class="wall arrow-lg">
-                            <p>Вы можете в режиме онлайн проверить любое физическое или юридическое лицо на предмет просуженных задолженностей</p>
-                        </div><!-- .wall -->
+    <h2 class="h1 center">Проверьте свои долги, штрафы в режиме реального&nbsp;времени!</h2>
+    <div class="container mb-4">
+        <div class="cart pr-lg-3">
+            <div class="cart-body">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg order-lg-2 z-2">
+                        <h2 class="center">Жители г.&nbsp;<?= $city->name ?> могут бесплатно проверить долги у&nbsp;судебных приставов по фамилии прямо у нас на портале</h2>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="em-11">Бесплатная проверка долгов у судебных приставов ФССП по фамилии. Укажите Фамилию, Имя, Отчество, Регион и дату рождения физического лица и нажмите проверить долги. В режиме онлайн будут показаны задолженности по кредитам, штрафам ГИБДД, алиментам и другие исполнительные производства должника.</p>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <a class="btn btn-default" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">Проверить долги</a>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .col -->
+                    <div class="col-12 col-lg-auto align-self-end order-lg-1 z-1">
+                        <img class="img-center" width="400" style="margin-bottom: -3px" src="/img/block-img-2.jpg">
                     </div><!-- .col -->
                 </div><!-- .row -->
-                <div class="row justify-content-center">
-                    <div class="col-auto">
-                        <a class="btn btn-default" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">Проверить долги</a>
-                    </div><!-- .col -->
-                </div><!-- .row -->
-            </div><!-- .col -->
-            <div class="col-12 col-lg-auto align-self-end order-lg-1 z-1">
-                <img class="img-center" width="400" style="margin-bottom: -10px" src="/img/block-img-2.jpg">
-            </div><!-- .col -->
-        </div><!-- .row -->
+            </div>
+        </div>
     </div><!-- .container -->
 </section><!-- .section -->
-
-<div class="block-divider bg"></div>

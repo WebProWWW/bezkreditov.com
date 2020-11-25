@@ -33,10 +33,16 @@ $dataProvider = Material::dataProvider();
                         </div><!-- .cart-body -->
                         <div class="cart-footer">
                             <div class="d-flex no-gutters align-items-center">
-                                <div class="col">
+                                <div class="col-auto">
                                     <p class="mutted"><?= date('d.m.Y', $material->created_at) ?></p>
                                 </div>
-                                <div class="col-auto col-sm-3 col-md-4 col-lg-5">
+                                <div class="col-auto mx-auto">
+                                    <p class="mutted">
+                                        <i class="i-eye-a"></i>
+                                        <?= $material->viewCount ?>
+                                    </p>
+                                </div>
+                                <div class="col-auto">
                                     <a class="btn btn-sm btn-default" href="<?= Url::to(['site/material', 'alias' => $material->alias]) ?>">Читать</a>
                                 </div>
                             </div>

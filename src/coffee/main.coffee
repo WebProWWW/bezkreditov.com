@@ -321,7 +321,7 @@ class AjaxForm
 
 
 
-# $.fancybox.open src: '#register'
+# $.fancybox.open src: '#login'
 
 $('#main-user-form-login').on 'success', (e) ->
     e.preventDefault()
