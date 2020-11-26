@@ -15,24 +15,26 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 <section class="section bg">
     <div class="container">
         <h2 class="h1 center">Бесплатный онлайн тест на списание долгов от портала «Без&nbsp;Кредитов»</h2>
-        <div class="cart pr-lg-3">
+        <div class="cart">
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-12 col-lg order-lg-2 z-2">
-                        <h2 class="h2 fw-400" style="margin-bottom: 30px">
-                            <em>
-                                <span class="dialog">Смогу ли я списать свои долги через банкротство?</span>
-                                <span class="dialog">А долги все спишут или частично?</span>
-                            </em>
-                        </h2>
-                        <h3 class="h2">Хватит гадать пора действовать!</h3>
-                        <p class="em-11">Пройдите бесплатный онлайн тест и получите предварительное решение о&nbsp;списании ваших долгов* прямо на почту</p>
-                        <div class="row justify-content-center">
-                            <div class="col-auto">
-                                <a class="btn btn-default" data-fancybox href="#test">Пройти тест</a>
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                        <p>*<small> По 127 Федеральному закону «О банкротстве» можно списать следующие долги: Кредиты и займы. Просрочки по кредитам и кредитными картам. Административные штрафы, долги за коммунальные услуги. Задолженность и пени по налогам.</small></p>
+                        <div class="px-sm-3 pl-lg-0">
+                            <h2 class="h2 fw-400 my-5">
+                                <em>
+                                    <span class="dialog">Смогу ли я списать свои долги через банкротство?</span>
+                                    <span class="dialog">А долги все спишут или частично?</span>
+                                </em>
+                            </h2>
+                            <h3 class="h2 center my-5">Хватит гадать пора действовать!</h3>
+                            <p class="em-11 my-5">Пройдите бесплатный онлайн тест и получите предварительное решение о&nbsp;списании ваших долгов* прямо на почту</p>
+                            <div class="row justify-content-center my-5">
+                                <div class="col-auto">
+                                    <a class="btn btn-default" data-fancybox href="#test">Пройти тест</a>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                            <p class="my-5">*<small> По 127 Федеральному закону «О банкротстве» можно списать следующие долги: Кредиты и займы. Просрочки по кредитам и кредитными картам. Административные штрафы, долги за коммунальные услуги. Задолженность и пени по налогам.</small></p>
+                        </div>
                     </div><!-- .col -->
                     <div class="col-12 col-lg align-self-end order-md-1 z-1">
                         <img class="img-center" width="480" style="margin-bottom: -3px" src="/img/block-img-1.jpg">
@@ -686,23 +688,21 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 <section class="section bg">
     <h2 class="h1 center">Проверьте свои долги, штрафы в режиме реального&nbsp;времени!</h2>
     <div class="container mb-4">
-        <div class="cart pr-lg-3">
+        <div class="cart">
             <div class="cart-body">
                 <div class="row align-items-center">
-                    <div class="col-12 col-lg order-lg-2 z-2">
-                        <h2 class="center">Жители г.&nbsp;<?= $city->name ?> могут бесплатно проверить долги у&nbsp;судебных приставов по фамилии прямо у нас на портале</h2>
-                        <div class="row">
-                            <div class="col-12">
-                                <p class="em-11">Бесплатная проверка долгов у судебных приставов ФССП по фамилии. Укажите Фамилию, Имя, Отчество, Регион и дату рождения физического лица и нажмите проверить долги. В режиме онлайн будут показаны задолженности по кредитам, штрафам ГИБДД, алиментам и другие исполнительные производства должника.</p>
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                        <div class="row justify-content-center">
-                            <div class="col-auto">
-                                <a class="btn btn-default" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">Проверить долги</a>
-                            </div><!-- .col -->
-                        </div><!-- .row -->
+                    <div class="col-12 col-lg-6 order-lg-2 z-2">
+                        <div class="px-sm-3">
+                            <h2 class="center my-5">Жители г.&nbsp;<?= $city->name ?> могут бесплатно проверить долги у&nbsp;судебных приставов по фамилии прямо у нас на портале</h2>
+                            <p class="em-11 my-5">Бесплатная проверка долгов у судебных приставов ФССП по фамилии. Укажите Фамилию, Имя, Отчество, Регион и дату рождения физического лица и нажмите проверить долги. В режиме онлайн будут показаны задолженности по кредитам, штрафам ГИБДД, алиментам и другие исполнительные производства должника.</p>
+                            <div class="row my-5">
+                                <div class="col-auto mx-auto">
+                                    <a class="btn btn-default" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">Проверить долги</a>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                        </div>
                     </div><!-- .col -->
-                    <div class="col-12 col-lg-auto align-self-end order-lg-1 z-1">
+                    <div class="col-12 col-lg align-self-end order-lg-1 z-1">
                         <img class="img-center" width="400" style="margin-bottom: -3px" src="/img/block-img-2.jpg">
                     </div><!-- .col -->
                 </div><!-- .row -->

@@ -21,24 +21,26 @@ $this->params['breadcrumbs'] = [
 <section class="section bg">
     <div class="container">
         <h1 class="center">Вопросы и ответы по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h1>
-        <div class="cart pr-xl-3">
+        <div class="cart">
             <div class="cart-body">
                 <div class="row align-items-center">
-                    <div class="col-12 col-lg order-lg-2 z-2">
-                        <h2 class="fw-400" style="margin-bottom: 30px">
-                            <em>
-                                <span class="dialog">Пострадает ли имущество супруги, если я признаю себя банкротом?</span>
-                                <span class="dialog">А что будет с моим единственным жильем?</span>
-                            </em>
-                        </h2>
-                        <div class="wall arrow-lg">
-                            <p>На этой странице вы можете получить консультацию по банкротству физических лиц от юриста, специализирующегося на проведение процедур банкротства физических лиц в&nbsp;г.&nbsp;<?= $city->name ?>. Задайте вопрос ниже в форме и в течение дня вы получите ответ на свой вопрос.</p>
-                            <p>Ваш контактный Email не публикуется, а используется только для уведомления о получении ответа на ваш вопрос.</p>
-                            <p>Консультация по вопросам банкротства физических лиц полностью бесплатна</p>
-                        </div><!-- .wall -->
-                        <h3 class="h2 center">Задайте свой вопрос в форме ниже</h3>
+                    <div class="col-12 col-lg-6 order-lg-2 z-2">
+                        <div class="px-sm-3">
+                            <h2 class="fw-400 my-5">
+                                <em>
+                                    <span class="dialog">Пострадает ли имущество супруги, если я признаю себя банкротом?</span>
+                                    <span class="dialog">А что будет с моим единственным жильем?</span>
+                                </em>
+                            </h2>
+                            <div class="wall arrow-lg my-5">
+                                <p>На этой странице вы можете получить консультацию по банкротству физических лиц от юриста, специализирующегося на проведение процедур банкротства физических лиц в&nbsp;г.&nbsp;<?= $city->name ?>. Задайте вопрос ниже в форме и в течение дня вы получите ответ на свой вопрос.</p>
+                                <p>Ваш контактный Email не публикуется, а используется только для уведомления о получении ответа на ваш вопрос.</p>
+                                <p>Консультация по вопросам банкротства физических лиц полностью бесплатна</p>
+                            </div><!-- .wall -->
+                            <h3 class="h2 center my-5">Задайте свой вопрос в форме ниже</h3>
+                        </div>
                     </div><!-- .col -->
-                    <div class="col-12 col-lg-auto align-self-end order-lg-1 z-1">
+                    <div class="col-12 col-lg align-self-end order-lg-1 z-1">
                         <img class="img-center" width="480" style="margin-bottom: -3px" src="/img/block-img-3.jpg">
                     </div><!-- .col -->
                 </div><!-- .row -->
