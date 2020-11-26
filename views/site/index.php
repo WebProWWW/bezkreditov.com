@@ -427,16 +427,24 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
     </div><!-- .container -->
 </section><!-- .section -->
 
-<section class="section">
-    <div class="container">
-        <h2 class="h1 center">Часто обсуждаемые компании по банкроству в&nbsp;г.&nbsp;<?= $city->name ?></h2>
-    </div><!-- .container -->
-</section><!-- .section -->
-
 <section class="section bg">
     <div class="container">
-        <div class="row">
 
+        <h2 class="h1 center">Часто обсуждаемые компании по банкроству в&nbsp;г.&nbsp;<?= $city->name ?></h2>
+
+        <div class="row justify-content-center mb-3">
+            <div class="col-auto">
+                <a class="tab-ln active">Новые</a>
+            </div><!-- .col -->
+            <div class="col-auto">
+                <a class="tab-ln">Обсуждаемые сегодня</a>
+            </div><!-- .col -->
+            <div class="col-auto">
+                <a class="tab-ln">Топ за все время</a>
+            </div><!-- .col -->
+        </div><!-- .tab -->
+
+        <div class="row">
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
                     <div class="cart-body">
@@ -643,6 +651,17 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 <section class="section">
     <div class="container">
         <h2 class="h1 center">Полезные материалы по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h2>
+        <div class="row justify-content-center mb-3">
+            <div class="col-auto">
+                <a class="tab-ln active">Лучшее за неделю</a>
+            </div><!-- .col -->
+            <div class="col-auto">
+                <a class="tab-ln">Выбор редакции</a>
+            </div><!-- .col -->
+            <div class="col-auto">
+                <a class="tab-ln">Самое популярное</a>
+            </div><!-- .col -->
+        </div><!-- .tab -->
         <div class="row">
             <?php foreach ($materials as $material): ?>
                 <div class="col-12 col-md-6 col-lg-4 mb-4">

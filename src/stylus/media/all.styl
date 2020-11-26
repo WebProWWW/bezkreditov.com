@@ -928,6 +928,19 @@ label
 	mpd(0 auto 15px)
 
 
+.tab-ln
+	mpd(0 0 15px, 0, inline-block)
+	trans()
+	resetLn(black, pcolor)
+	border-bottom 2px solid pcolor
+	text-align center
+	font-size 1.1rem
+
+.tab-ln.active
+	resetLn(pcolor, pcolor)
+	border-bottom 2px solid pcolor
+
+
 
 .bb-primary
 	border-bottom .2em solid pcolor
