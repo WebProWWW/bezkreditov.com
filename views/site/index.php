@@ -127,13 +127,20 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 </section><!-- .section -->
 
 <?php if ($news = $city->region->lastNews): ?>
-<section class="section">
-        <div class="container">
-            <h1 class="center">Актуальные новости по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h1>
-        </div><!-- .container -->
-    </section><!-- .section -->
 <section class="section bg">
+    <h1 class="center">Актуальные новости по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h1>
     <div class="container">
+        <div class="row justify-content-center mb-3">
+            <div class="col-auto">
+                <a class="tab-ln active">Сегодня</a>
+            </div><!-- .col -->
+            <div class="col-auto">
+                <a class="tab-ln">Лучшее за неделю</a>
+            </div><!-- .col -->
+            <div class="col-auto">
+                <a class="tab-ln">Самое обсуждаемое</a>
+            </div><!-- .col -->
+        </div><!-- .tab -->
         <div class="row">
             <?php foreach ($news as $newsItem): ?>
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
