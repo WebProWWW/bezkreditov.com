@@ -48,6 +48,17 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 <section class="section bg">
     <div class="container">
         <h2 class="h1 center">Лучшие компании по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h2>
+        <div class="row justify-content-center mb-3">
+            <div class="col-auto">
+                <a class="tab-ln active">По количеству успешных дел</a>
+            </div><!-- .col -->
+            <div class="col-auto">
+                <a class="tab-ln">По количеству отзывов</a>
+            </div><!-- .col -->
+            <div class="col-auto">
+                <a class="tab-ln">По рейтингу</a>
+            </div><!-- .col -->
+        </div><!-- .tab -->
         <div class="row">
             <?php foreach (Company::findTop() as $company): ?>
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
