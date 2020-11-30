@@ -219,10 +219,12 @@ label
 	padding 8px 18px
 	background transparent
 
-
+.btn-trsp.active
 .btn-trsp:hover
 	background pcolor
 
+.btn-trsp.active:hover
+	box-shadow none
 
 .btn-sm
 	padding 5px 15px
@@ -576,7 +578,7 @@ label
 
 .date-bg
 	background pcolor
-	padding 5px 8px
+	padding 3px 6px
 
 
 .bg-eo:nth-child(even)
@@ -654,11 +656,11 @@ label
 
 
 .percent
-	mpd(0 0 15px, 8px 15px)
-	b(1, darken(#29E334, 30%))
+	mpd(40px 15px 15px)
+	b(1, darken(pcolor, 30%))
 	position relative
+	height 6px
 	border-radius 5px
-	overflow hidden
 
 .percent-value
 	mpd()
@@ -667,15 +669,30 @@ label
 	left 0
 	bottom 0
 	width 0
-	background #29E334
+	background pcolor
+	border-radius 5px
 	z-index 5
 
 .percent-txt
-	mpd()
-	position relative
-	z-index 10
+	mpd(0 0 0 -18px, 4px 0)
+	position absolute
+	width 36px
+	top -27px
+	left 0
+	border-radius 3px
+	box-shadow 0 3px 10px 0 alpha(black, .4)
 	text-align center
+	font-size 11px
+	line-height 1
+	z-index 10
 
+.percent-txt:before
+	mpd(0 0 0 -4px)
+	arrowToBottom(8, 4, white)
+	content ''
+	position absolute
+	bottom -4px
+	left 50%
 
 .team-img
 	mpd(0 auto 15px)
@@ -802,6 +819,9 @@ label
 
 .primary
 	color pcolor
+
+.yellow
+	color #FFC951
 
 .red
 	color red

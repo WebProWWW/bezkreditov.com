@@ -28,6 +28,8 @@ use yii\web\UploadedFile;
  * @property string|null $content
  * @property int $published
  *
+ * @property int $viewCount
+ *
  * @property Region $region
  * @property string|null $img
  * @property string|null $thumb
@@ -223,6 +225,15 @@ class News extends ActiveRecord implements ModelInterface
                 FileHelper::unlink($file);
             }
         }
+    }
+
+    public function getViewCount()
+    {
+        $count = 123;
+        if ($count >= 1000000000) return round($count / 1000000000, 1) . 'G';
+        if ($count >= 1000000) return round($count / 10000000, 1) . 'M';
+        if ($count >= 1000) return round($count / 1000, 1) . 'K';
+        return $count;
     }
 
     /**

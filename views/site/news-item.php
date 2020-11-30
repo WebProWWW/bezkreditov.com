@@ -18,16 +18,58 @@ $this->params['breadcrumbs'] = [
     ],
 ];
 
+$srcUrl = Yii::$app->urlManager->createAbsoluteUrl([
+    'site/news-item',
+    'alias' => $model->alias,
+    'id' => $model->id,
+]);
+
 ?>
 <section class="section">
     <div class="container">
         <h1 class=""><?= $model->title ?></h1>
         <p><span class="date-bg"><?= date('d.m.Y', $model->date) ?></span></p>
-        <img class="news-img" src="<?= $model->image ?>">
+        <img class="news-img" src="<?= $model->image ?>" alt="<?= $model->title ?>">
         <div class="editor">
             <?= $model->content ?>
         </div>
         <div style="clear: both"></div>
+        <div class="row no-gutters align-items-center mt-5">
+            <div class="col-auto mr-3">
+                <p class="em-9"><i class="i-mark"></i> 1</p>
+            </div>
+            <div class="col-auto mr-3">
+                <p class="em-9"><i class="i-heart red"></i> 1</p>
+            </div>
+            <div class="col-auto mr-3">
+                <p class="em-9"><i class="i-comment"></i> 13</p>
+            </div>
+            <div class="col-auto mr-3">
+                <p class="em-9"><i class="i-eye-a"></i> <?= $model->viewCount ?></p>
+            </div>
+            <div class="col-auto">
+                <p class="row align-items-center no-gutters em-9">
+                    <span class="d-none d-lg-block mr-2 right">Поделиться:</span>
+                    <span class="col col-md-auto">
+                        <a class="ln-black-primary mr-2" target="_blank" href="https://vk.com/share.php?url=<?= $srcUrl ?>">
+                            <i class="i-vk"></i>
+                        </a>
+                        <a class="ln-black-primary mr-2" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?= $srcUrl ?>">
+                            <i class="i-f"></i>
+                        </a>
+                        <a class="ln-black-primary mr-2" target="_blank" href="https://connect.ok.ru/offer?url=<?= $srcUrl ?>&title=<?= $model->title ?>">
+                            <i class="i-ok"></i>
+                        </a>
+                        <a class="ln-black-primary mr-2" target="_blank" href="https://twitter.com/intent/tweet?text=<?= $model->title ?>&url=<?= $srcUrl ?>">
+                            <i class="i-tw"></i>
+                        </a>
+                        <a class="ln-black-primary" target="_blank" href="https://telegram.me/share/url?url=<?= $srcUrl ?>&text=<?= $model->title ?>">
+                            <i class="i-telegram"></i>
+                        </a>
+                    </span>
+                </p>
+            </div>
+        </div><!-- .row -->
     </div><!-- .container -->
 </section><!-- .section -->
 

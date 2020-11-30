@@ -49,10 +49,10 @@ class JsSearch
 
 
 
-$('*[data-percent]').each (i, el) ->
-    $this = $ el
-    percent = Number $(this).data 'percent'
-    $this.css width: "#{percent}%"
+# $('*[data-percent]').each (i, el) ->
+#     $this = $ el
+#     percent = Number $(this).data 'percent'
+#     $this.css width: "#{percent}%"
 
 
 # $.fancybox.open src: '#cities'

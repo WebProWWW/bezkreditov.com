@@ -28,50 +28,94 @@ $this->params['breadcrumbs'] = [
 <section class="section">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-lg mx-auto">
+            <div class="col-12 col-sm col-lg">
                 <img class="klogo" src="<?= $model->logoImg ?>">
                 <p><?= $model->address ?></p>
-                <p class="em-15">
+                <p class="em-13 fw-600">
                     <?php foreach ($model->phones as $phone): ?>
                         <a class="ln-black-primary" href="tel:<?= $phone->phone ?>"><?= $phone->phone ?></a>
                         <br>
                     <?php endforeach; ?>
                 </p>
                 <p><a href="<?= $model->website ?>" target="_blank">Веб-сайт</a></p>
-                <a class="btn btn-default" href="">Обратный звонок</a>
-            </div><!-- .col -->
-
-            <div class="col-12 d-lg-none"><span class="divider-h"></span></div>
-            <div class="d-none d-lg-block px-xl-4"><span class="divider-v"></span></div>
-
-            <div class="col-12 col-sm col-lg mx-auto">
-                <h3 class="h2 center">Дела по банкротству</h3>
-                <p><span class="em-16"><?= $model->cases ?></span> - всего дел</p>
-                <p><span class="em-16"><?= $model->written_off ?></span> - списание долгов</p>
-                <p><span class="em-16"><?= $model->in_work ?></span> - в работе</p>
-                <p><span class="em-16"><?= $model->refusals ?></span> - отказ в списании</p>
-                <div class="percent">
-                    <span class="percent-value" data-percent="<?= $model->percent ?>"></span>
-                    <span class="percent-txt"><?= $model->percent ?>%</span>
+                <div class="row">
+                    <div class="col-auto">
+                        <a class="btn-default" href="">Обратный звонок</a>
+                    </div>
                 </div>
             </div><!-- .col -->
 
             <div class="col-12 d-sm-none"><span class="divider-h"></span></div>
             <div class="d-none d-sm-block px-xl-4"><span class="divider-v"></span></div>
 
-            <div class="col-12 col-sm-auto mx-auto">
-                <h3 class="h2 center">Отзывы</h3>
-                <?php foreach ($model->reviewsCountByRate as $enabledStars => $countByRate): ?>
-                    <div class="d-flex align-items-center">
-                        <div class="mr-4 mb-2 em-13">
-                            <?php for ($star=1; $star <= 5; $star++ ): ?>
-                                <?php $isMuted = $enabledStars < $star;  ?>
-                                <i class="i-star <?= $isMuted ? 'mutted' : 'green' ?>"></i>
-                            <?php endfor; ?>
-                        </div>
-                        <p class="mb-2"><span class="em-16"><?= $countByRate ?></span></p>
-                    </div>
-                <?php endforeach; ?>
+            <div class="col-12 col-sm col-lg mx-auto">
+                <h3 class="center">Дела по банкротству</h3>
+                <p class="d-flex align-items-center">
+                    <span class="d-block em-13 fw-600 mr-2"><?= $model->cases ?></span>
+                    <span class="mr-2">-</span>
+                    <span class="d-block">всего дел по банкротству</span>
+                </p>
+                <p class="d-flex align-items-center">
+                    <span class="d-block em-13 fw-600 mr-2"><?= $model->written_off ?></span>
+                    <span class="mr-2">-</span>
+                    <span class="d-block">количество успешных дел по банкротству</span>
+                </p>
+                <p class="d-flex align-items-center">
+                    <span class="d-block em-13 fw-600 mr-2"><?= $model->in_work ?></span>
+                    <span class="mr-2">-</span>
+                    <span class="d-block">дел по банкротству в работе</span>
+                </p>
+                <p class="d-flex align-items-center">
+                    <span class="d-block em-13 fw-600 mr-2"><?= $model->refusals ?></span>
+                    <span class="mr-2">-</span>
+                    <span class="d-block">отказ в списании долгов</span>
+                </p>
+                <div class="percent">
+                    <?php $percent = $model->percent . '%' ?>
+                    <span class="percent-value" style="width: <?= $percent ?>"></span>
+                    <span class="percent-txt" style="left: <?= $percent ?>"><?= $percent ?></span>
+                </div>
+            </div><!-- .col -->
+
+            <div class="col-12 d-lg-none"><span class="divider-h mt-3"></span></div>
+            <div class="d-none d-lg-block px-xl-4"><span class="divider-v"></span></div>
+
+            <div class="col-12 col-sm col-lg-auto mx-auto mb-2">
+                <h3 class="center">Отзывы</h3>
+                <p class="em-30 fw-600 center" style="line-height: 1"><?= $model->rate ?></p>
+                <h3 class="center">Общий рейтинг</h3>
+                <div class="row">
+                    <div class="col-auto mx-auto">
+                        <?php foreach ($model->reviewsCountByRate as $enabledStars => $countByRate): ?>
+                            <?php if ($countByRate): ?>
+                                <div class="d-flex align-items-center">
+                                    <div class="mr-3 mb-1 em-11">
+                                        <?php for ($star=1; $star <= 5; $star++ ): ?>
+                                            <?php $isMuted = $enabledStars < $star;  ?>
+                                            <i class="i-star <?= $isMuted ? 'mutted' : 'yellow' ?>"></i>
+                                        <?php endfor; ?>
+                                    </div>
+                                    <p class="mb-1"><span class="em-13"><?= $countByRate ?></span></p>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .col -->
+
+            <div class="col-12 d-sm-none"><span class="divider-h"></span></div>
+            <div class="d-none d-sm-block px-xl-4"><span class="divider-v"></span></div>
+
+            <div class="col-12 col-sm col-lg-auto">
+                <div class="center">
+                    <h3>Цены на процедуру<br>банкротства</h3>
+                    <p class="fw-600 my-5">
+                        <span class="em-20 px-3 py-1 bg-primary">4&nbsp;999</span>
+                        <br>
+                        <span class="em-15">руб.</span>
+                    </p>
+                    <p><em>в рассрочку</em></p>
+                </div><!-- .center -->
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
@@ -113,7 +157,20 @@ $this->params['breadcrumbs'] = [
 </section><!-- .section -->
 
 <section class="section">
-    <h2 class="h1 center">Отзывы о компании <?= $model->name ?></h2>
+    <div class="container">
+        <h2 class="h1 center">Отзывы о компании <?= $model->name ?></h2>
+        <div class="row no-gutters align-items-center justify-content-center">
+            <div class="col-12 col-sm-auto mx-sm-2">
+                <p class="center">Сортировать:</p>
+            </div>
+            <div class="col-auto mx-2">
+                <a class="btn-sm btn-trsp">по дате</a>
+            </div>
+            <div class="col-auto mx-2">
+                <a class="btn-sm btn-trsp active">по оценке</a>
+            </div>
+        </div>
+    </div>
     <?php
         $comments = new ActiveDataProvider();
         $comments->query = $model->getComments();
@@ -151,11 +208,13 @@ $this->params['breadcrumbs'] = [
             </div><!-- .container -->
         </div>
     <?php endforeach; ?>
-    <div class="row justify-content-center my-3">
-        <div class="col-auto">
-            <?= LinkPager::widget([
-                'pagination' => $comments->pagination,
-            ]) ?>
+    <div class="container">
+        <div class="row justify-content-center my-3">
+            <div class="col-auto">
+                <?= LinkPager::widget([
+                    'pagination' => $comments->pagination,
+                ]) ?>
+            </div>
         </div>
     </div>
 </section><!-- .section -->

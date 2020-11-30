@@ -32,31 +32,35 @@ $srcUrl = Yii::$app->urlManager->createAbsoluteUrl(['site/material', 'alias' => 
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10 col-xl-9">
-                <div class="row align-items-center">
-                    <div class="col-12 col-sm-6 col-md-auto">
+                <div class="row no-gutters align-items-center justify-content-md-between">
+                    <div class="col-12 col-sm-auto mr-3">
                         <p class="row align-items-center no-gutters em-9">
-                            <span class="col-5 col-md-auto mr-3 right">Выход статьи:</span>
+                            <span class="col-5 col-sm-auto mr-1 right">Выход статьи:</span>
                             <span class="col col-md-auto"><span class="date-bg"><?= date('d.m.Y', $model->created_at) ?></span></span>
                         </p>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-auto">
+                    <div class="col-12 col-sm-auto mr-3">
                         <p class="row align-items-center no-gutters em-9">
-                            <span class="col-5 col-md-auto mr-3 right">Время чтения:</span>
+                            <span class="col-5 col-sm-auto mr-1 right">Время чтения:</span>
                             <span class="col col-md-auto"><span class="date-bg"><?= $model->readTime ?></span></span>
                         </p>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-auto">
-                        <p class="row align-items-center no-gutters em-9">
-                            <span class="col-5 col-md-auto mr-3 right">Просмотров:</span>
-                            <span class="col col-md-auto">
-                                <i class="i-eye-a"></i>
-                                <?= $model->viewCount ?>
-                            </span>
-                        </p>
+                    <div class="col-12 d-md-none"></div>
+                    <div class="col-auto ml-auto ml-md-0 mr-3">
+                        <p class="em-9"><i class="i-mark"></i> 1</p>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-auto">
+                    <div class="col-auto mr-3">
+                        <p class="em-9"><i class="i-heart red"></i> 1</p>
+                    </div>
+                    <div class="col-auto mr-3">
+                        <p class="em-9"><i class="i-comment"></i> 13</p>
+                    </div>
+                    <div class="col-auto mr-3">
+                        <p class="em-9"><i class="i-eye-a"></i> <?= $model->viewCount ?></p>
+                    </div>
+                    <div class="col-auto">
                         <p class="row align-items-center no-gutters em-9">
-                            <span class="col-5 col-md-auto mr-3 right">Поделиться:</span>
+                            <span class="d-none d-lg-block mr-2 right">Поделиться:</span>
                             <span class="col col-md-auto">
                                 <a class="ln-black-primary mr-2" target="_blank" href="https://vk.com/share.php?url=<?= $srcUrl ?>">
                                     <i class="i-vk"></i>
@@ -76,13 +80,49 @@ $srcUrl = Yii::$app->urlManager->createAbsoluteUrl(['site/material', 'alias' => 
                             </span>
                         </p>
                     </div>
-                </div>
+                </div><!-- .row -->
                 <img class="img" style="width: 100%" src="<?= $model->img ?>" alt="<?= $model->title ?>">
                 <p><?= $model->description ?></p>
                 <div class="editor">
                     <div class="js-h-hash-nav"></div>
                     <?= $model->content ?>
                 </div>
+                <div class="row no-gutters align-items-center mt-5">
+                    <div class="col-auto mr-3">
+                        <p class="em-9"><i class="i-mark"></i> 1</p>
+                    </div>
+                    <div class="col-auto mr-3">
+                        <p class="em-9"><i class="i-heart red"></i> 1</p>
+                    </div>
+                    <div class="col-auto mr-3">
+                        <p class="em-9"><i class="i-comment"></i> 13</p>
+                    </div>
+                    <div class="col-auto mr-3">
+                        <p class="em-9"><i class="i-eye-a"></i> <?= $model->viewCount ?></p>
+                    </div>
+                    <div class="col-auto">
+                        <p class="row align-items-center no-gutters em-9">
+                            <span class="d-none d-lg-block mr-2 right">Поделиться:</span>
+                            <span class="col col-md-auto">
+                                <a class="ln-black-primary mr-2" target="_blank" href="https://vk.com/share.php?url=<?= $srcUrl ?>">
+                                    <i class="i-vk"></i>
+                                </a>
+                                <a class="ln-black-primary mr-2" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?= $srcUrl ?>">
+                                    <i class="i-f"></i>
+                                </a>
+                                <a class="ln-black-primary mr-2" target="_blank" href="https://connect.ok.ru/offer?url=<?= $srcUrl ?>&title=<?= $model->title ?>">
+                                    <i class="i-ok"></i>
+                                </a>
+                                <a class="ln-black-primary mr-2" target="_blank" href="https://twitter.com/intent/tweet?text=<?= $model->title ?>&url=<?= $srcUrl ?>">
+                                    <i class="i-tw"></i>
+                                </a>
+                                <a class="ln-black-primary" target="_blank" href="https://telegram.me/share/url?url=<?= $srcUrl ?>&text=<?= $model->title ?>">
+                                    <i class="i-telegram"></i>
+                                </a>
+                            </span>
+                        </p>
+                    </div>
+                </div><!-- .row -->
             </div>
         </div>
     </div><!-- .container -->
@@ -97,33 +137,7 @@ $srcUrl = Yii::$app->urlManager->createAbsoluteUrl(['site/material', 'alias' => 
 <section class="section">
     <div class="container">
         <h2 class="h1 center">Другие материалы по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h2>
-
-        <div class="row">
-            <?php foreach ($model->lastMaterials as $lastMaterial): ?>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <div class="cart">
-                            <div class="cart-img-header">
-                                <img class="cart-img" style="width: 100%" src="<?= $lastMaterial->thumb ?>">
-                            </div>
-                            <div class="cart-body">
-                                <h4><?= $lastMaterial->title ?></h4>
-                                <p><?= StringHelper::truncate($lastMaterial->description, 100) ?></p>
-                            </div><!-- .cart-body -->
-                            <div class="cart-footer">
-                                <div class="d-flex no-gutters align-items-center">
-                                    <div class="col">
-                                        <p class="mutted"><?= date('d.m.Y', $lastMaterial->created_at) ?></p>
-                                    </div>
-                                    <div class="col-auto col-sm-3 col-md-4 col-lg-5">
-                                        <a class="btn btn-sm btn-default" href="<?= Url::to(['site/material', 'alias' => $lastMaterial->alias]) ?>">Читать</a>
-                                    </div>
-                                </div>
-                            </div><!-- .cart-footer -->
-                        </div><!-- .cart -->
-                    </div><!-- .col -->
-            <?php endforeach; ?>
-        </div><!-- .row -->
-
+        <?= $this->render('-material-list', [ 'materials' => $model->lastMaterials ]) ?>
         <div class="row justify-content-center">
             <div class="col-12 col-sm-8 col-md-5 col-lg-3">
                 <a class="btn btn-default" href="<?= Url::to(['site/index', 'view' => Material::ALIAS]) ?>">Читать все материалы</a>
