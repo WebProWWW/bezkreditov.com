@@ -12,7 +12,33 @@ $this->params['breadcrumbs'] = [
 ];
 
 ?>
-<section class="section bg">
+
+<section class="section" style="background: #fbbd14; overflow: hidden; position: relative;">
+    <div class="container">
+        <div class="row no-gutters align-items-center">
+            <div class="col-12 col-lg">
+                <h2 class="h1 fw-400 center">
+                    Более&nbsp;<span class="fw-600">200&nbsp;000&nbsp;человек*</span> списали&nbsp;все&nbsp;свои
+                    <br>
+                    и&nbsp;начали&nbsp;жизнь с&nbsp;чистого&nbsp;листа
+                </h2>
+            </div><!-- .col -->
+            <div class="col-12 col-lg-6 col-xl-5">
+                <img class="img-center" src="/img/img-1.jpg" style="margin-bottom: -13px">
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+    <p style="
+        position: absolute;
+        margin: 0;
+        width: 100%;
+        bottom: 5px;
+        color: #7E5D1A;
+        text-align: center;
+    ">* согласно данным Федрусарс на на ноября 2020 года</p>
+</section><!-- .section -->
+
+<section class="section">
     <div class="container">
         <h1 class="center">Отзывы людей прошедших процедуру банкротства г.&nbsp;<?= $city->name ?></h1>
     </div><!-- .container -->

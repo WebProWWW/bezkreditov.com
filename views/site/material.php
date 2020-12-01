@@ -100,9 +100,9 @@ $srcUrl = Yii::$app->urlManager->createAbsoluteUrl(['site/material', 'alias' => 
                     <div class="col-auto mr-3">
                         <p class="em-9"><i class="i-eye-a"></i> <?= $model->viewCount ?></p>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-auto ml-auto">
                         <p class="row align-items-center no-gutters em-9">
-                            <span class="d-none d-lg-block mr-2 right">Поделиться:</span>
+                            <span class="d-none d-sm-block mr-2 right">Поделиться:</span>
                             <span class="col col-md-auto">
                                 <a class="ln-black-primary mr-2" target="_blank" href="https://vk.com/share.php?url=<?= $srcUrl ?>">
                                     <i class="i-vk"></i>

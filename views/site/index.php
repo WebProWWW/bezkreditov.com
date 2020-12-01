@@ -14,6 +14,96 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 ?>
 <section class="section bg">
     <div class="container">
+        <h2 class="h1 center">Онлайн сервис подбора специалистов по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></h2>
+        <div class="row">
+            <div class="col-12 col-lg-6 mb-4">
+                <div class="cart">
+                    <div class="cart-body">
+                        <h3 class="em-13">Подбор юриста по банкротству</h3>
+                        <div class="row no-gutters" style="height: 100%;">
+                            <div class="col-12 col-sm">
+                                <p>Удобный сервис подбора юриста по банкротству в вашем регионе. Быстро, бесплатно, надежно.</p>
+                                <p>Больше 50 предложений от юридических компаний</p>
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="percent-circle" style="width: 60px">
+                                            <span data-circle-percent="95"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <p>Количество<br>успешных&nbsp;дел</p>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <p class="em-15 center" style="width: 60px">
+                                            <i class="i-star primary"></i> 10
+                                        </p>
+                                    </div>
+                                    <div class="col">
+                                        <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto mx-auto mx-sm-0">
+                                        <a class="btn-default">Попробовать</a>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-5 col-xl-6 align-self-end mx-auto">
+                                <img class="img-center" src="/img/w-img-1.jpg" style="margin-bottom: -3px; margin-top: -3px;">
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .cart-body -->
+                </div><!-- .cart -->
+            </div><!-- .col -->
+            <div class="col-12 col-lg-6 mb-4">
+                <div class="cart">
+                    <div class="cart-body">
+                        <h3 class="em-13">Подбор финансового управляющего</h3>
+                        <div class="row no-gutters" style="height: 100%;">
+                            <div class="col-12 col-sm">
+                                <p>Удобный сервис подбора финансового управляющего в вашем регионе для ведения процедуры банкротства.</p>
+                                <p>Больше 70 предложений от финансовых управляющих</p>
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="percent-circle" style="width: 60px">
+                                            <span data-circle-percent="93"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <p>Количество<br>успешных&nbsp;дел</p>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <p class="em-15 center" style="width: 60px">
+                                            <i class="i-star primary"></i> 9.5
+                                        </p>
+                                    </div>
+                                    <div class="col">
+                                        <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto mx-auto mx-sm-0">
+                                        <a class="btn-default">Попробовать</a>
+                                    </div>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-5 col-xl-6 align-self-end mx-auto">
+                                <img class="img-center" src="/img/w-img-2.jpg" style="margin-bottom: -3px; margin-top: -3px;">
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .cart-body -->
+                </div><!-- .cart -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+</section><!-- .section -->
+
+<section class="section bg">
+    <div class="container">
         <h2 class="h1 center">Бесплатный онлайн тест на списание долгов от портала «Без&nbsp;Кредитов»</h2>
         <div class="cart">
             <div class="cart-body">
@@ -130,8 +220,8 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 
 <?php if ($news = $city->region->lastNews): ?>
 <section class="section bg">
-    <h1 class="center">Актуальные новости по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h1>
     <div class="container">
+        <h1 class="center">Актуальные новости по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h1>
         <div class="row justify-content-center mb-3">
             <div class="col-auto">
                 <a class="tab-ln active">Сегодня</a>

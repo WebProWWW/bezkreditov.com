@@ -47,7 +47,7 @@ $srcUrl = Yii::$app->urlManager->createAbsoluteUrl([
             <div class="col-auto mr-3">
                 <p class="em-9"><i class="i-eye-a"></i> <?= $model->viewCount ?></p>
             </div>
-            <div class="col-auto">
+            <div class="col-auto ml-auto">
                 <p class="row align-items-center no-gutters em-9">
                     <span class="d-none d-lg-block mr-2 right">Поделиться:</span>
                     <span class="col col-md-auto">
