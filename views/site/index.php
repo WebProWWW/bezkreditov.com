@@ -24,8 +24,8 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                             <div class="col-12 col-sm">
                                 <div class="d-flex flex-column" style="height: 100%; position: relative;">
                                     <p class="em-9">Удобный сервис подбора юриста по банкротству в вашем регионе. Быстро, бесплатно, надежно.</p>
-                                    <p class="em-9">Больше 50 предложений от юридических компаний</p>
-                                    <div class="row align-items-center mt-auto">
+                                    <p class="em-9 mt-auto mb-5">Больше 50 предложений от юридических компаний</p>
+                                    <div class="row align-items-center">
                                         <div class="col-auto">
                                             <div class="percent-circle" style="width: 60px">
                                                 <span data-circle-percent="95"></span>
@@ -69,8 +69,8 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                             <div class="col-12 col-sm">
                                 <div class="d-flex flex-column" style="height: 100%; position: relative;">
                                     <p class="em-9">Удобный сервис подбора финансового управляющего в вашем регионе для ведения процедуры банкротства.</p>
-                                    <p class="em-9">Больше 70 предложений от финансовых управляющих</p>
-                                    <div class="row align-items-center mt-auto">
+                                    <p class="em-9 mt-auto mb-5">Больше 70 предложений от финансовых управляющих</p>
+                                    <div class="row align-items-center">
                                         <div class="col-auto">
                                             <div class="percent-circle" style="width: 60px">
                                                 <span data-circle-percent="93"></span>
