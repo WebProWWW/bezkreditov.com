@@ -126,7 +126,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                             </h2>
                             <div class="wall px-sm-5 mb-lg-4">
                                 <h3 class="h2 center my-3">Хватит гадать пора действовать!</h3>
-                                <p class="em-11 my-3">Пройдите бесплатный онлайн тест и получите предварительное решение о&nbsp;списании ваших долгов* и три шикарных <a href="">бонуса</a> от нас прямо на почту</p>
+                                <p class="em-11 my-3">Пройдите бесплатный онлайн тест и получите предварительное решение о&nbsp;списании ваших долгов* и три шикарных <a data-fancybox href="#test-bonus">бонуса</a> от нас прямо на почту</p>
                                 <div class="row justify-content-center my-3">
                                     <div class="col-auto">
                                         <a class="btn btn-default" data-fancybox href="#test">Пройти тест</a>

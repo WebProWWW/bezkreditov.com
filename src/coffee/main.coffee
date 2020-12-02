@@ -22,6 +22,7 @@ $('.js-test').each (i, el) ->
         render: (h) -> h Test
     .$mount el
 
+# $.fancybox.open src: '#test-bonus'
 # $.fancybox.open src: '#test'
 
 

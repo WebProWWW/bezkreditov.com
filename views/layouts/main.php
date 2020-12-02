@@ -41,7 +41,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
     <?php $this->registerCsrfMetaTags() ?>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap">
     <link rel="stylesheet" href="/css/main.depends.css?v=029">
-    <link rel="stylesheet" href="/css/main.css?v=052">
+    <link rel="stylesheet" href="/css/main.css?v=053">
     <title><?= $title ?></title>
     <meta name="description" content="<?= $description ?>">
     <meta property="og:locale" content="ru_RU">
@@ -218,6 +218,28 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 
 <!-- МОДАЛЬНЫЕ ОКНА -->
 <div class="d-none">
+
+
+<!-- БОНУС -->
+<div class="modal-md" id="test-bonus">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-3 col-lg-auto">
+                <img class="img-center" width="200" src="/img/idir.png">
+            </div><!-- .col -->
+            <div class="col-12 col-md">
+                <h3 class="h2">За прохождение теста вы дополнительно получаете:</h3>
+                <p class="dialog mb-2">
+                    План по списанию долго в подарок:
+                    <br>
+                    <em>(пошаговая инструкция образцы заявлений, приложений, ходатайств по банкротству, сроки, размеры госпошлин)</em>
+                </p>
+                <p class="dialog mb-2">Образец заявления для подачи в Арбитражный суд</p>
+                <p class="dialog mb-2">Подробные отзывы и истории людей начавших жизнь с чистого листа</p>
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+</div><!-- .modal -->
 
 
 <!-- ПРОЙТИ ТЕСТ -->
