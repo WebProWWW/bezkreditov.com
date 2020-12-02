@@ -18,7 +18,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
         <div class="row">
             <div class="col-12 col-lg-6 mb-4">
                 <div class="cart">
-                    <div class="cart-body">
+                    <div class="cart-body" style="height: 100%;">
                         <h3 class="em-13">Подбор юриста по банкротству</h3>
                         <div class="row no-gutters" style="height: 100%;">
                             <div class="col-12 col-sm">
@@ -59,7 +59,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
             </div><!-- .col -->
             <div class="col-12 col-lg-6 mb-4">
                 <div class="cart">
-                    <div class="cart-body">
+                    <div class="cart-body" style="height: 100%;">
                         <h3 class="em-13">Подбор финансового управляющего</h3>
                         <div class="row no-gutters" style="height: 100%;">
                             <div class="col-12 col-sm">
