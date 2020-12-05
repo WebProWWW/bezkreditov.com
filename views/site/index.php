@@ -158,7 +158,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
             <div class="col-auto">
                 <a class="tab-ln">По рейтингу</a>
             </div><!-- .col -->
-        </div><!-- .tab -->
+        </div><!-- .row -->
         <div class="row">
             <?php foreach (Company::findTop() as $company): ?>
                 <div class="col-12 col-md-6 col-lg-4 mb-4">

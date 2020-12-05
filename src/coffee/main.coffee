@@ -341,6 +341,12 @@ $('#main-user-form-register').on 'fail', (e) ->
     off
 
 
+# TO-DO
+$('#rating-arb-form-filter').on 'submit', (e) ->
+    e.preventDefault()
+    e.stopImmediatePropagation()
+    off
+
 $('.js-form-ajax').each (i, form) ->
     ajaxForm = new AjaxForm form
     ajaxForm.$form
