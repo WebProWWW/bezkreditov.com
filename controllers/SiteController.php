@@ -14,8 +14,8 @@ use app\models\Fssp;
 use app\models\Material;
 use app\models\News;
 use app\models\Company;
-
 use app\models\User;
+
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
@@ -127,6 +127,16 @@ class SiteController extends Controller
     {
         return $this->render('company', [
             'model' => Company::findByAlias($alias),
+            'city' => $this->city,
+        ]);
+    }
+
+    /**
+     * РЕЙТИНГ АРБИТРАЖНЫХ УПРАВЛЯЮЩИХ
+     */
+    public function actionArbitration()
+    {
+        return $this->render('arbitration', [
             'city' => $this->city,
         ]);
     }

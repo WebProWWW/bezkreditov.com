@@ -164,7 +164,7 @@ $this->params['breadcrumbs'] = [
                                     </div><!-- .row -->
                                     <div class="row">
                                         <div class="col-auto mx-auto mx-sm-0">
-                                            <a class="btn-default">Смотреть профиль</a>
+                                            <a class="btn-default" href="<?= Url::to(['site/arbitration']) ?>">Смотреть профиль</a>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
                                 </div><!-- .col -->
@@ -199,7 +199,7 @@ $this->params['breadcrumbs'] = [
                                     </div><!-- .row -->
                                     <div class="row">
                                         <div class="col-auto mx-auto mx-sm-0">
-                                            <a class="btn-default">Смотреть профиль</a>
+                                            <a class="btn-default" href="<?= Url::to(['site/arbitration']) ?>">Смотреть профиль</a>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
                                 </div><!-- .col -->
@@ -234,7 +234,7 @@ $this->params['breadcrumbs'] = [
                                     </div><!-- .row -->
                                     <div class="row">
                                         <div class="col-auto mx-auto mx-sm-0">
-                                            <a class="btn-default">Смотреть профиль</a>
+                                            <a class="btn-default" href="<?= Url::to(['site/arbitration']) ?>">Смотреть профиль</a>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
                                 </div><!-- .col -->
@@ -269,7 +269,7 @@ $this->params['breadcrumbs'] = [
                                     </div><!-- .row -->
                                     <div class="row">
                                         <div class="col-auto mx-auto mx-sm-0">
-                                            <a class="btn-default">Смотреть профиль</a>
+                                            <a class="btn-default" href="<?= Url::to(['site/arbitration']) ?>">Смотреть профиль</a>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
                                 </div><!-- .col -->
@@ -304,7 +304,7 @@ $this->params['breadcrumbs'] = [
                                     </div><!-- .row -->
                                     <div class="row">
                                         <div class="col-auto mx-auto mx-sm-0">
-                                            <a class="btn-default">Смотреть профиль</a>
+                                            <a class="btn-default" href="<?= Url::to(['site/arbitration']) ?>">Смотреть профиль</a>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
                                 </div><!-- .col -->
@@ -339,7 +339,7 @@ $this->params['breadcrumbs'] = [
                                     </div><!-- .row -->
                                     <div class="row">
                                         <div class="col-auto mx-auto mx-sm-0">
-                                            <a class="btn-default">Смотреть профиль</a>
+                                            <a class="btn-default" href="<?= Url::to(['site/arbitration']) ?>">Смотреть профиль</a>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
                                 </div><!-- .col -->
@@ -374,7 +374,7 @@ $this->params['breadcrumbs'] = [
                                     </div><!-- .row -->
                                     <div class="row">
                                         <div class="col-auto mx-auto mx-sm-0">
-                                            <a class="btn-default">Смотреть профиль</a>
+                                            <a class="btn-default" href="<?= Url::to(['site/arbitration']) ?>">Смотреть профиль</a>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
                                 </div><!-- .col -->
@@ -409,7 +409,7 @@ $this->params['breadcrumbs'] = [
                                     </div><!-- .row -->
                                     <div class="row">
                                         <div class="col-auto mx-auto mx-sm-0">
-                                            <a class="btn-default">Смотреть профиль</a>
+                                            <a class="btn-default" href="<?= Url::to(['site/arbitration']) ?>">Смотреть профиль</a>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
                                 </div><!-- .col -->
@@ -444,7 +444,7 @@ $this->params['breadcrumbs'] = [
                                     </div><!-- .row -->
                                     <div class="row">
                                         <div class="col-auto mx-auto mx-sm-0">
-                                            <a class="btn-default">Смотреть профиль</a>
+                                            <a class="btn-default" href="<?= Url::to(['site/arbitration']) ?>">Смотреть профиль</a>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
                                 </div><!-- .col -->
@@ -479,7 +479,7 @@ $this->params['breadcrumbs'] = [
                                     </div><!-- .row -->
                                     <div class="row">
                                         <div class="col-auto mx-auto mx-sm-0">
-                                            <a class="btn-default">Смотреть профиль</a>
+                                            <a class="btn-default" href="<?= Url::to(['site/arbitration']) ?>">Смотреть профиль</a>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
                                 </div><!-- .col -->
