@@ -13,6 +13,9 @@ h2, .h2
 .md-left
 	text-align left
 
+.md-center
+	text-align center
+
 .wall.arrow-md
 	position relative
 
@@ -31,3 +34,17 @@ h2, .h2
 .news-img
 	float left
 	width 50%
+
+
+.list.list-md-border > .list-item
+	padding-top 0 !important
+
+.list.list-md-border > .list-item > [class*="col-"]
+	display flex
+	flex-direction column
+	justify-content center
+	padding-top 15px
+	border-right 1px solid #E3E4E6
+
+.list.list-md-border > .list-item > [class*="col-"]:last-child
+	border none

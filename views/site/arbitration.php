@@ -268,5 +268,324 @@ $this->params['breadcrumbs'] = [
                 </div>
             </div><!-- .col -->
         </div><!-- .row -->
+
+        <div class="mb-4">
+            <div class="cart">
+                <div class="cart-body">
+                    <h2 class="center">Лидеры рейтинга арбитражных управляющих. Белгородская область</h2>
+                    <div class="list list-md-border">
+
+                        <div class="d-none d-lg-block">
+                            <div class="row bg-eo border-header">
+                                <div class="col">
+                                    <p class="fw-600 em-9">Арбитражный управляющий</p>
+                                </div><!-- .col -->
+                                <div class="col-3 center">
+                                    <p class="fw-600 em-9">Регион</p>
+                                </div><!-- .col -->
+                                <div class="col-2 center">
+                                    <p class="fw-600 em-9">Рейтинг ПРОФ</p>
+                                </div><!-- .col -->
+                                <div class="col-3 center">
+                                    <p class="fw-600 em-9">Народный рейтинг</p>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                        </div>
+
+                        <a class="list-item" href="">
+                            <div class="col-12 col-lg">
+                                <p class="fw-600">Коптяева Дарья Павловна</p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-lg-3">
+                                <p>
+                                    <span class="fw-600 d-md-none">Регион<br></span>
+                                    Белгородская область
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Рейтинг ПРОФ<br></span>
+                                    3433.5
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Народный рейтинг<br></span>
+                                    <span class="yellow">
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                    </span>
+                                </p>
+                            </div><!-- .col -->
+                        </a>
+                        <a class="list-item" href="">
+                            <div class="col-12 col-lg">
+                                <p class="fw-600">Коптяева Дарья Павловна</p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-lg-3">
+                                <p>
+                                    <span class="fw-600 d-md-none">Регион<br></span>
+                                    Белгородская область
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Рейтинг ПРОФ<br></span>
+                                    3433.5
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Народный рейтинг<br></span>
+                                    <span class="yellow">
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                    </span>
+                                </p>
+                            </div><!-- .col -->
+                        </a>
+                        <a class="list-item" href="">
+                            <div class="col-12 col-lg">
+                                <p class="fw-600">Коптяева Дарья Павловна</p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-lg-3">
+                                <p>
+                                    <span class="fw-600 d-md-none">Регион<br></span>
+                                    Белгородская область
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Рейтинг ПРОФ<br></span>
+                                    3433.5
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Народный рейтинг<br></span>
+                                    <span class="yellow">
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                    </span>
+                                </p>
+                            </div><!-- .col -->
+                        </a>
+                        <a class="list-item" href="">
+                            <div class="col-12 col-lg">
+                                <p class="fw-600">Коптяева Дарья Павловна</p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-lg-3">
+                                <p>
+                                    <span class="fw-600 d-md-none">Регион<br></span>
+                                    Белгородская область
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Рейтинг ПРОФ<br></span>
+                                    3433.5
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Народный рейтинг<br></span>
+                                    <span class="yellow">
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                    </span>
+                                </p>
+                            </div><!-- .col -->
+                        </a>
+                        <a class="list-item" href="">
+                            <div class="col-12 col-lg">
+                                <p class="fw-600">Коптяева Дарья Павловна</p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-lg-3">
+                                <p>
+                                    <span class="fw-600 d-md-none">Регион<br></span>
+                                    Белгородская область
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Рейтинг ПРОФ<br></span>
+                                    3433.5
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Народный рейтинг<br></span>
+                                    <span class="yellow">
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                    </span>
+                                </p>
+                            </div><!-- .col -->
+                        </a>
+                        <a class="list-item" href="">
+                            <div class="col-12 col-lg">
+                                <p class="fw-600">Коптяева Дарья Павловна</p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-lg-3">
+                                <p>
+                                    <span class="fw-600 d-md-none">Регион<br></span>
+                                    Белгородская область
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Рейтинг ПРОФ<br></span>
+                                    3433.5
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Народный рейтинг<br></span>
+                                    <span class="yellow">
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                    </span>
+                                </p>
+                            </div><!-- .col -->
+                        </a>
+                        <a class="list-item" href="">
+                            <div class="col-12 col-lg">
+                                <p class="fw-600">Коптяева Дарья Павловна</p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-lg-3">
+                                <p>
+                                    <span class="fw-600 d-md-none">Регион<br></span>
+                                    Белгородская область
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Рейтинг ПРОФ<br></span>
+                                    3433.5
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Народный рейтинг<br></span>
+                                    <span class="yellow">
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                    </span>
+                                </p>
+                            </div><!-- .col -->
+                        </a>
+                        <a class="list-item" href="">
+                            <div class="col-12 col-lg">
+                                <p class="fw-600">Коптяева Дарья Павловна</p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-lg-3">
+                                <p>
+                                    <span class="fw-600 d-md-none">Регион<br></span>
+                                    Белгородская область
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Рейтинг ПРОФ<br></span>
+                                    3433.5
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Народный рейтинг<br></span>
+                                    <span class="yellow">
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                    </span>
+                                </p>
+                            </div><!-- .col -->
+                        </a>
+                        <a class="list-item" href="">
+                            <div class="col-12 col-lg">
+                                <p class="fw-600">Коптяева Дарья Павловна</p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-lg-3">
+                                <p>
+                                    <span class="fw-600 d-md-none">Регион<br></span>
+                                    Белгородская область
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Рейтинг ПРОФ<br></span>
+                                    3433.5
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Народный рейтинг<br></span>
+                                    <span class="yellow">
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                    </span>
+                                </p>
+                            </div><!-- .col -->
+                        </a>
+                        <a class="list-item" href="">
+                            <div class="col-12 col-lg">
+                                <p class="fw-600">Коптяева Дарья Павловна</p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-lg-3">
+                                <p>
+                                    <span class="fw-600 d-md-none">Регион<br></span>
+                                    Белгородская область
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-2">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Рейтинг ПРОФ<br></span>
+                                    3433.5
+                                </p>
+                            </div><!-- .col -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <p class="md-center">
+                                    <span class="fw-600 d-md-none">Народный рейтинг<br></span>
+                                    <span class="yellow">
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                        <i class="i-star"></i>
+                                    </span>
+                                </p>
+                            </div><!-- .col -->
+                        </a>
+
+                    </div><!-- .list -->
+                </div><!-- .cart-body -->
+            </div><!-- .cart -->
+        </div>
     </div><!-- .container -->
 </section><!-- .section -->
