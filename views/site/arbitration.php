@@ -584,6 +584,12 @@ $this->params['breadcrumbs'] = [
                         </a>
 
                     </div><!-- .list -->
+
+                    <div class="row">
+                        <div class="col-auto mx-auto">
+                            <a class="btn-default" href="<?= Url::to(['site/index', 'view' => 'rejting-arbitrazhnyh-upravlyayushih']) ?>">Показать весь рейтинг управляющих</a>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
                 </div><!-- .cart-body -->
             </div><!-- .cart -->
         </div>
