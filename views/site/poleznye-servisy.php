@@ -1,5 +1,7 @@
 <?php
 
+use yii\helpers\Url;
+
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
 
@@ -122,7 +124,7 @@ $this->params['breadcrumbs'] = [
                                 <p class="center">Онлайн калькулятор по банкротству</p>
                                 <div class="row">
                                     <div class="col-auto mx-auto">
-                                        <a class="btn-sm btn-default" href="">Попробовать</a>
+                                        <a class="btn-sm btn-default" href="<?= Url::to(['site/index', 'view' => 'kalkulyator-stoimosti-bankrotstva']) ?>">Попробовать</a>
                                     </div>
                                 </div>
                             </div><!-- .col -->
