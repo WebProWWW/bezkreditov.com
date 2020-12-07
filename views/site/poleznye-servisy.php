@@ -59,7 +59,7 @@ $this->params['breadcrumbs'] = [
                     <div class="cart-body">
                         <div class="row align-items-center my-auto">
                             <div class="col-12 col-sm-6 col-md-12">
-                                <img class="img-center" width="200" height="200" src="/img/icon-svg/calendar.svg">
+                                <img class="img-center" width="200" height="200" src="/img/icon-svg/credit_card_monochromatic.svg">
                             </div><!-- .col -->
                             <div class="col-12 col-sm-6 col-md-12">
                                 <p class="center">Кредитный калькулятор</p>
@@ -97,7 +97,7 @@ $this->params['breadcrumbs'] = [
                     <div class="cart-body">
                         <div class="row align-items-center my-auto">
                             <div class="col-12 col-sm-6 col-md-12">
-                                <img class="img-center" width="200" height="200" src="/img/icon-svg/credit_card_monochromatic.svg">
+                                <img class="img-center" width="200" height="200" src="/img/icon-svg/calendar.svg">
                             </div><!-- .col -->
                             <div class="col-12 col-sm-6 col-md-12">
                                 <p class="center">Ипотечный калькулятор</p>
