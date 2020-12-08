@@ -549,7 +549,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 <section class="section" style="background: #97C7D1; overflow: hidden;" id="zapret_viezda_iz_rf">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 align-self-center">
+            <div class="col-12 col-md-5 col-xl-6 align-self-center">
                 <h2>Онлайн сервис: Проверка запрета на выезд из РФ</h2>
                 <h3 class="fw-400">Как проверить запрет на выезд за границу:</h3>
                 <p>На сайте “Без кредитов” вы можете проверить запрет на выезд из страны. Для проверки необходимо указать фамилию, имя, дату рождения, паспортные данные.</p>
@@ -560,8 +560,8 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div><!-- .col -->
-            <div class="col-12 col-md-6 align-self-end">
-                <img class="img-center" src="/img/img-3.jpg" style="margin-bottom: -13px">
+            <div class="col-12 col-md-7 col-xl-6 align-self-end">
+                <img class="img-center" src="/img/img-3-1.jpg" style="margin-bottom: -13px">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
