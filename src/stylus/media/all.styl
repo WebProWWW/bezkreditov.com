@@ -1067,6 +1067,73 @@ label
 	overflow hidden
 
 
+.bg-circle
+	position relative
+	padding-left 1rem
+
+.bg-circle:before
+	content ''
+	display block
+	width 2.3em
+	height @width
+	border-radius 50%
+	background pcolor
+	position absolute
+	top 50%
+	left 0
+	margin-top -1em
+	z-index 1
+
+
+.circle-num
+	mpd(0 0 15px, 0, flex)
+	align-items center
+	justify-content center
+	width 2em
+	height @width
+	border-radius 50%
+	background pcolor
+	font-weight 600
+
+
+.blockquote-right
+	border-right .3em solid pcolor
+	padding-right 15px
+
+
+.circle-list
+	padding-left 3.2em
+
+.circle-list:before
+	mpd(0, 0, flex)
+	align-items center
+	justify-content center
+	float left
+	margin-top .2em
+	margin-left -2.5em
+	width 2em
+	height @width
+	border-radius 50%
+	background pcolor
+	font-size 1.3em
+	font-weight 600
+
+.circle-list:after
+	content ''
+	display block
+	height 1px
+	clear both
+
+for child in (1..10)
+	.circle-list:nth-child({child}):before
+		content ('' + child)
+
+
+for w in (1..10)
+	.border-primary-{w}
+		border (w * 1px) solid pcolor
+
+
 for zi in (1..100)
 	.z-{zi}
 		z-index zi
@@ -1076,8 +1143,17 @@ for num in (1..100)
 	.em-{num}
 		font-size (num * .1em)
 
+for rem in (1..100)
+	.rem-{rem}
+		font-size (rem * .1rem)
+
+
 
 for fw in 300 400 600 700
 	.fw-{fw}
 		font-weight fw
 
+
+for lh in (10..100)
+	.lh-{lh}
+		line-height (lh * .1)

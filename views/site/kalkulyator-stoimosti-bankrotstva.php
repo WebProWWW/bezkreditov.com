@@ -201,16 +201,14 @@ $companyDataProvider = Company::dataProvider();
                 </div><!-- .cart -->
             </div><!-- .col -->
         </div><!-- .row -->
-
-        <h2 class="h1 center">Проверенные юристы по банкротству в г. Москва</h2>
-
     </div><!-- .container -->
 </section><!-- .section -->
 
 <section class="section">
     <div class="container">
-        <div class="list">
+        <h2 class="h1 center">Проверенные юристы по банкротству в г. Москва</h2>
 
+        <div class="list">
             <div class="d-none d-xl-block">
                 <div class="row bg-eo border-header-xl">
                     <div class="col-5">
@@ -277,7 +275,6 @@ $companyDataProvider = Company::dataProvider();
                     </div><!-- .col -->
                 </a>
             <?php endforeach; ?>
-
         </div><!-- .list -->
-    </div>
+    </div><!-- .container -->
 </section>
