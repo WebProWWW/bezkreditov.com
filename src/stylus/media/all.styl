@@ -61,7 +61,7 @@ label
 	min-height 100%
 
 
-.header, .section
+.section
 	mpd(0, 25px 0 10px)
 
 
@@ -69,13 +69,16 @@ label
 .block-divider
 	mpd(0, 36px 0)
 
+.header
+	mpd()
+
 .header-top
-	mpd(-25px 0 0, 15px 0 1px)
+	mpd(0, 15px 0 1px)
 	background bgcolor
 
 
 .header-body
-	mpd(0, 25px 0 10px)
+	mpd(0, 15px 0 1px)
 
 
 .bg
@@ -126,18 +129,24 @@ label
 	font-size 120px
 	color pcolor
 
-.logo-lg > .logo-txt
+.logo-lg .logo-txt
 	border 11px solid pcolor
 	font-size 43px
 
-.logo-sm > .logo-txt
+.logo-sm .logo-txt
 	border 5px solid pcolor
 	font-size 18px
+
+.logo-xs .logo-txt
+	padding 8px 5px
+	border 3px solid pcolor
+	font-size 16px
 
 
 .nav
 	mpd(0 -10px, 0, flex)
 	flex-wrap wrap
+
 
 .nav-ln
 	mpd(0 0 15px, 0 10px, flex)
@@ -169,11 +178,49 @@ label
 	width 100%
 
 
+.nav-ln.nav-list:before
+	mpd(0 1em 0 0)
+	content ''
+	width 1em
+	height @width
+	background pcolor
+	border-radius 50%
+
+
+.main-nav
+	mpd(0, 0, flex)
+	position relative
+
+.main-nav-ln
+	mpd(0 0 15px)
+	resetLn(black, darken(pcolor, 30%))
+	border-bottom 2px solid transparent
+
+.main-nav-ln:hover
+	border-bottom 2px solid pcolor
+
+
+.main-nav-content
+	mpd(0, 15px 15px 1px)
+	trans()
+	position absolute
+	top 100%
+	left 0
+	right 0
+	background white
+	box-shadow 1px 1px 6px 0 alpha(black, .3)
+	z-index 11
+	opacity 0
+	visibility hidden
+
+.main-nav-content.active
+	opacity 1
+	visibility visible
+
+
 
 .toggle-btn
-	mpd(0 0 15px, 0, flex)
-	flex-direction column
-	align-items center
+	mpd(0 0 15px)
 	user-select none
 	cursor pointer
 
@@ -183,9 +230,9 @@ label
 	align-items center
 	justify-content center
 	border-radius 50%
-	width 50px
+	width 43px
 	height @width
-	font-size 23px
+	font-size 20px
 
 .toggle-txt
 	mpd()
@@ -640,10 +687,15 @@ label
 	background #E9EBEC
 
 .divider-v
+.divider-v-primary
 	mpd(0 15px)
 	width 1px
 	height 100%
 	background #E9EBEC
+
+
+.divider-v-primary
+	background pcolor
 
 
 .divider-dark
@@ -819,6 +871,10 @@ label
 	trans()
 	resetLn(black, pcolor)
 
+
+.ln-primary-darken
+	trans()
+	resetLn(pcolor, darken(pcolor, 13%))
 
 
 .td-line

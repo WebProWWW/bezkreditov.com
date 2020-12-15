@@ -386,3 +386,27 @@ $('*[data-file-input]').on 'click', (e) ->
 window.isCity = () ->
     $.fancybox.open src: '#is-city'
     on
+
+
+# mainNavLnHoverIn = (e) ->
+#     content = $ "#{$(this).attr 'href'}"
+#     console.log e.type
+
+# mainNavLnHoverOut = (e) ->
+#     console.log e.type
+
+# $('.main-nav-ln').hover mainNavLnHoverIn, mainNavLnHoverOut
+
+$('.main-nav').on 'mouseleave', (e) ->
+    $('.main-nav-content').removeClass 'active'
+
+$('.main-nav-ln').on 'click', (e) ->
+    e.preventDefault()
+    off
+
+$('.main-nav-ln').on 'mouseenter', (e) ->
+    $('.main-nav-content').removeClass 'active'
+    $content = $ "#{$(this).attr 'href'}"
+    $content.addClass 'active'
+    on
+
