@@ -70,7 +70,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 
 <?php if (ArrayHelper::getValue($this->params, 'is-header', true)): ?>
 <header class="header">
-    <?= $this->render('-main-mobile-nav') ?>
+    <?= $this->render('-main-mobile-nav', ['city' => $city]) ?>
     <div class="header-top">
         <div class="container">
             <div class="row no-gutters align-items-center">
@@ -155,7 +155,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
     </div><!-- .header-top -->
     <div class="header-body d-none d-xl-block">
         <div class="container">
-            <?= $this->render('-main-nav') ?>
+            <?= $this->render('-main-nav', ['city' => $city]) ?>
         </div><!-- .container -->
     </div><!-- .header-body -->
 </header>

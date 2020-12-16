@@ -2,6 +2,8 @@
 
 use app\helpers\Url;
 
+/* @var $city app\models\City */
+
 ?>
 
 <div class="main-mnav">

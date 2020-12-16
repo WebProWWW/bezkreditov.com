@@ -2,6 +2,8 @@
 
 use app\helpers\Url;
 
+/* @var $city app\models\City */
+
 ?>
 <div class="main-nav justify-content-between">
     <a class="main-nav-ln" href="#main-nav-content-1">
