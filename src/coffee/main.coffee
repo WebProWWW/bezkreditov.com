@@ -398,6 +398,7 @@ window.isCity = () ->
 # $('.main-nav-ln').hover mainNavLnHoverIn, mainNavLnHoverOut
 
 $('.main-nav').on 'mouseleave', (e) ->
+    $('.main-nav-ln').removeClass 'active'
     $('.main-nav-content').removeClass 'active'
 
 $('.main-nav-ln').on 'click', (e) ->
@@ -406,7 +407,31 @@ $('.main-nav-ln').on 'click', (e) ->
 
 $('.main-nav-ln').on 'mouseenter', (e) ->
     $('.main-nav-content').removeClass 'active'
-    $content = $ "#{$(this).attr 'href'}"
+    $('.main-nav-ln').removeClass 'active'
+    $this = $ this
+    $content = $ "#{$this.attr 'href'}"
+    $this.addClass 'active'
     $content.addClass 'active'
     on
 
+
+$('.main-mnav-ln').on 'click', (e) ->
+    e.preventDefault()
+    $this = $ this
+    $content = $ "#{$this.attr 'href'}"
+    $this.toggleClass 'active'
+    $content.stop().slideToggle 300, () ->
+        $this.addClass 'active' if $(this).is ':visible'
+    off
+
+
+$('*[data-mnav-open]').on 'click', (e) ->
+    e.preventDefault()
+    $('.main-mnav').addClass 'active'
+    $('body').addClass 'main-mnav-active'
+    off
+
+
+$('.main-mnav-close').on 'click', (e) ->
+    $('.main-mnav').removeClass 'active'
+    $('body').removeClass 'main-mnav-active'

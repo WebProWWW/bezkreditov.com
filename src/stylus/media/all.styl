@@ -1,14 +1,14 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // #pixelp
-// 	mpd()
-// 	position absolute
-// 	top 0
-// 	left 0
-// 	z-index 99999999
-// 	opacity .4
-// 	user-select none
-// 	cursor default
+//  mpd()
+//  position absolute
+//  top 0
+//  left 0
+//  z-index 99999999
+//  opacity .4
+//  user-select none
+//  cursor default
 
 
 pcolor = #FFC951
@@ -16,1200 +16,1289 @@ pcolor = #FFC951
 bgcolor = #F0F3F6
 
 html, body
-	height 100%
-	font-size 14px
+    height 100%
+    font-size 14px
 
 
 body
-	//font-family 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
-	font-family 'Montserrat', sans-serif
+    //font-family 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+    font-family 'Montserrat', sans-serif
 
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, p, .p
-	mpd(0 0 15px)
-	font-weight 600
+    mpd(0 0 15px)
+    font-weight 600
 
 h1, .h1
-	font-size 1.4em
-	font-weight 600
+    font-size 1.4em
+    font-weight 600
 
 h2, .h2
-	font-size 1.2em
-	font-weight 600
+    font-size 1.2em
+    font-weight 600
 
 h4, .h4
-	font-size 1em
-	font-weight 600
+    font-size 1em
+    font-weight 600
 
 p, .p
-	font-size 1rem
-	font-weight 400
+    font-size 1rem
+    font-weight 400
 
 a
-	outline none
-	cursor pointer
+    outline none
+    cursor pointer
 
 
 label
-	user-select none
-	cursor pointer
+    user-select none
+    cursor pointer
 
 
 .full-height
-	mpd(0, 0, flex)
-	flex-direction column
-	min-height 100%
+    mpd(0, 0, flex)
+    flex-direction column
+    min-height 100%
 
 
 .section
-	mpd(0, 25px 0 10px)
+    mpd(0, 25px 0 10px)
 
 
 
 .block-divider
-	mpd(0, 36px 0)
+    mpd(0, 36px 0)
 
 .header
-	mpd()
+    mpd()
 
 .header-top
-	mpd(0, 15px 0 1px)
-	background bgcolor
+    mpd(0, 15px 0 1px)
+    background bgcolor
 
 
 .header-body
-	mpd(0, 15px 0 1px)
+    mpd(0, 15px 0 1px)
 
 
 .bg
-	background bgcolor
+    background bgcolor
 
 .bg-primary
-	background pcolor
+    background pcolor
 
 .i-circle-dblue-ln
 .i-circle-blue-ln
-	mpd(0 0 15px, 0, flex)
-	resetLn(white, white)
-	align-items center
-	justify-content center
-	width 30px
-	height @width
-	border-radius 50%
-	line-height 1
-	font-size 18px
-	overflow hidden
+    mpd(0 0 15px, 0, flex)
+    resetLn(white, white)
+    align-items center
+    justify-content center
+    width 30px
+    height @width
+    border-radius 50%
+    line-height 1
+    font-size 18px
+    overflow hidden
 
 
 .i-circle-blue-ln
-	background #407FBF
+    background #407FBF
 
 .i-circle-dblue-ln
-	background #395895
+    background #395895
 
 
 .logo
-	mpd(0 0 15px)
-	resetLn(black, black)
-	text-align center
+    mpd(0 0 15px)
+    resetLn(black, black)
+    text-align center
 
 .logo-txt
-	mpd(0 0 5px, 12px)
-	border 8px solid pcolor
-	font-weight 600
-	font-size 30px
-	line-height 1
+    mpd(0 0 5px, 12px)
+    border 8px solid pcolor
+    font-weight 600
+    font-size 30px
+    line-height 1
 
 .logo-stxt
-	mpd(0, 0 8px)
-	font-size .9rem
+    mpd(0, 0 8px)
+    font-size .9rem
 
 .logo-icon
-	mpd(0 0 0 30px)
-	font-size 120px
-	color pcolor
+    mpd(0 0 0 30px)
+    font-size 120px
+    color pcolor
 
 .logo-lg .logo-txt
-	border 11px solid pcolor
-	font-size 43px
+    border 11px solid pcolor
+    font-size 43px
 
 .logo-sm .logo-txt
-	border 5px solid pcolor
-	font-size 18px
+    border 5px solid pcolor
+    font-size 18px
 
 .logo-xs .logo-txt
-	padding 8px 5px
-	border 3px solid pcolor
-	font-size 16px
+    padding 8px 5px
+    border 3px solid pcolor
+    font-size 16px
 
 
 .nav
-	mpd(0 -10px, 0, flex)
-	flex-wrap wrap
+    mpd(0 -10px, 0, flex)
+    flex-wrap wrap
 
 
 .nav-ln
-	mpd(0 0 15px, 0 10px, flex)
-	resetLn(black, black)
-	align-items center
+    mpd(0 0 15px, 0 10px, flex)
+    resetLn(black, black)
+    align-items center
 
 .nav-ln:hover > .nav-txt
-	color darken(pcolor, 30%)
+    color darken(pcolor, 30%)
 
 .nav-ln:hover > .nav-i
-	color white
-	background darken(pcolor, 10%)
+    color white
+    background darken(pcolor, 10%)
 
 .nav-i
-	mpd(0 10px 0 0, 0, flex)
-	trans()
-	flex 0 0 auto
-	justify-content center
-	align-items center
-	width 36px
-	height @width
-	border-radius 50%
-	background pcolor
-	font-size 18px
+    mpd(0 10px 0 0, 0, flex)
+    trans()
+    flex 0 0 auto
+    justify-content center
+    align-items center
+    width 36px
+    height @width
+    border-radius 50%
+    background pcolor
+    font-size 18px
 
 .nav-txt
-	mpd()
-	trans()
-	width 100%
+    mpd()
+    trans()
+    width 100%
 
 
 .nav-ln.nav-list:before
-	mpd(0 1em 0 0)
-	content ''
-	width 1em
-	height @width
-	background pcolor
-	border-radius 50%
+    mpd(0 1em 0 0)
+    content ''
+    width 1em
+    height @width
+    background pcolor
+    border-radius 50%
 
 
 .main-nav
-	mpd(0, 0, flex)
-	position relative
+    mpd(0, 0, flex)
+    position relative
 
 .main-nav-ln
-	mpd(0 0 15px)
-	resetLn(black, darken(pcolor, 30%))
-	border-bottom 2px solid transparent
+    mpd(0 0 15px)
+    resetLn(black, darken(pcolor, 30%))
+    border-bottom 2px solid transparent
 
+.main-nav-ln.active
 .main-nav-ln:hover
-	border-bottom 2px solid pcolor
+    color darken(pcolor, 30%)
+    border-bottom 2px solid pcolor
 
 
 .main-nav-content
-	mpd(0, 15px 15px 1px)
-	trans()
-	position absolute
-	top 100%
-	left 0
-	right 0
-	background white
-	box-shadow 1px 1px 6px 0 alpha(black, .3)
-	z-index 11
-	opacity 0
-	visibility hidden
+    mpd(0, 15px 15px 1px)
+    trans()
+    position absolute
+    top 100%
+    left 0
+    right 0
+    background white
+    box-shadow 1px 1px 6px 0 alpha(black, .3)
+    z-index 11
+    opacity 0
+    visibility hidden
 
 .main-nav-content.active
-	opacity 1
-	visibility visible
+    opacity 1
+    visibility visible
+
+
+
+
+.main-mnav
+    mpd()
+    trans()
+    position fixed
+    top 0
+    left 0
+    bottom 0
+    right 0
+    background alpha(black, .8)
+    backdrop-filter blur(5px)
+    overflow-y auto
+    z-index 1000
+    opacity 0
+    visibility hidden
+
+
+.main-mnav-close
+    mpd(0, 5px)
+    position fixed
+    top 0
+    right 0
+    bottom 0
+    left 0
+    font-size 26px
+    line-height 1
+    color white
+    user-select none
+    cursor pointer
+    z-index 5
+
+.main-mnav-close > i
+    mpd()
+    position absolute
+    top 15px
+    right 15px
+
+.main-mnav-close:hover
+    color pcolor
+
+
+.main-mnav-sidebar
+    mpd(0, 15px 15px 1px)
+    trans()
+    position absolute
+    top 0
+    left 0
+    height auto
+    background white
+    width 280px
+    min-height 100%
+    z-index 10
+
+.main-mnav-ln
+    mpd(0 0 15px, 0, flex)
+    resetLn(black, darken(pcolor, 30%))
+    align-items center
+
+.main-mnav-ln:hover
+.main-mnav-ln.active
+    color pcolor
+
+.main-mnav-ln > .i-ch-down
+    trans()
+    transform rotate(-90deg)
+
+
+.main-mnav-ln.active > .i-ch-down
+    transform rotate(0deg)
+
+
+.main-mnav-content
+    mpd()
+    overflow hidden
+    display none
+
+
+body.main-mnav-active
+    overflow hidden
+
+.main-mnav.active
+    opacity 1
+    visibility visible
+
 
 
 
 .toggle-btn
-	mpd(0 0 15px)
-	user-select none
-	cursor pointer
+    mpd(0 0 15px)
+    user-select none
+    cursor pointer
 
 .toggle-i
-	mpd(0, 0, flex)
-	b(1, pcolor)
-	align-items center
-	justify-content center
-	border-radius 50%
-	width 43px
-	height @width
-	font-size 20px
+    mpd(0, 0, flex)
+    b(1, pcolor)
+    align-items center
+    justify-content center
+    border-radius 50%
+    width 43px
+    height @width
+    font-size 20px
 
 .toggle-txt
-	mpd()
-	font-weight 600
-	font-size 15px
+    mpd()
+    font-weight 600
+    font-size 15px
 
 
 .toggle
-	display none
+    display none
 
 
 .btn
 .btn-default
 .btn-trsp
 .btn-bordered
-	mpd(0 0 15px, 9px 20px)
-	resetLn(black, black)
-	trans()
-	box-sizing border-box
-	width 100%
-	background pcolor
-	border-radius 5px
-	text-align center
-	user-select none
-	cursor pointer
+    mpd(0 0 15px, 9px 20px)
+    resetLn(black, black)
+    trans()
+    box-sizing border-box
+    width 100%
+    background pcolor
+    border-radius 5px
+    text-align center
+    user-select none
+    cursor pointer
 
 .btn-trsp:hover
 .btn-default:hover
-	box-shadow 1px 1px 3px 0 alpha(black, .5)
+    box-shadow 1px 1px 3px 0 alpha(black, .5)
 
 
 .btn-trsp
-	b(1, pcolor)
-	padding 8px 18px
-	background transparent
+    b(1, pcolor)
+    padding 8px 18px
+    background transparent
 
 .btn-trsp.active
 .btn-trsp:hover
-	background pcolor
+    background pcolor
 
 .btn-trsp.active:hover
-	box-shadow none
+    box-shadow none
 
 .btn-sm
-	padding 5px 15px
+    padding 5px 15px
 
 
 .btn-trsp.btn-sm
-	padding 4px 15px
+    padding 4px 15px
 
 
 .btn-bordered
-	b(3, pcolor)
-	padding 5px 15px
-	background transparent
+    b(3, pcolor)
+    padding 5px 15px
+    background transparent
 
 .btn-bordered:hover
-	background pcolor
+    background pcolor
 
 
 .wall-divider
-	mpd(0 0 15px)
-	box-sizing border-box
-	height 2px
-	background #E7EAED
-	border-bottom 1px solid white
+    mpd(0 0 15px)
+    box-sizing border-box
+    height 2px
+    background #E7EAED
+    border-bottom 1px solid white
 
 .wall
-	mpd(0 0 15px, 15px 15px 1px, flex)
-	flex-direction column
-	justify-content center
-	min-height 120px
-	background bgcolor
-	border-radius 15px
+    mpd(0 0 15px, 15px 15px 1px, flex)
+    flex-direction column
+    justify-content center
+    min-height 120px
+    background bgcolor
+    border-radius 15px
 
 
 .wall-white
-	mpd(0 0 15px, 15px 15px 1px, flex)
-	flex-direction column
-	justify-content center
-	min-height 120px
-	background bgcolor
-	border-radius 15px
-	background white
+    mpd(0 0 15px, 15px 15px 1px, flex)
+    flex-direction column
+    justify-content center
+    min-height 120px
+    background bgcolor
+    border-radius 15px
+    background white
 
 .wall-dark
-	mpd(0 0 15px, 15px 15px 1px)
-	background bgcolor
-	border-radius 15px
-	.wall-divider
-		background lighten(#B1B6B4, 45%)
+    mpd(0 0 15px, 15px 15px 1px)
+    background bgcolor
+    border-radius 15px
+    .wall-divider
+        background lighten(#B1B6B4, 45%)
 
 
 .img-a
-	mpd(0 auto 15px)
-	max-width 100%
-	height auto
+    mpd(0 auto 15px)
+    max-width 100%
+    height auto
 
 
 .img-b
-	mpd(0 auto 15px)
-	b(4, white)
-	max-width 100%
-	height auto
-	border-radius 50%
-	box-shadow 0 0 5px 0 alpha(black, .2)
+    mpd(0 auto 15px)
+    b(4, white)
+    max-width 100%
+    height auto
+    border-radius 50%
+    box-shadow 0 0 5px 0 alpha(black, .2)
 
 
 .cart
-	mpd(0, 0, flex)
-	flex-direction column
-	height 100%
-	background white
-	border-radius 5px
-	overflow hidden
-	box-shadow 1px 1px 6px 0 alpha(black, .3)
+    mpd(0, 0, flex)
+    flex-direction column
+    height 100%
+    background white
+    border-radius 5px
+    overflow hidden
+    box-shadow 1px 1px 6px 0 alpha(black, .3)
 
 
 .cart-img-header
-	mpd()
-	position relative
-	padding-top 80%
+    mpd()
+    position relative
+    padding-top 80%
 
 .cart-img
-	mpd()
-	position absolute
-	top 0
-	left 0
-	width 100%
-	height 100%
+    mpd()
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
 
 
 .cart-body
-	mpd(0, 15px 15px 1px, flex)
-	flex-direction column
-	flex-grow 1
+    mpd(0, 15px 15px 1px, flex)
+    flex-direction column
+    flex-grow 1
 
 .carg-body-bg
-	mpd(0, 15px 15px 1px, flex)
-	flex-direction column
-	flex-grow 1
-	background bgcolor
+    mpd(0, 15px 15px 1px, flex)
+    flex-direction column
+    flex-grow 1
+    background bgcolor
 
 .cart-footer
-	mpd(0 0 -5px 0, 10px 15px 1px)
-	border-top 1px solid #CDD0D2
+    mpd(0 0 -5px 0, 10px 15px 1px)
+    border-top 1px solid #CDD0D2
 
 
 .cart-full-btn
-	mpd(0, 30px 15px, flex)
-	align-items center
-	justify-content center
-	border-radius 0
-	color white
-	font-size 18px
-	font-weight 600
+    mpd(0, 30px 15px, flex)
+    align-items center
+    justify-content center
+    border-radius 0
+    color white
+    font-size 18px
+    font-weight 600
 
 .cart-full-btn-i
-	mpd(0 20px 0 0)
-	font-size 43px
+    mpd(0 20px 0 0)
+    font-size 43px
 
 .cart-divider
-	mpd(0 0 15px)
-	height 1px
-	background #CDD0D2
+    mpd(0 0 15px)
+    height 1px
+    background #CDD0D2
 
 
 
 .img-center
-	mpd(0 auto 15px)
-	max-width 100%
-	height auto
+    mpd(0 auto 15px)
+    max-width 100%
+    height auto
 
 
 .img-wrap-circle
-	mpd(0 0 15px)
-	background url('../img/circle.svg') 50% 50% no-repeat
-	background-size auto 100%
+    mpd(0 0 15px)
+    background url('../img/circle.svg') 50% 50% no-repeat
+    background-size auto 100%
 
 
 .img-wrap-circle > img
-	mpd(0 auto)
-	max-width 100%
-	height auto
-	border-radius 0 0 50% 50%
+    mpd(0 auto)
+    max-width 100%
+    height auto
+    border-radius 0 0 50% 50%
 
 
 .breadcrubmbs
-	mpd(0 0 15px, 0)
-	flex-wrap wrap
-	font-size 13px
+    mpd(0 0 15px, 0)
+    flex-wrap wrap
+    font-size 13px
 
 
 .breadcrubmbs-ln
-	mpd(0, 0, inline)
-	resetLn(black, black)
-	trans()
+    mpd(0, 0, inline)
+    resetLn(black, black)
+    trans()
 
 
 .breadcrubmbs-ln:after
-	content '/'
-	margin 0 5px
+    content '/'
+    margin 0 5px
 
 
 .breadcrubmbs-ln:hover
-	color pcolor
+    color pcolor
 
 
 .breadcrubmbs-ln:hover:after
-	color black
+    color black
 
 
 .breadcrubmbs-ln > i
-	color pcolor
-	font-size 1.1em
+    color pcolor
+    font-size 1.1em
 
 
 .breadcrubmbs-ln:last-child:after
-	display none
+    display none
 
 
 .label
-	mpd(0 0 3px)
-	font-size .9rem
+    mpd(0 0 3px)
+    font-size .9rem
 
 
 .sselect
-	mpd()
-	position relative
+    mpd()
+    position relative
 
 
 .sselect-options
-	mpd(15px 0 0, 12px 15px)
-	top 100%
-	left 0
-	right 0
-	max-height 350px
-	position absolute
-	border-radius 5px
-	background white
-	z-index 100
-	box-shadow 1px 1px 6px 0 alpha(black, .3)
-	overflow-y auto
-	display none
+    mpd(15px 0 0, 12px 15px)
+    top 100%
+    left 0
+    right 0
+    max-height 350px
+    position absolute
+    border-radius 5px
+    background white
+    z-index 100
+    box-shadow 1px 1px 6px 0 alpha(black, .3)
+    overflow-y auto
+    display none
 
 .sselect-options.active
-	display block
+    display block
 
 .sselect-option
-	mpd(0, 3px 0)
-	trans()
-	font-size .9em
-	user-select none
-	cursor pointer
+    mpd(0, 3px 0)
+    trans()
+    font-size .9em
+    user-select none
+    cursor pointer
 
 .sselect-option:hover
 .sselect-option.selected
-	color pcolor
+    color pcolor
 
 .sselect-option.selected:before
-	mpd(.5em .5em 0 0)
-	content ''
-	float left
-	width .4em
-	height @width
-	border-radius 50%
-	background black
+    mpd(.5em .5em 0 0)
+    content ''
+    float left
+    width .4em
+    height @width
+    border-radius 50%
+    background black
 
 .sselect-option.disabled
-	cursor default
-	font-weight 600
-	font-size 1.1em
+    cursor default
+    font-weight 600
+    font-size 1.1em
 
 
 .input
-	appearance none
-	outline none
-	mpd(0 0 15px, 8px 15px)
-	b(1, #C7C9CC)
-	trans()
-	box-sizing border-box
-	border-radius 5px
-	width 100%
-	background white
-	font-size 1rem
+    appearance none
+    outline none
+    mpd(0 0 15px, 8px 15px)
+    b(1, #C7C9CC)
+    trans()
+    box-sizing border-box
+    border-radius 5px
+    width 100%
+    background white
+    font-size 1rem
 
 .input:focus
-	b(1, pcolor)
+    b(1, pcolor)
 
 .input.error
-	b(1, red)
+    b(1, red)
 
 
 .gj-icon
-	margin 5px 3px 0 0
+    margin 5px 3px 0 0
 
 
 .radio
-	appearance none
-	outline none
-	mpd(0 10px 0 0, 0, flex)
-	b(1, #C7C9CC)
-	trans()
-	align-items center
-	justify-content center
-	width 36px
-	height @width
-	border-radius 50%
-	background white
-	vertical-align middle
-	user-select none
-	cursor pointer
+    appearance none
+    outline none
+    mpd(0 10px 0 0, 0, flex)
+    b(1, #C7C9CC)
+    trans()
+    align-items center
+    justify-content center
+    width 36px
+    height @width
+    border-radius 50%
+    background white
+    vertical-align middle
+    user-select none
+    cursor pointer
 
 .radio:before
-	trans()
-	content ''
-	width 20px
-	height @width
-	background white
-	border-radius 50%
+    trans()
+    content ''
+    width 20px
+    height @width
+    background white
+    border-radius 50%
 
 .radio:checked
-	b(1, pcolor)
+    b(1, pcolor)
 
 .radio:checked:before
-	background pcolor
+    background pcolor
 
 
 .checkbox
-	appearance none
-	outline none
-	mpd(0 10px 0 0, 0, flex)
-	b(1, #C7C9CC)
-	trans()
-	align-items center
-	justify-content center
-	width 36px
-	height @width
-	border-radius 50%
-	background white
-	vertical-align middle
-	user-select none
-	cursor pointer
+    appearance none
+    outline none
+    mpd(0 10px 0 0, 0, flex)
+    b(1, #C7C9CC)
+    trans()
+    align-items center
+    justify-content center
+    width 36px
+    height @width
+    border-radius 50%
+    background white
+    vertical-align middle
+    user-select none
+    cursor pointer
 
 .checkbox:before
-	trans()
-	content ''
-	width 23px
-	height @width
-	background url('../img/check.svg') 50% 50% no-repeat
-	transform scale(0)
+    trans()
+    content ''
+    width 23px
+    height @width
+    background url('../img/check.svg') 50% 50% no-repeat
+    transform scale(0)
 
 
 .checkbox:checked
-	b(1, pcolor)
+    b(1, pcolor)
 
 .checkbox:checked:before
-	transform scale(1)
+    transform scale(1)
 
 
 .checkbox.error
-	b(1, red)
+    b(1, red)
 
 
 .checkbox-sm
-	width 26px
-	height @width
+    width 26px
+    height @width
 
 .checkbox:before
-	trans()
-	width 14px
-	height @width
+    trans()
+    width 14px
+    height @width
 
 
 .input-error
-	mpd(-13px 0 15px)
-	font-weight 400
-	font-size .8rem
-	color red
+    mpd(-13px 0 15px)
+    font-weight 400
+    font-size .8rem
+    color red
 
 
 .yur
-	mpd(0 0 15px)
-	position relative
-	width 60px
-	height 60px
-	&:after
-		content ''
-		position absolute
-		top 2px
-		right @top
-		width 12px
-		height @width
-		border-radius 50%
-		background #00D695
+    mpd(0 0 15px)
+    position relative
+    width 60px
+    height 60px
+    &:after
+        content ''
+        position absolute
+        top 2px
+        right @top
+        width 12px
+        height @width
+        border-radius 50%
+        background #00D695
 
 .yur-img
-	mpd()
-	max-width 100%
-	border-radius 50%
+    mpd()
+    max-width 100%
+    border-radius 50%
 
 
 .date-bg
-	background pcolor
-	padding 3px 6px
+    background pcolor
+    padding 3px 6px
 
 
 .bg-eo:nth-child(even)
-	background bgcolor
+    background bgcolor
 
 .ava
-	mpd(0 auto 15px, 6px)
-	b(6, white)
-	width 120px
-	height @width
-	box-sizing border-box
-	border-radius 50%
-	background bgcolor
+    mpd(0 auto 15px, 6px)
+    b(6, white)
+    width 120px
+    height @width
+    box-sizing border-box
+    border-radius 50%
+    background bgcolor
 
 .ava-img
-	mpd()
-	b(6, white)
-	box-sizing border-box
-	width 100%
-	height auto
-	max-width 100%
-	border-radius 50%
+    mpd()
+    b(6, white)
+    box-sizing border-box
+    width 100%
+    height auto
+    max-width 100%
+    border-radius 50%
 
 
 .rate
-	mpd(0 -3px 15px, 0, flex)
-	flex-direction row-reverse
+    mpd(0 -3px 15px, 0, flex)
+    flex-direction row-reverse
 
 
 .rate-star-ln
-	mpd(0, 0 3px)
-	resetLn(gray, pcolor)
-	trans()
+    mpd(0, 0 3px)
+    resetLn(gray, pcolor)
+    trans()
 
 .rate-star-ln:hover ~ .rate-star-ln
-	color pcolor
+    color pcolor
 
 .rate-star-i
-	mpd()
-	font-size 23px
-	line-height 1
+    mpd()
+    font-size 23px
+    line-height 1
 
 
 .divider-h
-	mpd(0 0 15px)
-	height 1px
-	background #E9EBEC
+    mpd(0 0 15px)
+    height 1px
+    background #E9EBEC
 
 .divider-v
 .divider-v-primary
-	mpd(0 15px)
-	width 1px
-	height 100%
-	background #E9EBEC
+    mpd(0 15px)
+    width 1px
+    height 100%
+    background #E9EBEC
 
 
 .divider-v-primary
-	background pcolor
+    background pcolor
 
 
 .divider-dark
-	mpd(0 0 15px)
-	box-sizing border-box
-	width 100%
-	height 1px
-	background #C7C9CC
+    mpd(0 0 15px)
+    box-sizing border-box
+    width 100%
+    height 1px
+    background #C7C9CC
 
 
 .divider-dark-v
-	mpd(0 15px)
-	width 1px
-	height 100%
-	background #C7C9CC
+    mpd(0 15px)
+    width 1px
+    height 100%
+    background #C7C9CC
 
 
 .klogo
-	mpd(0 auto 15px)
-	max-width 100%
-	height auto
+    mpd(0 auto 15px)
+    max-width 100%
+    height auto
 
 
 .percent
-	mpd(40px 15px 15px)
-	b(1, darken(pcolor, 30%))
-	position relative
-	height 6px
-	border-radius 5px
+    mpd(40px 15px 15px)
+    b(1, darken(pcolor, 30%))
+    position relative
+    height 6px
+    border-radius 5px
 
 .percent-value
-	mpd()
-	position absolute
-	top 0
-	left 0
-	bottom 0
-	width 0
-	background pcolor
-	border-radius 5px
-	z-index 5
+    mpd()
+    position absolute
+    top 0
+    left 0
+    bottom 0
+    width 0
+    background pcolor
+    border-radius 5px
+    z-index 5
 
 .percent-txt
-	mpd(0 0 0 -18px, 4px 0)
-	position absolute
-	width 36px
-	top -27px
-	left 0
-	border-radius 3px
-	box-shadow 0 3px 10px 0 alpha(black, .4)
-	text-align center
-	font-size 11px
-	line-height 1
-	z-index 10
+    mpd(0 0 0 -18px, 4px 0)
+    position absolute
+    width 36px
+    top -27px
+    left 0
+    border-radius 3px
+    box-shadow 0 3px 10px 0 alpha(black, .4)
+    text-align center
+    font-size 11px
+    line-height 1
+    z-index 10
 
 .percent-txt:before
-	mpd(0 0 0 -4px)
-	arrowToBottom(8, 4, white)
-	content ''
-	position absolute
-	bottom -4px
-	left 50%
+    mpd(0 0 0 -4px)
+    arrowToBottom(8, 4, white)
+    content ''
+    position absolute
+    bottom -4px
+    left 50%
 
 .team-img
-	mpd(0 auto 15px)
-	max-width 100%
-	height auto
-	border-radius 50%
+    mpd(0 auto 15px)
+    max-width 100%
+    height auto
+    border-radius 50%
 
 .img
-	mpd(0 0 15px)
-	max-width 100%
-	height auto
+    mpd(0 0 15px)
+    max-width 100%
+    height auto
 
 
 
 .editor
-	img
-		max-width 100%
-	blockquote
-		mpd(0 0 15px, 15px 15px 1px)
-		background bgcolor
-		border-left 3px solid pcolor
-	ul
-		mpd(0 0 10px, 0 0 1px)
-		li
-			mpd(0 0 5px, 0 0 0 1.1em)
-			list-style none
-		li:before
-			mpd(.5em 0 0 -1.1em)
-			content ''
-			width .5em
-			height @width
-			border-radius 50%
-			background pcolor
-			float left
-		li:after
-			mpd()
-			content ''
-			height 1px
-			clear both
-	ol
-		margin-bottom 5px
-		padding-bottom 1px
-		li
-			margin-bottom 10px
-			a
-				mpd(0, 0, inline-block)
-				trans()
-				resetLn(black, pcolor)
-				border-bottom 1px dotted #B8B8B8
-				&:hover
-					border-bottom 1px dotted pcolor
-		ol
-			margin-bottom 0
-			padding-bottom 0
-			margin-top 10px
-	// ol
-	// 	mpd(0 0 10px, 0 0 1px)
-	// 	li
-	// 		mpd(0 0 5px)
-	// 	ol
-	// 		mpd(5px 0 0)
+    img
+        max-width 100%
+    blockquote
+        mpd(0 0 15px, 15px 15px 1px)
+        background bgcolor
+        border-left 3px solid pcolor
+    ul
+        mpd(0 0 10px, 0 0 1px)
+        li
+            mpd(0 0 5px, 0 0 0 1.1em)
+            list-style none
+        li:before
+            mpd(.5em 0 0 -1.1em)
+            content ''
+            width .5em
+            height @width
+            border-radius 50%
+            background pcolor
+            float left
+        li:after
+            mpd()
+            content ''
+            height 1px
+            clear both
+    ol
+        margin-bottom 5px
+        padding-bottom 1px
+        li
+            margin-bottom 10px
+            a
+                mpd(0, 0, inline-block)
+                trans()
+                resetLn(black, pcolor)
+                border-bottom 1px dotted #B8B8B8
+                &:hover
+                    border-bottom 1px dotted pcolor
+        ol
+            margin-bottom 0
+            padding-bottom 0
+            margin-top 10px
+    // ol
+    //  mpd(0 0 10px, 0 0 1px)
+    //  li
+    //      mpd(0 0 5px)
+    //  ol
+    //      mpd(5px 0 0)
 
 
 
 
 .list
-	mpd(0 0 15px)
+    mpd(0 0 15px)
 
 .list-item
-	mpd(0 -15px, 15px 0 0, flex)
-	resetLn(black, black)
-	trans()
-	flex-wrap wrap
+    mpd(0 -15px, 15px 0 0, flex)
+    resetLn(black, black)
+    trans()
+    flex-wrap wrap
 
 .list-item:hover
-	box-shadow 0 0 13px 0 alpha(black, .3)
-	position relative
+    box-shadow 0 0 13px 0 alpha(black, .3)
+    position relative
 
 .list-item:nth-child(even)
-	background bgcolor
+    background bgcolor
 
 
 
 .pagination
-	mpd(0 -8px 15px, 0, flex)
-	list-style none
+    mpd(0 -8px 15px, 0, flex)
+    list-style none
 
 .pagination > li
-	mpd()
-	list-style none
-	font-weight 400
-	font-size 18px
-	line-height 1
+    mpd()
+    list-style none
+    font-weight 400
+    font-size 18px
+    line-height 1
 
 .pagination > li > a
-	mpd(0, 0 8px)
-	trans()
-	resetLn(black, pcolor)
+    mpd(0, 0 8px)
+    trans()
+    resetLn(black, pcolor)
 
 .pagination > li.disabled
-	padding 0 8px
-	opacity .5
+    padding 0 8px
+    opacity .5
 
 .pagination > li.active > a
-	color pcolor
+    color pcolor
 
 .pagination > li i
-	font-size .8em
+    font-size .8em
 
 
 .ln-black-primary
-	trans()
-	resetLn(black, pcolor)
+    trans()
+    resetLn(black, pcolor)
 
 
 .ln-primary-darken
-	trans()
-	resetLn(pcolor, darken(pcolor, 13%))
+    trans()
+    resetLn(pcolor, darken(pcolor, 13%))
 
 
 .td-line
-	text-decoration underline
+    text-decoration underline
 
 
 .mutted
-	color gray
+    color gray
 
 .primary
-	color pcolor
+    color pcolor
 
 .yellow
-	color #FFC951
+    color #FFC951
 
 .red
-	color red
+    color red
 
 .green
-	color #00E449
+    color #00E449
 
 .center
-	text-align center
+    text-align center
 
 .right
-	text-align right
+    text-align right
 
 
 .ws-nowrap
-	white-space nowrap
+    white-space nowrap
 
 
 .map-tmp
-	mpd(0 0 15px)
-	height 300px
-	background url('../img/map.jpg') 50% 50% no-repeat
-	background-size cover
-	// background darken(bgcolor, 13%)
+    mpd(0 0 15px)
+    height 300px
+    background url('../img/map.jpg') 50% 50% no-repeat
+    background-size cover
+    // background darken(bgcolor, 13%)
 
 
 
 .inwith
-	mpd(0 -8px 15px, 0, flex)
-	justify-content center
+    mpd(0 -8px 15px, 0, flex)
+    justify-content center
 
 .inwith-icon
-	mpd(0, 0 8px)
-	trans()
-	font-size 24px
-	color #B2B2B2
-	user-select none
-	cursor pointer
+    mpd(0, 0 8px)
+    trans()
+    font-size 24px
+    color #B2B2B2
+    user-select none
+    cursor pointer
 
 .inwith-icon:hover
-	color pcolor
+    color pcolor
 
 
 
 .modal
-	width 100%
-	min-height 100%
-	max-width 1250px
+    width 100%
+    min-height 100%
+    max-width 1250px
 
 
 .modal-sm
-	padding 40px 25px 10px
-	max-width 450px
-	min-height auto
-	height auto
+    padding 40px 25px 10px
+    max-width 450px
+    min-height auto
+    height auto
 
 
 .modal-md
-	padding 40px 25px 25px
-	max-width 900px
+    padding 40px 25px 25px
+    max-width 900px
 
 
 .test-modal
-	width 100%
-	max-width 700px
+    width 100%
+    max-width 700px
 
 // .test-header
-// 	mpd(0 0 15px)
-// 	position relative
+//  mpd(0 0 15px)
+//  position relative
 
 .test-title
-	mpd(0 0 15px)
-	text-align center
+    mpd(0 0 15px)
+    text-align center
 
 .test-title:after
-	mpd(15px 0 0)
-	content ''
-	height 3px
-	background pcolor
+    mpd(15px 0 0)
+    content ''
+    height 3px
+    background pcolor
 
 .test-progress
-	mpd()
-	trans()
-	position absolute
-	height 3px
-	left 0
-	bottom 0
-	background pcolor
+    mpd()
+    trans()
+    position absolute
+    height 3px
+    left 0
+    bottom 0
+    background pcolor
 
 
 .fade-enter-active, .fade-leave-active
-	transition opacity .3s ease
+    transition opacity .3s ease
 
 .fade-enter, .fade-leave-to
-	// .component-fade-leave-active до версии 2.1.8
-	opacity 0
+    // .component-fade-leave-active до версии 2.1.8
+    opacity 0
 
 
 
 .news-img
-	mpd(0 30px 15px 0)
-	width 100%
-	height auto
+    mpd(0 30px 15px 0)
+    width 100%
+    height auto
 
 
 
 .nav-block
-	mpd(0, 0 0 0 25px)
+    mpd(0, 0 0 0 25px)
 
 .nav-block > a
-	mpd(0 0 15px)
+    mpd(0 0 15px)
 
 .nav-block > h3
-	font-size 1rem
+    font-size 1rem
 
 
 
 .ch-p-bold > p
-	font-weight 600
+    font-weight 600
 .ch-p-span-normal > p > span
-	font-weight 400
+    font-weight 400
 
 
 .percent-circle
-	mpd(0 auto)
-	width 70px
+    mpd(0 auto)
+    width 70px
 
 .percent-circle svg
-	mpd(0 auto 15px)
+    mpd(0 auto 15px)
 
 
 .tab-ln
-	mpd(0 0 15px, 0, inline-block)
-	resetLn(black, pcolor)
-	trans()
-	border-bottom 2px solid transparent
-	text-align center
-	font-size 1rem
+    mpd(0 0 15px, 0, inline-block)
+    resetLn(black, pcolor)
+    trans()
+    border-bottom 2px solid transparent
+    text-align center
+    font-size 1rem
 
 .tab-ln.active
-	resetLn(pcolor, pcolor)
-	border-bottom 2px solid pcolor
+    resetLn(pcolor, pcolor)
+    border-bottom 2px solid pcolor
 
 
 
 .bb-primary
-	border-bottom .2em solid pcolor
+    border-bottom .2em solid pcolor
 
 
 
 .dialog
-	mpd(0, 0 0 0 1em)
+    mpd(0, 0 0 0 1em)
 
 
 .dialog:before
-	content '-'
-	display block
-	margin-left -1em
-	float left
+    content '-'
+    display block
+    margin-left -1em
+    float left
 
 
 .dialog:after
-	content ''
-	display block
-	height 1px
-	clear both
+    content ''
+    display block
+    height 1px
+    clear both
 
 
 .ihover
-	mpd(0 0 30px)
-	trans()
-	position relative
-	overflow hidden
-	border-radius 5px
-	user-select none
-	cursor pointer
+    mpd(0 0 30px)
+    trans()
+    position relative
+    overflow hidden
+    border-radius 5px
+    user-select none
+    cursor pointer
 
 .ihover:hover
-	box-shadow 1px 1px 6px 0 alpha(black, .5)
+    box-shadow 1px 1px 6px 0 alpha(black, .5)
 
 .ihover-img
-	mpd()
-	width 100%
-	height auto
+    mpd()
+    width 100%
+    height auto
 
 .ihover-content
-	mpd(0, 20px 20px 5px, flex)
-	flex-direction column
-	position absolute
-	top 0
-	left 0
-	width 100%
-	height 100%
-	background alpha(black, 60%)
-	color white
-	line-height 1.3
+    mpd(0, 20px 20px 5px, flex)
+    flex-direction column
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background alpha(black, 60%)
+    color white
+    line-height 1.3
 
 
 .relative
-	position relative
+    position relative
 
 
 .border-header
-	border-bottom 1px solid #E3E4E6
+    border-bottom 1px solid #E3E4E6
 
 .border-header > [class*="col"]
-	display flex
-	flex-direction column
-	justify-content center
-	padding-top 15px
-	border-right 1px solid #E3E4E6
+    display flex
+    flex-direction column
+    justify-content center
+    padding-top 15px
+    border-right 1px solid #E3E4E6
 
 // .border-header-xl > [class*="col"]:nth-child(2)
 //     width 300px !important
 
 .border-header > [class*="col"]:last-child
-	border-right none
+    border-right none
 
 
 .img-c
-	mpd()
-	width 100%
-	height auto
+    mpd()
+    width 100%
+    height auto
 
 .img-c-wrap
-	mpd(0 -15px)
-	margin-bottom -11px
+    mpd(0 -15px)
+    margin-bottom -11px
 
 .img-c-bg
-	position relative
-	background #EC819D
-	overflow hidden
+    position relative
+    background #EC819D
+    overflow hidden
 
 
 .bg-circle
-	position relative
-	padding-left 1rem
+    position relative
+    padding-left 1rem
 
 .bg-circle:before
-	content ''
-	display block
-	width 2.3em
-	height @width
-	border-radius 50%
-	background pcolor
-	position absolute
-	top 50%
-	left 0
-	margin-top -1em
-	z-index 1
+    content ''
+    display block
+    width 2.3em
+    height @width
+    border-radius 50%
+    background pcolor
+    position absolute
+    top 50%
+    left 0
+    margin-top -1em
+    z-index 1
 
 
 .circle-num
-	mpd(0 0 15px, 0, flex)
-	align-items center
-	justify-content center
-	width 2em
-	height @width
-	border-radius 50%
-	background pcolor
-	font-weight 600
+    mpd(0 0 15px, 0, flex)
+    align-items center
+    justify-content center
+    width 2em
+    height @width
+    border-radius 50%
+    background pcolor
+    font-weight 600
 
 
 .blockquote-right
-	border-right .3em solid pcolor
-	padding-right 15px
+    border-right .3em solid pcolor
+    padding-right 15px
 
 
 .circle-list
-	padding-left 3.2em
+    padding-left 3.2em
 
 .circle-list:before
-	mpd(0, 0, flex)
-	align-items center
-	justify-content center
-	float left
-	margin-top .2em
-	margin-left -2.5em
-	width 2em
-	height @width
-	border-radius 50%
-	background pcolor
-	font-size 1.3em
-	font-weight 600
+    mpd(0, 0, flex)
+    align-items center
+    justify-content center
+    float left
+    margin-top .2em
+    margin-left -2.5em
+    width 2em
+    height @width
+    border-radius 50%
+    background pcolor
+    font-size 1.3em
+    font-weight 600
 
 .circle-list:after
-	content ''
-	display block
-	height 1px
-	clear both
+    content ''
+    display block
+    height 1px
+    clear both
 
 for child in (1..10)
-	.circle-list:nth-child({child}):before
-		content ('' + child)
+    .circle-list:nth-child({child}):before
+        content ('' + child)
 
 
 for w in (1..10)
-	.border-primary-{w}
-		border (w * 1px) solid pcolor
+    .border-primary-{w}
+        border (w * 1px) solid pcolor
 
 
 for zi in (1..100)
-	.z-{zi}
-		z-index zi
+    .z-{zi}
+        z-index zi
 
 
 for num in (1..100)
-	.em-{num}
-		font-size (num * .1em)
+    .em-{num}
+        font-size (num * .1em)
 
 for rem in (1..100)
-	.rem-{rem}
-		font-size (rem * .1rem)
+    .rem-{rem}
+        font-size (rem * .1rem)
 
 
 
 for fw in 300 400 600 700
-	.fw-{fw}
-		font-weight fw
+    .fw-{fw}
+        font-weight fw
 
 
 for lh in (10..100)
-	.lh-{lh}
-		line-height (lh * .1)
+    .lh-{lh}
+        line-height (lh * .1)
