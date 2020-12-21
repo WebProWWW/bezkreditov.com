@@ -17,15 +17,23 @@ $this->params['breadcrumbs'] = [
 <section class="section img-c-bg">
     <div class="container relative z-1">
         <div class="row align-items-center">
-            <div class="col-12 col-md-6 col-lg-8">
+            <div class="col-12 col-md-6 col-lg-auto mx-auto">
                 <h1>
-                Полезные онлайн&nbsp;-&nbsp;сервисы
-                <br>
-                от&nbsp;портала «Без&nbsp;кредитов»
-            </h1>
-                <p class="em-13">С помощью онлайн-сервисов вы сможете рассчитать стоимость банкротства, узнать свои долги, проконсультироваться с юристом</p>
+                    Полезные онлайн - сервисы
+                    <br class="d-none d-lg-block">
+                    от портала «Без&nbsp;кредитов»
+                </h1>
+                <p class="em-11">
+                    С помощью онлайн-сервисов вы сможете
+                    <br class="d-none d-lg-block">
+                    рассчитать стоимость банкротства, узнать
+                    <br class="d-none d-lg-block">
+                    свои долги, проконсультироваться
+                    <br class="d-none d-lg-block">
+                    с юристом
+                </p>
             </div><!-- .col -->
-            <div class="col-12 col-md-6 col-lg-4 mx-auto align-self-end">
+            <div class="col-12 col-md-6 col-lg-4 mx-auto ml-xl-0 align-self-end">
                 <div class="img-c-wrap">
                     <img class="img-c" src="/img/img-2.jpg">
                 </div>

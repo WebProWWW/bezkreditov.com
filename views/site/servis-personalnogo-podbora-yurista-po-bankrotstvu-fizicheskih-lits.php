@@ -15,21 +15,16 @@ $this->params['breadcrumbs'] = [
 <section class="section" style="background: #F1F2F6;">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-7 col-xl-9 align-self-center">
-                <div class="row">
-                    <div class="col-12 mb-xl-3">
-                        <h1>Сервис персонального подбора юриста по банкротству физических лиц не выходя&nbsp;из&nbsp;дома</h1>
-                    </div><!-- .col -->
-                    <div class="col-12 mb-xl-4">
-                        <p>Наш сервис, бесплатно подберет для вас персонального юриста по банкротству</p>
-                    </div><!-- .col -->
-                    <div class="col-12"></div>
+            <div class="col-12 col-md-6 col-lg-auto mx-auto align-self-center">
+                <h1 class=" mb-xl-5">Сервис персонального подбора юриста <br>по банкротству физических лиц <br>не выходя&nbsp;из&nbsp;дома</h1>
+                <p class="mb-xl-5">Наш сервис, бесплатно подберет для вас <br>персонального юриста по банкротству</p>
+                <div class="d-flex no-gutters">
                     <div class="col-auto">
                         <div class="btn-default">Начать подбор</div>
                     </div><!-- .col -->
-                </div><!-- .row -->
+                </div><!-- .d-flex -->
             </div><!-- .col -->
-            <div class="col-12 col-sm-8 col-md-4 col-lg-3 mx-auto align-self-end">
+            <div class="col-8 col-md-5 col-lg-3 mx-auto ml-xl-0 align-self-end">
                 <img class="img-center" src="/img/img-5.jpg">
             </div><!-- .col -->
         </div><!-- .row -->
