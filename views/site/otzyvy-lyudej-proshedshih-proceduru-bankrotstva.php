@@ -15,16 +15,18 @@ $this->params['breadcrumbs'] = [
 
 <section class="section" style="background: #fbbd14; overflow: hidden; position: relative;">
     <div class="container">
-        <div class="row no-gutters align-items-center">
-            <div class="col-12 col-lg">
+        <div class="row no-gutters align-items-center justify-content-center">
+            <div class="col-12 col-lg-auto">
                 <h2 class="h1 fw-400 center">
-                    Более&nbsp;<span class="fw-600">200&nbsp;000&nbsp;человек*</span> списали&nbsp;все&nbsp;свои
+                    Более&nbsp;<span class="fw-600">200&nbsp;000&nbsp;человек*</span>
                     <br>
-                    и&nbsp;начали&nbsp;жизнь с&nbsp;чистого&nbsp;листа
+                    списали&nbsp;все&nbsp;свои&nbsp;и
+                    <br>
+                    начали&nbsp;жизнь с&nbsp;чистого&nbsp;листа
                 </h2>
             </div><!-- .col -->
             <div class="col-12 col-lg-6 col-xl-5">
-                <img class="img-center" src="/img/img-1.jpg" style="margin-bottom: -13px">
+                <img class="img-center" src="/img/img-1.jpg" style="margin-bottom: -13px;">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->

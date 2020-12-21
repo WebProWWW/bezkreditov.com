@@ -19,7 +19,7 @@ use app\helpers\Url;
 
         <a class="main-mnav-ln" href="#main-mnav-content-1">
             <span class="nav-txt">
-                БАНКРОТСТВО
+                Банкротство
             </span>
             <i class="i-ch-down em-8"></i>
         </a>
@@ -64,7 +64,7 @@ use app\helpers\Url;
 
         <a class="main-mnav-ln" href="#main-mnav-content-2">
             <span class="nav-txt">
-                РЕФИНАНСИРОВАНИЕ
+                Рефинансирование
             </span>
             <i class="i-ch-down em-8"></i>
         </a>
@@ -109,7 +109,7 @@ use app\helpers\Url;
 
         <a class="main-mnav-ln" href="#main-mnav-content-3">
             <span class="nav-txt">
-                КРЕДИТЫ
+                Кредиты
             </span>
             <i class="i-ch-down em-8"></i>
         </a>
@@ -154,7 +154,7 @@ use app\helpers\Url;
 
         <a class="main-mnav-ln" href="#main-mnav-content-4">
             <span class="nav-txt">
-                ИПОТЕКА
+                Ипотека
             </span>
             <i class="i-ch-down em-8"></i>
         </a>
@@ -199,7 +199,7 @@ use app\helpers\Url;
 
         <a class="main-mnav-ln" href="#main-mnav-content-5">
             <span class="nav-txt">
-                СЕРВИСЫ
+                Сервисы
             </span>
             <i class="i-ch-down em-8"></i>
         </a>
@@ -244,7 +244,7 @@ use app\helpers\Url;
 
         <a class="main-mnav-ln" href="#main-mnav-content-6">
             <span class="nav-txt">
-                КАЛЬКУЛЯТОРЫ
+                Калькуляторы
             </span>
             <i class="i-ch-down em-8"></i>
         </a>
@@ -289,7 +289,7 @@ use app\helpers\Url;
 
         <a class="main-mnav-ln" href="#main-mnav-content-7">
             <span class="nav-txt">
-                НОВОСТИ
+                Новости
             </span>
             <i class="i-ch-down em-8"></i>
         </a>
@@ -334,7 +334,7 @@ use app\helpers\Url;
 
         <a class="main-mnav-ln" href="#main-mnav-content-8">
             <span class="nav-txt">
-                О ПРОЕКТЕ
+                О проекте
             </span>
             <i class="i-ch-down em-8"></i>
         </a>

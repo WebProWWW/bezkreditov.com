@@ -22,9 +22,9 @@ $this->params['breadcrumbs'] = [
 
         <div class="mb-4">
             <div class="cart">
-                <div class="cart-body">
-                    <div class="row">
-                        <div class="col-12 col-lg-6">
+                <div class="cart-body p-xl-4 pt-xl-5">
+                    <div class="row justify-content-around">
+                        <div class="col-12 col-lg-6 col-xl-4">
                             <label class="label">Общий размер долга</label>
                             <input class="input" type="text">
 
@@ -37,7 +37,7 @@ $this->params['breadcrumbs'] = [
                             <input class="input" type="text">
                         </div><!-- .col -->
 
-                        <div class="col-12 col-lg-6">
+                        <div class="col-12 col-lg-6 col-xl-6">
                             <span class="label d-none d-xl-block">&nbsp;</span>
                             <div class="row align-items-center mb-3">
                                 <div class="col-12 col-sm">
@@ -48,13 +48,13 @@ $this->params['breadcrumbs'] = [
                                         <div class="col-auto">
                                             <label class="d-flex align-items-center m-0">
                                                 <span class="d-block mr-3">Есть</span>
-                                                <input class="radio" type="radio" name="radio-111">
+                                                <input class="radio radio-sm" type="radio" name="radio-111">
                                             </label>
                                         </div><!-- .col -->
                                         <div class="col-auto">
                                             <label class="d-flex align-items-center m-0">
                                                 <span class="d-block mr-3">Нет</span>
-                                                <input class="radio" type="radio" name="radio-111">
+                                                <input class="radio radio-sm" type="radio" name="radio-111">
                                             </label>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
@@ -70,13 +70,13 @@ $this->params['breadcrumbs'] = [
                                         <div class="col-auto">
                                             <label class="d-flex align-items-center m-0">
                                                 <span class="d-block mr-3">Есть</span>
-                                                <input class="radio" type="radio" name="radio-222">
+                                                <input class="radio radio-sm" type="radio" name="radio-222">
                                             </label>
                                         </div><!-- .col -->
                                         <div class="col-auto">
                                             <label class="d-flex align-items-center m-0">
                                                 <span class="d-block mr-3">Нет</span>
-                                                <input class="radio" type="radio" name="radio-222">
+                                                <input class="radio radio-sm" type="radio" name="radio-222">
                                             </label>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
@@ -92,13 +92,13 @@ $this->params['breadcrumbs'] = [
                                         <div class="col-auto">
                                             <label class="d-flex align-items-center m-0">
                                                 <span class="d-block mr-3">Есть</span>
-                                                <input class="radio" type="radio" name="radio-333">
+                                                <input class="radio radio-sm" type="radio" name="radio-333">
                                             </label>
                                         </div><!-- .col -->
                                         <div class="col-auto">
                                             <label class="d-flex align-items-center m-0">
                                                 <span class="d-block mr-3">Нет</span>
-                                                <input class="radio" type="radio" name="radio-333">
+                                                <input class="radio radio-sm" type="radio" name="radio-333">
                                             </label>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
@@ -114,13 +114,13 @@ $this->params['breadcrumbs'] = [
                                         <div class="col-auto">
                                             <label class="d-flex align-items-center m-0">
                                                 <span class="d-block mr-3">Да</span>
-                                                <input class="radio" type="radio" name="radio-666">
+                                                <input class="radio radio-sm" type="radio" name="radio-666">
                                             </label>
                                         </div><!-- .col -->
                                         <div class="col-auto">
                                             <label class="d-flex align-items-center m-0">
                                                 <span class="d-block mr-3">Нет</span>
-                                                <input class="radio" type="radio" name="radio-666">
+                                                <input class="radio radio-sm" type="radio" name="radio-666">
                                             </label>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
