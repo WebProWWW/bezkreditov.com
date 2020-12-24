@@ -1,5 +1,7 @@
 <?php
 
+use app\helpers\Url;
+
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
 
@@ -20,7 +22,7 @@ $this->params['breadcrumbs'] = [
                 <p class="mb-xl-5">Наш сервис, бесплатно подберет для вас <br>персонального юриста по банкротству</p>
                 <div class="d-flex no-gutters">
                     <div class="col-auto">
-                        <div class="btn-default">Начать подбор</div>
+                        <a class="btn-default" href="<?= Url::toView('servis-personalnogo-podbora-yurista-po-bankrotstvu') ?>">Начать подбор</a>
                     </div><!-- .col -->
                 </div><!-- .d-flex -->
             </div><!-- .col -->
@@ -128,20 +130,20 @@ $this->params['breadcrumbs'] = [
             </div><!-- .col -->
             <div class="col-12 col-sm-11 col-md-7 col-lg-8 col-xl-5 mx-auto align-self-center order-1 order-md-2">
                 <div>
-                    <p class="circle-list em-12 mb-xl-5">
+                    <p class="circle-list mb-xl-4">
                         <span class="circle-list-txt">Вы заполняете мини анкету с вашими данными о долгах</span>
                     </p>
-                    <p class="circle-list em-12 mb-xl-5">
+                    <p class="circle-list mb-xl-4">
                         <span class="circle-list-txt">Система бесплатно проводит поиск по базе проверенных юристов в вашем городе</span>
                     </p>
-                    <p class="circle-list em-12 mb-xl-4">
+                    <p class="circle-list mb-xl-4">
                         <span class="circle-list-txt">После поиска сервис покажет вам от 3 до 5 проверенных компаний, которые помогут списать вам долги</span>
                     </p>
                 </div>
                 <p class="h2 center mb-xl-4">-Вау! Как круто. Хочу попробовать!</p>
                 <div class="row">
                     <div class="col-auto mx-auto">
-                        <div class="btn-default">Попробовать</div>
+                        <a class="btn-default" href="<?= Url::toView('servis-personalnogo-podbora-yurista-po-bankrotstvu') ?>">Попробовать</a>
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div><!-- .col -->

@@ -24,9 +24,9 @@ $this->params['breadcrumbs'] = [
         <div class="cart">
             <div class="cart-body">
                 <div class="row align-items-center">
-                    <div class="col-12 col-lg order-lg-2 z-2">
+                    <div class="col-12 col-lg-7 col-xl-8 order-lg-2 z-2">
                         <div class="px-sm-3">
-                            <h2 class="fw-400 my-4">
+                            <h2 class="h3 fw-400 my-4">
                                 <em>
                                     <span class="dialog">Пострадает ли имущество супруги, если я признаю себя банкротом?</span>
                                     <span class="dialog">А что будет с моим единственным жильем?</span>
@@ -37,10 +37,10 @@ $this->params['breadcrumbs'] = [
                                 <p>Ваш контактный Email не публикуется, а используется только для уведомления о получении ответа на ваш вопрос.</p>
                                 <p>Консультация по вопросам банкротства физических лиц полностью бесплатна</p>
                             </div><!-- .wall -->
-                            <h3 class="h2 center my-4">Задайте свой вопрос в форме ниже</h3>
+                            <h3 class="center my-4">Задайте свой вопрос в форме ниже</h3>
                         </div>
                     </div><!-- .col -->
-                    <div class="col-12 col-lg-5 align-self-end order-lg-1 z-1">
+                    <div class="col-8 col-lg-4 col-xl-3 align-self-end order-lg-1 z-1 mx-auto">
                         <img class="img-center" width="330" style="margin-bottom: -3px" src="/img/block-img-6.jpg">
                     </div><!-- .col -->
                 </div><!-- .row -->

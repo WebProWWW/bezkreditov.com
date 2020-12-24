@@ -24,6 +24,15 @@ class Url extends YiiHelperUrl
     }
 
     /**
+     * @param string $view
+     * @return string
+     */
+    public static function toView(string $view)
+    {
+        return self::to(['site/index', 'view' => $view]);
+    }
+
+    /**
      * @return string
      */
     public static function rootDomain()

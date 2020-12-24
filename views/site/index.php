@@ -1,6 +1,6 @@
 <?php
 
-use yii\helpers\Url;
+use app\helpers\Url;
 use yii\helpers\StringHelper;
 use app\models\Material;
 use app\models\Company;
@@ -47,7 +47,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                     </div>
                                     <div class="row">
                                         <div class="col-auto mx-auto mx-sm-0 my-4">
-                                            <a class="btn-default">Попробовать</a>
+                                            <a class="btn-default" href="<?= Url::toView('servis-personalnogo-podbora-yurista-po-bankrotstvu-fizicheskih-lits') ?>">Попробовать</a>
                                         </div>
                                     </div>
                                 </div><!-- .d-flex -->
@@ -92,7 +92,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                     </div>
                                     <div class="row">
                                         <div class="col-auto mx-auto mx-sm-0 my-4">
-                                            <a class="btn-default">Попробовать</a>
+                                            <a class="btn-default" href="<?= Url::toView('rejting-arbitrazhnyh-upravlyayushih') ?>">Попробовать</a>
                                         </div>
                                     </div>
                                 </div><!-- .d-flex -->

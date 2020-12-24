@@ -1,4 +1,6 @@
 
+$.fn.hasAttr = (name) -> @attr(name)?
+
 #=require ./vue/Fssp.coffee
 #=require ./vue/Test.coffee
 
@@ -252,6 +254,29 @@ $('input[data-mask]').each (i, input) ->
     on
 
 
+$('input[data-maskmoney]').each (i, input) ->
+    $(input).maskMoney
+        suffix: ' ₽'
+        thousands: ' '
+        precision: 0
+    on
+
+
+$('input[data-maskint]').each (i, input) ->
+    $(input).inputmask
+        alias: 'integer'
+        allowMinus: false
+        digits: 0
+        rightAlign: off
+    on
+
+
+$('input[data-date]').each (i, input) ->
+    $(input).datepicker
+        locale: 'ru-ru'
+        format: 'dd.mm.yyyy'
+    on
+
 
 class AjaxForm
 
@@ -388,28 +413,27 @@ window.isCity = () ->
     on
 
 
-# mainNavLnHoverIn = (e) ->
-#     content = $ "#{$(this).attr 'href'}"
-#     console.log e.type
 
-# mainNavLnHoverOut = (e) ->
-#     console.log e.type
+$mainNavLn = $ "*[data-dropdown]"
 
-# $('.main-nav-ln').hover mainNavLnHoverIn, mainNavLnHoverOut
+
 
 $('.main-nav').on 'mouseleave', (e) ->
-    $('.main-nav-ln').removeClass 'active'
+    $mainNavLn.removeClass 'active'
     $('.main-nav-content').removeClass 'active'
 
-$('.main-nav-ln').on 'click', (e) ->
+
+$mainNavLn.on 'click', (e) ->
     e.preventDefault()
     off
 
+
 $('.main-nav-ln').on 'mouseenter', (e) ->
     $('.main-nav-content').removeClass 'active'
-    $('.main-nav-ln').removeClass 'active'
+    $mainNavLn.removeClass 'active'
     $this = $ this
-    $content = $ "#{$this.attr 'href'}"
+    return on unless $this.hasAttr 'data-dropdown'
+    $content = $ "#{$this.attr 'data-dropdown'}"
     $this.addClass 'active'
     $content.addClass 'active'
     on

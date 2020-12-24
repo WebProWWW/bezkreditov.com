@@ -1,5 +1,8 @@
 <?php
 
+use app\helpers\Url;
+use app\models\Region;
+
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
 
@@ -26,15 +29,19 @@ $this->params['breadcrumbs'] = [
                     <div class="row justify-content-around">
                         <div class="col-12 col-lg-6 col-xl-4">
                             <label class="label">Общий размер долга</label>
-                            <input class="input" type="text">
+                            <input class="input" type="text" data-maskmoney>
 
                             <label class="label">Регион проживания (прописки)</label>
                             <select class="input">
-                                <option>Москва и Московская область</option>
+                                <?php foreach (Region::findAllRegions() as $region): ?>
+                                    <option <?= ($city->region->code === $region->code) ? 'selected' : '' ?> >
+                                        <?= $region->region_name ?>
+                                    </option>
+                                <?php endforeach; ?>
                             </select>
 
                             <label class="label">Колличество кредитов, распиcок, поручительств</label>
-                            <input class="input" type="text">
+                            <input class="input" type="text" data-maskint>
                         </div><!-- .col -->
 
                         <div class="col-12 col-lg-6 col-xl-6">
@@ -48,7 +55,7 @@ $this->params['breadcrumbs'] = [
                                         <div class="col-auto">
                                             <label class="d-flex align-items-center m-0">
                                                 <span class="d-block mr-3">Есть</span>
-                                                <input class="radio radio-sm" type="radio" name="radio-111">
+                                                <input class="radio radio-sm" type="radio" name="radio-111" checked>
                                             </label>
                                         </div><!-- .col -->
                                         <div class="col-auto">
@@ -70,7 +77,7 @@ $this->params['breadcrumbs'] = [
                                         <div class="col-auto">
                                             <label class="d-flex align-items-center m-0">
                                                 <span class="d-block mr-3">Есть</span>
-                                                <input class="radio radio-sm" type="radio" name="radio-222">
+                                                <input class="radio radio-sm" type="radio" name="radio-222" checked>
                                             </label>
                                         </div><!-- .col -->
                                         <div class="col-auto">
@@ -98,7 +105,7 @@ $this->params['breadcrumbs'] = [
                                         <div class="col-auto">
                                             <label class="d-flex align-items-center m-0">
                                                 <span class="d-block mr-3">Нет</span>
-                                                <input class="radio radio-sm" type="radio" name="radio-333">
+                                                <input class="radio radio-sm" type="radio" name="radio-333" checked>
                                             </label>
                                         </div><!-- .col -->
                                     </div><!-- .row -->
@@ -114,7 +121,7 @@ $this->params['breadcrumbs'] = [
                                         <div class="col-auto">
                                             <label class="d-flex align-items-center m-0">
                                                 <span class="d-block mr-3">Да</span>
-                                                <input class="radio radio-sm" type="radio" name="radio-666">
+                                                <input class="radio radio-sm" type="radio" name="radio-666" checked>
                                             </label>
                                         </div><!-- .col -->
                                         <div class="col-auto">
@@ -130,7 +137,7 @@ $this->params['breadcrumbs'] = [
                     </div><!-- .row -->
                     <div class="row">
                         <div class="col-auto mx-auto">
-                            <div class="btn-default">Подобрать юриста</div>
+                            <a class="btn-default" href="<?= Url::toView('spisok-yuristov-po-bankrotstvu') ?>">Подобрать юриста</a>
                         </div><!-- .col -->
                     </div><!-- .row -->
                 </div><!-- .cart-body -->

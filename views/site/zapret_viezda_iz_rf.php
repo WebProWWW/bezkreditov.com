@@ -27,8 +27,11 @@ $this->params['description'] = 'На нашем сайте вы можете п�
         <p>На нашем сайте вы можете проверить запрет на выезд из страны.</p>
         <label>Регион <span class="red">*</span></label>
         <select class="input">
-            <option disabled selected>Регион</option>
-            <option>Москва</option>
+            <?php foreach (Region::findAllRegions() as $region): ?>
+                <option <?= ($city->region->code === $region->code) ? 'selected' : '' ?> >
+                    <?= $region->region_name ?>
+                </option>
+            <?php endforeach; ?>
         </select>
         <div class="row">
             <div class="col-12 col-md-6">
@@ -48,7 +51,7 @@ $this->params['description'] = 'На нашем сайте вы можете п�
 
             <div class="col-12 col-md-6">
                 <label>Дата рождения</label>
-                <input class="input" type="text">
+                <input class="input" type="text" data-date>
             </div><!-- .col -->
         </div><!-- .row type -->
     </div><!-- .container -->

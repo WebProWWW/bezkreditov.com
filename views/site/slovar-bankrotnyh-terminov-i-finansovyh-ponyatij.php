@@ -25,16 +25,16 @@ $dataProvider = Material::dataProvider();
 <section class="section relative" style="background: #E2E6E9; overflow: hidden;">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-12 col-md-7">
-                <h1>
+            <div class="col-12 col-md-7 mx-auto">
+                <h1 class="h2 mb-4">
                     <span class="dialog">Что такое ФССП?</span>
                     <span class="dialog">Что такое реструктуризация долга?</span>
                     <span class="dialog">Кто такой финансовый управляющий?</span>
                     <span class="dialog">Кто такой судебный пристав?</span>
                 </h1>
-                <p class="center em-13">…вопросов больше чем ответов, наш банкротный словарь поможет ва разобраться в самых сложных определениях&nbsp;и&nbsp;понятиях</p>
+                <p class="center em-11">…вопросов больше чем ответов, наш банкротный словарь поможет ва разобраться в самых сложных определениях&nbsp;и&nbsp;понятиях</p>
             </div><!-- .col -->
-            <div class="col-12 col-md-5 col-xl-4 mx-auto align-self-end">
+            <div class="col-8 col-md-5 col-lg-3 mx-auto align-self-end">
                 <img class="img-center" src="/img/img-7.jpg" style="margin-bottom: -11px;">
             </div><!-- .col -->
         </div><!-- .row -->

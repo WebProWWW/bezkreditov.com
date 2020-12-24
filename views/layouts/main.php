@@ -41,7 +41,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
     <?php $this->registerCsrfMetaTags() ?>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap">
     <link rel="stylesheet" href="/css/main.depends.css?v=033">
-    <link rel="stylesheet" href="/css/main.css?v=063">
+    <link rel="stylesheet" href="/css/main.css?v=064">
     <title><?= $title ?></title>
     <meta name="description" content="<?= $description ?>">
     <meta property="og:locale" content="ru_RU">
@@ -392,8 +392,8 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 </div><!-- .d-none -->
 <!-- / МОДАЛЬНЫЕ ОКНА -->
 
-<script src="/js/main.depends.js?v=026"></script>
-<script src="/js/main.js?v=040"></script>
+<script src="/js/main.depends.js?v=027"></script>
+<script src="/js/main.js?v=041"></script>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
 <script>if ("function"==typeof window.isCity) { window.isCity() };</script>

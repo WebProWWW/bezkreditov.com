@@ -20,10 +20,10 @@ $companyDataProvider = Company::dataProvider();
 <section class="section" style="background: #D9DEE1; overflow: hidden;">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-sm-8 col-md-4 col-lg-3 order-2 order-md-1 align-self-end mx-auto">
+            <div class="col-8 col-sm-8 col-md-4 col-lg-3 order-2 order-md-1 align-self-end mx-auto mr-lg-5">
                 <img class="img-center" src="/img/img-4.jpg" style="margin-bottom: -13px">
             </div><!-- .col -->
-            <div class="col-12 col-sm-9 col-md-8 col-lg-7 col-xl-6 order-1 order-md-2 align-self-center">
+            <div class="col-12 col-sm-9 col-md-6 col-lg-5 col-xl-4 order-1 order-md-2 align-self-center mx-auto ml-lg-5">
                 <div class="border-primary-8 pt-3 px-4 mb-3">
                     <h1>Мы подобрали для вас список юристов по&nbsp;банкротству в&nbsp;вашем&nbsp;городе</h1>
                 </div>

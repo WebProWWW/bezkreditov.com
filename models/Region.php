@@ -132,7 +132,10 @@ class Region extends ActiveRecord
     {
         $regions = Yii::$app->cache->get('all-regions');
         if ($regions === false) {
-            $regions = self::find()->where(['not', ['code' => 99]])->all();
+            $regions = self::find()
+                ->where(['not', ['code' => 99]])
+                ->orderBy(['region_name' => SORT_ASC])
+                ->all();
             Yii::$app->cache->set('all-regions', $regions, 3600 * 24 * 365);
         }
         return $regions;
