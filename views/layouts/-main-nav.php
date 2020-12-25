@@ -303,41 +303,41 @@ use app\helpers\Url;
             </div><!-- .col -->
             <div class="col">
                 <nav class="nav">
-                    <a class="nav-ln nav-list col-4" href="<?= Url::to(['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu']) ?>">
-                        <span class="nav-txt">Онлайн подбор юриста по банкротству</span>
+                    <a class="nav-ln nav-list col-4" href="">
+                        <span class="nav-txt">Онлайн подбор юриста <br> по банкротству</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::to(['site/index', 'view' => 'onlajn-konsultaciya-yurista-po-bankrotstvu']) ?>">
-                        <span class="nav-txt">Кредитный калькулятор</span>
+                    <a class="nav-ln nav-list col-4" href="">
+                        <span class="nav-txt">Онлайн калькулятор <br> по банкротству</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::to(['site/index', 'view' => 'rejting-arbitrazhnyh-upravlyayushih']) ?>">
-                        <span class="nav-txt">Калькулятор рефинансирования</span>
+                    <a class="nav-ln nav-list col-4" href="">
+                        <span class="nav-txt">Онлайн консультация <br> по банкротству</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::to(['site/index', 'view' => 'poleznye-materialy-po-bankrotstvu']) ?>">
+                    <a class="nav-ln nav-list col-4" href="">
                         <span class="nav-txt">Ипотечный калькулятор</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::to(['site/index', 'view' => 'ufssp-rossii']) ?>">
-                        <span class="nav-txt">Онлайн калькулятор по банкротству</span>
+                    <a class="nav-ln nav-list col-4" href="">
+                        <span class="nav-txt">Кредитный калькулятор</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::to(['site/index', 'view' => 'otzyvy-lyudej-proshedshih-proceduru-bankrotstva']) ?>">
-                        <span class="nav-txt">Онлайн консультация по банкротству</span>
+                    <a class="nav-ln nav-list col-4" href="">
+                        <span class="nav-txt">Калькулятор рефинансирования</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::to(['site/index', 'view' => 'novosti-po-bankrotstvu']) ?>">
-                        <span class="nav-txt">Проверка долгов онлайн</span>
+                    <a class="nav-ln nav-list col-4" href="">
+                        <span class="nav-txt">Проверка долгов <br> онлайн</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::to(['site/index', 'view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic']) ?>">
-                        <span class="nav-txt">Онлайн тест на списание долгов, кредитов</span>
+                    <a class="nav-ln nav-list col-4" href="">
+                        <span class="nav-txt">Онлайн тест на списание <br> долгов, кредитов</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::to(['site/index', 'view' => 'novosti-po-bankrotstvu']) ?>">
-                        <span class="nav-txt">Проверка и оплата штрафов ГИБДД</span>
+                    <a class="nav-ln nav-list col-4" href="">
+                        <span class="nav-txt">Проверка и оплата <br> штрафов ГИБДД</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::to(['site/index', 'view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic']) ?>">
-                        <span class="nav-txt">Налоги: проверка и оплата онлайн</span>
+                    <a class="nav-ln nav-list col-4" href="">
+                        <span class="nav-txt">Налоги: проверка <br> и оплата онлайн</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::to(['site/index', 'view' => 'novosti-po-bankrotstvu']) ?>">
-                        <span class="nav-txt">Калькулятор налога с продажи квартиры</span>
+                    <a class="nav-ln nav-list col-4" href="">
+                        <span class="nav-txt">Калькулятор налога <br> с продажи квартиры</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::to(['site/index', 'view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic']) ?>">
-                        <span class="nav-txt">Калькулятор пеней и штрафов</span>
+                    <a class="nav-ln nav-list col-4" href="">
+                        <span class="nav-txt">Калькулятор пеней <br> и штрафов</span>
                     </a>
                 </nav>
             </div><!-- .col -->

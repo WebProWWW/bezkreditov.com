@@ -14,11 +14,14 @@ use app\widgets\FormAjax;
                 'success' => '<strong>Мы получили ваш вопрос.</strong><br>В течении 5 минут мы отправим ответ на Ваш Email',
             ]) ?>
                 <div class="row">
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-lg-4">
                         <?= $form->inputText('name', 'Ваше имя <span class="red">*</span>') ?>
                     </div><!-- .col -->
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-lg-4">
                         <?= $form->inputText('email', 'Ваш Email <span class="red">*</span>') ?>
+                    </div><!-- .col -->
+                    <div class="col-12 col-lg-4">
+                        <?= $form->inputText('phone', 'Телефон <span class="red">*</span>', null, '+7-999-999-99-99') ?>
                     </div><!-- .col -->
                 </div><!-- .row -->
                 <?= $form->textarea('text', 'Ваш вопрос <span class="red">*</span>') ?>

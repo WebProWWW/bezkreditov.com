@@ -24,6 +24,7 @@ use app\dashboard\Input;
  * @property string $alias
  * @property string $name
  * @property string $email
+ * @property string $phone
  * @property string $text
  * @property int|null $views
  * @property int|null $created_at
@@ -66,9 +67,9 @@ class Faq extends ActiveRecord implements ModelInterface
     {
         return [
             [['city_id', 'status', 'views', 'created_at', 'updated_at'], 'integer'],
-            [['title', 'alias', 'name', 'email', 'text'], 'required'],
+            [['title', 'alias', 'name', 'email', 'text', 'phone'], 'required'],
             [['text'], 'string'],
-            [['title', 'alias', 'name', 'email'], 'string', 'max' => 255],
+            [['title', 'alias', 'name', 'email', 'phone'], 'string', 'max' => 255],
             [['email'], 'email'],
             [['city_id'], 'exist', 'skipOnError' => true, 'targetClass' => City::class, 'targetAttribute' => ['city_id' => 'id']],
             [['userFile'], 'file', 'skipOnEmpty' => true],
@@ -81,7 +82,7 @@ class Faq extends ActiveRecord implements ModelInterface
     public function scenarios()
     {
         return ArrayHelper::merge(parent::scenarios(), [
-            self::SCENARIO_ADD => ['name','email','text'],
+            self::SCENARIO_ADD => ['name','email','text','phone'],
         ]);
     }
 
@@ -98,6 +99,7 @@ class Faq extends ActiveRecord implements ModelInterface
             'alias' => 'Псевдоним',
             'name' => 'Ваше Имя',
             'email' => 'Ваш Email',
+            'phone' => 'Телефон',
             'text' => 'Ваш вопрос',
             'views' => 'Просмотры',
             'created_at' => 'Создан',

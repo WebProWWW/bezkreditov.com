@@ -190,40 +190,6 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 <?php if (ArrayHelper::getValue($this->params, 'is-footer', true)): ?>
 <footer class="section">
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-auto">
-                <div class="row">
-                    <div class="col-auto mx-auto">
-                        <a class="logo" href="<?= Url::home() ?>">
-                            <span class="logo-txt">Без кредитов</span>
-                            <span class="logo-stxt">Помогаем избавиться от долгов</span>
-                        </a>
-                    </div><!-- .col -->
-                </div><!-- .row -->
-                <div class="row justify-content-center no-gutters">
-                    <div class="col-auto mr-3 d-lg-none">
-                        <div class="d-flex align-items-center">
-                            <div class="toggle-btn" data-toggle="#footer-nav">
-                                <i class="i-bars toggle-i"></i>
-                                <p class="toggle-txt">Меню</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <a class="btn-trsp">
-                            <span class="row no-gutters justify-content-center align-items-center">
-                                <span class="col-auto em-24 mr-2"><i class="i-like"></i></span>
-                                <span class="col-auto em-9">Полезные сервисы от<br>портала «Без кредитов»</span>
-                            </span>
-                        </a>
-                    </div><!-- .col -->
-                </div><!-- .row -->
-            </div><!-- .col -->
-            <div class="col-12 col-lg">
-                <?= $this->render('-nav', ['city' => $city, 'id' => 'footer-nav']) ?>
-            </div><!-- .col -->
-        </div><!-- .row -->
-        <br>
         <p class="center"><small>&copy; Без кредитов. При воспроизведении редакционных материалов сайта обязательна установка активной гиперссылки на источник - страницу с этой публикацией на безкредитов.рф</small></p>
     </div><!-- .container -->
 </footer><!-- .section -->
