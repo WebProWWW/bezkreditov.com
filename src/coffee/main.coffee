@@ -347,6 +347,7 @@ class AjaxForm
 
 
 
+# $.fancybox.open src: '#register'
 # $.fancybox.open src: '#login'
 
 $('#main-user-form-login').on 'success', (e) ->
@@ -440,14 +441,17 @@ $('.main-nav-ln').on 'mouseenter', (e) ->
 
 
 $('.main-mnav-ln').on 'click', (e) ->
-    e.preventDefault()
     $this = $ this
-    $content = $ "#{$this.attr 'href'}"
+    return on unless $this.hasAttr 'data-dropdown'
+    $content = $ "#{$this.attr 'data-dropdown'}"
     $this.toggleClass 'active'
     $content.stop().slideToggle 300, () ->
         $this.addClass 'active' if $(this).is ':visible'
-    off
+    on
 
+
+# $('.main-mnav').addClass 'active'
+# $('body').addClass 'main-mnav-active'
 
 $('*[data-mnav-open]').on 'click', (e) ->
     e.preventDefault()

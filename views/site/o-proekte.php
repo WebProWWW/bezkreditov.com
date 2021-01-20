@@ -9,7 +9,7 @@ $this->title = 'О проекте';
 $this->params['description'] = 'Городской портал Без Кредитов - помогает жителям Москвы и Московской области выбрать правильную компанию по банкротству физических лиц и избавиться от долгов и начать свою жизнь с чистого лица.';
 // $this->params['breadcrumbs'] = ['О проекте'];
 $this->params['is-footer'] = false;
-$this->params['is-header'] = false;
+$this->params['is-header'] = true;
 
 ?>
 
@@ -51,16 +51,13 @@ $this->params['is-header'] = false;
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-auto d-lg-none">
-                <div class="d-flex align-items-center">
-                    <div class="toggle-btn" data-toggle="#main-nav">
-                        <i class="i-bars toggle-i"></i>
-                        <p class="toggle-txt">Меню</p>
-                    </div>
+                <div class="toggle-btn" data-mnav-open>
+                    <i class="i-bars toggle-i"></i>
+                    <p class="toggle-txt">Меню</p>
                 </div>
-            </div>
+            </div><!-- .col -->
         </div><!-- .row -->
-        <?= $this->render('../layouts/-nav', ['city' => $city]) ?>
-    </div>
+    </div><!-- .container -->
 </footer>
 
 <p class="center"><small>&copy; Без кредитов. При воспроизведении редакционных материалов сайта обязательна установка активной гиперссылки на источник - страницу с этой публикацией на безкредитов.рф</small></p>

@@ -17,7 +17,7 @@ use app\helpers\Url;
             </span>
         </a>
 
-        <a class="main-mnav-ln" href="#main-mnav-content-1">
+        <a class="main-mnav-ln" data-dropdown="#main-mnav-content-1">
             <span class="nav-txt">
                 Банкротство
             </span>
@@ -62,7 +62,7 @@ use app\helpers\Url;
             </a>
         </div><!-- .main-mnav-content -->
 
-        <a class="main-mnav-ln" href="#main-mnav-content-2">
+        <a class="main-mnav-ln" data-dropdown="#main-mnav-content-2">
             <span class="nav-txt">
                 Рефинансирование
             </span>
@@ -107,7 +107,7 @@ use app\helpers\Url;
             </a>
         </div><!-- .main-mnav-content -->
 
-        <a class="main-mnav-ln" href="#main-mnav-content-3">
+        <a class="main-mnav-ln" data-dropdown="#main-mnav-content-3">
             <span class="nav-txt">
                 Кредиты
             </span>
@@ -152,7 +152,7 @@ use app\helpers\Url;
             </a>
         </div><!-- .main-mnav-content -->
 
-        <a class="main-mnav-ln" href="#main-mnav-content-4">
+        <a class="main-mnav-ln" data-dropdown="#main-mnav-content-4">
             <span class="nav-txt">
                 Ипотека
             </span>
@@ -197,7 +197,7 @@ use app\helpers\Url;
             </a>
         </div><!-- .main-mnav-content -->
 
-        <a class="main-mnav-ln" href="#main-mnav-content-5">
+        <a class="main-mnav-ln" data-dropdown="#main-mnav-content-5">
             <span class="nav-txt">
                 Сервисы
             </span>
@@ -242,7 +242,7 @@ use app\helpers\Url;
             </a>
         </div><!-- .main-mnav-content -->
 
-        <a class="main-mnav-ln" href="#main-mnav-content-6">
+        <a class="main-mnav-ln" data-dropdown="#main-mnav-content-6">
             <span class="nav-txt">
                 Калькуляторы
             </span>
@@ -287,94 +287,29 @@ use app\helpers\Url;
             </a>
         </div><!-- .main-mnav-content -->
 
-        <a class="main-mnav-ln" href="#main-mnav-content-7">
+        <a class="main-mnav-ln" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
             <span class="nav-txt">
                 Новости
             </span>
-            <i class="i-ch-down em-8"></i>
         </a>
-        <div class="main-mnav-content" id="main-mnav-content-7">
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Рейтинг компаний по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'onlajn-konsultaciya-yurista-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Онлайн консультация юриста по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'zakon-o-bankrotstve']) ?>">
-                <span class="nav-txt">Закон о банкротстве</span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'rejting-arbitrazhnyh-upravlyayushih']) ?>">
-                <span class="nav-txt">Рейтинг арбитражных управляющих в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'poleznye-materialy-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Полезные материалы по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">
-                <span class="nav-txt">Узнать свои долги г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'ufssp-rossii']) ?>">
-                <span class="nav-txt">УФССП России по&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'otzyvy-lyudej-proshedshih-proceduru-bankrotstva']) ?>">
-                <span class="nav-txt">Отзывы людей прошедших процедуру банкротства в&nbsp;&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'obratnaya-svyaz']) ?>">
-                <span class="nav-txt">Обратная связь</span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'novosti-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Новости по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic']) ?>">
-                <span class="nav-txt">Вопрос-ответ по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'o-proekte']) ?>">
-                <span class="nav-txt">О проекте</span>
-            </a>
-        </div><!-- .main-mnav-content -->
 
-        <a class="main-mnav-ln" href="#main-mnav-content-8">
+        <a class="main-mnav-ln" href="<?= Url::toView('o-proekte') ?>">
             <span class="nav-txt">
                 О проекте
             </span>
-            <i class="i-ch-down em-8"></i>
         </a>
-        <div class="main-mnav-content" id="main-mnav-content-8">
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Рейтинг компаний по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'onlajn-konsultaciya-yurista-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Онлайн консультация юриста по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'zakon-o-bankrotstve']) ?>">
-                <span class="nav-txt">Закон о банкротстве</span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'rejting-arbitrazhnyh-upravlyayushih']) ?>">
-                <span class="nav-txt">Рейтинг арбитражных управляющих в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'poleznye-materialy-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Полезные материалы по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">
-                <span class="nav-txt">Узнать свои долги г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'ufssp-rossii']) ?>">
-                <span class="nav-txt">УФССП России по&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'otzyvy-lyudej-proshedshih-proceduru-bankrotstva']) ?>">
-                <span class="nav-txt">Отзывы людей прошедших процедуру банкротства в&nbsp;&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'obratnaya-svyaz']) ?>">
-                <span class="nav-txt">Обратная связь</span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'novosti-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Новости по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic']) ?>">
-                <span class="nav-txt">Вопрос-ответ по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'o-proekte']) ?>">
-                <span class="nav-txt">О проекте</span>
-            </a>
-        </div><!-- .main-mnav-content -->
+
+        <div class="row">
+            <div class="col-auto">
+                <?php if ($user): ?>
+                    <a class="btn-sm btn-default" href="<?= Url::to(['site/logout']) ?>">
+                        <i class="i-out"></i>
+                        Выйти
+                    </a>
+                <?php else: ?>
+                    <a class="btn-sm btn-default" data-fancybox href="#login">Вход</a>
+                <?php endif; ?>
+            </div><!-- .col -->
+        </div><!-- .row -->
     </div><!-- .main-mnav -->
 </div><!-- .main-mnav-sidebar -->
