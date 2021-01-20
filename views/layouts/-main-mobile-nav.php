@@ -4,13 +4,15 @@ use app\helpers\Url;
 
 /* @var $city app\models\City */
 
+$user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
+
 ?>
 
 <div class="main-mnav">
     <div class="main-mnav-close"><i class="i-times"></i></div>
 
     <div class="main-mnav-sidebar">
-        <a class="btn-trsp" href="<?= Url::to(['site/index', 'view' => 'poleznye-servisy']) ?>">
+        <a class="btn-trsp" href="<?= Url::toView('poleznye-servisy') ?>">
             <span class="row no-gutters justify-content-center align-items-center">
                 <span class="col-auto em-24 mr-2"><i class="i-like"></i></span>
                 <span class="col-auto em-9">Полезные сервисы от<br>портала «Без кредитов»</span>
