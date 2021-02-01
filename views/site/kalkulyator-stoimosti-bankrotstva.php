@@ -25,136 +25,9 @@ $companyDataProvider = Company::dataProvider();
         <div class="mb-4">
             <div class="cart">
                 <div class="cart-body">
-                    <div class="row">
-                        <div class="col-12 col-lg-6">
-                            <label class="label">Общий размер долга</label>
-                            <input class="input" type="text">
-
-                            <label class="label">Регион проживания (прописки)</label>
-                            <select class="input">
-                                <option>Москва и Московская область</option>
-                            </select>
-
-                            <label class="label">Колличество кредитов, распиcок, поручительств</label>
-                            <input class="input" type="text">
-                        </div><!-- .col -->
-
-                        <div class="col-12 col-lg-6">
-                            <span class="label d-none d-lg-block">&nbsp;</span>
-                            <div class="row align-items-center mb-3">
-                                <div class="col-12 col-sm">
-                                    <p class="em-9 mb-2">Залоговое имущество, которое нужно продать (в том числе ипотечное):</p>
-                                </div><!-- .col -->
-                                <div class="col-12 col-sm-auto mb-2">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <label class="d-flex align-items-center m-0">
-                                                <span class="d-block mr-3">Есть</span>
-                                                <input class="radio" type="radio" name="radio-111">
-                                            </label>
-                                        </div><!-- .col -->
-                                        <div class="col-auto">
-                                            <label class="d-flex align-items-center m-0">
-                                                <span class="d-block mr-3">Нет</span>
-                                                <input class="radio" type="radio" name="radio-111">
-                                            </label>
-                                        </div><!-- .col -->
-                                    </div><!-- .row -->
-                                </div><!-- .col -->
-                            </div><!-- .row -->
-
-                            <span class="label d-none d-xl-block">&nbsp;</span>
-                            <div class="row align-items-center mb-3">
-                                <div class="col-12 col-sm">
-                                    <p class="em-9 mb-2">Несовершеннолетние дети:</p>
-                                </div><!-- .col -->
-                                <div class="col-12 col-sm-auto mb-2">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <label class="d-flex align-items-center m-0">
-                                                <span class="d-block mr-3">Есть</span>
-                                                <input class="radio" type="radio" name="radio-222">
-                                            </label>
-                                        </div><!-- .col -->
-                                        <div class="col-auto">
-                                            <label class="d-flex align-items-center m-0">
-                                                <span class="d-block mr-3">Нет</span>
-                                                <input class="radio" type="radio" name="radio-222">
-                                            </label>
-                                        </div><!-- .col -->
-                                    </div><!-- .row -->
-                                </div><!-- .col -->
-                            </div><!-- .row -->
-
-                            <span class="label d-none d-xl-block">&nbsp;</span>
-                            <div class="row align-items-center mb-3">
-                                <div class="col-12 col-sm">
-                                    <p class="em-9 mb-2">Крупные делки последние три года:</p>
-                                </div><!-- .col -->
-                                <div class="col-12 col-sm-auto mb-2">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <label class="d-flex align-items-center m-0">
-                                                <span class="d-block mr-3">Есть</span>
-                                                <input class="radio" type="radio" name="radio-333">
-                                            </label>
-                                        </div><!-- .col -->
-                                        <div class="col-auto">
-                                            <label class="d-flex align-items-center m-0">
-                                                <span class="d-block mr-3">Нет</span>
-                                                <input class="radio" type="radio" name="radio-333">
-                                            </label>
-                                        </div><!-- .col -->
-                                    </div><!-- .row -->
-                                </div><!-- .col -->
-                            </div><!-- .row -->
-                        </div><!-- .col -->
-                    </div><!-- .row -->
-                    <div class="row">
-                        <div class="col-auto mx-auto">
-                            <div class="btn-default">Расчитать стоимость</div>
-                        </div><!-- .col -->
-                    </div><!-- .row -->
-                </div><!-- .cart-body -->
-            </div><!-- .cart -->
-        </div><!-- .mb-4 -->
-
-        <div class="mb-4">
-            <div class="cart">
-                <div class="cart-body">
-                    <div class="row">
-                        <div class="col-auto mx-auto">
-                            <div class="logo logo-sm">
-                                <span class="logo-txt">Без кредитов</span>
-                            </div>
-                        </div><!-- .col -->
-                    </div><!-- .row -->
-                    <p class="center">Мы сделали предварительный расчет вашего банкротства исходя из данных:</p>
-                    <div class="cart-divider"></div>
-                    <p class="row">
-                        <span class="col-12 col-sm-6 fw-600 sm-right">Общий долг:</span>
-                        <span class="col-12 col-sm-6">5 000 000 рублей</span>
-                    </p>
-                    <p class="row">
-                        <span class="col-12 col-sm-6 fw-600 sm-right">Регион:</span>
-                        <span class="col-12 col-sm-6">Москва и МО</span>
-                    </p>
-                    <p class="row">
-                        <span class="col-12 col-sm-6 fw-600 sm-right">Колличество кредитов:</span>
-                        <span class="col-12 col-sm-6">10</span>
-                    </p>
-                    <p class="row">
-                        <span class="col-12 col-sm-6 fw-600 sm-right">Залоговое имущество:</span>
-                        <span class="col-12 col-sm-6">Нет</span>
-                    </p>
-                    <p class="row">
-                        <span class="col-12 col-sm-6 fw-600 sm-right">Несовершеннолетние дети:</span>
-                        <span class="col-12 col-sm-6">Нет</span>
-                    </p>
-                    <p class="row">
-                        <span class="col-12 col-sm-6 fw-600 sm-right">Сделки за 3 года:</span>
-                        <span class="col-12 col-sm-6">Нет</span>
-                    </p>
+                    <!-- VUE-APP-COST-CALCULATOR -->
+                    <div class="js-vue-cost-calculator"></div>
+                    <!-- / VUE-APP-COST-CALCULATOR -->
                 </div><!-- .cart-body -->
             </div><!-- .cart -->
         </div><!-- .mb-4 -->
@@ -232,7 +105,7 @@ $companyDataProvider = Company::dataProvider();
                 </div><!-- .row -->
             </div>
 
-            <?php foreach ($companyDataProvider->models as $company): ?>
+            <?php /* foreach ($companyDataProvider->models as $company): ?>
                 <a class="list-item" href="<?= Url::to(['site/company', 'alias' => $company->alias]) ?>">
                     <div class="col-12 col-xl-5 mx-auto mx-sm-0">
                         <div class="row no-gutters align-items-center">
@@ -274,7 +147,7 @@ $companyDataProvider = Company::dataProvider();
                         <p class="em-16"><i class="i-star primary"></i> <?= $company->rate ?></p>
                     </div><!-- .col -->
                 </a>
-            <?php endforeach; ?>
+            <?php endforeach; */ ?>
         </div><!-- .list -->
     </div><!-- .container -->
 </section>

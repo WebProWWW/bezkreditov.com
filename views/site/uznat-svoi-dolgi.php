@@ -24,6 +24,7 @@ $this->params['description'] = 'Даже контролируя оплату п�
 
 <section class="section">
     <div class="container">
+
         <!-- VUE-APP-FSSP -->
         <div
             class="js-vue-app-fssp"
@@ -34,6 +35,7 @@ $this->params['description'] = 'Даже контролируя оплату п�
             ]) ?>'
         ></div>
         <!-- / VUE-APP-FSSP -->
+
     </div><!-- .container -->
 </section><!-- .section -->
 

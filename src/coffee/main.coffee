@@ -3,6 +3,7 @@ $.fn.hasAttr = (name) -> @attr(name)?
 
 #=require ./vue/Fssp.coffee
 #=require ./vue/Test.coffee
+#=require ./vue/CostCalculator.coffee
 
 Vue.config.productionTip = off
 
@@ -26,6 +27,14 @@ $('.js-test').each (i, el) ->
 
 # $.fancybox.open src: '#test-bonus'
 # $.fancybox.open src: '#test'
+
+
+$('.js-vue-cost-calculator').each (i, el) ->
+    $el = $ el
+    new Vue
+        render: (h) -> h CostCalculator
+    .$mount el
+
 
 
 class JsSearch
