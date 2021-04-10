@@ -14,24 +14,21 @@ $this->params['is-header'] = true;
 ?>
 
 <section class="section mt-auto">
-    <h1 class="center mb-5">О проекте</h1>
     <div class="container">
-        <div class="row justify-content-center align-items-center mb-lg-5">
-            <div class="col-auto">
-                <a class="logo logo-lg" href="<?= Url::home() ?>">
-                    <span class="logo-txt">Без кредитов</span>
-                </a>
+        <div class="row mb-4">
+            <div class="col-12 col-md-3">
+                <p class="fw-600 em-12 md-right">
+                    <span class="bb-primary pb-1">О проекте:</span>
+                </p>
+            </div><!-- .col -->
+            <div class="col-12 col-md">
+                <p class="em-12">Городской портал Без Кредитов - помогает жителям г.&nbsp;<?= $city->name ?> выбрать правильную компанию по банкротству физических лиц и избавиться от долгов и начать свою жизнь с чистого лица.</p>
             </div>
-            <div class="col-12 col-lg my-5 my-lg-0">
-                <h3 class="fw-400 center">
-                    Городской портал Без Кредитов - помогает жителям г.&nbsp;<?= $city->name ?> выбрать правильную компанию по банкротству
-                    физических лиц и избавиться от долгов и начать свою жизнь с чистого лица.
-                </h3>
-            </div>
-        </div>
+        </div><!-- .row -->
+
         <div class="row">
-            <div class="col-12 col-md-auto">
-                <p class="fw-600 em-12">
+            <div class="col-12 col-md-3">
+                <p class="fw-600 em-12 md-right">
                     <span class="bb-primary pb-1">Наша миссия:</span>
                 </p>
             </div><!-- .col -->
@@ -39,6 +36,7 @@ $this->params['is-header'] = true;
                 <p class="em-12">Изменить страну к лучшему помогая людям и их семьям, попавшим в тяжёлое финансовое положение, вновь начать радоваться жизни освободившись от долгов.</p>
             </div>
         </div><!-- .row -->
+
         <div class="row mt-3">
             <div class="col-auto mx-auto">
                 <a class="btn-default" href="<?= Url::home() ?>">На главную</a>
