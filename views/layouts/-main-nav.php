@@ -80,7 +80,7 @@ use app\helpers\Url;
 
                     <div class="col-12"></div>
 
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('rejting-arbitrazhnyh-upravlyayushih') ?>">
+                    <a class="nav-ln nav-list col" href="<?= Url::to(['site/arbitration-list', 'page' => 1]) ?>">
                         <span class="nav-txt">Рейтинг арбитражных управляющих г.&nbsp;<?= $city->name ?></span>
                     </a>
                     <a class="nav-ln nav-list col-4" href="<?= Url::toView('poleznye-materialy-po-bankrotstvu') ?>">

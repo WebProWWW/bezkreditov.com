@@ -27,7 +27,7 @@ $('.js-test').each (i, el) ->
 
 # $.fancybox.open src: '#test-bonus'
 # $.fancybox.open src: '#test'
-
+# $.fancybox.open src: '#arbitration-rate-info'
 
 $('.js-vue-cost-calculator').each (i, el) ->
     $el = $ el

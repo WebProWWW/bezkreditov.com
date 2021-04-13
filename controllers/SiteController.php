@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Arbitration;
 use app\models\City;
 use app\helpers\Url;
 use app\models\Faq;
@@ -133,10 +134,29 @@ class SiteController extends Controller
 
     /**
      * РЕЙТИНГ АРБИТРАЖНЫХ УПРАВЛЯЮЩИХ
+     * @return string
+     * @throws NotFoundHttpException
      */
-    public function actionArbitration()
+    public function actionArbitrationList()
+    {
+        return $this->render('arbitration-list', [
+            'dataProvider' => Arbitration::search(),
+            'city' => $this->city,
+        ]);
+    }
+
+    /**
+     * ПРОФИЛЬ УПРАВЛЯЮЩЕГО
+     * @param string $id
+     * @param string $page
+     * @return string
+     * @throws NotFoundHttpException
+     */
+    public function actionArbitration(string $id = '', string $page = '1')
     {
         return $this->render('arbitration', [
+            'arbitration' => Arbitration::findById($id),
+            'page' => $page,
             'city' => $this->city,
         ]);
     }
@@ -263,6 +283,7 @@ class SiteController extends Controller
     }
 
     /**
+     * АКЦИВАЦИЯ НОВОГО ПОЛЬЗОВАТЕЛЯ
      * @param string $token
      * @throws NotFoundHttpException
      */

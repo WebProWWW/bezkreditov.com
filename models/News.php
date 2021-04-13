@@ -154,8 +154,8 @@ class News extends ActiveRecord implements ModelInterface
      */
     public static function findByAlias(string $alias, int $id = null)
     {
-        $cond = array_merge(['alias' => $alias], $id ? ['id' => $id] : []);
-        $item = self::findOne($cond);
+        $condition = array_merge(['alias' => $alias], $id ? ['id' => $id] : []);
+        $item = self::findOne($condition);
         if ($item === null) {
             throw new NotFoundHttpException();
         }

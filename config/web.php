@@ -15,6 +15,18 @@ return ArrayHelper::merge([
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                [
+                    // РЕЙТИНГ АРБИТРАЖНЫХ УПРАВЛЯЮЩИХ
+                    'pattern' => '/rejting-arbitrazhnyh-upravlyayushih-<page:[\w\-]+>',
+                    'route' => 'site/arbitration-list',
+                    'suffix' => '.html',
+                ],
+                [
+                    // ПРОФИЛЬ УПРАВЛЯЮЩЕГО
+                    'pattern' => '/rejting-arbitrazhnyh-upravlyayushih-<page:[\w\-]+>/profil-<id:[\w\-]+>',
+                    'route' => 'site/arbitration',
+                    'suffix' => '.html',
+                ],
                 [   // КОРНЕВЫЕ СТРАНИЦЫ
                     'pattern' => '/<view:[\w\-]+>',
                     'route' => 'site/index',

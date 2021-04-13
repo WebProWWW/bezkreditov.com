@@ -26,7 +26,7 @@ if (!isset($id)) $id = Yii::$app->security->generateRandomString(8);
 
         <!-- ROW -->
 
-        <a class="nav-ln col-12 col-sm-6 col-xl-4" href="<?= Url::to(['site/index', 'view' => 'rejting-arbitrazhnyh-upravlyayushih']) ?>">
+        <a class="nav-ln col-12 col-sm-6 col-xl-4" href="<?= Url::to(['site/arbitration-list', 'page' => 1]) ?>">
             <i class="i-stat nav-i"></i>
             <span class="nav-txt">Рейтинг арбитражных управляющих в&nbsp;г.&nbsp;<?= $city->name ?></span>
         </a>

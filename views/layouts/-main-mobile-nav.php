@@ -30,7 +30,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <a class="nav-ln" href="<?= Url::toView('rejting-kompanij-po-bankrotstvu') ?>">
                 <span class="nav-txt">Рейтинг компаний по банкротству г.&nbsp;<?= $city->name ?></span>
             </a>
-            <a class="nav-ln" href="<?= Url::toView('rejting-arbitrazhnyh-upravlyayushih') ?>">
+            <a class="nav-ln" href="<?= Url::to(['site/arbitration-list', 'page' => 1]) ?>">
                 <span class="nav-txt">Рейтинг арбитражных управляющих г.&nbsp;<?= $city->name ?></span>
             </a>
             <a class="nav-ln" href="<?= Url::toView('rejting-chastnyh-yuristov') ?>">
