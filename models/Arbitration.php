@@ -5,6 +5,7 @@ namespace app\models;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
+use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 
 /**
@@ -90,11 +91,15 @@ class Arbitration extends ActiveRecord
     }
 
     /**
+     * @param int|string $regionCode
      * @return ActiveDataProvider
      */
-    public static function search()
+    public static function search($regionCode)
     {
         $query = self::find();
+        $query->andFilterWhere([
+            'region_code' => $regionCode
+        ]);
         return new ActiveDataProvider([
             'query' => $query,
             'pagination' => [

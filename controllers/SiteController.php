@@ -140,7 +140,7 @@ class SiteController extends Controller
     public function actionArbitrationList()
     {
         return $this->render('arbitration-list', [
-            'dataProvider' => Arbitration::search(),
+            'dataProvider' => Arbitration::search($this->city->region_code),
             'city' => $this->city,
         ]);
     }
