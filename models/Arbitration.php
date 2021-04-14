@@ -28,8 +28,8 @@ use yii\web\NotFoundHttpException;
  * @property ArbitrationCase[] $cases
  * @property Arbitration[] $regionLeaders
  * @property ArbitrationComments[] $comments
- * @property RegionCodes $regionCode
- * @property ArbitrationManagersCpo $spo
+ * @property Region $region
+ * @property ArbitrationCpo $spo
  */
 class Arbitration extends ActiveRecord
 {
@@ -91,25 +91,33 @@ class Arbitration extends ActiveRecord
     }
 
     /**
-     * @param int|string $regionCode
+     * @param int|string $currentRegionCode
+     * @param array $filter
      * @return ActiveDataProvider
      */
-    public static function search($regionCode)
+    public static function search(array $filter, $currentRegionCode)
     {
+        $regionCode = ArrayHelper::getValue($filter, 'regionCode', $currentRegionCode);
         $query = self::find();
-        $query->andFilterWhere([
-            'region_code' => $regionCode
-        ]);
+        $query->andFilterWhere(['region_code' => $regionCode]);
+        if ($spoId = ArrayHelper::getValue($filter, 'spoId', false)) {
+            $query->andFilterWhere(['spo_id' => $spoId]);
+        }
+        if ($fullName = ArrayHelper::getValue($filter, 'fullName', false)) {
+            $query->andFilterWhere(['like', 'fullname', $fullName]);
+        }
+        $defaultOrder = [];
+        $orderBy = ArrayHelper::getValue($filter, 'orderBy', 'people');
+        if ($orderBy === 'people') $defaultOrder = ['people_rate' => SORT_DESC,];
+        if ($orderBy === 'prof') $defaultOrder = ['professional_rate' => SORT_DESC];
         return new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
-                'pageSize' => 6,
-                'defaultPageSize' => 6,
+                'pageSize' => 8,
+                'defaultPageSize' => 8,
             ],
             'sort' => [
-                'defaultOrder' => [
-                    'people_rate' => SORT_DESC,
-                ],
+                'defaultOrder' => $defaultOrder,
             ],
         ]);
     }
@@ -142,7 +150,7 @@ class Arbitration extends ActiveRecord
     }
 
     /**
-     * @return yii\db\ActiveQuery|Region
+     * @return yii\db\ActiveQuery
      */
     public function getRegion()
     {
@@ -154,6 +162,6 @@ class Arbitration extends ActiveRecord
      */
     public function getSpo()
     {
-        return $this->hasOne(ArbitrationManagersCpo::className(), ['cpo_id' => 'spo_id']);
+        return $this->hasOne(ArbitrationCpo::class, ['cpo_id' => 'spo_id']);
     }
 }

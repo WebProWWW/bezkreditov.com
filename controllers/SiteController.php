@@ -134,13 +134,13 @@ class SiteController extends Controller
 
     /**
      * РЕЙТИНГ АРБИТРАЖНЫХ УПРАВЛЯЮЩИХ
-     * @return string
+     * @return string|array
      * @throws NotFoundHttpException
      */
     public function actionArbitrationList()
     {
         return $this->render('arbitration-list', [
-            'dataProvider' => Arbitration::search($this->city->region_code),
+            'dataProvider' => Arbitration::search(Yii::$app->request->get(), $this->city->region_code),
             'city' => $this->city,
         ]);
     }

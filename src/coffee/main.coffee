@@ -55,8 +55,8 @@ class JsSearch
         @$items.removeClass 'd-none'
         @$items.each (i, item) =>
             $item = $ item
-            datdStr = $item.find('.js-search-data').text()
-            $item.addClass 'd-none' if datdStr.search(///#{val}///i) < 0
+            dataStr = $item.find('.js-search-data').text()
+            $item.addClass 'd-none' if dataStr.search(///#{val}///i) < 0
         on
 
 
@@ -472,3 +472,18 @@ $('*[data-mnav-open]').on 'click', (e) ->
 $('.main-mnav-close').on 'click', (e) ->
     $('.main-mnav').removeClass 'active'
     $('body').removeClass 'main-mnav-active'
+
+
+
+# РЕЙТИНГ АРБИТРАЖНЫХ УПРАВЛЯЮЩИХ
+$('.js-arbitration-filter-tab').on 'click', (e) ->
+    e.preventDefault()
+    $this = $ this
+    return off if $this.hasClass 'active'
+    $($this.attr 'data-input').val $this.attr 'data-val'
+    $($this.attr 'data-form').submit()
+    off
+
+$('.js-arbitration-filter-select').on 'change', () ->
+    $this = $ this
+    $($this.attr 'data-form').submit()

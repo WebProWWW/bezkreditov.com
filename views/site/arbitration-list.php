@@ -8,6 +8,8 @@ use app\widgets\LinkPager;
 use app\models\Arbitration;
 use app\widgets\FormAjax;
 use app\models\Region;
+use app\models\ArbitrationCpo;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
@@ -20,7 +22,6 @@ $this->params['description'] = 'Рейтинг арбитражных управ
 $this->params['breadcrumbs'] = [
     'Рейтинг арбитражных управляющих г.&nbsp;' . $city->name,
 ];
-
 
 $arbitrations = $dataProvider->models;
 
@@ -40,57 +41,94 @@ $arbitrations = $dataProvider->models;
         <div class="row">
             <div class="col-12 col-xl order-2 order-xl-1">
                 <h2>Фильтр управляющих</h2>
+                <!-- TODO Фильтр управляющих -->
                 <div class="mb-4">
                     <div class="cart">
-                        <div class="cart-body">
-                            <div class="row">
-                                <div class="col-12 col-md-6 col-xl-12">
-                                    <label class="label" for="">Регион</label>
-                                    <select name="" id="" class="input">
-                                        <option selected>Все</option>
-                                        <option></option>
-                                    </select>
-                                </div><!-- .col -->
-                                <div class="col-12 col-md-6 col-xl-12">
-                                    <label class="label" for="">Выбор СРО</label>
-                                    <select name="" id="" class="input">
-                                        <option selected>Все</option>
-                                        <option></option>
-                                    </select>
-                                </div><!-- .col -->
-                                <div class="col-12">
-                                    <label class="label" for="">Поиск по фамилии</label>
-                                    <input class="input" type="text" name="" placeholder="Поиск по фамилии">
-                                </div><!-- .col -->
-                            </div><!-- .row -->
-                        </div><!-- .cart-body -->
-                        <div class="cart-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <p>Упорядочить по:</p>
-                                </div><!-- .col-12 -->
-                                <div class="col-12 d-md-none d-xl-block"></div>
-                                <div class="col-auto">
-                                    <a class="tab-ln active">Народный рейтинг</a>
-                                </div><!-- .col -->
-                                <div class="col-12 d-md-none d-xl-block"></div>
-                                <div class="col-auto">
-                                    <a class="tab-ln">Профессиональный рейтинг</a>
-                                </div><!-- .col -->
-                            </div><!-- .row -->
-                        </div><!-- .cart-body -->
-                        <div class="cart-body">
-                            <div class="row align-items-center">
-                                <div class="col-12 col-md-6 col-xl-12">
-                                    <a class="btn-default">Найти</a>
-                                </div><!-- .col -->
-                                <div class="col-12 col-md-6 col-xl-12">
-                                    <p class="center">
-                                        <a class="ln-black-primary">Сбросить фильтры</a>
-                                    </p>
-                                </div><!-- .col -->
-                            </div><!-- .row -->
-                        </div><!-- .cart-body -->
+                        <form action="" id="arbitration-filter-form">
+
+                            <div class="cart-body">
+                                <div class="row">
+                                    <div class="col-12 col-md-6 col-xl-12">
+                                        <label class="label" for="">Регион</label>
+                                        <select name="regionCode" id="" class="input js-arbitration-filter-select" data-form="#arbitration-filter-form">
+                                            <option value="">Все</option>
+                                            <?php $regions = Region::findAllRegions(); ?>
+                                            <?php $currentRegionCode = (int) Yii::$app->request->get('regionCode', $city->region_code) ?>
+                                            <?php foreach ($regions as $region): ?>
+                                                <option
+                                                    <?= ($region->code === $currentRegionCode) ? 'selected' : '' ?>
+                                                    value="<?= $region->code ?>"
+                                                >
+                                                    <?= $region->region_name ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div><!-- .col -->
+                                    <div class="col-12 col-md-6 col-xl-12">
+                                        <label class="label" for="">Выбор СРО</label>
+                                        <select name="spoId" id="" class="input js-arbitration-filter-select" data-form="#arbitration-filter-form">
+                                            <option selected value="">Все</option>
+                                            <?php $cpo = ArbitrationCpo::findAllCpo(); ?>
+                                            <?php $currentCpoId = (int) Yii::$app->request->get('spoId', '') ?>
+                                            <?php foreach ($cpo as $cpoOption): ?>
+                                                <option value="<?= $cpoOption->cpo_id ?>" <?= $currentCpoId === $cpoOption->cpo_id ? 'selected' : '' ?>>
+                                                    <?= $cpoOption->cpo_name ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div><!-- .col -->
+                                    <div class="col-12">
+                                        <?php $currentNameVal = Yii::$app->request->get('fullName', '') ?>
+                                        <label class="label" for="">Поиск по фамилии</label>
+                                        <input class="input" type="text" name="fullName" value="<?= $currentNameVal ?>" placeholder="Поиск по фамилии">
+                                    </div><!-- .col -->
+                                </div><!-- .row -->
+                            </div><!-- .cart-body -->
+                            <div class="cart-body">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <p>Упорядочить по:</p>
+                                    </div><!-- .col-12 -->
+                                    <div class="col-12 d-md-none d-xl-block"></div>
+                                    <?php $currentOrderVal = Yii::$app->request->get('orderBy', 'people') ?>
+                                    <input type="hidden" id="arbitration-filter-order" name="orderBy" value="<?= $currentOrderVal ?>">
+                                    <div class="col-auto">
+                                        <a
+                                            class="tab-ln js-arbitration-filter-tab <?= ($currentOrderVal === 'people') ? 'active' : '' ?>"
+                                            data-form="#arbitration-filter-form"
+                                            data-input="#arbitration-filter-order"
+                                            data-val="people"
+                                        >
+                                            Народный рейтинг
+                                        </a>
+                                    </div><!-- .col -->
+                                    <div class="col-12 d-md-none d-xl-block"></div>
+                                    <div class="col-auto">
+                                        <a
+                                            class="tab-ln js-arbitration-filter-tab <?= ($currentOrderVal === 'prof') ? 'active' : '' ?>"
+                                            data-form="#arbitration-filter-form"
+                                            data-input="#arbitration-filter-order"
+                                            data-val="prof"
+                                        >
+                                            Профессиональный рейтинг
+                                        </a>
+                                    </div><!-- .col -->
+                                </div><!-- .row -->
+                            </div><!-- .cart-body -->
+                            <div class="cart-body">
+                                <div class="row align-items-center">
+                                    <div class="col-12 col-md-6 col-xl-12">
+                                        <button type="submit" class="btn-default">Найти</button>
+                                    </div><!-- .col -->
+                                    <div class="col-12 col-md-6 col-xl-12">
+                                        <p class="center">
+                                            <a class="ln-black-primary" href="<?= Url::to(['site/arbitration-list', 'page' => 1]) ?>">Сбросить фильтры</a>
+                                        </p>
+                                    </div><!-- .col -->
+                                </div><!-- .row -->
+                            </div><!-- .cart-body -->
+
+                        </form>
                     </div><!-- .cart -->
                 </div>
                 <h2>Полезные статьи</h2>

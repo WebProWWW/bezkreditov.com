@@ -27,11 +27,6 @@ return ArrayHelper::merge([
                     'route' => 'site/arbitration',
                     'suffix' => '.html',
                 ],
-                [   // КОРНЕВЫЕ СТРАНИЦЫ
-                    'pattern' => '/<view:[\w\-]+>',
-                    'route' => 'site/index',
-                    'suffix' => '.html',
-                ],
                 [   // НОВОСТЬ
                     'pattern' => '/novosti-po-bankrotstvu/<alias:[\w\-]+>-<id:[\w\-]+>',
                     'route' => 'site/news-item',
@@ -50,6 +45,11 @@ return ArrayHelper::merge([
                 [   // РЕЙТИНГ КОМПАНИИ
                     'pattern' => '/rejting-kompanij-po-bankrotstvu/<alias:[\w\-]+>',
                     'route' => 'site/company',
+                    'suffix' => '.html',
+                ],
+                [   // КОРНЕВЫЕ СТРАНИЦЫ
+                    'pattern' => '/<view:[\w\-]+>',
+                    'route' => 'site/index',
                     'suffix' => '.html',
                 ],
                 // JSON
