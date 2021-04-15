@@ -6,6 +6,7 @@ use app\models\Arbitration;
 use app\models\City;
 use app\helpers\Url;
 use app\models\Faq;
+use app\models\FormCallback;
 use app\models\FormConsult;
 use app\models\FormContact;
 use app\models\FormLogin;
@@ -159,6 +160,21 @@ class SiteController extends Controller
             'page' => $page,
             'city' => $this->city,
         ]);
+    }
+
+    /**
+     * /callback.json
+     * ОБРАТНЫЙ ЗВОНОК
+     * @throws NotFoundHttpException
+     */
+    public function actionCallback()
+    {
+        $req = $this->ajaxRequest();
+        $model = new FormCallback();
+        if ($model->load($req->post()) and $model->send()) {
+            return ['success' => 1];
+        }
+        return ActiveForm::validate($model);
     }
 
     /**

@@ -90,6 +90,16 @@ class FormAjax extends Widget
 
     /**
      * @param string $name
+     * @param mixed $value
+     * @return string
+     */
+    public function inputHidden(string $name, $value=null)
+    {
+        return Html::input('hidden', $this->name($name), $value);
+    }
+
+    /**
+     * @param string $name
      * @param string $label
      * @param string $placeholder
      * @param string $mask
@@ -98,14 +108,14 @@ class FormAjax extends Widget
     public function inputText(string $name, string $label = null, string $placeholder = null, string $mask = null)
     {
         $label = $label ? $this->label($label, $name) : '';
-        if ($placeholder) $options[] = $placeholder;
-        if ($mask) $options['data-mask'] = $mask;
         $input = Html::input('text', $this->name($name), null, ArrayHelper::merge([
             'class' => 'input',
             'id' => $this->id('input', $name),
-        ], $placeholder ? [
-            'placeholder' => $placeholder,
-        ] : [], $mask ? [
+        ],
+        $placeholder ? [
+                'placeholder' => $placeholder,
+        ] : [],
+        $mask ? [
             'data-mask' => $mask,
         ] : []));
         return $label . $input . $this->error($name);

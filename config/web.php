@@ -53,6 +53,11 @@ return ArrayHelper::merge([
                     'suffix' => '.html',
                 ],
                 // JSON
+                [
+                    'pattern' => '/callback',
+                    'route' => 'site/callback',
+                    'suffix' => '.json',
+                ],
                 [   // ПОИСК ДОЛГОВ ФССП
                     'pattern' => '/fssp-search',
                     'route' => 'site/fssp-search',
