@@ -83,9 +83,16 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
                             </span>
                             <span class="col d-none d-md-block" style="text-align: left;">
                                 <span class="em-8">
+                                    Городской портал «Без Кредитов» - учим финансовой,
+                                    <br>
+                                    грамотности помогаем правильно брать кредиты и
+                                    <br>
+                                    избавиться от долгов если вы попали в сложную ситуацию.
+                                    <!--
                                     Городской портал «Без Кредитов» - помогает жителям
                                     <br>
                                     избавиться от долгов и начать свою жизнь с чистого лица
+                                    -->
                                 </span>
                             </span>
                         </span>
@@ -416,7 +423,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 <!-- / МОДАЛЬНЫЕ ОКНА -->
 
 <script src="/js/main.depends.js?v=027"></script>
-<script src="/js/main.js?v=060"></script>
+<script src="/js/main.js?v=061"></script>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
 <script>if ("function"==typeof window.isCity) { window.isCity() };</script>

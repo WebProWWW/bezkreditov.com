@@ -42,8 +42,11 @@ use app\helpers\Url;
             <i class="i-ch-down em-7"></i>
         </span>
     </a>
-    <a class="main-nav-ln" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
-        <span class="nav-txt">Новости</span>
+    <a class="main-nav-ln" data-dropdown="#main-nav-content-7">
+        <span class="nav-txt">
+            Финансы
+            <i class="i-ch-down em-7"></i>
+        </span>
     </a>
     <a class="main-nav-ln" href="<?= Url::toView('o-proekte') ?>">
         <span class="nav-txt">О проекте</span>
@@ -407,6 +410,80 @@ use app\helpers\Url;
                     <a class="nav-ln nav-list col-3" href="<?= Url::toView('o-proekte') ?>">
                         <span class="nav-txt">О проекте</span>
                     </a>
+                </nav>
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .main-nav-content -->
+
+    <div class="main-nav-content" id="main-nav-content-7">
+        <div class="row align-items-center">
+            <div class="col-3">
+                <a class="logo logo-sm" href="<?= Url::home() ?>">
+                    <span class="logo-txt">Финансы</span>
+                    <span class="logo-stxt">Вся полезная информация о финансировании</span>
+                </a>
+                <a class="btn-trsp" href="<?= Url::toView('poleznye-servisy') ?>">
+                    <span class="row no-gutters justify-content-center align-items-center">
+                        <span class="col-auto em-24 mr-2"><i class="i-like"></i></span>
+                        <span class="col-auto em-9">Полезные сервисы от<br>портала «Без кредитов»</span>
+                    </span>
+                </a>
+            </div><!-- .col -->
+            <div class="col">
+                <nav class="nav">
+
+                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                        <span class="nav-txt">Вводный курс</span>
+                    </a>
+                    <a class="nav-ln nav-list col" href="javascript:;">
+                        <span class="nav-txt">Домашняя бухгалтерия</span>
+                    </a>
+                    <a class="nav-ln nav-list col-3" href="javascript:;">
+                        <span class="nav-txt">Долги и кредиты</span>
+                    </a>
+                    <!-- ROW -->
+
+                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                        <span class="nav-txt">Финансы и жилье</span>
+                    </a>
+                    <a class="nav-ln nav-list col" href="javascript:;">
+                        <span class="nav-txt">Работа и зарплата</span>
+                    </a>
+                    <a class="nav-ln nav-list col-3" href="javascript:;">
+                        <span class="nav-txt">Семья и деньги</span>
+                    </a>
+                    <!-- ROW -->
+
+                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                        <span class="nav-txt">Права и обязанности</span>
+                    </a>
+                    <a class="nav-ln nav-list col" href="javascript:;">
+                        <span class="nav-txt">Непредвиденные обстоятельства</span>
+                    </a>
+                    <a class="nav-ln nav-list col-3" href="javascript:;">
+                        <span class="nav-txt">Обеспеченная старость</span>
+                    </a>
+                    <!-- ROW -->
+
+                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                        <span class="nav-txt">Сохранить и приумножить</span>
+                    </a>
+                    <a class="nav-ln nav-list col" href="javascript:;">
+                        <span class="nav-txt">Словарь финансовых терминов</span>
+                    </a>
+                    <a class="nav-ln nav-list col-3" href="javascript:;">
+                        <span class="nav-txt">Вопрос? Ответ!</span>
+                    </a>
+                    <!-- ROW -->
+
+                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                        <span class="nav-txt">Мнение эксперта</span>
+                    </a>
+                    <a class="nav-ln nav-list col" href="javascript:;">
+                        <span class="nav-txt">Лайфхаки</span>
+                    </a>
+                    <!-- ROW -->
+
                 </nav>
             </div><!-- .col -->
         </div><!-- .row -->

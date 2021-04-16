@@ -216,14 +216,6 @@ do ->
                     </div>
                 </div>
             </div>
-
-            <p>
-                Нажимая кнопку «Получить информацию», вы принимаете условия
-                <br>
-                <strong>
-                    <a class="ln-black-primary td-line" @click.prevent href="">Политики обработки персональных данных.</a>
-                </strong>
-            </p>
         </div>
         '''
 
@@ -291,18 +283,14 @@ do ->
     Fssp =
         template: '''
         <div ref="container">
-            <div class="row">
-                <div class="col-12 col-xl-10 mx-auto">
-                    <transition name="fade" mode="out-in">
-                        <component :is="view"
-                            :input="input"
-                            @search-success="searchSuccess"
-                            @search-error="searchError"
-                            @new-search="newSearch"
-                        ></component>
-                    </transition>
-                </div>
-            </div>
+            <transition name="fade" mode="out-in">
+                <component :is="view"
+                    :input="input"
+                    @search-success="searchSuccess"
+                    @search-error="searchError"
+                    @new-search="newSearch"
+                ></component>
+            </transition>
         </div>
         '''
 

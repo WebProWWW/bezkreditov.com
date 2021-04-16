@@ -299,11 +299,56 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             </a>
         </div><!-- .main-mnav-content -->
 
-        <a class="main-mnav-ln" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
+        <a class="main-mnav-ln" data-dropdown="#main-mnav-content-7">
             <span class="nav-txt">
-                Новости
+                Финансы
             </span>
+            <i class="i-ch-down em-8"></i>
         </a>
+        <div class="main-mnav-content" id="main-mnav-content-7">
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Вводный курс</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Домашняя бухгалтерия</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Долги и кредиты</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Финансы и жилье</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Работа и зарплата</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Семья и деньги</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Права и обязанности</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Непредвиденные обстоятельства</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Обеспеченная старость</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Сохранить и приумножить</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Словарь финансовых терминов</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Вопрос? Ответ!</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Мнение эксперта</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Лайфхаки</span>
+            </a>
+        </div><!-- .main-mnav-content -->
 
         <a class="main-mnav-ln" href="<?= Url::toView('o-proekte') ?>">
             <span class="nav-txt">
