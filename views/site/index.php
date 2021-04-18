@@ -213,7 +213,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                         <p class="em-9"><span class="date-bg"><?= $company->cases ?></span> - всего дел</p>
                                     </div>
                                     <div class="col-auto ml-auto">
-                                        <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/company', 'alias' => $company->alias]) ?>">Подробнее</a>
+                                        <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/company', 'alias' => $company->alias, 'cpage' => 1]) ?>">Подробнее</a>
                                     </div>
                                 </div>
                             </div><!-- .cart-footer -->
@@ -275,7 +275,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                         <p class="em-9"><span class="date-bg"><?= $company->cases ?></span> - всего дел</p>
                                     </div>
                                     <div class="col-auto ml-auto">
-                                        <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/company', 'alias' => $company->alias]) ?>">Подробнее</a>
+                                        <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/company', 'alias' => $company->alias, 'cpage' => 1]) ?>">Подробнее</a>
                                     </div>
                                 </div>
                             </div><!-- .cart-footer -->
@@ -337,7 +337,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                         <p class="em-9"><span class="date-bg"><?= $company->cases ?></span> - всего дел</p>
                                     </div>
                                     <div class="col-auto ml-auto">
-                                        <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/company', 'alias' => $company->alias]) ?>">Подробнее</a>
+                                        <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/company', 'alias' => $company->alias, 'cpage' => 1]) ?>">Подробнее</a>
                                     </div>
                                 </div>
                             </div><!-- .cart-footer -->
