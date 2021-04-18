@@ -6,6 +6,7 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
 use yii\db\ActiveQuery;
+use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 
 /**
@@ -32,9 +33,14 @@ use yii\web\NotFoundHttpException;
  *
  * @property CompanyPhone[] $phones
  * @property CompanyComment[] $comments
+ * @property int|string|null|bool $commentsCount
+ * @property ActiveDataProvider $commentsDataProvider
  */
 class Company extends ActiveRecord
 {
+    private $_commentsCount;
+    private $_commentsDataProvider;
+
     /**
      * {@inheritdoc}
      */
@@ -81,7 +87,7 @@ class Company extends ActiveRecord
     }
 
     /**
-     * @return CompanyPhone[]|ActiveQuery
+     * @return ActiveQuery
      */
     public function getPhones()
     {
@@ -89,8 +95,6 @@ class Company extends ActiveRecord
     }
 
     /**
-     * Gets query for [[CompanyComments]].
-     *
      * @return ActiveQuery
      */
     public function getComments()
@@ -99,7 +103,62 @@ class Company extends ActiveRecord
     }
 
     /**
+     * @param int|string $val
+     */
+    public function setCommentsCount($val)
+    {
+        $this->_commentsCount = (int) $val;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCommentsCount()
+    {
+        if ($this->isNewRecord) return 0;
+        if ($this->_commentsCount === null) {
+            $this->setCommentsCount($this->getComments()->count());
+        }
+        return $this->_commentsCount;
+    }
+
+    /**
+     * @param ActiveDataProvider $dataProvider
+     */
+    public function setCommentsDataProvider(ActiveDataProvider $dataProvider)
+    {
+        $this->_commentsDataProvider = $dataProvider;
+    }
+
+    /**
      * @return ActiveDataProvider
+     */
+    public function getCommentsDataProvider()
+    {
+        if ($this->_commentsDataProvider === null) {
+            $query = $this->getComments();
+            $order = Yii::$app->request->get('cf', 'rate');
+            $defaultOrder = [];
+            if ($order === 'rate') $defaultOrder = ['rate' => SORT_DESC];
+            if ($order === 'data') $defaultOrder = ['date' => SORT_DESC];
+            $provider = new ActiveDataProvider([
+                'query' => $query,
+                'pagination' => [
+                    'pageSize' => 5,
+                    'defaultPageSize' => 5,
+                ],
+                'sort' => [
+                    'defaultOrder' => $defaultOrder
+                ],
+            ]);
+            $this->setCommentsDataProvider($provider);
+        }
+        return $this->_commentsDataProvider;
+    }
+
+    /**
+     * @return ActiveDataProvider
+     * @deprecated
      */
     public static function dataProvider()
     {
@@ -117,6 +176,46 @@ class Company extends ActiveRecord
     }
 
     /**
+     * @param array $filter
+     * @param int $pageSize
+     * @return ActiveDataProvider
+     */
+    public static function search(array $filter = [], int $pageSize = 10)
+    {
+        $defaultOrder = [];
+        $query = self::find();
+        if ($searchName = ArrayHelper::getValue($filter, 'cs', false)) {
+            $query->andFilterWhere(['like', 'name', $searchName]);
+        }
+        $orderBy = ArrayHelper::getValue($filter, 'order', 'rate');
+        if ($orderBy === 'work') $defaultOrder = ['written_off' => SORT_DESC];
+        if ($orderBy === 'rate') $defaultOrder = ['rate' => SORT_DESC];
+        if ($orderBy === 'comment') {
+            $query
+                ->select(['company_rate.*', 'COUNT(company_rate_comment.comment_id) AS commentsCount'])
+                ->joinWith('comments')
+                ->groupBy('company_rate.company_rate_id');
+            $defaultOrder = ['commentsCount' => SORT_DESC];
+        }
+
+        return new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => $pageSize,
+                'defaultPageSize' => $pageSize,
+            ],
+            'sort' => [
+                'attributes' => [
+                    'written_off',
+                    'rate',
+                    'commentsCount',
+                ],
+                'defaultOrder' => $defaultOrder,
+            ],
+        ]);
+    }
+
+    /**
      * @param int $limit
      * @return Company[]
      */
@@ -127,6 +226,8 @@ class Company extends ActiveRecord
             ->limit($limit)
             ->all();
     }
+
+
 
     /**
      * @return string|null
@@ -155,12 +256,12 @@ class Company extends ActiveRecord
     {
         $query = $this->getComments();
         return [
-            $query->where(['<', 'rate', 1])->count(),
-            $query->where(['<', 'rate', 2])->count(),
-            $query->where(['<', 'rate', 3])->count(),
-            $query->where(['<', 'rate', 4])->count(),
-            $query->where(['<', 'rate', 5])->count(),
-            $query->where(['<', 'rate', 6])->count(),
+            $query->where(['in', 'rate', [0, 0.5]])->count(),
+            $query->where(['in', 'rate', [1, 1.5]])->count(),
+            $query->where(['in', 'rate', [2, 2.5]])->count(),
+            $query->where(['in', 'rate', [3, 3.5]])->count(),
+            $query->where(['in', 'rate', [4, 4.5]])->count(),
+            $query->where(['in', 'rate', [5]])->count(),
         ];
     }
 

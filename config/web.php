@@ -15,6 +15,16 @@ return ArrayHelper::merge([
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                [   // РЕЙТИНГ КОМПАНИИ
+                    'pattern' => '/rejting-kompanij-po-bankrotstvu-<page:[\w\-]+>',
+                    'route' => 'site/company-list',
+                    'suffix' => '.html',
+                ],
+                [   // ПРОФИЛЬ КОМПАНИИ
+                    'pattern' => '/rejting-kompanij-po-bankrotstvu-<cpage:[\w\-]+>/<alias:[\w\-]+>',
+                    'route' => 'site/company',
+                    'suffix' => '.html',
+                ],
                 [
                     // РЕЙТИНГ АРБИТРАЖНЫХ УПРАВЛЯЮЩИХ
                     'pattern' => '/rejting-arbitrazhnyh-upravlyayushih-<page:[\w\-]+>',
@@ -40,11 +50,6 @@ return ArrayHelper::merge([
                 [   // ЗАКОН О БАНКРОТСТВЕ
                     'pattern' => '/zakon-o-bankrotstve/<alias:[\w\-]+>',
                     'route' => 'site/law',
-                    'suffix' => '.html',
-                ],
-                [   // РЕЙТИНГ КОМПАНИИ
-                    'pattern' => '/rejting-kompanij-po-bankrotstvu/<alias:[\w\-]+>',
-                    'route' => 'site/company',
                     'suffix' => '.html',
                 ],
                 [   // КОРНЕВЫЕ СТРАНИЦЫ

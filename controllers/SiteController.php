@@ -121,14 +121,27 @@ class SiteController extends Controller
 
     /**
      * РЕЙТИНГ КОМПАНИЙ
+     * @return string
+     */
+    public function actionCompanyList()
+    {
+        return $this->render('company-list', [
+            'dataProvider' => Company::search(Yii::$app->request->get(), 10),
+            'city' => $this->city,
+        ]);
+    }
+
+    /**
+     * ПРОФИЛЬ КОМПАНИЙ
      * @param string $alias
      * @return string
      * @throws NotFoundHttpException
      */
-    public function actionCompany(string $alias = '')
+    public function actionCompany(int $cpage = 1,string $alias = '')
     {
         return $this->render('company', [
             'model' => Company::findByAlias($alias),
+            'cpage' => $cpage,
             'city' => $this->city,
         ]);
     }

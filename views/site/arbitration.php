@@ -30,7 +30,7 @@ $this->params['breadcrumbs'] = [
 
         <div class="row">
             <div class="col-12 col-xl order-2 order-xl-1">
-                <a class="btn-default" data-fancybox data-src="#arbitration-callback" href="javascript:;">Заказать банкротство</a>
+                <a class="btn-default" data-fancybox data-src="#callback" href="javascript:;">Заказать банкротство</a>
                 <a class="btn-trsp">Оставить отзыв</a>
                 <a class="btn-trsp" href="<?= Url::to(['site/arbitration-list', 'page' => $page]) ?>">К списку управляющих</a>
                 <h2>Полезные статьи</h2>
@@ -107,7 +107,7 @@ $this->params['breadcrumbs'] = [
                                     <p class="row no-gutters bg align-items-center" style="margin: 0 -15px; padding: 10px 15px">
                                         <span class="col-12 col-sm-6">Телефон:</span>
                                         <span class="col-12 col-sm-6">
-                                            <a class="btn-sm btn-default m-0" data-fancybox data-src="#arbitration-callback" href="javascript:;">Перезвонить</a>
+                                            <a class="btn-sm btn-default m-0" data-fancybox data-src="#callback" href="javascript:;">Перезвонить</a>
                                         </span>
                                     </p>
                                 </div><!-- .col -->
@@ -288,22 +288,6 @@ $this->params['breadcrumbs'] = [
 </section><!-- .section -->
 
 <div class="d-none">
-
-<div class="modal-sm" id="arbitration-callback">
-    <?php $form = FormAjax::begin([
-        'formName' => 'FormCallback',
-        'action' => ['site/callback'],
-    ]) ?>
-        <?= $form->inputHidden('title', 'Обратный звонок') ?>
-        <?= $form->inputText('name', null, 'Ваше имя') ?>
-        <?= $form->inputText('phone', null, 'Ваш номер телефона', '+7-999-999-99-99') ?>
-        <?= $form->submit('Отправить') ?>
-        <p class="em-9">
-            Нажимая кнопку «Отправить», вы принимаете условия
-            <a href="javascript:;">Политики обработки персональных данных.</a>
-        </p>
-    <?php FormAjax::end() ?>
-</div><!-- .modal -->
 
 <div class="modal-md" id="arbitration-rate-info">
     <p class="center fw-600">Что представляет собой данный рейтинг и чем он может быть полезен</p>

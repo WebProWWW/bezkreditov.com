@@ -14,7 +14,7 @@ $this->params['breadcrumbs'] = [
     'Калькулятор стоимости банкротства',
 ];
 
-$companyDataProvider = Company::dataProvider();
+//$companyDataProvider = Company::dataProvider();
 
 ?>
 <section class="section bg">
@@ -77,6 +77,8 @@ $companyDataProvider = Company::dataProvider();
     </div><!-- .container -->
 </section><!-- .section -->
 
+<?php /*
+
 <section class="section">
     <div class="container">
         <h2 class="h1 center">Проверенные юристы по банкротству в г. Москва</h2>
@@ -104,7 +106,7 @@ $companyDataProvider = Company::dataProvider();
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div>
-
+*/ ?>
             <?php /* foreach ($companyDataProvider->models as $company): ?>
                 <a class="list-item" href="<?= Url::to(['site/company', 'alias' => $company->alias]) ?>">
                     <div class="col-12 col-xl-5 mx-auto mx-sm-0">
@@ -148,6 +150,9 @@ $companyDataProvider = Company::dataProvider();
                     </div><!-- .col -->
                 </a>
             <?php endforeach; */ ?>
+<?php /*
         </div><!-- .list -->
     </div><!-- .container -->
 </section>
+
+ */ ?>

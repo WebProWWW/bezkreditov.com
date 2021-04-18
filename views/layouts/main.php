@@ -203,7 +203,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 
 
         <nav class="nav">
-            <a class="nav-ln nav-list col-12 col-sm-6 col-md-4" href="<?= Url::to(['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu']) ?>">
+            <a class="nav-ln nav-list col-12 col-sm-6 col-md-4" href="<?= Url::to(['site/company-list', 'page' => 1]) ?>">
                 <span class="nav-txt">Рейтинг компаний по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
             </a>
             <a class="nav-ln nav-list col-12 col-sm-6 col-md" href="<?= Url::to(['site/index', 'view' => 'onlajn-konsultaciya-yurista-po-bankrotstvu']) ?>">
@@ -340,9 +340,9 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
         <?php $this->endCache() ?>
     <?php endif; ?>
 </div><!-- .modal -->
-<!-- / СПИСОК ГОРОДОВ -->
 
-<!-- ВХОД РЕГИСТРАЦИЯ -->
+
+<!-- ВХОД РЕГИСТРАЦИЯ АКЦИВАЦИЯ -->
 <div class="modal modal-sm" id="login">
     <?php $formLogin = FormAjax::begin([
         'formName' => 'FormLogin',
@@ -402,8 +402,6 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
         <a data-fancybox onclick="$.fancybox.close();" href="#login">Войти</a>
     </p>
 </div>
-<!-- / ВХОД РЕГИСТРАЦИЯ -->
-
 <div class="modal modal-sm" id="activate-success">
     <p class="center">
         <strong>Ваш аккаунт успешно активирован!</strong>
@@ -416,6 +414,23 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
         </div>
     </div>
 </div>
+
+<!-- ОБРАТНЫЙ ЗВОНОК -->
+<div class="modal modal-sm" id="callback">
+    <?php $form = FormAjax::begin([
+        'formName' => 'FormCallback',
+        'action' => ['site/callback'],
+    ]) ?>
+    <?= $form->inputHidden('title', 'Обратный звонок') ?>
+    <?= $form->inputText('name', null, 'Ваше имя') ?>
+    <?= $form->inputText('phone', null, 'Ваш номер телефона', '+7-999-999-99-99') ?>
+    <?= $form->submit('Отправить') ?>
+    <p class="em-9">
+        Нажимая кнопку «Отправить», вы принимаете условия
+        <a href="javascript:;">Политики обработки персональных данных.</a>
+    </p>
+    <?php FormAjax::end() ?>
+</div><!-- .modal -->
 
 <?php $this->trigger(FormAjax::EVENT_NOTIFY_MODALS) ?>
 

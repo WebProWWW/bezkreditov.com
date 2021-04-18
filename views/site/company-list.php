@@ -1,12 +1,15 @@
 <?php
 
-use yii\helpers\Url;
 use app\models\City;
 use app\models\Company;
+use app\widgets\LinkPager;
+use yii\helpers\Url;
+use yii\helpers\Html;
 
 /* @var $city City */
 /* @var $this yii\web\View */
-/* @var $company Company */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $companies Company[] */
 
 $this->title = 'Рейтинг компаний по банкротству физических лиц в г. ' . $city->name;
 
@@ -18,7 +21,8 @@ $this->params['breadcrumbs'] = [
 
 $this->params['description'] = $this->title;
 
-$companyDataProvider = Company::dataProvider();
+$companies = $dataProvider->models;
+$currentPage = $dataProvider->pagination->page + 1;
 
 ?>
 <div class="container pb-1">
@@ -27,40 +31,22 @@ $companyDataProvider = Company::dataProvider();
 
 <section class="section bg">
     <div class="container">
-        <div class="row">
-            <?php /*
-            <div class="col-12 col-lg">
-                <select class="input js-select-search">
-                    <?php if ($cities = City::allCities()): ?>
-                        <?php $letter = '' ?>
-                        <?php foreach ($cities as $optCity): ?>
-                            <?php $cityLetter = mb_substr($optCity->name, 0, 1, 'utf-8') ?>
-                            <?php if ($cityLetter !== $letter): ?>
-                                <?php $letter = $cityLetter ?>
-                                <option disabled><?= $letter ?></option>
-                            <?php endif; ?>
-                            <?php $selected = ($city->alias === $optCity->alias) ? 'selected' : '' ?>
-                            <option value="<?= $optCity->alias ?>" <?= $selected ?>>
-                                <?= $optCity->name ?>
-                            </option>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                </select>
-            </div><!-- .col -->
-            */ ?>
-            <div class="col-12 col-lg">
-                <input class="input" type="text" placeholder="Название компании">
-            </div><!-- .col -->
-            <div class="col-12 col-lg-auto">
-                <button class="btn btn-default">Подобрать компанию</button>
-            </div><!-- .col -->
-        </div><!-- .row -->
+        <?= Html::beginForm(Url::to(['site/company-list', 'page' => 1]), 'get') ?>
+            <div class="row">
+                <div class="col-12 col-lg">
+                    <?php $csVal = Yii::$app->request->get('cs', '') ?>
+                    <input class="input" type="text" name="cs" value="<?= $csVal ?>" placeholder="Название компании">
+                </div><!-- .col -->
+                <div class="col-12 col-lg-auto">
+                    <button type="submit" class="btn btn-default">Подобрать компанию</button>
+                </div><!-- .col -->
+            </div><!-- .row -->
+        <?= Html::endForm() ?>
     </div><!-- .container -->
 </section><!-- .section -->
 
 <section class="section">
     <div class="container">
-
 
         <div class="list">
 
@@ -87,8 +73,12 @@ $companyDataProvider = Company::dataProvider();
                 </div><!-- .row -->
             </div>
 
-            <?php foreach ($companyDataProvider->models as $company): ?>
-                <a class="list-item" href="<?= Url::to(['site/company', 'alias' => $company->alias]) ?>">
+            <?php foreach ($companies as $company): ?>
+                <a class="list-item" href="<?= Url::to([
+                    'site/company',
+                    'cpage' => ($csVal) ? 1 : $currentPage,
+                    'alias' => $company->alias,
+                ]) ?>">
                     <div class="col-12 col-xl-5 mx-auto mx-sm-0">
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto mr-3">
@@ -122,7 +112,7 @@ $companyDataProvider = Company::dataProvider();
                     </div><!-- .col -->
                     <div class="col-auto col-sm-4 col-md col-xl-1 mx-auto center">
                         <p class="fw-600 em-9 d-xl-none">Отзывов</p>
-                        <p><i class="i-mgs-a"></i> <?= $company->getComments()->count() ?></p>
+                        <p><i class="i-mgs-a"></i> <?= $company->commentsCount ?></p>
                     </div><!-- .col -->
                     <div class="col-auto col-sm-4 col-md col-xl-1 mx-auto center">
                         <p class="fw-600 em-9 d-xl-none">Рейтинг</p>
@@ -132,6 +122,14 @@ $companyDataProvider = Company::dataProvider();
             <?php endforeach; ?>
 
         </div><!-- .list -->
+
+        <div class="row justify-content-center my-3">
+            <div class="col-auto">
+                <?= LinkPager::widget([
+                    'pagination' => $dataProvider->pagination,
+                ]) ?>
+            </div>
+        </div><!-- .row -->
 
 
 

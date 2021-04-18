@@ -6,6 +6,7 @@ use app\widgets\LinkPager;
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
 /* @var $model app\models\Company */
+/* @var $cpage int|string */
 
 $this->title = $model->name;
 
@@ -13,9 +14,10 @@ $this->params['description'] = 'Спасибо самой замечательн
 
 $this->params['breadcrumbs'] = [
     [
-        'url' => ['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu'],
+        'url' => ['site/company-list', 'page' => $cpage],
         'label' => 'Рейтинг компаний по банкротству г.&nbsp;' . $city->name,
     ],
+    $this->title,
 ];
 
 ?>
@@ -40,7 +42,7 @@ $this->params['breadcrumbs'] = [
                 <p><a href="<?= $model->website ?>" target="_blank">Веб-сайт</a></p>
                 <div class="row">
                     <div class="col-auto">
-                        <a class="btn-default" href="">Обратный звонок</a>
+                        <a class="btn-default" data-fancybox data-src="#callback" href="javascript:;">Обратный звонок</a>
                     </div>
                 </div>
             </div><!-- .col -->
@@ -82,11 +84,12 @@ $this->params['breadcrumbs'] = [
 
             <div class="col-12 col-sm col-lg-auto mx-auto mb-2">
                 <h3 class="center">Отзывы</h3>
-                <p class="em-30 fw-600 center" style="line-height: 1"><?= $model->rate ?></p>
+                <p class="em-30 fw-600 center" style="line-height: 1"><?= $model->commentsCount ?></p>
                 <h3 class="center">Общий рейтинг</h3>
                 <div class="row">
                     <div class="col-auto mx-auto">
-                        <?php foreach ($model->reviewsCountByRate as $enabledStars => $countByRate): ?>
+                        <?php $reviewsCountByRate = $model->reviewsCountByRate ?>
+                        <?php foreach ($reviewsCountByRate as $enabledStars => $countByRate): ?>
                             <?php if ($countByRate): ?>
                                 <div class="d-flex align-items-center">
                                     <div class="mr-3 mb-1 em-11">
@@ -142,7 +145,7 @@ $this->params['breadcrumbs'] = [
                 <p class="center">
                     Отзывов
                     <br>
-                    <strong class="em-18"><?= $model->getComments()->count() ?></strong>
+                    <strong class="em-18"><?= $model->commentsCount ?></strong>
                 </p>
             </div><!-- .col -->
             <div class="col-6 col-sm-auto">
@@ -156,9 +159,11 @@ $this->params['breadcrumbs'] = [
     </div><!-- .container -->
 </section><!-- .section -->
 
+<?php if ($model->commentsDataProvider->count): ?>
 <section class="section">
     <div class="container">
         <h2 class="h1 center">Отзывы о компании <?= $model->name ?></h2>
+        <!--
         <div class="row no-gutters align-items-center justify-content-center">
             <div class="col-12 col-sm-auto mx-sm-2">
                 <p class="center">Сортировать:</p>
@@ -170,14 +175,13 @@ $this->params['breadcrumbs'] = [
                 <a class="btn-sm btn-trsp active">по оценке</a>
             </div>
         </div>
+        -->
     </div>
     <?php
-        $comments = new ActiveDataProvider();
-        $comments->query = $model->getComments();
-        $comments->pagination->pageSize = 5;
-        $comments->sort->defaultOrder = ['rate' => SORT_DESC]
+        /* @var $comments app\models\CompanyComment[] */
+        $comments = $model->commentsDataProvider->models;
     ?>
-    <?php foreach ($comments->models as $comment): ?>
+    <?php foreach ($comments as $comment): ?>
         <div class="bg-eo pt-3 pb-1">
             <div class="container">
                 <div class="row align-items-center">
@@ -212,14 +216,15 @@ $this->params['breadcrumbs'] = [
         <div class="row justify-content-center my-3">
             <div class="col-auto">
                 <?= LinkPager::widget([
-                    'pagination' => $comments->pagination,
+                    'pagination' => $model->commentsDataProvider->pagination,
                 ]) ?>
             </div>
         </div>
     </div>
 </section><!-- .section -->
+<?php endif; ?>
 
-<?php /*
+<?php /* TODO SEND REVIEW
 
 <section class="section">
     <div class="container">

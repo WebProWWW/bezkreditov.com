@@ -27,7 +27,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
         </a>
         <div class="main-mnav-content" id="main-mnav-content-1">
 
-            <a class="nav-ln" href="<?= Url::toView('rejting-kompanij-po-bankrotstvu') ?>">
+            <a class="nav-ln" href="<?= Url::to(['site/company-list', 'page' => 1]) ?>">
                 <span class="nav-txt">Рейтинг компаний по банкротству г.&nbsp;<?= $city->name ?></span>
             </a>
             <a class="nav-ln" href="<?= Url::to(['site/arbitration-list', 'page' => 1]) ?>">
