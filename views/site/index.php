@@ -168,7 +168,6 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                         <div class="cart">
                             <div class="cart-body px-xl-5">
-                                <?= $company->commentsCount ?>
                                 <div class="row align-items-center justify-content-center my-auto">
                                     <div class="col-auto">
                                         <div style="padding: 0 12px">
@@ -223,6 +222,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
             </div><!-- .row -->
         </div>
 
+        <?php /* @var $companies Company[] */ ?>
         <div id="block-company-slide-2" style="display: none;">
             <div class="row">
                 <?php $companies = Company::search(['order' => 'comment'], 6)->models; ?>
@@ -230,7 +230,6 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                         <div class="cart">
                             <div class="cart-body px-xl-5">
-                                <?= $company->commentsCount ?>
                                 <div class="row align-items-center justify-content-center my-auto">
                                     <div class="col-auto">
                                         <div style="padding: 0 12px">
@@ -285,6 +284,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
             </div><!-- .row -->
         </div>
 
+        <?php /* @var $companies Company[] */ ?>
         <div id="block-company-slide-3" style="display: none;">
             <div class="row">
                 <?php $companies = Company::search(['order' => 'rate'], 6)->models; ?>
@@ -292,7 +292,6 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                         <div class="cart">
                             <div class="cart-body px-xl-5">
-                                <?= $company->commentsCount ?>
                                 <div class="row align-items-center justify-content-center my-auto">
                                     <div class="col-auto">
                                         <div style="padding: 0 12px">
