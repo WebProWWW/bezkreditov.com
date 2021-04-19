@@ -3,8 +3,9 @@
 namespace app\models;
 
 use app\dashboard\Input;
+use app\dashboard\ModelInterface;
+
 use Yii;
-use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 use yii\data\ActiveDataProvider;
 use yii\behaviors\TimestampBehavior;
@@ -13,8 +14,6 @@ use yii\helpers\FileHelper;
 use yii\helpers\StringHelper;
 use yii\imagine\Image;
 use yii\web\NotFoundHttpException;
-
-use app\dashboard\ModelInterface;
 use yii\web\UploadedFile;
 
 /**
@@ -169,12 +168,18 @@ class Material extends ActiveRecord implements ModelInterface
 
     /**
      * @param int $limit
+     * @param int|string $sort
      * @return Material[]
      */
-    public static function lastMaterials(int $limit = 3)
+    public static function lastMaterials(int $limit = 3, $sort = SORT_DESC)
     {
+        //->orderBy(['created_at' => SORT_DESC])
+        $orderBy = [];
+        if ($sort === SORT_DESC) $orderBy = ['created_at' => SORT_DESC];
+        if ($sort === SORT_ASC) $orderBy = ['created_at' => SORT_ASC];
+        if ($sort === 'rand') $orderBy = 'rand()';
         return self::find()
-            ->orderBy(['created_at' => SORT_DESC])
+            ->orderBy($orderBy)
             ->limit($limit)
             ->all();
     }

@@ -362,18 +362,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 <?php if ($news = $city->region->lastNews): ?>
 <section class="section bg">
     <div class="container">
-        <h1 class="center">Актуальные новости по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h1>
-        <div class="row justify-content-center mb-3">
-            <div class="col-auto">
-                <a class="tab-ln active">Сегодня</a>
-            </div><!-- .col -->
-            <div class="col-auto">
-                <a class="tab-ln">Лучшее за неделю</a>
-            </div><!-- .col -->
-            <div class="col-auto">
-                <a class="tab-ln">Самое обсуждаемое</a>
-            </div><!-- .col -->
-        </div><!-- .tab -->
+        <h1 class="center mb-4">Актуальные новости по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h1>
         <div class="row">
             <?php foreach ($news as $newsItem): ?>
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
@@ -463,7 +452,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                             <p>Поделитесь информацией о прохождении процедуры банкротства</p>
                         </div>
                     </div><!-- .cart-body -->
-                    <a class="btn cart-full-btn">
+                    <a class="btn cart-full-btn" href="<?= Url::to(['site/company-list', 'page' => 1]) ?>">
                         <i class="i-plus cart-full-btn-i"></i>
                         Добавить отзыв
                     </a>
@@ -678,7 +667,6 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
     </div><!-- .container -->
 </section><!-- .section -->
 
-
 <section class="section" style="background: #97C7D1; overflow: hidden;" id="zapret_viezda_iz_rf">
     <div class="container">
         <div class="row no-gutters">
@@ -704,24 +692,24 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
     </div><!-- .container -->
 </section><!-- .section -->
 
-
 <section class="section bg">
     <div class="container">
 
         <h2 class="h1 center">Часто обсуждаемые компании по банкроству в&nbsp;г.&nbsp;<?= $city->name ?></h2>
 
+        <!--
         <div class="row justify-content-center mb-3">
             <div class="col-auto">
                 <a class="tab-ln active">Новые</a>
-            </div><!-- .col -->
+            </div>
             <div class="col-auto">
                 <a class="tab-ln">Обсуждаемые сегодня</a>
-            </div><!-- .col -->
+            </div>
             <div class="col-auto">
                 <a class="tab-ln">Топ за все время</a>
-            </div><!-- .col -->
-        </div><!-- .tab -->
-
+            </div>
+        </div>
+        -->
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="cart">
@@ -731,7 +719,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                             <p>Поделитесь информацией о компании, которая поможет определиться людям с выбором.</p>
                         </div>
                     </div><!-- .cart-body -->
-                    <a class="btn cart-full-btn">
+                    <a class="btn cart-full-btn" href="<?= Url::to(['site/company-list', 'page' => 1]) ?>">
                         <i class="i-plus cart-full-btn-i"></i>
                         Добавить отзыв<br>о компании
                     </a>
@@ -741,206 +729,88 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                 </div><!-- .cart -->
             </div><!-- .col -->
 
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body">
-                        <h3 class="center">2Лекс</h3>
-                        <p>
-                            «Не думал что меня когда-нибудь коснется эта
-                            проблема. Когда брал потребительский кредит,
-                            было все безоблачно. Платил исправно. Потом...»
-                        </p>
-                        <div class="row align-items-end mt-auto">
-                            <div class="col-auto">
-                                <p>
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                </p>
-                            </div><!-- .col -->
-                        </div>
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
+            <?php /* @var $companies Company[] */ ?>
+            <?php $companies = Company::search(['order' => 'comment'], 5)->models; ?>
+            <?php foreach ($companies as $company): ?>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="cart">
+                        <div class="cart-body">
+                            <h3 class="center"><?= $company->name ?></h3>
+                            <?php $firstComment = $company->comments[0] ?>
+                            <p><?= StringHelper::truncate($firstComment->text, 120); ?></p>
+                            <div class="row align-items-end mt-auto">
+                                <div class="col-auto">
+                                    <p>
+                                        <?php for ($star=1; $star <= 5; $star++ ): ?>
+                                            <?php $isMuted = $firstComment->rate < $star;  ?>
+                                            <i class="i-star <?= $isMuted ? 'mutted' : 'primary' ?>"></i>
+                                        <?php endfor; ?>
+                                    </p>
+                                </div><!-- .col -->
                             </div>
-                            <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
+                        </div><!-- .cart-body -->
+                        <div class="cart-footer">
+                            <div class="d-flex no-gutters align-items-center">
+                                <div class="col">
+                                    <p class="mutted">13:14 11.07.2020</p>
+                                </div>
+                                <div class="col-auto">
+                                    <a
+                                        class="btn btn-sm btn-default"
+                                        href="<?= Url::to([
+                                            'site/company',
+                                            'alias' => $company->alias,
+                                            'cpage' => 1
+                                        ]) ?>"
+                                    >
+                                        Читать отзыв
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
+                        </div><!-- .cart-footer -->
+                    </div><!-- .cart -->
+                </div><!-- .col -->
+            <?php endforeach; ?>
 
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body">
-                        <h3 class="center">Витакон</h3>
-                        <p>
-                            «Не думал что меня когда-нибудь коснется эта
-                            проблема. Когда брал потребительский кредит,
-                            было все безоблачно. Платил исправно. Потом
-                            в одночасье...развод с женой, потеря работы...»
-                        </p>
-                        <div class="row align-items-end mt-auto">
-                            <div class="col-auto">
-                                <p>
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                </p>
-                            </div><!-- .col -->
-                        </div>
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
-                            </div>
-                            <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body">
-                        <h3 class="center">Смолин</h3>
-                        <p>
-                            «Не думал что меня когда-нибудь коснется эта
-                            проблема. Когда брал потребительский кредит,
-                            было все безоблачно. Платил исправно. Потом
-                            в одночасье...развод с женой, потеря работы...»
-                        </p>
-                        <div class="row align-items-end mt-auto">
-                            <div class="col-auto">
-                                <p>
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                </p>
-                            </div><!-- .col -->
-                        </div>
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
-                            </div>
-                            <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body">
-                        <h3 class="center">ДОЛГАМ.НЕТ</h3>
-                        <p>
-                            «Не думал что меня когда-нибудь коснется эта
-                            проблема. Когда брал потребительский кредит,
-                            было все безоблачно. Платил исправно. Потом
-                            в одночасье...развод с женой, потеря работы...»
-                        </p>
-                        <div class="row align-items-end mt-auto">
-                            <div class="col-auto">
-                                <p>
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                </p>
-                            </div><!-- .col -->
-                        </div>
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
-                            </div>
-                            <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body">
-                        <h3 class="center">МэйДэй</h3>
-                        <p>
-                            «Не думал что меня когда-нибудь коснется эта
-                            проблема. Когда брал потребительский кредит,
-                            было все безоблачно. Платил исправно. Потом
-                            в одночасье...развод с женой, потеря работы...»
-                        </p>
-                        <div class="row align-items-end mt-auto">
-                            <div class="col-auto">
-                                <p>
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                    <img width="14" height="14" src="/img/star-a.svg">
-                                </p>
-                            </div><!-- .col -->
-                        </div>
-                    </div><!-- .cart-body -->
-                    <div class="cart-footer">
-                        <div class="d-flex no-gutters align-items-center">
-                            <div class="col">
-                                <p class="mutted">13:14 11.07.2020</p>
-                            </div>
-                            <div class="col-auto">
-                                <a class="btn btn-sm btn-default" href="">Читать отзыв</a>
-                            </div>
-                        </div>
-                    </div><!-- .cart-footer -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-        </div><!-- .row -->
-
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <a class="btn btn-default" href="">Читать все отзывы</a>
-            </div><!-- .col -->
         </div><!-- .row -->
 
     </div><!-- .container -->
 </section><!-- .section -->
 
-<?php if ($materials = Material::lastMaterials()): ?>
 <section class="section">
     <div class="container">
         <h2 class="h1 center">Полезные материалы по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h2>
-        <div class="row justify-content-center mb-3">
+        <div class="row justify-content-center mb-3 js-tab-links">
             <div class="col-auto">
-                <a class="tab-ln active">Лучшее за неделю</a>
+                <a class="tab-ln active" data-link="#block-material-slide-1" href="javascript:;">Лучшее за неделю</a>
             </div><!-- .col -->
             <div class="col-auto">
-                <a class="tab-ln">Выбор редакции</a>
+                <a class="tab-ln" data-link="#block-material-slide-2" href="javascript:;">Выбор редакции</a>
             </div><!-- .col -->
             <div class="col-auto">
-                <a class="tab-ln">Самое популярное</a>
+                <a class="tab-ln" data-link="#block-material-slide-3" href="javascript:;">Самое популярное</a>
             </div><!-- .col -->
         </div><!-- .tab -->
-        <?= $this->render('-material-list', [ 'materials' => $materials ]) ?>
+
+        <div class="js-tab-contents">
+
+            <div class="tab-content active" id="block-material-slide-1" style="opacity: 1">
+                <?php $materials = Material::lastMaterials(3, SORT_DESC); ?>
+                <?= $this->render('-material-list', [ 'materials' => $materials ]) ?>
+            </div>
+
+            <div class="tab-content" id="block-material-slide-2">
+                <?php $materials = Material::lastMaterials(3, 'rand'); ?>
+                <?= $this->render('-material-list', [ 'materials' => $materials ]) ?>
+            </div>
+
+            <div class="tab-content" id="block-material-slide-3">
+                <?php $materials = Material::lastMaterials(3, SORT_ASC); ?>
+                <?= $this->render('-material-list', [ 'materials' => $materials ]) ?>
+            </div>
+
+        </div><!-- .js-tab-contents -->
+
         <div class="row justify-content-center">
             <div class="col-auto">
                 <a class="btn btn-default" href="<?= Url::to(
@@ -948,9 +818,9 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                 ]) ?>">Читать все материалы</a>
             </div><!-- .col -->
         </div><!-- .row -->
+
     </div><!-- .container -->
 </section><!-- .section -->
-<?php endif; ?>
 
 <section class="section bg">
     <h2 class="h1 center">Проверьте свои долги, штрафы в режиме реального&nbsp;времени!</h2>
