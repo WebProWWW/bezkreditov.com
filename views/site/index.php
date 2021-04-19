@@ -148,203 +148,207 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
 <section class="section bg">
     <div class="container">
         <h2 class="h1 center">Лучшие компании по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></h2>
-        <div class="row justify-content-center mb-3">
+        <div class="row justify-content-center mb-3 js-tab-links">
             <div class="col-auto">
-                <a class="tab-ln active">По количеству успешных дел</a>
+                <a class="tab-ln active" data-link="#block-company-slide-1" href="javascript:;">По количеству успешных дел</a>
             </div><!-- .col -->
             <div class="col-auto">
-                <a class="tab-ln">По количеству отзывов</a>
+                <a class="tab-ln" data-link="#block-company-slide-2" href="javascript:;">По количеству отзывов</a>
             </div><!-- .col -->
             <div class="col-auto">
-                <a class="tab-ln">По рейтингу</a>
+                <a class="tab-ln" data-link="#block-company-slide-3" href="javascript:;">По рейтингу</a>
             </div><!-- .col -->
         </div><!-- .row -->
 
-        <?php /* @var $companies Company[] */ ?>
-        <div id="block-company-slide-1">
-            <div class="row">
-                <?php $companies = Company::search(['order' => 'work'], 6)->models; ?>
-                <?php foreach ($companies as $company): ?>
-                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <div class="cart">
-                            <div class="cart-body px-xl-5">
-                                <div class="row align-items-center justify-content-center my-auto">
-                                    <div class="col-auto">
-                                        <div style="padding: 0 12px">
-                                            <img class="klogo" width="46" src="<?= $company->logoImg ?>">
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <h4 class="fw-600"><?= $company->name ?></h4>
-                                    </div>
-                                </div>
-                                <div class="cart-divider"></div>
-                                <div class="row">
-                                    <div class="col-12 col-sm-6 col-md-12">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <div class="percent-circle">
-                                                    <span data-circle-percent="<?= $company->percent ?>"></span>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <p>Количество<br>успешных&nbsp;дел</p>
-                                            </div>
-                                        </div>
-                                    </div><!-- .col -->
-                                    <div class="col-12 col-sm-6 col-md-12">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <p class="em-16 center" style="width: 70px">
-                                                    <i class="i-star primary"></i> <?= $company->rate ?>
-                                                </p>
-                                            </div>
-                                            <div class="col">
-                                                <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
-                                            </div>
-                                        </div>
-                                    </div><!-- .col -->
-                                </div><!-- .row -->
-                            </div><!-- .cart-body -->
-                            <div class="cart-footer">
-                                <div class="row align-items-center no-gutters">
-                                    <div class="col-auto">
-                                        <p class="em-9"><span class="date-bg"><?= $company->cases ?></span> - всего дел</p>
-                                    </div>
-                                    <div class="col-auto ml-auto">
-                                        <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/company', 'alias' => $company->alias, 'cpage' => 1]) ?>">Подробнее</a>
-                                    </div>
-                                </div>
-                            </div><!-- .cart-footer -->
-                        </div><!-- .cart -->
-                    </div><!-- .col -->
-                <?php endforeach; ?>
-            </div><!-- .row -->
-        </div>
+        <div class="js-tab-contents">
 
-        <?php /* @var $companies Company[] */ ?>
-        <div id="block-company-slide-2" style="display: none;">
-            <div class="row">
-                <?php $companies = Company::search(['order' => 'comment'], 6)->models; ?>
-                <?php foreach ($companies as $company): ?>
-                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <div class="cart">
-                            <div class="cart-body px-xl-5">
-                                <div class="row align-items-center justify-content-center my-auto">
-                                    <div class="col-auto">
-                                        <div style="padding: 0 12px">
-                                            <img class="klogo" width="46" src="<?= $company->logoImg ?>">
+            <?php /* @var $companies Company[] */ ?>
+            <div class="tab-content active" id="block-company-slide-1" style="opacity: 1">
+                <div class="row">
+                    <?php $companies = Company::search(['order' => 'work'], 6)->models; ?>
+                    <?php foreach ($companies as $company): ?>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="cart">
+                                <div class="cart-body px-xl-5">
+                                    <div class="row align-items-center justify-content-center my-auto">
+                                        <div class="col-auto">
+                                            <div style="padding: 0 12px">
+                                                <img class="klogo" width="46" src="<?= $company->logoImg ?>">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <h4 class="fw-600"><?= $company->name ?></h4>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <h4 class="fw-600"><?= $company->name ?></h4>
-                                    </div>
-                                </div>
-                                <div class="cart-divider"></div>
-                                <div class="row">
-                                    <div class="col-12 col-sm-6 col-md-12">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <div class="percent-circle">
-                                                    <span data-circle-percent="<?= $company->percent ?>"></span>
+                                    <div class="cart-divider"></div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 col-md-12">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="percent-circle">
+                                                        <span data-circle-percent="<?= $company->percent ?>"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <p>Количество<br>успешных&nbsp;дел</p>
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <p>Количество<br>успешных&nbsp;дел</p>
+                                        </div><!-- .col -->
+                                        <div class="col-12 col-sm-6 col-md-12">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <p class="em-16 center" style="width: 70px">
+                                                        <i class="i-star primary"></i> <?= $company->rate ?>
+                                                    </p>
+                                                </div>
+                                                <div class="col">
+                                                    <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
+                                                </div>
                                             </div>
+                                        </div><!-- .col -->
+                                    </div><!-- .row -->
+                                </div><!-- .cart-body -->
+                                <div class="cart-footer">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col-auto">
+                                            <p class="em-9"><span class="date-bg"><?= $company->cases ?></span> - всего дел</p>
                                         </div>
-                                    </div><!-- .col -->
-                                    <div class="col-12 col-sm-6 col-md-12">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <p class="em-16 center" style="width: 70px">
-                                                    <i class="i-star primary"></i> <?= $company->rate ?>
-                                                </p>
-                                            </div>
-                                            <div class="col">
-                                                <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
-                                            </div>
+                                        <div class="col-auto ml-auto">
+                                            <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/company', 'alias' => $company->alias, 'cpage' => 1]) ?>">Подробнее</a>
                                         </div>
-                                    </div><!-- .col -->
-                                </div><!-- .row -->
-                            </div><!-- .cart-body -->
-                            <div class="cart-footer">
-                                <div class="row align-items-center no-gutters">
-                                    <div class="col-auto">
-                                        <p class="em-9"><span class="date-bg"><?= $company->cases ?></span> - всего дел</p>
                                     </div>
-                                    <div class="col-auto ml-auto">
-                                        <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/company', 'alias' => $company->alias, 'cpage' => 1]) ?>">Подробнее</a>
-                                    </div>
-                                </div>
-                            </div><!-- .cart-footer -->
-                        </div><!-- .cart -->
-                    </div><!-- .col -->
-                <?php endforeach; ?>
-            </div><!-- .row -->
-        </div>
+                                </div><!-- .cart-footer -->
+                            </div><!-- .cart -->
+                        </div><!-- .col -->
+                    <?php endforeach; ?>
+                </div><!-- .row -->
+            </div>
 
-        <?php /* @var $companies Company[] */ ?>
-        <div id="block-company-slide-3" style="display: none;">
-            <div class="row">
-                <?php $companies = Company::search(['order' => 'rate'], 6)->models; ?>
-                <?php foreach ($companies as $company): ?>
-                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                        <div class="cart">
-                            <div class="cart-body px-xl-5">
-                                <div class="row align-items-center justify-content-center my-auto">
-                                    <div class="col-auto">
-                                        <div style="padding: 0 12px">
-                                            <img class="klogo" width="46" src="<?= $company->logoImg ?>">
+            <?php /* @var $companies Company[] */ ?>
+            <div class="tab-content" id="block-company-slide-2">
+                <div class="row">
+                    <?php $companies = Company::search(['order' => 'comment'], 6)->models; ?>
+                    <?php foreach ($companies as $company): ?>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="cart">
+                                <div class="cart-body px-xl-5">
+                                    <div class="row align-items-center justify-content-center my-auto">
+                                        <div class="col-auto">
+                                            <div style="padding: 0 12px">
+                                                <img class="klogo" width="46" src="<?= $company->logoImg ?>">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <h4 class="fw-600"><?= $company->name ?></h4>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <h4 class="fw-600"><?= $company->name ?></h4>
-                                    </div>
-                                </div>
-                                <div class="cart-divider"></div>
-                                <div class="row">
-                                    <div class="col-12 col-sm-6 col-md-12">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <div class="percent-circle">
-                                                    <span data-circle-percent="<?= $company->percent ?>"></span>
+                                    <div class="cart-divider"></div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 col-md-12">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="percent-circle">
+                                                        <span data-circle-percent="<?= $company->percent ?>"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <p>Количество<br>успешных&nbsp;дел</p>
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <p>Количество<br>успешных&nbsp;дел</p>
+                                        </div><!-- .col -->
+                                        <div class="col-12 col-sm-6 col-md-12">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <p class="em-16 center" style="width: 70px">
+                                                        <i class="i-star primary"></i> <?= $company->rate ?>
+                                                    </p>
+                                                </div>
+                                                <div class="col">
+                                                    <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
+                                                </div>
+                                            </div>
+                                        </div><!-- .col -->
+                                    </div><!-- .row -->
+                                </div><!-- .cart-body -->
+                                <div class="cart-footer">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col-auto">
+                                            <p class="em-9"><span class="date-bg"><?= $company->cases ?></span> - всего дел</p>
+                                        </div>
+                                        <div class="col-auto ml-auto">
+                                            <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/company', 'alias' => $company->alias, 'cpage' => 1]) ?>">Подробнее</a>
+                                        </div>
+                                    </div>
+                                </div><!-- .cart-footer -->
+                            </div><!-- .cart -->
+                        </div><!-- .col -->
+                    <?php endforeach; ?>
+                </div><!-- .row -->
+            </div>
+
+            <?php /* @var $companies Company[] */ ?>
+            <div class="tab-content" id="block-company-slide-3">
+                <div class="row">
+                    <?php $companies = Company::search(['order' => 'rate'], 6)->models; ?>
+                    <?php foreach ($companies as $company): ?>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="cart">
+                                <div class="cart-body px-xl-5">
+                                    <div class="row align-items-center justify-content-center my-auto">
+                                        <div class="col-auto">
+                                            <div style="padding: 0 12px">
+                                                <img class="klogo" width="46" src="<?= $company->logoImg ?>">
                                             </div>
                                         </div>
-                                    </div><!-- .col -->
-                                    <div class="col-12 col-sm-6 col-md-12">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <p class="em-16 center" style="width: 70px">
-                                                    <i class="i-star primary"></i> <?= $company->rate ?>
-                                                </p>
-                                            </div>
-                                            <div class="col">
-                                                <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
-                                            </div>
+                                        <div class="col">
+                                            <h4 class="fw-600"><?= $company->name ?></h4>
                                         </div>
-                                    </div><!-- .col -->
-                                </div><!-- .row -->
-                            </div><!-- .cart-body -->
-                            <div class="cart-footer">
-                                <div class="row align-items-center no-gutters">
-                                    <div class="col-auto">
-                                        <p class="em-9"><span class="date-bg"><?= $company->cases ?></span> - всего дел</p>
                                     </div>
-                                    <div class="col-auto ml-auto">
-                                        <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/company', 'alias' => $company->alias, 'cpage' => 1]) ?>">Подробнее</a>
+                                    <div class="cart-divider"></div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 col-md-12">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="percent-circle">
+                                                        <span data-circle-percent="<?= $company->percent ?>"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <p>Количество<br>успешных&nbsp;дел</p>
+                                                </div>
+                                            </div>
+                                        </div><!-- .col -->
+                                        <div class="col-12 col-sm-6 col-md-12">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <p class="em-16 center" style="width: 70px">
+                                                        <i class="i-star primary"></i> <?= $company->rate ?>
+                                                    </p>
+                                                </div>
+                                                <div class="col">
+                                                    <p>Рейтинг портала<br>«Без&nbsp;кредитов»</p>
+                                                </div>
+                                            </div>
+                                        </div><!-- .col -->
+                                    </div><!-- .row -->
+                                </div><!-- .cart-body -->
+                                <div class="cart-footer">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col-auto">
+                                            <p class="em-9"><span class="date-bg"><?= $company->cases ?></span> - всего дел</p>
+                                        </div>
+                                        <div class="col-auto ml-auto">
+                                            <a class="btn btn-sm btn-default px-2" href="<?= Url::to(['site/company', 'alias' => $company->alias, 'cpage' => 1]) ?>">Подробнее</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </div><!-- .cart-footer -->
-                        </div><!-- .cart -->
-                    </div><!-- .col -->
-                <?php endforeach; ?>
-            </div><!-- .row -->
-        </div>
+                                </div><!-- .cart-footer -->
+                            </div><!-- .cart -->
+                        </div><!-- .col -->
+                    <?php endforeach; ?>
+                </div><!-- .row -->
+            </div>
+
+        </div><!-- .js-tab-contents -->
 
         <div class="row justify-content-center">
             <div class="col-auto">

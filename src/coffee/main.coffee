@@ -475,6 +475,23 @@ $('.main-mnav-close').on 'click', (e) ->
     $('body').removeClass 'main-mnav-active'
 
 
+$('*[data-link]').on 'click', (e) ->
+    e.preventDefault();
+    $this = $ this
+    return off if $this.hasClass 'active'
+    $this.parents('.js-tab-links').find('*[data-link]').removeClass 'active'
+    $this.addClass 'active'
+    $content = $ $this.attr 'data-link'
+    $content
+        .parents('.js-tab-contents')
+        .find('.tab-content')
+        .removeClass('active')
+        .css('opacity', 0)
+    $content
+        .addClass('active')
+        .animate({opacity: 1}, 300)
+    off
+
 
 # РЕЙТИНГ АРБИТРАЖНЫХ УПРАВЛЯЮЩИХ
 $('.js-arbitration-filter-tab').on 'click', (e) ->
