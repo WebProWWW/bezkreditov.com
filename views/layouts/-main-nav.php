@@ -14,7 +14,7 @@ use app\helpers\Url;
     </a>
     <a class="main-nav-ln" data-dropdown="#main-nav-content-2">
         <span class="nav-txt">
-            Рефинансирование
+            Карты
             <i class="i-ch-down em-7"></i>
         </span>
     </a>
@@ -47,6 +47,15 @@ use app\helpers\Url;
             Финансы
             <i class="i-ch-down em-7"></i>
         </span>
+    </a>
+    <a class="main-nav-ln" data-dropdown="#main-nav-content-8">
+        <span class="nav-txt">
+            Еще
+            <i class="i-ch-down em-7"></i>
+        </span>
+    </a>
+    <a class="main-nav-ln" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
+        <span class="nav-txt">Новости</span>
     </a>
     <a class="main-nav-ln" href="<?= Url::toView('o-proekte') ?>">
         <span class="nav-txt">О проекте</span>
@@ -132,8 +141,8 @@ use app\helpers\Url;
         <div class="row">
             <div class="col-3">
                 <a class="logo logo-sm" href="<?= Url::home() ?>">
-                    <span class="logo-txt">Рефинансирование</span>
-                    <span class="logo-stxt">Вся полезная информация о банкротстве физических лиц в одном месте</span>
+                    <span class="logo-txt">Карты</span>
+                    <span class="logo-stxt">Вся полезная информация по банковским картам в одном месте</span>
                 </a>
                 <a class="btn-trsp" href="<?= Url::toView('poleznye-servisy') ?>">
                     <span class="row no-gutters justify-content-center align-items-center">
@@ -143,50 +152,44 @@ use app\helpers\Url;
                 </a>
             </div><!-- .col -->
             <div class="col">
-                <nav class="nav">
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('rejting-kompanij-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Рейтинг компаний по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('onlajn-konsultaciya-yurista-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Онлайн консультация юриста по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('zakon-o-bankrotstve') ?>">
-                        <span class="nav-txt">Закон о банкротстве</span>
-                    </a>
-
-                    <!-- ROW -->
-
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('rejting-arbitrazhnyh-upravlyayushih') ?>">
-                        <span class="nav-txt">Рейтинг арбитражных управляющих в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('poleznye-materialy-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Полезные материалы по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('uznat-svoi-dolgi') ?>">
-                        <span class="nav-txt">Узнать свои долги г.&nbsp;<?= $city->name ?></span>
-                    </a>
-
-                    <!-- ROW -->
-
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('ufssp-rossii') ?>">
-                        <span class="nav-txt">УФССП России по&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('otzyvy-lyudej-proshedshih-proceduru-bankrotstva') ?>">
-                        <span class="nav-txt">Отзывы людей прошедших процедуру банкротства в&nbsp;&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('obratnaya-svyaz') ?>">
-                        <span class="nav-txt">Обратная связь</span>
-                    </a>
-
-                    <!-- ROW -->
-
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Новости по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('vopros-otvet-po-bankrotstvu-fizicheskih-lic') ?>">
-                        <span class="nav-txt">Вопрос-ответ по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                </nav>
+                <div class="row">
+                    <div class="col-4">
+                        <p class="fw-600">Дебетовые карты</p>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Бесплатная</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">С процентом на остаток</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Выгодные</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">С кэшбэком</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Онлайн-заявка</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col-4">
+                        <p class="fw-600">Кредитные карты</p>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">С кэшбэком</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">С плохой историей</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Онлайн</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">С доставкой</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Для снятия наличных</span>
+                        </a>
+                    </div><!-- .col -->
+                </div><!-- .row -->
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
@@ -196,7 +199,7 @@ use app\helpers\Url;
             <div class="col-3">
                 <a class="logo logo-sm" href="<?= Url::home() ?>">
                     <span class="logo-txt">Кредиты</span>
-                    <span class="logo-stxt">Вся полезная информация о банкротстве физических лиц в одном месте</span>
+                    <span class="logo-stxt">Мы не рекомендуем брать кредиты без нужды, но если без этого никак воспользуйтесь нашим поиском самых выгодных условий по кредитом</span>
                 </a>
                 <a class="btn-trsp" href="<?= Url::toView('poleznye-servisy') ?>">
                     <span class="row no-gutters justify-content-center align-items-center">
@@ -206,49 +209,71 @@ use app\helpers\Url;
                 </a>
             </div><!-- .col -->
             <div class="col">
-                <nav class="nav">
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('rejting-kompanij-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Рейтинг компаний по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('onlajn-konsultaciya-yurista-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Онлайн консультация юриста по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-3" href="<?= Url::toView('zakon-o-bankrotstve') ?>">
-                        <span class="nav-txt">Закон о банкротстве</span>
-                    </a>
-
-                    <!-- ROW -->
-
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('rejting-arbitrazhnyh-upravlyayushih') ?>">
-                        <span class="nav-txt">Рейтинг арбитражных управляющих в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('poleznye-materialy-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Полезные материалы по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-3" href="<?= Url::toView('uznat-svoi-dolgi') ?>">
-                        <span class="nav-txt">Узнать свои долги г.&nbsp;<?= $city->name ?></span>
-                    </a>
-
-                    <!-- ROW -->
-
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('ufssp-rossii') ?>">
-                        <span class="nav-txt">УФССП России по&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('otzyvy-lyudej-proshedshih-proceduru-bankrotstva') ?>">
-                        <span class="nav-txt">Отзывы людей прошедших процедуру банкротства в&nbsp;&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <div class="col-3"></div>
-
-                    <!-- ROW -->
-
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Новости по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('vopros-otvet-po-bankrotstvu-fizicheskih-lic') ?>">
-                        <span class="nav-txt">Вопрос-ответ по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <div class="col-3"></div>
-                </nav>
+                <div class="row">
+                    <div class="col-3">
+                        <p class="fw-600">Потребительские кредиты</p>
+                    </div><!-- .col -->
+                    <div class="col-3">
+                        <p class="fw-600">Микрозаймы</p>
+                    </div><!-- .col -->
+                    <div class="col-3">
+                        <p class="fw-600">Автокредиты</p>
+                    </div><!-- .col -->
+                    <div class="col-3">
+                        <p class="fw-600">Рефинансирование</p>
+                    </div><!-- .col -->
+                    <div class="col-3">
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Наличными</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Онлайн на карта</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Без отказа</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">С плохой кредитной историей</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Пенсионерам</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col-3">
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">На карту</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Без отказа</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Без процентов</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Срочно</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">До зарплаты</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col-3">
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">На вторе с пробегом</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">На новый автомобиль</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Выгодные</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Без первоначального взноса</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col-3">
+                        &nbsp;
+                    </div><!-- .col -->
+                </div><!-- .row -->
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
@@ -258,7 +283,7 @@ use app\helpers\Url;
             <div class="col-3">
                 <a class="logo logo-sm" href="<?= Url::home() ?>">
                     <span class="logo-txt">Ипотека</span>
-                    <span class="logo-stxt">Вся полезная информация о банкротстве физических лиц в одном месте</span>
+                    <span class="logo-stxt">Вся полезная информация по ипотеке и ипотечному кредитованию в одном месте</span>
                 </a>
                 <a class="btn-trsp" href="<?= Url::toView('poleznye-servisy') ?>">
                     <span class="row no-gutters justify-content-center align-items-center">
@@ -268,32 +293,41 @@ use app\helpers\Url;
                 </a>
             </div><!-- .col -->
             <div class="col">
-                <nav class="nav">
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('rejting-kompanij-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Рейтинг компаний по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('onlajn-konsultaciya-yurista-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Онлайн консультация юриста по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('rejting-arbitrazhnyh-upravlyayushih') ?>">
-                        <span class="nav-txt">Рейтинг арбитражных управляющих в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('poleznye-materialy-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Полезные материалы по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('ufssp-rossii') ?>">
-                        <span class="nav-txt">УФССП России по&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('otzyvy-lyudej-proshedshih-proceduru-bankrotstva') ?>">
-                        <span class="nav-txt">Отзывы людей прошедших процедуру банкротства в&nbsp;&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Новости по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('vopros-otvet-po-bankrotstvu-fizicheskih-lic') ?>">
-                        <span class="nav-txt">Вопрос-ответ по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                </nav>
+                <div class="row">
+                    <div class="col-4">
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Без первоначального взноса</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">На новостройку</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">На вторичное жилье</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Без подтверждения дохода</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col-4">
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Молодой семье</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Социальная</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">С господдержкой</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Пенсионерам</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col-4">
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">По двум документам</span>
+                        </a>
+                    </div><!-- .col -->
+                </div><!-- .row -->
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
@@ -305,44 +339,54 @@ use app\helpers\Url;
                     <span class="logo-txt">Сервисы</span>
                     <span class="logo-stxt">Вся полезная информация о банкротстве физических лиц в одном месте</span>
                 </a>
+                <a class="btn-trsp" href="<?= Url::toView('poleznye-servisy') ?>">
+                    <span class="row no-gutters justify-content-center align-items-center">
+                        <span class="col-auto em-24 mr-2"><i class="i-like"></i></span>
+                        <span class="col-auto em-9">Полезные сервисы от<br>портала «Без кредитов»</span>
+                    </span>
+                </a>
             </div><!-- .col -->
             <div class="col">
+                <div class="row no-gutters">
+                    <div class="col-4">
+                        <p class="fw-600">Банкротство</p>
+                    </div><!-- .col-4 -->
+                    <div class="col-4">
+                        <p class="fw-600">&nbsp;</p>
+                    </div><!-- .col-4 -->
+                    <div class="col-4">
+                        <p class="fw-600">Кредиты и финансы</p>
+                    </div><!-- .col-4 -->
+                </div><!-- .row -->
                 <nav class="nav">
-                    <a class="nav-ln nav-list col-4" href="">
-                        <span class="nav-txt">Онлайн подбор юриста <br> по банкротству</span>
+                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                        <span class="nav-txt">Онлайн подбор юриста по банкротству</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="">
-                        <span class="nav-txt">Онлайн калькулятор <br> по банкротству</span>
+                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                        <span class="nav-txt">Онлайн тест на списание долгов, кредитов</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="">
-                        <span class="nav-txt">Онлайн консультация <br> по банкротству</span>
+                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                        <span class="nav-txt">Полная кредитная история</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="">
-                        <span class="nav-txt">Ипотечный калькулятор</span>
+
+                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                        <span class="nav-txt">Онлайн калькулятор по банкротству</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="">
-                        <span class="nav-txt">Кредитный калькулятор</span>
+                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                        <span class="nav-txt">Онлайн консультация по банкротству</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="">
-                        <span class="nav-txt">Калькулятор рефинансирования</span>
+                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                        <span class="nav-txt">Защита от мощенников</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="">
-                        <span class="nav-txt">Проверка долгов <br> онлайн</span>
+
+                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                        <span class="nav-txt">Проверка долгов онлайн</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="">
+                    <a class="nav-ln nav-list col-4" href="javascript:;">
                         <span class="nav-txt">Онлайн тест на списание <br> долгов, кредитов</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="">
-                        <span class="nav-txt">Проверка и оплата <br> штрафов ГИБДД</span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="">
-                        <span class="nav-txt">Налоги: проверка <br> и оплата онлайн</span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="">
-                        <span class="nav-txt">Калькулятор налога <br> с продажи квартиры</span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="">
-                        <span class="nav-txt">Калькулятор пеней <br> и штрафов</span>
+                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                        <span class="nav-txt">Проверка финансового здоровья</span>
                     </a>
                 </nav>
             </div><!-- .col -->
@@ -364,53 +408,32 @@ use app\helpers\Url;
                 </a>
             </div><!-- .col -->
             <div class="col">
-                <nav class="nav">
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('rejting-kompanij-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Рейтинг компаний по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('onlajn-konsultaciya-yurista-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Онлайн консультация юриста по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-3" href="<?= Url::toView('zakon-o-bankrotstve') ?>">
-                        <span class="nav-txt">Закон о банкротстве</span>
-                    </a>
-
-                    <!-- ROW -->
-
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('rejting-arbitrazhnyh-upravlyayushih') ?>">
-                        <span class="nav-txt">Рейтинг арбитражных управляющих в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('poleznye-materialy-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Полезные материалы по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-3" href="<?= Url::toView('uznat-svoi-dolgi') ?>">
-                        <span class="nav-txt">Узнать свои долги г.&nbsp;<?= $city->name ?></span>
-                    </a>
-
-                    <!-- ROW -->
-
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('ufssp-rossii') ?>">
-                        <span class="nav-txt">УФССП России по&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('otzyvy-lyudej-proshedshih-proceduru-bankrotstva') ?>">
-                        <span class="nav-txt">Отзывы людей прошедших процедуру банкротства в&nbsp;&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-3" href="<?= Url::toView('obratnaya-svyaz') ?>">
-                        <span class="nav-txt">Обратная связь</span>
-                    </a>
-
-                    <!-- ROW -->
-
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Новости по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('vopros-otvet-po-bankrotstvu-fizicheskih-lic') ?>">
-                        <span class="nav-txt">Вопрос-ответ по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-3" href="<?= Url::toView('o-proekte') ?>">
-                        <span class="nav-txt">О проекте</span>
-                    </a>
-                </nav>
+                <div class="row">
+                    <div class="col">
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Онлайн калькулятор по банкротству</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Калькулятор налога с продажи квартиры</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col-auto">
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Калькулятор рефинансирования</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Калькулятор перей и штрафов</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col-auto">
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Ипотечный калькулятор</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Кредитный калькулятор</span>
+                        </a>
+                    </div><!-- .col -->
+                </div><!-- .row -->
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
@@ -485,6 +508,93 @@ use app\helpers\Url;
                     <!-- ROW -->
 
                 </nav>
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .main-nav-content -->
+
+    <div class="main-nav-content" id="main-nav-content-8">
+        <div class="row">
+            <div class="col-3">
+                <a class="logo logo-sm" href="<?= Url::home() ?>">
+                    <span class="logo-txt">Полезная информация</span>
+                    <span class="logo-stxt">Вся полезная информация о финансах в одном месте</span>
+                </a>
+                <a class="btn-trsp" href="<?= Url::toView('poleznye-servisy') ?>">
+                    <span class="row no-gutters justify-content-center align-items-center">
+                        <span class="col-auto em-24 mr-2"><i class="i-like"></i></span>
+                        <span class="col-auto em-9">Полезные сервисы от<br>портала «Без кредитов»</span>
+                    </span>
+                </a>
+            </div><!-- .col -->
+            <div class="col">
+                <div class="row">
+                    <div class="col-4">
+                        <p class="fw-600">Банки</p>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Курсы валют ЦБ РФ</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Курсы обмена валют</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Рейтинги банков</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Клиентский рейтинг</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Финансовые показатели</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Отзывы о банках</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col-4">
+                        <p class="fw-600">Банкротство</p>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Курсы валют ЦБ РФ</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Курсы обмена валют</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Рейтинги банков</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Клиентский рейтинг</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Финансовые показатели</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Отзывы о банках</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col-4">
+                        <p class="fw-600">Статьи и новости</p>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Сравнения</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Бытовая аналитика</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Тест-драйвы</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Истории</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Советы</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Новости партнеров</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Funny Money</span>
+                        </a>
+                    </div><!-- .col -->
+                </div><!-- .row -->
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .main-nav-content -->

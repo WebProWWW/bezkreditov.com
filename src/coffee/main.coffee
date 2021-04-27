@@ -460,15 +460,12 @@ $('.main-mnav-ln').on 'click', (e) ->
     on
 
 
-#$('.main-mnav').addClass 'active'
-#$('body').addClass 'main-mnav-active'
-
 $('*[data-mnav-open]').on 'click', (e) ->
     e.preventDefault()
     $('.main-mnav').addClass 'active'
     $('body').addClass 'main-mnav-active'
     off
-
+# $('*[data-mnav-open]').trigger 'click'
 
 $('.main-mnav-close').on 'click', (e) ->
     $('.main-mnav').removeClass 'active'

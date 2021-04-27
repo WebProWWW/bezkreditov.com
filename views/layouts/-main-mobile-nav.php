@@ -76,46 +76,42 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 
         <a class="main-mnav-ln" data-dropdown="#main-mnav-content-2">
             <span class="nav-txt">
-                Рефинансирование
+                Карты
             </span>
             <i class="i-ch-down em-8"></i>
         </a>
         <div class="main-mnav-content" id="main-mnav-content-2">
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Рейтинг компаний по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <p class="fw-600 em-9 pl-1">Дебетовые карты</p>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Бесплатная</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'onlajn-konsultaciya-yurista-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Онлайн консультация юриста по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">С процентом на остаток</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'zakon-o-bankrotstve']) ?>">
-                <span class="nav-txt">Закон о банкротстве</span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Выгодные</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'rejting-arbitrazhnyh-upravlyayushih']) ?>">
-                <span class="nav-txt">Рейтинг арбитражных управляющих в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">С кэшбэком</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'poleznye-materialy-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Полезные материалы по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Онлайн-заявка</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">
-                <span class="nav-txt">Узнать свои долги г.&nbsp;<?= $city->name ?></span>
+            <p class="fw-600 em-9 pl-1">Кредитные карты</p>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">С кэшбэком</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'ufssp-rossii']) ?>">
-                <span class="nav-txt">УФССП России по&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">С плохой историей</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'otzyvy-lyudej-proshedshih-proceduru-bankrotstva']) ?>">
-                <span class="nav-txt">Отзывы людей прошедших процедуру банкротства в&nbsp;&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Онлайн</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'obratnaya-svyaz']) ?>">
-                <span class="nav-txt">Обратная связь</span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">С доставкой</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'novosti-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Новости по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic']) ?>">
-                <span class="nav-txt">Вопрос-ответ по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'o-proekte']) ?>">
-                <span class="nav-txt">О проекте</span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Для снятия наличных</span>
             </a>
         </div><!-- .main-mnav-content -->
 
@@ -126,41 +122,54 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <i class="i-ch-down em-8"></i>
         </a>
         <div class="main-mnav-content" id="main-mnav-content-3">
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Рейтинг компаний по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <p class="fw-600 em-9 pl-1">Потребительские кредиты</p>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Наличными</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'onlajn-konsultaciya-yurista-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Онлайн консультация юриста по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Онлайн на карта</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'zakon-o-bankrotstve']) ?>">
-                <span class="nav-txt">Закон о банкротстве</span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Без отказа</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'rejting-arbitrazhnyh-upravlyayushih']) ?>">
-                <span class="nav-txt">Рейтинг арбитражных управляющих в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">С плохой кредитной историей</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'poleznye-materialy-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Полезные материалы по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Пенсионерам</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">
-                <span class="nav-txt">Узнать свои долги г.&nbsp;<?= $city->name ?></span>
+            <p class="fw-600 em-9 pl-1">Микрозаймы</p>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">На карту</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'ufssp-rossii']) ?>">
-                <span class="nav-txt">УФССП России по&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Без отказа</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'otzyvy-lyudej-proshedshih-proceduru-bankrotstva']) ?>">
-                <span class="nav-txt">Отзывы людей прошедших процедуру банкротства в&nbsp;&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Без процентов</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'obratnaya-svyaz']) ?>">
-                <span class="nav-txt">Обратная связь</span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Срочно</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'novosti-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Новости по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">До зарплаты</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic']) ?>">
-                <span class="nav-txt">Вопрос-ответ по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <p class="fw-600 em-9 pl-1">Автокредиты</p>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">На вторе с пробегом</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'o-proekte']) ?>">
-                <span class="nav-txt">О проекте</span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">На новый автомобиль</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Выгодные</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Без первоначального взноса</span>
+            </a>
+            <p class="fw-600 em-9 pl-1">Рефинансирование</p>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">&nbsp;</span>
             </a>
         </div><!-- .main-mnav-content -->
 
@@ -171,41 +180,32 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <i class="i-ch-down em-8"></i>
         </a>
         <div class="main-mnav-content" id="main-mnav-content-4">
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Рейтинг компаний по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Без первоначального взноса</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'onlajn-konsultaciya-yurista-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Онлайн консультация юриста по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">На новостройку</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'zakon-o-bankrotstve']) ?>">
-                <span class="nav-txt">Закон о банкротстве</span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">На вторичное жилье</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'rejting-arbitrazhnyh-upravlyayushih']) ?>">
-                <span class="nav-txt">Рейтинг арбитражных управляющих в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Без подтверждения дохода</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'poleznye-materialy-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Полезные материалы по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Молодой семье</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">
-                <span class="nav-txt">Узнать свои долги г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Социальная</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'ufssp-rossii']) ?>">
-                <span class="nav-txt">УФССП России по&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">С господдержкой</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'otzyvy-lyudej-proshedshih-proceduru-bankrotstva']) ?>">
-                <span class="nav-txt">Отзывы людей прошедших процедуру банкротства в&nbsp;&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Пенсионерам</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'obratnaya-svyaz']) ?>">
-                <span class="nav-txt">Обратная связь</span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'novosti-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Новости по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic']) ?>">
-                <span class="nav-txt">Вопрос-ответ по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'o-proekte']) ?>">
-                <span class="nav-txt">О проекте</span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">По двум документам</span>
             </a>
         </div><!-- .main-mnav-content -->
 
@@ -216,41 +216,34 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <i class="i-ch-down em-8"></i>
         </a>
         <div class="main-mnav-content" id="main-mnav-content-5">
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Рейтинг компаний по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Онлайн тест на списание долгов, кредитов</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'onlajn-konsultaciya-yurista-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Онлайн консультация юриста по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Онлайн консультация по банкротству</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'zakon-o-bankrotstve']) ?>">
-                <span class="nav-txt">Закон о банкротстве</span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Онлайн тест на списание <br> долгов, кредитов</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'rejting-arbitrazhnyh-upravlyayushih']) ?>">
-                <span class="nav-txt">Рейтинг арбитражных управляющих в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <p class="fw-600 em-9 pl-1">Банкротство</p>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Онлайн подбор юриста по банкротству</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'poleznye-materialy-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Полезные материалы по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Онлайн калькулятор по банкротству</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">
-                <span class="nav-txt">Узнать свои долги г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Проверка долгов онлайн</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'ufssp-rossii']) ?>">
-                <span class="nav-txt">УФССП России по&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <p class="fw-600 em-9 pl-1">Кредиты и финансы</p>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Полная кредитная история</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'otzyvy-lyudej-proshedshih-proceduru-bankrotstva']) ?>">
-                <span class="nav-txt">Отзывы людей прошедших процедуру банкротства в&nbsp;&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Защита от мощенников</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'obratnaya-svyaz']) ?>">
-                <span class="nav-txt">Обратная связь</span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'novosti-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Новости по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic']) ?>">
-                <span class="nav-txt">Вопрос-ответ по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'o-proekte']) ?>">
-                <span class="nav-txt">О проекте</span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Проверка финансового здоровья</span>
             </a>
         </div><!-- .main-mnav-content -->
 
@@ -261,41 +254,23 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <i class="i-ch-down em-8"></i>
         </a>
         <div class="main-mnav-content" id="main-mnav-content-6">
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'rejting-kompanij-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Рейтинг компаний по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Онлайн калькулятор по банкротству</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'onlajn-konsultaciya-yurista-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Онлайн консультация юриста по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Калькулятор налога с продажи квартиры</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'zakon-o-bankrotstve']) ?>">
-                <span class="nav-txt">Закон о банкротстве</span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Калькулятор рефинансирования</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'rejting-arbitrazhnyh-upravlyayushih']) ?>">
-                <span class="nav-txt">Рейтинг арбитражных управляющих в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Калькулятор перей и штрафов</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'poleznye-materialy-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Полезные материалы по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Ипотечный калькулятор</span>
             </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">
-                <span class="nav-txt">Узнать свои долги г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'ufssp-rossii']) ?>">
-                <span class="nav-txt">УФССП России по&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'otzyvy-lyudej-proshedshih-proceduru-bankrotstva']) ?>">
-                <span class="nav-txt">Отзывы людей прошедших процедуру банкротства в&nbsp;&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'obratnaya-svyaz']) ?>">
-                <span class="nav-txt">Обратная связь</span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'novosti-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Новости по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic']) ?>">
-                <span class="nav-txt">Вопрос-ответ по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::to(['site/index', 'view' => 'o-proekte']) ?>">
-                <span class="nav-txt">О проекте</span>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Кредитный калькулятор</span>
             </a>
         </div><!-- .main-mnav-content -->
 
@@ -349,6 +324,81 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
                 <span class="nav-txt">Лайфхаки</span>
             </a>
         </div><!-- .main-mnav-content -->
+
+        <a class="main-mnav-ln" data-dropdown="#main-mnav-content-8">
+            <span class="nav-txt">
+                Еще
+            </span>
+            <i class="i-ch-down em-8"></i>
+        </a>
+        <div class="main-mnav-content" id="main-mnav-content-8">
+            <p class="fw-600 em-9 pl-1">Банки</p>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Курсы валют ЦБ РФ</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Курсы обмена валют</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Рейтинги банков</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Клиентский рейтинг</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Финансовые показатели</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Отзывы о банках</span>
+            </a>
+            <p class="fw-600 em-9 pl-1">Банкротство</p>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Курсы валют ЦБ РФ</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Курсы обмена валют</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Рейтинги банков</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Клиентский рейтинг</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Финансовые показатели</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Отзывы о банках</span>
+            </a>
+            <p class="fw-600 em-9 pl-1">Статьи и новости</p>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Сравнения</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Бытовая аналитика</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Тест-драйвы</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Истории</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Советы</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Новости партнеров</span>
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt">Funny Money</span>
+            </a>
+        </div><!-- .main-mnav-content -->
+
+        <a class="main-mnav-ln" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
+            <span class="nav-txt">
+                Новости
+            </span>
+        </a>
 
         <a class="main-mnav-ln" href="<?= Url::toView('o-proekte') ?>">
             <span class="nav-txt">
