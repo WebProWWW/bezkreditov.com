@@ -938,6 +938,25 @@ body.main-mnav-active
 
 
 
+.ul-circle
+    mpd(0 0 10px, 0 0 1px)
+    > li
+        mpd(0, 0 0 0 1.2em)
+        list-style none
+    > li:before
+        mpd(.4em 0 0 -1.2em)
+        content ''
+        width .7em
+        height @width
+        border-radius 50%
+        background pcolor
+        float left
+    > li:after
+        mpd()
+        content ''
+        height 1px
+        clear both
+
 
 .list
     mpd(0 0 15px)
@@ -1105,6 +1124,20 @@ body.main-mnav-active
     // .component-fade-leave-active до версии 2.1.8
     opacity 0
 
+.progress
+    mpd(0 0 15px)
+    position relative
+    background #EEF2F8
+    height 3px
+
+.progress-line
+    mpd()
+    trans()
+    position absolute
+    height 3px
+    left 0
+    bottom 0
+    background pcolor
 
 
 .news-img
@@ -1277,6 +1310,17 @@ body.main-mnav-active
     font-weight 600
 
 
+.circle-i
+    mpd(0 0 15px, 0, flex)
+    align-items center
+    justify-content center
+    width 2em
+    height @width
+    border-radius 50%
+    background pcolor
+    font-weight 600
+
+
 .blockquote-right
     border-right .3em solid pcolor
     padding-right 15px
@@ -1313,6 +1357,49 @@ body.main-mnav-active
 for child in (1..10)
     .circle-list:nth-child({child}):before
         content ('' + child)
+
+
+
+.sale-gray
+.sale-primary
+    mpd(0 0 0 .8em, .5em .5em .5em 0, inline-block)
+    position relative
+    background #DADFE5
+    height 2em
+    line-height 1
+    text-align center
+
+.sale-gray:before
+    arrowToLeft(.8em, 2em, #DADFE5)
+    content ''
+    display block
+    position absolute
+    margin-top -.5em
+    margin-left -.8em
+
+.sale-primary
+    background pcolor
+
+.sale-primary:before
+    arrowToLeft(.8em, 2em, pcolor)
+    content ''
+    display block
+    position absolute
+    margin-top -.5em
+    margin-left -.8em
+
+
+.pointer
+    cursor pointer
+    user-select none
+
+
+
+.i-down-trans > .i-down
+    trans()
+
+.i-down-trans.active > .i-down
+    transform rotate(180deg)
 
 
 for w in (1..10)

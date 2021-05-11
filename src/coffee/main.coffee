@@ -141,11 +141,15 @@ class SelectSearch
 $('.js-select-search').each (i, el) ->
     new SelectSearch el
 
+
 $('*[data-toggle]').on 'click', (e) ->
     e.preventDefault()
     $this = $ this
+    $this.toggleClass 'active'
     $targetBlock = $ "#{$this.attr('data-toggle')}"
-    $targetBlock.slideToggle()
+    $targetBlock.stop().slideToggle 300, () ->
+        # $this.addClass 'active' if $(this).is ':visible'
+        on
     off
 
 
