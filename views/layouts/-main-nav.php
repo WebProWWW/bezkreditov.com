@@ -365,7 +365,7 @@ use app\helpers\Url;
                     <a class="nav-ln nav-list col-4" href="javascript:;">
                         <span class="nav-txt">Онлайн тест на списание долгов, кредитов</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('polnaya-kreditnaya-istoriya') ?>">
                         <span class="nav-txt">Полная кредитная история</span>
                     </a>
 

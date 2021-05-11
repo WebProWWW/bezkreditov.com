@@ -2,11 +2,9 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Узнайте свою полную кредитную историю';
+$this->title = 'Полная кредитная история';
 $this->params['description'] = 'Узнайте свою полную кредитную историю';
-$this->params['breadcrumbs'] = [
-    'Узнайте свою полную кредитную историю',
-];
+$this->params['breadcrumbs'] = ['Полная кредитная история'];
 
 ?>
 
@@ -37,13 +35,13 @@ $this->params['breadcrumbs'] = [
                                 <p class="em-12">Старая цена 1200 ₽</p>
                             </div><!-- .col -->
                             <div class="col-auto">
-                                <a class="btn-default" href="javascript:;">Получить отчет</a>
+                                <a class="btn-default js-hash-nav" href="#poluchite-polnuyu-kreditnuyu-istoriyu">Получить отчет</a>
                             </div><!-- .col -->
                         </div>
                     </div><!-- .cart-body -->
                     <div class="cart-footer">
                         <p class="center">
-                            <a href="javascript:;">
+                            <a target="_blank" href="/download/primer-polnoj-kreditnoj-sitorii.pdf">
                                 <i class="i-download"></i>
                                 Скачать пример отчета
                             </a>
@@ -87,7 +85,7 @@ $this->params['breadcrumbs'] = [
     <div class="container">
         <h2 class="h1 center">Из чего состоит кредитная история</h2>
         <p class="center">
-            <a href="javascript:;">Скачать пример полной кредитной истории</a>
+            <a target="_blank" href="/download/primer-polnoj-kreditnoj-sitorii.pdf">Скачать пример полной кредитной истории</a>
         </p>
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 col-lg-4 mb-4">
@@ -155,7 +153,7 @@ $this->params['breadcrumbs'] = [
                         <p>Иногда банки забывают вовремя передавать сведения о закрытых кредитах и просрочках в бюро кредитных историй. Из-за таких ошибок вы можете получать отказы.</p>
                         <div class="row">
                             <div class="col-auto">
-                                <p><a class="btn-default" href="javascript:;">Получить отчет</a></p>
+                                <p><a class="btn-default js-hash-nav" href="#poluchite-polnuyu-kreditnuyu-istoriyu">Получить отчет</a></p>
                             </div><!-- .col -->
                         </div><!-- .row -->
                     </div><!-- .col -->
@@ -235,7 +233,7 @@ $this->params['breadcrumbs'] = [
     </div><!-- .container -->
 </section><!-- .section -->
 
-<section class="section bg">
+<section class="section bg" id="poluchite-polnuyu-kreditnuyu-istoriyu">
     <div class="container">
         <h2 class="h1 center">Получите полную кредитную историю прямо сейчас</h2>
         <div class="cart mb-4">
@@ -318,12 +316,8 @@ $this->params['breadcrumbs'] = [
                 <i class="i-down ml-auto"></i>
             </p>
             <div class="px-4" style="display: none;" id="faq-content-1">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Если вы получали кредит в разных организациях, есть вероятность, что кредитная история хранится в нескольких бюро. Количество обращений в каждое из таких БКИ лимитировано — не более 2 раз в год.</p>
+                <p>С помощью нашего сервиса можно запрашивать отчет о вашей кредитной активности сколько угодно раз. Вся необходимая информация собирается в крупнейшем российском бюро кредитных историй — НБКИ.</p>
             </div>
             <div class="divider-dark"></div>
             <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-2">
@@ -331,12 +325,7 @@ $this->params['breadcrumbs'] = [
                 <i class="i-down ml-auto"></i>
             </p>
             <div class="px-4" style="display: none;" id="faq-content-2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Для того, чтобы заказать отчет, достаточно указать паспортные данные и номер мобильного телефона.</p>
             </div>
             <div class="divider-dark"></div>
             <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-3">
@@ -344,12 +333,8 @@ $this->params['breadcrumbs'] = [
                 <i class="i-down ml-auto"></i>
             </p>
             <div class="px-4" style="display: none;" id="faq-content-3">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Если вы хотите узнать свой кредитный рейтинг, прежде всего надо понимать, что только ФИО будет недостаточно для подтверждения личности. Понадобятся паспортные реквизиты и другие данные, в зависимости от того, где вы заказываете свое кредитное досье.</p>
+                <p>Помимо нашего сервиса, самые распространенные способы получения отчета — через портал Госуслуг или сайт Центробанка. В первом случае понадобится паспорт и СНИЛС, во втором — код субъекта кредитной истории. Обратите внимание, что такие варианты требуют большего времени и увеличивают количество необходимых шагов. Эти платформы лишь предоставят вам список бюро, где хранится ваша кредитная история, для более подробной информации придется обращаться в каждое из них отдельно.</p>
             </div>
             <div class="divider-dark"></div>
             <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-4">
@@ -357,12 +342,7 @@ $this->params['breadcrumbs'] = [
                 <i class="i-down ml-auto"></i>
             </p>
             <div class="px-4" style="display: none;" id="faq-content-4">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Продолжительность хранения кредитной истории в БКИ — 10 лет с последней даты внесения в нее информации. Но банкам наиболее важны последние 2–3 года вашей активности в роли заемщика.</p>
             </div>
             <div class="divider-dark"></div>
             <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-5">
@@ -370,12 +350,15 @@ $this->params['breadcrumbs'] = [
                 <i class="i-down ml-auto"></i>
             </p>
             <div class="px-4" style="display: none;" id="faq-content-5">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>К основополагающим факторам, которые сказываются на кредитном рейтинге заемщика, относятся:</p>
+                <ul>
+                    <li>просрочки по кредитам;</li>
+                    <li>текущая долговая нагрузка;</li>
+                    <li>продолжительность КИ;</li>
+                    <li>количество запросов кредитной истории;</li>
+                    <li>отсутствие опыта в исполнении финансовых обязательств;</li>
+                    <li>уровень дохода, трудовой стаж, информация о работодателях.</li>
+                </ul>
             </div>
         </div><!-- .cart -->
     </div><!-- .container -->

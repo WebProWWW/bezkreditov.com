@@ -236,7 +236,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
                 <span class="nav-txt">Проверка долгов онлайн</span>
             </a>
             <p class="fw-600 em-9 pl-1">Кредиты и финансы</p>
-            <a class="nav-ln" href="javascript:;">
+            <a class="nav-ln" href="<?= Url::toView('polnaya-kreditnaya-istoriya') ?>">
                 <span class="nav-txt">Полная кредитная история</span>
             </a>
             <a class="nav-ln" href="javascript:;">

@@ -157,7 +157,7 @@ hashScroll = (e) ->
     e.preventDefault()
     $this = $ this
     offsetTop = $("#{$this.attr('href')}").offset().top
-    $('html:not(:animated),body:not(:animated)').animate scrollTop: offsetTop
+    $('html:not(:animated),body:not(:animated)').stop().animate scrollTop: offsetTop
     off
 
 hHashNav = (index, $headers) ->
