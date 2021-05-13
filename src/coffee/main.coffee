@@ -469,6 +469,7 @@ $('*[data-mnav-open]').on 'click', (e) ->
     $('.main-mnav').addClass 'active'
     $('body').addClass 'main-mnav-active'
     off
+
 # $('*[data-mnav-open]').trigger 'click'
 
 $('.main-mnav-close').on 'click', (e) ->

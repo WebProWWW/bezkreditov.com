@@ -64,6 +64,30 @@ label
     cursor pointer
 
 
+table
+    margin 0 0 15px
+
+table tr
+    border-bottom 1px solid #E9EBEC
+
+table tr:last-child
+    border-bottom none
+
+table td
+table th
+    padding 5px 10px
+    border-right 1px solid #E9EBEC
+
+table td:last-child
+table th:last-child
+    border-right none
+    padding-right 0
+
+table td:first-child
+table th:first-child
+    padding-left 0
+
+
 .full-height
     mpd(0, 0, flex)
     flex-direction column
@@ -955,7 +979,7 @@ body.main-mnav-active
     > li:before
         mpd(.4em 0 0 -1.2em)
         content ''
-        width .7em
+        width .6em
         height @width
         border-radius 50%
         background pcolor
@@ -969,6 +993,11 @@ body.main-mnav-active
 
 .list
     mpd(0 0 15px)
+
+
+.list-header
+    display none
+
 
 .list-item
     mpd(0 -15px, 15px 0 0, flex)

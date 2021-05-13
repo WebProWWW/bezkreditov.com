@@ -154,38 +154,42 @@ use app\helpers\Url;
             <div class="col">
                 <div class="row">
                     <div class="col-4">
-                        <p class="fw-600">Дебетовые карты</p>
-                        <a class="nav-ln nav-list" href="javascript:;">
-                            <span class="nav-txt">Бесплатная</span>
+                        <a class="nav-ln fw-600" href="<?= Url::toView('debetovye-karty') ?>">
+                            <span class="nav-txt">Дебетовые карты</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('debetovye-karty-besplatnye') ?>">
+                            <span class="nav-txt">Бесплатные</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('debetovye-karty-s-procentom-na-ostatok') ?>">
                             <span class="nav-txt">С процентом на остаток</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('debetovye-karty-vygodnye') ?>">
                             <span class="nav-txt">Выгодные</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('debetovye-karty-s-keshbekom') ?>">
                             <span class="nav-txt">С кэшбэком</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('debetovye-karty-onlajn-zayavka') ?>">
                             <span class="nav-txt">Онлайн-заявка</span>
                         </a>
                     </div><!-- .col -->
                     <div class="col-4">
-                        <p class="fw-600">Кредитные карты</p>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln fw-600" href="<?= Url::toView('kreditnye-karty') ?>">
+                            <span class="nav-txt">Кредитные карты</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('kreditnye-karty-s-keshbekom') ?>">
                             <span class="nav-txt">С кэшбэком</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('kreditnye-karty-s-plohoj-istoriej') ?>">
                             <span class="nav-txt">С плохой историей</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('kreditnye-karty') ?>">
                             <span class="nav-txt">Онлайн</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('kreditnye-karty-s-dostavkoj') ?>">
                             <span class="nav-txt">С доставкой</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('kreditnye-karty-dlya-snyatiya-nalichnyh') ?>">
                             <span class="nav-txt">Для снятия наличных</span>
                         </a>
                     </div><!-- .col -->

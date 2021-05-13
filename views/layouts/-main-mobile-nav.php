@@ -81,36 +81,40 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <i class="i-ch-down em-8"></i>
         </a>
         <div class="main-mnav-content" id="main-mnav-content-2">
-            <p class="fw-600 em-9 pl-1">Дебетовые карты</p>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Бесплатная</span>
+            <a class="nav-ln fw-600" href="<?= Url::toView('debetovye-karty') ?>">
+                <span class="nav-txt">Дебетовые карты</span>
             </a>
-            <a class="nav-ln" href="javascript:;">
+            <a class="nav-ln" href="<?= Url::toView('debetovye-karty-besplatnye') ?>">
+                <span class="nav-txt">Бесплатные</span>
+            </a>
+            <a class="nav-ln" href="<?= Url::toView('debetovye-karty-s-procentom-na-ostatok') ?>">
                 <span class="nav-txt">С процентом на остаток</span>
             </a>
-            <a class="nav-ln" href="javascript:;">
+            <a class="nav-ln" href="<?= Url::toView('debetovye-karty-vygodnye') ?>">
                 <span class="nav-txt">Выгодные</span>
             </a>
-            <a class="nav-ln" href="javascript:;">
+            <a class="nav-ln" href="<?= Url::toView('debetovye-karty-s-keshbekom') ?>">
                 <span class="nav-txt">С кэшбэком</span>
             </a>
-            <a class="nav-ln" href="javascript:;">
+            <a class="nav-ln" href="<?= Url::toView('debetovye-karty-onlajn-zayavka') ?>">
                 <span class="nav-txt">Онлайн-заявка</span>
             </a>
-            <p class="fw-600 em-9 pl-1">Кредитные карты</p>
-            <a class="nav-ln" href="javascript:;">
+            <a class="nav-ln fw-600" href="<?= Url::toView('kreditnye-karty') ?>">
+                <span class="nav-txt">Кредитные карты</span>
+            </a>
+            <a class="nav-ln" href="<?= Url::toView('kreditnye-karty-s-keshbekom') ?>">
                 <span class="nav-txt">С кэшбэком</span>
             </a>
-            <a class="nav-ln" href="javascript:;">
+            <a class="nav-ln" href="<?= Url::toView('kreditnye-karty-s-plohoj-istoriej') ?>">
                 <span class="nav-txt">С плохой историей</span>
             </a>
-            <a class="nav-ln" href="javascript:;">
+            <a class="nav-ln" href="<?= Url::toView('kreditnye-karty') ?>">
                 <span class="nav-txt">Онлайн</span>
             </a>
-            <a class="nav-ln" href="javascript:;">
+            <a class="nav-ln" href="<?= Url::toView('kreditnye-karty-s-dostavkoj') ?>">
                 <span class="nav-txt">С доставкой</span>
             </a>
-            <a class="nav-ln" href="javascript:;">
+            <a class="nav-ln" href="<?= Url::toView('kreditnye-karty-dlya-snyatiya-nalichnyh') ?>">
                 <span class="nav-txt">Для снятия наличных</span>
             </a>
         </div><!-- .main-mnav-content -->

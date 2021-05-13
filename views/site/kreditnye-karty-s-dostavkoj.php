@@ -2,9 +2,15 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Кредитные карты';
+$this->title = 'Кредитные карты с доставкой';
 $this->params['description'] = 'Кредитные карты от банков России с процентной ставкой от 0% - на Без кредитов можно оформить кредитную карту онлайн, сравнив предложения от популярных банков России. Изучите условия по процентным ставкам, льготному периоду, стоимости обслуживания. Онлайн-заявка на кредитную карту в два клика!';
-$this->params['breadcrumbs'] = ['Кредитные карты'];
+$this->params['breadcrumbs'] = [
+    [
+        'url' => ['site/index', 'view' => 'kreditnye-karty'],
+        'label' => 'Кредитные карты',
+    ],
+    'С доставкой'
+];
 
 ?>
 
@@ -12,16 +18,12 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md-6">
-                <h1>Кредитные карты</h1>
+                <h1>Кредитные карты с доставкой</h1>
                 <p class="em-11">
-                    Кредитные карты от банков России с процентной ставкой от&nbsp;0%&nbsp;-&nbsp;на 
-                    &laquo;Без&nbsp;кредитов&raquo; можно оформить кредитную карту онлайн, сравнив 
-                    предложения от популярных банков России. Изучите условия по 
-                    процентным ставкам, льготному периоду, стоимости обслуживания. 
-                    Онлайн-заявка на кредитную карту в два клика!
+                    Оформляйте кредитную карту с доставкой на дом без посещения банка на &laquo;Без&nbsp;кредитов&raquo;. Оставляйте онлайн заявку на кредитную карту с бесплатной доставкой на дом и ставкой от 0%.
                 </p>
                 <p class="em-11">
-                    На 06.05.2021 количество предложений - 89.
+                    На 13.05.2021 количество предложений - 105.
                 </p>
             </div><!-- .col -->
             <div class="col-12 col-md-6">
@@ -60,12 +62,33 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                 <button class="btn-default">Показать</button>
             </div><!-- .col -->
         </div><!-- .row -->
+        <div class="row no-gutters" style="margin: 0 -8px">
+            <div class="col-auto" style="margin: 0 8px">
+                <a class="btn-trsp btn-sm px-2" style="font-size: .75em" href="javascript:;">100 ДНЕЙ БЕЗ ПРОЦЕНТОВ</a>
+            </div>
+            <div class="col-auto" style="margin: 0 8px">
+                <a class="btn-trsp btn-sm px-2" style="font-size: .75em" href="javascript:;">ПО ПОЧТЕ</a>
+            </div>
+            <div class="col-auto" style="margin: 0 8px">
+                <a class="btn-trsp btn-sm px-2" style="font-size: .75em" href="javascript:;">С ЛЬГОТНЫМ ПЕРИОДОМ</a>
+            </div>
+            <div class="col-auto" style="margin: 0 8px">
+                <a class="btn-trsp btn-sm px-2" style="font-size: .75em" href="javascript:;">МОМЕНТАЛЬНЫЕ</a>
+            </div>
+            <div class="col-auto" style="margin: 0 8px">
+                <a class="btn-trsp btn-sm px-2" style="font-size: .75em" href="javascript:;">КАРТА РАССРОЧКИ</a>
+            </div>
+            <div class="col-auto" style="margin: 0 8px">
+                <a class="btn-trsp btn-sm px-2" style="font-size: .75em" href="javascript:;">БЕСПЛАТНЫЕ</a>
+            </div>
+        </div><!-- .row -->
     </div><!-- .container -->
 </section><!-- .section -->
 
+
 <section class="section bg">
     <div class="container">
-        <h2 class="h1">Рекомендуем лучшие кредитные карты банков</h2>
+        <h2 class="h1">Рекомендуем оформить кредитную карту с бесплатной доставкой на дом</h2>
         <div class="cart mb-4">
             <div class="cart-body">
                 <div class="row">
@@ -98,32 +121,24 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                     </div><!-- .col -->
                 </div><!-- .row -->
                 <div class="row justify-content-between">
-                    <div class="col-12 col-lg-auto">
+                    <div class="col-12 col-md-auto">
                         <p class="">
                             <a href="javascript:;">
                                 Подробнее <i class="i-down"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-8 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             Одобряют 45% заявок
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             <a href="javascript:;">Моя вероятность</a>
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-8 col-lg-auto">
-                        <p class="">
-                            <a href="javascript:;">
-                                <i class=" i-char"></i> 1952 кредита(ов)
-                            </a>
-                            - выдано сегодня
-                        </p>
-                    </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             <a href="javascript:;">
                                 <i class="i-add em-11"></i> Сравнить
@@ -166,32 +181,24 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                     </div><!-- .col -->
                 </div><!-- .row -->
                 <div class="row justify-content-between">
-                    <div class="col-12 col-lg-auto">
+                    <div class="col-12 col-md-auto">
                         <p class="">
                             <a href="javascript:;">
                                 Подробнее <i class="i-down"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-8 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             Одобряют 60% заявок
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             <a href="javascript:;">Моя вероятность</a>
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-8 col-lg-auto">
-                        <p class="">
-                            <a href="javascript:;">
-                                <i class=" i-char"></i> 252 кредита(ов)
-                            </a>
-                            - выдано сегодня
-                        </p>
-                    </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             <a href="javascript:;">
                                 <i class="i-add em-11"></i> Сравнить
@@ -234,32 +241,24 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                     </div><!-- .col -->
                 </div><!-- .row -->
                 <div class="row justify-content-between">
-                    <div class="col-12 col-lg-auto">
+                    <div class="col-12 col-md-auto">
                         <p class="">
                             <a href="javascript:;">
                                 Подробнее <i class="i-down"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-8 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             Одобряют 43% заявок
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             <a href="javascript:;">Моя вероятность</a>
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-8 col-lg-auto">
-                        <p class="">
-                            <a href="javascript:;">
-                                <i class=" i-char"></i> 252 кредита(ов)
-                            </a>
-                            - выдано сегодня
-                        </p>
-                    </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             <a href="javascript:;">
                                 <i class="i-add em-11"></i> Сравнить
@@ -274,8 +273,8 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
 
 <section class="section bg">
     <div class="container">
-        <h2 class="h1">Подобрать кредитную карту</h2>
-        <p>Показано 89 кредитных карт из 89 доступных</p>
+        <h2 class="h1">Подобрать кредитную карту с доставкой курьером</h2>
+        <p>Показано 105 кредитных карт из 105 доступных</p>
         <div class="cart mb-4">
             <div class="cart-body">
                 <div class="row">
@@ -308,32 +307,24 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                     </div><!-- .col -->
                 </div><!-- .row -->
                 <div class="row justify-content-between">
-                    <div class="col-12 col-lg-auto">
+                    <div class="col-12 col-md-auto">
                         <p class="">
                             <a href="javascript:;">
                                 Подробнее <i class="i-down"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-8 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             Одобряют 37% заявок
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             <a href="javascript:;">Моя вероятность</a>
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-8 col-lg-auto">
-                        <p class="">
-                            <a href="javascript:;">
-                                <i class=" i-char"></i> 1952 кредита(ов)
-                            </a>
-                            - выдано сегодня
-                        </p>
-                    </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             <a href="javascript:;">
                                 <i class="i-add em-11"></i> Сравнить
@@ -376,32 +367,24 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                     </div><!-- .col -->
                 </div><!-- .row -->
                 <div class="row justify-content-between">
-                    <div class="col-12 col-lg-auto">
+                    <div class="col-12 col-md-auto">
                         <p class="">
                             <a href="javascript:;">
                                 Подробнее <i class="i-down"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-8 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             Одобряют 60% заявок
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             <a href="javascript:;">Моя вероятность</a>
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-8 col-lg-auto">
-                        <p class="">
-                            <a href="javascript:;">
-                                <i class=" i-char"></i> 252 кредита(ов)
-                            </a>
-                            - выдано сегодня
-                        </p>
-                    </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             <a href="javascript:;">
                                 <i class="i-add em-11"></i> Сравнить
@@ -444,32 +427,24 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                     </div><!-- .col -->
                 </div><!-- .row -->
                 <div class="row justify-content-between">
-                    <div class="col-12 col-lg-auto">
+                    <div class="col-12 col-md-auto">
                         <p class="">
                             <a href="javascript:;">
                                 Подробнее <i class="i-down"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-8 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             Одобряют 43% заявок
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             <a href="javascript:;">Моя вероятность</a>
                         </p>
                     </div><!-- .col -->
-                    <div class="col-12 col-sm-8 col-lg-auto">
-                        <p class="">
-                            <a href="javascript:;">
-                                <i class=" i-char"></i> 252 кредита(ов)
-                            </a>
-                            - выдано сегодня
-                        </p>
-                    </div><!-- .col -->
-                    <div class="col-12 col-sm-4 col-lg-auto">
+                    <div class="col-12 col-sm-auto">
                         <p class="">
                             <a href="javascript:;">
                                 <i class="i-add em-11"></i> Сравнить
@@ -635,119 +610,79 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
     <div class="container">
         <div class="cart mb-4 p-lg-3">
             <div class="cart-body">
-                <h2 class="h1">Кредитные карты: памятка клиента</h2>
-                <p>Банковские кредитные карты - это выгодный и удобный продукт, который при грамотном подходе позволяют решить финансовые проблемы.</p>
-                <p>Особенность кредитных карт в том, что банки предоставляют своим клиентам льготный период, в течение которого не нужно будет уплачивать проценты.  Кроме того, деньги, которые предоставляются банком, не требуют целевого использования, а значит их можно использовать на свое усмотрение.</p>
-                <h3 class="h1">Плюсы и минусы</h3>
-                <p>К преимуществам кредитных карт можно отнести то, что:</p>
+                <h2 class="h1">Кредитные карты с доставкой на дом</h2>
+                <p>Заказать кредитную карту быстро с доставкой на дом можно при лимите по счёту до 150 тысяч рублей. При этом экспресс-оформление онлайн не займёт много времени, нужная сумма появится через короткий промежуток времени. Доставка карт осуществляется банками бесплатно для удобства клиентов. В статье можно узнать условия получения, и какие документы понадобятся для оформления займа.</p>
+                <h3 class="h1">Как получить кредитную карту с курьерской доставкой</h3>
+                <p>Для получения кредитной карты с доставкой и без посещения банка, нужно оформить заявку через сайт Юником24. Перед оформлением нужно внимательно прочитать информацию и выбрать для себя карту удовлетворяющую условиям. Немаловажным для принятия решения будет анализ условий пользования и погашения займа. Лимиты денежных средств и беспроцентные сроки пользования деньгами банки разрабатывают индивидуально, и они могут отличаться. Кроме этого нужно обратить внимание на кешбэк, предлагаемый банком.</p>
+                <h3 class="h1">Документы на кредитную карту с доставкой</h3>
+                <p>Рассмотрение о кредите основывается на предоставленных документах. Для одобрения важны разные аспекты: возраст, кредитная история, получаемый доход, место и стаж работы, наличие детей, профессия и многое другое.</p>
+                <p>Для анализа всех этих данных требуются документы:</p>
                 <ul class="ul-circle">
-                    <li>банки могут принять заявку на оформление кредитки онлайн;</li>
-                    <li>владельцы карт могут рассчитывать на скидки и бонусы от компаний-партнеров;</li>
-                    <li>льготный период позволяет пользоваться деньгами без уплаты процентов;</li>
-                    <li>решение о выдаче карты принимается онлайн;</li>
-                    <li>лимит на карте обновляется.</li>
+                    <li>Паспорт гражданина.</li>
+                    <li>Справка о доходах: 2-НДФЛ или по форме банка.</li>
+                    <li>ИНН или СНИЛС.</li>
                 </ul>
-                <p>К минусам можно отнести:</p>
+                <p>При оформлении карты с доставкой курьером через интернет следует учитывать ограничение по сумме кредитного лимита и наличие более высокой ставки, ввиду рискованности принятия решения. После одобрения кредита можно получить карту с доставкой на дом или в указанное место, в зависимости от условий банка.</p>
+                <h3 class="h1">Условия получение кредитной карты</h3>
+                <p>Кредитная карта выдаётся при соблюдении условий банка:</p>
                 <ul class="ul-circle">
-                    <li>снятие наличных средств без процентов не предусмотрено;</li>
-                    <li>нельзя получить большой лимит по карте без подтверждения доходов.</li>
+                    <li>Возраст - не ниже 18 лет.</li>
+                    <li>Гражданство РФ.</li>
+                    <li>Официальное трудоустройство.</li>
                 </ul>
-                <h3 class="h1">Как оформить кредитную карту онлайн?</h3>
-                <p>На портале “Без кредитов” представлен список проверенных банков выдачи кредитных карт, которые предлагают выбрать и оформить заявку на кредитную карту на выгодных условиях. На данный момент доступно 89 предложений.</p>
-                <p>Чтобы получить кредитную карту, достаточно ознакомиться с предложениями банков на этой странице и заполнить анкету, кликнув на кнопку "Оформить". В анкете необходимо будет подтвердить выбранные условия и заполнить паспортные данные. Если вы подходите под минимальные требования банка, то вам одобрят кредитную карту с максимальным лимитом.</p>
-                <p>Когда карта будет готова, вам придет уведомление через СМС и на электронную почту.</p>
+                <p>Эти условия являются обязательными для предоставления кредита. При рассмотрении заявки для положительного результата необходимо предоставление максимального количества данных. Банки, оценивая платежеспособность, учитывают все данные, предоставленные клиентами и полученные самостоятельно.</p>
+                <h3 class="h1">Погашение долга по карте</h3>
+                <p>Погашение кредита по карте зависит от требований банка, выдавшего карту. Процент за использование средств начинает начисляться со второго дня после оформления карточки. В зависимости от условий банка он может различаться и находиться в пределах до 24% в год.</p>
+                <p>Некоторые банки не берут проценты за использование кредитных средств, но при этом процент за снятие наличных средств или оплата покупок облагается дополнительным налогом. При внесении минимального платежа, который клиент обязательно вносит на счёт для подтверждения платежеспособности, взимается небольшая плата, которая зависит от условий банка.</p>
+                <p>Кроме этого, у каждого банка есть свои условия беспроцентного периода, при котором оплата за пользование картой не взимается.</p>
             </div><!-- .cart-body -->
         </div><!-- .cart -->
     </div><!-- .container -->
 </section><!-- .section -->
+
 
 <section class="section bg">
     <div class="container">
         <div class="cart mb-4 p-lg-3">
             <div class="cart-body">
                 <h2 class="h1">Популярные предложения</h2>
-                <h3>Условия кредитных карт</h3>
+                <h3>По условиям кредитования</h3>
                 <div class="row">
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">По почте</a>
+                        <a href="javascript:;">Без посещения банка</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">С льготным периодом</a>
+                        <a href="javascript:;">Экспресс-кредит</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">Моментальные</a>
+                        <a href="javascript:;">Без отказа</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">Карта рассрочки</a>
+                        <a href="javascript:;">Без справки о доходах</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">Бесплатные</a>
-                    </div><!-- .col -->
-                    <div class="col-auto mb-3">
-                        <a href="javascript:;">100 дней без процентов</a>
+                        <a href="javascript:;">Под залог недвижимости</a>
                     </div><!-- .col -->
                 </div><!-- .row -->
-                <h3>Для категории клиентов</h3>
+                <h3>Займы без отказа</h3>
                 <div class="row">
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">Без трудоустройства</a>
+                        <a href="javascript:;">Без прописки</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">Молодежные</a>
+                        <a href="javascript:;">Без звонков</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">С 18 лет</a>
+                        <a href="javascript:;">Круглосуточно</a>
                     </div><!-- .col -->
-                    <div class="col-auto mb-3">
-                        <a href="javascript:;">Безработным</a>
-                    </div><!-- .col -->
-                    <div class="col-auto mb-3">
-                        <a href="javascript:;">Пенсионерам</a>
-                    </div><!-- .col -->
-                    <div class="col-auto mb-3">
-                        <a href="javascript:;">Студентам</a>
-                    </div><!-- .col -->
-                </div><!-- .row -->
-                <h3>По типу</h3>
-                <div class="row">
                     <div class="col-auto mb-3">
                         <a href="javascript:;">С плохой кредитной историей</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">Мастеркард</a>
+                        <a href="javascript:;">Без фото паспорта</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">Виртуальная карта</a>
-                    </div><!-- .col -->
-                    <div class="col-auto mb-3">
-                        <a href="javascript:;">Для снятия наличных</a>
-                    </div><!-- .col -->
-                    <div class="col-auto mb-3">
-                        <a href="javascript:;">С кэшбеком</a>
-                    </div><!-- .col -->
-                    <div class="col-auto mb-3">
-                        <a href="javascript:;">Срочные</a>
-                    </div><!-- .col -->
-                </div><!-- .row -->
-                <h3>Лучшие условия</h3>
-                <div class="row">
-                    <div class="col-auto mb-3">
-                        <a href="javascript:;">По почте</a>
-                    </div><!-- .col -->
-                    <div class="col-auto mb-3">
-                        <a href="javascript:;">С льготным периодом</a>
-                    </div><!-- .col -->
-                    <div class="col-auto mb-3">
-                        <a href="javascript:;">Моментальные</a>
-                    </div><!-- .col -->
-                    <div class="col-auto mb-3">
-                        <a href="javascript:;">Карта рассрочки</a>
-                    </div><!-- .col -->
-                    <div class="col-auto mb-3">
-                        <a href="javascript:;">Бесплатные</a>
-                    </div><!-- .col -->
-                    <div class="col-auto mb-3">
-                        <a href="javascript:;">100 дней без процентов</a>
+                        <a href="javascript:;">До зарплаты</a>
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div><!-- .cart-body -->
