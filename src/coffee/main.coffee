@@ -507,3 +507,36 @@ $('.js-arbitration-filter-tab').on 'click', (e) ->
 $('.js-arbitration-filter-select').on 'change', () ->
     $this = $ this
     $($this.attr 'data-form').submit()
+
+
+$('.js-slick-slider').each (i, el) ->
+    $el = $ el
+    $el.slick
+        autoplay: yes
+        arrows: no
+        focusOnSelect: yes
+        mobileFirst: yes
+        slidesToShow: 3
+        responsive: [
+            {
+                breakpoint: 576
+                settings:
+                    slidesToShow: 4
+            }
+            {
+                breakpoint: 768
+                settings:
+                    slidesToShow: 5
+            }
+            {
+                breakpoint: 992
+                settings:
+                    slidesToShow: 6
+            }
+            {
+                breakpoint: 1200
+                settings:
+                    slidesToShow: 7
+            }
+        ]
+    on

@@ -379,7 +379,7 @@ use app\helpers\Url;
                     <a class="nav-ln nav-list col-4" href="javascript:;">
                         <span class="nav-txt">Онлайн консультация по банкротству</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('zashita-ot-moshennikov') ?>">
                         <span class="nav-txt">Защита от мощенников</span>
                     </a>
 
@@ -389,8 +389,13 @@ use app\helpers\Url;
                     <a class="nav-ln nav-list col-4" href="javascript:;">
                         <span class="nav-txt">Онлайн тест на списание <br> долгов, кредитов</span>
                     </a>
-                    <a class="nav-ln nav-list col-4" href="javascript:;">
+                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('proverka-finansovogo-zdorovya') ?>">
                         <span class="nav-txt">Проверка финансового здоровья</span>
+                    </a>
+                    <div class="col-4">&nbsp;</div>
+                    <div class="col-4">&nbsp;</div>
+                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('podbor-kredita') ?>">
+                        <span class="nav-txt">Подбор кредита</span>
                     </a>
                 </nav>
             </div><!-- .col -->

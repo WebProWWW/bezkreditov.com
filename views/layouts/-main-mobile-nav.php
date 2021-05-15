@@ -243,11 +243,14 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <a class="nav-ln" href="<?= Url::toView('polnaya-kreditnaya-istoriya') ?>">
                 <span class="nav-txt">Полная кредитная история</span>
             </a>
-            <a class="nav-ln" href="javascript:;">
+            <a class="nav-ln" href="<?= Url::toView('zashita-ot-moshennikov') ?>">
                 <span class="nav-txt">Защита от мощенников</span>
             </a>
-            <a class="nav-ln" href="javascript:;">
+            <a class="nav-ln" href="<?= Url::toView('proverka-finansovogo-zdorovya') ?>">
                 <span class="nav-txt">Проверка финансового здоровья</span>
+            </a>
+            <a class="nav-ln" href="<?= Url::toView('podbor-kredita') ?>">
+                <span class="nav-txt">Подбор кредита</span>
             </a>
         </div><!-- .main-mnav-content -->
 
