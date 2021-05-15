@@ -8,7 +8,7 @@ $this->params['breadcrumbs'] = ['Дебетовые карты'];
 
 ?>
 
-<section class="section bg">
+<section class="section bg" style="position: relative; overflow: hidden;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md-6">
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'] = ['Дебетовые карты'];
                 </p>
             </div><!-- .col -->
             <div class="col-12 col-md-6">
-                <img class="img-center" width="365" src="/img/img-13.png">
+                <img class="img-center" width="384" src="/img/card-home-1.jpg" style="margin-bottom: -15px;">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
