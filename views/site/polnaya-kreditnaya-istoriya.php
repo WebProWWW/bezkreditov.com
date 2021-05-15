@@ -50,7 +50,7 @@ $this->params['breadcrumbs'] = ['Полная кредитная история'
                 </div><!-- .cart -->
             </div><!-- .col -->
             <div class="col-12 col-md-6 col-lg">
-                <img class="img-center" width="462" src="/img/img-15.jpg">
+                <img class="img-center" width="350" src="/img/img-15.jpg">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->

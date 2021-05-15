@@ -25,7 +25,7 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                 </p>
             </div><!-- .col -->
             <div class="col-12 col-md-6">
-                <img class="img-center" width="345" src="/img/card-home-2.jpg" style="margin-bottom: -15px;">
+                <img class="img-center" width="290" src="/img/card-home-2.jpg" style="margin-bottom: -15px;">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->

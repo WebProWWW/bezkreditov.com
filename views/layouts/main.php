@@ -170,27 +170,25 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 <?php endif; ?>
 
 <?php if ($breadcrumbs = ArrayHelper::getValue($this->params, 'breadcrumbs', [])): ?>
-    <div class="divider m-0"></div>
-    <section class="section">
-        <div class="container">
-            <nav class="breadcrubmbs">
-                <a class="breadcrubmbs-ln" href="<?= Url::home() ?>">
-                    <i class="i-home"></i> Главная
-                </a>
-                <?php foreach ($breadcrumbs as $breadcrumb): ?>
-                    <?php if (is_array($breadcrumb)):?>
-                        <a class="breadcrubmbs-ln" href="<?= Url::to($breadcrumb['url']) ?>">
-                            <?= $breadcrumb['label'] ?>
-                        </a>
-                    <?php elseif (is_string($breadcrumb)): ?>
-                        <span class="breadcrubmbs-ln">
-                            <?= $breadcrumb ?>
-                        </span>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </nav>
-        </div><!-- .container -->
-    </section><!-- .section -->
+    <div class="divider"></div>
+    <div class="container">
+        <nav class="breadcrubmbs">
+            <a class="breadcrubmbs-ln" href="<?= Url::home() ?>">
+                <i class="i-home"></i> Главная
+            </a>
+            <?php foreach ($breadcrumbs as $breadcrumb): ?>
+                <?php if (is_array($breadcrumb)):?>
+                    <a class="breadcrubmbs-ln" href="<?= Url::to($breadcrumb['url']) ?>">
+                        <?= $breadcrumb['label'] ?>
+                    </a>
+                <?php elseif (is_string($breadcrumb)): ?>
+                    <span class="breadcrubmbs-ln">
+                        <?= $breadcrumb ?>
+                    </span>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </nav>
+    </div><!-- .container -->
 <?php endif; ?>
 
 <?= $content ?>

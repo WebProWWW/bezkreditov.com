@@ -56,7 +56,7 @@ $this->params['breadcrumbs'] = [
                                 <p class="center">Онлайн подбор юриста по банкротству</p>
                                 <div class="row">
                                     <div class="col-auto mx-auto">
-                                        <a class="btn-sm btn-default" href="">Попробовать</a>
+                                        <a class="btn-sm btn-default" href="javascript:;">Попробовать</a>
                                     </div>
                                 </div>
                             </div><!-- .col -->
@@ -75,7 +75,7 @@ $this->params['breadcrumbs'] = [
                                 <p class="center">Кредитный калькулятор</p>
                                 <div class="row">
                                     <div class="col-auto mx-auto">
-                                        <a class="btn-sm btn-default" href="">Попробовать</a>
+                                        <a class="btn-sm btn-default" href="javascript:;">Попробовать</a>
                                     </div>
                                 </div>
                             </div><!-- .col -->
@@ -94,7 +94,7 @@ $this->params['breadcrumbs'] = [
                                 <p class="center">Калькулятор рефинансирования</p>
                                 <div class="row">
                                     <div class="col-auto mx-auto">
-                                        <a class="btn-sm btn-default" href="">Попробовать</a>
+                                        <a class="btn-sm btn-default" href="javascript:;">Попробовать</a>
                                     </div>
                                 </div>
                             </div><!-- .col -->
@@ -113,7 +113,7 @@ $this->params['breadcrumbs'] = [
                                 <p class="center">Ипотечный калькулятор</p>
                                 <div class="row">
                                     <div class="col-auto mx-auto">
-                                        <a class="btn-sm btn-default" href="">Попробовать</a>
+                                        <a class="btn-sm btn-default" href="javascript:;">Попробовать</a>
                                     </div>
                                 </div>
                             </div><!-- .col -->
@@ -151,7 +151,7 @@ $this->params['breadcrumbs'] = [
                                 <p class="center">Онлайн консультация по банкротству</p>
                                 <div class="row">
                                     <div class="col-auto mx-auto">
-                                        <a class="btn-sm btn-default" href="">Попробовать</a>
+                                        <a class="btn-sm btn-default" href="javascript:;">Попробовать</a>
                                     </div>
                                 </div>
                             </div><!-- .col -->
@@ -170,7 +170,7 @@ $this->params['breadcrumbs'] = [
                                 <p class="center">Проверка долгов онлайн</p>
                                 <div class="row">
                                     <div class="col-auto mx-auto">
-                                        <a class="btn-sm btn-default" href="">Попробовать</a>
+                                        <a class="btn-sm btn-default" href="javascript:;">Попробовать</a>
                                     </div>
                                 </div>
                             </div><!-- .col -->
@@ -189,7 +189,7 @@ $this->params['breadcrumbs'] = [
                                 <p class="center">Онлайн тест на списание долгов, кредитов</p>
                                 <div class="row">
                                     <div class="col-auto mx-auto">
-                                        <a class="btn-sm btn-default" href="">Попробовать</a>
+                                        <a class="btn-sm btn-default" href="javascript:;">Попробовать</a>
                                     </div>
                                 </div>
                             </div><!-- .col -->
@@ -208,7 +208,7 @@ $this->params['breadcrumbs'] = [
                                 <p class="center">Проверка и оплата штрафов ГИБДД</p>
                                 <div class="row">
                                     <div class="col-auto mx-auto">
-                                        <a class="btn-sm btn-default" href="">Попробовать</a>
+                                        <a class="btn-sm btn-default" href="javascript:;">Попробовать</a>
                                     </div>
                                 </div>
                             </div><!-- .col -->
@@ -227,7 +227,7 @@ $this->params['breadcrumbs'] = [
                                 <p class="center">Налоги: проверка и оплата онлайн</p>
                                 <div class="row">
                                     <div class="col-auto mx-auto">
-                                        <a class="btn-sm btn-default" href="">Попробовать</a>
+                                        <a class="btn-sm btn-default" href="javascript:;">Попробовать</a>
                                     </div>
                                 </div>
                             </div><!-- .col -->
@@ -246,7 +246,7 @@ $this->params['breadcrumbs'] = [
                                 <p class="center">Калькулятор налога с продажи квартиры</p>
                                 <div class="row">
                                     <div class="col-auto mx-auto">
-                                        <a class="btn-sm btn-default" href="">Попробовать</a>
+                                        <a class="btn-sm btn-default" href="javascript:;">Попробовать</a>
                                     </div>
                                 </div>
                             </div><!-- .col -->
@@ -265,7 +265,7 @@ $this->params['breadcrumbs'] = [
                                 <p class="center">Калькулятор пеней и штрафов</p>
                                 <div class="row">
                                     <div class="col-auto mx-auto">
-                                        <a class="btn-sm btn-default" href="">Попробовать</a>
+                                        <a class="btn-sm btn-default" href="javascript:;">Попробовать</a>
                                     </div>
                                 </div>
                             </div><!-- .col -->
