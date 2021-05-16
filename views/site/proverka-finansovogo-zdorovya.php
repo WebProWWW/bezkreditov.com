@@ -10,12 +10,12 @@ $this->params['breadcrumbs'] = ['Проверка финансового здо�
 
 <section class="section bg">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-end">
             <div class="col-12 col-md-6 col-lg-auto">
                 <h1>
-                    Узнайте свой
+                    Проверка
                     <br class="d-none d-lg-block">
-                    кредитный рейтинг
+                    финансового здоровья
                 </h1>
                 <p class="em-11 mb-4">
                     Получите отчет по рейтингу
@@ -41,7 +41,7 @@ $this->params['breadcrumbs'] = ['Проверка финансового здо�
                     </div><!-- .cart-body -->
                     <div class="cart-footer">
                         <p class="center">
-                            <a target="_blank" href="/download/primer-rejtinga-finansovogo-zdorovya.pdf">
+                            <a target="_blank" href="/download/primer-rejtinga-finansovogo-zdorovya-1">
                                 <i class="i-download"></i>
                                 Скачать пример отчета
                             </a>
@@ -49,8 +49,12 @@ $this->params['breadcrumbs'] = ['Проверка финансового здо�
                     </div><!-- .cart-body -->
                 </div><!-- .cart -->
             </div><!-- .col -->
-            <div class="col-12 col-md-6 col-lg">
-                <img class="img-center" width="400" src="/img/img-16.svg">
+            <div class="col-12 col-md-6 col-lg-auto mx-auto mb-4">
+                <div class="cart px-5 py-3">
+                    <div class="cart-body">
+                        <img class="img-center" width="350" src="/img/img-16.svg">
+                    </div><!-- .cart-body -->
+                </div><!-- .cart -->
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
@@ -62,7 +66,7 @@ $this->params['breadcrumbs'] = ['Проверка финансового здо�
         <h2 class="h1 center">Знать кредитный рейтинг - полезно</h2>
         <p class="center">
             В 2019 году 1 638 032 пользователей узнали свой кредитный рейтинг.
-            <br>Теперь они понимают, какие кредитные предложения им доступны.
+            Теперь они понимают, какие кредитные предложения им доступны.
         </p>
         <div class="row justify-content-center">
             <div class="col-12 col-sm-6 col-xl-4 mb-4">
@@ -129,10 +133,12 @@ $this->params['breadcrumbs'] = ['Проверка финансового здо�
         <div class="cart mb-4">
             <div class="cart-body">
                 <div class="row align-items-center">
-                    <div class="col-12 col-md-5 col-lg-auto order-2 order-md-1 mx-auto">
-                        <img class="img-center" width="300" src="/img/img-17.svg">
+                    <div class="col-12 col-md-auto order-2 order-lg-1 mx-auto">
+                        <div class="border-primary-5 border-radius-5 px-5 pt-3 mb-3">
+                            <img class="img-center" width="250" src="/img/img-17.svg">
+                        </div>
                     </div><!-- .col -->
-                    <div class="col-12 col-md col-xl-7 mx-auto order-1 order-md-2">
+                    <div class="col-12 col-lg col-xl-7 order-1 order-lg-2">
                         <h2 class="h1">Что такое рейтинг финансового здоровья?</h2>
                         <p>Это один из главных показателей, который рассчитывается кредитными организациями при решении о предоставлении кредита или займа. Он неразрывно связан с кредитной историей и фактически представляет собой числовую оценку её качества.</p>
                         <div class="row align-items-center justify-content-center">
@@ -236,10 +242,10 @@ $this->params['breadcrumbs'] = ['Проверка финансового здо�
                     <div class="col-12 col-md col-xl-7 mx-auto order-1 order-md-2">
                         <h2 class="h1">Что вы узнаете из отчёта?</h2>
                         <ul class="ul-circle">
-                            <li>Свой кредитный рейтинг</li>
-                            <li>Возможные причины отказа в кредите или займе</li>
-                            <li>Вероятность одобрения</li>
-                            <li>Персональные рекомендации по исправлению ситуации</li>
+                            <li><p>Свой кредитный рейтинг</p></li>
+                            <li><p>Возможные причины отказа в кредите или займе</p></li>
+                            <li><p>Вероятность одобрения</p></li>
+                            <li><p>Персональные рекомендации по исправлению ситуации</p></li>
                         </ul>
                     </div><!-- .col -->
                 </div><!-- .row -->

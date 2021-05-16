@@ -20,7 +20,8 @@
     "sendpulse/rest-api": "~10.0.15"
   },
   "require-dev": {
-    "yiisoft/yii2-gii": "~2.2.1"
+    "yiisoft/yii2-gii": "~2.2.1",
+    "yiisoft/yii2-debug": "~2.1.17"
   },
   "repositories": [
     {

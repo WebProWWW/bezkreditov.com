@@ -333,7 +333,9 @@ class SiteController extends Controller
     {
         if ($this->_city === null) {
             $this->_city = City::findOne(['alias' => Url::subdomain()]);
-            if ($this->_city === null) throw new NotFoundHttpException();
+            if ($this->_city === null) {
+                throw new NotFoundHttpException();
+            }
         }
         return $this->_city;
     }

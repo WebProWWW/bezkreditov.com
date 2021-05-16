@@ -40,7 +40,9 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
                 </div><!-- .cart -->
             </div><!-- .col -->
             <div class="col-12 col-md-6 col-lg">
-                <img class="img-center" width="371" src="/img/img-22.png">
+                <div class="img-wrap-circle">
+                    <img class="img-center" width="371" src="/img/img-22.png">
+                </div>
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
@@ -60,7 +62,7 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
                             </div><!-- .col -->
                             <div class="col-12 col-sm">
                                 <div class="d-flex align-items-center">
-                                    <p class="fw-600 em-9">Без Кредитов</p>
+                                    <p class="fw-600 em-9">Артемий</p>
                                     <p class="ml-auto em-8 mutted">Минуту назад</p>
                                 </div>
                                 <p>
@@ -78,11 +80,11 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
                     <div class="cart-body">
                         <div class="row align-items-center">
                             <div class="col-12 col-sm-auto">
-                                <img class="img-center" width="60" src="/img/ava-man.svg">
+                                <img class="img-center" width="60" src="/img/ava-w.svg">
                             </div><!-- .col -->
                             <div class="col-12 col-sm">
                                 <div class="d-flex align-items-center">
-                                    <p class="fw-600 em-9">Без Кредитов</p>
+                                    <p class="fw-600 em-9">Екатерина</p>
                                     <p class="ml-auto em-8 mutted">Только что</p>
                                 </div>
                                 <p>
@@ -98,11 +100,11 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
                     <div class="cart-body">
                         <div class="row align-items-center">
                             <div class="col-12 col-sm-auto">
-                                <img class="img-center" width="60" src="/img/ava-man.svg">
+                                <img class="img-center" width="60" src="/img/ava-m.svg">
                             </div><!-- .col -->
                             <div class="col-12 col-sm">
                                 <div class="d-flex align-items-center">
-                                    <p class="fw-600 em-9">Без Кредитов</p>
+                                    <p class="fw-600 em-9">Михаил</p>
                                     <p class="ml-auto em-8 mutted">Две минуты назад</p>
                                 </div>
                                 <p>
@@ -124,7 +126,7 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-12 col-md-5 col-lg-auto order-2 order-md-1 mx-auto">
-                        <img style="margin-bottom: -3px;" class="img-center" width="240" src="/img/img-23.jpg">
+                        <img style="margin-bottom: -3px;" class="img-center" width="240" src="/img/img-30.jpg">
                     </div><!-- .col -->
                     <div class="col-12 col-md col-xl-7 mx-auto order-1 order-md-2">
                         <h2 class="h1">Что такое «Защита от мошенников»?</h2>
@@ -193,7 +195,9 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
                         </div><!-- .row -->
                     </div><!-- .col -->
                     <div class="col-12 col-lg-5">
-                        <img class="img-center" width="300" src="/img/img-25.png">
+                        <div class="img-wrap-circle">
+                            <img class="img-center" width="300" src="/img/img-25.png">
+                        </div>
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div><!-- .cart-body -->
@@ -207,16 +211,16 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
         <div class="cart mb-4">
             <div class="cart-body">
                 <div class="row align-items-center">
-                    <div class="col-12 col-md-5 col-lg-auto order-2 order-md-1 mx-auto">
-                        <img style="margin-bottom: -3px;" class="img-center" width="240" src="/img/img-26.jpg">
+                    <div class="col-12 col-md-5 col-lg-auto order-2 order-md-1 mx-auto align-self-end">
+                        <img style="margin-bottom: -3px;" class="img-center" width="240" src="/img/img-31.jpg">
                     </div><!-- .col -->
                     <div class="col-12 col-md col-xl-7 mx-auto order-1 order-md-2">
                         <h2 class="h1">Какие сообщения я буду получать?</h2>
                         <p>Мы фиксируем более 20 разных событий из вашей кредитной истории, например:</p>
                         <ul class="ul-circle">
-                            <li>«Оформлен новый кредит. Это были вы?»</li>
-                            <li>«Сделан запрос на получение вашей кредитной истории»</li>
-                            <li>«Внимание! По вашему кредиту возникла просрочка»</li>
+                            <li><p>«Оформлен новый кредит. Это были вы?»</p></li>
+                            <li><p>«Сделан запрос на получение вашей кредитной истории»</p></li>
+                            <li><p>«Внимание! По вашему кредиту возникла просрочка»</p></li>
                         </ul>
                         <div class="row">
                             <div class="col-auto">
@@ -341,7 +345,7 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
     <div class="container">
         <h2 class="h1 center">Часто задаваемые вопросы</h2>
         <div class="cart pt-4 mb-4">
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-1">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-1">
                 <a class="ln-black-primary" href="javascript:;">Кому нужен сервис "Защиты от мошенников"</a>
                 <i class="i-down ml-auto"></i>
             </p>
@@ -349,7 +353,7 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
                 <p>Всем, у кого есть хотя бы один кредит или займ, а также тем, кто боится, что их могут на него оформить.</p>
             </div>
             <div class="divider-dark"></div>
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-2">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-2">
                 <a class="ln-black-primary" href="javascript:;">Для чего нужны мои паспортные данные?</a>
                 <i class="i-down ml-auto"></i>
             </p>
@@ -357,7 +361,7 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
                 <p>С их помощью мы будем проверять данные по вам, делая запрос в бюро кредитных историй.</p>
             </div>
             <div class="divider-dark"></div>
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-3">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-3">
                 <a class="ln-black-primary" href="javascript:;">Безопасно ли оставлять персональные данные на вашем сайте?</a>
                 <i class="i-down ml-auto"></i>
             </p>
@@ -365,7 +369,7 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
                 <p>Безусловно. Все персональные данные клиентов мы храним на отдельном сервере с многоступенчатой системой кодирования, а также строго соблюдаем 152-ФЗ "О персональных данных".</p>
             </div>
             <div class="divider-dark"></div>
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-4">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-4">
                 <a class="ln-black-primary" href="javascript:;">У меня есть мобильное приложение банка/МФО, в котором я могу смотреть статусы по кредитам/займам - зачем мне подписка на ваш сервис?</a>
                 <i class="i-down ml-auto"></i>
             </p>
@@ -373,7 +377,7 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
                 <p>В мобильных приложениях действительно можно получить всю необходимую информацию по действующему кредиту или займу. Однако ситуация осложняется, если на руках несколько ссуд и если у кого-то из кредиторов нет приложения. Гораздо удобнее получать адресное SMS-сообщение со всей необходимой информацией и быстро просматривать её на экране телефона, не отвлекаясь от дел.</p>
             </div>
             <div class="divider-dark"></div>
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-5">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-5">
                 <a class="ln-black-primary" href="javascript:;">На меня никогда не оформляли кредит и я думаю, что такого не произойдет. Нужна ли мне подписка?</a>
                 <i class="i-down ml-auto"></i>
             </p>
@@ -391,7 +395,7 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
             <div class="col-12 col-md-6 mb-4">
                 <div class="cart">
                     <div class="cart-body">
-                        <img class="d-block mx-auto mb-4" height="150" src="/img/icon-svg/data_analytics__monochromatic.svg">
+                        <img class="d-block m-auto mb-4" height="200" src="/img/img-9.png">
                         <h3 class="h2 center">Полная кредитная история</h3>
                         <p class="center">Полная кредитная история (ПКИ) представляет собой документ, в котором собрана информация о кредитах.</p>
                     </div><!-- .cart-body -->
@@ -400,7 +404,7 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
             <div class="col-12 col-md-6 mb-4">
                 <div class="cart">
                     <div class="cart-body">
-                        <img class="d-block mx-auto mb-4" height="150" src="/img/img-12.svg">
+                        <img class="d-block m-auto mb-4" height="150" src="/img/img-12.svg">
                         <h3 class="h2 center">Кредитный рейтинг</h3>
                         <p class="center">Получите отчет по рейтингу финансового здоровья и узнайте настоящую причину отказа в кредите.</p>
                     </div><!-- .cart-body -->
