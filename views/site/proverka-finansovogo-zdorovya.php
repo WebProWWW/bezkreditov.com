@@ -41,7 +41,7 @@ $this->params['breadcrumbs'] = ['Проверка финансового здо�
                     </div><!-- .cart-body -->
                     <div class="cart-footer">
                         <p class="center">
-                            <a target="_blank" href="/download/primer-rejtinga-finansovogo-zdorovya-1">
+                            <a target="_blank" href="/download/primer-rejtinga-finansovogo-zdorovya-1.pdf">
                                 <i class="i-download"></i>
                                 Скачать пример отчета
                             </a>
