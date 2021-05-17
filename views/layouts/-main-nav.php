@@ -215,13 +215,19 @@ use app\helpers\Url;
             <div class="col">
                 <div class="row">
                     <div class="col-3">
-                        <p class="fw-600">Потребительские кредиты</p>
+                        <a class="nav-ln fw-600" href="<?= Url::toView('potrebitelskie-kredity-onlajn-na-kartu') ?>">
+                            <span class="nav-txt">Потребительские кредиты</span>
+                        </a>
                     </div><!-- .col -->
                     <div class="col-3">
-                        <p class="fw-600">Микрозаймы</p>
+                        <a class="nav-ln fw-600" href="<?= Url::toView('zajmy-onlajn-na-kartu') ?>">
+                            <span class="nav-txt">Микрозаймы</span>
+                        </a>
                     </div><!-- .col -->
                     <div class="col-3">
-                        <p class="fw-600">Автокредиты</p>
+                        <a class="nav-ln fw-600" href="<?= Url::toView('avtokredity') ?>">
+                            <span class="nav-txt">Автокредиты</span>
+                        </a>
                     </div><!-- .col -->
                     <div class="col-3">
                         <a class="nav-ln fw-600" href="<?= Url::toView('refinansirovanie-kredita') ?>">
@@ -232,8 +238,8 @@ use app\helpers\Url;
                         <a class="nav-ln nav-list" href="javascript:;">
                             <span class="nav-txt">Наличными</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
-                            <span class="nav-txt">Онлайн на карта</span>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('potrebitelskie-kredity-onlajn-na-kartu') ?>">
+                            <span class="nav-txt">Онлайн на карту</span>
                         </a>
                         <a class="nav-ln nav-list" href="javascript:;">
                             <span class="nav-txt">Без отказа</span>
@@ -246,7 +252,7 @@ use app\helpers\Url;
                         </a>
                     </div><!-- .col -->
                     <div class="col-3">
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('zajmy-onlajn-na-kartu') ?>">
                             <span class="nav-txt">На карту</span>
                         </a>
                         <a class="nav-ln nav-list" href="javascript:;">

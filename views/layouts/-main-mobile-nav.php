@@ -126,12 +126,14 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <i class="i-ch-down em-8"></i>
         </a>
         <div class="main-mnav-content" id="main-mnav-content-3">
-            <p class="fw-600 em-9 pl-1">Потребительские кредиты</p>
+            <a class="nav-ln fw-600" href="<?= Url::toView('potrebitelskie-kredity-onlajn-na-kartu') ?>">
+                <span class="nav-txt">Потребительские кредиты</span>
+            </a>
             <a class="nav-ln" href="javascript:;">
                 <span class="nav-txt">Наличными</span>
             </a>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Онлайн на карта</span>
+            <a class="nav-ln" href="<?= Url::toView('potrebitelskie-kredity-onlajn-na-kartu') ?>">
+                <span class="nav-txt">Онлайн на карту</span>
             </a>
             <a class="nav-ln" href="javascript:;">
                 <span class="nav-txt">Без отказа</span>
@@ -142,8 +144,10 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <a class="nav-ln" href="javascript:;">
                 <span class="nav-txt">Пенсионерам</span>
             </a>
-            <p class="fw-600 em-9 pl-1">Микрозаймы</p>
-            <a class="nav-ln" href="javascript:;">
+            <a class="nav-ln fw-600" href="<?= Url::toView('zajmy-onlajn-na-kartu') ?>">
+                <span class="nav-txt">Микрозаймы</span>
+            </a>
+            <a class="nav-ln" href="<?= Url::toView('zajmy-onlajn-na-kartu') ?>">
                 <span class="nav-txt">На карту</span>
             </a>
             <a class="nav-ln" href="javascript:;">
@@ -158,7 +162,9 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <a class="nav-ln" href="javascript:;">
                 <span class="nav-txt">До зарплаты</span>
             </a>
-            <p class="fw-600 em-9 pl-1">Автокредиты</p>
+            <a class="nav-ln fw-600" href="<?= Url::toView('avtokredity') ?>">
+                <span class="nav-txt">Автокредиты</span>
+            </a>
             <a class="nav-ln" href="javascript:;">
                 <span class="nav-txt">На вторе с пробегом</span>
             </a>
