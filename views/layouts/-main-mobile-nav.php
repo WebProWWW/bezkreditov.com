@@ -171,7 +171,9 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <a class="nav-ln" href="javascript:;">
                 <span class="nav-txt">Без первоначального взноса</span>
             </a>
-            <p class="fw-600 em-9 pl-1">Рефинансирование</p>
+            <a class="nav-ln fw-600" href="<?= Url::toView('refinansirovanie-kredita') ?>">
+                <span class="nav-txt">Рефинансирование</span>
+            </a>
             <a class="nav-ln" href="javascript:;">
                 <span class="nav-txt">&nbsp;</span>
             </a>

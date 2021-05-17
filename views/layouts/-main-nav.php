@@ -224,7 +224,9 @@ use app\helpers\Url;
                         <p class="fw-600">Автокредиты</p>
                     </div><!-- .col -->
                     <div class="col-3">
-                        <p class="fw-600">Рефинансирование</p>
+                        <a class="nav-ln fw-600" href="<?= Url::toView('refinansirovanie-kredita') ?>">
+                            <span class="nav-txt">Рефинансирование</span>
+                        </a>
                     </div><!-- .col -->
                     <div class="col-3">
                         <a class="nav-ln nav-list" href="javascript:;">
