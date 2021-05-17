@@ -23,7 +23,7 @@ $this->params['breadcrumbs'] = [
                 </p>
             </div><!-- .col -->
             <div class="col-12 col-md-6">
-                <img class="img-center" width="384" src="/img/card-home-1.jpg" style="margin-bottom: -15px;">
+                <img class="img-center" width="300" src="/img/card-home-1.jpg" style="margin-bottom: -15px;">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
