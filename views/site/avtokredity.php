@@ -8,7 +8,7 @@ $this->params['breadcrumbs'] = ['Автокредиты'];
 
 ?>
 
-<section class="section bg" style="position: relative; overflow: hidden;">
+<section class="section" style="position: relative; overflow: hidden; background: #FBCF01;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md-6">
@@ -17,8 +17,8 @@ $this->params['breadcrumbs'] = ['Автокредиты'];
                     Выгодные автокредиты в банках России - изучите условия автокредитования, сравните предложения банков и подайте онлайн-заявку на самый выгодный кредит на покупку автомобиля с помощью &laquo;Без&nbsp;кредитов&raquo;.
                 </p>
             </div><!-- .col -->
-            <div class="col-12 col-md-6">
-                <img class="img-center" width="600" src="/img/img-36.svg" style="margin-bottom: -11px;">
+            <div class="col-12 col-md-6 align-self-end">
+                <img class="img-center" width="430" src="/img/img-40.jpg" style="margin-bottom: -11px;">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->

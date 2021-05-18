@@ -2,29 +2,32 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Кредиты онлайн на карту';
+$this->title = 'Займы до зарплаты';
 $this->params['description'] = 'Оформите срочный микрозайм онлайн на карту от МФО, проверенных экспертами &laquo;Без&nbsp;кредитов&raquo;. Для этого вам не придется даже выходить из дома: достаточно выбрать подходящее предложение и подать заявку на займ онлайн.';
 $this->params['breadcrumbs'] = [
     [
-        'url' => ['site/index', 'view' => 'potrebitelskie-kredity'],
-        'label' => 'Потребительские кредиты',
+        'url' => ['site/index', 'view' => 'mikrozajmy'],
+        'label' => 'Микрозаймы',
     ],
-    'Онлайн на карту',
+    'До зарплаты',
 ];
 
 ?>
 
-<section class="section" style="position: relative; overflow: hidden; background: #BDC1C2;">
+<section class="section bg" style="position: relative; overflow: hidden;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md-6">
-                <h1>Кредиты онлайн на карту</h1>
+                <h1>Займы до зарплаты</h1>
                 <p class="em-11">
-                    На &laquo;Без&nbsp;кредитов&raquo; вы можете взять кредит онлайн на карту на выгодных условиях. На 17.05.2021 представлены 72 предложений от банков России с процентной ставкой от 5.4% до 38%. Сравните кредитные предложения по ключевым параметрам и определитесь в каком банке лучше брать потребительский кредит.
+                    Срочные займы до зарплаты по ставке от&nbsp;0% до&nbsp;1%, суммой от&nbsp;1&nbsp;000&nbsp;рублей до&nbsp;100&nbsp;000&nbsp;рублей. Воспользуйтесь сортировкой и отправьте онлайн-заявку. Ответ в течение 10&nbsp;минут!
+                </p>
+                <p>
+                    На 18.05.2021 количество предложений - 80.
                 </p>
             </div><!-- .col -->
-            <div class="col-12 col-md-6">
-                <img class="img-center" width="500" src="/img/img-38.jpg" style="margin-bottom: -11px;">
+            <div class="col-12 col-md-6 align-self-end">
+                <img class="img-center" width="490" src="/img/img-37.jpg" style="margin-bottom: -11px;">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
@@ -54,39 +57,49 @@ $this->params['breadcrumbs'] = [
                     <option>120 дней</option>
                 </select>
             </div><!-- .col -->
-            <div class="col-12 col-lg-auto">
+            <div class="col-12 col-md-6 col-lg-auto">
                 <label class="label d-none d-lg-block">&nbsp;</label>
                 <button class="btn-default">Показать</button>
+            </div><!-- .col -->
+            <div class="col-12 col-md-6 col-lg-auto">
+                <label class="label d-none d-lg-block">&nbsp;</label>
+                <button class="btn-trsp">Деньги срочно</button>
             </div><!-- .col -->
         </div><!-- .row -->
 
         <div class="row">
             <div class="col-auto">
-                <a class="btn-trsp btn-sm px-2 em-7 active" href="javascript:;">ВСЕ КРЕДИТЫ</a>
+                <a class="btn-trsp btn-sm px-2 em-8 active" href="javascript:;">ВСЕ МИКРОЗАЙМЫ</a>
             </div>
             <div class="col-auto">
-                <a class="btn-trsp btn-sm px-2 em-7" href="javascript:;">НАЛИЧНЫМИ</a>
+                <a class="btn-trsp btn-sm px-2 em-8" href="javascript:;">СРОЧНО</a>
             </div>
             <div class="col-auto">
-                <a class="btn-trsp btn-sm px-2 em-7" href="javascript:;">БЕЗ СПРАВОК</a>
+                <a class="btn-trsp btn-sm px-2 em-8" href="javascript:;">БЕЗ ОТКАЗА</a>
             </div>
             <div class="col-auto">
-                <a class="btn-trsp btn-sm px-2 em-7" href="javascript:;">С ПЛОХОЙ КИ</a>
+                <a class="btn-trsp btn-sm px-2 em-8" href="javascript:;">КАЛЬКУЛЯТОР ЗАЙМОВ</a>
             </div>
             <div class="col-auto">
-                <a class="btn-trsp btn-sm px-2 em-7" href="javascript:;">ОНЛАЙН-ЗАЯВКА</a>
+                <a class="btn-trsp btn-sm px-2 em-8" href="javascript:;">БЕЗ ПРОЦЕНТОВ</a>
             </div>
             <div class="col-auto">
-                <a class="btn-trsp btn-sm px-2 em-7" href="javascript:;">ПОД ЗАЛОГ</a>
+                <a class="btn-trsp btn-sm px-2 em-8" href="javascript:;">ПОД ЗАЛОГ ПТС</a>
             </div>
             <div class="col-auto">
-                <a class="btn-trsp btn-sm px-2 em-7" href="javascript:;">БЕЗ ОТКАЗА</a>
+                <a class="btn-trsp btn-sm px-2 em-8" href="javascript:;">КРУГЛОСУТОЧНЫЕ</a>
             </div>
             <div class="col-auto">
-                <a class="btn-trsp btn-sm px-2 em-7" href="javascript:;">КАЛЬКУЛЯТОР</a>
+                <a class="btn-trsp btn-sm px-2 em-8" href="javascript:;">ДО ЗАРПЛАТЫ</a>
             </div>
             <div class="col-auto">
-                <a class="btn-trsp btn-sm px-2 em-7" href="javascript:;">ПЕНСИОНЕРАМ</a>
+                <a class="btn-trsp btn-sm px-2 em-8" href="javascript:;">БЕЗ ПАСПОРТА</a>
+            </div>
+            <div class="col-auto">
+                <a class="btn-trsp btn-sm px-2 em-8" href="javascript:;">С ПЛОХОЙ ИСТОРИЕЙ</a>
+            </div>
+            <div class="col-auto">
+                <a class="btn-trsp btn-sm px-2 em-8" href="javascript:;">АБСОЛЮТНО ВСЕМ</a>
             </div>
         </div><!-- .row -->
     </div><!-- .container -->
@@ -94,7 +107,7 @@ $this->params['breadcrumbs'] = [
 
 <section class="section bg">
     <div class="container">
-        <h2 class="h1">Рекомендуем потребительский кредит на карту на выгодных условиях</h2>
+        <h2 class="h1">Рекомендуем займы до зарплаты - одобрение 95%</h2>
 
         <div class="cart mb-4">
             <div class="cart-body">
@@ -113,16 +126,16 @@ $this->params['breadcrumbs'] = [
                     <div class="col-12 d-lg-none"></div><!-- .col -->
 
                     <div class="col-12 col-sm-auto ml-xl-auto">
-                        <p class="em-13 fw-600 mb-0">от 20 000 ₽</p>
-                        <p class="gray">Сумма</p>
+                        <p class="em-13 fw-600 mb-0">от 2 000 ₽</p>
+                        <p class="gray">Сумма займа</p>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-auto mx-auto">
-                        <p class="em-13 fw-600 mb-0">от 36 мес.</p>
-                        <p class="gray">Срок</p>
+                        <p class="em-13 fw-600 mb-0">от 7 дней</p>
+                        <p class="gray">Срок займа</p>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-auto">
-                        <p class="em-13 fw-600 mb-0">от 6,3%</p>
-                        <p class="gray">Ставка в год</p>
+                        <p class="em-13 fw-600 mb-0">от 0,0%</p>
+                        <p class="gray">Ставка в день</p>
                     </div><!-- .col -->
                     <div class="col-12 col-md-auto ml-auto">
                         <a class="btn-default" href="javascript:;">Оформить</a>
@@ -176,16 +189,16 @@ $this->params['breadcrumbs'] = [
                     <div class="col-12 d-lg-none"></div><!-- .col -->
 
                     <div class="col-12 col-sm-auto ml-xl-auto">
-                        <p class="em-13 fw-600 mb-0">от 100 000 ₽</p>
-                        <p class="gray">Сумма</p>
+                        <p class="em-13 fw-600 mb-0">от 100 ₽</p>
+                        <p class="gray">Сумма займа</p>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-auto mx-auto">
-                        <p class="em-13 fw-600 mb-0">от 36 мес.</p>
-                        <p class="gray">Срок</p>
+                        <p class="em-13 fw-600 mb-0">от 7 дней</p>
+                        <p class="gray">Срок займа</p>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-auto">
-                        <p class="em-13 fw-600 mb-0">от 6,3%</p>
-                        <p class="gray">Ставка в год</p>
+                        <p class="em-13 fw-600 mb-0">от 0,0%</p>
+                        <p class="gray">Ставка в день</p>
                     </div><!-- .col -->
                     <div class="col-12 col-md-auto ml-auto">
                         <a class="btn-default" href="javascript:;">Оформить</a>
@@ -239,16 +252,16 @@ $this->params['breadcrumbs'] = [
                     <div class="col-12 d-lg-none"></div><!-- .col -->
 
                     <div class="col-12 col-sm-auto ml-xl-auto">
-                        <p class="em-13 fw-600 mb-0">от 500 000 ₽</p>
-                        <p class="gray">Сумма</p>
+                        <p class="em-13 fw-600 mb-0">от 1 500 ₽</p>
+                        <p class="gray">Сумма займа</p>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-auto mx-auto">
-                        <p class="em-13 fw-600 mb-0">от 3 лет</p>
-                        <p class="gray">Срок</p>
+                        <p class="em-13 fw-600 mb-0">от 5 дней</p>
+                        <p class="gray">Срок займа</p>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-auto">
-                        <p class="em-13 fw-600 mb-0">от 6,3%</p>
-                        <p class="gray">Ставка в год</p>
+                        <p class="em-13 fw-600 mb-0">от 0,0%</p>
+                        <p class="gray">Ставка в день</p>
                     </div><!-- .col -->
                     <div class="col-12 col-md-auto ml-auto">
                         <a class="btn-default" href="javascript:;">Оформить</a>
@@ -291,8 +304,8 @@ $this->params['breadcrumbs'] = [
 
 <section class="section bg">
     <div class="container">
-        <h2 class="h1">Подобрать кредит онлайн</h2>
-        <p>Показано 20 кредитов из 72 доступных</p>
+        <h2 class="h1">Подобрать срочный займ до зарплаты на &laquo;Без&nbsp;кредитов&raquo;</h2>
+        <p>Показано 20 займов из 80 доступных</p>
 
         <div class="cart mb-4">
             <div class="cart-body">
@@ -311,16 +324,16 @@ $this->params['breadcrumbs'] = [
                     <div class="col-12 d-lg-none"></div><!-- .col -->
 
                     <div class="col-12 col-sm-auto ml-xl-auto">
-                        <p class="em-13 fw-600 mb-0">от 20 000 ₽</p>
-                        <p class="gray">Сумма</p>
+                        <p class="em-13 fw-600 mb-0">от 2 000 ₽</p>
+                        <p class="gray">Сумма займа</p>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-auto mx-auto">
-                        <p class="em-13 fw-600 mb-0">от 36 мес.</p>
-                        <p class="gray">Срок</p>
+                        <p class="em-13 fw-600 mb-0">от 7 дней</p>
+                        <p class="gray">Срок займа</p>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-auto">
-                        <p class="em-13 fw-600 mb-0">от 6,3%</p>
-                        <p class="gray">Ставка в год</p>
+                        <p class="em-13 fw-600 mb-0">от 0,0%</p>
+                        <p class="gray">Ставка в день</p>
                     </div><!-- .col -->
                     <div class="col-12 col-md-auto ml-auto">
                         <a class="btn-default" href="javascript:;">Оформить</a>
@@ -374,16 +387,16 @@ $this->params['breadcrumbs'] = [
                     <div class="col-12 d-lg-none"></div><!-- .col -->
 
                     <div class="col-12 col-sm-auto ml-xl-auto">
-                        <p class="em-13 fw-600 mb-0">от 100 000 ₽</p>
-                        <p class="gray">Сумма</p>
+                        <p class="em-13 fw-600 mb-0">от 100 ₽</p>
+                        <p class="gray">Сумма займа</p>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-auto mx-auto">
-                        <p class="em-13 fw-600 mb-0">от 36 мес.</p>
-                        <p class="gray">Срок</p>
+                        <p class="em-13 fw-600 mb-0">от 7 дней</p>
+                        <p class="gray">Срок займа</p>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-auto">
-                        <p class="em-13 fw-600 mb-0">от 6,3%</p>
-                        <p class="gray">Ставка в год</p>
+                        <p class="em-13 fw-600 mb-0">от 0,0%</p>
+                        <p class="gray">Ставка в день</p>
                     </div><!-- .col -->
                     <div class="col-12 col-md-auto ml-auto">
                         <a class="btn-default" href="javascript:;">Оформить</a>
@@ -492,16 +505,16 @@ $this->params['breadcrumbs'] = [
                     <div class="col-12 d-lg-none"></div><!-- .col -->
 
                     <div class="col-12 col-sm-auto ml-xl-auto">
-                        <p class="em-13 fw-600 mb-0">от 500 000 ₽</p>
-                        <p class="gray">Сумма</p>
+                        <p class="em-13 fw-600 mb-0">от 1 500 ₽</p>
+                        <p class="gray">Сумма займа</p>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-auto mx-auto">
-                        <p class="em-13 fw-600 mb-0">от 3 лет</p>
-                        <p class="gray">Срок</p>
+                        <p class="em-13 fw-600 mb-0">от 5 дней</p>
+                        <p class="gray">Срок займа</p>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-auto">
-                        <p class="em-13 fw-600 mb-0">от 6,3%</p>
-                        <p class="gray">Ставка в год</p>
+                        <p class="em-13 fw-600 mb-0">от 0,0%</p>
+                        <p class="gray">Ставка в день</p>
                     </div><!-- .col -->
                     <div class="col-12 col-md-auto ml-auto">
                         <a class="btn-default" href="javascript:;">Оформить</a>
@@ -555,21 +568,10 @@ $this->params['breadcrumbs'] = [
                 <div class="cart">
                     <div class="cart-body center">
                         <div class="circle-i em-30 mx-auto">
-                            <i class="i-stat"></i>
-                        </div>
-                        <h3>Ставки от 6,9%</h3>
-                        <p class="my-auto pb-3">Самые выгодные условия на рынке!</p>
-                    </div><!-- .cart-body -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body center">
-                        <div class="circle-i em-30 mx-auto">
                             <i class="i-rub"></i>
                         </div>
-                        <h3>Суммы до 5 000 000 рублей</h3>
-                        <p class="my-auto pb-3">Кредиты, с которыми можно решать задачи любого масштаба!</p>
+                        <h3>Суммы до 500 000 рублей на карту</h3>
+                        <p class="my-auto pb-3">Сотни тысяч рублей, не выходя из дома!</p>
                     </div><!-- .cart-body -->
                 </div><!-- .cart -->
             </div><!-- .col -->
@@ -577,185 +579,81 @@ $this->params['breadcrumbs'] = [
                 <div class="cart">
                     <div class="cart-body center">
                         <div class="circle-i em-30 mx-auto">
-                            <i class="i-timer"></i>
+                            <i class="i-stat"></i>
                         </div>
-                        <h3>Рассмотрение от 1 минуты</h3>
-                        <p class="my-auto pb-3">Самые выгодные условия на рынке!</p>
+                        <h3>Более 20 предложений под 0%</h3>
+                        <p class="my-auto pb-3">Берите деньги и не переплачивайте МФО ни рубля!</p>
+                    </div><!-- .cart-body -->
+                </div><!-- .cart -->
+            </div><!-- .col -->
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="cart">
+                    <div class="cart-body center">
+                        <div class="circle-i em-30 mx-auto">
+                            <i class="i-checked"></i>
+                        </div>
+                        <h3>До 100% одобрения</h3>
+                        <p class="my-auto pb-3">Деньги может получить каждый - от студента до пенсионера!</p>
                     </div><!-- .cart-body -->
                 </div><!-- .cart -->
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
 </section><!-- .section -->
-
-
-<section class="section bg">
-    <div class="container">
-        <h2 class="h1">Последние отзывы о потребительских кредитах</h2>
-        <div class="cart">
-            <div class="cart-body">
-                <div class="row">
-                    <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/0-1.png">
-                    </div><!-- .col -->
-                    <div class="col-12 col-md">
-                        <h3 class="mb-1">Кредит «Наличными»</h3>
-                        <p>
-                            <i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>
-                            Вячеслав
-                        </p>
-                    </div><!-- .col -->
-                    <div class="col-12 col-md-auto">
-                        <p>16 мая 2021</p>
-                    </div><!-- .col -->
-                </div><!-- .row -->
-                <p>Оставил на сайте заявку на кредит, мне сразу же перезвонили, сказали, какие документы принести в банк. Пришлось брать справку 2-НДФЛ за два года, зато одобрили быстро.</p>
-            </div><!-- .cart-body -->
-
-            <div class="divider mb-1"></div>
-
-            <div class="cart-body">
-                <div class="row">
-                    <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/0.png">
-                    </div><!-- .col -->
-                    <div class="col-12 col-md">
-                        <h3 class="mb-1">Кредит «На любые цели - Универсальный»</h3>
-                        <p>
-                            <i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>
-                            Сергеев Григорий
-                        </p>
-                    </div><!-- .col -->
-                    <div class="col-12 col-md-auto">
-                        <p>16 мая 2021</p>
-                    </div><!-- .col -->
-                </div><!-- .row -->
-                <p>Заявку на кредит рассмотрели и одобрили быстро. Условия устраивают, процентная ставка не большая. Плачу ежемесячно, в срок, проблем еще ни разу не было.</p>
-            </div><!-- .cart-body -->
-
-            <div class="divider mb-1"></div>
-
-            <div class="cart-body">
-                <div class="row">
-                    <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/0.png">
-                    </div><!-- .col -->
-                    <div class="col-12 col-md">
-                        <h3 class="mb-1">Кредит «Наличными»</h3>
-                        <p>
-                            <i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>
-                            Шомко Татьяна Петровна
-                        </p>
-                    </div><!-- .col -->
-                    <div class="col-12 col-md-auto">
-                        <p>16 мая 2021</p>
-                    </div><!-- .col -->
-                </div><!-- .row -->
-                <p>Нужны были средства на нормальный Евро-ремонт. Обратилась в Альфа, менеджеры умеют убеждать. Условия были подходящие, оформила кредит, деньги получила быстро. Довольна отношением к клиенту и профессионализмом сотрудников.</p>
-            </div><!-- .cart-body -->
-        </div><!-- .cart -->
-    </div><!-- .container -->
-</section><!-- .section -->
-
-
-<section class="section bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-6 mb-4">
-                <div class="cart">
-                    <div class="cart-body center sm-left">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-sm-auto">
-                                <img class="img-center" width="70" src="/img/ava-man.svg">
-                            </div><!-- .col -->
-                            <div class="col-12 col-sm">
-                                <h3 class="mb-1">Денис Беневольский</h3>
-                                <p>04 дек. 2020</p>
-                            </div><!-- .col-12 -->
-                        </div><!-- .row -->
-                        <h3 class="yellow clip">Лучшие кредиты в день обращения от банков и МФО</h3>
-                    </div><!-- .cart-body -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-            <div class="col-12 col-lg-6 mb-4">
-                <div class="cart">
-                    <div class="cart-body center sm-left">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-sm-auto">
-                                <img class="img-center" width="70" src="/img/ava-man.svg">
-                            </div><!-- .col -->
-                            <div class="col-12 col-sm">
-                                <h3 class="mb-1">Денис Беневольский</h3>
-                                <p>01 дек. 2020</p>
-                            </div><!-- .col-12 -->
-                        </div><!-- .row -->
-                        <h3 class="yellow clip">ТОП 5 банков с лучшими кредитами для зарплатных клиентов</h3>
-                    </div><!-- .cart-body -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-        </div><!-- .row -->
-    </div><!-- .container -->
-</section><!-- .section -->
-
-
-<section class="section bg">
-    <div class="container">
-        <h2 class="h1">Как оформить кредит на карту онлайн через &laquo;Без&nbsp;кредитов&raquo;</h2>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body center">
-                        <div class="circle-i em-30 mx-auto">
-                            <i class="i-stamp"></i>
-                        </div>
-                        <p>С помощью фильтров подберите лучшее предложение из доступных</p>
-                    </div><!-- .cart-body -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body center">
-                        <div class="circle-i em-30 mx-auto">
-                            <i class="i-hand"></i>
-                        </div>
-                        <p>Перед оформлением кредита ознакомьтесь с условиями на странице предложения</p>
-                    </div><!-- .cart-body -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body center">
-                        <div class="circle-i em-30 mx-auto">
-                            <i class="i-edit"></i>
-                        </div>
-                        <p>Нажмите на кнопку “Оформить” и заполните анкету на сайте банка</p>
-                    </div><!-- .cart-body -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-        </div><!-- .row -->
-    </div><!-- .container -->
-</section><!-- .section -->
-
 
 <section class="section bg">
     <div class="container">
         <div class="cart mb-4 p-lg-3">
             <div class="cart-body">
-                <h2 class="h1">Онлайн кредит на карту: памятка клиенту</h2>
-                <p>Хотя кредит наличными пока остается самым популярным способом кредитования населения, статистика показывает, что все больше людей всех возрастов прибегает к возможности взять кредит онлайн на карту без посещения банка.</p>
-                <p>Банки предлагают различные программы кредитования, чтобы помочь заемщикам в различных жизненных ситуациях. Для решения финансовых трудностей можно взять потребительский кредит на карту, обратившись в один из банков, представленных на этой странице. Мы собрали все условия по кредитам в одном месте, а вам осталось лишь внимательно изучить предложения и выбрать условия, которые решат вашу финансовую потребность.</p>
-                <h3 class="h1">Как и где можно взять онлайн кредит на карту?</h3>
-                <p>Самым простым способом получить кредит онлайн - является подача заявки на этой странице. Это позволяет прямо из дома сравнить кредиты и отправить анкету во все банки, увеличив шансы на получение одобрения в одном из них.</p>
-                <h3 class="h1">Как подать онлайн-заявку на кредит на карту?</h3>
+                <h2 class="h1">Оформить займ денег до зарплаты</h2>
+
+                <p>Займ до зарплаты простой вариант для получения небольшого количества денег, если возникли финансовые проблемы, а зарплата еще не скоро. Займ стоит выбрать, потому что его оформление не займет много времени, а сумму можно выбрать, чтобы ее хватило до зарплаты. </p>
+
+                <p>Согласно статистике, заявленной Центробанком, общее количество должников по выплатам кредитов продолжает расти в геометрической прогрессии. Чтобы обезопасить финансовые активы, происходит ужесточение условий, при которых можно получить очередную ссуду. Если раннее заемщик допускал просрочки больше, чем на месяц, то банки могут отказать в кредите даже под высокий процент. Но, что делать, если деньги нужны срочно, а зарплату задерживают и требуется небольшая сумма? В таком случае микрокредитование становится достойной альтернативой, позволяющей решить возникшую проблему.</p>
+
+                <h3 class="h1">Как получить деньги на карту</h3>
+
+                <p>Займ на карту до зарплаты можно получить даже без проверки кредитной истории, это легче, чем многие думают. От вас не потребуется особых усилий, затрат времени, или долгого сбора множества документов. Проще всего оформить микрозайм до зарплаты на карту в интернете, и оставить номер телефона, чтобы была возможность получить сообщение о предполагаемых условиях.</p>
+
+                <p><strong>Чтобы не дожидаться звонка менеджера, и получить деньги до зарплаты на карту онлайн срочно. Можно самостоятельно выполнить всего несколько действий:</strong></p>
+
                 <ul class="ul-circle">
-                    <li>Рассмотрите условия кредитования от разных банков на этой странице - сравните процентные ставки по кредитам, срок кредитования, размер ежемесячного платежа, необходимый кредитный рейтинг и другие параметры;</li>
-                    <li>Выберите подходящее предложение и отправьте заявку с заполненными данными;</li>
-                    <li>Получите предварительное решение по кредиту через несколько минут;</li>
-                    <li>Если заявка будет одобрена, то с вами свяжется представитель банка и сообщит о дальнейших действиях.</li>
+                    <li><p>выбрать МФО с более выгодными условиями;</p></li>
+                    <li><p>пройти регистрацию (при необходимости);</p></li>
+                    <li><p>заполнить стандартную анкету;</p></li>
+                    <li><p>выбрать сумму и срок кредитования;</p></li>
+                    <li><p>выбрать способ получения;</p></li>
+                    <li><p>отправить заявку на рассмотрение.</p></li>
                 </ul>
-                <div class="wall px-sm-4" style="min-height: auto;">
-                    <p><strong>Важно!</strong> Необходимо использовать только проверенные сайты, чтобы ваши данные не оказались в руках мошенников. Наш сайт предлагает только проверенные предложения от действующих и проверенных организаций, что гарантирует безопасность для клиента.</p>
-                </div>
+
+                <p>Как правило, ответ можно получить в течение 10-20 минут благодаря автоматической обработке информации. Важно указывать только достоверные данные, а также проверить наличие опечаток, чтобы получить деньги до зп, и не получить отказ. Повторную заявку можно будет оформить только через 30-60 дней.</p>
+
+                <h3 class="h1">Документы для получения займа до зарплаты</h3>
+
+                <p>Для займа на карту не потребуется паспорт. Все, что нужно, это основные личные данные. Кроме того, стоит оставить вариант для связи с заемщиком, например, номер телефона или электронная почта.</p>
+
+                <p><strong>В зависимости от выбранной организации, условия предоставления займа могут меняться. Так, например, некоторые МФО в целях безопасности просят прикрепить фото/сканы паспорта РФ, а также одного документа на выбор:</strong></p>
+
+                <ul class="ul-circle">
+                    <li><p>ИНН;</p></li>
+                    <li><p>СНИЛС;</p></li>
+                    <li><p>загранпаспорт (с отметками о выезде не старше 6 месяцев на момент подачи заявки);</p></li>
+                    <li><p>водительское удостоверение.</p></li>
+                </ul>
+
+                <p>Чем больше документов будет предоставлено, тем выше вероятность получения положительного решения по заявке. В качестве дополнительной идентификации может потребоваться фото заемщика с паспортом. Условия индивидуальны и зачастую указаны на официальном сайте организации или в личном кабинете.</p>
+
+                Плюсы и минусы
+
+                Почему стоит взять займ до зарплаты?
+
+                Быстрое принятие решения по заявке;
+                Деньги поступают сразу после одобрения;
+                Возможность получить заем даже пользователям с неидельной кредитной историей.
+                Почему не стоит брать займ до зарплаты?
+
+                Небольшая сумма займа. Если вам нужна большая сумма денег, то обращаться к микрозайму не стоит. Он рассчитан на то, что денежные средства решат текущие проблемы за краткий период.
+                Некбольшой срок. Стоит тщательно обдумать свои финансовые возможности, чтобы выплатить займ в срок. Как правило, средства на карту до зарплаты предоставляется на маленький период времени.
             </div><!-- .cart-body -->
         </div><!-- .cart -->
     </div><!-- .container -->
@@ -766,61 +664,85 @@ $this->params['breadcrumbs'] = [
         <div class="cart mb-4 p-lg-3">
             <div class="cart-body">
                 <h2 class="h1">Популярные предложения</h2>
-                <h3>Выберите кредит</h3>
+                <h3>Популярные займы</h3>
                 <div class="row">
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">По 2 документам без справок</a>
+                        <a href="javascript:;">С плохой кредитной историей</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">С плохой КИ</a>
+                        <a href="javascript:;">С автоматическим одобрением</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">Неработающим</a>
+                        <a href="javascript:;">Займ без процентов</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">Без отказа</a>
+                        <a href="javascript:;">Круглосуточно</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">Наличными</a>
-                    </div><!-- .col -->
-                    <div class="col-auto mb-3">
-                        <a href="javascript:;">С минимальной процентной ставкой</a>
+                        <a href="javascript:;">По номеру карты</a>
                     </div><!-- .col -->
                 </div><!-- .row -->
-                <h3>Большие суммы</h3>
+                <h3>Получение займа</h3>
                 <div class="row">
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">На 1 000 000 рублей</a>
+                        <a href="javascript:;">На Яндекс Деньги</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">На 500 000 рублей</a>
+                        <a href="javascript:;">На Юmoney</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">На 300 000 рублей</a>
+                        <a href="javascript:;">Без проверок</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">На 250 000 рублей</a>
+                        <a href="javascript:;">На Киви</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">На 1 500 000 рублей</a>
+                        <a href="javascript:;">На карту без отказа</a>
+                    </div><!-- .col -->
+                    <div class="col-auto mb-3">
+                        <a href="javascript:;">За 5 минут</a>
                     </div><!-- .col -->
                 </div><!-- .row -->
-                <h3>Лучшие кредиты</h3>
+                <h3>Категория заёмщика</h3>
                 <div class="row">
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">Без поручителей</a>
+                        <a href="javascript:;">Безработным</a>
+                    </div><!-- .col -->
+                    <div class="col-auto mb-3">
+                        <a href="javascript:;">Студентам</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
                         <a href="javascript:;">С 18 лет</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">По двум документам</a>
+                        <a href="javascript:;">Для пенсионеров</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">На один год</a>
+                        <a href="javascript:;">Для граждан СНГ</a>
                     </div><!-- .col -->
                     <div class="col-auto mb-3">
-                        <a href="javascript:;">Образовательный кредит</a>
+                        <a href="javascript:;">Займ без паспорта</a>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+                <h3>Лучшие условия</h3>
+                <div class="row">
+                    <div class="col-auto mb-3">
+                        <a href="javascript:;">Автокредит</a>
+                    </div><!-- .col -->
+                    <div class="col-auto mb-3">
+                        <a href="javascript:;">Дебетовые карты</a>
+                    </div><!-- .col -->
+                    <div class="col-auto mb-3">
+                        <a href="javascript:;">Займы онлайн на карту</a>
+                    </div><!-- .col -->
+                    <div class="col-auto mb-3">
+                        <a href="javascript:;">Кредитные карты</a>
+                    </div><!-- .col -->
+                    <div class="col-auto mb-3">
+                        <a href="javascript:;">Ипотека</a>
+                    </div><!-- .col -->
+                    <div class="col-auto mb-3">
+                        <a href="javascript:;">Кредит онлайн</a>
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div><!-- .cart-body -->
