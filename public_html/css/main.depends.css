@@ -16,9 +16,9 @@ body.compensate-for-scrollbar{overflow:hidden}.fancybox-active{height:auto}.fanc
 @font-face {
   font-family: 'icomoon';
   src:
-    url('fonts/icomoon.ttf?mjlt1m') format('truetype'),
-    url('fonts/icomoon.woff?mjlt1m') format('woff'),
-    url('fonts/icomoon.svg?mjlt1m#icomoon') format('svg');
+    url('fonts/icomoon.ttf?mmp1wa') format('truetype'),
+    url('fonts/icomoon.woff?mmp1wa') format('woff'),
+    url('fonts/icomoon.svg?mmp1wa#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -39,6 +39,15 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.i-up-s:before {
+  content: "\e93a";
+}
+.i-up:before {
+  content: "\e93b";
+}
+.i-hot:before {
+  content: "\e93c";
+}
 .i-wallet:before {
   content: "\e937";
 }

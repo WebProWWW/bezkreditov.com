@@ -262,7 +262,7 @@ $this->params['breadcrumbs'] = ['Полная кредитная история'
                         <div class="progress">
                             <div class="progress-line" style="width: 33%"></div>
                         </div>
-                        <h2>Авторизуйтесь</h2>
+                        <p class="h2">Авторизуйтесь</p>
                         <p>Войдите через госуслуги для быстрого создания личного кабинета или введите номер телефона и продолжите регистрацию</p>
                         <a class="btn-trsp pt-3" href="javascript:;">
                             <img class="img-center mb-0" width="110" src="/img/gos-logo-line.svg">
@@ -311,7 +311,7 @@ $this->params['breadcrumbs'] = ['Полная кредитная история'
     <div class="container">
         <h2 class="h1 center">Часто задаваемые вопросы</h2>
         <div class="cart pt-4 mb-4">
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-1">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-1">
                 <a class="ln-black-primary" href="javascript:;">Можно ли проверить кредитный рейтинг бесплатно?</a>
                 <i class="i-down ml-auto"></i>
             </p>
@@ -320,7 +320,7 @@ $this->params['breadcrumbs'] = ['Полная кредитная история'
                 <p>С помощью нашего сервиса можно запрашивать отчет о вашей кредитной активности сколько угодно раз. Вся необходимая информация собирается в крупнейшем российском бюро кредитных историй — НБКИ.</p>
             </div>
             <div class="divider-dark"></div>
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-2">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-2">
                 <a class="ln-black-primary" href="javascript:;">Какие данные необходимы, чтобы проверить кредитный рейтинг?</a>
                 <i class="i-down ml-auto"></i>
             </p>
@@ -328,7 +328,7 @@ $this->params['breadcrumbs'] = ['Полная кредитная история'
                 <p>Для того, чтобы заказать отчет, достаточно указать паспортные данные и номер мобильного телефона.</p>
             </div>
             <div class="divider-dark"></div>
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-3">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-3">
                 <a class="ln-black-primary" href="javascript:;">Можно ли самому получить кредитный рейтинг по фамилии?</a>
                 <i class="i-down ml-auto"></i>
             </p>
@@ -337,7 +337,7 @@ $this->params['breadcrumbs'] = ['Полная кредитная история'
                 <p>Помимо нашего сервиса, самые распространенные способы получения отчета — через портал Госуслуг или сайт Центробанка. В первом случае понадобится паспорт и СНИЛС, во втором — код субъекта кредитной истории. Обратите внимание, что такие варианты требуют большего времени и увеличивают количество необходимых шагов. Эти платформы лишь предоставят вам список бюро, где хранится ваша кредитная история, для более подробной информации придется обращаться в каждое из них отдельно.</p>
             </div>
             <div class="divider-dark"></div>
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-4">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-4">
                 <a class="ln-black-primary" href="javascript:;">Сколько времени хранится кредитная история?</a>
                 <i class="i-down ml-auto"></i>
             </p>
@@ -345,7 +345,7 @@ $this->params['breadcrumbs'] = ['Полная кредитная история'
                 <p>Продолжительность хранения кредитной истории в БКИ — 10 лет с последней даты внесения в нее информации. Но банкам наиболее важны последние 2–3 года вашей активности в роли заемщика.</p>
             </div>
             <div class="divider-dark"></div>
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-5">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-5">
                 <a class="ln-black-primary" href="javascript:;">Что влияет на кредитный рейтинг?</a>
                 <i class="i-down ml-auto"></i>
             </p>

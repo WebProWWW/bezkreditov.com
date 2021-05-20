@@ -8,7 +8,7 @@ $this->params['breadcrumbs'] = ['Подбор кредита'];
 
 ?>
 
-<section class="section bg" style="overflow: hidden; position: relative;">
+<section class="section" style="overflow: hidden; position: relative; background: #BDC1C2;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md">
@@ -24,8 +24,8 @@ $this->params['breadcrumbs'] = ['Подбор кредита'];
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div><!-- .col -->
-            <div class="col-12 col-md-6 col-xl-8">
-                <img class="img-center" width="650" src="/img/img-28.svg" style="margin-bottom: -11px">
+            <div class="col-12 col-md-6 col-xl-8 align-self-end">
+                <img class="img-center" width="520" src="/img/img-38.jpg" style="margin-bottom: -11px">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
@@ -213,7 +213,7 @@ $this->params['breadcrumbs'] = ['Подбор кредита'];
     <div class="container">
         <h2 class="h1 center">Часто задаваемые вопросы</h2>
         <div class="cart pt-4 mb-4">
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-1">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-1">
                 <a class="ln-black-primary" href="javascript:;">
                     Мне подходят несколько предложений, я могу везде сразу получить деньги?
                 </a>
@@ -223,7 +223,7 @@ $this->params['breadcrumbs'] = ['Подбор кредита'];
                 <p>Конечно, мы делаем все, чтобы у вас был максимально широкий выбор. Вы сможете взять деньги там, где захотите.</p>
             </div>
             <div class="divider-dark"></div>
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-2">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-2">
                 <a class="ln-black-primary" href="javascript:;">
                     Объясните еще раз по простому: как все работает?
                 </a>
@@ -233,7 +233,7 @@ $this->params['breadcrumbs'] = ['Подбор кредита'];
                 <p>Очень просто. Заявка - одобрение - получение решения - выдача денег. Максимально быстро и удобно.</p>
             </div>
             <div class="divider-dark"></div>
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-3">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-3">
                 <a class="ln-black-primary" href="javascript:;">
                     Почему стоит оформлять заявку на &laquo;Без&nbsp;кредитов&raquo;, а не через банк напрямую?
                 </a>
@@ -243,7 +243,7 @@ $this->params['breadcrumbs'] = ['Подбор кредита'];
                 <p>Мы сэкономим ваше время и отправим заявку только в те банки, которые больше всего подходят вам по вашему кредитному рейтингу. Таким образом, вы сможете получить деньги максимально быстро.</p>
             </div>
             <div class="divider-dark"></div>
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-4">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-4">
                 <a class="ln-black-primary" href="javascript:;">
                     А мне точно одобрят кредит?
                 </a>
@@ -253,7 +253,7 @@ $this->params['breadcrumbs'] = ['Подбор кредита'];
                 <p>100% гарантию дать не можем, но алгоритмы Юником24 работают с высочайшей точностью и отправляют заявки в банки, которые выдадут вам деньги с максимальной вероятностью.</p>
             </div>
             <div class="divider-dark"></div>
-            <p class="h2 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-5">
+            <p class="em-13 px-4 pointer d-flex align-items-center i-down-trans" data-toggle="#faq-content-5">
                 <a class="ln-black-primary" href="javascript:;">
                     Как быстро я могу получить деньги?
                 </a>

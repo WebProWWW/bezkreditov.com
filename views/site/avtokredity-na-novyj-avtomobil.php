@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Автокредит на новый автомобиль';
-$this->params['description'] = 'Оформите срочный микрозайм онлайн на карту от МФО, проверенных экспертами &laquo;Без&nbsp;кредитов&raquo;. Для этого вам не придется даже выходить из дома: достаточно выбрать подходящее предложение и подать заявку на займ онлайн.';
+$this->params['description'] = 'Кредит на новый автомобиль. Специальные программы автокредитования. Быстрое решение по автокредиту на новое авто';
 $this->params['breadcrumbs'] = [
     [
         'url' => ['site/index', 'view' => 'avtokredity'],
@@ -19,6 +19,7 @@ $this->params['breadcrumbs'] = [
         <div class="row align-items-center">
             <div class="col-12 col-md-6">
                 <h1>Автокредит на новый <br>автомобиль</h1>
+                <p class="em-11">Кредит на новый автомобиль. Специальные программы автокредитования. Быстрое решение по автокредиту на новое&nbsp;авто</p>
             </div><!-- .col -->
             <div class="col-12 col-md-6 align-self-end">
                 <img class="img-center" width="430" src="/img/img-40.jpg" style="margin-bottom: -11px;">

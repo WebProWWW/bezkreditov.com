@@ -12,55 +12,6 @@ use app\helpers\Url;
             <i class="i-ch-down em-7"></i>
         </span>
     </a>
-    <a class="main-nav-ln" data-dropdown="#main-nav-content-2">
-        <span class="nav-txt">
-            Карты
-            <i class="i-ch-down em-7"></i>
-        </span>
-    </a>
-    <a class="main-nav-ln" data-dropdown="#main-nav-content-3">
-        <span class="nav-txt">
-            Кредиты
-            <i class="i-ch-down em-7"></i>
-        </span>
-    </a>
-    <a class="main-nav-ln" data-dropdown="#main-nav-content-4">
-        <span class="nav-txt">
-            Ипотека
-            <i class="i-ch-down em-7"></i>
-        </span>
-    </a>
-    <a class="main-nav-ln" data-dropdown="#main-nav-content-5">
-        <span class="nav-txt">
-            Сервисы
-            <i class="i-ch-down em-7"></i>
-        </span>
-    </a>
-    <a class="main-nav-ln" data-dropdown="#main-nav-content-6">
-        <span class="nav-txt">
-            Калькуляторы
-            <i class="i-ch-down em-7"></i>
-        </span>
-    </a>
-    <a class="main-nav-ln" data-dropdown="#main-nav-content-7">
-        <span class="nav-txt">
-            Финансы
-            <i class="i-ch-down em-7"></i>
-        </span>
-    </a>
-    <a class="main-nav-ln" data-dropdown="#main-nav-content-8">
-        <span class="nav-txt">
-            Еще
-            <i class="i-ch-down em-7"></i>
-        </span>
-    </a>
-    <a class="main-nav-ln" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
-        <span class="nav-txt">Новости</span>
-    </a>
-    <a class="main-nav-ln" href="<?= Url::toView('o-proekte') ?>">
-        <span class="nav-txt">О проекте</span>
-    </a>
-
     <div class="main-nav-content" id="main-nav-content-1">
         <div class="row no-gutters">
             <div class="col-auto mr-4">
@@ -137,6 +88,12 @@ use app\helpers\Url;
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
 
+    <a class="main-nav-ln" data-dropdown="#main-nav-content-2">
+        <span class="nav-txt">
+            Карты
+            <i class="i-ch-down em-7"></i>
+        </span>
+    </a>
     <div class="main-nav-content" id="main-nav-content-2">
         <div class="row">
             <div class="col-3">
@@ -198,6 +155,12 @@ use app\helpers\Url;
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
 
+    <a class="main-nav-ln" data-dropdown="#main-nav-content-3">
+        <span class="nav-txt">
+            Кредиты
+            <i class="i-ch-down em-7"></i>
+        </span>
+    </a>
     <div class="main-nav-content" id="main-nav-content-3">
         <div class="row">
             <div class="col-3">
@@ -281,6 +244,12 @@ use app\helpers\Url;
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
 
+    <a class="main-nav-ln" data-dropdown="#main-nav-content-4">
+        <span class="nav-txt">
+            Ипотека
+            <i class="i-ch-down em-7"></i>
+        </span>
+    </a>
     <div class="main-nav-content" id="main-nav-content-4">
         <div class="row">
             <div class="col-3">
@@ -335,6 +304,12 @@ use app\helpers\Url;
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
 
+    <a class="main-nav-ln" data-dropdown="#main-nav-content-5">
+        <span class="nav-txt">
+            Сервисы
+            <i class="i-ch-down em-7"></i>
+        </span>
+    </a>
     <div class="main-nav-content" id="main-nav-content-5">
         <div class="row">
             <div class="col-3">
@@ -350,57 +325,69 @@ use app\helpers\Url;
                 </a>
             </div><!-- .col -->
             <div class="col">
-                <div class="row no-gutters">
-                    <div class="col-4">
-                        <p class="fw-600">Банкротство</p>
-                    </div><!-- .col-4 -->
-                    <div class="col-4">
-                        <p class="fw-600">&nbsp;</p>
-                    </div><!-- .col-4 -->
-                    <div class="col-4">
-                        <p class="fw-600">Кредиты и финансы</p>
-                    </div><!-- .col-4 -->
+                <div class="row">
+                    <div class="col">
+                        <a class="nav-ln" href="javascript:;">
+                            <span class="nav-txt fw-600">Банкротство</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Онлайн подбор юриста по банкротству</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Онлайн калькулятор по банкротству</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Проверка долгов онлайн</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col">
+                        <a class="nav-ln" href="javascript:;">
+                            <span class="nav-txt fw-600">&nbsp;</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Онлайн тест на списание долгов, кредитов</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Онлайн консультация по банкротству</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Онлайн тест на списание <br> долгов, кредитов</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col">
+                        <a class="nav-ln" href="javascript:;">
+                            <span class="nav-txt fw-600">Кредиты и финансы</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('polnaya-kreditnaya-istoriya') ?>">
+                            <span class="nav-txt">Полная кредитная история</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('zashita-ot-moshennikov') ?>">
+                            <span class="nav-txt">Защита от мощенников</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('proverka-finansovogo-zdorovya') ?>">
+                            <span class="nav-txt">Проверка финансового здоровья</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('podbor-kredita') ?>">
+                            <span class="nav-txt">Подбор кредита</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('bankrotstvo') ?>">
+                            <span class="nav-txt">Банкротство</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('kreditnyj-kalkulyator') ?>">
+                            <span class="nav-txt">Кредитный калькулятор</span>
+                        </a>
+                    </div><!-- .col -->
                 </div><!-- .row -->
-                <nav class="nav">
-                    <a class="nav-ln nav-list col-4" href="javascript:;">
-                        <span class="nav-txt">Онлайн подбор юриста по банкротству</span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="javascript:;">
-                        <span class="nav-txt">Онлайн тест на списание долгов, кредитов</span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('polnaya-kreditnaya-istoriya') ?>">
-                        <span class="nav-txt">Полная кредитная история</span>
-                    </a>
-
-                    <a class="nav-ln nav-list col-4" href="javascript:;">
-                        <span class="nav-txt">Онлайн калькулятор по банкротству</span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="javascript:;">
-                        <span class="nav-txt">Онлайн консультация по банкротству</span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('zashita-ot-moshennikov') ?>">
-                        <span class="nav-txt">Защита от мощенников</span>
-                    </a>
-
-                    <a class="nav-ln nav-list col-4" href="javascript:;">
-                        <span class="nav-txt">Проверка долгов онлайн</span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="javascript:;">
-                        <span class="nav-txt">Онлайн тест на списание <br> долгов, кредитов</span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('proverka-finansovogo-zdorovya') ?>">
-                        <span class="nav-txt">Проверка финансового здоровья</span>
-                    </a>
-                    <div class="col-4">&nbsp;</div>
-                    <div class="col-4">&nbsp;</div>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('podbor-kredita') ?>">
-                        <span class="nav-txt">Подбор кредита</span>
-                    </a>
-                </nav>
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
 
+    <a class="main-nav-ln" data-dropdown="#main-nav-content-6">
+        <span class="nav-txt">
+            Калькуляторы
+            <i class="i-ch-down em-7"></i>
+        </span>
+    </a>
     <div class="main-nav-content" id="main-nav-content-6">
         <div class="row">
             <div class="col-3">
@@ -446,6 +433,12 @@ use app\helpers\Url;
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
 
+    <a class="main-nav-ln" data-dropdown="#main-nav-content-7">
+        <span class="nav-txt">
+            Финансы
+            <i class="i-ch-down em-7"></i>
+        </span>
+    </a>
     <div class="main-nav-content" id="main-nav-content-7">
         <div class="row align-items-center">
             <div class="col-3">
@@ -520,6 +513,12 @@ use app\helpers\Url;
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
 
+    <a class="main-nav-ln" data-dropdown="#main-nav-content-8">
+        <span class="nav-txt">
+            Еще
+            <i class="i-ch-down em-7"></i>
+        </span>
+    </a>
     <div class="main-nav-content" id="main-nav-content-8">
         <div class="row">
             <div class="col-3">
@@ -607,4 +606,11 @@ use app\helpers\Url;
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
 
+    <a class="main-nav-ln" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
+        <span class="nav-txt">Новости</span>
+    </a>
+
+    <a class="main-nav-ln" href="<?= Url::toView('o-proekte') ?>">
+        <span class="nav-txt">О проекте</span>
+    </a>
 </div><!-- .main-nav -->

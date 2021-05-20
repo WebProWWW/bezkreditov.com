@@ -237,7 +237,9 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <a class="nav-ln" href="javascript:;">
                 <span class="nav-txt">Онлайн тест на списание <br> долгов, кредитов</span>
             </a>
-            <p class="fw-600 em-9 pl-1">Банкротство</p>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt fw-600">Банкротство</span>
+            </a>
             <a class="nav-ln" href="javascript:;">
                 <span class="nav-txt">Онлайн подбор юриста по банкротству</span>
             </a>
@@ -247,7 +249,9 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <a class="nav-ln" href="javascript:;">
                 <span class="nav-txt">Проверка долгов онлайн</span>
             </a>
-            <p class="fw-600 em-9 pl-1">Кредиты и финансы</p>
+            <a class="nav-ln" href="javascript:;">
+                <span class="nav-txt fw-600">Кредиты и финансы</span>
+            </a>
             <a class="nav-ln" href="<?= Url::toView('polnaya-kreditnaya-istoriya') ?>">
                 <span class="nav-txt">Полная кредитная история</span>
             </a>
@@ -259,6 +263,12 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             </a>
             <a class="nav-ln" href="<?= Url::toView('podbor-kredita') ?>">
                 <span class="nav-txt">Подбор кредита</span>
+            </a>
+            <a class="nav-ln" href="<?= Url::toView('bankrotstvo') ?>">
+                <span class="nav-txt">Банкротство</span>
+            </a>
+            <a class="nav-ln" href="<?= Url::toView('kreditnyj-kalkulyator') ?>">
+                <span class="nav-txt">Кредитный калькулятор</span>
             </a>
         </div><!-- .main-mnav-content -->
 

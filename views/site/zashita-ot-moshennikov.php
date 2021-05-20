@@ -8,7 +8,7 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
 
 ?>
 
-<section class="section bg">
+<section class="section" style="overflow: hidden; position: relative; background: #BDC1C2;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md-6 col-lg-auto">
@@ -39,10 +39,8 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
                     </div><!-- .cart-body -->
                 </div><!-- .cart -->
             </div><!-- .col -->
-            <div class="col-12 col-md-6 col-lg">
-                <div class="img-wrap-circle">
-                    <img class="img-center" width="371" src="/img/img-22.png">
-                </div>
+            <div class="col-12 col-md-6 col-lg align-self-end">
+                <img class="img-center" width="580" src="/img/img-41.jpg" style="margin-bottom: -11px">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->

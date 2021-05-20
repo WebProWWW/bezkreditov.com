@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Автомобиль в кредит без первоначального взноса';
-$this->params['description'] = 'Оформите срочный микрозайм онлайн на карту от МФО, проверенных экспертами &laquo;Без&nbsp;кредитов&raquo;. Для этого вам не придется даже выходить из дома: достаточно выбрать подходящее предложение и подать заявку на займ онлайн.';
+$this->params['description'] = 'Выгодный автокредит на покупку автомобиля. Первоначальный взнос от 0%';
 $this->params['breadcrumbs'] = [
     [
         'url' => ['site/index', 'view' => 'avtokredity'],
@@ -19,6 +19,7 @@ $this->params['breadcrumbs'] = [
         <div class="row align-items-center">
             <div class="col-12 col-md-6">
                 <h1>Автомобиль в кредит без первоначального взноса</h1>
+                <p class="em-11">Выгодный автокредит на покупку автомобиля. Первоначальный взнос&nbsp;от&nbsp;0%</p>
             </div><!-- .col -->
             <div class="col-12 col-md-6 align-self-end">
                 <img class="img-center" width="430" src="/img/img-40.jpg" style="margin-bottom: -11px;">

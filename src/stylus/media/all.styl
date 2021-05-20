@@ -452,6 +452,15 @@ body.main-mnav-active
     .wall-divider
         background lighten(#B1B6B4, 45%)
 
+.wall-trsp
+    mpd(0 0 15px, 15px 15px 1px, flex)
+    b(1, #C7C9CC)
+    flex-direction column
+    min-height 100%
+    border-radius 5px
+    overflow hidden
+    .wall-divider
+        background #C7C9CC
 
 .img-a
     mpd(0 auto 15px)
@@ -1455,8 +1464,11 @@ for child in (1..10)
 
 
 for w in (1..10)
+    wPx = w * 1px
     .border-primary-{w}
-        border (w * 1px) solid pcolor
+        border wPx solid pcolor
+    .border-gray-{w}
+        border wPx solid #C7C9CC
 
 for r in (1..50)
     .border-radius-{r}
