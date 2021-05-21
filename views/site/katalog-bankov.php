@@ -102,28 +102,30 @@ $this->params['breadcrumbs'] = [
                                 </div><!-- .col -->
                                 <div class="col-12 col-sm-9 col-md-5">
                                     <h3 class="clip mb-1">
-                                        ПРОГРЕССКАРД
+                                        Россельхозбанк
                                     </h3>
                                     <p class="mb-1">
                                         <span class="fw-600">
-                                            <i class="i-star yellow"></i>&nbsp;4.8
+                                            <i class="i-star yellow"></i>&nbsp;4.6
                                         </span>
                                         •
                                         <span class="gray">
-                                            17 отзывов
+                                            7 отзывов
                                         </span>
-                                    </p>
-                                    <p>
-                                        <a href="javascript:;">
-                                            Микрозаймы (1)
-                                        </a>
                                     </p>
                                 </div><!-- .col -->
                                 <div class="col-auto col-md-5 ml-auto">
                                     <p class="gray right">
-                                        № 01503045006581
+                                        № 3349 от 12.08.2015
                                     </p>
                                 </div><!-- .col -->
+                            </div><!-- .row -->
+                            <div class="row" style="margin: 0 -8px;">
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Кредитные карты (21)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Кредиты (3)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Рефинансирование (1)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Ипотека (14)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Дебетовые карты (86)</a></p></div>
                             </div><!-- .row -->
                         </div><!-- .cart-body -->
                     </div><!-- .cart -->
@@ -137,28 +139,29 @@ $this->params['breadcrumbs'] = [
                                 </div><!-- .col -->
                                 <div class="col-12 col-sm-9 col-md-5">
                                     <h3 class="clip mb-1">
-                                        Е-Заём
+                                        СберБанк
                                     </h3>
                                     <p class="mb-1">
                                         <span class="fw-600">
-                                            <i class="i-star yellow"></i>&nbsp;4.5
+                                            <i class="i-star yellow"></i>&nbsp;5
                                         </span>
                                         •
                                         <span class="gray">
-                                            28 отзывов
+                                            12 отзывов
                                         </span>
-                                    </p>
-                                    <p>
-                                        <a href="javascript:;">
-                                            Микрозаймы (1)
-                                        </a>
                                     </p>
                                 </div><!-- .col -->
                                 <div class="col-auto col-md-5 ml-auto">
                                     <p class="gray right">
-                                        № 651303045003161 от 14.05.2013
+                                        № 1481 от 11.08.2015
                                     </p>
                                 </div><!-- .col -->
+                            </div><!-- .row -->
+                            <div class="row" style="margin: 0 -8px;">
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Кредитные карты (11)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Кредиты (6)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Ипотека (11)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Дебетовые карты (22)</a></p></div>
                             </div><!-- .row -->
                         </div><!-- .cart-body -->
                     </div><!-- .cart -->
@@ -172,23 +175,30 @@ $this->params['breadcrumbs'] = [
                                 </div><!-- .col -->
                                 <div class="col-12 col-sm-9 col-md-5">
                                     <h3 class="clip mb-1">
-                                        Домашние деньги
+                                        Альфа-банк
                                     </h3>
-                                    <p class="">
+                                    <p class="mb-1">
                                         <span class="fw-600">
-                                            <i class="i-star yellow"></i>&nbsp;4
+                                            <i class="i-star yellow"></i>&nbsp;5
                                         </span>
                                         •
                                         <span class="gray">
-                                            0 отзывов
+                                            81 отзыв
                                         </span>
                                     </p>
                                 </div><!-- .col -->
                                 <div class="col-auto col-md-5 ml-auto">
                                     <p class="gray right">
-                                        нет
+                                        № 1326 от 16.01.2015
                                     </p>
                                 </div><!-- .col -->
+                            </div><!-- .row -->
+                            <div class="row" style="margin: 0 -8px;">
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Кредитные карты (16)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Кредиты (3)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Рефинансирование (1)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Ипотека (3)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Дебетовые карты (14)</a></p></div>
                             </div><!-- .row -->
                         </div><!-- .cart-body -->
                     </div><!-- .cart -->
@@ -202,28 +212,30 @@ $this->params['breadcrumbs'] = [
                                 </div><!-- .col -->
                                 <div class="col-12 col-sm-9 col-md-5">
                                     <h3 class="clip mb-1">
-                                        ПРОГРЕССКАРД
+                                        Россельхозбанк
                                     </h3>
                                     <p class="mb-1">
                                         <span class="fw-600">
-                                            <i class="i-star yellow"></i>&nbsp;4.8
+                                            <i class="i-star yellow"></i>&nbsp;4.6
                                         </span>
                                         •
                                         <span class="gray">
-                                            17 отзывов
+                                            7 отзывов
                                         </span>
-                                    </p>
-                                    <p>
-                                        <a href="javascript:;">
-                                            Микрозаймы (1)
-                                        </a>
                                     </p>
                                 </div><!-- .col -->
                                 <div class="col-auto col-md-5 ml-auto">
                                     <p class="gray right">
-                                        № 01503045006581
+                                        № 3349 от 12.08.2015
                                     </p>
                                 </div><!-- .col -->
+                            </div><!-- .row -->
+                            <div class="row" style="margin: 0 -8px;">
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Кредитные карты (21)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Кредиты (3)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Рефинансирование (1)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Ипотека (14)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Дебетовые карты (86)</a></p></div>
                             </div><!-- .row -->
                         </div><!-- .cart-body -->
                     </div><!-- .cart -->
@@ -237,58 +249,29 @@ $this->params['breadcrumbs'] = [
                                 </div><!-- .col -->
                                 <div class="col-12 col-sm-9 col-md-5">
                                     <h3 class="clip mb-1">
-                                        Е-Заём
+                                        СберБанк
                                     </h3>
                                     <p class="mb-1">
                                         <span class="fw-600">
-                                            <i class="i-star yellow"></i>&nbsp;4.5
+                                            <i class="i-star yellow"></i>&nbsp;5
                                         </span>
                                         •
                                         <span class="gray">
-                                            28 отзывов
+                                            12 отзывов
                                         </span>
-                                    </p>
-                                    <p>
-                                        <a href="javascript:;">
-                                            Микрозаймы (1)
-                                        </a>
                                     </p>
                                 </div><!-- .col -->
                                 <div class="col-auto col-md-5 ml-auto">
                                     <p class="gray right">
-                                        № 651303045003161 от 14.05.2013
+                                        № 1481 от 11.08.2015
                                     </p>
                                 </div><!-- .col -->
                             </div><!-- .row -->
-                        </div><!-- .cart-body -->
-                    </div><!-- .cart -->
-                </div><!-- .mb-4 -->
-                <div class="mb-4">
-                    <div class="cart">
-                        <div class="cart-body">
-                            <div class="row align-items-center">
-                                <div class="col-auto mx-auto">
-                                    <img class="img img-circle" width="60" src="/img/logo/0-2.png">
-                                </div><!-- .col -->
-                                <div class="col-12 col-sm-9 col-md-5">
-                                    <h3 class="clip mb-1">
-                                        Домашние деньги
-                                    </h3>
-                                    <p class="">
-                                        <span class="fw-600">
-                                            <i class="i-star yellow"></i>&nbsp;4
-                                        </span>
-                                        •
-                                        <span class="gray">
-                                            0 отзывов
-                                        </span>
-                                    </p>
-                                </div><!-- .col -->
-                                <div class="col-auto col-md-5 ml-auto">
-                                    <p class="gray right">
-                                        нет
-                                    </p>
-                                </div><!-- .col -->
+                            <div class="row" style="margin: 0 -8px;">
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Кредитные карты (11)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Кредиты (6)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Ипотека (11)</a></p></div>
+                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Дебетовые карты (22)</a></p></div>
                             </div><!-- .row -->
                         </div><!-- .cart-body -->
                     </div><!-- .cart -->
