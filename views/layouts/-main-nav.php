@@ -177,7 +177,7 @@ use app\helpers\Url;
             </div><!-- .col -->
             <div class="col">
                 <div class="row justify-content-between">
-                    <div class="col-auto">
+                    <div class="col">
                         <a class="nav-ln fw-600" href="<?= Url::toView('potrebitelskie-kredity') ?>">
                             <span class="nav-txt">Потребительские кредиты</span>
                         </a>
@@ -218,6 +218,17 @@ use app\helpers\Url;
                         </a>
                     </div><!-- .col -->
                     <div class="col-auto">
+                        <a class="nav-ln fw-600" href="javascript:;">
+                            <span class="nav-txt">&nbsp;</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('katalog-mfo') ?>">
+                            <span class="nav-txt">Каталог <br>МФО</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('katalog-bankov') ?>">
+                            <span class="nav-txt">Каталог <br>банков</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col">
                         <a class="nav-ln fw-600" href="<?= Url::toView('avtokredity') ?>">
                             <span class="nav-txt">Автокредиты</span>
                         </a>

@@ -26,7 +26,6 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <i class="i-ch-down em-8"></i>
         </a>
         <div class="main-mnav-content" id="main-mnav-content-1">
-
             <a class="nav-ln" href="<?= Url::to(['site/company-list', 'page' => 1]) ?>">
                 <span class="nav-txt">Рейтинг компаний по банкротству г.&nbsp;<?= $city->name ?></span>
             </a>
@@ -127,61 +126,64 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
         </a>
         <div class="main-mnav-content" id="main-mnav-content-3">
             <a class="nav-ln fw-600" href="<?= Url::toView('potrebitelskie-kredity') ?>">
-                <span class="nav-txt">Потребительские кредиты</span>
+                Потребительские кредиты
             </a>
             <a class="nav-ln" href="<?= Url::toView('potrebitelskie-kredity-nalichnymi') ?>">
-                <span class="nav-txt">Наличными</span>
+                Наличными
             </a>
             <a class="nav-ln" href="<?= Url::toView('potrebitelskie-kredity-onlajn-na-kartu') ?>">
-                <span class="nav-txt">Онлайн на карту</span>
+                Онлайн на карту
             </a>
             <a class="nav-ln" href="<?= Url::toView('potrebitelskie-kredity-bez-otkaza') ?>">
-                <span class="nav-txt">Без отказа</span>
+                Без отказа
             </a>
             <a class="nav-ln" href="<?= Url::toView('potrebitelskie-kredity-s-plohoj-kreditnoj-istoriej') ?>">
-                <span class="nav-txt">С плохой кредитной историей</span>
+                С плохой кредитной историей
             </a>
             <a class="nav-ln" href="<?= Url::toView('potrebitelskie-kredity-pensioneram') ?>">
-                <span class="nav-txt">Пенсионерам</span>
+                Пенсионерам
             </a>
             <a class="nav-ln fw-600" href="<?= Url::toView('mikrozajmy') ?>">
-                <span class="nav-txt">Микрозаймы</span>
+                Микрозаймы
             </a>
             <a class="nav-ln" href="<?= Url::toView('mikrozajmy-na-kartu') ?>">
-                <span class="nav-txt">На карту</span>
+                На карту
             </a>
             <a class="nav-ln" href="<?= Url::toView('mikrozajmy-bez-otkaza') ?>">
-                <span class="nav-txt">Без отказа</span>
+                Без отказа
             </a>
             <a class="nav-ln" href="<?= Url::toView('mikrozajmy-bez-procentov') ?>">
-                <span class="nav-txt">Без процентов</span>
+                Без процентов
             </a>
             <a class="nav-ln" href="<?= Url::toView('mikrozajmy-srochno') ?>">
-                <span class="nav-txt">Срочно</span>
+                Срочно
             </a>
             <a class="nav-ln" href="<?= Url::toView('mikrozajmy-do-zarplaty') ?>">
-                <span class="nav-txt">До зарплаты</span>
+                До зарплаты
             </a>
             <a class="nav-ln fw-600" href="<?= Url::toView('avtokredity') ?>">
-                <span class="nav-txt">Автокредиты</span>
+                Автокредиты
             </a>
             <a class="nav-ln" href="<?= Url::toView('avtokredity-na-vtore-s-probegom') ?>">
-                <span class="nav-txt">На вторе с пробегом</span>
+                На вторе с пробегом
             </a>
             <a class="nav-ln" href="<?= Url::toView('avtokredity-na-novyj-avtomobil') ?>">
-                <span class="nav-txt">На новый автомобиль</span>
+                На новый автомобиль
             </a>
             <a class="nav-ln" href="<?= Url::toView('avtokredity-vygodnye') ?>">
-                <span class="nav-txt">Выгодные</span>
+                Выгодные
             </a>
             <a class="nav-ln" href="<?= Url::toView('avtokredity-bez-pervonachalnogo-vznosa') ?>">
-                <span class="nav-txt">Без первоначального взноса</span>
+                Без первоначального взноса
             </a>
             <a class="nav-ln fw-600" href="<?= Url::toView('refinansirovanie-kredita') ?>">
-                <span class="nav-txt">Рефинансирование</span>
+                Рефинансирование
             </a>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">&nbsp;</span>
+            <a class="nav-ln" href="<?= Url::toView('katalog-mfo') ?>">
+                Каталог МФО
+            </a>
+            <a class="nav-ln" href="<?= Url::toView('katalog-bankov') ?>">
+                Каталог банков
             </a>
         </div><!-- .main-mnav-content -->
 
@@ -357,65 +359,71 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <i class="i-ch-down em-8"></i>
         </a>
         <div class="main-mnav-content" id="main-mnav-content-8">
-            <p class="fw-600 em-9 pl-1">Банки</p>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Курсы валют ЦБ РФ</span>
+            <a class="nav-ln fw-600" href="javascript:;">
+                Банки
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Курсы обмена валют</span>
+                Курсы валют ЦБ РФ
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Рейтинги банков</span>
+                Курсы обмена валют
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Клиентский рейтинг</span>
+                Рейтинги банков
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Финансовые показатели</span>
+                Клиентский рейтинг
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Отзывы о банках</span>
-            </a>
-            <p class="fw-600 em-9 pl-1">Банкротство</p>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Курсы валют ЦБ РФ</span>
+                Финансовые показатели
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Курсы обмена валют</span>
+                Отзывы о банках
+            </a>
+            <a class="nav-ln fw-600" href="javascript:;">
+                Банкротство
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Рейтинги банков</span>
+                Курсы валют ЦБ РФ
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Клиентский рейтинг</span>
+                Курсы обмена валют
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Финансовые показатели</span>
+                Рейтинги банков
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Отзывы о банках</span>
-            </a>
-            <p class="fw-600 em-9 pl-1">Статьи и новости</p>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Сравнения</span>
+                Клиентский рейтинг
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Бытовая аналитика</span>
+                Финансовые показатели
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Тест-драйвы</span>
+                Отзывы о банках
+            </a>
+            <a class="nav-ln fw-600" href="javascript:;">
+                Статьи и новости
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Истории</span>
+                Сравнения
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Советы</span>
+                Бытовая аналитика
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Новости партнеров</span>
+                Тест-драйвы
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Funny Money</span>
+                Истории
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                Советы
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                Новости партнеров
+            </a>
+            <a class="nav-ln" href="javascript:;">
+                Funny Money
             </a>
         </div><!-- .main-mnav-content -->
 

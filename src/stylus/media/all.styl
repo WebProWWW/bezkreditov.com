@@ -217,7 +217,6 @@ table th:first-child
 .nav-ln.nav-list:before
     mpd(.4em .5em 0 0)
     content ''
-    // flex 0 0 auto
     width .6em
     height @width
     background pcolor
@@ -334,6 +333,10 @@ table th:first-child
     mpd()
     overflow hidden
     display none
+
+.main-mnav-content > .nav-ln
+    padding-left 15px
+
 
 
 body.main-mnav-active
@@ -652,7 +655,28 @@ body.main-mnav-active
     font-size 1.1em
 
 
+.input-group
+    mpd(0, 0, flex)
+    position relative
+
+
+.input-group > .input
+    padding-left 3rem
+
+
+.input-right
+    position absolute
+    top 0
+    right 0
+
+
+.input-left
+    position absolute
+    top 0
+    left 0
+
 .input
+.input-btn
     appearance none
     outline none
     mpd(0 0 15px, 8px 15px)
@@ -664,7 +688,22 @@ body.main-mnav-active
     background white
     font-size 1rem
 
+
+.input-btn
+.input-btn:focus
+.input-btn:active
+    outline none
+    border none
+    width auto
+    border-radius 0
+    background transparent
+
+.input-btn:hover
+    color pcolor
+
+
 .input:focus
+    outline none
     b(1, pcolor)
 
 .input.error
