@@ -272,6 +272,9 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <a class="nav-ln" href="<?= Url::toView('kreditnyj-kalkulyator') ?>">
                 <span class="nav-txt">Кредитный калькулятор</span>
             </a>
+            <a class="nav-ln fw-600" href="<?= Url::toView('osago-onlajn') ?>">
+                ОСАГО онлайн
+            </a>
         </div><!-- .main-mnav-content -->
 
         <a class="main-mnav-ln" data-dropdown="#main-mnav-content-6">

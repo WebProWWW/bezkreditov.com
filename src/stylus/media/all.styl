@@ -58,6 +58,8 @@ a:active
     text-decoration none
     color #014091
 
+button
+    trans()
 
 label
     user-select none
@@ -183,8 +185,7 @@ table th:first-child
 
 .nav-ln
     mpd(0 0 15px, 0 5px, flex)
-    resetLn(black, black)
-    // align-items center
+    resetLn(black, darken(pcolor, 30%))
     font-size 12px
 
 .nav-ln:hover > .nav-txt
@@ -318,7 +319,7 @@ table th:first-child
 
 .main-mnav-ln:hover
 .main-mnav-ln.active
-    color pcolor
+    color darken(pcolor, 30%)
 
 .main-mnav-ln > .i-ch-down
     trans()
@@ -378,9 +379,9 @@ body.main-mnav-active
 .btn-default
 .btn-trsp
 .btn-bordered
+.btn-red
     mpd(0 0 15px, 9px 20px)
     resetLn(black, black)
-    trans()
     box-sizing border-box
     width 100%
     background pcolor
@@ -391,7 +392,13 @@ body.main-mnav-active
 
 .btn-trsp:hover
 .btn-default:hover
+.btn-red:hover
     box-shadow 1px 1px 3px 0 alpha(black, .5)
+
+
+.btn-red
+    resetLn(white, white)
+    background #F50222
 
 
 .btn-trsp
@@ -570,12 +577,12 @@ body.main-mnav-active
 .breadcrubmbs-ln
     mpd(0, 0, inline)
     resetLn(black, black)
-    trans()
 
 
 .breadcrubmbs-ln:after
     content '/'
     margin 0 5px
+    color black
 
 
 .breadcrubmbs-ln:hover

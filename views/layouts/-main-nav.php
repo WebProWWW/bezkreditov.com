@@ -388,6 +388,11 @@ use app\helpers\Url;
                             <span class="nav-txt">Кредитный калькулятор</span>
                         </a>
                     </div><!-- .col -->
+                    <div class="col-auto">
+                        <a class="nav-ln fw-600" href="<?= Url::toView('osago-onlajn') ?>">
+                            ОСАГО онлайн
+                        </a>
+                    </div><!-- .col -->
                 </div><!-- .row -->
             </div><!-- .col -->
         </div><!-- .row -->
