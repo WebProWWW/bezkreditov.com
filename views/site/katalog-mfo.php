@@ -66,33 +66,33 @@ $this->params['breadcrumbs'] = [
 
 <section class="section bg">
     <div class="container">
-
-        <div class="row">
-            <div class="col-12 col-lg">
-                <div class="input-group">
-                    <input class="input" type="text" placeholder="Введите название МФО">
-                    <div class="input-left">
-                        <button class="input-btn"><i class="i-search"></i></button>
-                    </div>
-                </div><!-- .input-group -->
-            </div><!-- .col -->
-        </div><!-- .row -->
-
-        <div class="row">
-            <div class="col-12 col-md-auto">
-                <p>Доступна информация о 139 МФО</p>
-            </div><!-- .col -->
-            <div class="col-12 col-md-auto ml-auto">
-                <p>
-                    <a href="javascript:;">
-                        <i class="i-stat em-8"></i> По кол-ву предложений <i class="i-down em-8"></i>
-                    </a>
-                </p>
-            </div><!-- .col -->
-        </div><!-- .row -->
-
         <div class="row">
             <div class="col-12 col-xl-8">
+
+                <div class="row">
+                    <div class="col-12 col-lg">
+                        <div class="input-group">
+                            <input class="input" type="text" placeholder="Введите название МФО">
+                            <div class="input-left">
+                                <button class="input-btn"><i class="i-search"></i></button>
+                            </div>
+                        </div><!-- .input-group -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+
+                <div class="row">
+                    <div class="col-12 col-md-auto">
+                        <p>Доступна информация о 139 МФО</p>
+                    </div><!-- .col -->
+                    <div class="col-12 col-md-auto ml-auto">
+                        <p>
+                            <a href="javascript:;">
+                                <i class="i-stat em-8"></i> По кол-ву предложений <i class="i-down em-8"></i>
+                            </a>
+                        </p>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+
                 <div class="mb-4">
                     <div class="cart">
                         <div class="cart-body">
@@ -257,36 +257,6 @@ $this->params['breadcrumbs'] = [
                                 <div class="col-auto col-md-5 ml-auto">
                                     <p class="gray right">
                                         № 651303045003161 от 14.05.2013
-                                    </p>
-                                </div><!-- .col -->
-                            </div><!-- .row -->
-                        </div><!-- .cart-body -->
-                    </div><!-- .cart -->
-                </div><!-- .mb-4 -->
-                <div class="mb-4">
-                    <div class="cart">
-                        <div class="cart-body">
-                            <div class="row align-items-center">
-                                <div class="col-auto mx-auto">
-                                    <img class="img img-circle" width="60" src="/img/logo/0-2.png">
-                                </div><!-- .col -->
-                                <div class="col-12 col-sm-9 col-md-5">
-                                    <h3 class="clip mb-1">
-                                        Домашние деньги
-                                    </h3>
-                                    <p class="">
-                                        <span class="fw-600">
-                                            <i class="i-star yellow"></i>&nbsp;4
-                                        </span>
-                                        •
-                                        <span class="gray">
-                                            0 отзывов
-                                        </span>
-                                    </p>
-                                </div><!-- .col -->
-                                <div class="col-auto col-md-5 ml-auto">
-                                    <p class="gray right">
-                                        нет
                                     </p>
                                 </div><!-- .col -->
                             </div><!-- .row -->

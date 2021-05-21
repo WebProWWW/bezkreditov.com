@@ -68,31 +68,31 @@ $this->params['breadcrumbs'] = [
     <div class="container">
 
         <div class="row">
-            <div class="col-12 col-lg">
-                <div class="input-group">
-                    <input class="input" type="text" placeholder="Введите название банка">
-                    <div class="input-left">
-                        <button class="input-btn"><i class="i-search"></i></button>
-                    </div>
-                </div><!-- .input-group -->
-            </div><!-- .col -->
-        </div><!-- .row -->
-
-        <div class="row">
-            <div class="col-12 col-md-auto">
-                <p>Доступна информация о 105 банках</p>
-            </div><!-- .col -->
-            <div class="col-12 col-md-auto ml-auto">
-                <p>
-                    <a href="javascript:;">
-                        <i class="i-stat em-8"></i> По кол-ву предложений <i class="i-down em-8"></i>
-                    </a>
-                </p>
-            </div><!-- .col -->
-        </div><!-- .row -->
-
-        <div class="row">
             <div class="col-12 col-xl-8">
+                <div class="row">
+                    <div class="col-12 col-lg">
+                        <div class="input-group">
+                            <input class="input" type="text" placeholder="Введите название банка">
+                            <div class="input-left">
+                                <button class="input-btn"><i class="i-search"></i></button>
+                            </div>
+                        </div><!-- .input-group -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+
+                <div class="row">
+                    <div class="col-12 col-md-auto">
+                        <p>Доступна информация о 105 банках</p>
+                    </div><!-- .col -->
+                    <div class="col-12 col-md-auto ml-auto">
+                        <p>
+                            <a href="javascript:;">
+                                <i class="i-stat em-8"></i> По кол-ву предложений <i class="i-down em-8"></i>
+                            </a>
+                        </p>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+
                 <div class="mb-4">
                     <div class="cart">
                         <div class="cart-body">
@@ -236,42 +236,6 @@ $this->params['breadcrumbs'] = [
                                 <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Рефинансирование (1)</a></p></div>
                                 <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Ипотека (14)</a></p></div>
                                 <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Дебетовые карты (86)</a></p></div>
-                            </div><!-- .row -->
-                        </div><!-- .cart-body -->
-                    </div><!-- .cart -->
-                </div><!-- .mb-4 -->
-                <div class="mb-4">
-                    <div class="cart">
-                        <div class="cart-body">
-                            <div class="row align-items-center">
-                                <div class="col-auto mx-auto">
-                                    <img class="img img-circle" width="60" src="/img/logo/1.png">
-                                </div><!-- .col -->
-                                <div class="col-12 col-sm-9 col-md-5">
-                                    <h3 class="clip mb-1">
-                                        СберБанк
-                                    </h3>
-                                    <p class="mb-1">
-                                        <span class="fw-600">
-                                            <i class="i-star yellow"></i>&nbsp;5
-                                        </span>
-                                        •
-                                        <span class="gray">
-                                            12 отзывов
-                                        </span>
-                                    </p>
-                                </div><!-- .col -->
-                                <div class="col-auto col-md-5 ml-auto">
-                                    <p class="gray right">
-                                        № 1481 от 11.08.2015
-                                    </p>
-                                </div><!-- .col -->
-                            </div><!-- .row -->
-                            <div class="row" style="margin: 0 -8px;">
-                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Кредитные карты (11)</a></p></div>
-                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Кредиты (6)</a></p></div>
-                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Ипотека (11)</a></p></div>
-                                <div class="col-auto" style="padding: 0 8px;"><p class="em-9"><a href="javascript:;">Дебетовые карты (22)</a></p></div>
                             </div><!-- .row -->
                         </div><!-- .cart-body -->
                     </div><!-- .cart -->
