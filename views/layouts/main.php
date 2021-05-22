@@ -436,7 +436,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 <!-- / МОДАЛЬНЫЕ ОКНА -->
 
 <script src="/js/main.depends.js?v=028"></script>
-<script src="/js/main.js?v=067"></script>
+<script src="/js/main.js?v=068"></script>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
 <script>if ("function"==typeof window.isCity) { window.isCity() };</script>

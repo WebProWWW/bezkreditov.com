@@ -8,7 +8,7 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
 
 ?>
 
-<section class="section bg" style="position: relative; overflow: hidden;">
+<section class="section bg" style="position: relative; overflow: hidden; background: #DADAE6;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md-6">
@@ -24,8 +24,8 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                     На 06.05.2021 количество предложений - 89.
                 </p>
             </div><!-- .col -->
-            <div class="col-12 col-md-6">
-                <img class="img-center" width="290" src="/img/card-home-2.jpg" style="margin-bottom: -15px;">
+            <div class="col-12 col-md-6 align-self-end">
+                <img class="img-center" width="430" src="/img/img-50.jpg" style="margin-bottom: -11px;">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
@@ -91,7 +91,7 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                                 <p class="em-13 fw-600 mb-0">от 0,0%</p>
                                 <p class="gray">Ставка</p>
                             </div><!-- .col -->
-                            <div class="col-12 col-lg-auto">
+                            <div class="col-12 col-md-auto">
                                 <a class="btn-default" href="javascript:;">Оформить</a>
                             </div><!-- .col -->
                         </div><!-- .row -->
@@ -100,8 +100,9 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                 <div class="row justify-content-between">
                     <div class="col-12 col-lg-auto">
                         <p class="">
-                            <a href="javascript:;">
-                                Подробнее <i class="i-down"></i>
+                            <a class="i-down-trans" data-toggle="#more-info-card-1" href="javascript:;">
+                                Подробнее
+                                <i class="i-down d-inline-block em-9"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
@@ -131,6 +132,74 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         </p>
                     </div><!-- .col -->
                 </div><!-- .row -->
+                <div id="more-info-card-1" style="display: none; overflow: hidden;">
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Стоимость обслуживания:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    бесплатно
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Время рассмотрения:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    2 мин - 1 день
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Требуемый рейтинг:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    -
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Возраст:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    18 - 100 лет
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Лицензия:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    № 1326 от 16.01.2015
+                                </span>
+                            </p>
+                            <div class="row">
+                                <div class="col-12 col-md-auto">
+                                    <a class="btn-trsp" href="javascript:;">Перейти</a>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-auto d-none d-lg-block mb-3">
+                            <div class="divider-v"></div>
+                        </div><!-- .col -->
+                        <div class="col-12 col-md-5">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img class="img" width="60" src="/img/ava-w.svg">
+                                </div><!-- .col -->
+                                <div class="col">
+                                    <p class="mb-1 fw-600">Александра</p>
+                                    <p><i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i></p>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                            <p>Хорошо, что есть такой банк как этот, в выходные не найдёшь в центре банков по обмену валют, а тут всё работает, и курс очень хороший. Отличные кассиры и сервис на высоте!</p>
+                            <p><a href="javascript:;">Все отзывы</a></p>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- #more-info-card-1 -->
             </div><!-- .cart-body -->
         </div><!-- .cart -->
 
@@ -159,7 +228,7 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                                 <p class="em-13 fw-600 mb-0">от 0,0%</p>
                                 <p class="gray">Ставка</p>
                             </div><!-- .col -->
-                            <div class="col-12 col-lg-auto">
+                            <div class="col-12 col-md-auto">
                                 <a class="btn-default" href="javascript:;">Оформить</a>
                             </div><!-- .col -->
                         </div><!-- .row -->
@@ -168,8 +237,9 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                 <div class="row justify-content-between">
                     <div class="col-12 col-lg-auto">
                         <p class="">
-                            <a href="javascript:;">
-                                Подробнее <i class="i-down"></i>
+                            <a class="i-down-trans" data-toggle="#more-info-card-2" href="javascript:;">
+                                Подробнее
+                                <i class="i-down d-inline-block em-9"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
@@ -199,6 +269,74 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         </p>
                     </div><!-- .col -->
                 </div><!-- .row -->
+                <div id="more-info-card-2" style="display: none; overflow: hidden;">
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Стоимость обслуживания:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    бесплатно
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Время рассмотрения:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    2 мин - 1 день
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Требуемый рейтинг:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    -
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Возраст:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    18 - 100 лет
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Лицензия:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    № 1326 от 16.01.2015
+                                </span>
+                            </p>
+                            <div class="row">
+                                <div class="col-12 col-md-auto">
+                                    <a class="btn-trsp" href="javascript:;">Перейти</a>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-auto d-none d-lg-block mb-3">
+                            <div class="divider-v"></div>
+                        </div><!-- .col -->
+                        <div class="col-12 col-md-5">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img class="img" width="60" src="/img/ava-w.svg">
+                                </div><!-- .col -->
+                                <div class="col">
+                                    <p class="mb-1 fw-600">Александра</p>
+                                    <p><i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i></p>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                            <p>Хорошо, что есть такой банк как этот, в выходные не найдёшь в центре банков по обмену валют, а тут всё работает, и курс очень хороший. Отличные кассиры и сервис на высоте!</p>
+                            <p><a href="javascript:;">Все отзывы</a></p>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- #more-info-card-1 -->
             </div><!-- .cart-body -->
         </div><!-- .cart -->
 
@@ -227,7 +365,7 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                                 <p class="em-13 fw-600 mb-0">от 0,0%</p>
                                 <p class="gray">Ставка</p>
                             </div><!-- .col -->
-                            <div class="col-12 col-lg-auto">
+                            <div class="col-12 col-md-auto">
                                 <a class="btn-default" href="javascript:;">Оформить</a>
                             </div><!-- .col -->
                         </div><!-- .row -->
@@ -236,8 +374,9 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                 <div class="row justify-content-between">
                     <div class="col-12 col-lg-auto">
                         <p class="">
-                            <a href="javascript:;">
-                                Подробнее <i class="i-down"></i>
+                            <a class="i-down-trans" data-toggle="#more-info-card-3" href="javascript:;">
+                                Подробнее
+                                <i class="i-down d-inline-block em-9"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
@@ -267,6 +406,74 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         </p>
                     </div><!-- .col -->
                 </div><!-- .row -->
+                <div id="more-info-card-3" style="display: none; overflow: hidden;">
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Стоимость обслуживания:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    бесплатно
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Время рассмотрения:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    2 мин - 1 день
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Требуемый рейтинг:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    -
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Возраст:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    18 - 100 лет
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Лицензия:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    № 1326 от 16.01.2015
+                                </span>
+                            </p>
+                            <div class="row">
+                                <div class="col-12 col-md-auto">
+                                    <a class="btn-trsp" href="javascript:;">Перейти</a>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-auto d-none d-lg-block mb-3">
+                            <div class="divider-v"></div>
+                        </div><!-- .col -->
+                        <div class="col-12 col-md-5">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img class="img" width="60" src="/img/ava-w.svg">
+                                </div><!-- .col -->
+                                <div class="col">
+                                    <p class="mb-1 fw-600">Александра</p>
+                                    <p><i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i></p>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                            <p>Хорошо, что есть такой банк как этот, в выходные не найдёшь в центре банков по обмену валют, а тут всё работает, и курс очень хороший. Отличные кассиры и сервис на высоте!</p>
+                            <p><a href="javascript:;">Все отзывы</a></p>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- #more-info-card-1 -->
             </div><!-- .cart-body -->
         </div><!-- .cart -->
     </div><!-- .container -->
@@ -301,7 +508,7 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                                 <p class="em-13 fw-600 mb-0">от 0,0%</p>
                                 <p class="gray">Ставка</p>
                             </div><!-- .col -->
-                            <div class="col-12 col-lg-auto">
+                            <div class="col-12 col-md-auto">
                                 <a class="btn-default" href="javascript:;">Оформить</a>
                             </div><!-- .col -->
                         </div><!-- .row -->
@@ -310,8 +517,9 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                 <div class="row justify-content-between">
                     <div class="col-12 col-lg-auto">
                         <p class="">
-                            <a href="javascript:;">
-                                Подробнее <i class="i-down"></i>
+                            <a class="i-down-trans" data-toggle="#more-info-card-4" href="javascript:;">
+                                Подробнее
+                                <i class="i-down d-inline-block em-9"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
@@ -341,6 +549,74 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         </p>
                     </div><!-- .col -->
                 </div><!-- .row -->
+                <div id="more-info-card-4" style="display: none; overflow: hidden;">
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Стоимость обслуживания:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    бесплатно
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Время рассмотрения:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    2 мин - 1 день
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Требуемый рейтинг:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    -
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Возраст:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    18 - 100 лет
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Лицензия:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    № 1326 от 16.01.2015
+                                </span>
+                            </p>
+                            <div class="row">
+                                <div class="col-12 col-md-auto">
+                                    <a class="btn-trsp" href="javascript:;">Перейти</a>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-auto d-none d-lg-block mb-3">
+                            <div class="divider-v"></div>
+                        </div><!-- .col -->
+                        <div class="col-12 col-md-5">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img class="img" width="60" src="/img/ava-w.svg">
+                                </div><!-- .col -->
+                                <div class="col">
+                                    <p class="mb-1 fw-600">Александра</p>
+                                    <p><i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i></p>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                            <p>Хорошо, что есть такой банк как этот, в выходные не найдёшь в центре банков по обмену валют, а тут всё работает, и курс очень хороший. Отличные кассиры и сервис на высоте!</p>
+                            <p><a href="javascript:;">Все отзывы</a></p>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- #more-info-card-1 -->
             </div><!-- .cart-body -->
         </div><!-- .cart -->
 
@@ -369,7 +645,7 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                                 <p class="em-13 fw-600 mb-0">от 0,0%</p>
                                 <p class="gray">Ставка</p>
                             </div><!-- .col -->
-                            <div class="col-12 col-lg-auto">
+                            <div class="col-12 col-md-auto">
                                 <a class="btn-default" href="javascript:;">Оформить</a>
                             </div><!-- .col -->
                         </div><!-- .row -->
@@ -378,8 +654,9 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                 <div class="row justify-content-between">
                     <div class="col-12 col-lg-auto">
                         <p class="">
-                            <a href="javascript:;">
-                                Подробнее <i class="i-down"></i>
+                            <a class="i-down-trans" data-toggle="#more-info-card-5" href="javascript:;">
+                                Подробнее
+                                <i class="i-down d-inline-block em-9"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
@@ -409,6 +686,74 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         </p>
                     </div><!-- .col -->
                 </div><!-- .row -->
+                <div id="more-info-card-5" style="display: none; overflow: hidden;">
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Стоимость обслуживания:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    бесплатно
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Время рассмотрения:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    2 мин - 1 день
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Требуемый рейтинг:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    -
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Возраст:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    18 - 100 лет
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Лицензия:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    № 1326 от 16.01.2015
+                                </span>
+                            </p>
+                            <div class="row">
+                                <div class="col-12 col-md-auto">
+                                    <a class="btn-trsp" href="javascript:;">Перейти</a>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-auto d-none d-lg-block mb-3">
+                            <div class="divider-v"></div>
+                        </div><!-- .col -->
+                        <div class="col-12 col-md-5">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img class="img" width="60" src="/img/ava-w.svg">
+                                </div><!-- .col -->
+                                <div class="col">
+                                    <p class="mb-1 fw-600">Александра</p>
+                                    <p><i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i></p>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                            <p>Хорошо, что есть такой банк как этот, в выходные не найдёшь в центре банков по обмену валют, а тут всё работает, и курс очень хороший. Отличные кассиры и сервис на высоте!</p>
+                            <p><a href="javascript:;">Все отзывы</a></p>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- #more-info-card-1 -->
             </div><!-- .cart-body -->
         </div><!-- .cart -->
 
@@ -437,7 +782,7 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                                 <p class="em-13 fw-600 mb-0">от 0,0%</p>
                                 <p class="gray">Ставка</p>
                             </div><!-- .col -->
-                            <div class="col-12 col-lg-auto">
+                            <div class="col-12 col-md-auto">
                                 <a class="btn-default" href="javascript:;">Оформить</a>
                             </div><!-- .col -->
                         </div><!-- .row -->
@@ -446,8 +791,9 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                 <div class="row justify-content-between">
                     <div class="col-12 col-lg-auto">
                         <p class="">
-                            <a href="javascript:;">
-                                Подробнее <i class="i-down"></i>
+                            <a class="i-down-trans" data-toggle="#more-info-card-6" href="javascript:;">
+                                Подробнее
+                                <i class="i-down d-inline-block em-9"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
@@ -477,6 +823,74 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         </p>
                     </div><!-- .col -->
                 </div><!-- .row -->
+                <div id="more-info-card-6" style="display: none; overflow: hidden;">
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Стоимость обслуживания:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    бесплатно
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Время рассмотрения:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    2 мин - 1 день
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Требуемый рейтинг:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    -
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Возраст:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    18 - 100 лет
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Лицензия:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    № 1326 от 16.01.2015
+                                </span>
+                            </p>
+                            <div class="row">
+                                <div class="col-12 col-md-auto">
+                                    <a class="btn-trsp" href="javascript:;">Перейти</a>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-auto d-none d-lg-block mb-3">
+                            <div class="divider-v"></div>
+                        </div><!-- .col -->
+                        <div class="col-12 col-md-5">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img class="img" width="60" src="/img/ava-w.svg">
+                                </div><!-- .col -->
+                                <div class="col">
+                                    <p class="mb-1 fw-600">Александра</p>
+                                    <p><i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i></p>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                            <p>Хорошо, что есть такой банк как этот, в выходные не найдёшь в центре банков по обмену валют, а тут всё работает, и курс очень хороший. Отличные кассиры и сервис на высоте!</p>
+                            <p><a href="javascript:;">Все отзывы</a></p>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- #more-info-card-1 -->
             </div><!-- .cart-body -->
         </div><!-- .cart -->
 

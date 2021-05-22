@@ -148,7 +148,7 @@ $('*[data-toggle]').on 'click', (e) ->
     $this.toggleClass 'active'
     $targetBlock = $ "#{$this.attr('data-toggle')}"
     $targetBlock.stop().slideToggle 300, () ->
-        # $this.addClass 'active' if $(this).is ':visible'
+        $this.addClass 'active' if $(this).is ':visible'
         on
     off
 

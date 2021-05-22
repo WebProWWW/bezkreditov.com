@@ -13,7 +13,7 @@ $this->params['breadcrumbs'] = [
 ];
 ?>
 
-<section class="section bg" style="position: relative; overflow: hidden;">
+<section class="section" style="position: relative; overflow: hidden; background: #C4C9DD;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md-6">
@@ -22,8 +22,8 @@ $this->params['breadcrumbs'] = [
                     Дебетовые карты без платы за обслуживание позволят вам не тратить деньги за ежемесячное или годовое обслуживание карты. На &laquo;Без&nbsp;кредитов&raquo; можно сравнить и оформить бесплатные карты от популярных банков, которые могут включать дополнительные бонусы - повышенные кэшбэк, процент на остаток и другие бонусы.
                 </p>
             </div><!-- .col -->
-            <div class="col-12 col-md-6">
-                <img class="img-center" width="300" src="/img/card-home-1.jpg" style="margin-bottom: -15px;">
+            <div class="col-12 col-md-6 align-self-end">
+                <img class="img-center" width="400" src="/img/img-49.jpg" style="margin-bottom: -11px;">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
