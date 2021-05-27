@@ -40,8 +40,8 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <?php $this->registerCsrfMetaTags() ?>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap">
-    <link rel="stylesheet" href="/css/main.depends.css?v=040">
-    <link rel="stylesheet" href="/css/main.css?v=083">
+    <link rel="stylesheet" href="/css/main.depends.css?v=041">
+    <link rel="stylesheet" href="/css/main.css?v=084">
     <title><?= $title ?></title>
     <meta name="description" content="<?= $description ?>">
     <meta property="og:locale" content="ru_RU">

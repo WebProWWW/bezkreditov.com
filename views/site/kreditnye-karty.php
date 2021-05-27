@@ -1,5 +1,7 @@
 <?php
 
+use app\helpers\Url;
+
 /* @var $this yii\web\View */
 
 $this->title = 'Кредитные карты';
@@ -73,7 +75,11 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         <img class="img" width="241" src="/img/card-a.png">
                     </div><!-- .col -->
                     <div class="col-12 col-md">
-                        <h3>Карта «100 дней без процентов» Mastercard Standard от Альфа-банка</h3>
+                        <h3>
+                            <a href="<?= Url::toView('karta-100-dnej-bez-procentov-mastercard-standard-ot-alfa-banka') ?>">
+                                Карта «100 дней без процентов» Mastercard Standard от Альфа-банка
+                            </a>
+                        </h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.9</span>
                             <span class="gray">Альфа-банк</span>
@@ -210,7 +216,11 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         <img class="img" width="241" src="/img/card-mts.png">
                     </div><!-- .col -->
                     <div class="col-12 col-md">
-                        <h3>Карта «Универсальная MTS CASHBACK»</h3>
+                        <h3>
+                            <a href="<?= Url::toView('karta-100-dnej-bez-procentov-mastercard-standard-ot-alfa-banka') ?>">
+                                Карта «Универсальная MTS CASHBACK»
+                            </a>
+                        </h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.9</span>
                             <span class="gray">МТС Банк</span>
@@ -347,7 +357,11 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         <img class="img" width="241" src="/img/card-xalva.png">
                     </div><!-- .col -->
                     <div class="col-12 col-md">
-                        <h3>Карта рассрочки Халва</h3>
+                        <h3>
+                            <a href="<?= Url::toView('karta-100-dnej-bez-procentov-mastercard-standard-ot-alfa-banka') ?>">
+                                Карта рассрочки Халва
+                            </a>
+                        </h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.9</span>
                             <span class="gray">Совкомбанк</span>
@@ -490,7 +504,11 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         <img class="img" width="241" src="/img/card-a-v.png">
                     </div><!-- .col -->
                     <div class="col-12 col-md">
-                        <h3>Карта «100 дней без процентов» Visa Platinum от Альфа-банка</h3>
+                        <h3>
+                            <a href="<?= Url::toView('karta-100-dnej-bez-procentov-mastercard-standard-ot-alfa-banka') ?>">
+                                Карта «100 дней без процентов» Visa Platinum от Альфа-банка
+                            </a>
+                        </h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.9</span>
                             <span class="gray">Альфа-банк</span>
@@ -627,7 +645,11 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         <img class="img" width="241" src="/img/card-a-m.png">
                     </div><!-- .col -->
                     <div class="col-12 col-md">
-                        <h3>Карта «100 дней без процентов» Mastercard Platinum</h3>
+                        <h3>
+                            <a href="<?= Url::toView('karta-100-dnej-bez-procentov-mastercard-standard-ot-alfa-banka') ?>">
+                                Карта «100 дней без процентов» Mastercard Platinum
+                            </a>
+                        </h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.9</span>
                             <span class="gray">Альфа-банк</span>
@@ -764,7 +786,11 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         <img class="img" width="241" src="/img/card-a-vc.png">
                     </div><!-- .col -->
                     <div class="col-12 col-md">
-                        <h3>Карта «100 дней без процентов» Visa Classic</h3>
+                        <h3>
+                            <a href="<?= Url::toView('karta-100-dnej-bez-procentov-mastercard-standard-ot-alfa-banka') ?>">
+                                Карта «100 дней без процентов» Visa Classic
+                            </a>
+                        </h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.9</span>
                             <span class="gray">Альфа-банк</span>
