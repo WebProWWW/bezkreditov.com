@@ -1,5 +1,7 @@
 <?php
 
+use app\helpers\Url;
+
 /* @var $this yii\web\View */
 
 $this->title = 'Автокредиты';
@@ -8,7 +10,7 @@ $this->params['breadcrumbs'] = ['Автокредиты'];
 
 ?>
 
-<section class="section" style="position: relative; overflow: hidden; background: #FBCF01;">
+<section class="section" style="position: relative; overflow: hidden; background: #FDE002;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md-6">
@@ -18,7 +20,7 @@ $this->params['breadcrumbs'] = ['Автокредиты'];
                 </p>
             </div><!-- .col -->
             <div class="col-12 col-md-6 align-self-end">
-                <img class="img-center" width="430" src="/img/img-40.jpg" style="margin-bottom: -11px;">
+                <img class="img-center" width="430" src="/img/img-52.jpg" style="margin-bottom: -11px;">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
@@ -88,10 +90,12 @@ $this->params['breadcrumbs'] = ['Автокредиты'];
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/2.png">
+                        <a href="<?= Url::toView('avtokredity-kredit-na-avtomobil-ot-alfa-banka') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/2.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">Займер</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('avtokredity-kredit-na-avtomobil-ot-alfa-banka') ?>">Займер</a></h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.4</span>
                             <span class="gray">Займер</span>
@@ -151,10 +155,12 @@ $this->params['breadcrumbs'] = ['Автокредиты'];
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/1.png">
+                        <a href="<?= Url::toView('avtokredity-kredit-na-avtomobil-ot-alfa-banka') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/1.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">еКапуста</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('avtokredity-kredit-na-avtomobil-ot-alfa-banka') ?>">еКапуста</a></h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;5</span>
                             <span class="gray">еКапуста</span>
@@ -214,10 +220,12 @@ $this->params['breadcrumbs'] = ['Автокредиты'];
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/0-2.png">
+                        <a href="<?= Url::toView('avtokredity-kredit-na-avtomobil-ot-alfa-banka') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/0-2.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">MoneyMan</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('avtokredity-kredit-na-avtomobil-ot-alfa-banka') ?>">MoneyMan</a></h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.9</span>
                             <span class="gray">MoneyMan</span>
@@ -286,10 +294,12 @@ $this->params['breadcrumbs'] = ['Автокредиты'];
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/2.png">
+                        <a href="<?= Url::toView('avtokredity-kredit-na-avtomobil-ot-alfa-banka') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/2.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">Займер</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('avtokredity-kredit-na-avtomobil-ot-alfa-banka') ?>">Займер</a></h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.4</span>
                             <span class="gray">Займер</span>
@@ -349,10 +359,12 @@ $this->params['breadcrumbs'] = ['Автокредиты'];
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/1.png">
+                        <a href="<?= Url::toView('avtokredity-kredit-na-avtomobil-ot-alfa-banka') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/1.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">еКапуста</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('avtokredity-kredit-na-avtomobil-ot-alfa-banka') ?>">еКапуста</a></h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;5</span>
                             <span class="gray">еКапуста</span>
@@ -467,10 +479,12 @@ $this->params['breadcrumbs'] = ['Автокредиты'];
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/0-2.png">
+                        <a href="<?= Url::toView('avtokredity-kredit-na-avtomobil-ot-alfa-banka') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/0-2.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">MoneyMan</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('avtokredity-kredit-na-avtomobil-ot-alfa-banka') ?>">MoneyMan</a></h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.9</span>
                             <span class="gray">MoneyMan</span>

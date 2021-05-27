@@ -1,15 +1,13 @@
 <?php
 
+use app\helpers\Url;
+
 /* @var $this yii\web\View */
 
-$this->title = 'Кредит наличными';
-$this->params['description'] = 'Оформите срочный микрозайм онлайн на карту от МФО, проверенных экспертами &laquo;Без&nbsp;кредитов&raquo;. Для этого вам не придется даже выходить из дома: достаточно выбрать подходящее предложение и подать заявку на займ онлайн.';
+$this->title = 'Ипотека в банках России в 2021 году';
+$this->params['description'] = 'На «Без кредитов» представлены актуальные условия и процентные ставки по ипотеке от банков России. Сравните условия ипотечного кредитования, выберите наиболее подходящее предложение и оформите онлайн-заявку по выбранному кредиту.';
 $this->params['breadcrumbs'] = [
-    // [
-    //     'url' => ['site/index', 'view' => 'potrebitelskie-kredity'],
-    //     'label' => 'Потребительские кредиты',
-    // ],
-    'Наличными',
+    'Ипотека',
 ];
 
 ?>
@@ -19,10 +17,8 @@ $this->params['breadcrumbs'] = [
         <div class="row align-items-center">
             <div class="col-12 col-lg-5 col-xl-4">
                 <h1>Ипотека в банках России в 2021 году</h1>
-                <p class="em-11">
-                    На «Без кредитов» представлены актуальные условия и процентные ставки по ипотеке от банков России. Сравните условия ипотечного кредитования, выберите наиболее подходящее предложение и оформите онлайн-заявку по выбранному кредиту.
-                    На 21.05.2021 доступно 94 ипочетных кредитов по ставке от 0.1% до 20.31% и суммой от 100 000 рублей до 100 000 000 рублей
-                </p>
+                <p class="em-11">На «Без кредитов» представлены актуальные условия и процентные ставки по ипотеке от банков России. Сравните условия ипотечного кредитования, выберите наиболее подходящее предложение и оформите онлайн-заявку по выбранному кредиту.</p>
+                <p class="em-11">На 21.05.2021 доступно 94 ипочетных кредитов по ставке от 0.1% до 20.31% и суммой от 100 000 рублей до 100 000 000 рублей</p>
             </div><!-- .col -->
             <div class="col-12 col-md align-self-end">
                 <img class="img-center" width="650" src="/img/img-47.jpg" style="margin-bottom: -11px;">
@@ -113,10 +109,12 @@ $this->params['breadcrumbs'] = [
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/2.png">
+                        <a href="<?= Url::toView('ipoteka-ipoteka-na-kvartiru-ot-alfa-banka') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/2.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">Льготная ипотека «Господдержка-2020»</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('ipoteka-ipoteka-na-kvartiru-ot-alfa-banka') ?>">Льготная ипотека «Господдержка-2020»</a></h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4</span>
                             <span class="gray">Банк Возрождение</span>
@@ -176,10 +174,12 @@ $this->params['breadcrumbs'] = [
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/1.png">
+                        <a href="<?= Url::toView('ipoteka-ipoteka-na-kvartiru-ot-alfa-banka') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/1.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">Ипотека "Для Дальнего востока"</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('ipoteka-ipoteka-na-kvartiru-ot-alfa-banka') ?>">Ипотека "Для Дальнего востока"</a></h3>
                         <p class="clip">
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;3</span>
                             <span class="gray">Азиатско-Тихоокеанский Банк</span>
@@ -294,10 +294,12 @@ $this->params['breadcrumbs'] = [
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/0-2.png">
+                        <a href="<?= Url::toView('ipoteka-ipoteka-na-kvartiru-ot-alfa-banka') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/0-2.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">Ипотека на новостройку от Альфа-банка</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('ipoteka-ipoteka-na-kvartiru-ot-alfa-banka') ?>">Ипотека на новостройку от Альфа-банка</a></h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;5</span>
                             <span class="gray">Альфа-банк</span>

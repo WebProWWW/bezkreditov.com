@@ -1,10 +1,12 @@
 <?php
 
+use app\helpers\Url;
+
 /* @var $this yii\web\View */
 
-$this->title = 'Кредитные карты';
-$this->params['description'] = 'Кредитные карты от банков России с процентной ставкой от 0% - на Без кредитов можно оформить кредитную карту онлайн, сравнив предложения от популярных банков России. Изучите условия по процентным ставкам, льготному периоду, стоимости обслуживания. Онлайн-заявка на кредитную карту в два клика!';
-$this->params['breadcrumbs'] = ['Кредитные карты'];
+$this->title = 'Рефинансирование кредита';
+$this->params['description'] = 'Хотите выгодно рефинансировать кредит? Без кредитов собрал лучшие предложения банков по рефинансированию кредита наличными под маленький процент и с моментальным одобрением';
+$this->params['breadcrumbs'] = ['Рефинансирование'];
 
 ?>
 
@@ -68,7 +70,9 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         <img class="img img-circle" width="60" src="/img/logo/0.jpeg">
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-4">
-                        <h3 class="clip mb-0">Рефинансирование с льготным периодом от МТС-банка</h3>
+                        <h3 class="clip mb-0">
+                            <a href="<?= Url::toView('refinansirovanie-s-lgotnym-periodom-ot-mts-banka') ?>">Рефинансирование с льготным периодом от МТС-банка</a>
+                        </h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.4</span>
                             <span class="gray">МТС Банк</span>
@@ -131,7 +135,9 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         <img class="img img-circle" width="60" src="/img/logo/0.png">
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-4">
-                        <h3 class="clip mb-0">Рефинансирование кредита в Альфа-банке</h3>
+                        <h3 class="clip mb-0">
+                            <a href="<?= Url::toView('refinansirovanie-s-lgotnym-periodom-ot-mts-banka') ?>">Рефинансирование кредита в Альфа-банке</a>
+                        </h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;5</span>
                             <span class="gray">Альфа-банк</span>
@@ -194,7 +200,9 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         <img class="img img-circle" width="60" src="/img/logo/0-1.png">
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-4">
-                        <h3 class="clip mb-0">Рефинансирование кредита в банке ВТБ</h3>
+                        <h3 class="clip mb-0">
+                            <a href="<?= Url::toView('refinansirovanie-s-lgotnym-periodom-ot-mts-banka') ?>">Рефинансирование кредита в банке ВТБ</a>
+                        </h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.9</span>
                             <span class="gray">ВТБ</span>
@@ -312,7 +320,9 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         <img class="img img-circle" width="60" src="/img/logo/0.jpeg">
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-4">
-                        <h3 class="clip mb-0">Рефинансирование с льготным периодом от МТС-банка</h3>
+                        <h3 class="clip mb-0">
+                            <a href="<?= Url::toView('refinansirovanie-s-lgotnym-periodom-ot-mts-banka') ?>">Рефинансирование с льготным периодом от МТС-банка</a>
+                        </h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.4</span>
                             <span class="gray">МТС Банк</span>
@@ -375,7 +385,9 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         <img class="img img-circle" width="60" src="/img/logo/0.png">
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-4">
-                        <h3 class="clip mb-0">Рефинансирование кредита в Альфа-банке</h3>
+                        <h3 class="clip mb-0">
+                            <a href="<?= Url::toView('refinansirovanie-s-lgotnym-periodom-ot-mts-banka') ?>">Рефинансирование кредита в Альфа-банке</a>
+                        </h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;5</span>
                             <span class="gray">Альфа-банк</span>
@@ -438,7 +450,9 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
                         <img class="img img-circle" width="60" src="/img/logo/0-1.png">
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-4">
-                        <h3 class="clip mb-0">Рефинансирование кредита в банке ВТБ</h3>
+                        <h3 class="clip mb-0">
+                            <a href="<?= Url::toView('refinansirovanie-s-lgotnym-periodom-ot-mts-banka') ?>">Рефинансирование кредита в банке ВТБ</a>
+                        </h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.9</span>
                             <span class="gray">ВТБ</span>

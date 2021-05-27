@@ -1,5 +1,7 @@
 <?php
 
+use app\helpers\Url;
+
 /* @var $this yii\web\View */
 
 $this->title = 'Займы онлайн на карту';
@@ -107,10 +109,12 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/2.png">
+                        <a href="<?= Url::toView('mikrozajmy-mikrozajm-ekapusta') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/2.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">Займер</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('mikrozajmy-mikrozajm-ekapusta') ?>">Займер</a></h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.4</span>
                             <span class="gray">Займер</span>
@@ -138,8 +142,9 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-auto">
                         <p class="">
-                            <a href="javascript:;">
-                                Подробнее <i class="i-down"></i>
+                            <a class="i-down-trans" data-toggle="#more-info-card-1" href="javascript:;">
+                                Подробнее
+                                <i class="i-down d-inline-block em-9"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
@@ -163,6 +168,74 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
                         </p>
                     </div><!-- .col -->
                 </div><!-- .row -->
+                <div id="more-info-card-1" style="display: none; overflow: hidden;">
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Стоимость обслуживания:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    бесплатно
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Время рассмотрения:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    2 мин - 1 день
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Требуемый рейтинг:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    -
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Возраст:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    18 - 100 лет
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Лицензия:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    № 1326 от 16.01.2015
+                                </span>
+                            </p>
+                            <div class="row">
+                                <div class="col-12 col-md-auto">
+                                    <a class="btn-trsp" href="javascript:;">Перейти</a>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-auto d-none d-lg-block mb-3">
+                            <div class="divider-v"></div>
+                        </div><!-- .col -->
+                        <div class="col-12 col-md-5">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img class="img" width="60" src="/img/ava-w.svg">
+                                </div><!-- .col -->
+                                <div class="col">
+                                    <p class="mb-1 fw-600">Александра</p>
+                                    <p><i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i></p>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                            <p>Хорошо, что есть такой банк как этот, в выходные не найдёшь в центре банков по обмену валют, а тут всё работает, и курс очень хороший. Отличные кассиры и сервис на высоте!</p>
+                            <p><a href="javascript:;">Все отзывы</a></p>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- #more-info-card-1 -->
             </div><!-- .cart-body -->
         </div><!-- .cart -->
 
@@ -170,10 +243,12 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/1.png">
+                        <a href="<?= Url::toView('mikrozajmy-mikrozajm-ekapusta') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/1.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">еКапуста</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('mikrozajmy-mikrozajm-ekapusta') ?>">еКапуста</a></h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;5</span>
                             <span class="gray">еКапуста</span>
@@ -201,8 +276,9 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-auto">
                         <p class="">
-                            <a href="javascript:;">
-                                Подробнее <i class="i-down"></i>
+                            <a class="i-down-trans" data-toggle="#more-info-card-2" href="javascript:;">
+                                Подробнее
+                                <i class="i-down d-inline-block em-9"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
@@ -226,6 +302,74 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
                         </p>
                     </div><!-- .col -->
                 </div><!-- .row -->
+                <div id="more-info-card-2" style="display: none; overflow: hidden;">
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Стоимость обслуживания:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    бесплатно
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Время рассмотрения:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    2 мин - 1 день
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Требуемый рейтинг:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    -
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Возраст:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    18 - 100 лет
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Лицензия:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    № 1326 от 16.01.2015
+                                </span>
+                            </p>
+                            <div class="row">
+                                <div class="col-12 col-md-auto">
+                                    <a class="btn-trsp" href="javascript:;">Перейти</a>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-auto d-none d-lg-block mb-3">
+                            <div class="divider-v"></div>
+                        </div><!-- .col -->
+                        <div class="col-12 col-md-5">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img class="img" width="60" src="/img/ava-w.svg">
+                                </div><!-- .col -->
+                                <div class="col">
+                                    <p class="mb-1 fw-600">Александра</p>
+                                    <p><i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i></p>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                            <p>Хорошо, что есть такой банк как этот, в выходные не найдёшь в центре банков по обмену валют, а тут всё работает, и курс очень хороший. Отличные кассиры и сервис на высоте!</p>
+                            <p><a href="javascript:;">Все отзывы</a></p>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- #more-info-card-2 -->
             </div><!-- .cart-body -->
         </div><!-- .cart -->
 
@@ -233,10 +377,12 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/0-2.png">
+                        <a href="<?= Url::toView('mikrozajmy-mikrozajm-ekapusta') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/0-2.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">MoneyMan</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('mikrozajmy-mikrozajm-ekapusta') ?>">MoneyMan</a></h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.9</span>
                             <span class="gray">MoneyMan</span>
@@ -264,8 +410,9 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-auto">
                         <p class="">
-                            <a href="javascript:;">
-                                Подробнее <i class="i-down"></i>
+                            <a class="i-down-trans" data-toggle="#more-info-card-3" href="javascript:;">
+                                Подробнее
+                                <i class="i-down d-inline-block em-9"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
@@ -289,6 +436,74 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
                         </p>
                     </div><!-- .col -->
                 </div><!-- .row -->
+                <div id="more-info-card-3" style="display: none; overflow: hidden;">
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Стоимость обслуживания:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    бесплатно
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Время рассмотрения:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    2 мин - 1 день
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Требуемый рейтинг:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    -
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Возраст:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    18 - 100 лет
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Лицензия:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    № 1326 от 16.01.2015
+                                </span>
+                            </p>
+                            <div class="row">
+                                <div class="col-12 col-md-auto">
+                                    <a class="btn-trsp" href="javascript:;">Перейти</a>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-auto d-none d-lg-block mb-3">
+                            <div class="divider-v"></div>
+                        </div><!-- .col -->
+                        <div class="col-12 col-md-5">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img class="img" width="60" src="/img/ava-w.svg">
+                                </div><!-- .col -->
+                                <div class="col">
+                                    <p class="mb-1 fw-600">Александра</p>
+                                    <p><i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i></p>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                            <p>Хорошо, что есть такой банк как этот, в выходные не найдёшь в центре банков по обмену валют, а тут всё работает, и курс очень хороший. Отличные кассиры и сервис на высоте!</p>
+                            <p><a href="javascript:;">Все отзывы</a></p>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- #more-info-card-3 -->
             </div><!-- .cart-body -->
         </div><!-- .cart -->
 
@@ -305,10 +520,12 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/2.png">
+                        <a href="<?= Url::toView('mikrozajmy-mikrozajm-ekapusta') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/2.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">Займер</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('mikrozajmy-mikrozajm-ekapusta') ?>">Займер</a></h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.4</span>
                             <span class="gray">Займер</span>
@@ -336,8 +553,9 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-auto">
                         <p class="">
-                            <a href="javascript:;">
-                                Подробнее <i class="i-down"></i>
+                            <a class="i-down-trans" data-toggle="#more-info-card-4" href="javascript:;">
+                                Подробнее
+                                <i class="i-down d-inline-block em-9"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
@@ -361,6 +579,74 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
                         </p>
                     </div><!-- .col -->
                 </div><!-- .row -->
+                <div id="more-info-card-4" style="display: none; overflow: hidden;">
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Стоимость обслуживания:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    бесплатно
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Время рассмотрения:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    2 мин - 1 день
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Требуемый рейтинг:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    -
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Возраст:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    18 - 100 лет
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Лицензия:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    № 1326 от 16.01.2015
+                                </span>
+                            </p>
+                            <div class="row">
+                                <div class="col-12 col-md-auto">
+                                    <a class="btn-trsp" href="javascript:;">Перейти</a>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-auto d-none d-lg-block mb-3">
+                            <div class="divider-v"></div>
+                        </div><!-- .col -->
+                        <div class="col-12 col-md-5">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img class="img" width="60" src="/img/ava-w.svg">
+                                </div><!-- .col -->
+                                <div class="col">
+                                    <p class="mb-1 fw-600">Александра</p>
+                                    <p><i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i></p>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                            <p>Хорошо, что есть такой банк как этот, в выходные не найдёшь в центре банков по обмену валют, а тут всё работает, и курс очень хороший. Отличные кассиры и сервис на высоте!</p>
+                            <p><a href="javascript:;">Все отзывы</a></p>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- #more-info-card-4 -->
             </div><!-- .cart-body -->
         </div><!-- .cart -->
 
@@ -368,10 +654,12 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/1.png">
+                        <a href="<?= Url::toView('mikrozajmy-mikrozajm-ekapusta') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/1.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">еКапуста</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('mikrozajmy-mikrozajm-ekapusta') ?>">еКапуста</a></h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;5</span>
                             <span class="gray">еКапуста</span>
@@ -399,8 +687,9 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-auto">
                         <p class="">
-                            <a href="javascript:;">
-                                Подробнее <i class="i-down"></i>
+                            <a class="i-down-trans" data-toggle="#more-info-card-5" href="javascript:;">
+                                Подробнее
+                                <i class="i-down d-inline-block em-9"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
@@ -424,6 +713,74 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
                         </p>
                     </div><!-- .col -->
                 </div><!-- .row -->
+                <div id="more-info-card-5" style="display: none; overflow: hidden;">
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Стоимость обслуживания:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    бесплатно
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Время рассмотрения:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    2 мин - 1 день
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Требуемый рейтинг:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    -
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Возраст:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    18 - 100 лет
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Лицензия:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    № 1326 от 16.01.2015
+                                </span>
+                            </p>
+                            <div class="row">
+                                <div class="col-12 col-md-auto">
+                                    <a class="btn-trsp" href="javascript:;">Перейти</a>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-auto d-none d-lg-block mb-3">
+                            <div class="divider-v"></div>
+                        </div><!-- .col -->
+                        <div class="col-12 col-md-5">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img class="img" width="60" src="/img/ava-w.svg">
+                                </div><!-- .col -->
+                                <div class="col">
+                                    <p class="mb-1 fw-600">Александра</p>
+                                    <p><i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i></p>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                            <p>Хорошо, что есть такой банк как этот, в выходные не найдёшь в центре банков по обмену валют, а тут всё работает, и курс очень хороший. Отличные кассиры и сервис на высоте!</p>
+                            <p><a href="javascript:;">Все отзывы</a></p>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- #more-info-card-5 -->
             </div><!-- .cart-body -->
         </div><!-- .cart -->
 
@@ -486,10 +843,12 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
             <div class="cart-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <img class="img img-circle" width="60" src="/img/logo/0-2.png">
+                        <a href="<?= Url::toView('mikrozajmy-mikrozajm-ekapusta') ?>">
+                            <img class="img img-circle" width="60" src="/img/logo/0-2.png">
+                        </a>
                     </div><!-- .col -->
                     <div class="col-12 col-sm-9 col-md-10 col-xl-3">
-                        <h3 class="clip mb-0">MoneyMan</h3>
+                        <h3 class="clip mb-0"><a href="<?= Url::toView('mikrozajmy-mikrozajm-ekapusta') ?>">MoneyMan</a></h3>
                         <p>
                             <span class="fw-600"><i class="i-star yellow"></i>&nbsp;4.9</span>
                             <span class="gray">MoneyMan</span>
@@ -517,8 +876,9 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-auto">
                         <p class="">
-                            <a href="javascript:;">
-                                Подробнее <i class="i-down"></i>
+                            <a class="i-down-trans" data-toggle="#more-info-card-6" href="javascript:;">
+                                Подробнее
+                                <i class="i-down d-inline-block em-9"></i>
                             </a>
                         </p>
                     </div><!-- .col -->
@@ -542,6 +902,74 @@ $this->params['breadcrumbs'] = ['Микрозаймы'];
                         </p>
                     </div><!-- .col -->
                 </div><!-- .row -->
+                <div id="more-info-card-6" style="display: none; overflow: hidden;">
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Стоимость обслуживания:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    бесплатно
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Время рассмотрения:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    2 мин - 1 день
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Требуемый рейтинг:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    -
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Возраст:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    18 - 100 лет
+                                </span>
+                            </p>
+                            <p class="row align-items-end">
+                                <span class="col-6 gray">
+                                    Лицензия:
+                                </span>
+                                <span class="col-6 fw-600">
+                                    № 1326 от 16.01.2015
+                                </span>
+                            </p>
+                            <div class="row">
+                                <div class="col-12 col-md-auto">
+                                    <a class="btn-trsp" href="javascript:;">Перейти</a>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-auto d-none d-lg-block mb-3">
+                            <div class="divider-v"></div>
+                        </div><!-- .col -->
+                        <div class="col-12 col-md-5">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img class="img" width="60" src="/img/ava-w.svg">
+                                </div><!-- .col -->
+                                <div class="col">
+                                    <p class="mb-1 fw-600">Александра</p>
+                                    <p><i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i></p>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                            <p>Хорошо, что есть такой банк как этот, в выходные не найдёшь в центре банков по обмену валют, а тут всё работает, и курс очень хороший. Отличные кассиры и сервис на высоте!</p>
+                            <p><a href="javascript:;">Все отзывы</a></p>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
+                </div><!-- #more-info-card-6 -->
             </div><!-- .cart-body -->
         </div><!-- .cart -->
 
