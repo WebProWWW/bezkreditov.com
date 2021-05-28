@@ -264,7 +264,7 @@ use app\helpers\Url;
     <div class="main-nav-content" id="main-nav-content-4">
         <div class="row">
             <div class="col-3">
-                <a class="logo logo-sm" href="<?= Url::home() ?>">
+                <a class="logo logo-sm" href="<?= Url::toView('ipoteka') ?>">
                     <span class="logo-txt">Ипотека</span>
                     <span class="logo-stxt">Вся полезная информация по ипотеке и ипотечному кредитованию в одном месте</span>
                 </a>
@@ -276,23 +276,26 @@ use app\helpers\Url;
                 </a>
             </div><!-- .col -->
             <div class="col">
+                <a class="nav-ln" href="<?= Url::toView('ipoteka') ?>">
+                    <span class="nav-txt fw-600">Ипотека</span>
+                </a>
                 <div class="row">
                     <div class="col-4">
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-bez-pervonachalnogo-vznosa') ?>">
                             <span class="nav-txt">Без первоначального взноса</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-na-novostrojku') ?>">
                             <span class="nav-txt">На новостройку</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-na-vtorichnoe-zhile') ?>">
                             <span class="nav-txt">На вторичное жилье</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-bez-podtverzhdeniya-dohoda') ?>">
                             <span class="nav-txt">Без подтверждения дохода</span>
                         </a>
                     </div><!-- .col -->
                     <div class="col-4">
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-molodoj-seme') ?>">
                             <span class="nav-txt">Молодой семье</span>
                         </a>
                         <a class="nav-ln nav-list" href="javascript:;">

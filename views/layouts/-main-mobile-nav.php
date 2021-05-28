@@ -194,32 +194,35 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <i class="i-ch-down em-8"></i>
         </a>
         <div class="main-mnav-content" id="main-mnav-content-4">
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Без первоначального взноса</span>
+            <a class="nav-ln fw-600" href="<?= Url::toView('ipoteka') ?>">
+                Ипотека
             </a>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">На новостройку</span>
+            <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-bez-pervonachalnogo-vznosa') ?>">
+                Без первоначального взноса
             </a>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">На вторичное жилье</span>
+            <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-na-novostrojku') ?>">
+                На новостройку
             </a>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Без подтверждения дохода</span>
+            <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-na-vtorichnoe-zhile') ?>">
+                На вторичное жилье
             </a>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Молодой семье</span>
+            <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-bez-podtverzhdeniya-dohoda') ?>">
+                Без подтверждения дохода
             </a>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Социальная</span>
+            <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-molodoj-seme') ?>">
+                Молодой семье
             </a>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">С господдержкой</span>
+            <a class="nav-ln nav-list" href="javascript:;">
+                Социальная
             </a>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Пенсионерам</span>
+            <a class="nav-ln nav-list" href="javascript:;">
+                С господдержкой
             </a>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">По двум документам</span>
+            <a class="nav-ln nav-list" href="javascript:;">
+                Пенсионерам
+            </a>
+            <a class="nav-ln nav-list" href="javascript:;">
+                По двум документам
             </a>
         </div><!-- .main-mnav-content -->
 
