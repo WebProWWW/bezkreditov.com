@@ -301,6 +301,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             </a>
         </div><!-- .main-mnav-content -->
 
+        <?php /*
         <a class="main-mnav-ln" data-dropdown="#main-mnav-content-7">
             <span class="nav-txt">
                 Финансы
@@ -426,6 +427,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
                 Funny Money
             </a>
         </div><!-- .main-mnav-content -->
+        */ ?>
 
         <a class="main-mnav-ln" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
             <span class="nav-txt">

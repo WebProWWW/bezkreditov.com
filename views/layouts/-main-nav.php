@@ -449,6 +449,7 @@ use app\helpers\Url;
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
 
+    <?php /*
     <a class="main-nav-ln" data-dropdown="#main-nav-content-7">
         <span class="nav-txt">
             Финансы
@@ -621,6 +622,7 @@ use app\helpers\Url;
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
+    */ ?>
 
     <a class="main-nav-ln" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
         <span class="nav-txt">Новости</span>
