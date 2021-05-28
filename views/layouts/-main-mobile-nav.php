@@ -233,47 +233,41 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <i class="i-ch-down em-8"></i>
         </a>
         <div class="main-mnav-content" id="main-mnav-content-5">
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Онлайн тест на списание долгов, кредитов</span>
+            <a class="nav-ln fw-600" href="<?= Url::toView('bankrotstvo') ?>">
+                Банкротство
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Онлайн консультация по банкротству</span>
+                Онлайн подбор юриста по банкротству
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Онлайн тест на списание <br> долгов, кредитов</span>
+                Онлайн калькулятор по банкротству
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt fw-600">Банкротство</span>
+                Проверка долгов онлайн
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Онлайн подбор юриста по банкротству</span>
+                Онлайн тест на списание долгов, кредитов
             </a>
             <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Онлайн калькулятор по банкротству</span>
+                Онлайн консультация по банкротству
             </a>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt">Проверка долгов онлайн</span>
-            </a>
-            <a class="nav-ln" href="javascript:;">
-                <span class="nav-txt fw-600">Кредиты и финансы</span>
+            <a class="nav-ln fw-600" href="javascript:;">
+                Кредиты и финансы
             </a>
             <a class="nav-ln" href="<?= Url::toView('polnaya-kreditnaya-istoriya') ?>">
-                <span class="nav-txt">Полная кредитная история</span>
+                Полная кредитная история
             </a>
             <a class="nav-ln" href="<?= Url::toView('zashita-ot-moshennikov') ?>">
-                <span class="nav-txt">Защита от мощенников</span>
+                Защита от мощенников
             </a>
             <a class="nav-ln" href="<?= Url::toView('proverka-finansovogo-zdorovya') ?>">
-                <span class="nav-txt">Проверка финансового здоровья</span>
+                Проверка финансового здоровья
             </a>
             <a class="nav-ln" href="<?= Url::toView('podbor-kredita') ?>">
-                <span class="nav-txt">Подбор кредита</span>
-            </a>
-            <a class="nav-ln" href="<?= Url::toView('bankrotstvo') ?>">
-                <span class="nav-txt">Банкротство</span>
+                Подбор кредита
             </a>
             <a class="nav-ln" href="<?= Url::toView('kreditnyj-kalkulyator') ?>">
-                <span class="nav-txt">Кредитный калькулятор</span>
+                Кредитный калькулятор
             </a>
             <a class="nav-ln fw-600" href="<?= Url::toView('osago-onlajn') ?>">
                 ОСАГО онлайн
