@@ -27,50 +27,52 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
         </a>
         <div class="main-mnav-content" id="main-mnav-content-1">
             <a class="nav-ln" href="<?= Url::to(['site/company-list', 'page' => 1]) ?>">
-                <span class="nav-txt">Рейтинг компаний по банкротству г.&nbsp;<?= $city->name ?></span>
+                Рейтинг компаний по банкротству
             </a>
             <a class="nav-ln" href="<?= Url::to(['site/arbitration-list', 'page' => 1]) ?>">
-                <span class="nav-txt">Рейтинг арбитражных управляющих г.&nbsp;<?= $city->name ?></span>
+                Рейтинг арбитражных управляющих
             </a>
             <a class="nav-ln" href="<?= Url::toView('rejting-chastnyh-yuristov') ?>">
-                <span class="nav-txt">Рейтинг частных юристов по банкротству</span>
+                Рейтинг частных юристов по банкротству
             </a>
             <a class="nav-ln" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
-                <span class="nav-txt">Новости по банкротству г.&nbsp;<?= $city->name ?></span>
+                Новости по банкротству
             </a>
             <a class="nav-ln" href="<?= Url::toView('onlajn-konsultaciya-yurista-po-bankrotstvu') ?>">
-                <span class="nav-txt">Онлайн консультация юриста по банкротству г.&nbsp;<?= $city->name ?></span>
+                Онлайн консультация юриста по банкротству
             </a>
             <a class="nav-ln" href="<?= Url::toView('poleznye-materialy-po-bankrotstvu') ?>">
-                <span class="nav-txt">Полезные материалы по банкротству г.&nbsp;<?= $city->name ?></span>
+                Полезные материалы по банкротству
             </a>
             <a class="nav-ln" href="<?= Url::toView('otzyvy-lyudej-proshedshih-proceduru-bankrotstva') ?>">
-                <span class="nav-txt">Отзывы людей прошедших процедуру банкротства г.&nbsp;<?= $city->name ?></span>
+                Отзывы людей прошедших процедуру банкротства
             </a>
             <a class="nav-ln" href="<?= Url::toView('vopros-otvet-po-bankrotstvu-fizicheskih-lic') ?>">
-                <span class="nav-txt">Вопрос-ответ по банкротству физических лиц г.&nbsp;<?= $city->name ?></span>
+                Вопрос-ответ по банкротству физических лиц
             </a>
             <a class="nav-ln" href="<?= Url::toView('zakon-o-bankrotstve') ?>">
-                <span class="nav-txt">Закон о банкротстве</span>
-            </a>
-            <a class="nav-ln" href="<?= Url::toView('uznat-svoi-dolgi') ?>">
-                <span class="nav-txt">Узнать свои долги г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::toView('servis-personalnogo-podbora-yurista-po-bankrotstvu-fizicheskih-lits') ?>">
-                <span class="nav-txt">Сервис подбора юриста по банкротству г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln" href="<?= Url::toView('slovar-bankrotnyh-terminov-i-finansovyh-ponyatij') ?>">
-                <span class="nav-txt">Словарь «Без кредитов»</span>
-            </a>
-            <a class="nav-ln" href="<?= Url::toView('zapret-viezda-iz-rf') ?>">
-                <span class="nav-txt">Проверка запрета на выез за границу</span>
+                Закон о банкротстве
             </a>
             <a class="nav-ln" href="<?= Url::toView('ufssp-rossii') ?>">
-                <span class="nav-txt">УФССП России г.&nbsp;<?= $city->name ?></span>
+                УФССП России
+            </a>
+            <a class="nav-ln" href="<?= Url::toView('slovar-bankrotnyh-terminov-i-finansovyh-ponyatij') ?>">
+                Словарь «Без кредитов»
+            </a>
+            <?php /*
+            <a class="nav-ln" href="<?= Url::toView('zapret-viezda-iz-rf') ?>">
+                Проверка запрета на выез за границу
+            </a>
+            <a class="nav-ln" href="<?= Url::toView('uznat-svoi-dolgi') ?>">
+                Узнать свои долги г.&nbsp;<?= $city->name ?>
+            </a>
+            <a class="nav-ln" href="<?= Url::toView('servis-personalnogo-podbora-yurista-po-bankrotstvu-fizicheskih-lits') ?>">
+                Сервис подбора юриста по банкротству г.&nbsp;<?= $city->name ?>
             </a>
             <a class="nav-ln" href="<?= Url::toView('obratnaya-svyaz') ?>">
-                <span class="nav-txt">Обратная связь</span>
+                Обратная связь
             </a>
+            */ ?>
         </div><!-- .main-mnav-content -->
 
         <a class="main-mnav-ln" data-dropdown="#main-mnav-content-2">

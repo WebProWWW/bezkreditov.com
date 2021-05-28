@@ -27,63 +27,62 @@ use app\helpers\Url;
                 </a>
             </div><!-- .col -->
             <div class="col">
-                <nav class="nav">
-                    <a class="nav-ln nav-list col" href="<?= Url::to(['site/company-list', 'page' => 1]) ?>">
-                        <span class="nav-txt">Рейтинг компаний по банкротству г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('onlajn-konsultaciya-yurista-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Онлайн консультация юриста по банкротству г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('zakon-o-bankrotstve') ?>">
-                        <span class="nav-txt">Закон о банкротстве</span>
-                    </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('zapret-viezda-iz-rf') ?>">
+                <div class="row">
+                    <div class="col-4">
+                        <a class="nav-ln nav-list" href="<?= Url::to(['site/company-list', 'page' => 1]) ?>">
+                            <span class="nav-txt">Рейтинг компаний по банкротству</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::to(['site/arbitration-list', 'page' => 1]) ?>">
+                            <span class="nav-txt">Рейтинг арбитражных управляющих</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('rejting-chastnyh-yuristov') ?>">
+                            <span class="nav-txt">Рейтинг частных юристов по банкротству</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
+                            <span class="nav-txt">Новости по банкротству</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('onlajn-konsultaciya-yurista-po-bankrotstvu') ?>">
+                            <span class="nav-txt">Онлайн консультация юриста по банкротству</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('poleznye-materialy-po-bankrotstvu') ?>">
+                            <span class="nav-txt">Полезные материалы по банкротству</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('otzyvy-lyudej-proshedshih-proceduru-bankrotstva') ?>">
+                            <span class="nav-txt">Отзывы людей прошедших процедуру банкротства</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('vopros-otvet-po-bankrotstvu-fizicheskih-lic') ?>">
+                            <span class="nav-txt">Вопрос-ответ по банкротству физических лиц</span>
+                        </a>
+                    </div><!-- .col -->
+                    <div class="col-auto">
+                        <a class="nav-ln nav-list" href="<?= Url::toView('zakon-o-bankrotstve') ?>">
+                            <span class="nav-txt">Закон о банкротстве</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('ufssp-rossii') ?>">
+                            <span class="nav-txt">УФССП России</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('slovar-bankrotnyh-terminov-i-finansovyh-ponyatij') ?>">
+                            <span class="nav-txt">Словарь «Без кредитов»</span>
+                        </a>
+                    </div><!-- .col -->
+
+                    <?php /*
+                    <a class="nav-ln nav-list" href="<?= Url::toView('zapret-viezda-iz-rf') ?>">
                         <span class="nav-txt">Проверка запрета на выез за границу</span>
                     </a>
-
-                    <div class="col-12"></div>
-
-                    <a class="nav-ln nav-list col" href="<?= Url::to(['site/arbitration-list', 'page' => 1]) ?>">
-                        <span class="nav-txt">Рейтинг арбитражных управляющих г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('poleznye-materialy-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Полезные материалы по банкротству г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('uznat-svoi-dolgi') ?>">
+                    <a class="nav-ln nav-list" href="<?= Url::toView('uznat-svoi-dolgi') ?>">
                         <span class="nav-txt">Узнать свои долги г.&nbsp;<?= $city->name ?></span>
                     </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('ufssp-rossii') ?>">
-                        <span class="nav-txt">УФССП России г.&nbsp;<?= $city->name ?></span>
-                    </a>
-
-                    <div class="col-12"></div>
-
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('rejting-chastnyh-yuristov') ?>">
-                        <span class="nav-txt">Рейтинг частных юристов по банкротству</span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('otzyvy-lyudej-proshedshih-proceduru-bankrotstva') ?>">
-                        <span class="nav-txt">Отзывы людей прошедших процедуру банкротства г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('servis-personalnogo-podbora-yurista-po-bankrotstvu-fizicheskih-lits') ?>">
+                    <a class="nav-ln nav-list" href="<?= Url::toView('servis-personalnogo-podbora-yurista-po-bankrotstvu-fizicheskih-lits') ?>">
                         <span class="nav-txt">Сервис подбора юриста по банкротству г.&nbsp;<?= $city->name ?></span>
                     </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('obratnaya-svyaz') ?>">
+                    <a class="nav-ln nav-list" href="<?= Url::toView('obratnaya-svyaz') ?>">
                         <span class="nav-txt">Обратная связь</span>
                     </a>
-
-                    <div class="col-12"></div>
-
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
-                        <span class="nav-txt">Новости по банкротству г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col-4" href="<?= Url::toView('vopros-otvet-po-bankrotstvu-fizicheskih-lic') ?>">
-                        <span class="nav-txt">Вопрос-ответ по банкротству физических лиц г.&nbsp;<?= $city->name ?></span>
-                    </a>
-                    <a class="nav-ln nav-list col" href="<?= Url::toView('slovar-bankrotnyh-terminov-i-finansovyh-ponyatij') ?>">
-                        <span class="nav-txt">Словарь «Без кредитов»</span>
-                    </a>
-                    <div class="nav-ln col">&nbsp;</div>
-                </nav>
+                    */ ?>
+                </div><!-- .row -->
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .main-nav-content -->
