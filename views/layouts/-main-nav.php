@@ -341,7 +341,7 @@ use app\helpers\Url;
             <div class="col">
                 <div class="row">
                     <div class="col">
-                        <a class="nav-ln" href="javascript:;">
+                        <a class="nav-ln" href="<?= Url::toView('bankrotstvo') ?>">
                             <span class="nav-txt fw-600">Банкротство</span>
                         </a>
                         <a class="nav-ln nav-list" href="javascript:;">
@@ -353,13 +353,13 @@ use app\helpers\Url;
                         <a class="nav-ln nav-list" href="javascript:;">
                             <span class="nav-txt">Проверка долгов онлайн</span>
                         </a>
+                        <a class="nav-ln nav-list" href="javascript:;">
+                            <span class="nav-txt">Онлайн тест на списание долгов, кредитов</span>
+                        </a>
                     </div><!-- .col -->
                     <div class="col">
                         <a class="nav-ln" href="javascript:;">
                             <span class="nav-txt fw-600">&nbsp;</span>
-                        </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
-                            <span class="nav-txt">Онлайн тест на списание долгов, кредитов</span>
                         </a>
                         <a class="nav-ln nav-list" href="javascript:;">
                             <span class="nav-txt">Онлайн консультация по банкротству</span>
@@ -383,9 +383,6 @@ use app\helpers\Url;
                         </a>
                         <a class="nav-ln nav-list" href="<?= Url::toView('podbor-kredita') ?>">
                             <span class="nav-txt">Подбор кредита</span>
-                        </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('bankrotstvo') ?>">
-                            <span class="nav-txt">Банкротство</span>
                         </a>
                         <a class="nav-ln nav-list" href="<?= Url::toView('kreditnyj-kalkulyator') ?>">
                             <span class="nav-txt">Кредитный калькулятор</span>
