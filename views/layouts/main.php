@@ -196,61 +196,26 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 <?php if (ArrayHelper::getValue($this->params, 'is-footer', true)): ?>
 <footer class="section">
     <div class="container">
-
-
-
-
-        <nav class="nav">
-            <a class="nav-ln nav-list col-12 col-sm-6 col-md-4" href="<?= Url::to(['site/company-list', 'page' => 1]) ?>">
-                <span class="nav-txt">Рейтинг компаний по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+        <nav class="nav justify-content-lg-between">
+            <a class="nav-ln col-12 col-sm-6 col-md-4 col-lg-auto" href="<?= Url::toView('o-proekte') ?>">
+                О проекте
             </a>
-            <a class="nav-ln nav-list col-12 col-sm-6 col-md" href="<?= Url::to(['site/index', 'view' => 'onlajn-konsultaciya-yurista-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Онлайн консультация юриста по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln col-12 col-sm-6 col-md-4 col-lg-auto" href="<?= Url::toView('obratnaya-svyaz') ?>">
+                Контакты
             </a>
-            <a class="nav-ln nav-list col-12 col-sm-6 col-md-3" href="<?= Url::to(['site/index', 'view' => 'zakon-o-bankrotstve']) ?>">
-                <span class="nav-txt">Закон о банкротстве</span>
+            <a class="nav-ln col-12 col-sm-6 col-md-4 col-lg-auto" href="javascript:;">
+                Карта сайта
             </a>
-
-            <!-- ROW -->
-
-            <a class="nav-ln nav-list col-12 col-sm-6 col-md-4" href="<?= Url::to(['site/arbitration-list', 'page' => 1]) ?>">
-                <span class="nav-txt">Рейтинг арбитражных управляющих в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln col-12 col-sm-6 col-md-4 col-lg-auto" href="/reklama-na-sajte.pdf" target="_blank">
+                Реклама на сайте
             </a>
-            <a class="nav-ln nav-list col-12 col-sm-6 col-md" href="<?= Url::to(['site/index', 'view' => 'poleznye-materialy-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Полезные материалы по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
+            <a class="nav-ln col-12 col-sm-6 col-md-4 col-lg-auto" href="/politika-konfidencialnosti.pdf" target="_blank">
+                Политика конфиденциальности
             </a>
-            <a class="nav-ln nav-list col-12 col-sm-6 col-md-3" href="<?= Url::to(['site/index', 'view' => 'uznat-svoi-dolgi']) ?>">
-                <span class="nav-txt">Узнать свои долги г.&nbsp;<?= $city->name ?></span>
-            </a>
-
-            <!-- ROW -->
-
-            <a class="nav-ln nav-list col-12 col-sm-6 col-md-4" href="<?= Url::to(['site/index', 'view' => 'ufssp-rossii']) ?>">
-                <span class="nav-txt">УФССП России по&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln nav-list col-12 col-sm-6 col-md" href="<?= Url::to(['site/index', 'view' => 'otzyvy-lyudej-proshedshih-proceduru-bankrotstva']) ?>">
-                <span class="nav-txt">Отзывы людей прошедших процедуру банкротства в&nbsp;&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln nav-list col-12 col-sm-6 col-md-3" href="<?= Url::to(['site/index', 'view' => 'obratnaya-svyaz']) ?>">
-                <span class="nav-txt">Обратная связь</span>
-            </a>
-
-            <!-- ROW -->
-
-            <a class="nav-ln nav-list col-12 col-sm-6 col-md-4" href="<?= Url::to(['site/index', 'view' => 'novosti-po-bankrotstvu']) ?>">
-                <span class="nav-txt">Новости по банкротству в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln nav-list col-12 col-sm-6 col-md" href="<?= Url::to(['site/index', 'view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic']) ?>">
-                <span class="nav-txt">Вопрос-ответ по банкротству физических лиц в&nbsp;г.&nbsp;<?= $city->name ?></span>
-            </a>
-            <a class="nav-ln nav-list col-12 col-sm-6 col-md-3" href="<?= Url::to(['site/index', 'view' => 'o-proekte']) ?>">
-                <span class="nav-txt">О проекте</span>
+            <a class="nav-ln col-12 col-sm-6 col-md-4 col-lg-auto" href="/soglashenie-oferta.pdf" target="_blank">
+                Пользовательское соглашение
             </a>
         </nav>
-
-
-
-
         <br>
         <p class="center"><small>&copy; Без кредитов. При воспроизведении редакционных материалов сайта обязательна установка активной гиперссылки на источник - страницу с этой публикацией на безкредитов.рф</small></p>
     </div><!-- .container -->
