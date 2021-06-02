@@ -8,7 +8,7 @@ $this->params['breadcrumbs'] = ['Дебетовые карты'];
 
 ?>
 
-<section class="section bg" style="position: relative; overflow: hidden;">
+<section class="section" style="position: relative; overflow: hidden; background: #C4C9DD;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md-6">
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'] = ['Дебетовые карты'];
                 </p>
             </div><!-- .col -->
             <div class="col-12 col-md-6">
-                <img class="img-center" width="300" src="/img/card-home-1.jpg" style="margin-bottom: -15px;">
+                <img class="img-center" width="400" src="/img/img-49.jpg" style="margin-bottom: -11px;">
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
@@ -617,15 +617,3 @@ $this->params['breadcrumbs'] = ['Дебетовые карты'];
         </div><!-- .cart -->
     </div><!-- .container -->
 </section><!-- .section -->
-
-<section class="section">
-    <div class="container">
-        <p>
-            Оцените&nbsp;наши&nbsp;предложения:
-            <i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>
-            4.9&nbsp;из&nbsp;5 (на&nbsp;основании&nbsp;12&nbsp;голоcов)
-        </p>
-    </div><!-- .container -->
-</section><!-- .section -->
-
-<div class="divider"></div>

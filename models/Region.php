@@ -6,6 +6,7 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
 use yii\db\ActiveQuery;
+use Throwable;
 
 /**
  * This is the model class for table "region_codes".
@@ -130,14 +131,23 @@ class Region extends ActiveRecord
      */
     public static function findAllRegions()
     {
-        $regions = Yii::$app->cache->get('all-regions');
-        if ($regions === false) {
-            $regions = self::find()
-                ->where(['not', ['code' => 99]])
-                ->orderBy(['region_name' => SORT_ASC])
-                ->all();
-            Yii::$app->cache->set('all-regions', $regions, 3600 * 24 * 365);
-        }
-        return $regions;
+        try {
+            return self::getDb()->cache(function () {
+                return self::find()
+                    ->where(['not', ['code' => 99]])
+                    ->orderBy(['region_name' => SORT_ASC])
+                    ->all();
+            });
+        } catch (Throwable $e) {}
+        return [];
+//        $regions = Yii::$app->cache->get('all-regions');
+//        if ($regions === false) {
+//            $regions = self::find()
+//                ->where(['not', ['code' => 99]])
+//                ->orderBy(['region_name' => SORT_ASC])
+//                ->all();
+//            Yii::$app->cache->set('all-regions', $regions, 3600 * 24 * 365);
+//        }
+//        return $regions;
     }
 }

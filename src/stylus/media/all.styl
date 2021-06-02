@@ -1488,7 +1488,7 @@ for child in (1..10)
     display block
     position absolute
     margin-top -.5em
-    margin-left -.8em
+    margin-left -.75em
 
 .sale-primary
     background pcolor
@@ -1549,3 +1549,24 @@ for fw in 300 400 600 700
 for lh in (10..100)
     .lh-{lh}
         line-height (lh * .1)
+
+
+.sms
+    mpd(0 0 15px, 10px 15px)
+    position relative
+    background #2380FE
+    color white
+    font-weight 300
+    font-size 13px
+    border-radius 16px
+
+
+.sms:before
+    mpd()
+    content ''
+    position absolute
+    width 16px
+    height 20px
+    bottom 0
+    right -6px
+    background url('../img/sms-arr.svg') 0 100% no-repeat

@@ -35,8 +35,8 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <a class="nav-ln" href="<?= Url::toView('rejting-chastnyh-yuristov') ?>">
                 Рейтинг частных юристов по банкротству
             </a>
-            <a class="nav-ln" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
-                Новости по банкротству
+            <a class="nav-ln" href="<?= Url::toView('vopros-otvet-po-bankrotstvu-fizicheskih-lic') ?>">
+                Вопрос-ответ по банкротству физических лиц
             </a>
             <a class="nav-ln" href="<?= Url::toView('onlajn-konsultaciya-yurista-po-bankrotstvu') ?>">
                 Онлайн консультация юриста по банкротству
@@ -47,17 +47,17 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <a class="nav-ln" href="<?= Url::toView('otzyvy-lyudej-proshedshih-proceduru-bankrotstva') ?>">
                 Отзывы людей прошедших процедуру банкротства
             </a>
-            <a class="nav-ln" href="<?= Url::toView('vopros-otvet-po-bankrotstvu-fizicheskih-lic') ?>">
-                Вопрос-ответ по банкротству физических лиц
+            <a class="nav-ln" href="<?= Url::toView('slovar-bankrotnyh-terminov-i-finansovyh-ponyatij') ?>">
+                Словарь «Без кредитов»
             </a>
             <a class="nav-ln" href="<?= Url::toView('zakon-o-bankrotstve') ?>">
                 Закон о банкротстве
             </a>
+            <a class="nav-ln" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
+                Новости по банкротству
+            </a>
             <a class="nav-ln" href="<?= Url::toView('ufssp-rossii') ?>">
                 УФССП России
-            </a>
-            <a class="nav-ln" href="<?= Url::toView('slovar-bankrotnyh-terminov-i-finansovyh-ponyatij') ?>">
-                Словарь «Без кредитов»
             </a>
             <?php /*
             <a class="nav-ln" href="<?= Url::toView('zapret-viezda-iz-rf') ?>">

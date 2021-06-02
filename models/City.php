@@ -71,7 +71,7 @@ class City extends ActiveRecord
     public static function allCities()
     {
         try {
-            return self::getDb()->cache(function ($db) {
+            return self::getDb()->cache(function () {
                 return self::find()->all();
             });
         } catch (Throwable $e) {}

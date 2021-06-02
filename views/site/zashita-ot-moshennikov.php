@@ -63,7 +63,7 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
                                     <p class="fw-600 em-9">Артемий</p>
                                     <p class="ml-auto em-8 mutted">Минуту назад</p>
                                 </div>
-                                <p>
+                                <p class="sms">
                                     Оформлен новый кредит.
                                     <br>
                                     Это были вы?
@@ -85,7 +85,7 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
                                     <p class="fw-600 em-9">Екатерина</p>
                                     <p class="ml-auto em-8 mutted">Только что</p>
                                 </div>
-                                <p>
+                                <p class="sms">
                                     Внимание! По Вашему кредиту возникла просрочка
                                 </p>
                             </div><!-- .col-12 -->
@@ -105,7 +105,7 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
                                     <p class="fw-600 em-9">Михаил</p>
                                     <p class="ml-auto em-8 mutted">Две минуты назад</p>
                                 </div>
-                                <p>
+                                <p class="sms">
                                     Cделан запрос на получение Вашей кредитной истории
                                 </p>
                             </div><!-- .col-12 -->
@@ -411,15 +411,3 @@ $this->params['breadcrumbs'] = ['Защита от мощенников'];
         </div><!-- .row -->
     </div><!-- .container -->
 </section><!-- .section -->
-
-<section class="section">
-    <div class="container">
-        <p>
-            Оцените&nbsp;наши&nbsp;предложения:
-            <i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>
-            4.9&nbsp;из&nbsp;5 (на&nbsp;основании&nbsp;12&nbsp;голоcов)
-        </p>
-    </div><!-- .container -->
-</section><!-- .section -->
-
-<div class="divider"></div>

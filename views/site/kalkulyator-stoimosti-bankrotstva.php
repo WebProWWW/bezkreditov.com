@@ -23,57 +23,11 @@ $this->params['breadcrumbs'] = [
         <p class="center">Удобный калькулятор для расчета стоимости банкротства по России.</p>
 
         <div class="mb-4">
-            <div class="cart">
-                <div class="cart-body">
-                    <!-- VUE-APP-COST-CALCULATOR -->
-                    <div class="js-vue-cost-calculator"></div>
-                    <!-- / VUE-APP-COST-CALCULATOR -->
-                </div><!-- .cart-body -->
-            </div><!-- .cart -->
+            <!-- VUE-APP-COST-CALCULATOR -->
+            <div class="js-vue-cost-calculator"></div>
+            <!-- / VUE-APP-COST-CALCULATOR -->
         </div><!-- .mb-4 -->
 
-        <h2 class="h1 center">Предварительный расчет</h2>
-
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body">
-                        <p class="center mt-auto">Предварительнася стоимость банкротства под ключ составит</p>
-                        <p class="center fw-600 em-13">104 999 рублей</p>
-                        <div class="row mt-auto">
-                            <div class="col-12 mx-auto">
-                                <div class="btn-default"><i class="i-download"></i> Сохранить расчет</div>
-                            </div>
-                        </div>
-                    </div><!-- .cart-body -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body">
-                        <p class="center fw-600 em-13 mt-auto">10 999 рублей в месяц!</p>
-                        <p class="center">Ваше банкротство в рассрочку на 12 месяцев</p>
-                        <div class="row mt-auto">
-                            <div class="col-12 mx-auto">
-                                <div class="btn-default">Получить консультацию</div>
-                            </div>
-                        </div>
-                    </div><!-- .cart-body -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="cart">
-                    <div class="cart-body">
-                        <p class="center mt-auto">Хочу получить индивидуальную бесплатную консультацию юриста по банкротству</p>
-                        <div class="row mt-auto">
-                            <div class="col-12 mx-auto">
-                                <div class="btn-default">Получить консультацию</div>
-                            </div>
-                        </div>
-                    </div><!-- .cart-body -->
-                </div><!-- .cart -->
-            </div><!-- .col -->
-        </div><!-- .row -->
     </div><!-- .container -->
 </section><!-- .section -->
 

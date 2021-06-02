@@ -32,14 +32,14 @@ use app\helpers\Url;
                         <a class="nav-ln nav-list" href="<?= Url::to(['site/company-list', 'page' => 1]) ?>">
                             <span class="nav-txt">Рейтинг компаний по банкротству</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::to(['site/arbitration-list', 'page' => 1]) ?>">
+                        <a class="nav-ln nav-list ws-nowrap" href="<?= Url::to(['site/arbitration-list', 'page' => 1]) ?>">
                             <span class="nav-txt">Рейтинг арбитражных управляющих</span>
                         </a>
                         <a class="nav-ln nav-list" href="<?= Url::toView('rejting-chastnyh-yuristov') ?>">
                             <span class="nav-txt">Рейтинг частных юристов по банкротству</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
-                            <span class="nav-txt">Новости по банкротству</span>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('vopros-otvet-po-bankrotstvu-fizicheskih-lic') ?>">
+                            <span class="nav-txt">Вопрос-ответ по банкротству физических лиц</span>
                         </a>
                     </div><!-- .col -->
                     <div class="col">
@@ -52,19 +52,19 @@ use app\helpers\Url;
                         <a class="nav-ln nav-list" href="<?= Url::toView('otzyvy-lyudej-proshedshih-proceduru-bankrotstva') ?>">
                             <span class="nav-txt">Отзывы людей прошедших процедуру банкротства</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('vopros-otvet-po-bankrotstvu-fizicheskih-lic') ?>">
-                            <span class="nav-txt">Вопрос-ответ по банкротству физических лиц</span>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('slovar-bankrotnyh-terminov-i-finansovyh-ponyatij') ?>">
+                            <span class="nav-txt">Словарь «Без кредитов»</span>
                         </a>
                     </div><!-- .col -->
                     <div class="col-auto">
                         <a class="nav-ln nav-list" href="<?= Url::toView('zakon-o-bankrotstve') ?>">
                             <span class="nav-txt">Закон о банкротстве</span>
                         </a>
+                        <a class="nav-ln nav-list" href="<?= Url::toView('novosti-po-bankrotstvu') ?>">
+                            <span class="nav-txt">Новости по банкротству</span>
+                        </a>
                         <a class="nav-ln nav-list" href="<?= Url::toView('ufssp-rossii') ?>">
                             <span class="nav-txt">УФССП России</span>
-                        </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('slovar-bankrotnyh-terminov-i-finansovyh-ponyatij') ?>">
-                            <span class="nav-txt">Словарь «Без кредитов»</span>
                         </a>
                     </div><!-- .col -->
 
@@ -190,7 +190,7 @@ use app\helpers\Url;
                             <span class="nav-txt">Без отказа</span>
                         </a>
                         <a class="nav-ln nav-list" href="<?= Url::toView('potrebitelskie-kredity-s-plohoj-kreditnoj-istoriej') ?>">
-                            <span class="nav-txt">С плохой кредитной историей</span>
+                            <span class="nav-txt">С плохой КИ</span>
                         </a>
                         <a class="nav-ln nav-list" href="<?= Url::toView('potrebitelskie-kredity-pensioneram') ?>">
                             <span class="nav-txt">Пенсионерам</span>

@@ -4,6 +4,7 @@ use app\helpers\Url;
 use app\models\City;
 use app\widgets\FormAjax;
 use app\models\User;
+use app\models\Region;
 
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -14,6 +15,13 @@ use yii\helpers\StringHelper;
 /* @var $cities City[] */
 /* @var $city City */
 /* @var $user User */
+
+
+$cities = City::allCities();
+ArrayHelper::setValue($this->params, 'cities', $cities);
+
+$regions = Region::findAllRegions();
+ArrayHelper::setValue($this->params, 'regions', $regions);
 
 $city = $this->params['city'];
 
@@ -27,6 +35,11 @@ $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
 
 $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 
+$this->registerJsVar('appModel', [
+    'city' => $city,
+    'cities' => $cities,
+    'regions' => $regions,
+]);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -41,7 +54,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
     <?php $this->registerCsrfMetaTags() ?>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap">
     <link rel="stylesheet" href="/css/main.depends.css?v=041">
-    <link rel="stylesheet" href="/css/main.css?v=084">
+    <link rel="stylesheet" href="/css/main.css?v=085">
     <title><?= $title ?></title>
     <meta name="description" content="<?= $description ?>">
     <meta property="og:locale" content="ru_RU">
@@ -216,7 +229,9 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
                 Пользовательское соглашение
             </a>
         </nav>
-        <br>
+    </div><!-- .container -->
+    <div class="divider"></div>
+    <div class="container">
         <p class="center"><small>&copy; Без кредитов. При воспроизведении редакционных материалов сайта обязательна установка активной гиперссылки на источник - страницу с этой публикацией на безкредитов.рф</small></p>
     </div><!-- .container -->
 </footer><!-- .section -->
@@ -275,33 +290,27 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 
 <!-- СПИСОК ГОРОДОВ -->
 <div class="modal em-9" id="cities">
-    <!-- КЭШИРОВАНИЕ МЕНЮ СТРАН -->
-    <?php if ($this->beginCache('main-city-list', ['duration' => 3600 * 24 * 365 ])): ?>
-        <?php if ($cities = City::find()->all()): ?>
-            <label class="label">Быстрый поиск города</label>
-            <div class="js-search">
-                <input class="input js-search-input" type="text" placeholder="Введите название своего города">
-                <div class="row">
-                    <?php $letter = '' ?>
-                    <?php foreach ($cities as $city): ?>
-                        <?php $cityLetter = mb_substr($city->name, 0, 1, 'utf-8') ?>
-                        <?php if ($cityLetter !== $letter): ?>
-                            <?php $letter = $cityLetter ?>
-                            <div class="col-12 js-search-hide">
-                                <p class="mb-2 fw-600"><?= $letter ?></p>
-                            </div>
-                        <?php endif; ?>
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2 js-search-item">
-                            <a class="js-search-data" href="<?= Url::toSubdomain($city->alias) ?>">
-                                <?= $city->name ?>
-                            </a>
-                        </div>
-                    <?php endforeach; ?>
-                </div><!-- .row -->
-            </div><!-- .js-search -->
-        <?php endif; ?>
-        <?php $this->endCache() ?>
-    <?php endif; ?>
+    <label class="label">Быстрый поиск города</label>
+    <div class="js-search">
+        <input class="input js-search-input" type="text" placeholder="Введите название своего города">
+        <div class="row">
+            <?php $letter = '' ?>
+            <?php foreach ($cities as $city): ?>
+                <?php $cityLetter = mb_substr($city->name, 0, 1, 'utf-8') ?>
+                <?php if ($cityLetter !== $letter): ?>
+                    <?php $letter = $cityLetter ?>
+                    <div class="col-12 js-search-hide">
+                        <p class="mb-2 fw-600"><?= $letter ?></p>
+                    </div>
+                <?php endif; ?>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2 js-search-item">
+                    <a class="js-search-data" href="<?= Url::toSubdomain($city->alias) ?>">
+                        <?= $city->name ?>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div><!-- .row -->
+    </div><!-- .js-search -->
 </div><!-- .modal -->
 
 
@@ -401,7 +410,7 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 <!-- / МОДАЛЬНЫЕ ОКНА -->
 
 <script src="/js/main.depends.js?v=028"></script>
-<script src="/js/main.js?v=068"></script>
+<script src="/js/main.js?v=070"></script>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
 <script>if ("function"==typeof window.isCity) { window.isCity() };</script>

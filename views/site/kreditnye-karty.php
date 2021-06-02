@@ -1194,15 +1194,3 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
         </div><!-- .cart -->
     </div><!-- .container -->
 </section><!-- .section -->
-
-<section class="section">
-    <div class="container">
-        <p>
-            Оцените&nbsp;наши&nbsp;предложения:
-            <i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>
-            4.9&nbsp;из&nbsp;5 (на&nbsp;основании&nbsp;12&nbsp;голоcов)
-        </p>
-    </div><!-- .container -->
-</section><!-- .section -->
-
-<div class="divider"></div>
