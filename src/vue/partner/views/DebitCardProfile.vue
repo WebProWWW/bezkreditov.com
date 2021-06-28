@@ -1,29 +1,22 @@
-<?php
-
-/* @var $this yii\web\View */
-
-$this->title = 'Кредитные карты';
-$this->params['description'] = 'Кредитные карты от банков России с процентной ставкой от 0% - на Без кредитов можно оформить кредитную карту онлайн, сравнив предложения от популярных банков России. Изучите условия по процентным ставкам, льготному периоду, стоимости обслуживания. Онлайн-заявка на кредитную карту в два клика!';
-$this->params['breadcrumbs'] = ['Кредитные карты'];
-
-?>
+<template>
+<div>
 
 <section class="section">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-md-7 col-lg-8 order-md-1">
-                <h1>Карта «100 дней без процентов» Mastercard Standard от Альфа-банка</h1>
+                <h1>{{ offer.name }}</h1>
                 <div class="d-flex align-items-center">
-                    <img class="img img-circle" width="60" height="60" src="/img/logo/0.png">
-                    <h3 class="ml-3">Альфа-банк</h3>
+                    <img class="img img-circle" width="60" height="60" :src="listOffer.round_logo">
+                    <h3 class="ml-3">{{ listOffer.mfi.name }}</h3>
                 </div>
             </div><!-- .col -->
 
             <div class="col-12 col-md-5 col-lg-4 order-md-2">
-                <img class="img-center" width="380" src="/img/card-a-1.jpg">
+                <img class="img-center" width="380" :src="offer.logo">
                 <p class="h1">
                     <span class="em-11">5/5</span>
-                    <span class="em-9"><i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i>&nbsp;<i class="i-star yellow"></i></span>
+                    <span class="em-9" v-html="rating"></span>
                     <span class="em-6 d-block">15 отзывов</span>
                 </p>
             </div><!-- .col -->
@@ -669,3 +662,81 @@ $this->params['breadcrumbs'] = ['Кредитные карты'];
         </div><!-- .mb-4 -->
     </div><!-- .container -->
 </section><!-- .section -->
+
+
+</div><!-- root -->
+</template>
+
+<!-- * * * * * * * * * * * * * * * CoffeeScript * * * * * * * * * * * * * * * -->
+<script lang="coffee">
+
+# import AppComp from '@/components/AppComp'
+
+export default
+
+    name: 'DebitCardProfile'
+
+    # components: {}
+
+    # beforeCreate: () ->
+
+    # created: () ->
+
+    # beforeMount: () ->
+
+    # mounted: () ->
+
+    props:
+        offer:
+            type: Object
+            defaul: -> {}
+        listOffer:
+            type: Object
+            defaul: -> {}
+
+    # data: () ->
+
+    # methods:
+
+    computed:
+        rating: ->
+            out = ''
+            rating = (Number @listOffer.mfi.rating)
+            for i in [1..rating]
+                out = "#{out}<i class=\"i-star yellow\"></i>&nbsp;"
+            len = 5 - rating
+            return out if len < 1
+            for i in [1..len]
+                out = "#{out}<i class=\"i-star gray\"></i>&nbsp;"
+            out
+
+    # watch:
+
+</script>
+
+<!-- * * * * * * * * * * * * * * * * Stylus * * * * * * * * * * * * * * * * * -->
+<style lang="stylus" scoped>
+
+// @require '../fun'
+
+/*
+* Small devices (phones, 576px and up)                          ≥ 576px
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+// @media (min-width: 576px)
+
+/*
+* Medium devices (tablets, 768px and up)                        ≥ 768px
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+// @media (min-width: 768px)
+
+/*
+* Large devices (desktops, 992px and up)                        ≥ 992px
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+// @media (min-width: 992px)
+
+/*
+* Extra large devices (large desktops, 1200px and up)          ≥ 1200px
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+// @media (min-width: 1200px)
+
+</style>

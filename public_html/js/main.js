@@ -2,4 +2,1482 @@
  * @author Timur Valiyev
  * @link https://webprowww.github.io
  */
-"use strict";function _typeof(n){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(n){return typeof n}:function(n){return n&&"function"==typeof Symbol&&n.constructor===Symbol&&n!==Symbol.prototype?"symbol":typeof n})(n)}function _defineProperty(n,e,t){return e in n?Object.defineProperty(n,e,{value:t,enumerable:!0,configurable:!0,writable:!0}):n[e]=t,n}function _classCallCheck(n,e){if(!(n instanceof e))throw new TypeError("Cannot call a class as a function")}function _defineProperties(n,e){for(var t=0;t<e.length;t++){var s=e[t];s.enumerable=s.enumerable||!1,s.configurable=!0,"value"in s&&(s.writable=!0),Object.defineProperty(n,s.key,s)}}function _createClass(n,e,t){return e&&_defineProperties(n.prototype,e),t&&_defineProperties(n,t),n}(function(){var s,t,a,i,r,o,c,l,p,d,v,n,e,u;$.fn.hasAttr=function(n){return null!=this.attr(n)},function(){var t=new(function(){var n=function(){function t(){var n,e;_classCallCheck(this,t),n=$('meta[name="csrf-param"]').attr("content"),e=$('meta[name="csrf-token"]').attr("content"),this.csrf=_defineProperty({},"".concat(n),e)}return _createClass(t,[{key:"load",value:function(n,e){var t=1<arguments.length&&void 0!==e?e:{},t=$.extend({},this.csrf,t);return $.ajax({method:"post",url:n,data:t,dataType:"json"}).done(function(n){return!0}).fail(function(n){return!0}).always(function(){return!0})}}]),t}();return n.prototype.csrf={},n}.call(this)),e={template:'<div class="row py-5">\n    <div class="col-12 col-md-10 mx-auto">\n        <p class="em-11 center">\n            <i class="i-check em-36 green"></i>\n            <br>\n            <br>\n            Запрос на получения информации успешно оформлен.\n            <br>\n            <br>\n            Проверка может занять несколько минут, как только отчет будет готов, мы отправим его на указанный вами E-mail.\n        </p>\n    </div>\n\n    <div class="col-12"></div>\n\n    <div class="col-auto mx-auto">\n        <div class="btn btn-default" @click.prevent="$emit(\'new-search\')">Новый запрос</div>\n    </div>\n</div>',props:{input:Object,email:String}},n={template:'<div class="row py-5">\n    <div class="col-12 col-md-10 mx-auto">\n        <p class="em-11 center">\n            <i class="i-ban em-36 red"></i>\n            <br>\n            <br>\n            При обработки запроса произошла ошибка\n            <br>\n            <br>\n            Пожалуйста, попробуйте позже.\n        </p>\n    </div>\n\n    <div class="col-12"></div>\n\n    <div class="col-auto mx-auto">\n        <div class="btn btn-default" @click.prevent="$emit(\'new-search\')">Поиск</div>\n    </div>\n</div>',props:{input:Object}},s={template:'<div>\n    <p class="em-11">Чтобы получить информацию об имеющихся задолженностях перед судебными приставами по исполнительным производствам необходимо заполнить форму ниже.</p>\n\n    <div class="row">\n        <div class="col-12 col-md-6 col-lg-auto">\n            <label class="label mb-4 d-flex align-items-center">\n                <span class="d-block">\n                    <input class="radio" type="radio" v-model="input.searchType.val" value="A" :disabled="loading">\n                </span>\n                <span class="d-block">\n                    Поиск по базе физ лиц\n                </span>\n            </label>\n        </div>\x3c!-- .col --\x3e\n        <div class="col-12 col-md-6 col-lg-auto">\n            <label class="label mb-4 d-flex align-items-center">\n                <span class="d-block">\n                    <input class="radio" type="radio" v-model="input.searchType.val" value="B" :disabled="loading">\n                </span>\n                <span class="d-block">\n                    Поиск по базе юр лиц\n                </span>\n            </label>\n        </div>\x3c!-- .col --\x3e\n        <div class="col-12 col-md-6 col-lg-auto">\n            <label class="label mb-4 d-flex align-items-center">\n                <span class="d-block">\n                    <input class="radio" type="radio" v-model="input.searchType.val" value="C" :disabled="loading">\n                </span>\n                <span class="d-block">\n                    Поиск по базе исполнительных производств\n                </span>\n            </label>\n        </div>\x3c!-- .col --\x3e\n    </div>\x3c!-- .row --\x3e\n\n    <div v-if="isSearchTypeA || isSearchTypeB">\n        <label>Регион <span class="red">*</span></label>\n        <select class="input" :class="{error: input.region.error}" v-model="input.region.val" @focus="input.region.error = \'\'" :disabled="loading">\n            <option disabled selected value="null">Регион</option>\n            <option v-for="option in input.region.options" :value="option.val">\n                {{option.txt}}\n            </option>\n        </select>\n        <span class="input-error" v-if="input.region.error">{{input.region.error}}</span>\n    </div>\x3c!-- type --\x3e\n\n\n    <div class="row" v-if="isSearchTypeA">\n        <div class="col-12 col-md-6">\n            <label>Имя <span class="red">*</span></label>\n            <input class="input" :class="{error: input.firstname.error}" type="text" v-model="input.firstname.val" @focus="input.firstname.error=\'\'" :disabled="loading">\n            <span class="input-error" v-if="input.firstname.error">{{input.firstname.error}}</span>\n        </div>\x3c!-- .col --\x3e\n\n        <div class="col-12 col-md-6">\n            <label>Фамилия <span class="red">*</span></label>\n            <input class="input" :class="{error: input.lastname.error}" type="text" v-model="input.lastname.val" @focus="input.lastname.error=\'\'" :disabled="loading">\n            <span class="input-error" v-if="input.lastname.error">{{input.lastname.error}}</span>\n        </div>\x3c!-- .col --\x3e\n\n        <div class="col-12 col-md-6">\n            <label>Отчество</label>\n            <input class="input" :class="{error: input.secondname.error}" type="text" v-model="input.secondname.val" @focus="input.secondname.error=\'\'" :disabled="loading">\n            <span class="input-error" v-if="input.secondname.error">{{input.secondname.error}}</span>\n        </div>\x3c!-- .col --\x3e\n\n        <div class="col-12 col-md-6">\n            <label>Дата рождения</label>\n            <input class="input" :class="{error: input.birthdate.error}" type="text" placeholder="дд.мм.гггг" v-model="input.birthdate.val" @focus="input.birthdate.error=\'\'" readonly ref="date">\n            <span class="input-error" v-if="input.birthdate.error">{{input.birthdate.error}}</span>\n        </div>\x3c!-- .col --\x3e\n    </div>\x3c!-- .row type --\x3e\n\n    <div v-if="isSearchTypeB">\n        <label>Наименование предприятия <span class="red">*</span></label>\n        <input class="input" :class="{error: input.name.error}" type="text" v-model="input.name.val" @focus="input.name.error=\'\'" :disabled="loading">\n        <span class="input-error" v-if="input.name.error">{{input.name.error}}</span>\n\n        <label>Адрес предприятия - должника</label>\n        <input class="input" :class="{error: input.address.error}" type="text" v-model="input.address.val" @focus="input.address.error=\'\'" :disabled="loading">\n        <span class="input-error" v-if="input.address.error">{{input.address.error}}</span>\n    </div>\x3c!-- type --\x3e\n\n    <div v-if="isSearchTypeC">\n        <label>Номер исполнительного производства <span class="red">*</span></label>\n        <input class="input" :class="{error: input.number.error}" type="text" v-model="input.number.val" @focus="input.number.error=\'\'" :disabled="loading">\n        <span class="input-error" v-if="input.number.error">{{input.number.error}}</span>\n    </div>\x3c!-- type --\x3e\n\n    <div class="row">\n        <div class="col-12 col-md-6">\n            <label>E-mail <span class="red">*</span></label>\n            <input class="input" :class="{error: input.email.error}" type="text" v-model="input.email.val" @focus="input.email.error=\'\'" :disabled="loading">\n            <span class="input-error" v-if="input.email.error">{{input.email.error}}</span>\n        </div>\x3c!-- .col --\x3e\n\n        <div class="col-12 col-md-6">\n            <label>Телефон</label>\n            <input ref="inputPhone" class="input" :class="{error: input.phone.error}" type="text" v-model="input.phone.val" @focus="input.phone.error=\'\'" :disabled="loading">\n            <span class="input-error" v-if="input.phone.error">{{input.phone.error}}</span>\n        </div>\x3c!-- .col --\x3e\n    </div>\x3c!-- .row --\x3e\n\n    <div class="row">\n        <div class="col-12 col-md-6">\n            <div class="btn btn-default" @click.prevent="submit">\n                <span v-if="!loading">Получить информацию</span>\n                <span v-else><img height="10" src="/img/loader.svg"></span>\n            </div>\n        </div>\n    </div>\n</div>',props:{input:Object},mounted:function(){var e=this;return $(this.$refs.inputPhone).inputmask("+7-999-999-99-99",{greedy:!1,oncomplete:function(n){return e.input.phone.val=$(n.target).val(),!0}}),$(this.$refs.date).datepicker({locale:"ru-ru",format:"dd.mm.yyyy"}).on("change",function(n){return e.input.birthdate.val=n.target.value,!0}),!0},data:function(){return{loading:!1}},methods:{submit:function(){var n,s,a,e,i=this;if(!this.loading){for(a in this.loading=!0,n=new Object,e=this.input)s=e[a],n["Fssp[".concat(a,"]")]=s.val;t.load(this.$fsspAction,n).done(function(n){var e,t;if(null!=(null!=n?n.success:void 0)&&1===n.success){for(a in e=i.input.email.val,t=i.input)(s=t[a]).val=s.reset;i.$emit("search-success",e)}else i.addArrors(n);return!0}).fail(function(){return i.$emit("search-error"),!0}).always(function(){return!(i.loading=!1)})}return!0},addArrors:function(n){var e,t;if("object"!==_typeof(n))return!0;for(t in n)e=n[t],this.input["".concat(t.substr(5))].error=e[0];return!0}},computed:{isSearchTypeA:function(){return"A"===this.input.searchType.val},isSearchTypeB:function(){return"B"===this.input.searchType.val},isSearchTypeC:function(){return"C"===this.input.searchType.val}}};r={template:'<div ref="container">\n    <transition name="fade" mode="out-in">\n        <component :is="view"\n            :input="input"\n            @search-success="searchSuccess"\n            @search-error="searchError"\n            @new-search="newSearch"\n        ></component>\n    </transition>\n</div>',created:function(){for(var n,e=this.$region.options,t=0,s=e.length;t<s;t++)n=e[t],this.input.region.options.push({val:n.code,txt:n.region_name}),this.$region.current.code===n.code&&(this.input.region.val=n.code);return!0},data:function(){return{view:s,email:"",input:{searchType:{val:"A",error:"",reset:"A"},region:{val:null,error:"",reset:null,options:[]},firstname:{val:"",error:"",reset:""},secondname:{val:"",error:"",reset:""},lastname:{val:"",error:"",reset:""},birthdate:{val:"",error:"",reset:""},name:{val:"",error:"",reset:""},address:{val:"",error:"",reset:""},number:{val:"",error:"",reset:""},email:{val:"",error:"",reset:""},phone:{val:"",error:"",reset:""}}}},methods:{setView:function(n){var e=$(this.$refs.container).offset().top-30;return $("html:not(:animated),body:not(:animated)").animate({scrollTop:e}),this.view=n,!0},searchSuccess:function(n){return this.email=n,this.setView(e),!0},searchError:function(){return this.setView(n),!0},newSearch:function(){return this.setView(s),!0}}}}(),n={template:'<div>\n    <h3>Благодарим за доверие! Результат готов.</h3>\n    <p>Введите номер телефона и узнайте стоимость:</p>\n    <p>Заявка на расчет стоимости ни к чему Вас не обязывает</p>\n    <input\n        ref="input"\n        :class="{error: error}"\n        :disabled="loading"\n        @click="$emit(\'error-clear\')"\n        class="input"\n        type="text"\n        placeholder="Ваш номер телефона"\n    >\n    <span class="input-error" v-if="error">{{ error }}</span>\n    <p class="em-9">Даю согласие на обработку своих персональных данных в соответствии с политикой конфиденциальности компании «Без Кредитов»</p>\n    <div class="row mt-4">\n        <div class="col-12 col-sm-6 ml-auto">\n            <span class="btn" @click.prevent="submit">\n                <span v-if="!loading">УЗНАТЬ СТОИМОСТЬ</span>\n                <span v-else><img height="8" src="/img/loader.svg"></span>\n            </span>\n        </div>\x3c!-- /.col --\x3e\n    </div>\n</div>',props:{loading:{type:Object,default:!1},error:{tyoe:String,default:""}},mounted:function(){var e=this;return $(this.$refs.input).inputmask("+7-999-999-99-99",{greedy:!1,oncomplete:function(n){return e.phone=$(n.target).val(),!0}}),!0},data:function(){return{phone:""}},methods:{submit:function(){return this.$emit("submit",this.phone),!1}}},e={template:'<div>\n    <h3 class="test-title">\n        <span class="em-11">Поздравляем!</span>\n        <br>\n        Вы успешно прошли онлайн - тест на списание всех ваших долгов!\n    </h3>\n    <p class="center">Предварительное решение о возможности списания всех ваших долгов мы пришлем вам на почту, для этого заполните поле ввода почты и нажмите кнопку «Получить мое решение»</p>\n    <input\n        v-model="email"\n        :disabled="loading"\n        :class="{error: error}"\n        @click="$emit(\'error-clear\')"\n        class="input"\n        type="text"\n        placeholder="Ваша электронная почта"\n    >\n    <span class="input-error" v-if="error">{{ error }}</span>\n    <label class="label d-flex align-items-center mb-4">\n        <span class="d-block">\n            <input\n                class="checkbox"\n                type="checkbox"\n                :class="{error: acceptError}"\n                :disabled="loading"\n                v-model="accept"\n                @change="acceptError = false"\n            >\n        </span>\n        <span class="d-block em-9">Даю согласие на обработку своих персональных данных в соответствии с политикой конфиденциальности портала «Без Кредитов»</span>\n    </label>\n    <span class="input-error" v-if="acceptError">Подтвердите согласие на обработку своих персональных данных</span>\n    <div class="row mt-4">\n        <div class="col-12 col-sm-6 mx-auto">\n            <span class="btn" @click.prevent="submit">\n                <span v-if="!loading">Получить мое решение</span>\n                <span v-else><img height="8" src="/img/loader.svg"></span>\n            </span>\n        </div>\x3c!-- /.col --\x3e\n    </div>\n</div>',props:{loading:{type:Object,default:!1},error:{tyoe:String,default:""}},data:function(){return{email:"",accept:!1,acceptError:!1}},methods:{submit:function(){return this.accept?(this.$emit("submit",this.email),!1):!(this.acceptError=!0)}}},u={template:'<div class="center">\n    <h3 class="">Данные успешно получены!</h3>\n    <p class="">Предварительное решение о возможности списания всех ваших долгов мы пришлем вам на почту {{ email }}</p>\n</div>',props:{email:{type:String,default:""}}},l={template:'<div>\n    <questions\n        v-if="state === 1"\n        @complete="questionsComplete"\n    />\n    <phone\n        v-if="state === 2"\n        :loading="process"\n        :error="phoneErr"\n        @error-clear="phoneErr = \'\'"\n        @submit="phoneSubmit"\n    />\n    <success\n        v-if="state === 3"\n        @close="close"\n        @checklist="state = 4"\n    />\n    <email\n        v-if="state === 4"\n        :loading="process"\n        :error="emailErr"\n        @error-clear="emailErr = \'\'"\n        @submit="emailSubmit"\n    />\n    <esuccess\n        v-if="state === 5"\n        :email="email"\n        @close="close(true)"\n    />\n</div>',components:{questions:{template:'<div class="test">\n    <div class="test-header">\n        <div class="row">\n            <div class="col-12">\n                <h3 class="test-title">\n                    Ответьте на 5 простых вопросов и получите\n                    <br>\n                    предварительное решение по списаниею ваших долгов.\n                </h3>\n            </div>\n            \x3c!--\n            <div class="col-auto">\n                <p class="m-0">{{ steep }} / {{ steepTotal }}</p>\n            </div>\n            --\x3e\n        </div>\n        \x3c!--\n        <span class="test-progress" :style="{ right: progress }"></span>\n        --\x3e\n    </div>\n\n    <p><em class="em-11">Вопрос {{ steep }}</em></p>\n\n    <h3 class="mb-1">{{ item.title }}</h3>\n    <p class="popup-desc">{{ item.desc }}</p>\n\n    <label class="label mb-4 d-flex align-items-center" v-for="option in item.options">\n        <span class="d-block">\n            <input class="radio" type="radio" v-model="item.value" :value="option">\n        </span>\n        <span class="d-block">\n            {{ option }}\n        </span>\n    </label>\n\n    <div class="row no-gutters mt-4">\n        <div class="col-12 col-sm-auto order-2 order-sm-1">\n            <span class="btn btn-sm" @click.prevent="back">\n                <span v-if="(steep === 1)">Закрыть</span>\n                <span v-else>\n                    <i class="i-left em-8"></i>\n                    Назад\n                </span>\n            </span>\n        </div>\x3c!-- /.col --\x3e\n        <div class="col-12 col-sm-auto ml-auto order-1 order-sm-2">\n            <span class="btn btn-sm" @click.prevent="next">\n                Далее\n                <i class="i-right em-8"></i>\n            </span>\n        </div>\x3c!-- /.col --\x3e\n    </div>\n</div>',data:function(){return{steep:1,steepTotal:5,items:[{title:"Какая общая сумма Вашего долга?",desc:"Выберите вариант нише и жмите на кнопку «Далее»",value:"0 - 200 000 ₽",options:["0 - 200 000 ₽","200 000 - 400 000 ₽","400 000 - 1 000 000 ₽","1 000 000 - 3 000 000 ₽","Более 3 000 000 ₽"]},{title:"Какой у Вас срок просрочки по кредитам и займам?",value:"1 месяц",options:["1 месяц","2 месяца","3 месяца","4 месяца и более","Нет"]},{title:"Есть ли у Вас в собственности автомобиль или квартира?",value:"Да, есть",options:["Да, есть","Нет"]},{title:"Вы заключали сделки с недвижимостью или автомобилем за последние 3 года?",value:"Да",options:["Да","Нет"]},{title:"Вы вносили хотя бы один ежемесячный платеж по кредитам или займам?",value:"Да",options:["Да","Нет"]}]}},methods:{back:function(){return 1===this.steep&&$.fancybox.close(!0),1<this.steep&&this.steep--,!1},next:function(){return this.steep===this.steepTotal&&this.$emit("complete",this.items),this.steep<this.steepTotal&&this.steep++,!1}},computed:{progress:function(){return"".concat(100-100*this.steep/this.steepTotal,"%")},item:function(){return this.items["".concat(this.steep-1)]},inputName:function(){return"questions[".concat(this.steep-1,"]")}}},phone:n,success:{template:'<div>\n    <div class="text-center">\n        <h3 class="">Спасибо вы успешно прошли тест!</h3>\n        <p class="">Сегодня мы свяжемся с вами и поможем списать ваши долги</p>\n    </div>\n    <div class="row mt-4">\n        <div class="col-12 col-sm">\n            <p class="text text-center">\n                А пока скачайте наш чек лист: <br>«Как общаться с коллекторами!»\n            </p>\n        </div>\n        <div class="col-12 col-sm-auto">\n            <span class="btn" @click="$emit(\'checklist\')">СКАЧАТЬ ЧЕК-ЛИСТ</span>\n        </div>\n    </div>\n    \x3c!--\n    <img @click.prevent="$emit(\'close\')" class="popup-close" src="img/close.svg">\n    --\x3e\n</div>'},email:e,esuccess:u},data:function(){return{state:1,comment:"",process:!1,phone:"",phoneErr:"",email:"",emailErr:""}},methods:{delay:function(n,e){return setTimeout(e,n)},questionsComplete:function(n){for(var e,t=0,s=n.length;t<s;t++)e=n[t],this.comment+="<p>".concat(e.title,"<br>").concat(e.value,"</p>");return this.state=4,!0},phoneSubmit:function(n){var e,t,s,a=this;return this.phone=n,this.process||(this.process=!0,(s={})["FormCallback[phone]"]=this.phone,s["FormCallback[comment]"]=this.comment,e=$('meta[name="csrf-param"]').attr("content"),t=$('meta[name="csrf-token"]').attr("content"),this.csrf=_defineProperty({},"".concat(e),t),s=$.extend({},this.csrf,s),$.ajax({method:"post",url:this.testCallback,data:s}).done(function(n){var e;return null!=(null!=n?n.success:void 0)&&1===n.success?a.state=3:null!=(null!=(e=n["formcallback-phone"])?e[0]:void 0)&&(a.phoneErr=n["formcallback-phone"][0]),!0}).fail(function(n){return!0}).always(function(){return!(a.process=!1)})),!0},emailSubmit:function(n){var e,t,s,a=this;return this.email=n,this.process||(this.process=!0,(s={})["FormTest[email]"]=this.email,s["FormTest[comment]"]=this.comment,e=$('meta[name="csrf-param"]').attr("content"),t=$('meta[name="csrf-token"]').attr("content"),this.csrf=_defineProperty({},"".concat(e),t),s=$.extend({},this.csrf,s),$.ajax({method:"post",url:this.$action,data:s}).done(function(n){var e;return null!=(null!=n?n.success:void 0)&&1===n.success?(a.state=5,$(document).one("afterClose.fb",function(n){return a.state=1,a.comment="",a.email="",a.phone=""})):null!=(null!=(e=n["formtest-email"])?e[0]:void 0)&&(a.emailErr=n["formtest-email"][0]),!0}).fail(function(n){return!0}).always(function(){return!(a.process=!1)})),!0}}},i={template:'<div>\n    <div v-show="state === 1">\n        <div class="cart">\n            <div class="cart-body">\n                <div class="row">\n                    <div class="col-12 col-lg-6">\n                        <label class="label">Общий размер долга</label>\n                        <input class="input" type="text" v-model="input.debtStr" ref="inputDebt">\n\n                        <label class="label">Регион проживания (прописки)</label>\n                        <select class="input" v-model="input.region.code">\n                            <option v-for="region in input.region.options" :value="region.code">{{ region.region_name }}</option>\n                        </select>\n\n                        <label class="label">Колличество кредитов, распиcок, поручительств</label>\n                        <input class="input" type="text" v-model="input.creditCount" ref="inputCount">\n                    </div>\x3c!-- .col --\x3e\n\n                    <div class="col-12 col-lg-6">\n                        <div class="label">&nbsp;</div>\n                        <div class="row align-items-center mb-4">\n                            <div class="col-12 col-sm">\n                                <p class="em-9 mb-2">Залоговое имущество, которое нужно продать (в том числе ипотечное):</p>\n                            </div>\x3c!-- .col --\x3e\n                            <div class="col-12 col-sm-auto mb-2">\n                                <div class="row">\n                                    <div class="col-auto">\n                                        <label class="d-flex align-items-center m-0">\n                                            <span class="d-block mr-3">Есть</span>\n                                            <input class="radio" type="radio" value="1" v-model="input.quA">\n                                        </label>\n                                    </div>\x3c!-- .col --\x3e\n                                    <div class="col-auto">\n                                        <label class="d-flex align-items-center m-0">\n                                            <span class="d-block mr-3">Нет</span>\n                                            <input class="radio" type="radio" value="0" v-model="input.quA">\n                                        </label>\n                                    </div>\x3c!-- .col --\x3e\n                                </div>\x3c!-- .row --\x3e\n                            </div>\x3c!-- .col --\x3e\n                        </div>\x3c!-- .row --\x3e\n\n                        <div class="row align-items-center mb-4">\n                            <div class="col-12 col-sm">\n                                <p class="em-9 mb-2">Несовершеннолетние дети:</p>\n                            </div>\x3c!-- .col --\x3e\n                            <div class="col-12 col-sm-auto mb-2">\n                                <div class="row">\n                                    <div class="col-auto">\n                                        <label class="d-flex align-items-center m-0">\n                                            <span class="d-block mr-3">Есть</span>\n                                            <input class="radio" type="radio" value="1" v-model="input.quB">\n                                        </label>\n                                    </div>\x3c!-- .col --\x3e\n                                    <div class="col-auto">\n                                        <label class="d-flex align-items-center m-0">\n                                            <span class="d-block mr-3">Нет</span>\n                                            <input class="radio" type="radio" value="0" v-model="input.quB">\n                                        </label>\n                                    </div>\x3c!-- .col --\x3e\n                                </div>\x3c!-- .row --\x3e\n                            </div>\x3c!-- .col --\x3e\n                        </div>\x3c!-- .row --\x3e\n\n                        <div class="row align-items-center mb-4">\n                            <div class="col-12 col-sm">\n                                <p class="em-9 mb-2">Крупные делки последние три года:</p>\n                            </div>\x3c!-- .col --\x3e\n                            <div class="col-12 col-sm-auto mb-2">\n                                <div class="row">\n                                    <div class="col-auto">\n                                        <label class="d-flex align-items-center m-0">\n                                            <span class="d-block mr-3">Есть</span>\n                                            <input class="radio" type="radio" value="1" v-model="input.quC">\n                                        </label>\n                                    </div>\x3c!-- .col --\x3e\n                                    <div class="col-auto">\n                                        <label class="d-flex align-items-center m-0">\n                                            <span class="d-block mr-3">Нет</span>\n                                            <input class="radio" type="radio" value="0" v-model="input.quC">\n                                        </label>\n                                    </div>\x3c!-- .col --\x3e\n                                </div>\x3c!-- .row --\x3e\n                            </div>\x3c!-- .col --\x3e\n                        </div>\x3c!-- .row --\x3e\n                    </div>\x3c!-- .col --\x3e\n                </div>\x3c!-- .row --\x3e\n                <div class="row">\n                    <div class="col-auto mx-auto">\n                        <div class="btn-default" @click.prevent="state = 2">Расчитать стоимость</div>\n                    </div>\x3c!-- .col --\x3e\n                </div>\x3c!-- .row --\x3e\n            </div>\x3c!-- .cart-body --\x3e\n        </div>\x3c!-- .cart --\x3e\n    </div>\x3c!-- Form --\x3e\n\n\n    <div v-show="state === 2">\n        <div class="mb-4">\n            <div class="cart">\n                <div class="cart-body">\n                    <div class="row">\n                        <div class="col-auto mx-auto">\n                            <div class="logo logo-sm">\n                                <span class="logo-txt">Без кредитов</span>\n                            </div>\n                        </div>\x3c!-- .col --\x3e\n                    </div>\x3c!-- .row --\x3e\n                    <p class="center">Мы сделали предварительный расчет вашего банкротства исходя из данных:</p>\n                    <div class="cart-divider"></div>\n                    <p class="row">\n                        <span class="col-12 col-sm-6 fw-600 sm-right">Общий долг:</span>\n                        <span class="col-12 col-sm-6">{{ input.debtStr }}</span>\n                    </p>\n                    <p class="row">\n                        <span class="col-12 col-sm-6 fw-600 sm-right">Регион:</span>\n                        <span class="col-12 col-sm-6">{{ regionNane }}</span>\n                    </p>\n                    <p class="row">\n                        <span class="col-12 col-sm-6 fw-600 sm-right">Колличество кредитов:</span>\n                        <span class="col-12 col-sm-6">{{ input.creditCount }}</span>\n                    </p>\n                    <p class="row">\n                        <span class="col-12 col-sm-6 fw-600 sm-right">Залоговое имущество:</span>\n                        <span class="col-12 col-sm-6">{{ input.quA ? \'Да\' : \'Нет\' }}</span>\n                    </p>\n                    <p class="row">\n                        <span class="col-12 col-sm-6 fw-600 sm-right">Несовершеннолетние дети:</span>\n                        <span class="col-12 col-sm-6">{{ input.quB ? \'Да\' : \'Нет\' }}</span>\n                    </p>\n                    <p class="row">\n                        <span class="col-12 col-sm-6 fw-600 sm-right">Сделки за 3 года:</span>\n                        <span class="col-12 col-sm-6">{{ input.quC ? \'Да\' : \'Нет\' }}</span>\n                    </p>\n                    <div class="row">\n                        <div class="col-auto mx-auto">\n                            <div class="btn-default" @click.prevent="state = 1">Новый расчет</div>\n                        </div>\x3c!-- .col --\x3e\n                    </div>\x3c!-- .row --\x3e\n                </div>\x3c!-- .cart-body --\x3e\n            </div>\x3c!-- .cart --\x3e\n        </div>\x3c!-- .mb-4 --\x3e\n\n        <h2 class="h1 center">Предварительный расчет</h2>\n\n        <div class="row justify-content-center">\n            <div class="col-12 col-md-6 col-lg-4 mb-4">\n                <div class="cart">\n                    <div class="cart-body">\n                        <p class="center mt-auto">Предварительнася стоимость банкротства под ключ составит</p>\n                        <p class="center fw-600 em-13">104 999 рублей</p>\n                        <div class="row mt-auto">\n                            <div class="col-12 mx-auto">\n                                <div class="btn-default"><i class="i-download"></i> Сохранить расчет</div>\n                            </div>\n                        </div>\n                    </div>\x3c!-- .cart-body --\x3e\n                </div>\x3c!-- .cart --\x3e\n            </div>\x3c!-- .col --\x3e\n            <div class="col-12 col-md-6 col-lg-4 mb-4">\n                <div class="cart">\n                    <div class="cart-body">\n                        <p class="center fw-600 em-13 mt-auto">10 999 рублей в месяц!</p>\n                        <p class="center">Ваше банкротство в рассрочку на 12 месяцев</p>\n                        <div class="row mt-auto">\n                            <div class="col-12 mx-auto">\n                                <div class="btn-default">Получить консультацию</div>\n                            </div>\n                        </div>\n                    </div>\x3c!-- .cart-body --\x3e\n                </div>\x3c!-- .cart --\x3e\n            </div>\x3c!-- .col --\x3e\n            <div class="col-12 col-md-6 col-lg-4 mb-4">\n                <div class="cart">\n                    <div class="cart-body">\n                        <p class="center mt-auto">Хочу получить индивидуальную бесплатную консультацию юриста по банкротству</p>\n                        <div class="row mt-auto">\n                            <div class="col-12 mx-auto">\n                                <div class="btn-default">Получить консультацию</div>\n                            </div>\n                        </div>\n                    </div>\x3c!-- .cart-body --\x3e\n                </div>\x3c!-- .cart --\x3e\n            </div>\x3c!-- .col --\x3e\n        </div>\x3c!-- .row --\x3e\n    </div>\x3c!-- Result --\x3e\n\n</div>\x3c!-- root --\x3e',created:function(){var n,e;return this.city=null!=(n=window.appModel.city)?n:{alias:"",id:"",name:"",region_code:""},this.input.region.options=null!=(e=window.appModel.regions)?e:{code:"",region_name:""},this.input.region.code=this.city.region_code,!0},mounted:function(){return $(this.$refs.inputDebt).maskMoney({suffix:" ₽",thousands:" ",precision:0}),$(this.$refs.inputCount).inputmask({alias:"integer",allowMinus:!1,digits:0,rightAlign:!1}),!0},data:function(){return{city:{},input:{debtStr:"200 000 ₽",creditCount:1,quA:1,quB:1,quC:0,region:{code:"",region_name:"",options:[]}},state:1}},watch:{"input.region.code":function(n){return this.regionName=n,this.input.region.region_name=this.regionNane,!0}},computed:{regionNane:function(){for(var n,e="",t=this.input.region.options,s=0,a=t.length;s<a;s++)(n=t[s]).code===this.input.region.code&&(e=n.region_name);return e}}},Vue.config.productionTip=!1,$(".js-vue-app-fssp").each(function(n,e){var t=$(e),s=t.data("region"),a=t.data("action-search");return Vue.prototype.$fsspAction=null!=a?a:"",Vue.prototype.$region=null!=s?s:{city:{},options:[]},new Vue({render:function(n){return n(r)}}).$mount(e)}),$(".js-test").each(function(n,e){var t=$(e);return Vue.prototype.$action=t.data("action"),new Vue({render:function(n){return n(l)}}).$mount(e)}),$(".js-vue-cost-calculator").each(function(n,e){$(e);return new Vue({render:function(n){return n(i)}}).$mount(e)}),o=function(){var n=function(){function t(n){var e=this;_classCallCheck(this,t),this.$el=$(n),this.$items=this.$el.find(".js-search-item"),this.$hide=this.$el.find(".js-search-hide"),this.$el.find(".js-search-input").on("input",function(n){return e.filterData($(n.target).val())})}return _createClass(t,[{key:"filterData",value:function(s){return this.$hide.removeClass("d-none"),s.length&&this.$hide.addClass("d-none"),this.$items.removeClass("d-none"),this.$items.each(function(n,e){var t=$(e);if(t.find(".js-search-data").text().search(RegExp("".concat(s),"i"))<0)return t.addClass("d-none")}),!0}}]),t}();return n.prototype.$el=$({}),n.prototype.$items=$({}),n}.call(this),$(".js-search").each(function(n,e){return new o(e)}),c=function(){function t(n){var e,o=this;_classCallCheck(this,t),e=$(n),this.$root=$('<div class="sselect"></div>'),this.$input=$('<input class="input" type="text" placeholder="Введите название своего города">'),this.$options=$('<div class="sselect-options"></div>'),e.find("option").each(function(n,e){var t=$(e),s=t.text().trim(),a=t.is(":disabled")?" disabled":"",i=t.is(":selected")?(o.$input.val(s)," selected"):"",r=$('<div class="sselect-option'.concat(a).concat(i,'">').concat(s,"</div>"));return o.$options.append(r),!0}),this.$root.append(this.$input),this.$root.append(this.$options),e.replaceWith(this.$root),$("body").on("click",function(n){var t=$(n.target),s=o.$options.find(".sselect-option");return s.each(function(n,e){return t.is($(e))&&(s.removeClass("selected"),t.addClass("selected")),!0}),t.is(o.$input)||(o.$input.val(o.$options.find(".selected").text().trim()),o.$options.removeClass("active"),o.$options.find(".sselect-option").removeClass("d-none")),!0}),this.$input.on("focusin",function(n){var e;return n.preventDefault(),o.$options.addClass("active"),o.$options.scrollTop(0),e=o.$options.find(".selected").position().top-30,o.$options.stop().animate({scrollTop:e})}),this.$input.on("input",function(n){return o.filterData(),!0})}return _createClass(t,[{key:"filterData",value:function(){var s=this.$input.val().trim(),n=this.$options.find(".sselect-option");return n.removeClass("d-none"),s.length&&n.each(function(n,e){var t=$(e);if(t.text().trim().search(RegExp("".concat(s),"i"))<0)return t.addClass("d-none")}),!0}}]),t}(),$(".js-select-search").each(function(n,e){return new c(e)}),$("*[data-toggle]").on("click",function(n){var e;return n.preventDefault(),(e=$(this)).toggleClass("active"),$("".concat(e.attr("data-toggle"))).stop().slideToggle(300,function(){return $(this).is(":visible")&&e.addClass("active"),!0}),!1}),v=function(n){var e,t;return n.preventDefault(),e=$(this),t=$("".concat(e.attr("href"))).offset().top,$("html:not(:animated),body:not(:animated)").stop().animate({scrollTop:t}),!1},d=function(c,n){var l,p,d=$("<blockquote></blockquote>"),u=l=p=0;return n.each(function(n,e){var t,s,a,i,r=$(e),o="h-hash-nav-".concat(c,"-").concat(n);return r.attr("id",o),i=Number(r.prop("tagName")[1]),a=$('<p class="fw-600" style="padding-left:'.concat(2*(i-2),'em"></p>')),t=$('<a href="#'.concat(o,'">').concat(r.text(),"</a>")),(s=$('<span class="fw-300 mr-2"></span>')).text(function(){switch(i){case 2:return p=l=0,"".concat(++u,".");case 3:return p=0,"".concat(u,".").concat(++l,".");case 4:return"".concat(u,".").concat(l,".").concat(++p,".");default:return""}}()),a.append(s),a.append(t),d.append(a),t.on("click",v)}),d},$(".js-hash-nav").on("click",v),$(".js-h-hash-nav").each(function(n,e){var t,s=$(e),a=s.parent().find("h2, h3, h4");return a.length&&((t=$("<div></div>")).append('<p class="fw-600 em-12">Оглавление</p>'),t.append(d(n,a)),s.replaceWith(t)),!0}),a=function(){var n=function(){function t(n){var e;_classCallCheck(this,t),this.$el=$(n),e=Number(this.$el.data("circle-percent")),this.svg=SVG(),this.svg.viewbox(0,0,130,130),this.$el.replaceWith(this.svg.node),this.arc(359.99999*e/100),this.percent(e)}return _createClass(t,[{key:"arcPoint",value:function(n){var e=(n-90)*Math.PI/180;return{x:65+60*Math.cos(e),y:65+60*Math.sin(e)}}},{key:"arc",value:function(n){var s,a,i=this,e=0<arguments.length&&void 0!==n?n:0;return 360<=e&&(e=359.9999999),a=this.arcPoint(0),s=this.svg.group().fill("none").stroke({color:"rgba(255 202 95)",width:10}),$({deg:0}).animate({deg:e},{duration:this.duration,step:function(n){var e,t;return s.clear().stroke("rgba( ".concat((255-.5*n).toFixed()," ").concat((202-25/360*n).toFixed()," ").concat((95-32/360*n).toFixed()," )")),e=i.arcPoint(n),t=n<=180?"0":"1",s.path("M ".concat(e.x," ").concat(e.y," A 60 60 0 ").concat(t," 0 ").concat(a.x," ").concat(a.y))}})}},{key:"percent",value:function(n){var e=0<arguments.length&&void 0!==n?n:0,t=this.svg.group().text("").font({family:"sans-serif",size:30,anchor:"middle"}).attr({x:"50%",y:"36"});return $({percent:0}).animate({percent:e},{duration:this.duration,step:function(n){return t.text("".concat(n.toFixed(),"%"))}})}}]),t}();return n.prototype.duration=800,n}.call(this),$("*[data-circle-percent]").each(function(n,e){return new a(e)}),$("input[data-mask]").each(function(n,e){var t=$(e);return t.inputmask(t.data("mask")),!0}),$("input[data-maskmoney]").each(function(n,e){return $(e).maskMoney({suffix:" ₽",thousands:" ",precision:0}),!0}),$("input[data-maskint]").each(function(n,e){return $(e).inputmask({alias:"integer",allowMinus:!1,digits:0,rightAlign:!1}),!0}),$("input[data-date]").each(function(n,e){return $(e).datepicker({locale:"ru-ru",format:"dd.mm.yyyy"}),!0}),t=function(){var n=function(){function n(e){var t=this;_classCallCheck(this,n),this.$form=$(e),this.id=this.$form.attr("id"),this.$loader=$("#".concat(this.id,"-button")),this.action=this.$form.data("action"),this.$form.on("error",function(n,e){return t.error(e)}),this.$form.on("submit",function(n){return n.preventDefault(),t.send(new FormData(e)),!1})}return _createClass(n,[{key:"send",value:function(n){var e=this;return this.progress||(this.progress=!0,this.loaderHtml=this.$loader.html(),this.$loader.html(this.loaderImg),$.ajax({method:"post",url:this.action,data:n,dataType:"json",processData:!1,contentType:!1,cache:!1}).done(function(n){return null!=(null!=n?n.success:void 0)&&1===n.success?e.success(n):e.$form.trigger("error",n),!0}).fail(function(n){return e.$form.trigger("fail"),!0}).always(function(){return e.progress=!1,e.$loader.text(e.loaderHtml),!0})),!0}},{key:"success",value:function(){return this.$form.trigger("success"),!0}},{key:"error",value:function(n){var e,t;for(e in console.log(n),n)t=n[e],$("#".concat(this.id,"-input-").concat(e)).addClass("error").one("focusin",function(n){var e=$(n.target);return e.removeClass("error"),$("#".concat(String(e.attr("id")).replace("-input-","-error-"))).html("").addClass("d-none")}),$("#".concat(this.id,"-error-").concat(e)).html(t[0]).removeClass("d-none");return!0}},{key:"delay",value:function(n,e){return setTimeout(e,n)}}]),n}();return n.prototype.loaderHtml="",n.prototype.loaderImg='<img height="8" src="/img/loader.svg">',n.prototype.progress=!1,n.prototype.id="",n.prototype.$form=$({}),n}.call(this),$("#main-user-form-login").on("success",function(n){return n.preventDefault(),n.stopImmediatePropagation(),window.document.location.reload(),!1}),$("#main-user-form-register").on("success",function(n){return n.preventDefault(),n.stopImmediatePropagation(),!1}),$("#main-user-form-register").on("fail",function(n){return n.preventDefault(),n.stopImmediatePropagation(),!1}),$("#rating-arb-form-filter").on("submit",function(n){return n.preventDefault(),n.stopImmediatePropagation(),!1}),$(".js-form-ajax").each(function(n,e){return new t(e).$form.on("success",function(){return $.fancybox.close(),$.fancybox.open({src:"#".concat(this.id,"-modal-success")}),!0}).on("fail",function(n){return $.fancybox.close(),$.fancybox.open({src:"#".concat(this.id,"-modal-error")}),!0})}),p=function(){var n,e=this.files,t=$(this),s=$("#".concat(t.attr("id"),"-label"));return e.length&&(25<(n=String(e[0].name)).length&&(n="".concat(n.slice(0,23),"...")),s.html(n)),!0},$("*[data-file-input]").on("click",function(n){var e,t;return n.preventDefault(),t=$(this),(e=$(t.attr("data-file-input"))).one("change",p),e.trigger("click"),!1}),window.isCity=function(){return $.fancybox.open({src:"#is-city"}),!0},s=$("*[data-dropdown]"),$(".main-nav").on("mouseleave",function(n){return s.removeClass("active"),$(".main-nav-content").removeClass("active")}),s.on("click",function(n){return n.preventDefault(),!1}),$(".main-nav-ln").on("mouseenter",function(n){var e,t;return $(".main-nav-content").removeClass("active"),s.removeClass("active"),(t=$(this)).hasAttr("data-dropdown")&&(e=$("".concat(t.attr("data-dropdown"))),t.addClass("active"),e.addClass("active")),!0}),$(".main-mnav-ln").on("click",function(n){var e,t=$(this);return t.hasAttr("data-dropdown")&&(e=$("".concat(t.attr("data-dropdown"))),t.toggleClass("active"),e.stop().slideToggle(300,function(){if($(this).is(":visible"))return t.addClass("active")})),!0}),$("*[data-mnav-open]").on("click",function(n){return n.preventDefault(),$(".main-mnav").addClass("active"),$("body").addClass("main-mnav-active"),!1}),$(".main-mnav-close").on("click",function(n){return $(".main-mnav").removeClass("active"),$("body").removeClass("main-mnav-active")}),$("*[data-link]").on("click",function(n){var e,t;return n.preventDefault(),(t=$(this)).hasClass("active")||(t.parents(".js-tab-links").find("*[data-link]").removeClass("active"),t.addClass("active"),(e=$(t.attr("data-link"))).parents(".js-tab-contents").find(".tab-content").removeClass("active").css("opacity",0),e.addClass("active").animate({opacity:1},300)),!1}),$(".js-arbitration-filter-tab").on("click",function(n){var e;return n.preventDefault(),(e=$(this)).hasClass("active")||($(e.attr("data-input")).val(e.attr("data-val")),$(e.attr("data-form")).submit()),!1}),$(".js-arbitration-filter-select").on("change",function(){var n=$(this);return $(n.attr("data-form")).submit()}),$(".js-slick-slider").each(function(n,e){return $(e).slick({autoplay:!0,arrows:!1,focusOnSelect:!0,mobileFirst:!0,slidesToShow:3,responsive:[{breakpoint:576,settings:{slidesToShow:4}},{breakpoint:768,settings:{slidesToShow:5}},{breakpoint:992,settings:{slidesToShow:6}},{breakpoint:1200,settings:{slidesToShow:7}}]}),!0})}).call(void 0);
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+(function () {
+  // alert 'asdasdasdd'
+  var $mainNavLn, AjaxForm, CirclePercent, CostCalculator, Fssp, JsSearch, SelectSearch, Test, fileInputChanged, hHashNav, hashScroll;
+
+  $.fn.hasAttr = function (name) {
+    return this.attr(name) != null;
+  };
+
+  Fssp = {};
+
+  (function () {
+    var ApiLoader, FsspError, FsspForm, FsspSuccess, delay, loader;
+
+    ApiLoader = function () {
+      // ApiLoader
+      // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+      // /site/fssp-search
+      var ApiLoader = /*#__PURE__*/function () {
+        function ApiLoader() {
+          _classCallCheck(this, ApiLoader);
+
+          var csrfParam, csrfToken;
+          csrfParam = $('meta[name="csrf-param"]').attr('content');
+          csrfToken = $('meta[name="csrf-token"]').attr('content');
+          this.csrf = _defineProperty({}, "".concat(csrfParam), csrfToken);
+        }
+
+        _createClass(ApiLoader, [{
+          key: "load",
+          value: function load(action) {
+            var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            data = $.extend({}, this.csrf, data);
+            return $.ajax({
+              method: 'post',
+              url: action,
+              data: data,
+              dataType: 'json'
+            }).done(function (data) {
+              // console.log data
+              return true;
+            }).fail(function (error) {
+              // console.log  error
+              return true;
+            }).always(function () {
+              return true;
+            });
+          }
+        }]);
+
+        return ApiLoader;
+      }();
+
+      ;
+      ApiLoader.prototype.csrf = {};
+      return ApiLoader;
+    }.call(this);
+
+    loader = new ApiLoader();
+
+    delay = function delay(ms, cb) {
+      return setTimeout(cb, ms);
+    }; // FsspSuccess
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+    FsspSuccess = {
+      template: "<div class=\"row py-5\">\n    <div class=\"col-12 col-md-10 mx-auto\">\n        <p class=\"em-11 center\">\n            <i class=\"i-check em-36 green\"></i>\n            <br>\n            <br>\n            \u0417\u0430\u043F\u0440\u043E\u0441 \u043D\u0430 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438 \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u043E\u0444\u043E\u0440\u043C\u043B\u0435\u043D.\n            <br>\n            <br>\n            \u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043C\u043E\u0436\u0435\u0442 \u0437\u0430\u043D\u044F\u0442\u044C \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043C\u0438\u043D\u0443\u0442, \u043A\u0430\u043A \u0442\u043E\u043B\u044C\u043A\u043E \u043E\u0442\u0447\u0435\u0442 \u0431\u0443\u0434\u0435\u0442 \u0433\u043E\u0442\u043E\u0432, \u043C\u044B \u043E\u0442\u043F\u0440\u0430\u0432\u0438\u043C \u0435\u0433\u043E \u043D\u0430 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u044B\u0439 \u0432\u0430\u043C\u0438 E-mail.\n        </p>\n    </div>\n\n    <div class=\"col-12\"></div>\n\n    <div class=\"col-auto mx-auto\">\n        <div class=\"btn btn-default\" @click.prevent=\"$emit('new-search')\">\u041D\u043E\u0432\u044B\u0439 \u0437\u0430\u043F\u0440\u043E\u0441</div>\n    </div>\n</div>",
+      props: {
+        input: Object,
+        email: String
+      }
+    }; // FsspError
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+    FsspError = {
+      template: "<div class=\"row py-5\">\n    <div class=\"col-12 col-md-10 mx-auto\">\n        <p class=\"em-11 center\">\n            <i class=\"i-ban em-36 red\"></i>\n            <br>\n            <br>\n            \u041F\u0440\u0438 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438 \u0437\u0430\u043F\u0440\u043E\u0441\u0430 \u043F\u0440\u043E\u0438\u0437\u043E\u0448\u043B\u0430 \u043E\u0448\u0438\u0431\u043A\u0430\n            <br>\n            <br>\n            \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u043F\u043E\u0437\u0436\u0435.\n        </p>\n    </div>\n\n    <div class=\"col-12\"></div>\n\n    <div class=\"col-auto mx-auto\">\n        <div class=\"btn btn-default\" @click.prevent=\"$emit('new-search')\">\u041F\u043E\u0438\u0441\u043A</div>\n    </div>\n</div>",
+      props: {
+        input: Object
+      }
+    }; // FsspForm
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+    FsspForm = {
+      template: "<div>\n    <p class=\"em-11\">\u0427\u0442\u043E\u0431\u044B \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E\u0431 \u0438\u043C\u0435\u044E\u0449\u0438\u0445\u0441\u044F \u0437\u0430\u0434\u043E\u043B\u0436\u0435\u043D\u043D\u043E\u0441\u0442\u044F\u0445 \u043F\u0435\u0440\u0435\u0434 \u0441\u0443\u0434\u0435\u0431\u043D\u044B\u043C\u0438 \u043F\u0440\u0438\u0441\u0442\u0430\u0432\u0430\u043C\u0438 \u043F\u043E \u0438\u0441\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u043C \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0430\u043C \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E \u0437\u0430\u043F\u043E\u043B\u043D\u0438\u0442\u044C \u0444\u043E\u0440\u043C\u0443 \u043D\u0438\u0436\u0435.</p>\n\n    <div class=\"row\">\n        <div class=\"col-12 col-md-6 col-lg-auto\">\n            <label class=\"label mb-4 d-flex align-items-center\">\n                <span class=\"d-block\">\n                    <input class=\"radio\" type=\"radio\" v-model=\"input.searchType.val\" value=\"A\" :disabled=\"loading\">\n                </span>\n                <span class=\"d-block\">\n                    \u041F\u043E\u0438\u0441\u043A \u043F\u043E \u0431\u0430\u0437\u0435 \u0444\u0438\u0437 \u043B\u0438\u0446\n                </span>\n            </label>\n        </div><!-- .col -->\n        <div class=\"col-12 col-md-6 col-lg-auto\">\n            <label class=\"label mb-4 d-flex align-items-center\">\n                <span class=\"d-block\">\n                    <input class=\"radio\" type=\"radio\" v-model=\"input.searchType.val\" value=\"B\" :disabled=\"loading\">\n                </span>\n                <span class=\"d-block\">\n                    \u041F\u043E\u0438\u0441\u043A \u043F\u043E \u0431\u0430\u0437\u0435 \u044E\u0440 \u043B\u0438\u0446\n                </span>\n            </label>\n        </div><!-- .col -->\n        <div class=\"col-12 col-md-6 col-lg-auto\">\n            <label class=\"label mb-4 d-flex align-items-center\">\n                <span class=\"d-block\">\n                    <input class=\"radio\" type=\"radio\" v-model=\"input.searchType.val\" value=\"C\" :disabled=\"loading\">\n                </span>\n                <span class=\"d-block\">\n                    \u041F\u043E\u0438\u0441\u043A \u043F\u043E \u0431\u0430\u0437\u0435 \u0438\u0441\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0445 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\n                </span>\n            </label>\n        </div><!-- .col -->\n    </div><!-- .row -->\n\n    <div v-if=\"isSearchTypeA || isSearchTypeB\">\n        <label>\u0420\u0435\u0433\u0438\u043E\u043D <span class=\"red\">*</span></label>\n        <select class=\"input\" :class=\"{error: input.region.error}\" v-model=\"input.region.val\" @focus=\"input.region.error = ''\" :disabled=\"loading\">\n            <option disabled selected value=\"null\">\u0420\u0435\u0433\u0438\u043E\u043D</option>\n            <option v-for=\"option in input.region.options\" :value=\"option.val\">\n                {{option.txt}}\n            </option>\n        </select>\n        <span class=\"input-error\" v-if=\"input.region.error\">{{input.region.error}}</span>\n    </div><!-- type -->\n\n\n    <div class=\"row\" v-if=\"isSearchTypeA\">\n        <div class=\"col-12 col-md-6\">\n            <label>\u0418\u043C\u044F <span class=\"red\">*</span></label>\n            <input class=\"input\" :class=\"{error: input.firstname.error}\" type=\"text\" v-model=\"input.firstname.val\" @focus=\"input.firstname.error=''\" :disabled=\"loading\">\n            <span class=\"input-error\" v-if=\"input.firstname.error\">{{input.firstname.error}}</span>\n        </div><!-- .col -->\n\n        <div class=\"col-12 col-md-6\">\n            <label>\u0424\u0430\u043C\u0438\u043B\u0438\u044F <span class=\"red\">*</span></label>\n            <input class=\"input\" :class=\"{error: input.lastname.error}\" type=\"text\" v-model=\"input.lastname.val\" @focus=\"input.lastname.error=''\" :disabled=\"loading\">\n            <span class=\"input-error\" v-if=\"input.lastname.error\">{{input.lastname.error}}</span>\n        </div><!-- .col -->\n\n        <div class=\"col-12 col-md-6\">\n            <label>\u041E\u0442\u0447\u0435\u0441\u0442\u0432\u043E</label>\n            <input class=\"input\" :class=\"{error: input.secondname.error}\" type=\"text\" v-model=\"input.secondname.val\" @focus=\"input.secondname.error=''\" :disabled=\"loading\">\n            <span class=\"input-error\" v-if=\"input.secondname.error\">{{input.secondname.error}}</span>\n        </div><!-- .col -->\n\n        <div class=\"col-12 col-md-6\">\n            <label>\u0414\u0430\u0442\u0430 \u0440\u043E\u0436\u0434\u0435\u043D\u0438\u044F</label>\n            <input class=\"input\" :class=\"{error: input.birthdate.error}\" type=\"text\" placeholder=\"\u0434\u0434.\u043C\u043C.\u0433\u0433\u0433\u0433\" v-model=\"input.birthdate.val\" @focus=\"input.birthdate.error=''\" readonly ref=\"date\">\n            <span class=\"input-error\" v-if=\"input.birthdate.error\">{{input.birthdate.error}}</span>\n        </div><!-- .col -->\n    </div><!-- .row type -->\n\n    <div v-if=\"isSearchTypeB\">\n        <label>\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u043F\u0440\u0435\u0434\u043F\u0440\u0438\u044F\u0442\u0438\u044F <span class=\"red\">*</span></label>\n        <input class=\"input\" :class=\"{error: input.name.error}\" type=\"text\" v-model=\"input.name.val\" @focus=\"input.name.error=''\" :disabled=\"loading\">\n        <span class=\"input-error\" v-if=\"input.name.error\">{{input.name.error}}</span>\n\n        <label>\u0410\u0434\u0440\u0435\u0441 \u043F\u0440\u0435\u0434\u043F\u0440\u0438\u044F\u0442\u0438\u044F - \u0434\u043E\u043B\u0436\u043D\u0438\u043A\u0430</label>\n        <input class=\"input\" :class=\"{error: input.address.error}\" type=\"text\" v-model=\"input.address.val\" @focus=\"input.address.error=''\" :disabled=\"loading\">\n        <span class=\"input-error\" v-if=\"input.address.error\">{{input.address.error}}</span>\n    </div><!-- type -->\n\n    <div v-if=\"isSearchTypeC\">\n        <label>\u041D\u043E\u043C\u0435\u0440 \u0438\u0441\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0433\u043E \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0430 <span class=\"red\">*</span></label>\n        <input class=\"input\" :class=\"{error: input.number.error}\" type=\"text\" v-model=\"input.number.val\" @focus=\"input.number.error=''\" :disabled=\"loading\">\n        <span class=\"input-error\" v-if=\"input.number.error\">{{input.number.error}}</span>\n    </div><!-- type -->\n\n    <div class=\"row\">\n        <div class=\"col-12 col-md-6\">\n            <label>E-mail <span class=\"red\">*</span></label>\n            <input class=\"input\" :class=\"{error: input.email.error}\" type=\"text\" v-model=\"input.email.val\" @focus=\"input.email.error=''\" :disabled=\"loading\">\n            <span class=\"input-error\" v-if=\"input.email.error\">{{input.email.error}}</span>\n        </div><!-- .col -->\n\n        <div class=\"col-12 col-md-6\">\n            <label>\u0422\u0435\u043B\u0435\u0444\u043E\u043D</label>\n            <input ref=\"inputPhone\" class=\"input\" :class=\"{error: input.phone.error}\" type=\"text\" v-model=\"input.phone.val\" @focus=\"input.phone.error=''\" :disabled=\"loading\">\n            <span class=\"input-error\" v-if=\"input.phone.error\">{{input.phone.error}}</span>\n        </div><!-- .col -->\n    </div><!-- .row -->\n\n    <div class=\"row\">\n        <div class=\"col-12 col-md-6\">\n            <div class=\"btn btn-default\" @click.prevent=\"submit\">\n                <span v-if=\"!loading\">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E</span>\n                <span v-else><img height=\"10\" src=\"/img/loader.svg\"></span>\n            </div>\n        </div>\n    </div>\n</div>",
+      props: {
+        input: Object
+      },
+      mounted: function mounted() {
+        var _this = this;
+
+        $(this.$refs.inputPhone).inputmask('+7-999-999-99-99', {
+          greedy: false,
+          oncomplete: function oncomplete(e) {
+            _this.input.phone.val = $(e.target).val();
+            return true;
+          }
+        });
+        $(this.$refs.date).datepicker({
+          locale: 'ru-ru',
+          format: 'dd.mm.yyyy'
+        }).on('change', function (e) {
+          _this.input.birthdate.val = e.target.value;
+          return true;
+        });
+        return true;
+      },
+      // components:
+      data: function data() {
+        return {
+          loading: false
+        };
+      },
+      methods: {
+        submit: function submit(e) {
+          var _this2 = this;
+
+          var data, input, name, ref;
+
+          if (!this.loading) {
+            this.loading = true;
+            data = new Object();
+            ref = this.input;
+
+            for (name in ref) {
+              input = ref[name];
+              data["Fssp[".concat(name, "]")] = input.val;
+            }
+
+            loader.load(this.$fsspAction, data).done(function (data) {
+              var email, ref1;
+
+              if ((data != null ? data.success : void 0) != null && data.success === 1) {
+                email = _this2.input.email.val;
+                ref1 = _this2.input;
+
+                for (name in ref1) {
+                  input = ref1[name];
+                  input.val = input.reset;
+                }
+
+                _this2.$emit('search-success', email);
+              } else {
+                _this2.addArrors(data);
+              }
+
+              return true;
+            }).fail(function () {
+              _this2.$emit('search-error');
+
+              return true;
+            }).always(function () {
+              _this2.loading = false;
+              return true;
+            });
+          }
+
+          return true;
+        },
+        addArrors: function addArrors(errors) {
+          var error, name;
+
+          if (_typeof(errors) !== 'object') {
+            return true;
+          }
+
+          for (name in errors) {
+            error = errors[name];
+            this.input["".concat(name.substr(5))].error = error[0];
+          }
+
+          return true;
+        }
+      },
+      computed: {
+        isSearchTypeA: function isSearchTypeA() {
+          return this.input.searchType.val === 'A';
+        },
+        isSearchTypeB: function isSearchTypeB() {
+          return this.input.searchType.val === 'B';
+        },
+        isSearchTypeC: function isSearchTypeC() {
+          return this.input.searchType.val === 'C';
+        }
+      }
+    }; // Fssp
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+    Fssp = {
+      template: "<div ref=\"container\">\n    <transition name=\"fade\" mode=\"out-in\">\n        <component :is=\"view\"\n            :input=\"input\"\n            @search-success=\"searchSuccess\"\n            @search-error=\"searchError\"\n            @new-search=\"newSearch\"\n        ></component>\n    </transition>\n</div>",
+      created: function created() {
+        var j, len, option, ref;
+        ref = this.$region.options;
+
+        for (j = 0, len = ref.length; j < len; j++) {
+          option = ref[j];
+          this.input.region.options.push({
+            val: option.code,
+            txt: option.region_name
+          });
+
+          if (this.$region.current.code === option.code) {
+            this.input.region.val = option.code;
+          }
+        }
+
+        return true;
+      },
+      data: function data() {
+        return {
+          view: FsspForm,
+          email: '',
+          input: {
+            // Тип поиска
+            searchType: {
+              val: 'A',
+              error: '',
+              reset: 'A'
+            },
+            // Номер региона
+            region: {
+              val: null,
+              error: '',
+              reset: null,
+              options: []
+            },
+            // Имя физического лица
+            firstname: {
+              val: '',
+              error: '',
+              reset: ''
+            },
+            // Отчество физического лица
+            secondname: {
+              val: '',
+              error: '',
+              reset: ''
+            },
+            // Фамилия физического лица
+            lastname: {
+              val: '',
+              error: '',
+              reset: ''
+            },
+            // Дата рождения физического лица, в формате dd.mm.YYYY
+            birthdate: {
+              val: '',
+              error: '',
+              reset: ''
+            },
+            // Имя юридического лица
+            name: {
+              val: '',
+              error: '',
+              reset: ''
+            },
+            // Адрес юридического лица
+            address: {
+              val: '',
+              error: '',
+              reset: ''
+            },
+            // Номер исполнительного производства в формате n…n/yy/dd/rr или n…n/yy/ddddd-ИП
+            number: {
+              val: '',
+              error: '',
+              reset: ''
+            },
+            // Email
+            email: {
+              val: '',
+              error: '',
+              reset: ''
+            },
+            // Телефон
+            phone: {
+              val: '',
+              error: '',
+              reset: ''
+            }
+          }
+        };
+      },
+      methods: {
+        setView: function setView(View) {
+          var offsetTop;
+          offsetTop = $(this.$refs.container).offset().top - 30;
+          $('html:not(:animated),body:not(:animated)').animate({
+            scrollTop: offsetTop
+          });
+          this.view = View;
+          return true;
+        },
+        searchSuccess: function searchSuccess(email1) {
+          this.email = email1;
+          this.setView(FsspSuccess);
+          return true;
+        },
+        searchError: function searchError() {
+          this.setView(FsspError);
+          return true;
+        },
+        newSearch: function newSearch(reset) {
+          this.setView(FsspForm);
+          return true;
+        }
+      }
+    }; // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+    return true;
+  })();
+
+  Test = {};
+
+  (function () {
+    var TestEmail, TestEmailSucess, TestPhone, TestQuestions, TestSuccess; // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+    TestQuestions = {
+      template: "<div class=\"test\">\n    <div class=\"test-header\">\n        <div class=\"row\">\n            <div class=\"col-12\">\n                <h3 class=\"test-title\">\n                    \u041E\u0442\u0432\u0435\u0442\u044C\u0442\u0435 \u043D\u0430 5 \u043F\u0440\u043E\u0441\u0442\u044B\u0445 \u0432\u043E\u043F\u0440\u043E\u0441\u043E\u0432 \u0438 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u0435\n                    <br>\n                    \u043F\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0435 \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u043F\u043E \u0441\u043F\u0438\u0441\u0430\u043D\u0438\u0435\u044E \u0432\u0430\u0448\u0438\u0445 \u0434\u043E\u043B\u0433\u043E\u0432.\n                </h3>\n            </div>\n            <!--\n            <div class=\"col-auto\">\n                <p class=\"m-0\">{{ steep }} / {{ steepTotal }}</p>\n            </div>\n            -->\n        </div>\n        <!--\n        <span class=\"test-progress\" :style=\"{ right: progress }\"></span>\n        -->\n    </div>\n\n    <p><em class=\"em-11\">\u0412\u043E\u043F\u0440\u043E\u0441 {{ steep }}</em></p>\n\n    <h3 class=\"mb-1\">{{ item.title }}</h3>\n    <p class=\"popup-desc\">{{ item.desc }}</p>\n\n    <label class=\"label mb-4 d-flex align-items-center\" v-for=\"option in item.options\">\n        <span class=\"d-block\">\n            <input class=\"radio\" type=\"radio\" v-model=\"item.value\" :value=\"option\">\n        </span>\n        <span class=\"d-block\">\n            {{ option }}\n        </span>\n    </label>\n\n    <div class=\"row no-gutters mt-4\">\n        <div class=\"col-12 col-sm-auto order-2 order-sm-1\">\n            <span class=\"btn btn-sm\" @click.prevent=\"back\">\n                <span v-if=\"(steep === 1)\">\u0417\u0430\u043A\u0440\u044B\u0442\u044C</span>\n                <span v-else>\n                    <i class=\"i-left em-8\"></i>\n                    \u041D\u0430\u0437\u0430\u0434\n                </span>\n            </span>\n        </div><!-- /.col -->\n        <div class=\"col-12 col-sm-auto ml-auto order-1 order-sm-2\">\n            <span class=\"btn btn-sm\" @click.prevent=\"next\">\n                \u0414\u0430\u043B\u0435\u0435\n                <i class=\"i-right em-8\"></i>\n            </span>\n        </div><!-- /.col -->\n    </div>\n</div>",
+      data: function data() {
+        return {
+          steep: 1,
+          steepTotal: 5,
+          items: [{
+            title: 'Какая общая сумма Вашего долга?',
+            desc: 'Выберите вариант нише и жмите на кнопку «Далее»',
+            value: '0 - 200 000 ₽',
+            options: ['0 - 200 000 ₽', '200 000 - 400 000 ₽', '400 000 - 1 000 000 ₽', '1 000 000 - 3 000 000 ₽', 'Более 3 000 000 ₽']
+          }, {
+            title: 'Какой у Вас срок просрочки по кредитам и займам?',
+            value: '1 месяц',
+            options: ['1 месяц', '2 месяца', '3 месяца', '4 месяца и более', 'Нет']
+          }, {
+            title: 'Есть ли у Вас в собственности автомобиль или квартира?',
+            value: 'Да, есть',
+            options: ['Да, есть', 'Нет']
+          }, {
+            title: 'Вы заключали сделки с недвижимостью или автомобилем за последние 3 года?',
+            value: 'Да',
+            options: ['Да', 'Нет']
+          }, {
+            title: 'Вы вносили хотя бы один ежемесячный платеж по кредитам или займам?',
+            value: 'Да',
+            options: ['Да', 'Нет']
+          }]
+        };
+      },
+      methods: {
+        back: function back(e) {
+          if (this.steep === 1) {
+            $.fancybox.close(true);
+          }
+
+          if (this.steep > 1) {
+            this.steep--;
+          }
+
+          return false;
+        },
+        next: function next(e) {
+          if (this.steep === this.steepTotal) {
+            this.$emit('complete', this.items);
+          }
+
+          if (this.steep < this.steepTotal) {
+            this.steep++;
+          }
+
+          return false;
+        }
+      },
+      computed: {
+        progress: function progress() {
+          return "".concat(100 - this.steep * 100 / this.steepTotal, "%");
+        },
+        item: function item() {
+          return this.items["".concat(this.steep - 1)];
+        },
+        inputName: function inputName() {
+          return "questions[".concat(this.steep - 1, "]");
+        }
+      }
+    }; // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+    TestPhone = {
+      template: "<div>\n    <h3>\u0411\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u0438\u043C \u0437\u0430 \u0434\u043E\u0432\u0435\u0440\u0438\u0435! \u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0433\u043E\u0442\u043E\u0432.</h3>\n    <p>\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430 \u0438 \u0443\u0437\u043D\u0430\u0439\u0442\u0435 \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C:</p>\n    <p>\u0417\u0430\u044F\u0432\u043A\u0430 \u043D\u0430 \u0440\u0430\u0441\u0447\u0435\u0442 \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u0438 \u043D\u0438 \u043A \u0447\u0435\u043C\u0443 \u0412\u0430\u0441 \u043D\u0435 \u043E\u0431\u044F\u0437\u044B\u0432\u0430\u0435\u0442</p>\n    <input\n        ref=\"input\"\n        :class=\"{error: error}\"\n        :disabled=\"loading\"\n        @click=\"$emit('error-clear')\"\n        class=\"input\"\n        type=\"text\"\n        placeholder=\"\u0412\u0430\u0448 \u043D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430\"\n    >\n    <span class=\"input-error\" v-if=\"error\">{{ error }}</span>\n    <p class=\"em-9\">\u0414\u0430\u044E \u0441\u043E\u0433\u043B\u0430\u0441\u0438\u0435 \u043D\u0430 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0443 \u0441\u0432\u043E\u0438\u0445 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445 \u0432 \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0438 \u0441 \u043F\u043E\u043B\u0438\u0442\u0438\u043A\u043E\u0439 \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u0438 \xAB\u0411\u0435\u0437 \u041A\u0440\u0435\u0434\u0438\u0442\u043E\u0432\xBB</p>\n    <div class=\"row mt-4\">\n        <div class=\"col-12 col-sm-6 ml-auto\">\n            <span class=\"btn\" @click.prevent=\"submit\">\n                <span v-if=\"!loading\">\u0423\u0417\u041D\u0410\u0422\u042C \u0421\u0422\u041E\u0418\u041C\u041E\u0421\u0422\u042C</span>\n                <span v-else><img height=\"8\" src=\"/img/loader.svg\"></span>\n            </span>\n        </div><!-- /.col -->\n    </div>\n</div>",
+      props: {
+        loading: {
+          type: Object,
+          default: false
+        },
+        error: {
+          tyoe: String,
+          default: ''
+        }
+      },
+      mounted: function mounted() {
+        var _this3 = this;
+
+        $(this.$refs.input).inputmask('+7-999-999-99-99', {
+          greedy: false,
+          oncomplete: function oncomplete(e) {
+            _this3.phone = $(e.target).val();
+            return true;
+          }
+        });
+        return true;
+      },
+      data: function data() {
+        return {
+          phone: ''
+        };
+      },
+      methods: {
+        submit: function submit() {
+          this.$emit('submit', this.phone);
+          return false;
+        }
+      }
+    }; // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+    TestSuccess = {
+      template: "<div>\n    <div class=\"text-center\">\n        <h3 class=\"\">\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0432\u044B \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u043F\u0440\u043E\u0448\u043B\u0438 \u0442\u0435\u0441\u0442!</h3>\n        <p class=\"\">\u0421\u0435\u0433\u043E\u0434\u043D\u044F \u043C\u044B \u0441\u0432\u044F\u0436\u0435\u043C\u0441\u044F \u0441 \u0432\u0430\u043C\u0438 \u0438 \u043F\u043E\u043C\u043E\u0436\u0435\u043C \u0441\u043F\u0438\u0441\u0430\u0442\u044C \u0432\u0430\u0448\u0438 \u0434\u043E\u043B\u0433\u0438</p>\n    </div>\n    <div class=\"row mt-4\">\n        <div class=\"col-12 col-sm\">\n            <p class=\"text text-center\">\n                \u0410 \u043F\u043E\u043A\u0430 \u0441\u043A\u0430\u0447\u0430\u0439\u0442\u0435 \u043D\u0430\u0448 \u0447\u0435\u043A \u043B\u0438\u0441\u0442: <br>\xAB\u041A\u0430\u043A \u043E\u0431\u0449\u0430\u0442\u044C\u0441\u044F \u0441 \u043A\u043E\u043B\u043B\u0435\u043A\u0442\u043E\u0440\u0430\u043C\u0438!\xBB\n            </p>\n        </div>\n        <div class=\"col-12 col-sm-auto\">\n            <span class=\"btn\" @click=\"$emit('checklist')\">\u0421\u041A\u0410\u0427\u0410\u0422\u042C \u0427\u0415\u041A-\u041B\u0418\u0421\u0422</span>\n        </div>\n    </div>\n    <!--\n    <img @click.prevent=\"$emit('close')\" class=\"popup-close\" src=\"img/close.svg\">\n    -->\n</div>"
+    }; // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+    TestEmail = {
+      template: "<div>\n    <h3 class=\"test-title\">\n        <span class=\"em-11\">\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!</span>\n        <br>\n        \u0412\u044B \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u043F\u0440\u043E\u0448\u043B\u0438 \u043E\u043D\u043B\u0430\u0439\u043D - \u0442\u0435\u0441\u0442 \u043D\u0430 \u0441\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0432\u0441\u0435\u0445 \u0432\u0430\u0448\u0438\u0445 \u0434\u043E\u043B\u0433\u043E\u0432!\n    </h3>\n    <p class=\"center\">\u041F\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0435 \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u043E \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u0438 \u0441\u043F\u0438\u0441\u0430\u043D\u0438\u044F \u0432\u0441\u0435\u0445 \u0432\u0430\u0448\u0438\u0445 \u0434\u043E\u043B\u0433\u043E\u0432 \u043C\u044B \u043F\u0440\u0438\u0448\u043B\u0435\u043C \u0432\u0430\u043C \u043D\u0430 \u043F\u043E\u0447\u0442\u0443, \u0434\u043B\u044F \u044D\u0442\u043E\u0433\u043E \u0437\u0430\u043F\u043E\u043B\u043D\u0438\u0442\u0435 \u043F\u043E\u043B\u0435 \u0432\u0432\u043E\u0434\u0430 \u043F\u043E\u0447\u0442\u044B \u0438 \u043D\u0430\u0436\u043C\u0438\u0442\u0435 \u043A\u043D\u043E\u043F\u043A\u0443 \xAB\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043C\u043E\u0435 \u0440\u0435\u0448\u0435\u043D\u0438\u0435\xBB</p>\n    <input\n        v-model=\"email\"\n        :disabled=\"loading\"\n        :class=\"{error: error}\"\n        @click=\"$emit('error-clear')\"\n        class=\"input\"\n        type=\"text\"\n        placeholder=\"\u0412\u0430\u0448\u0430 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u0430\u044F \u043F\u043E\u0447\u0442\u0430\"\n    >\n    <span class=\"input-error\" v-if=\"error\">{{ error }}</span>\n    <label class=\"label d-flex align-items-center mb-4\">\n        <span class=\"d-block\">\n            <input\n                class=\"checkbox\"\n                type=\"checkbox\"\n                :class=\"{error: acceptError}\"\n                :disabled=\"loading\"\n                v-model=\"accept\"\n                @change=\"acceptError = false\"\n            >\n        </span>\n        <span class=\"d-block em-9\">\u0414\u0430\u044E \u0441\u043E\u0433\u043B\u0430\u0441\u0438\u0435 \u043D\u0430 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0443 \u0441\u0432\u043E\u0438\u0445 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445 \u0432 \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0438 \u0441 \u043F\u043E\u043B\u0438\u0442\u0438\u043A\u043E\u0439 \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438 \u043F\u043E\u0440\u0442\u0430\u043B\u0430 \xAB\u0411\u0435\u0437 \u041A\u0440\u0435\u0434\u0438\u0442\u043E\u0432\xBB</span>\n    </label>\n    <span class=\"input-error\" v-if=\"acceptError\">\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435 \u0441\u043E\u0433\u043B\u0430\u0441\u0438\u0435 \u043D\u0430 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0443 \u0441\u0432\u043E\u0438\u0445 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445</span>\n    <div class=\"row mt-4\">\n        <div class=\"col-12 col-sm-6 mx-auto\">\n            <span class=\"btn\" @click.prevent=\"submit\">\n                <span v-if=\"!loading\">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043C\u043E\u0435 \u0440\u0435\u0448\u0435\u043D\u0438\u0435</span>\n                <span v-else><img height=\"8\" src=\"/img/loader.svg\"></span>\n            </span>\n        </div><!-- /.col -->\n    </div>\n</div>",
+      props: {
+        loading: {
+          type: Object,
+          default: false
+        },
+        error: {
+          tyoe: String,
+          default: ''
+        }
+      },
+      data: function data() {
+        return {
+          email: '',
+          accept: false,
+          acceptError: false
+        };
+      },
+      methods: {
+        submit: function submit() {
+          if (!this.accept) {
+            this.acceptError = true;
+            return false;
+          }
+
+          this.$emit('submit', this.email);
+          return false;
+        }
+      }
+    };
+    /*
+    TestEmail =
+        template:'''
+        <div>
+            <h3 class="">Введите свой Email и мы отправим чек лист на почту</h3>
+            <input
+                v-model="email"
+                :class="{error: error}"
+                @click="$emit('error-clear')"
+                class="input"
+                type="text"
+                placeholder="Email"
+            >
+            <span class="input-error" v-if="error">{{ error }}</span>
+            <p class="em-9">Даю согласие на обработку своих персональных данных в соответствии с политикой конфиденциальности компании «Без Кредитов»</p>
+            <div class="row mt-4">
+                <div class="col-12 col-sm-6 ml-auto">
+                    <span class="btn" @click.prevent="submit">
+                        <span v-if="!loading">ОТПРАВИТЬ</span>
+                        <span v-else><img height="8" src="/img/loader.svg"></span>
+                    </span>
+                </div><!-- /.col -->
+            </div>
+        </div>
+        '''
+         props:
+            loading:
+                type: Object
+                default: off
+            error:
+                tyoe: String
+                default: ''
+         data: ->
+            email: ''
+         methods:
+            submit: ->
+                @$emit 'submit', @email
+     * if @validate
+     *     @$emit 'submit', @email
+     * else
+     *     @error = yes
+                off
+      * computed:
+     *     validate: ->
+     *         emailRe = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+     *         emailRe.test @email
+     */
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+    TestEmailSucess = {
+      template: "<div class=\"center\">\n    <h3 class=\"\">\u0414\u0430\u043D\u043D\u044B\u0435 \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u044B!</h3>\n    <p class=\"\">\u041F\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0435 \u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u043E \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u0438 \u0441\u043F\u0438\u0441\u0430\u043D\u0438\u044F \u0432\u0441\u0435\u0445 \u0432\u0430\u0448\u0438\u0445 \u0434\u043E\u043B\u0433\u043E\u0432 \u043C\u044B \u043F\u0440\u0438\u0448\u043B\u0435\u043C \u0432\u0430\u043C \u043D\u0430 \u043F\u043E\u0447\u0442\u0443 {{ email }}</p>\n</div>",
+      props: {
+        email: {
+          type: String,
+          default: ''
+        }
+      }
+    }; // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+    return Test = {
+      template: "<div>\n    <questions\n        v-if=\"state === 1\"\n        @complete=\"questionsComplete\"\n    />\n    <phone\n        v-if=\"state === 2\"\n        :loading=\"process\"\n        :error=\"phoneErr\"\n        @error-clear=\"phoneErr = ''\"\n        @submit=\"phoneSubmit\"\n    />\n    <success\n        v-if=\"state === 3\"\n        @close=\"close\"\n        @checklist=\"state = 4\"\n    />\n    <email\n        v-if=\"state === 4\"\n        :loading=\"process\"\n        :error=\"emailErr\"\n        @error-clear=\"emailErr = ''\"\n        @submit=\"emailSubmit\"\n    />\n    <esuccess\n        v-if=\"state === 5\"\n        :email=\"email\"\n        @close=\"close(true)\"\n    />\n</div>",
+      components: {
+        'questions': TestQuestions,
+        'phone': TestPhone,
+        'success': TestSuccess,
+        'email': TestEmail,
+        'esuccess': TestEmailSucess
+      },
+      data: function data() {
+        return {
+          state: 1,
+          comment: '',
+          process: false,
+          phone: '',
+          phoneErr: '',
+          email: '',
+          emailErr: ''
+        };
+      },
+      methods: {
+        delay: function delay(ms, cb) {
+          return setTimeout(cb, ms);
+        },
+        questionsComplete: function questionsComplete(items) {
+          var item, j, len;
+
+          for (j = 0, len = items.length; j < len; j++) {
+            item = items[j];
+            this.comment += "<p>".concat(item.title, "<br>").concat(item.value, "</p>");
+          }
+
+          this.state = 4;
+          return true;
+        },
+        phoneSubmit: function phoneSubmit(phone) {
+          var _this4 = this;
+
+          var csrfParam, csrfToken, sendData;
+          this.phone = phone;
+
+          if (this.process) {
+            return true;
+          }
+
+          this.process = true;
+          sendData = {};
+          sendData['FormCallback[phone]'] = this.phone;
+          sendData['FormCallback[comment]'] = this.comment;
+          csrfParam = $('meta[name="csrf-param"]').attr('content');
+          csrfToken = $('meta[name="csrf-token"]').attr('content');
+          this.csrf = _defineProperty({}, "".concat(csrfParam), csrfToken);
+          sendData = $.extend({}, this.csrf, sendData);
+          $.ajax({
+            method: 'post',
+            url: this.testCallback,
+            data: sendData
+          }).done(function (data) {
+            var ref;
+
+            if ((data != null ? data.success : void 0) != null && data.success === 1) {
+              _this4.state = 3;
+            } else {
+              if (((ref = data['formcallback-phone']) != null ? ref[0] : void 0) != null) {
+                _this4.phoneErr = data['formcallback-phone'][0];
+              }
+            }
+
+            return true;
+          }).fail(function (error) {
+            return true;
+          }).always(function () {
+            _this4.process = false;
+            return true;
+          });
+          return true;
+        },
+        emailSubmit: function emailSubmit(email1) {
+          var _this5 = this;
+
+          var csrfParam, csrfToken, sendData;
+          this.email = email1;
+
+          if (this.process) {
+            return true;
+          }
+
+          this.process = true;
+          sendData = {};
+          sendData['FormTest[email]'] = this.email;
+          sendData['FormTest[comment]'] = this.comment;
+          csrfParam = $('meta[name="csrf-param"]').attr('content');
+          csrfToken = $('meta[name="csrf-token"]').attr('content');
+          this.csrf = _defineProperty({}, "".concat(csrfParam), csrfToken);
+          sendData = $.extend({}, this.csrf, sendData);
+          $.ajax({
+            method: 'post',
+            url: this.$action,
+            data: sendData
+          }).done(function (data) {
+            var ref;
+
+            if ((data != null ? data.success : void 0) != null && data.success === 1) {
+              _this5.state = 5;
+              $(document).one('afterClose.fb', function (e) {
+                _this5.state = 1;
+                _this5.comment = '';
+                _this5.email = '';
+                return _this5.phone = '';
+              });
+            } else {
+              if (((ref = data['formtest-email']) != null ? ref[0] : void 0) != null) {
+                _this5.emailErr = data['formtest-email'][0];
+              }
+            }
+
+            return true;
+          }).fail(function (error) {
+            return true;
+          }).always(function () {
+            _this5.process = false;
+            return true;
+          });
+          return true;
+        }
+      }
+    };
+  })(); // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+  CostCalculator = {};
+
+  (function () {
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    return CostCalculator = {
+      template: "<div>\n    <div v-show=\"state === 1\">\n        <div class=\"cart\">\n            <div class=\"cart-body\">\n                <div class=\"row\">\n                    <div class=\"col-12 col-lg-6\">\n                        <label class=\"label\">\u041E\u0431\u0449\u0438\u0439 \u0440\u0430\u0437\u043C\u0435\u0440 \u0434\u043E\u043B\u0433\u0430</label>\n                        <input class=\"input\" type=\"text\" v-model=\"input.debtStr\" ref=\"inputDebt\">\n\n                        <label class=\"label\">\u0420\u0435\u0433\u0438\u043E\u043D \u043F\u0440\u043E\u0436\u0438\u0432\u0430\u043D\u0438\u044F (\u043F\u0440\u043E\u043F\u0438\u0441\u043A\u0438)</label>\n                        <select class=\"input\" v-model=\"input.region.code\">\n                            <option v-for=\"region in input.region.options\" :value=\"region.code\">{{ region.region_name }}</option>\n                        </select>\n\n                        <label class=\"label\">\u041A\u043E\u043B\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u043A\u0440\u0435\u0434\u0438\u0442\u043E\u0432, \u0440\u0430\u0441\u043F\u0438c\u043E\u043A, \u043F\u043E\u0440\u0443\u0447\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432</label>\n                        <input class=\"input\" type=\"text\" v-model=\"input.creditCount\" ref=\"inputCount\">\n                    </div><!-- .col -->\n\n                    <div class=\"col-12 col-lg-6\">\n                        <div class=\"label\">&nbsp;</div>\n                        <div class=\"row align-items-center mb-4\">\n                            <div class=\"col-12 col-sm\">\n                                <p class=\"em-9 mb-2\">\u0417\u0430\u043B\u043E\u0433\u043E\u0432\u043E\u0435 \u0438\u043C\u0443\u0449\u0435\u0441\u0442\u0432\u043E, \u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u043D\u0443\u0436\u043D\u043E \u043F\u0440\u043E\u0434\u0430\u0442\u044C (\u0432 \u0442\u043E\u043C \u0447\u0438\u0441\u043B\u0435 \u0438\u043F\u043E\u0442\u0435\u0447\u043D\u043E\u0435):</p>\n                            </div><!-- .col -->\n                            <div class=\"col-12 col-sm-auto mb-2\">\n                                <div class=\"row\">\n                                    <div class=\"col-auto\">\n                                        <label class=\"d-flex align-items-center m-0\">\n                                            <span class=\"d-block mr-3\">\u0415\u0441\u0442\u044C</span>\n                                            <input class=\"radio\" type=\"radio\" value=\"1\" v-model=\"input.quA\">\n                                        </label>\n                                    </div><!-- .col -->\n                                    <div class=\"col-auto\">\n                                        <label class=\"d-flex align-items-center m-0\">\n                                            <span class=\"d-block mr-3\">\u041D\u0435\u0442</span>\n                                            <input class=\"radio\" type=\"radio\" value=\"0\" v-model=\"input.quA\">\n                                        </label>\n                                    </div><!-- .col -->\n                                </div><!-- .row -->\n                            </div><!-- .col -->\n                        </div><!-- .row -->\n\n                        <div class=\"row align-items-center mb-4\">\n                            <div class=\"col-12 col-sm\">\n                                <p class=\"em-9 mb-2\">\u041D\u0435\u0441\u043E\u0432\u0435\u0440\u0448\u0435\u043D\u043D\u043E\u043B\u0435\u0442\u043D\u0438\u0435 \u0434\u0435\u0442\u0438:</p>\n                            </div><!-- .col -->\n                            <div class=\"col-12 col-sm-auto mb-2\">\n                                <div class=\"row\">\n                                    <div class=\"col-auto\">\n                                        <label class=\"d-flex align-items-center m-0\">\n                                            <span class=\"d-block mr-3\">\u0415\u0441\u0442\u044C</span>\n                                            <input class=\"radio\" type=\"radio\" value=\"1\" v-model=\"input.quB\">\n                                        </label>\n                                    </div><!-- .col -->\n                                    <div class=\"col-auto\">\n                                        <label class=\"d-flex align-items-center m-0\">\n                                            <span class=\"d-block mr-3\">\u041D\u0435\u0442</span>\n                                            <input class=\"radio\" type=\"radio\" value=\"0\" v-model=\"input.quB\">\n                                        </label>\n                                    </div><!-- .col -->\n                                </div><!-- .row -->\n                            </div><!-- .col -->\n                        </div><!-- .row -->\n\n                        <div class=\"row align-items-center mb-4\">\n                            <div class=\"col-12 col-sm\">\n                                <p class=\"em-9 mb-2\">\u041A\u0440\u0443\u043F\u043D\u044B\u0435 \u0434\u0435\u043B\u043A\u0438 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0435 \u0442\u0440\u0438 \u0433\u043E\u0434\u0430:</p>\n                            </div><!-- .col -->\n                            <div class=\"col-12 col-sm-auto mb-2\">\n                                <div class=\"row\">\n                                    <div class=\"col-auto\">\n                                        <label class=\"d-flex align-items-center m-0\">\n                                            <span class=\"d-block mr-3\">\u0415\u0441\u0442\u044C</span>\n                                            <input class=\"radio\" type=\"radio\" value=\"1\" v-model=\"input.quC\">\n                                        </label>\n                                    </div><!-- .col -->\n                                    <div class=\"col-auto\">\n                                        <label class=\"d-flex align-items-center m-0\">\n                                            <span class=\"d-block mr-3\">\u041D\u0435\u0442</span>\n                                            <input class=\"radio\" type=\"radio\" value=\"0\" v-model=\"input.quC\">\n                                        </label>\n                                    </div><!-- .col -->\n                                </div><!-- .row -->\n                            </div><!-- .col -->\n                        </div><!-- .row -->\n                    </div><!-- .col -->\n                </div><!-- .row -->\n                <div class=\"row\">\n                    <div class=\"col-auto mx-auto\">\n                        <div class=\"btn-default\" @click.prevent=\"state = 2\">\u0420\u0430\u0441\u0447\u0438\u0442\u0430\u0442\u044C \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C</div>\n                    </div><!-- .col -->\n                </div><!-- .row -->\n            </div><!-- .cart-body -->\n        </div><!-- .cart -->\n    </div><!-- Form -->\n\n\n    <div v-show=\"state === 2\">\n        <div class=\"mb-4\">\n            <div class=\"cart\">\n                <div class=\"cart-body\">\n                    <div class=\"row\">\n                        <div class=\"col-auto mx-auto\">\n                            <div class=\"logo logo-sm\">\n                                <span class=\"logo-txt\">\u0411\u0435\u0437 \u043A\u0440\u0435\u0434\u0438\u0442\u043E\u0432</span>\n                            </div>\n                        </div><!-- .col -->\n                    </div><!-- .row -->\n                    <p class=\"center\">\u041C\u044B \u0441\u0434\u0435\u043B\u0430\u043B\u0438 \u043F\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439 \u0440\u0430\u0441\u0447\u0435\u0442 \u0432\u0430\u0448\u0435\u0433\u043E \u0431\u0430\u043D\u043A\u0440\u043E\u0442\u0441\u0442\u0432\u0430 \u0438\u0441\u0445\u043E\u0434\u044F \u0438\u0437 \u0434\u0430\u043D\u043D\u044B\u0445:</p>\n                    <div class=\"cart-divider\"></div>\n                    <p class=\"row\">\n                        <span class=\"col-12 col-sm-6 fw-600 sm-right\">\u041E\u0431\u0449\u0438\u0439 \u0434\u043E\u043B\u0433:</span>\n                        <span class=\"col-12 col-sm-6\">{{ input.debtStr }}</span>\n                    </p>\n                    <p class=\"row\">\n                        <span class=\"col-12 col-sm-6 fw-600 sm-right\">\u0420\u0435\u0433\u0438\u043E\u043D:</span>\n                        <span class=\"col-12 col-sm-6\">{{ regionNane }}</span>\n                    </p>\n                    <p class=\"row\">\n                        <span class=\"col-12 col-sm-6 fw-600 sm-right\">\u041A\u043E\u043B\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u043A\u0440\u0435\u0434\u0438\u0442\u043E\u0432:</span>\n                        <span class=\"col-12 col-sm-6\">{{ input.creditCount }}</span>\n                    </p>\n                    <p class=\"row\">\n                        <span class=\"col-12 col-sm-6 fw-600 sm-right\">\u0417\u0430\u043B\u043E\u0433\u043E\u0432\u043E\u0435 \u0438\u043C\u0443\u0449\u0435\u0441\u0442\u0432\u043E:</span>\n                        <span class=\"col-12 col-sm-6\">{{ input.quA ? '\u0415\u0441\u0442\u044C' : '\u041D\u0435\u0442' }}</span>\n                    </p>\n                    <p class=\"row\">\n                        <span class=\"col-12 col-sm-6 fw-600 sm-right\">\u041D\u0435\u0441\u043E\u0432\u0435\u0440\u0448\u0435\u043D\u043D\u043E\u043B\u0435\u0442\u043D\u0438\u0435 \u0434\u0435\u0442\u0438:</span>\n                        <span class=\"col-12 col-sm-6\">{{ input.quB ? '\u0415\u0441\u0442\u044C' : '\u041D\u0435\u0442' }}</span>\n                    </p>\n                    <p class=\"row\">\n                        <span class=\"col-12 col-sm-6 fw-600 sm-right\">\u0421\u0434\u0435\u043B\u043A\u0438 \u0437\u0430 3 \u0433\u043E\u0434\u0430:</span>\n                        <span class=\"col-12 col-sm-6\">{{ input.quC ? '\u0415\u0441\u0442\u044C' : '\u041D\u0435\u0442' }}</span>\n                    </p>\n                    <div class=\"row\">\n                        <div class=\"col-auto mx-auto\">\n                            <div class=\"btn-default\" @click.prevent=\"state = 1\">\u041D\u043E\u0432\u044B\u0439 \u0440\u0430\u0441\u0447\u0435\u0442</div>\n                        </div><!-- .col -->\n                    </div><!-- .row -->\n                </div><!-- .cart-body -->\n            </div><!-- .cart -->\n        </div><!-- .mb-4 -->\n\n        <h2 class=\"h1 center\">\u041F\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439 \u0440\u0430\u0441\u0447\u0435\u0442</h2>\n\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-md-6 col-lg-4 mb-4\">\n                <div class=\"cart\">\n                    <div class=\"cart-body\">\n                        <p class=\"center mt-auto\">\u041F\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043B\u044C\u043D\u0430\u0441\u044F \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u0431\u0430\u043D\u043A\u0440\u043E\u0442\u0441\u0442\u0432\u0430 \u043F\u043E\u0434 \u043A\u043B\u044E\u0447 \u0441\u043E\u0441\u0442\u0430\u0432\u0438\u0442</p>\n                        <p class=\"center fw-600 em-13\">104 999 \u0440\u0443\u0431\u043B\u0435\u0439</p>\n                        <div class=\"row mt-auto\">\n                            <div class=\"col-12 mx-auto\">\n                                <div class=\"btn-default\"><i class=\"i-download\"></i> \u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0440\u0430\u0441\u0447\u0435\u0442</div>\n                            </div>\n                        </div>\n                    </div><!-- .cart-body -->\n                </div><!-- .cart -->\n            </div><!-- .col -->\n            <div class=\"col-12 col-md-6 col-lg-4 mb-4\">\n                <div class=\"cart\">\n                    <div class=\"cart-body\">\n                        <p class=\"center fw-600 em-13 mt-auto\">10 999 \u0440\u0443\u0431\u043B\u0435\u0439 \u0432 \u043C\u0435\u0441\u044F\u0446!</p>\n                        <p class=\"center\">\u0412\u0430\u0448\u0435 \u0431\u0430\u043D\u043A\u0440\u043E\u0442\u0441\u0442\u0432\u043E \u0432 \u0440\u0430\u0441\u0441\u0440\u043E\u0447\u043A\u0443 \u043D\u0430 12 \u043C\u0435\u0441\u044F\u0446\u0435\u0432</p>\n                        <div class=\"row mt-auto\">\n                            <div class=\"col-12 mx-auto\">\n                                <div class=\"btn-default\">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u044E</div>\n                            </div>\n                        </div>\n                    </div><!-- .cart-body -->\n                </div><!-- .cart -->\n            </div><!-- .col -->\n            <div class=\"col-12 col-md-6 col-lg-4 mb-4\">\n                <div class=\"cart\">\n                    <div class=\"cart-body\">\n                        <p class=\"center mt-auto\">\u0425\u043E\u0447\u0443 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0438\u043D\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043B\u044C\u043D\u0443\u044E \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u0443\u044E \u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u044E \u044E\u0440\u0438\u0441\u0442\u0430 \u043F\u043E \u0431\u0430\u043D\u043A\u0440\u043E\u0442\u0441\u0442\u0432\u0443</p>\n                        <div class=\"row mt-auto\">\n                            <div class=\"col-12 mx-auto\">\n                                <div class=\"btn-default\">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u044E</div>\n                            </div>\n                        </div>\n                    </div><!-- .cart-body -->\n                </div><!-- .cart -->\n            </div><!-- .col -->\n        </div><!-- .row -->\n    </div><!-- Result -->\n\n</div><!-- root -->",
+      created: function created() {
+        var ref, ref1;
+        this.city = (ref = window.appModel.city) != null ? ref : {
+          alias: '',
+          id: '',
+          name: '',
+          region_code: ''
+        };
+        this.input.region.options = (ref1 = window.appModel.regions) != null ? ref1 : {
+          code: '',
+          region_name: ''
+        };
+        this.input.region.code = this.city.region_code;
+        return true;
+      },
+      mounted: function mounted() {
+        $(this.$refs.inputDebt).maskMoney({
+          suffix: ' ₽',
+          thousands: ' ',
+          precision: 0
+        });
+        $(this.$refs.inputCount).inputmask({
+          alias: 'integer',
+          allowMinus: false,
+          digits: 0,
+          rightAlign: false
+        });
+        return true;
+      },
+      data: function data() {
+        return {
+          city: {},
+          input: {
+            debtStr: '200 000 ₽',
+            creditCount: 1,
+            quA: 1,
+            quB: 1,
+            quC: 0,
+            region: {
+              code: '',
+              region_name: '',
+              options: []
+            }
+          },
+          state: 1
+        };
+      },
+      watch: {
+        'input.region.code': function inputRegionCode(val) {
+          this.regionName = val;
+          this.input.region.region_name = this.regionNane;
+          return true;
+        }
+      },
+      computed: {
+        regionNane: function regionNane() {
+          var j, len, name, ref, region;
+          name = '';
+          ref = this.input.region.options;
+
+          for (j = 0, len = ref.length; j < len; j++) {
+            region = ref[j];
+
+            if (region.code === this.input.region.code) {
+              name = region.region_name;
+            }
+          }
+
+          return name;
+        }
+      }
+    };
+  })();
+
+  Vue.config.productionTip = false;
+  Vue.prototype.$app = typeof appModel !== "undefined" && appModel !== null ? appModel : {
+    homeUrl: '/',
+    regions: [],
+    cities: [],
+    city: {}
+  };
+  $('.js-vue-app-fssp').each(function (i, el) {
+    var $el, actionSearch, region;
+    $el = $(el);
+    region = $el.data('region');
+    actionSearch = $el.data('action-search');
+    Vue.prototype.$fsspAction = actionSearch != null ? actionSearch : '';
+    Vue.prototype.$region = region != null ? region : {
+      city: {},
+      options: []
+    };
+    return new Vue({
+      render: function render(h) {
+        return h(Fssp);
+      }
+    }).$mount(el);
+  });
+  $('.js-test').each(function (i, el) {
+    var $el;
+    $el = $(el);
+    Vue.prototype.$action = $el.data('action');
+    return new Vue({
+      render: function render(h) {
+        return h(Test);
+      }
+    }).$mount(el);
+  }); // $.fancybox.open src: '#test-bonus'
+  // $.fancybox.open src: '#test'
+  // $.fancybox.open src: '#arbitration-rate-info'
+  //$.fancybox.open src: '#arbitration-callback'
+
+  $('.js-vue-cost-calculator').each(function (i, el) {
+    var $el;
+    $el = $(el);
+    return new Vue({
+      render: function render(h) {
+        return h(CostCalculator);
+      }
+    }).$mount(el);
+  });
+
+  JsSearch = function () {
+    var JsSearch = /*#__PURE__*/function () {
+      function JsSearch(el) {
+        var _this6 = this;
+
+        _classCallCheck(this, JsSearch);
+
+        this.$el = $(el);
+        this.$items = this.$el.find('.js-search-item');
+        this.$hide = this.$el.find('.js-search-hide');
+        this.$el.find('.js-search-input').on('input', function (e) {
+          return _this6.filterData($(e.target).val());
+        });
+      }
+
+      _createClass(JsSearch, [{
+        key: "filterData",
+        value: function filterData(val) {
+          this.$hide.removeClass('d-none');
+
+          if (val.length) {
+            this.$hide.addClass('d-none');
+          }
+
+          this.$items.removeClass('d-none');
+          this.$items.each(function (i, item) {
+            var $item, dataStr;
+            $item = $(item);
+            dataStr = $item.find('.js-search-data').text();
+
+            if (dataStr.search(RegExp("".concat(val), "i")) < 0) {
+              return $item.addClass('d-none');
+            }
+          });
+          return true;
+        }
+      }]);
+
+      return JsSearch;
+    }();
+
+    ;
+    JsSearch.prototype.$el = $({});
+    JsSearch.prototype.$items = $({});
+    return JsSearch;
+  }.call(this); // $('*[data-percent]').each (i, el) ->
+  //     $this = $ el
+  //     percent = Number $(this).data 'percent'
+  //     $this.css width: "#{percent}%"
+  // $.fancybox.open src: '#cities'
+
+
+  $('.js-search').each(function (i, el) {
+    return new JsSearch(el);
+  });
+
+  SelectSearch = /*#__PURE__*/function () {
+    function SelectSearch(select) {
+      var _this7 = this;
+
+      _classCallCheck(this, SelectSearch);
+
+      var $select;
+      $select = $(select);
+      this.$root = $('<div class="sselect"></div>');
+      this.$input = $("<input class=\"input\" type=\"text\" placeholder=\"Введите название своего города\">");
+      this.$options = $('<div class="sselect-options"></div>');
+      $select.find('option').each(function (i, option) {
+        var $option, $ssOption, disabled, optionText, selected;
+        $option = $(option);
+        optionText = $option.text().trim();
+
+        if ($option.is(':disabled')) {
+          disabled = ' disabled';
+        } else {
+          disabled = '';
+        }
+
+        if ($option.is(':selected')) {
+          _this7.$input.val(optionText);
+
+          selected = ' selected';
+        } else {
+          selected = '';
+        }
+
+        $ssOption = $("<div class=\"sselect-option".concat(disabled).concat(selected, "\">").concat(optionText, "</div>"));
+
+        _this7.$options.append($ssOption);
+
+        return true;
+      });
+      this.$root.append(this.$input);
+      this.$root.append(this.$options);
+      $select.replaceWith(this.$root); // EVENT
+
+      $('body').on('click', function (e) {
+        var $ssOption, $target;
+        $target = $(e.target);
+        $ssOption = _this7.$options.find('.sselect-option');
+        $ssOption.each(function (i, option) {
+          if ($target.is($(option))) {
+            $ssOption.removeClass('selected');
+            $target.addClass('selected');
+          }
+
+          return true;
+        });
+
+        if (!$target.is(_this7.$input)) {
+          _this7.$input.val(_this7.$options.find('.selected').text().trim());
+
+          _this7.$options.removeClass('active');
+
+          _this7.$options.find('.sselect-option').removeClass('d-none');
+        }
+
+        return true;
+      });
+      this.$input.on('focusin', function (e) {
+        var offsetTop;
+        e.preventDefault();
+
+        _this7.$options.addClass('active');
+
+        _this7.$options.scrollTop(0);
+
+        offsetTop = _this7.$options.find('.selected').position().top - 30;
+        return _this7.$options.stop().animate({
+          scrollTop: offsetTop
+        });
+      });
+      this.$input.on('input', function (e) {
+        _this7.filterData();
+
+        return true;
+      });
+    }
+
+    _createClass(SelectSearch, [{
+      key: "filterData",
+      value: function filterData() {
+        var $options, val;
+        val = this.$input.val().trim();
+        $options = this.$options.find('.sselect-option');
+        $options.removeClass('d-none');
+
+        if (!val.length) {
+          return true;
+        }
+
+        $options.each(function (i, option) {
+          var $option, optionText;
+          $option = $(option);
+          optionText = $option.text().trim();
+
+          if (optionText.search(RegExp("".concat(val), "i")) < 0) {
+            return $option.addClass('d-none');
+          }
+        });
+        return true;
+      }
+    }]);
+
+    return SelectSearch;
+  }();
+
+  $('.js-select-search').each(function (i, el) {
+    return new SelectSearch(el);
+  });
+  $('*[data-toggle]').on('click', function (e) {
+    var $targetBlock, $this;
+    e.preventDefault();
+    $this = $(this);
+    $this.toggleClass('active');
+    $targetBlock = $("".concat($this.attr('data-toggle')));
+    $targetBlock.stop().slideToggle(300, function () {
+      if ($(this).is(':visible')) {
+        $this.addClass('active');
+      }
+
+      return true;
+    });
+    return false;
+  });
+
+  hashScroll = function hashScroll(e) {
+    var $this, offsetTop;
+    e.preventDefault();
+    $this = $(this);
+    offsetTop = $("".concat($this.attr('href'))).offset().top;
+    $('html:not(:animated),body:not(:animated)').stop().animate({
+      scrollTop: offsetTop
+    });
+    return false;
+  };
+
+  hHashNav = function hHashNav(index, $headers) {
+    var $out, hPrev, level, numH2, numH3, numH4;
+    $out = $('<blockquote></blockquote>');
+    level = 0;
+    hPrev = 0;
+    numH2 = numH3 = numH4 = 0;
+    $headers.each(function (i, el) {
+      var $a, $el, $n, $p, h, id;
+      $el = $(el);
+      id = "h-hash-nav-".concat(index, "-").concat(i);
+      $el.attr('id', id);
+      h = Number($el.prop('tagName')[1]);
+      $p = $("<p class=\"fw-600\" style=\"padding-left:".concat((h - 2) * 2, "em\"></p>"));
+      $a = $("<a href=\"#".concat(id, "\">").concat($el.text(), "</a>"));
+      $n = $('<span class="fw-300 mr-2"></span>');
+      $n.text(function () {
+        switch (h) {
+          case 2:
+            numH3 = 0;
+            numH4 = 0;
+            return "".concat(++numH2, ".");
+
+          case 3:
+            numH4 = 0;
+            return "".concat(numH2, ".").concat(++numH3, ".");
+
+          case 4:
+            return "".concat(numH2, ".").concat(numH3, ".").concat(++numH4, ".");
+
+          default:
+            return '';
+        }
+      }());
+      $p.append($n);
+      $p.append($a);
+      $out.append($p);
+      return $a.on('click', hashScroll);
+    });
+    return $out;
+  };
+
+  $('.js-hash-nav').on('click', hashScroll);
+  $('.js-h-hash-nav').each(function (i, el) {
+    var $el, $headers, $root;
+    $el = $(el);
+    $headers = $el.parent().find('h2, h3, h4');
+
+    if (!$headers.length) {
+      return true;
+    }
+
+    $root = $('<div></div>');
+    $root.append('<p class="fw-600 em-12">Оглавление</p>');
+    $root.append(hHashNav(i, $headers));
+    $el.replaceWith($root);
+    return true;
+  });
+
+  CirclePercent = function () {
+    var CirclePercent = /*#__PURE__*/function () {
+      function CirclePercent(el) {
+        _classCallCheck(this, CirclePercent);
+
+        var percentNum;
+        this.$el = $(el);
+        percentNum = Number(this.$el.data('circle-percent'));
+        this.svg = SVG();
+        this.svg.viewbox(0, 0, 130, 130);
+        this.$el.replaceWith(this.svg.node);
+        this.arc(percentNum * 359.99999 / 100);
+        this.percent(percentNum);
+      }
+
+      _createClass(CirclePercent, [{
+        key: "arcPoint",
+        value: function arcPoint(deg) {
+          var angle, x, y;
+          angle = (deg - 90) * Math.PI / 180;
+          x = 65 + 60 * Math.cos(angle);
+          y = 65 + 60 * Math.sin(angle);
+          return {
+            x: x,
+            y: y
+          };
+        }
+      }, {
+        key: "arc",
+        value: function arc() {
+          var _this8 = this;
+
+          var deg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+          var circle, pointStart;
+
+          if (deg >= 360) {
+            deg = 359.9999999;
+          } // start = @arcPoint deg
+
+
+          pointStart = this.arcPoint(0);
+          circle = this.svg.group().fill('none').stroke({
+            color: "rgba(255 202 95)",
+            width: 10
+          });
+          return $({
+            deg: 0
+          }).animate({
+            deg: deg
+          }, {
+            duration: this.duration,
+            step: function step(now) {
+              var point, sweep;
+              circle.clear().stroke("rgba( ".concat((255 - 180 / 360 * now).toFixed(), " ").concat((202 - 25 / 360 * now).toFixed(), " ").concat((95 - 32 / 360 * now).toFixed(), " )"));
+              point = _this8.arcPoint(now);
+              sweep = now <= 180 ? "0" : "1";
+              return circle.path("M ".concat(point.x, " ").concat(point.y, " A 60 60 0 ").concat(sweep, " 0 ").concat(pointStart.x, " ").concat(pointStart.y));
+            }
+          });
+        }
+      }, {
+        key: "percent",
+        value: function percent() {
+          var num = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+          var text;
+          text = this.svg.group().text('').font({
+            family: 'sans-serif',
+            size: 30,
+            anchor: 'middle'
+          }).attr({
+            x: '50%',
+            y: '36'
+          });
+          return $({
+            percent: 0
+          }).animate({
+            percent: num
+          }, {
+            duration: this.duration,
+            step: function step(now) {
+              // text.clear()
+              return text.text("".concat(now.toFixed(), "%"));
+            }
+          });
+        }
+      }]);
+
+      return CirclePercent;
+    }();
+
+    ;
+    CirclePercent.prototype.duration = 800;
+    return CirclePercent;
+  }.call(this);
+
+  $('*[data-circle-percent]').each(function (i, el) {
+    return new CirclePercent(el);
+  });
+  $('input[data-mask]').each(function (i, input) {
+    var $input;
+    $input = $(input);
+    $input.inputmask($input.data('mask'));
+    return true;
+  });
+  $('input[data-maskmoney]').each(function (i, input) {
+    $(input).maskMoney({
+      suffix: ' ₽',
+      thousands: ' ',
+      precision: 0
+    });
+    return true;
+  });
+  $('input[data-maskint]').each(function (i, input) {
+    $(input).inputmask({
+      alias: 'integer',
+      allowMinus: false,
+      digits: 0,
+      rightAlign: false
+    });
+    return true;
+  });
+  $('input[data-date]').each(function (i, input) {
+    $(input).datepicker({
+      locale: 'ru-ru',
+      format: 'dd.mm.yyyy'
+    });
+    return true;
+  });
+
+  AjaxForm = function () {
+    var AjaxForm = /*#__PURE__*/function () {
+      function AjaxForm(form) {
+        var _this9 = this;
+
+        _classCallCheck(this, AjaxForm);
+
+        this.$form = $(form);
+        this.id = this.$form.attr('id');
+        this.$loader = $("#".concat(this.id, "-button"));
+        this.action = this.$form.data('action');
+        this.$form.on('error', function (e, data) {
+          return _this9.error(data);
+        });
+        this.$form.on('submit', function (e) {
+          e.preventDefault();
+
+          _this9.send(new FormData(form));
+
+          return false;
+        });
+      }
+
+      _createClass(AjaxForm, [{
+        key: "send",
+        value: function send(data) {
+          var _this10 = this;
+
+          if (this.progress) {
+            return true;
+          }
+
+          this.progress = true;
+          this.loaderHtml = this.$loader.html();
+          this.$loader.html(this.loaderImg);
+          $.ajax({
+            method: 'post',
+            url: this.action,
+            data: data,
+            dataType: 'json',
+            processData: false,
+            contentType: false,
+            cache: false
+          }).done(function (data) {
+            if ((data != null ? data.success : void 0) != null && data.success === 1) {
+              _this10.success(data);
+
+              return true;
+            }
+
+            _this10.$form.trigger('error', data);
+
+            return true;
+          }).fail(function (error) {
+            // //console.log error
+            _this10.$form.trigger('fail');
+
+            return true;
+          }).always(function () {
+            _this10.progress = false;
+
+            _this10.$loader.text(_this10.loaderHtml);
+
+            return true;
+          });
+          return true;
+        }
+      }, {
+        key: "success",
+        value: function success(data) {
+          this.$form.trigger('success');
+          return true;
+        }
+      }, {
+        key: "error",
+        value: function error(_error) {
+          var attr, errArr;
+          console.log(_error);
+
+          for (attr in _error) {
+            errArr = _error[attr];
+            $("#".concat(this.id, "-input-").concat(attr)).addClass('error').one('focusin', function (e) {
+              var $input;
+              $input = $(e.target);
+              $input.removeClass('error');
+              return $("#".concat(String($input.attr('id')).replace('-input-', '-error-'))).html('').addClass('d-none');
+            });
+            $("#".concat(this.id, "-error-").concat(attr)).html(errArr[0]).removeClass('d-none');
+          }
+
+          return true;
+        }
+      }, {
+        key: "delay",
+        value: function delay(ms, cb) {
+          return setTimeout(cb, ms);
+        }
+      }]);
+
+      return AjaxForm;
+    }();
+
+    ;
+    AjaxForm.prototype.loaderHtml = '';
+    AjaxForm.prototype.loaderImg = '<img height="8" src="/img/loader.svg">';
+    AjaxForm.prototype.progress = false;
+    AjaxForm.prototype.id = '';
+    AjaxForm.prototype.$form = $({});
+    return AjaxForm;
+  }.call(this); // $.fancybox.open src: '#register'
+  // $.fancybox.open src: '#login'
+
+
+  $('#main-user-form-login').on('success', function (e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    window.document.location.reload();
+    return false;
+  });
+  $('#main-user-form-register').on('success', function (e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    return false;
+  });
+  $('#main-user-form-register').on('fail', function (e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    return false;
+  }); // TO-DO
+
+  $('#rating-arb-form-filter').on('submit', function (e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    return false;
+  });
+  $('.js-form-ajax').each(function (i, form) {
+    var ajaxForm;
+    ajaxForm = new AjaxForm(form);
+    return ajaxForm.$form.on('success', function () {
+      $.fancybox.close();
+      $.fancybox.open({
+        src: "#".concat(this.id, "-modal-success")
+      });
+      return true;
+    }).on('fail', function (e) {
+      $.fancybox.close();
+      $.fancybox.open({
+        src: "#".concat(this.id, "-modal-error")
+      });
+      return true;
+    });
+  });
+
+  fileInputChanged = function fileInputChanged(e) {
+    var $input, $label, fileName, files;
+    files = this.files;
+    $input = $(this);
+    $label = $("#".concat($input.attr('id'), "-label"));
+
+    if (files.length) {
+      fileName = String(files[0].name);
+
+      if (fileName.length > 25) {
+        fileName = "".concat(fileName.slice(0, 23), "...");
+      }
+
+      $label.html(fileName);
+    }
+
+    return true;
+  };
+
+  $('*[data-file-input]').on('click', function (e) {
+    var $input, $this;
+    e.preventDefault();
+    $this = $(this);
+    $input = $($this.attr('data-file-input'));
+    $input.one('change', fileInputChanged);
+    $input.trigger('click');
+    return false;
+  });
+
+  window.isCity = function () {
+    $.fancybox.open({
+      src: '#is-city'
+    });
+    return true;
+  };
+
+  $mainNavLn = $("*[data-dropdown]");
+  $('.main-nav').on('mouseleave', function (e) {
+    $mainNavLn.removeClass('active');
+    return $('.main-nav-content').removeClass('active');
+  });
+  $mainNavLn.on('click', function (e) {
+    e.preventDefault();
+    return false;
+  });
+  $('.main-nav-ln').on('mouseenter', function (e) {
+    var $content, $this;
+    $('.main-nav-content').removeClass('active');
+    $mainNavLn.removeClass('active');
+    $this = $(this);
+
+    if (!$this.hasAttr('data-dropdown')) {
+      return true;
+    }
+
+    $content = $("".concat($this.attr('data-dropdown')));
+    $this.addClass('active');
+    $content.addClass('active');
+    return true;
+  });
+  $('.main-mnav-ln').on('click', function (e) {
+    var $content, $this;
+    $this = $(this);
+
+    if (!$this.hasAttr('data-dropdown')) {
+      return true;
+    }
+
+    $content = $("".concat($this.attr('data-dropdown')));
+    $this.toggleClass('active');
+    $content.stop().slideToggle(300, function () {
+      if ($(this).is(':visible')) {
+        return $this.addClass('active');
+      }
+    });
+    return true;
+  });
+  $('*[data-mnav-open]').on('click', function (e) {
+    e.preventDefault();
+    $('.main-mnav').addClass('active');
+    $('body').addClass('main-mnav-active');
+    return false;
+  }); // $('*[data-mnav-open]').trigger 'click'
+
+  $('.main-mnav-close').on('click', function (e) {
+    $('.main-mnav').removeClass('active');
+    return $('body').removeClass('main-mnav-active');
+  });
+  $('*[data-link]').on('click', function (e) {
+    var $content, $this;
+    e.preventDefault();
+    $this = $(this);
+
+    if ($this.hasClass('active')) {
+      return false;
+    }
+
+    $this.parents('.js-tab-links').find('*[data-link]').removeClass('active');
+    $this.addClass('active');
+    $content = $($this.attr('data-link'));
+    $content.parents('.js-tab-contents').find('.tab-content').removeClass('active').css('opacity', 0);
+    $content.addClass('active').animate({
+      opacity: 1
+    }, 300);
+    return false;
+  }); // РЕЙТИНГ АРБИТРАЖНЫХ УПРАВЛЯЮЩИХ
+
+  $('.js-arbitration-filter-tab').on('click', function (e) {
+    var $this;
+    e.preventDefault();
+    $this = $(this);
+
+    if ($this.hasClass('active')) {
+      return false;
+    }
+
+    $($this.attr('data-input')).val($this.attr('data-val'));
+    $($this.attr('data-form')).submit();
+    return false;
+  });
+  $('.js-arbitration-filter-select').on('change', function () {
+    var $this;
+    $this = $(this);
+    return $($this.attr('data-form')).submit();
+  });
+  $('.js-slick-slider').each(function (i, el) {
+    var $el;
+    $el = $(el);
+    $el.slick({
+      autoplay: true,
+      arrows: false,
+      focusOnSelect: true,
+      mobileFirst: true,
+      slidesToShow: 3,
+      responsive: [{
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 4
+        }
+      }, {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 5
+        }
+      }, {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 6
+        }
+      }, {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 7
+        }
+      }]
+    });
+    return true;
+  });
+}).call(void 0);

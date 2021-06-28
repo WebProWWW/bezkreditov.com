@@ -1,10 +1,11 @@
 <?php
 
-use app\helpers\Url;
 use app\models\City;
-use app\widgets\FormAjax;
 use app\models\User;
 use app\models\Region;
+use app\assets\MainAsset;
+use app\helpers\Url;
+use app\widgets\FormAjax;
 
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -16,6 +17,7 @@ use yii\helpers\StringHelper;
 /* @var $city City */
 /* @var $user User */
 
+MainAsset::register($this);
 
 $cities = City::allCities();
 ArrayHelper::setValue($this->params, 'cities', $cities);
@@ -39,6 +41,7 @@ $this->registerJsVar('appModel', [
     'city' => $city,
     'cities' => $cities,
     'regions' => $regions,
+    'homeUrl' => Url::home(),
 ]);
 ?>
 <?php $this->beginPage() ?>
@@ -52,9 +55,6 @@ $this->registerJsVar('appModel', [
     <meta name="format-detection" content="email=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <?php $this->registerCsrfMetaTags() ?>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap">
-    <link rel="stylesheet" href="/css/main.depends.css?v=041">
-    <link rel="stylesheet" href="/css/main.css?v=085">
     <title><?= $title ?></title>
     <meta name="description" content="<?= $description ?>">
     <meta property="og:locale" content="ru_RU">
@@ -183,31 +183,32 @@ $this->registerJsVar('appModel', [
 <?php endif; ?>
 
 <?php if ($breadcrumbs = ArrayHelper::getValue($this->params, 'breadcrumbs', [])): ?>
-    <div class="divider"></div>
-    <div class="container">
-        <nav class="breadcrubmbs">
-            <a class="breadcrubmbs-ln" href="<?= Url::home() ?>">
-                <i class="i-home"></i> Главная
-            </a>
-            <?php foreach ($breadcrumbs as $breadcrumb): ?>
-                <?php if (is_array($breadcrumb)):?>
-                    <a class="breadcrubmbs-ln" href="<?= Url::to($breadcrumb['url']) ?>">
-                        <?= $breadcrumb['label'] ?>
-                    </a>
-                <?php elseif (is_string($breadcrumb)): ?>
-                    <span class="breadcrubmbs-ln">
-                        <?= $breadcrumb ?>
-                    </span>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </nav>
-    </div><!-- .container -->
+<div class="divider"></div>
+
+<div class="container">
+    <nav class="breadcrubmbs">
+        <a class="breadcrubmbs-ln" href="<?= Url::home() ?>">
+            <i class="i-home"></i> Главная
+        </a>
+        <?php foreach ($breadcrumbs as $breadcrumb): ?>
+            <?php if (is_array($breadcrumb)):?>
+                <a class="breadcrubmbs-ln" href="<?= Url::to($breadcrumb['url']) ?>">
+                    <?= $breadcrumb['label'] ?>
+                </a>
+            <?php elseif (is_string($breadcrumb)): ?>
+                <span class="breadcrubmbs-ln">
+                    <?= $breadcrumb ?>
+                </span>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </nav>
+</div><!-- .container -->
 <?php endif; ?>
 
 <?= $content ?>
 
 <?php if (ArrayHelper::getValue($this->params, 'is-footer', true)): ?>
-<footer class="section">
+<footer class="section mt-auto">
     <div class="container">
         <nav class="nav justify-content-lg-between">
             <a class="nav-ln col-12 col-sm-6 col-md-4 col-lg-auto" href="<?= Url::toView('o-proekte') ?>">
@@ -409,18 +410,16 @@ $this->registerJsVar('appModel', [
 </div><!-- .d-none -->
 <!-- / МОДАЛЬНЫЕ ОКНА -->
 
-<script src="/js/main.depends.js?v=028"></script>
-<script src="/js/main.js?v=070"></script>
+<?php $this->endBody() ?>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
-<script>if ("function"==typeof window.isCity) { window.isCity() };</script>
+    <script>if ("function"==typeof window.isCity) { window.isCity() };</script>
 <?php endif; ?>
 
 <?php if (Yii::$app->session->getFlash('is-activated')): ?>
-<script>$.fancybox.open({ src: '#activate-success'});</script>
+    <script>$.fancybox.open({ src: '#activate-success'});</script>
 <?php endif; ?>
 
-<?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>

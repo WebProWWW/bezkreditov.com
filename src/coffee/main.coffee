@@ -1,4 +1,6 @@
 
+# alert 'asdasdasdd'
+
 $.fn.hasAttr = (name) -> @attr(name)?
 
 #=require ./vue/Fssp.coffee
@@ -6,6 +8,14 @@ $.fn.hasAttr = (name) -> @attr(name)?
 #=require ./vue/CostCalculator.coffee
 
 Vue.config.productionTip = off
+
+Vue.prototype.$app = appModel ? {
+    homeUrl: '/'
+    regions: []
+    cities: []
+    city: {}
+}
+
 
 $('.js-vue-app-fssp').each (i, el) ->
     $el = $ el
