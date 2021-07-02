@@ -82,40 +82,40 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <i class="i-ch-down em-8"></i>
         </a>
         <div class="main-mnav-content" id="main-mnav-content-2">
-            <a class="nav-ln fw-600" href="<?= Url::toView('debetovye-karty') ?>">
+            <a class="nav-ln fw-600" href="/debetovye-karty-1.html">
                 <span class="nav-txt">Дебетовые карты</span>
             </a>
-            <a class="nav-ln" href="<?= Url::toView('debetovye-karty-besplatnye') ?>">
+            <a class="nav-ln" href="/debetovye-karty-besplatnyie-1.html">
                 <span class="nav-txt">Бесплатные</span>
             </a>
-            <a class="nav-ln" href="<?= Url::toView('debetovye-karty-s-procentom-na-ostatok') ?>">
+            <a class="nav-ln" href="/debetovye-karty-dohodnye-s-nachisleniem-na-ostatok-1.html">
                 <span class="nav-txt">С процентом на остаток</span>
             </a>
-            <a class="nav-ln" href="<?= Url::toView('debetovye-karty-vygodnye') ?>">
+            <a class="nav-ln" href="/debetovye-karty-vygodnye-1.html">
                 <span class="nav-txt">Выгодные</span>
             </a>
-            <a class="nav-ln" href="<?= Url::toView('debetovye-karty-s-keshbekom') ?>">
+            <a class="nav-ln" href="/debetovye-karty-cashback-1.html">
                 <span class="nav-txt">С кэшбэком</span>
             </a>
-            <a class="nav-ln" href="<?= Url::toView('debetovye-karty-onlajn-zayavka') ?>">
+            <a class="nav-ln" href="/debetovye-karty-onlajn-1.html">
                 <span class="nav-txt">Онлайн-заявка</span>
             </a>
-            <a class="nav-ln fw-600" href="<?= Url::toView('kreditnye-karty') ?>">
+            <a class="nav-ln fw-600" href="/kreditnye-karty-1.html">
                 <span class="nav-txt">Кредитные карты</span>
             </a>
-            <a class="nav-ln" href="<?= Url::toView('kreditnye-karty-s-keshbekom') ?>">
+            <a class="nav-ln" href="/kreditnye-karty-cashback-1.html">
                 <span class="nav-txt">С кэшбэком</span>
             </a>
-            <a class="nav-ln" href="<?= Url::toView('kreditnye-karty-s-plohoj-istoriej') ?>">
+            <a class="nav-ln" href="/kreditnye-karty-s-plohoj-kreditnoj-istoriej-1.html">
                 <span class="nav-txt">С плохой историей</span>
             </a>
-            <a class="nav-ln" href="<?= Url::toView('kreditnye-karty') ?>">
+            <a class="nav-ln" href="/kreditnye-karty-1.html">
                 <span class="nav-txt">Онлайн</span>
             </a>
-            <a class="nav-ln" href="<?= Url::toView('kreditnye-karty-s-dostavkoj') ?>">
+            <a class="nav-ln" href="/kreditnye-karty-s-dostavkoj-1.html">
                 <span class="nav-txt">С доставкой</span>
             </a>
-            <a class="nav-ln" href="<?= Url::toView('kreditnye-karty-dlya-snyatiya-nalichnyh') ?>">
+            <a class="nav-ln" href="/kreditnye-karty-dlya-snyatiya-nalichnyh-1.html">
                 <span class="nav-txt">Для снятия наличных</span>
             </a>
         </div><!-- .main-mnav-content -->
