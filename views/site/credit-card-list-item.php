@@ -148,7 +148,7 @@ use app\widgets\LinkPager;
                 </div><!-- .cart-body -->
             </div>
         <?php endforeach; ?>
-        <?php if ($pagination !== null): ?>
+        <?php if (!empty($pagination)): ?>
             <div class="row justify-content-center my-3">
                 <div class="col-auto">
                     <?= LinkPager::widget([
