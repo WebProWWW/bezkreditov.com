@@ -979,6 +979,27 @@ body.main-mnav-active
 
 
 .editor
+    table
+        width 100%
+        border-color #dee2e6
+        caption-side bottom
+        border-collapse collapse
+
+    table > thead
+        vertical-align bottom
+
+    table > :not(:last-child) > :last-child > *
+        border-bottom-color currentColor
+
+    table > :not(caption) > * > *
+        padding .5rem .5rem
+        background-color var(--bs-table-bg)
+        border-bottom-width 1px
+        box-shadow inset 0 0 0 9999px var(--bs-table-accent-bg)
+
+    table > tbody
+        vertical-align inherit
+
     img
         max-width 100%
     blockquote
@@ -1019,12 +1040,6 @@ body.main-mnav-active
             margin-bottom 0
             padding-bottom 0
             margin-top 10px
-    // ol
-    //  mpd(0 0 10px, 0 0 1px)
-    //  li
-    //      mpd(0 0 5px)
-    //  ol
-    //      mpd(5px 0 0)
 
 
 
@@ -1570,3 +1585,7 @@ for lh in (10..100)
     bottom 0
     right -6px
     background url('../img/sms-arr.svg') 0 100% no-repeat
+
+
+.last-child-none:last-child
+    display none !important

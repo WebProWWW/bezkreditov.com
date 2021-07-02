@@ -16,7 +16,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 (function () {
   // alert 'asdasdasdd'
-  var $mainNavLn, AjaxForm, CirclePercent, CostCalculator, Fssp, JsSearch, SelectSearch, Test, fileInputChanged, hHashNav, hashScroll;
+  var $mainNavLn, AjaxForm, CardMoreReview, CirclePercent, CostCalculator, Fssp, JsSearch, SelectSearch, Test, fileInputChanged, hHashNav, hashScroll;
 
   $.fn.hasAttr = function (name) {
     return this.attr(name) != null;
@@ -204,10 +204,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     Fssp = {
       template: "<div ref=\"container\">\n    <transition name=\"fade\" mode=\"out-in\">\n        <component :is=\"view\"\n            :input=\"input\"\n            @search-success=\"searchSuccess\"\n            @search-error=\"searchError\"\n            @new-search=\"newSearch\"\n        ></component>\n    </transition>\n</div>",
       created: function created() {
-        var j, len, option, ref;
+        var j, len1, option, ref;
         ref = this.$region.options;
 
-        for (j = 0, len = ref.length; j < len; j++) {
+        for (j = 0, len1 = ref.length; j < len1; j++) {
           option = ref[j];
           this.input.region.options.push({
             val: option.code,
@@ -553,9 +553,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           return setTimeout(cb, ms);
         },
         questionsComplete: function questionsComplete(items) {
-          var item, j, len;
+          var item, j, len1;
 
-          for (j = 0, len = items.length; j < len; j++) {
+          for (j = 0, len1 = items.length; j < len1; j++) {
             item = items[j];
             this.comment += "<p>".concat(item.title, "<br>").concat(item.value, "</p>");
           }
@@ -720,11 +720,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       },
       computed: {
         regionNane: function regionNane() {
-          var j, len, name, ref, region;
+          var j, len1, name, ref, region;
           name = '';
           ref = this.input.region.options;
 
-          for (j = 0, len = ref.length; j < len; j++) {
+          for (j = 0, len1 = ref.length; j < len1; j++) {
             region = ref[j];
 
             if (region.code === this.input.region.code) {
@@ -962,13 +962,105 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     $this.toggleClass('active');
     $targetBlock = $("".concat($this.attr('data-toggle')));
     $targetBlock.stop().slideToggle(300, function () {
-      if ($(this).is(':visible')) {
+      var $thisBlock;
+      $thisBlock = $(this);
+
+      if ($($thisBlock).is(':visible')) {
         $this.addClass('active');
+        $this.trigger('toggle-open');
+        $thisBlock.trigger('toggle-open');
       }
 
       return true;
     });
     return false;
+  });
+  /*
+   */
+
+  CardMoreReview = /*#__PURE__*/function () {
+    function CardMoreReview($view1, action) {
+      var _this8 = this;
+
+      _classCallCheck(this, CardMoreReview);
+
+      this.$view = $view1;
+      $.getJSON(action).done(function (data) {
+        var ref, ref1, review;
+        review = (ref = data != null ? (ref1 = data.results) != null ? ref1[0] : void 0 : void 0) != null ? ref : false;
+
+        if (review) {
+          _this8.renderReview(review);
+        } else {
+          _this8.renderEmpty();
+        }
+
+        return true;
+      }).fail(function () {
+        console.log("Error: ".concat(url));
+
+        _this8.renderEmpty();
+
+        return true;
+      }).always(function () {
+        return true;
+      });
+    }
+
+    _createClass(CardMoreReview, [{
+      key: "renderReview",
+      value: function renderReview(review) {
+        this.$view.html("<div class=\"row align-items-center\">\n    <div class=\"col-auto\">\n        <img class=\"img\" width=\"50\" src=\"/img/ava.svg\">\n    </div>\n    <div class=\"col\">\n        <p class=\"mb-1 fw-600\">".concat(review.name, "</p>\n        <p>").concat(this.ratingHtml(review.rating), "</p>\n    </div><!-- .col -->\n    <div class=\"col-12\">\n        <p class=\"js-debit-card-review-text\">").concat(review.text, "</p>\n    </div>\n</div>")); //<!-- <p><a href="javascript:;">Все отзывы</a></p> -->
+
+        return true;
+      }
+    }, {
+      key: "ratingHtml",
+      value: function ratingHtml(rating) {
+        var i, j, k, len, out, ref, ref1;
+        out = '';
+        rating = Number(rating);
+
+        for (i = j = 1, ref = rating; 1 <= ref ? j <= ref : j >= ref; i = 1 <= ref ? ++j : --j) {
+          out = "".concat(out, "<i class=\"i-star yellow\"></i>&nbsp;");
+        }
+
+        len = 5 - rating;
+
+        if (len < 1) {
+          return out;
+        }
+
+        for (i = k = 1, ref1 = len; 1 <= ref1 ? k <= ref1 : k >= ref1; i = 1 <= ref1 ? ++k : --k) {
+          out = "".concat(out, "<i class=\"i-star gray\"></i>&nbsp;");
+        }
+
+        return out;
+      }
+    }, {
+      key: "renderEmpty",
+      value: function renderEmpty() {
+        return this.$view.html('<p>Еще никто не оставил отзыв</p>');
+      }
+    }]);
+
+    return CardMoreReview;
+  }();
+
+  $('.js-debit-card-more').on('toggle-open', function (e) {
+    var $this, $view, loaded, url;
+    $this = $(this);
+    loaded = $this.attr('data-loaded');
+
+    if (loaded != null) {
+      return true;
+    }
+
+    $this.attr('data-loaded', true);
+    url = $this.attr('data-action');
+    $view = $this.find('.js-debit-card-review');
+    new CardMoreReview($view, url);
+    return true;
   });
 
   hashScroll = function hashScroll(e) {
@@ -1070,7 +1162,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "arc",
         value: function arc() {
-          var _this8 = this;
+          var _this9 = this;
 
           var deg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
           var circle, pointStart;
@@ -1094,7 +1186,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             step: function step(now) {
               var point, sweep;
               circle.clear().stroke("rgba( ".concat((255 - 180 / 360 * now).toFixed(), " ").concat((202 - 25 / 360 * now).toFixed(), " ").concat((95 - 32 / 360 * now).toFixed(), " )"));
-              point = _this8.arcPoint(now);
+              point = _this9.arcPoint(now);
               sweep = now <= 180 ? "0" : "1";
               return circle.path("M ".concat(point.x, " ").concat(point.y, " A 60 60 0 ").concat(sweep, " 0 ").concat(pointStart.x, " ").concat(pointStart.y));
             }
@@ -1172,7 +1264,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   AjaxForm = function () {
     var AjaxForm = /*#__PURE__*/function () {
       function AjaxForm(form) {
-        var _this9 = this;
+        var _this10 = this;
 
         _classCallCheck(this, AjaxForm);
 
@@ -1181,12 +1273,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.$loader = $("#".concat(this.id, "-button"));
         this.action = this.$form.data('action');
         this.$form.on('error', function (e, data) {
-          return _this9.error(data);
+          return _this10.error(data);
         });
         this.$form.on('submit', function (e) {
           e.preventDefault();
 
-          _this9.send(new FormData(form));
+          _this10.send(new FormData(form));
 
           return false;
         });
@@ -1195,7 +1287,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AjaxForm, [{
         key: "send",
         value: function send(data) {
-          var _this10 = this;
+          var _this11 = this;
 
           if (this.progress) {
             return true;
@@ -1214,23 +1306,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             cache: false
           }).done(function (data) {
             if ((data != null ? data.success : void 0) != null && data.success === 1) {
-              _this10.success(data);
+              _this11.success(data);
 
               return true;
             }
 
-            _this10.$form.trigger('error', data);
+            _this11.$form.trigger('error', data);
 
             return true;
           }).fail(function (error) {
             // //console.log error
-            _this10.$form.trigger('fail');
+            _this11.$form.trigger('fail');
 
             return true;
           }).always(function () {
-            _this10.progress = false;
+            _this11.progress = false;
 
-            _this10.$loader.text(_this10.loaderHtml);
+            _this11.$loader.text(_this11.loaderHtml);
 
             return true;
           });

@@ -158,9 +158,77 @@ $('*[data-toggle]').on 'click', (e) ->
     $this.toggleClass 'active'
     $targetBlock = $ "#{$this.attr('data-toggle')}"
     $targetBlock.stop().slideToggle 300, () ->
-        $this.addClass 'active' if $(this).is ':visible'
+        $thisBlock = $ this
+        if $($thisBlock).is ':visible'
+            $this.addClass 'active'
+            $this.trigger 'toggle-open'
+            $thisBlock.trigger 'toggle-open'
         on
     off
+
+###
+
+
+###
+
+
+class CardMoreReview
+    constructor: (@$view, action) ->
+        $.getJSON action
+            .done (data) =>
+                review = data?.results?[0] ? off
+                if review then @renderReview review else @renderEmpty()
+                yes
+            .fail =>
+                console.log "Error: #{url}"
+                @renderEmpty()
+                yes
+            .always =>
+                yes
+
+    renderReview: (review) ->
+        @$view.html """
+        <div class="row align-items-center">
+            <div class="col-auto">
+                <img class="img" width="50" src="/img/ava.svg">
+            </div>
+            <div class="col">
+                <p class="mb-1 fw-600">#{review.name}</p>
+                <p>#{@ratingHtml review.rating}</p>
+            </div><!-- .col -->
+            <div class="col-12">
+                <p class="js-debit-card-review-text">#{review.text}</p>
+            </div>
+        </div>
+        """
+        #<!-- <p><a href="javascript:;">Все отзывы</a></p> -->
+        yes
+
+    ratingHtml: (rating) ->
+        out = ''
+        rating = Number rating
+        for i in [1..rating]
+            out = "#{out}<i class=\"i-star yellow\"></i>&nbsp;"
+        len = 5 - rating
+        return out if len < 1
+        for i in [1..len]
+            out = "#{out}<i class=\"i-star gray\"></i>&nbsp;"
+        out
+
+    renderEmpty: ->
+        @$view.html '<p>Еще никто не оставил отзыв</p>'
+
+
+
+$('.js-debit-card-more').on 'toggle-open', (e) ->
+    $this = $ this
+    loaded = $this.attr 'data-loaded'
+    return yes if loaded?
+    $this.attr 'data-loaded', yes
+    url = $this.attr 'data-action'
+    $view = $this.find '.js-debit-card-review'
+    new CardMoreReview $view, url
+    yes
 
 
 hashScroll = (e) ->

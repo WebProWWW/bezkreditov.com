@@ -1,8 +1,8 @@
 <?php
-
 namespace app\helpers;
 
 use yii\helpers\StringHelper as YiiStringHelper;
+use Yii;
 
 /**
  * Class StringHelper
@@ -26,5 +26,30 @@ class StringHelper extends YiiStringHelper
         $out = preg_replace('/\n/im', '', $out);
         $out = trim(trim($out), '-');
         return strtolower($out);
+    }
+
+    public static function replaceUnicom(string $string)
+    {
+        $string = str_replace('«Юником24»', '«Без&nbsp;кредитов»', $string);
+        $string = str_replace('&laquo;Юником24&raquo;', '«Без&nbsp;кредитов»', $string);
+        $string = str_replace('Юником24', '«Без&nbsp;кредитов»', $string);
+        $string = str_replace('«Юником 24»', '«Без&nbsp;кредитов»', $string);
+        $string = str_replace('&laquo;Юником 24&raquo;', '«Без&nbsp;кредитов»', $string);
+        $string = str_replace('Юником 24', '«Без&nbsp;кредитов»', $string);
+        $string = str_replace('%current_date%', Yii::$app->formatter->asDate('now'), $string);
+        $string = str_replace('%month%', self::currentMonth(), $string);
+        $string = str_replace('%year%', Yii::$app->formatter->asDate('now', 'Y'), $string);
+        $string = str_replace('%offer_rate_start%', '0%', $string);
+        $string = str_replace('%offer_sum_end%', '3&nbsp;000&nbsp;000&nbsp;рублей', $string);
+        $string = str_replace('%offer_time_end%', 'до&nbsp;72&nbsp;месяцев', $string);
+        return $string;
+    }
+
+    public static function currentMonth()
+    {
+        $n = (int) date('n');
+        $nArr = [1,2,3,4,5,6,7,8,9,10,11,12];
+        $monthArr = ['название','январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'];
+        return str_replace($nArr, $monthArr, $n);
     }
 }

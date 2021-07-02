@@ -2,9 +2,9 @@
 
 namespace app\controllers;
 
+use app\helpers\Url;
 use app\models\Arbitration;
 use app\models\City;
-use app\helpers\Url;
 use app\models\Faq;
 use app\models\FormCallback;
 use app\models\FormConsult;
@@ -16,15 +16,20 @@ use app\models\Fssp;
 use app\models\Material;
 use app\models\News;
 use app\models\Company;
+use app\models\UnicomOffer;
 use app\models\User;
+use app\models\Unicom;
 
+use linslin\yii2\curl\Curl;
 use Yii;
-use yii\helpers\ArrayHelper;
+use yii\data\Pagination;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\Cookie;
 use yii\web\NotFoundHttpException;
 use yii\web\Request;
 use yii\web\Response;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 
 /**
@@ -67,14 +72,54 @@ class SiteController extends Controller
     }
 
     /**
-     * КОРНЕВЫЕ СТРАНИЦЫ (views/site)
-     * @param string $view
+     * КОРНЕВЫЕ СТРАНИЦЫ
      */
     public function actionIndex(string $view = 'index')
     {
         return $this->render($view, [
             'city' => $this->city,
         ]);
+    }
+
+    /**
+     * ДЕБЕТОВЫЕ КАРТЫ
+     */
+    public function actionCreditCardList($page = 1, $alias = '')
+    {
+        $page = (int) $page;
+        $path = ($alias !== '') ? '/kreditnye-karty/'.$alias : '/kreditnye-karty';
+        $model = new Unicom([
+            'pageNum' => $page,
+            'path' => $path,
+            'loanType' => 'creditcard',
+        ]);
+        return $this->render('credit-card-list', ['model' => $model]);
+    }
+
+    /**
+     * ДЕБЕТОВЫЕ КАРТЫ
+     */
+    public function actionDebitCardList($page = 1, $alias = '')
+    {
+        $page = (int) $page;
+        $path = ($alias !== '') ? '/debetovye-karty/'.$alias : '/debetovye-karty';
+        $model = new Unicom([
+            'pageNum' => $page,
+            'path' => $path,
+            'loanType' => 'debitcard',
+        ]);
+        return $this->render('debit-card-list', ['model' => $model]);
+    }
+
+    /**
+     * ДЕБЕТОВЫЕ КАРТЫ ОТЗЫВ В СПИСКЕ
+     */
+    public function actionDebitCardListReview($mfiId)
+    {
+        $curl = new Curl();
+        $curl->setGetParams(['page' => 1, 'page_size' => 1]);
+        $data = $curl->get('https://unicom24.ru/api/v1/reviews/mfi/'.$mfiId.'/');
+        return $this->asJson(Json::decode($data));
     }
 
     /**

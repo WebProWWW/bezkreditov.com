@@ -15,7 +15,35 @@ return ArrayHelper::merge([
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                [   // РЕЙТИНГ КОМПАНИИ
+                // ДЕБЕТОВЫЕ КАРТЫ
+                [
+                    'pattern' => '/debetovye-karty-<alias:[\w\-]+>-<page:[\w\-]+>',
+                    'route' => 'site/debit-card-list',
+                    'suffix' => '.html',
+                ],
+                [
+                    'pattern' => '/debetovye-karty-<page:[\w\-]+>',
+                    'route' => 'site/debit-card-list',
+                    'suffix' => '.html',
+                ],
+                [
+                    'pattern' => '/debit-card-list-review-<mfiId:[\w\-]+>',
+                    'route' => 'site/debit-card-list-review',
+                    'suffix' => '.json',
+                ],
+                // КРЕДИТНЫЕ КАРТЫ
+                [
+                    'pattern' => '/kreditnye-karty-<alias:[\w\-]+>-<page:[\w\-]+>',
+                    'route' => 'site/credit-card-list',
+                    'suffix' => '.html',
+                ],
+                [
+                    'pattern' => '/kreditnye-karty-<page:[\w\-]+>',
+                    'route' => 'site/credit-card-list',
+                    'suffix' => '.html',
+                ],
+                // РЕЙТИНГ КОМПАНИИ
+                [
                     'pattern' => '/rejting-kompanij-po-bankrotstvu-<page:[\w\-]+>',
                     'route' => 'site/company-list',
                     'suffix' => '.html',
