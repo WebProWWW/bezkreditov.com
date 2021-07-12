@@ -92,7 +92,7 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                                     </div>
                                     <div class="row">
                                         <div class="col-auto mx-auto mx-sm-0 my-4">
-                                            <a class="btn-default" href="<?= Url::to(['site/arbitration-list']) ?>">Попробовать</a>
+                                            <a class="btn-default" href="<?= Url::to(['site/arbitration-list', 'page' => 1]) ?>">Попробовать</a>
                                         </div>
                                     </div>
                                 </div><!-- .d-flex -->

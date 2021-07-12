@@ -2,15 +2,14 @@
 <div>
 
 <input
-    class="input mb-1"
+    ref="input"
     type="text"
-    ref="money"
+    class="input"
     :class="{error: error !== ''}"
+    :value="val"
     @focus="$emit('focus')"
     @keyup="onInput"
-    @focusout="onFocusOut"
 >
-<div ref="slider"></div>
 
 </div><!-- root -->
 </template>
@@ -22,7 +21,7 @@
 
 export default
 
-    name: 'InputSlider'
+    name: 'InputDate'
 
     # components: {}
 
@@ -33,57 +32,39 @@ export default
     # beforeMount: () ->
 
     mounted: () ->
-        $(@$refs.money).maskMoney
-            suffix: ' ₽'
-            thousands: ' '
-            precision: 0
-            selectAllOnFocus: yes
-        $(@$refs.slider).slider
-            uiLibrary: 'bootstrap4'
-            min: @min
-            max: @max
-            slide: (e, value) =>
-                ceiil = Math.ceil(value * .001) * 1000
-                $(@$refs.money).maskMoney 'mask', ceiil
-                @val = ceiil
-                @$emit 'focus'
-                @$emit 'input', @val
-                yes
+        @val = @value
+        $(@$refs.input).inputmask '99.99.9999', placeholder: 'дд.мм.гггг'
+        # date = new Date()
+        # y = date.getFullYear() - 16
+        # m = date.getMonth()
+        # d = date.getDate()
+        # maxDate = new Date(y, m, d)
+        # $(@$refs.input).datepicker
+        #     locale: 'ru-ru'
+        #     format: 'dd.mm.yyyy'
+        #     maxDate: maxDate
+        #     showOtherMonths: off
+        #     selectOtherMonths: off
+        #     open: (e) =>
+        #         console.log e
+        #     # value: "#{d}.#{m}.#{y}"
+        #     change: @onInput
         yes
 
     props:
         error: String
-        value: Number
-        min:
-            type: Number
-            default: 0
-        max:
-            type: Number
-            default: 0
+        value: String
 
     data: () ->
-        val: 0
-        error: ''
+        val: ''
 
     methods:
         onInput: (e) ->
-            value = e.target.value
-                .replace /\s/g, ''
-                .replace /\₽/g, ''
-            # value = @min if value < @min
-            # value = @max if value > @max
-            @val = value
-            @$emit 'input', @val
-            yes
-
-        onFocusOut: (e) ->
-            value = e.target.value
-                .replace /\s/g, ''
-                .replace /\₽/g, ''
-            value = @min if value < @min
-            value = @max if value > @max
-            @val = value
-            $(@$refs.slider).slider().value @val
+            $target = $ e.target
+            if $target.inputmask('isComplete')
+                @$emit 'input', $target.val()
+            else
+                @$emit 'input', ''
             yes
 
     # computed:

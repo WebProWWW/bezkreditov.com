@@ -2,6 +2,7 @@
 
 use app\helpers\Url;
 use app\widgets\LinkPager;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $pagination yii\data\Pagination */
@@ -29,11 +30,17 @@ $pageNum = empty($pageNum) ? 1 : (int) $pageNum;
                                 </div><!-- .col -->
                                 <div class="col-12 col-sm clip">
                                     <h3 class="clip mb-0">
-                                        <a href="<?= Url::to([
-                                            'site/loan-item',
-                                            'id'=> $offer->id,
-                                            'page' => $pageNum
-                                        ]) ?>" target="_blank">
+                                        <a
+                                            href="javascript:;"
+                                            data-offer
+                                            data-min-sum="<?= $offer->minLoanSum ?>"
+                                            data-max-sum="<?= $offer->maxLoanSum ?>"
+                                            data-src="#offer-modal"
+                                            data-url="<?= Url::to(['site/offer', 'id' => $offer->id]) ?>"
+                                            data-id="<?= $offer->id ?>"
+                                            data-title="<?= Html::encode($offer->finmarketName) ?>"
+                                            data-logo="<?= $offer->roundLogo ?>"
+                                        >
                                             <?= $offer->finmarketName ?>
                                         </a>
                                     </h3>
@@ -58,7 +65,18 @@ $pageNum = empty($pageNum) ? 1 : (int) $pageNum;
                             <p class="gray">Ставка в год</p>
                         </div><!-- .col -->
                         <div class="col-12 col-md-auto ml-auto">
-                            <a class="btn-default" href="javascript:;">Оформить</a>
+                            <a
+                                class="btn-default"
+                                href="javascript:;"
+                                data-offer
+                                data-min-sum="<?= $offer->minLoanSum ?>"
+                                data-max-sum="<?= $offer->maxLoanSum ?>"
+                                data-src="#offer-modal"
+                                data-url="<?= Url::to(['site/offer', 'id' => $offer->id]) ?>"
+                                data-id="<?= $offer->id ?>"
+                                data-title="<?= Html::encode($offer->finmarketName) ?>"
+                                data-logo="<?= $offer->roundLogo ?>"
+                            >Оформить</a>
                         </div><!-- .col -->
                     </div><!-- .row -->
                     <div class="row">

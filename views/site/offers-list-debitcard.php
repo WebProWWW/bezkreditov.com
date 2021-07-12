@@ -24,7 +24,7 @@ use app\widgets\LinkPager;
                             </div><!-- .col -->
                             <div class="col-12 col-md">
                                 <h3>
-                                    <a href="javascript:;">
+                                    <a href="<?= $offer->encryptedRedirectUrl ?>" target="_blank">
                                         <?= $offer->finmarketName ?>
                                     </a>
                                 </h3>
@@ -48,7 +48,7 @@ use app\widgets\LinkPager;
                                         <p class="gray">Обслуживание</p>
                                     </div><!-- .col -->
                                     <div class="col-12 col-lg-auto">
-                                        <a class="btn-default" href="javascript:;">Оформить</a>
+                                        <a class="btn-default" href="<?= $offer->encryptedRedirectUrl ?>" target="_blank">Оформить</a>
                                     </div><!-- .col -->
                                 </div><!-- .row -->
                             </div><!-- .col -->

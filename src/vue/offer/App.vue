@@ -35,6 +35,27 @@
             @focus="input.error = ''"
         />
 
+        <input-only-text
+            v-if="input.type === 'only-text'"
+            v-model="input.value"
+            :error="input.error"
+            @focus="input.error = ''"
+        />
+
+        <input-date
+            v-if="input.type === 'date'"
+            v-model="input.value"
+            :error="input.error"
+            @focus="input.error = ''"
+        />
+
+        <input-passport
+            v-if="input.type === 'passport'"
+            v-model="input.value"
+            :error="input.error"
+            @focus="input.error = ''"
+        />
+
         <div v-if="input.type === 'text'">
             <input class="input" :class="{error: input.error !== ''}" type="text" :id="inputId(i)" @focus="input.error = ''" v-model="input.value">
         </div>
@@ -47,23 +68,26 @@
 
     </div>
     <div>
-        <div class="btn-default" @click.prevent="send">Отправить заявку</div>
+        <div class="btn-default" @click.prevent="send">
+            <img width="50" src="/img/loader.svg" v-if="sending">
+            <span v-else>Отправить заявку</span>
+        </div>
     </div>
+</div>
+
+<div v-else-if="sendSuccess">
+    <p class="center">
+        Ваша заявка №&nbsp;<span class="em-13 fw-600">{{ requestId }}</span> успешно принята.
+        <br>
+        Специалист Банка позвонит Вам в течении 30 минут.
+        <br>
+        Пожалуйста, сохраните номер Ваши заявки.
+    </p>
 </div>
 
 <div v-else>
     <p class="center">Предложение не найдено</p>
 </div>
-
-<!--
-<p class="center">
-    Ваша заявка №&nbsp;<span class="em-13 fw-600">1233123</span> успешно принята.
-    <br>
-    Специалист Банка позвонит Вам в течении 30 минут.
-    <br>
-    Пожалуйста, сохраните номер Ваши заявки.
-</p>
--->
 
 </div><!-- root -->
 </template>
@@ -72,13 +96,22 @@
 <script lang="coffee">
 
 import InputSlider from './components/InputSlider.vue'
-import InpitPhone from './components/InpitPhone.vue'
+import InputPhone from './components/InputPhone.vue'
+import InputOnlyText from './components/InputOnlyText.vue'
+import InputDate from './components/InputDate.vue'
+import InputPassport from './components/InputPassport.vue'
 
 export default
 
     name: 'App'
 
-    components: { InputSlider, InpitPhone }
+    components: {
+        InputSlider
+        InputPhone
+        InputOnlyText
+        InputDate
+        InputPassport
+    }
 
     # beforeCreate: () ->
 
@@ -87,13 +120,15 @@ export default
         csrfToken = $('meta[name="csrf-token"]').attr 'content'
         @csrf = "#{csrfParam}": csrfToken
         $(window).on 'vue-app-offer-load', (e, data) =>
-            @offer = null
+            @sendSuccess = no
+            # @id = data.id
+            @offer  = null
             @inputs = null
             @minSum = data.minSum
             @maxSum = data.maxSum
             @title = data.title
             @logo = data.logo
-            @load data.url, data.id
+            @load data.url
             yes
         yes
 
@@ -112,13 +147,15 @@ export default
         offer: null
         inputs: null
         csrf: null
+        sending: no
+        sendSuccess: no
 
     methods:
 
         inputId: (i) ->
             "offer-input-#{i}"
 
-        load: (url, id) ->
+        load: (url) ->
             @loading = yes
             $.get url
             .done (data) =>
@@ -133,6 +170,7 @@ export default
             yes
 
         send: (e) ->
+            @sending = yes
             postData = new Object
             postData["UnicomFormUniversal[#{name}]"] = input.value for name, input of @inputs
             postData["UnicomFormUniversal[offer]"] = @offer.id
@@ -140,13 +178,17 @@ export default
             $.post '/offer-send.json', postData
             .done (data) =>
                 if data?.success? and data.success is 1
-                    console.log data
+                    if data?.response?.id? and data?.response?.status is 'SENT'
+                        @offer = null
+                        @requestId = data.response.id
+                        @sendSuccess = yes
                     return yes
                 @addErrors data
                 yes
             .fail () =>
                 yes
             .always () =>
+                @sending = no
                 yes
             yes
 

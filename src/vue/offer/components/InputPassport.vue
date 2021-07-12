@@ -2,15 +2,14 @@
 <div>
 
 <input
-    class="input mb-1"
     type="text"
-    ref="money"
+    ref="input"
+    class="input"
     :class="{error: error !== ''}"
+    :value="val"
     @focus="$emit('focus')"
     @keyup="onInput"
-    @focusout="onFocusOut"
 >
-<div ref="slider"></div>
 
 </div><!-- root -->
 </template>
@@ -22,7 +21,7 @@
 
 export default
 
-    name: 'InputSlider'
+    name: 'InputPassport'
 
     # components: {}
 
@@ -33,57 +32,21 @@ export default
     # beforeMount: () ->
 
     mounted: () ->
-        $(@$refs.money).maskMoney
-            suffix: ' ₽'
-            thousands: ' '
-            precision: 0
-            selectAllOnFocus: yes
-        $(@$refs.slider).slider
-            uiLibrary: 'bootstrap4'
-            min: @min
-            max: @max
-            slide: (e, value) =>
-                ceiil = Math.ceil(value * .001) * 1000
-                $(@$refs.money).maskMoney 'mask', ceiil
-                @val = ceiil
-                @$emit 'focus'
-                @$emit 'input', @val
-                yes
+        @val = @value
+        $(@$refs.input).inputmask '9999-999999'
         yes
 
     props:
         error: String
-        value: Number
-        min:
-            type: Number
-            default: 0
-        max:
-            type: Number
-            default: 0
+        value: String
 
     data: () ->
-        val: 0
-        error: ''
+        val: null
 
     methods:
         onInput: (e) ->
-            value = e.target.value
-                .replace /\s/g, ''
-                .replace /\₽/g, ''
-            # value = @min if value < @min
-            # value = @max if value > @max
-            @val = value
-            @$emit 'input', @val
-            yes
-
-        onFocusOut: (e) ->
-            value = e.target.value
-                .replace /\s/g, ''
-                .replace /\₽/g, ''
-            value = @min if value < @min
-            value = @max if value > @max
-            @val = value
-            $(@$refs.slider).slider().value @val
+            val = $(e.target).inputmask 'unmaskedvalue'
+            if val.length is 10 then @$emit('input', val) else @$emit('input', '')
             yes
 
     # computed:

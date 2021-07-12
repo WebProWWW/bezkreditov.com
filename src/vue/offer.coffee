@@ -16,8 +16,8 @@ $('#vue-app-offer').each (i, el) ->
 #     clickSlide: false
 
 # $win.trigger 'vue-app-offer-load',
-#     minSum: 1000
-#     maxSum: 10000000
+#     minSum: 10000
+#     maxSum: 1000000
 #     url: '/offer-2003515.json'
 #     id: 2003515
 #     title: 'Ипотека "Вторичное жилье"'
@@ -25,15 +25,17 @@ $('#vue-app-offer').each (i, el) ->
 
 $('*[data-offer]').click (e) ->
     e.preventDefault()
-    # $this = $ this
-    # src = $this.data 'src'
-    # id = Number $this.data 'id'
-    # url = $this.data 'url'
-    # title = $this.data 'title'
-    # logo = $this.data 'logo'
-    # $.fancybox.open
-    #     src: src
-    #     touch: false
-    #     clickSlide: false
-    # $win.trigger 'vue-app-offer-load', {url, id, title, logo}
+    $this = $ this
+    minSum = $this.data 'min-sum'
+    maxSum = $this.data 'max-sum'
+    src = $this.data 'src'
+    id = 2003515 # Number $this.data 'id'
+    url = $this.data 'url'
+    title = $this.data 'title'
+    logo = $this.data 'logo'
+    $.fancybox.open
+        src: src
+        touch: false
+        clickSlide: false
+    $win.trigger 'vue-app-offer-load', {url, id, title, logo, minSum, maxSum}
     off

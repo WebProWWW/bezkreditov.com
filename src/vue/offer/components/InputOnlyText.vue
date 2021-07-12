@@ -1,19 +1,14 @@
 <template>
 <div>
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
 <input
+    type="text"
+    ref="input"
     class="input"
     :class="{error: error !== ''}"
-    ref="phone"
-    type="text"
+    :value="value"
     @focus="$emit('focus')"
+    @keyup="onInput"
 >
 
 </div><!-- root -->
@@ -26,7 +21,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 export default
 
-    name: 'InpitPhone'
+    name: 'InputOnlyText'
 
     # components: {}
 
@@ -37,19 +32,19 @@ export default
     # beforeMount: () ->
 
     mounted: () ->
-        console.log @$refs.phone
-        $(@$refs.phone).inputmask '+7-999-999-99-99',
-            greedy: false
+        $(@$refs.input).inputmask regex: '[а-яА-Я]*'
+        yes
 
     props:
         error: String
-        value:
-            type: Number
-            default: 0
+        value: String
 
     # data: () ->
 
-    # methods:
+    methods:
+        onInput: (e) ->
+            @$emit 'input', $(e.target).val()
+            yes
 
     # computed:
 

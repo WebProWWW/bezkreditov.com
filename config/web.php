@@ -65,6 +65,48 @@ return ArrayHelper::merge([
                     'defaults' => ['view' => 'rejting-chastnyh-yuristov'],
                 ],
                 [
+                    'pattern' => '/spisok-yuristov-po-bankrotstvu',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'spisok-yuristov-po-bankrotstvu'],
+                ],
+                [
+                    'pattern' => '/servis-personalnogo-podbora-yurista-po-bankrotstvu-fizicheskih-lits',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'servis-personalnogo-podbora-yurista-po-bankrotstvu-fizicheskih-lits'],
+                ],
+                [
+                    'pattern' => '/servis-personalnogo-podbora-yurista-po-bankrotstvu',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'servis-personalnogo-podbora-yurista-po-bankrotstvu'],
+                ],
+                [
+                    'pattern' => '/obratnaya-svyaz',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'obratnaya-svyaz'],
+                ],
+                [
+                    'pattern' => '/zapret-viezda-iz-rf',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'zapret-viezda-iz-rf'],
+                ],
+                [
+                    'pattern' => '/poleznye-servisy',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'poleznye-servisy'],
+                ],
+                [
+                    'pattern' => '/mogut-li-uvolit-za-bankrotstvo-ili-otkazat-v-rabote',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'mogut-li-uvolit-za-bankrotstvo-ili-otkazat-v-rabote'],
+                ],
+                [
                     'pattern' => '/osago-onlajn',
                     'route' => 'site/index',
                     'suffix' => '.html',
