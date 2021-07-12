@@ -76,7 +76,7 @@ $currentPage = $dataProvider->pagination->page + 1;
             <?php foreach ($companies as $company): ?>
                 <a class="list-item" href="<?= Url::to([
                     'site/company',
-                    'cpage' => ($csVal) ? 1 : $currentPage,
+                    'cpage' => $currentPage,
                     'alias' => $company->alias,
                 ]) ?>">
                     <div class="col-12 col-xl-5 mx-auto mx-sm-0">
