@@ -3,9 +3,11 @@
 namespace app\models;
 
 use Yii;
+use yii\base\BaseObject;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
 use yii\db\ActiveQuery;
+use yii\db\Query;
 use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 
@@ -184,7 +186,7 @@ class Company extends ActiveRecord
     {
         $defaultOrder = [];
         $query = self::find();
-        if ($searchName = ArrayHelper::getValue($filter, 'cs', false)) {
+        if ($searchName = ArrayHelper::getValue($filter, 'search', false)) {
             $query->andFilterWhere(['like', 'name', $searchName]);
         }
         $orderBy = ArrayHelper::getValue($filter, 'order', 'rate');
@@ -197,7 +199,6 @@ class Company extends ActiveRecord
                 ->groupBy('company_rate.company_rate_id');
             $defaultOrder = ['commentsCount' => SORT_DESC];
         }
-
         return new ActiveDataProvider([
             'query' => $query,
             'pagination' => [

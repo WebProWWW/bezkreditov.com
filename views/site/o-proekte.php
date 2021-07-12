@@ -1,6 +1,7 @@
 <?php
 
 use app\helpers\Url;
+use app\assets\MainAsset;
 
 /* @var $this yii\web\View */
 /* @var $city app\models\City */
@@ -10,6 +11,10 @@ $this->params['description'] = 'Городской портал Без Кред�
 $this->params['breadcrumbs'] = ['О проекте'];
 $this->params['is-footer'] = false;
 $this->params['is-header'] = true;
+
+// $offerJs = '/js/vue-app-offer.min.js?rnd=' . time();
+
+// $this->registerJsFile($offerJs, ['depends' => MainAsset::class]);
 
 ?>
 

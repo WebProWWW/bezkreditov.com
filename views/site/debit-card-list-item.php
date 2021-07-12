@@ -62,7 +62,7 @@ use app\widgets\LinkPager;
                     <div
                         class="js-debit-card-more"
                         id="<?= $cardMoreId ?>"
-                        data-action="<?= Url::to(['site/debit-card-list-review', 'mfiId' => $offer->mfiId]) ?>"
+                        data-action="<?= Url::to(['site/offer-review', 'mfiId' => $offer->mfiId]) ?>"
                         style="display: none; overflow: hidden;"
                     >
                         <div class="divider"></div>

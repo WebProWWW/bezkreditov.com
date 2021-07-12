@@ -14,6 +14,7 @@ use yii\helpers\ArrayHelper;
  * @property string $slug
  * @property string $loanType
  * @property string $logo
+ * @property string $mobileLogo
  * @property string $roundLogo
  * @property string $approvalTermStr
  * @property string $bankRequirements
@@ -56,6 +57,7 @@ use yii\helpers\ArrayHelper;
  * @property int $positionOnFinmarketPopularBlock
  * @property bool $prolongationPossibility
  * @property array $receiptType
+ * @property string $receiptString
  * @property string $refV1Position
  * @property string $refV2Position
  * @property string $remainingPercentTo
@@ -89,8 +91,42 @@ class UnicomOffer extends BaseObject
 
     public $data;
 
+    public function getReceiptString()
+    {
+        $out = '';
+        foreach ($this->receiptType as $type) {
+            $out .= ($out !== '') ? ', ' : '';
+            $out .= $this->receiptName($type);
+        }
+        return $out;
+    }
+
+    /**
+     * @param int|string $type
+     * @return string
+     */
+    private function receiptName($type)
+    {
+        $type = (int) $type;
+        return ArrayHelper::getValue([
+            '',
+            'Наличными в офисе',
+            'Перевод на банковскую карту',
+            'Перевод на банковский счет',
+            'На Яндекс-кошелек',
+            'На Qiwi-кошелек',
+            'Курьером на дом',
+            'Через систему «Золотая корона»',
+
+        ], $type, '');
+    }
+
     private function val($key, $default=null) { return ArrayHelper::getValue($this->data, $key, $default); }
 
+    /**
+     * @return string
+     */
+    public function getMobileLogo() { return $this->val('mobile_logo', ''); }
     public function getId() { return $this->val('id'); }
     public function getFinmarketName() { return $this->val('finmarket_name'); }
     public function getFinmarketPosition() { return $this->val('finmarket_position'); }
@@ -119,10 +155,7 @@ class UnicomOffer extends BaseObject
     public function getMaxLoanSum() { return $this->val('max_loan_sum'); }
     public function getMaxLoanTerm() { return $this->val('max_loan_term'); }
     public function getMaxTerm() { return $this->val('max_term'); }
-    public function getMfi()
-    {
-        return new UnicomMfi(['data' => $this->val('mfi')]);
-    }
+    public function getMfi() { return new UnicomMfi(['data' => $this->val('mfi')]); }
     public function getMfiId() { return $this->val('mfi_id'); }
     public function getMinAge() { return $this->val('min_age'); }
     public function getMinInitialFee() { return $this->val('min_initial_fee'); }
@@ -141,7 +174,7 @@ class UnicomOffer extends BaseObject
     public function getOwnBankCashWithdrawal() { return $this->val('own_bank_cash_withdrawal'); }
     public function getPositionOnFinmarketPopularBlock() { return $this->val('position_on_finmarket_popular_block'); }
     public function getProlongationPossibility() { return $this->val('prolongation_possibility'); }
-    public function getReceiptType() { return $this->val('receipt_type'); }
+    public function getReceiptType() { return $this->val('receipt_type', []); }
     public function getRefV1Position() { return $this->val('ref_v1_position'); }
     public function getRefV2Position() { return $this->val('ref_v2_position'); }
     public function getRemainingPercentTo() { return $this->val('remaining_percent_to'); }

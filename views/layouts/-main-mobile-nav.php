@@ -196,34 +196,34 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <i class="i-ch-down em-8"></i>
         </a>
         <div class="main-mnav-content" id="main-mnav-content-4">
-            <a class="nav-ln fw-600" href="<?= Url::toView('ipoteka') ?>">
+            <a class="nav-ln fw-600" href="/ipoteka-1.html">
                 Ипотека
             </a>
-            <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-bez-pervonachalnogo-vznosa') ?>">
+            <a class="nav-ln" href="/ipoteka-bez-pervonachalnogo-vznosa-1.html">
                 Без первоначального взноса
             </a>
-            <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-na-novostrojku') ?>">
+            <a class="nav-ln" href="/ipoteka-na-pervichnom-rynke-1.html">
                 На новостройку
             </a>
-            <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-na-vtorichnoe-zhile') ?>">
+            <a class="nav-ln" href="/ipoteka-na-vtorichnom-rynke-1.html">
                 На вторичное жилье
             </a>
-            <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-bez-podtverzhdeniya-dohoda') ?>">
+            <a class="nav-ln" href="/ipoteka-bez-podtverzhdeniya-dohoda-1.html">
                 Без подтверждения дохода
             </a>
-            <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-molodoj-seme') ?>">
+            <a class="nav-ln" href="/ipoteka-dlya-molodoj-semi-1.html">
                 Молодой семье
             </a>
-            <a class="nav-ln nav-list" href="javascript:;">
+            <a class="nav-ln" href="/ipoteka-socialnaya-ipoteka-1.html">
                 Социальная
             </a>
-            <a class="nav-ln nav-list" href="javascript:;">
+            <a class="nav-ln" href="/ipoteka-s-gospodderzhkoj-1.html">
                 С господдержкой
             </a>
-            <a class="nav-ln nav-list" href="javascript:;">
+            <a class="nav-ln" href="/ipoteka-dlya-pensionerov-1.html">
                 Пенсионерам
             </a>
-            <a class="nav-ln nav-list" href="javascript:;">
+            <a class="nav-ln" href="/ipoteka-po-2-dokumentam-1.html">
                 По двум документам
             </a>
         </div><!-- .main-mnav-content -->

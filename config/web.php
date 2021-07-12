@@ -15,77 +15,197 @@ return ArrayHelper::merge([
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                // ДЕБЕТОВЫЕ КАРТЫ
-                [
-                    'pattern' => '/debetovye-karty-<alias:[\w\-]+>-<page:[\w\-]+>',
-                    'route' => 'site/debit-card-list',
-                    'suffix' => '.html',
-                ],
-                [
-                    'pattern' => '/debetovye-karty-<page:[\w\-]+>',
-                    'route' => 'site/debit-card-list',
-                    'suffix' => '.html',
-                ],
-                [
-                    'pattern' => '/debit-card-list-review-<mfiId:[\w\-]+>',
-                    'route' => 'site/debit-card-list-review',
-                    'suffix' => '.json',
-                ],
-                // КРЕДИТНЫЕ КАРТЫ
-                [
-                    'pattern' => '/kreditnye-karty-<alias:[\w\-]+>-<page:[\w\-]+>',
-                    'route' => 'site/credit-card-list',
-                    'suffix' => '.html',
-                ],
-                [
-                    'pattern' => '/kreditnye-karty-<page:[\w\-]+>',
-                    'route' => 'site/credit-card-list',
-                    'suffix' => '.html',
-                ],
                 // РЕЙТИНГ КОМПАНИИ
                 [
                     'pattern' => '/rejting-kompanij-po-bankrotstvu-<page:[\w\-]+>',
                     'route' => 'site/company-list',
                     'suffix' => '.html',
                 ],
-                [   // ПРОФИЛЬ КОМПАНИИ
+                // ПРОФИЛЬ КОМПАНИИ
+                [
                     'pattern' => '/rejting-kompanij-po-bankrotstvu-<cpage:[\w\-]+>/<alias:[\w\-]+>',
                     'route' => 'site/company',
                     'suffix' => '.html',
                 ],
+                // РЕЙТИНГ АРБИТРАЖНЫХ УПРАВЛЯЮЩИХ
                 [
-                    // РЕЙТИНГ АРБИТРАЖНЫХ УПРАВЛЯЮЩИХ
                     'pattern' => '/rejting-arbitrazhnyh-upravlyayushih-<page:[\w\-]+>',
                     'route' => 'site/arbitration-list',
                     'suffix' => '.html',
                 ],
+                // ПРОФИЛЬ УПРАВЛЯЮЩЕГО
                 [
-                    // ПРОФИЛЬ УПРАВЛЯЮЩЕГО
                     'pattern' => '/rejting-arbitrazhnyh-upravlyayushih-<page:[\w\-]+>/profil-<id:[\w\-]+>',
                     'route' => 'site/arbitration',
                     'suffix' => '.html',
                 ],
-                [   // НОВОСТЬ
+                // НОВОСТЬ
+                [
                     'pattern' => '/novosti-po-bankrotstvu/<alias:[\w\-]+>-<id:[\w\-]+>',
                     'route' => 'site/news-item',
                     'suffix' => '.html',
                 ],
-                [   // ПОЛЕЗНЫЙ МАТЕРИАЛ
+                // ПОЛЕЗНЫЙ МАТЕРИАЛ
+                [
                     'pattern' => '/poleznye-materialy-po-bankrotstvu/<alias:[\w\-]+>',
                     'route' => 'site/material',
                     'suffix' => '.html',
                 ],
-                [   // ЗАКОН О БАНКРОТСТВЕ
+                // ЗАКОН О БАНКРОТСТВЕ
+                [
                     'pattern' => '/zakon-o-bankrotstve/<alias:[\w\-]+>',
                     'route' => 'site/law',
                     'suffix' => '.html',
                 ],
-                [   // КОРНЕВЫЕ СТРАНИЦЫ
+
+                [
+                    'pattern' => '/rejting-chastnyh-yuristov',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'rejting-chastnyh-yuristov'],
+                ],
+                [
+                    'pattern' => '/osago-onlajn',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'osago-onlajn'],
+                ],
+                [
+                    'pattern' => '/ufssp-rossii',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'ufssp-rossii'],
+                ],
+                [
+                    'pattern' => '/vopros-otvet-po-bankrotstvu-fizicheskih-lic',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'vopros-otvet-po-bankrotstvu-fizicheskih-lic'],
+                ],
+                [
+                    'pattern' => '/onlajn-konsultaciya-yurista-po-bankrotstvu',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'onlajn-konsultaciya-yurista-po-bankrotstvu'],
+                ],
+                [
+                    'pattern' => '/poleznye-materialy-po-bankrotstvu',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'poleznye-materialy-po-bankrotstvu'],
+                ],
+                [
+                    'pattern' => '/otzyvy-lyudej-proshedshih-proceduru-bankrotstva',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'otzyvy-lyudej-proshedshih-proceduru-bankrotstva'],
+                ],
+                [
+                    'pattern' => '/slovar-bankrotnyh-terminov-i-finansovyh-ponyatij',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'slovar-bankrotnyh-terminov-i-finansovyh-ponyatij'],
+                ],
+                [
+                    'pattern' => '/zakon-o-bankrotstve',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'zakon-o-bankrotstve'],
+                ],
+                [
+                    'pattern' => '/novosti-po-bankrotstvu',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'novosti-po-bankrotstvu'],
+                ],
+                [
+                    'pattern' => '/polnaya-kreditnaya-istoriya',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'polnaya-kreditnaya-istoriya'],
+                ],
+                [
+                    'pattern' => '/zashita-ot-moshennikov',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'zashita-ot-moshennikov'],
+                ],
+                [
+                    'pattern' => '/proverka-finansovogo-zdorovya',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'proverka-finansovogo-zdorovya'],
+                ],
+                [
+                    'pattern' => '/podbor-kredita',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'podbor-kredita'],
+                ],
+                [
+                    'pattern' => '/kreditnyj-kalkulyator',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'kreditnyj-kalkulyator'],
+                ],
+                [
+                    'pattern' => '/bankrotstvo',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'bankrotstvo'],
+                ],
+                [
+                    'pattern' => '/o-proekte',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'o-proekte'],
+                ],
+                [
+                    'pattern' => '/uznat-svoi-dolgi',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
+                    'defaults' => ['view' => 'uznat-svoi-dolgi'],
+                ],
+
+                // ОФФЕРЫ
+                [
+                    'pattern' => '/<loanAlias:[\w\-]+>/<alias:[\w\-]+>-<page:[\w\-]+>',
+                    'route' => 'site/offers',
+                    'suffix' => '.html',
+                ],
+                // ОФФЕРЫ / *
+                [
+                    'pattern' => '/<loanAlias:[\w\-]+>-<page:[\w\-]+>',
+                    'route' => 'site/offers',
+                    'suffix' => '.html',
+                ],
+                // ОТПРАВКА ОФФЕРА
+                [
+                    'pattern' => '/offer-send',
+                    'route' => 'site/offer-send',
+                    'suffix' => '.json',
+                ],
+                // ОТЗЫВ ОФФЕРА
+                [
+                    'pattern' => '/offer-review-<mfiId:[\w\-]+>',
+                    'route' => 'site/offer-review',
+                    'suffix' => '.json',
+                ],
+                // ОФФЕР JSON
+                [
+                    'pattern' => '/offer-<id:[\w\-]+>',
+                    'route' => 'site/offer',
+                    'suffix' => '.json',
+                ],
+                // КОРНЕВЫЕ СТРАНИЦЫ
+                [
                     'pattern' => '/<view:[\w\-]+>',
                     'route' => 'site/index',
                     'suffix' => '.html',
                 ],
+                // * * * * * * * * * * * * * * * * *
                 // JSON
+                // * * * * * * * * * * * * * * * * *
                 [
                     'pattern' => '/callback',
                     'route' => 'site/callback',

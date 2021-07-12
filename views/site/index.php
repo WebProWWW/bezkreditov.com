@@ -762,54 +762,53 @@ $this->params['description'] = 'Бесплатный онлайн тест на 
                         <i class="i-plus cart-full-btn-i"></i>
                         Добавить отзыв<br>о компании
                     </a>
-                    <div >
+                    <div>
 
                     </div><!-- .cart-footer -->
                 </div><!-- .cart -->
             </div><!-- .col -->
 
-            <?php /* @var $companies Company[] */ ?>
-            <?php $companies = Company::search(['order' => 'comment'], 5)->models; ?>
-            <?php foreach ($companies as $company): ?>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="cart">
-                        <div class="cart-body">
-                            <h3 class="center"><?= $company->name ?></h3>
-                            <?php $firstComment = $company->comments[0] ?>
-                            <p><?= StringHelper::truncate($firstComment->text, 120); ?></p>
-                            <div class="row align-items-end mt-auto">
-                                <div class="col-auto">
-                                    <p>
-                                        <?php for ($star=1; $star <= 5; $star++ ): ?>
-                                            <?php $isMuted = $firstComment->rate < $star;  ?>
-                                            <i class="i-star <?= $isMuted ? 'mutted' : 'primary' ?>"></i>
-                                        <?php endfor; ?>
-                                    </p>
-                                </div><!-- .col -->
-                            </div>
-                        </div><!-- .cart-body -->
-                        <div class="cart-footer">
-                            <div class="d-flex no-gutters align-items-center">
-                                <div class="col">
-                                    <p class="mutted">13:14 11.07.2020</p>
+            <?php if ($companyProvider = Company::search(['order' => 'comment'], 5)); ?>
+                <?php
+                     $companies = $companyProvider->models;
+                    /* @var $company Company */
+                    foreach ($companies as $company):
+                ?>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="cart">
+                            <div class="cart-body">
+                                <h3 class="center"><?= $company->name ?></h3>
+                                <?php $firstComment = $company->comments[0] ?>
+                                <p><?= StringHelper::truncate($firstComment->text, 120); ?></p>
+                            </div><!-- .cart-body -->
+                            <div class="cart-footer">
+                                <div class="d-flex no-gutters align-items-center">
+                                    <div class="col">
+                                        <p>
+                                            <?php for ($star=1; $star <= 5; $star++ ): ?>
+                                                <?php $isMuted = $firstComment->rate < $star;  ?>
+                                                <i class="i-star <?= $isMuted ? 'mutted' : 'primary' ?>"></i>
+                                            <?php endfor; ?>
+                                        </p>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a
+                                            class="btn btn-sm btn-default"
+                                            href="<?= Url::to([
+                                                'site/company',
+                                                'alias' => $company->alias,
+                                                'cpage' => 1
+                                            ]) ?>"
+                                        >
+                                            Читать отзыв
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="col-auto">
-                                    <a
-                                        class="btn btn-sm btn-default"
-                                        href="<?= Url::to([
-                                            'site/company',
-                                            'alias' => $company->alias,
-                                            'cpage' => 1
-                                        ]) ?>"
-                                    >
-                                        Читать отзыв
-                                    </a>
-                                </div>
-                            </div>
-                        </div><!-- .cart-footer -->
-                    </div><!-- .cart -->
-                </div><!-- .col -->
-            <?php endforeach; ?>
+                            </div><!-- .cart-footer -->
+                        </div><!-- .cart -->
+                    </div><!-- .col -->
+                <?php endforeach; ?>
+            <?php  ?>
 
         </div><!-- .row -->
 

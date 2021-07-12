@@ -16,13 +16,11 @@ use app\models\Fssp;
 use app\models\Material;
 use app\models\News;
 use app\models\Company;
-use app\models\UnicomOffer;
+use app\models\UnicomFormUniversal;
 use app\models\User;
 use app\models\Unicom;
 
-use linslin\yii2\curl\Curl;
 use Yii;
-use yii\data\Pagination;
 use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\Cookie;
@@ -31,6 +29,7 @@ use yii\web\Request;
 use yii\web\Response;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
+use linslin\yii2\curl\Curl;
 
 /**
  * Class SiteController
@@ -42,9 +41,6 @@ class SiteController extends Controller
 {
     private $_city;
 
-    /**
-     * @inheritDoc
-     */
     public function init()
     {
         parent::init();
@@ -76,45 +72,30 @@ class SiteController extends Controller
      */
     public function actionIndex(string $view = 'index')
     {
+        $city = City::findOne(['alias' => 'index']);
         return $this->render($view, [
             'city' => $this->city,
         ]);
     }
 
     /**
-     * ДЕБЕТОВЫЕ КАРТЫ
+     * ОФФЕРЫ
      */
-    public function actionCreditCardList($page = 1, $alias = '')
+    public function actionOffers($loanAlias = '', $alias = '', $page = 1)
     {
-        $page = (int) $page;
-        $path = ($alias !== '') ? '/kreditnye-karty/'.$alias : '/kreditnye-karty';
+        //https://unicom24.ru/api/v1/offers/?page_size=99999&with_inactive=true&with_info_offer=true&region_id=180185&loan_type=mortgage&without_popular_block=true&ordering=-min_loan_period_reduce&loan_sum=3000000&loan_period=5
         $model = new Unicom([
+            'loanAlias' => $loanAlias,
+            'alias' => $alias,
             'pageNum' => $page,
-            'path' => $path,
-            'loanType' => 'creditcard',
         ]);
-        return $this->render('credit-card-list', ['model' => $model]);
+        return $this->render('offers', ['model' => $model]);
     }
 
     /**
-     * ДЕБЕТОВЫЕ КАРТЫ
+     * ОТЗЫВ ОФФЕРА JSON
      */
-    public function actionDebitCardList($page = 1, $alias = '')
-    {
-        $page = (int) $page;
-        $path = ($alias !== '') ? '/debetovye-karty/'.$alias : '/debetovye-karty';
-        $model = new Unicom([
-            'pageNum' => $page,
-            'path' => $path,
-            'loanType' => 'debitcard',
-        ]);
-        return $this->render('debit-card-list', ['model' => $model]);
-    }
-
-    /**
-     * ДЕБЕТОВЫЕ КАРТЫ ОТЗЫВ В СПИСКЕ
-     */
-    public function actionDebitCardListReview($mfiId)
+    public function actionOfferReview($mfiId)
     {
         $curl = new Curl();
         $curl->setGetParams(['page' => 1, 'page_size' => 1]);
@@ -123,11 +104,49 @@ class SiteController extends Controller
     }
 
     /**
+     * ОФФЕР
+     */
+    public function actionOffer($id)
+    {
+        $curl = new Curl();
+        $data = $curl->get('https://unicom24.ru/api/universal/v1/doc/offer/' . $id . '/');
+        $offer = ArrayHelper::getValue(Json::decode($data), 'offer');
+//        ArrayHelper::remove($data, 'offer_description');
+//        ArrayHelper::remove($data, 'about_company');
+//        ArrayHelper::remove($data, 'api_required_fields');
+//        ArrayHelper::remove($data, 'allowed_traffic');
+//        ArrayHelper::remove($data, 'conditions');
+//        ArrayHelper::remove($data, 'forbidden_traffic');
+//        ArrayHelper::remove($data, 'all_regions');
+//        ArrayHelper::remove($data, 'regions');
+//        ArrayHelper::remove($data, 'regions_sorted');
+//        ArrayHelper::remove($data, 'phptemplate');
+        return $this->asJson([
+            'offer' => $offer,
+            'inputs' => (new UnicomFormUniversal())->inputs,
+        ]);
+    }
+
+    /**
+     * ОТПРАВКА ОФФЕРА JSON
+     */
+    public function actionOfferSend()
+    {
+        $req = $this->ajaxRequest();
+        $model = new UnicomFormUniversal();
+        $model->load($req->post());
+        if ($model->load($req->post()) && $model->send()) {
+            return [
+                'success' => 1,
+                'model' => $model,
+                'response' => $model->response,
+            ];
+        }
+        return ActiveForm::validate($model);
+    }
+
+    /**
      * НОВОСТИ
-     * @param string $alias
-     * @param int $id
-     * @return string
-     * @throws NotFoundHttpException
      */
     public function actionNewsItem(string $alias = '', int $id = null)
     {
@@ -140,9 +159,6 @@ class SiteController extends Controller
 
     /**
      * ПОЛЕЗНЫЕ МАТЕРИАЛЫ
-     * @param string $alias
-     * @return string
-     * @throws NotFoundHttpException
      */
     public function actionMaterial(string $alias = '')
     {
@@ -155,9 +171,6 @@ class SiteController extends Controller
 
     /**
      * ЗАКОН О БАНКРОТСТВЕ
-     * @param string $alias
-     * @return string
-     * @throws NotFoundHttpException
      */
     public function actionLaw(string $alias = '')
     {
@@ -166,7 +179,6 @@ class SiteController extends Controller
 
     /**
      * РЕЙТИНГ КОМПАНИЙ
-     * @return string
      */
     public function actionCompanyList()
     {
@@ -178,9 +190,6 @@ class SiteController extends Controller
 
     /**
      * ПРОФИЛЬ КОМПАНИЙ
-     * @param string $alias
-     * @return string
-     * @throws NotFoundHttpException
      */
     public function actionCompany(int $cpage = 1,string $alias = '')
     {
@@ -193,8 +202,6 @@ class SiteController extends Controller
 
     /**
      * РЕЙТИНГ АРБИТРАЖНЫХ УПРАВЛЯЮЩИХ
-     * @return string|array
-     * @throws NotFoundHttpException
      */
     public function actionArbitrationList()
     {
@@ -206,10 +213,6 @@ class SiteController extends Controller
 
     /**
      * ПРОФИЛЬ УПРАВЛЯЮЩЕГО
-     * @param string $id
-     * @param string $page
-     * @return string
-     * @throws NotFoundHttpException
      */
     public function actionArbitration(string $id = '', string $page = '1')
     {
@@ -221,9 +224,7 @@ class SiteController extends Controller
     }
 
     /**
-     * /callback.json
-     * ОБРАТНЫЙ ЗВОНОК
-     * @throws NotFoundHttpException
+     * ОБРАТНЫЙ ЗВОНОК /callback.json
      */
     public function actionCallback()
     {
@@ -238,7 +239,6 @@ class SiteController extends Controller
     /**
      * /fssp-search.json
      * ПОИСК ДОЛГОВ ФССП
-     * @throws NotFoundHttpException
      */
     public function actionFsspSearch()
     {
@@ -258,7 +258,6 @@ class SiteController extends Controller
     /**
      * /contact.json
      * ОБРАТНАЯ СВЯЗЬ (КОНТАКТ)
-     * @throws NotFoundHttpException
      */
     public function actionContact()
     {
@@ -273,7 +272,6 @@ class SiteController extends Controller
     /**
      * /consult.json
      * ЗАДАТЬ ВОПРОС ЮРИСТУ
-     * @throws NotFoundHttpException
      */
     public function actionConsult()
     {
@@ -288,7 +286,6 @@ class SiteController extends Controller
     /**
      * /send-test.json
      * ПРОЙТИ ТЕСТ
-     * @throws NotFoundHttpException
      */
     public function actionSendTest()
     {
@@ -303,7 +300,6 @@ class SiteController extends Controller
     /**
      * /send-faq.json
      * FAQ ЗАДАТЬ ВОПРОС
-     * @throws NotFoundHttpException
      */
     public function actionSendFaq()
     {
@@ -329,7 +325,6 @@ class SiteController extends Controller
     /**
      * /login.json
      * АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ
-     * @throws NotFoundHttpException
      */
     public function actionLogin()
     {
@@ -344,7 +339,6 @@ class SiteController extends Controller
     /**
      * /register.json
      * РЕГИСТРАЦИЯ НОВОГО ПОЛЬЗОВАТЕЛЯ
-     * @throws NotFoundHttpException
      */
     public function actionRegister()
     {
@@ -358,8 +352,6 @@ class SiteController extends Controller
 
     /**
      * АКЦИВАЦИЯ НОВОГО ПОЛЬЗОВАТЕЛЯ
-     * @param string $token
-     * @throws NotFoundHttpException
      */
     public function actionActivate(string $token)
     {
@@ -372,7 +364,6 @@ class SiteController extends Controller
 
     /**
      * @return City
-     * @throws NotFoundHttpException
      */
     protected function getCity()
     {
@@ -387,7 +378,6 @@ class SiteController extends Controller
 
     /**
      * @return Request
-     * @throws NotFoundHttpException
      */
     private function ajaxRequest()
     {

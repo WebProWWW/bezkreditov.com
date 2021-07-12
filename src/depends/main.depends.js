@@ -5,6 +5,6 @@
 //=include vue-router/vue-router.min.js
 //=require gijgo/gijgo.min.js
 //=require gijgo/messages.ru-ru.min.js
-//=require Inputmask/jquery.inputmask.min.js
+//=require Inputmask-5.0.6/jquery.inputmask.min.js
 //=require svg.js/svg.min.js
 //=require slick/slick.min.js

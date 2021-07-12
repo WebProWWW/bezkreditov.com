@@ -15,7 +15,7 @@ use yii\helpers\ArrayHelper;
  * @property bool $isActive
  * @property int $weight
  * @property string $alias
- *
+ * @property string $pathFirst
  */
 class UnicomAnchor extends BaseObject
 {
@@ -34,6 +34,12 @@ class UnicomAnchor extends BaseObject
     public function getAlias() {
         $path = StringHelper::explode($this->path, '/');
         return ArrayHelper::getValue($path, '2', null);
+    }
+
+    public function getPathFirst()
+    {
+        $path = StringHelper::explode($this->path, '/');
+        return ArrayHelper::getValue($path, '1', null);
     }
 
 }

@@ -27,10 +27,13 @@ ArrayHelper::setValue($this->params, 'regions', $regions);
 
 $city = $this->params['city'];
 
+$title = $this->title ?: 'Без кредитов';
+$title = str_replace('&nbsp;', ' ', $title);
+$title = Html::encode($title);
 $description = ArrayHelper::getValue($this->params, 'description', '');
+$description = str_replace('&nbsp;', ' ', $description);
+$description = Html::encode($description);
 $description = StringHelper::truncate($description, 160);
-
-$title = $this->title ? Html::encode($this->title) : 'Без кредитов';
 
 $urlBase = Url::base(true);
 $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
@@ -403,6 +406,10 @@ $this->registerJsVar('appModel', [
         <a href="javascript:;">Политики обработки персональных данных.</a>
     </p>
     <?php FormAjax::end() ?>
+</div><!-- .modal -->
+
+<div class="modal modal-sm" id="offer-modal">
+    <div id="vue-app-offer"></div>
 </div><!-- .modal -->
 
 <?php $this->trigger(FormAjax::EVENT_NOTIFY_MODALS) ?>

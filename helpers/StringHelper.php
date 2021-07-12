@@ -39,8 +39,11 @@ class StringHelper extends YiiStringHelper
         $string = str_replace('%current_date%', Yii::$app->formatter->asDate('now'), $string);
         $string = str_replace('%month%', self::currentMonth(), $string);
         $string = str_replace('%year%', Yii::$app->formatter->asDate('now', 'Y'), $string);
-        $string = str_replace('%offer_rate_start%', '0%', $string);
-        $string = str_replace('%offer_sum_end%', '3&nbsp;000&nbsp;000&nbsp;рублей', $string);
+        $string = str_replace('%offer_rate_start%', 'от&nbsp;0%', $string);
+        $string = str_replace('%offer_rate_end%', 'до&nbsp;20%', $string);
+        $string = str_replace('%offer_sum_start%', 'от&nbsp;0&nbsp;рублей', $string);
+        $string = str_replace('%offer_sum_end%', 'до&nbsp;3&nbsp;000&nbsp;000&nbsp;рублей', $string);
+        $string = str_replace('%offer_time_start%', 'от&nbsp;1&nbsp;месяца', $string);
         $string = str_replace('%offer_time_end%', 'до&nbsp;72&nbsp;месяцев', $string);
         return $string;
     }

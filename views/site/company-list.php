@@ -34,8 +34,8 @@ $currentPage = $dataProvider->pagination->page + 1;
         <?= Html::beginForm(Url::to(['site/company-list', 'page' => 1]), 'get') ?>
             <div class="row">
                 <div class="col-12 col-lg">
-                    <?php $csVal = Yii::$app->request->get('cs', '') ?>
-                    <input class="input" type="text" name="cs" value="<?= $csVal ?>" placeholder="Название компании">
+                    <?php $search = Yii::$app->request->get('search', '') ?>
+                    <input class="input" type="text" name="search" value="<?= $search ?>" placeholder="Название компании">
                 </div><!-- .col -->
                 <div class="col-12 col-lg-auto">
                     <button type="submit" class="btn btn-default">Подобрать компанию</button>

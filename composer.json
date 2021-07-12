@@ -12,12 +12,13 @@
   "require": {
     "php": ">=7.0",
     "ext-mbstring": "*",
+    "ext-curl": "*",
     "yiisoft/yii2": "~2.0.38",
     "yiisoft/yii2-swiftmailer": "~2.1.2",
     "linslin/yii2-curl": "~1.4.0",
     "yiisoft/yii2-imagine": "~2.2.0",
     "symfony/dotenv": "~v3.4.46",
-    "sendpulse/rest-api": "~10.0.15"
+    "sendpulse/rest-api": "~1.0.24"
   },
   "require-dev": {
     "yiisoft/yii2-gii": "~2.2.1",

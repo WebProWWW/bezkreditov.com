@@ -268,7 +268,6 @@ do ->
                 return on unless typeof errors is 'object'
                 for name, error of errors
                     @input["#{name.substr(5)}"].error = error[0]
-                
                 on
         computed:
             isSearchTypeA: -> @input.searchType.val is 'A'

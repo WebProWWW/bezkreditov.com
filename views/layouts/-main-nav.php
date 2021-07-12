@@ -96,7 +96,7 @@ use app\helpers\Url;
     <div class="main-nav-content" id="main-nav-content-2">
         <div class="row">
             <div class="col-3">
-                <a class="logo logo-sm" href="<?= Url::home() ?>">
+                <a class="logo logo-sm" href="/debetovye-karty-1.html">
                     <span class="logo-txt">Карты</span>
                     <span class="logo-stxt">Вся полезная информация по банковским картам в одном месте</span>
                 </a>
@@ -113,19 +113,19 @@ use app\helpers\Url;
                         <a class="nav-ln fw-600" href="/debetovye-karty-1.html">
                             <span class="nav-txt">Дебетовые карты</span>
                         </a>
-                        <a class="nav-ln nav-list" href="/debetovye-karty-besplatnyie-1.html">
+                        <a class="nav-ln nav-list" href="/debetovye-karty/besplatnyie-1.html">
                             <span class="nav-txt">Бесплатные</span>
                         </a>
-                        <a class="nav-ln nav-list" href="/debetovye-karty-dohodnye-s-nachisleniem-na-ostatok-1.html">
+                        <a class="nav-ln nav-list" href="/debetovye-karty/dohodnye-s-nachisleniem-na-ostatok-1.html">
                             <span class="nav-txt">С процентом на остаток</span>
                         </a>
-                        <a class="nav-ln nav-list" href="/debetovye-karty-vygodnye-1.html">
+                        <a class="nav-ln nav-list" href="/debetovye-karty/vygodnye-1.html">
                             <span class="nav-txt">Выгодные</span>
                         </a>
-                        <a class="nav-ln nav-list" href="/debetovye-karty-cashback-1.html">
+                        <a class="nav-ln nav-list" href="/debetovye-karty/cashback-1.html">
                             <span class="nav-txt">С кэшбэком</span>
                         </a>
-                        <a class="nav-ln nav-list" href="/debetovye-karty-onlajn-1.html">
+                        <a class="nav-ln nav-list" href="/debetovye-karty/onlajn-1.html">
                             <span class="nav-txt">Онлайн-заявка</span>
                         </a>
                     </div><!-- .col -->
@@ -133,19 +133,19 @@ use app\helpers\Url;
                         <a class="nav-ln fw-600" href="/kreditnye-karty-1.html">
                             <span class="nav-txt">Кредитные карты</span>
                         </a>
-                        <a class="nav-ln nav-list" href="/kreditnye-karty-cashback-1.html">
+                        <a class="nav-ln nav-list" href="/kreditnye-karty/cashback-1.html">
                             <span class="nav-txt">С кэшбэком</span>
                         </a>
-                        <a class="nav-ln nav-list" href="/kreditnye-karty-s-plohoj-kreditnoj-istoriej-1.html">
+                        <a class="nav-ln nav-list" href="/kreditnye-karty/s-plohoj-kreditnoj-istoriej-1.html">
                             <span class="nav-txt">С плохой историей</span>
                         </a>
                         <a class="nav-ln nav-list" href="/kreditnye-karty-1.html">
                             <span class="nav-txt">Онлайн</span>
                         </a>
-                        <a class="nav-ln nav-list" href="/kreditnye-karty-s-dostavkoj-1.html">
+                        <a class="nav-ln nav-list" href="/kreditnye-karty/s-dostavkoj-1.html">
                             <span class="nav-txt">С доставкой</span>
                         </a>
-                        <a class="nav-ln nav-list" href="/kreditnye-karty-dlya-snyatiya-nalichnyh-1.html">
+                        <a class="nav-ln nav-list" href="/kreditnye-karty/dlya-snyatiya-nalichnyh-1.html">
                             <span class="nav-txt">Для снятия наличных</span>
                         </a>
                     </div><!-- .col -->
@@ -163,7 +163,7 @@ use app\helpers\Url;
     <div class="main-nav-content" id="main-nav-content-3">
         <div class="row">
             <div class="col-3">
-                <a class="logo logo-sm" href="<?= Url::home() ?>">
+                <a class="logo logo-sm" href="/kredity-1.html">
                     <span class="logo-txt">Кредиты</span>
                     <span class="logo-stxt">Мы не рекомендуем брать кредиты без нужды, но если без этого никак воспользуйтесь нашим поиском самых выгодных условий по кредитом</span>
                 </a>
@@ -177,42 +177,45 @@ use app\helpers\Url;
             <div class="col">
                 <div class="row justify-content-between">
                     <div class="col">
-                        <a class="nav-ln fw-600" href="<?= Url::toView('potrebitelskie-kredity') ?>">
+                        <a class="nav-ln fw-600" href="/kredity-1.html">
                             <span class="nav-txt">Потребительские кредиты</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('potrebitelskie-kredity-nalichnymi') ?>">
+                        <a class="nav-ln nav-list" href="/kredity/nalichnymi-1.html">
                             <span class="nav-txt">Наличными</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('potrebitelskie-kredity-onlajn-na-kartu') ?>">
+                        <a class="nav-ln nav-list" href="/kredity-1.html">
                             <span class="nav-txt">Онлайн на карту</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('potrebitelskie-kredity-bez-otkaza') ?>">
+                        <a class="nav-ln nav-list" href="/kredity/nalichnymi-bez-otkaza-1.html">
                             <span class="nav-txt">Без отказа</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('potrebitelskie-kredity-s-plohoj-kreditnoj-istoriej') ?>">
+                        <a class="nav-ln nav-list" href="/kredity/s-plohoj-kreditnoj-istoriej-i-prosrochkami-1.html">
                             <span class="nav-txt">С плохой КИ</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('potrebitelskie-kredity-pensioneram') ?>">
+                        <a class="nav-ln nav-list" href="/kredity/dlya-pensionerov-1.html">
                             <span class="nav-txt">Пенсионерам</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="/kredity/s-momentalnym-resheniem-1.html">
+                            <span class="nav-txt">С моментальным решением</span>
                         </a>
                     </div><!-- .col -->
                     <div class="col-auto">
-                        <a class="nav-ln fw-600" href="<?= Url::toView('mikrozajmy') ?>">
+                        <a class="nav-ln fw-600" href="/mikrozajmy-1.html">
                             <span class="nav-txt">Микрозаймы</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('mikrozajmy-na-kartu') ?>">
+                        <a class="nav-ln nav-list" href="/mikrozajmy-1.html">
                             <span class="nav-txt">На карту</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('mikrozajmy-bez-otkaza') ?>">
+                        <a class="nav-ln nav-list" href="/mikrozajmy/zajm-na-kartu-bez-otkaza-1.html">
                             <span class="nav-txt">Без отказа</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('mikrozajmy-bez-procentov') ?>">
+                        <a class="nav-ln nav-list" href="/mikrozajmy/bes-procentov-1.html">
                             <span class="nav-txt">Без процентов</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('mikrozajmy-srochno') ?>">
+                        <a class="nav-ln nav-list" href="/mikrozajmy/srochno-1.html">
                             <span class="nav-txt">Срочно</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('mikrozajmy-do-zarplaty') ?>">
+                        <a class="nav-ln nav-list" href="/mikrozajmy/na-kartu-do-zarplaty-1.html">
                             <span class="nav-txt">До зарплаты</span>
                         </a>
                     </div><!-- .col -->
@@ -228,24 +231,30 @@ use app\helpers\Url;
                         </a>
                     </div><!-- .col -->
                     <div class="col">
-                        <a class="nav-ln fw-600" href="<?= Url::toView('avtokredity') ?>">
+                        <a class="nav-ln fw-600" href="/avtokredity-1.html">
                             <span class="nav-txt">Автокредиты</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('avtokredity-na-vtore-s-probegom') ?>">
+                        <a class="nav-ln nav-list" href="/avtokredity/na-poderzhannyj-avtomobil-1.html">
                             <span class="nav-txt">На вторе с пробегом</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('avtokredity-na-novyj-avtomobil') ?>">
+                        <a class="nav-ln nav-list" href="/avtokredity/na-novyj-avtomobil-bez-pervonachalnogo-vznosa-1.html">
                             <span class="nav-txt">На новый автомобиль</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('avtokredity-vygodnye') ?>">
+                        <a class="nav-ln nav-list" href="/avtokredity/-1.html">
                             <span class="nav-txt">Выгодные</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('avtokredity-bez-pervonachalnogo-vznosa') ?>">
+                        <a class="nav-ln nav-list" href="/avtokredity/bez-pervonachalnogo-vznosa-1.html">
                             <span class="nav-txt">Без первоначального взноса</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="/avtokredity/onlajn-zayavka-1.html">
+                            <span class="nav-txt">Онлайн-заявка</span>
+                        </a>
+                        <a class="nav-ln nav-list" href="/avtokredity/populyarnye-1.html">
+                            <span class="nav-txt">Выгодные</span>
                         </a>
                     </div><!-- .col -->
                     <div class="col-auto">
-                        <a class="nav-ln fw-600" href="<?= Url::toView('refinansirovanie-kredita') ?>">
+                        <a class="nav-ln fw-600" href="/refinance-1.html">
                             <span class="nav-txt">Рефинансирование</span>
                         </a>
                     </div><!-- .col -->
@@ -263,7 +272,7 @@ use app\helpers\Url;
     <div class="main-nav-content" id="main-nav-content-4">
         <div class="row">
             <div class="col-3">
-                <a class="logo logo-sm" href="<?= Url::toView('ipoteka') ?>">
+                <a class="logo logo-sm" href="/ipoteka-1.html">
                     <span class="logo-txt">Ипотека</span>
                     <span class="logo-stxt">Вся полезная информация по ипотеке и ипотечному кредитованию в одном месте</span>
                 </a>
@@ -275,40 +284,40 @@ use app\helpers\Url;
                 </a>
             </div><!-- .col -->
             <div class="col">
-                <a class="nav-ln" href="<?= Url::toView('ipoteka') ?>">
+                <a class="nav-ln" href="/ipoteka-1.html">
                     <span class="nav-txt fw-600">Ипотека</span>
                 </a>
                 <div class="row">
                     <div class="col-4">
-                        <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-bez-pervonachalnogo-vznosa') ?>">
+                        <a class="nav-ln nav-list" href="/ipoteka/bez-pervonachalnogo-vznosa-1.html">
                             <span class="nav-txt">Без первоначального взноса</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-na-novostrojku') ?>">
+                        <a class="nav-ln nav-list" href="/ipoteka/na-pervichnom-rynke-1.html">
                             <span class="nav-txt">На новостройку</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-na-vtorichnoe-zhile') ?>">
+                        <a class="nav-ln nav-list" href="/ipoteka/na-vtorichnom-rynke-1.html">
                             <span class="nav-txt">На вторичное жилье</span>
                         </a>
-                        <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-bez-podtverzhdeniya-dohoda') ?>">
+                        <a class="nav-ln nav-list" href="/ipoteka/bez-podtverzhdeniya-dohoda-1.html">
                             <span class="nav-txt">Без подтверждения дохода</span>
                         </a>
                     </div><!-- .col -->
                     <div class="col-4">
-                        <a class="nav-ln nav-list" href="<?= Url::toView('ipoteka-molodoj-seme') ?>">
+                        <a class="nav-ln nav-list" href="/ipoteka/dlya-molodoj-semi-1.html">
                             <span class="nav-txt">Молодой семье</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="/ipoteka/socialnaya-ipoteka-1.html">
                             <span class="nav-txt">Социальная</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="/ipoteka/s-gospodderzhkoj-1.html">
                             <span class="nav-txt">С господдержкой</span>
                         </a>
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="/ipoteka/dlya-pensionerov-1.html">
                             <span class="nav-txt">Пенсионерам</span>
                         </a>
                     </div><!-- .col -->
                     <div class="col-4">
-                        <a class="nav-ln nav-list" href="javascript:;">
+                        <a class="nav-ln nav-list" href="/ipoteka/po-2-dokumentam-1.html">
                             <span class="nav-txt">По двум документам</span>
                         </a>
                     </div><!-- .col -->
