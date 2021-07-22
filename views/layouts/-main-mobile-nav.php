@@ -85,37 +85,37 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <a class="nav-ln fw-600" href="/debetovye-karty-1.html">
                 <span class="nav-txt">Дебетовые карты</span>
             </a>
-            <a class="nav-ln" href="/debetovye-karty-besplatnyie-1.html">
+            <a class="nav-ln" href="/debetovye-karty/besplatnyie-1.html">
                 <span class="nav-txt">Бесплатные</span>
             </a>
-            <a class="nav-ln" href="/debetovye-karty-dohodnye-s-nachisleniem-na-ostatok-1.html">
+            <a class="nav-ln" href="/debetovye-karty/dohodnye-s-nachisleniem-na-ostatok-1.html">
                 <span class="nav-txt">С процентом на остаток</span>
             </a>
-            <a class="nav-ln" href="/debetovye-karty-vygodnye-1.html">
+            <a class="nav-ln" href="/debetovye-karty/vygodnye-1.html">
                 <span class="nav-txt">Выгодные</span>
             </a>
-            <a class="nav-ln" href="/debetovye-karty-cashback-1.html">
+            <a class="nav-ln" href="/debetovye-karty/cashback-1.html">
                 <span class="nav-txt">С кэшбэком</span>
             </a>
-            <a class="nav-ln" href="/debetovye-karty-onlajn-1.html">
+            <a class="nav-ln" href="/debetovye-karty/onlajn-1.html">
                 <span class="nav-txt">Онлайн-заявка</span>
             </a>
             <a class="nav-ln fw-600" href="/kreditnye-karty-1.html">
                 <span class="nav-txt">Кредитные карты</span>
             </a>
-            <a class="nav-ln" href="/kreditnye-karty-cashback-1.html">
+            <a class="nav-ln" href="/kreditnye-karty/cashback-1.html">
                 <span class="nav-txt">С кэшбэком</span>
             </a>
-            <a class="nav-ln" href="/kreditnye-karty-s-plohoj-kreditnoj-istoriej-1.html">
+            <a class="nav-ln" href="/kreditnye-karty/s-plohoj-kreditnoj-istoriej-1.html">
                 <span class="nav-txt">С плохой историей</span>
             </a>
             <a class="nav-ln" href="/kreditnye-karty-1.html">
                 <span class="nav-txt">Онлайн</span>
             </a>
-            <a class="nav-ln" href="/kreditnye-karty-s-dostavkoj-1.html">
+            <a class="nav-ln" href="/kreditnye-karty/s-dostavkoj-1.html">
                 <span class="nav-txt">С доставкой</span>
             </a>
-            <a class="nav-ln" href="/kreditnye-karty-dlya-snyatiya-nalichnyh-1.html">
+            <a class="nav-ln" href="/kreditnye-karty/dlya-snyatiya-nalichnyh-1.html">
                 <span class="nav-txt">Для снятия наличных</span>
             </a>
         </div><!-- .main-mnav-content -->
@@ -127,58 +127,67 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <i class="i-ch-down em-8"></i>
         </a>
         <div class="main-mnav-content" id="main-mnav-content-3">
-            <a class="nav-ln fw-600" href="<?= Url::toView('potrebitelskie-kredity') ?>">
+            <a class="nav-ln fw-600" href="/kredity-1.html">
                 Потребительские кредиты
             </a>
-            <a class="nav-ln" href="<?= Url::toView('potrebitelskie-kredity-nalichnymi') ?>">
+            <a class="nav-ln" href="/kredity/nalichnymi-1.html">
                 Наличными
             </a>
-            <a class="nav-ln" href="<?= Url::toView('potrebitelskie-kredity-onlajn-na-kartu') ?>">
+            <a class="nav-ln" href="/kredity-1.html">
                 Онлайн на карту
             </a>
-            <a class="nav-ln" href="<?= Url::toView('potrebitelskie-kredity-bez-otkaza') ?>">
+            <a class="nav-ln" href="/kredity/nalichnymi-bez-otkaza-1.html">
                 Без отказа
             </a>
-            <a class="nav-ln" href="<?= Url::toView('potrebitelskie-kredity-s-plohoj-kreditnoj-istoriej') ?>">
+            <a class="nav-ln" href="/kredity/s-plohoj-kreditnoj-istoriej-i-prosrochkami-1.html">
                 С плохой кредитной историей
             </a>
-            <a class="nav-ln" href="<?= Url::toView('potrebitelskie-kredity-pensioneram') ?>">
+            <a class="nav-ln" href="/kredity/dlya-pensionerov-1.html">
                 Пенсионерам
             </a>
-            <a class="nav-ln fw-600" href="<?= Url::toView('mikrozajmy') ?>">
+            <a class="nav-ln" href="/kredity/s-momentalnym-resheniem-1.html">
+                С моментальным решением
+            </a>
+            <a class="nav-ln fw-600" href="/mikrozajmy-1.html">
                 Микрозаймы
             </a>
-            <a class="nav-ln" href="<?= Url::toView('mikrozajmy-na-kartu') ?>">
+            <a class="nav-ln" href="/mikrozajmy-1.html">
                 На карту
             </a>
-            <a class="nav-ln" href="<?= Url::toView('mikrozajmy-bez-otkaza') ?>">
+            <a class="nav-ln" href="/mikrozajmy/zajm-na-kartu-bez-otkaza-1.html">
                 Без отказа
             </a>
-            <a class="nav-ln" href="<?= Url::toView('mikrozajmy-bez-procentov') ?>">
+            <a class="nav-ln" href="/mikrozajmy/bes-procentov-1.html">
                 Без процентов
             </a>
-            <a class="nav-ln" href="<?= Url::toView('mikrozajmy-srochno') ?>">
+            <a class="nav-ln" href="/mikrozajmy/srochno-1.html">
                 Срочно
             </a>
-            <a class="nav-ln" href="<?= Url::toView('mikrozajmy-do-zarplaty') ?>">
+            <a class="nav-ln" href="/mikrozajmy/na-kartu-do-zarplaty-1.html">
                 До зарплаты
             </a>
-            <a class="nav-ln fw-600" href="<?= Url::toView('avtokredity') ?>">
+            <a class="nav-ln fw-600" href="/avtokredity-1.html">
                 Автокредиты
             </a>
-            <a class="nav-ln" href="<?= Url::toView('avtokredity-na-vtore-s-probegom') ?>">
+            <a class="nav-ln" href="/avtokredity/na-poderzhannyj-avtomobil-1.html">
                 На вторе с пробегом
             </a>
-            <a class="nav-ln" href="<?= Url::toView('avtokredity-na-novyj-avtomobil') ?>">
+            <a class="nav-ln" href="/avtokredity/na-novyj-avtomobil-bez-pervonachalnogo-vznosa-1.html">
                 На новый автомобиль
             </a>
-            <a class="nav-ln" href="<?= Url::toView('avtokredity-vygodnye') ?>">
+            <a class="nav-ln" href="/avtokredity/-1.html">
                 Выгодные
             </a>
-            <a class="nav-ln" href="<?= Url::toView('avtokredity-bez-pervonachalnogo-vznosa') ?>">
+            <a class="nav-ln" href="/avtokredity/bez-pervonachalnogo-vznosa-1.html">
                 Без первоначального взноса
             </a>
-            <a class="nav-ln fw-600" href="<?= Url::toView('refinansirovanie-kredita') ?>">
+            <a class="nav-ln" href="/avtokredity/onlajn-zayavka-1.html">
+                Онлайн-заявка
+            </a>
+            <a class="nav-ln" href="/avtokredity/populyarnye-1.html">
+                Выгодные
+            </a>
+            <a class="nav-ln fw-600" href="/refinance-1.html">
                 Рефинансирование
             </a>
             <a class="nav-ln" href="<?= Url::toView('katalog-mfo') ?>">
@@ -199,31 +208,31 @@ $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
             <a class="nav-ln fw-600" href="/ipoteka-1.html">
                 Ипотека
             </a>
-            <a class="nav-ln" href="/ipoteka-bez-pervonachalnogo-vznosa-1.html">
+            <a class="nav-ln" href="/ipoteka/bez-pervonachalnogo-vznosa-1.html">
                 Без первоначального взноса
             </a>
-            <a class="nav-ln" href="/ipoteka-na-pervichnom-rynke-1.html">
+            <a class="nav-ln" href="/ipoteka/na-pervichnom-rynke-1.html">
                 На новостройку
             </a>
-            <a class="nav-ln" href="/ipoteka-na-vtorichnom-rynke-1.html">
+            <a class="nav-ln" href="/ipoteka/na-vtorichnom-rynke-1.html">
                 На вторичное жилье
             </a>
-            <a class="nav-ln" href="/ipoteka-bez-podtverzhdeniya-dohoda-1.html">
+            <a class="nav-ln" href="/ipoteka/bez-podtverzhdeniya-dohoda-1.html">
                 Без подтверждения дохода
             </a>
-            <a class="nav-ln" href="/ipoteka-dlya-molodoj-semi-1.html">
+            <a class="nav-ln" href="/ipoteka/dlya-molodoj-semi-1.html">
                 Молодой семье
             </a>
-            <a class="nav-ln" href="/ipoteka-socialnaya-ipoteka-1.html">
+            <a class="nav-ln" href="/ipoteka/socialnaya-ipoteka-1.html">
                 Социальная
             </a>
-            <a class="nav-ln" href="/ipoteka-s-gospodderzhkoj-1.html">
+            <a class="nav-ln" href="/ipoteka/s-gospodderzhkoj-1.html">
                 С господдержкой
             </a>
-            <a class="nav-ln" href="/ipoteka-dlya-pensionerov-1.html">
+            <a class="nav-ln" href="/ipoteka/dlya-pensionerov-1.html">
                 Пенсионерам
             </a>
-            <a class="nav-ln" href="/ipoteka-po-2-dokumentam-1.html">
+            <a class="nav-ln" href="/ipoteka/po-2-dokumentam-1.html">
                 По двум документам
             </a>
         </div><!-- .main-mnav-content -->
