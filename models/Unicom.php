@@ -328,7 +328,7 @@ class Unicom extends BaseObject
         $curl->setGetParams([
             'page' => $this->pageNum,
             'page_size' => 10,
-            'with_inactive' => true,
+            'with_inactive' => false,
             'with_info_offer' => true,
             'region_id' => 180185,
             'without_popular_block' => true,
