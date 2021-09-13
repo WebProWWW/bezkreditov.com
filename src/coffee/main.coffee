@@ -1,5 +1,51 @@
+###
+currentOfferIndex = 0
+offersLength = 0
+offers = []
 
-# alert 'asdasdasdd'
+saveFullOffers = () ->
+    offer = offers[currentOfferIndex]
+    $.ajax
+        url: 'http://bez-dolgov.loc/site/save-offer'
+        data:
+            id: offer.id
+    .done (data) ->
+        $('#offers-source-count').html "Обновлено предложении <strong>#{currentOfferIndex + 1}</strong> из <strong>#{offersLength}</strong>"
+        $('#offers-done-list').append """
+            <div class="row">
+                <div class="col">
+                    #{data.status}
+                </div>
+                <div class="col">
+                    #{data.id}
+                </div>
+                <div class="col">
+                    #{data.offer_id}
+                </div>
+                <div class="col">
+                    #{data.name}
+                </div>
+                <div class="col">
+                    #{data.errors}
+                </div>
+            </div>"""
+        if (currentOfferIndex < offersLength)
+            currentOfferIndex++
+            saveFullOffers()
+
+$('.js-parse-offers').one 'click', (e) ->
+    e.preventDefault()
+    $.ajax
+        url: 'http://bez-dolgov.loc/site/uni-offers'
+        dataType: 'json'
+    .done (data) ->
+        data = JSON.parse data
+        offers = data.offers
+        offersLength = offers.length
+        saveFullOffers()
+    off
+
+###
 
 $.fn.hasAttr = (name) -> @attr(name)?
 

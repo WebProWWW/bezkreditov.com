@@ -1,10 +1,17 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $page app\models\Page */
 
-$this->title = 'Оформите ОСАГО онлайн и с выгодой!';
-$this->params['description'] = 'Рассчитайте точную стоимость с учетом скидок, оплатите банковской картой и получите полис на электронную почту.';
-$this->params['breadcrumbs'] = ['ОСАГО онлайн'];
+$this->title = $page->child->title;
+$this->params['description'] = $page->child->description;
+$this->params['breadcrumbs'] = [
+    [
+        'label' => $page->label,
+        'url' => ['site/index', 'alias' => $page->alias],
+    ],
+    $page->child->label
+];
 
 ?>
 

@@ -218,6 +218,36 @@ class Company extends ActiveRecord
 
     /**
      * @param int $limit
+     * @return Company[][]
+     */
+    public static function top()
+    {
+        $sort = ['work', 'comment', 'rate'];
+        $companies = [];
+        foreach ($sort as $type) {
+            $orderBy = [];
+            $query = self::find();
+            if ($type === 'work') $orderBy = ['written_off' => SORT_DESC];
+            if ($type === 'rate') $orderBy = ['rate' => SORT_DESC];
+            if ($type === 'comment') {
+                $query
+                    ->select(['company_rate.*', 'COUNT(company_rate_comment.comment_id) AS commentsCount'])
+                    ->joinWith('comments')
+                    ->groupBy('company_rate.company_rate_id');
+                $orderBy = ['commentsCount' => SORT_DESC];
+            }
+            $companies[] = Yii::$app->cache->getOrSet('app-top-company-'.$type, function () use ($query, $orderBy) {
+                return $query
+                    ->orderBy($orderBy)
+                    ->limit(6)
+                    ->all();
+            }, 0);
+        }
+        return $companies;
+    }
+
+    /**
+     * @param int $limit
      * @return Company[]
      */
     public static function findTop(int $limit = 6)

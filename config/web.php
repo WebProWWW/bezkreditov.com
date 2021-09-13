@@ -15,6 +15,7 @@ return ArrayHelper::merge([
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                /*
                 // РЕЙТИНГ КОМПАНИИ
                 [
                     'pattern' => '/rejting-kompanij-po-bankrotstvu-<page:[\w\-]+>',
@@ -82,12 +83,12 @@ return ArrayHelper::merge([
                     'suffix' => '.html',
                     'defaults' => ['view' => 'servis-personalnogo-podbora-yurista-po-bankrotstvu'],
                 ],
-                [
-                    'pattern' => '/obratnaya-svyaz',
-                    'route' => 'site/index',
-                    'suffix' => '.html',
-                    'defaults' => ['view' => 'obratnaya-svyaz'],
-                ],
+//                [
+//                    'pattern' => '/obratnaya-svyaz',
+//                    'route' => 'site/index',
+//                    'suffix' => '.html',
+//                    'defaults' => ['view' => 'obratnaya-svyaz'],
+//                ],
                 [
                     'pattern' => '/zapret-viezda-iz-rf',
                     'route' => 'site/index',
@@ -208,37 +209,58 @@ return ArrayHelper::merge([
                     'suffix' => '.html',
                     'defaults' => ['view' => 'uznat-svoi-dolgi'],
                 ],
-
-                // ОФФЕРЫ
+                */
+                // СТРАНИЦЫ
                 [
-                    'pattern' => '/<loanAlias:[\w\-]+>/<alias:[\w\-]+>-<page:[\w\-]+>',
-                    'route' => 'site/offers',
+                    'pattern' => '/<alias:[\w\-]+>/<category:[\w\-]+>-<page:\d+>',
+                    'route' => 'site/index',
                     'suffix' => '.html',
                 ],
-                // ОФФЕРЫ / *
                 [
-                    'pattern' => '/<loanAlias:[\w\-]+>-<page:[\w\-]+>',
-                    'route' => 'site/offers',
+                    'pattern' => '/<alias:[\w\-]+>/<category:[\w\-]+>',
+                    'route' => 'site/index',
                     'suffix' => '.html',
                 ],
-                // ОТПРАВКА ОФФЕРА
                 [
-                    'pattern' => '/offer-send',
-                    'route' => 'site/offer-send',
-                    'suffix' => '.json',
+                    'pattern' => '/<alias:[\w\-]+>-<page:\d+>',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
                 ],
-                // ОТЗЫВ ОФФЕРА
                 [
-                    'pattern' => '/offer-review-<mfiId:[\w\-]+>',
-                    'route' => 'site/offer-review',
-                    'suffix' => '.json',
+                    'pattern' => '/<alias:[\w\-]+>',
+                    'route' => 'site/index',
+                    'suffix' => '.html',
                 ],
-                // ОФФЕР JSON
-                [
-                    'pattern' => '/offer-<id:[\w\-]+>',
-                    'route' => 'site/offer',
-                    'suffix' => '.json',
-                ],
+//                // ОФФЕРЫ
+//                [
+//                    'pattern' => '/<loanAlias:[\w\-]+>/<alias:[\w\-]+>-<page:[\w\-]+>',
+//                    'route' => 'site/offers',
+//                    'suffix' => '.html',
+//                ],
+//                // ОФФЕРЫ / *
+//                [
+//                    'pattern' => '/<loanAlias:[\w\-]+>-<page:[\w\-]+>',
+//                    'route' => 'site/offers',
+//                    'suffix' => '.html',
+//                ],
+//                // ОТПРАВКА ОФФЕРА
+//                [
+//                    'pattern' => '/offer-send',
+//                    'route' => 'site/offer-send',
+//                    'suffix' => '.json',
+//                ],
+//                // ОТЗЫВ ОФФЕРА
+//                [
+//                    'pattern' => '/offer-review-<mfiId:[\w\-]+>',
+//                    'route' => 'site/offer-review',
+//                    'suffix' => '.json',
+//                ],
+//                // ОФФЕР JSON
+//                [
+//                    'pattern' => '/offer-<id:[\w\-]+>',
+//                    'route' => 'site/offer',
+//                    'suffix' => '.json',
+//                ],
                 // КОРНЕВЫЕ СТРАНИЦЫ
                 [
                     'pattern' => '/<view:[\w\-]+>',

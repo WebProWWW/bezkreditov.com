@@ -16,11 +16,17 @@ use app\models\Fssp;
 use app\models\Material;
 use app\models\News;
 use app\models\Company;
+use app\models\Page;
+use app\models\PageUnicom;
 use app\models\UnicomFormUniversal;
+use app\models\UnicomOffer;
 use app\models\User;
 use app\models\Unicom;
+use app\models\Region;
 
 use Yii;
+use yii\base\InvalidConfigException;
+use yii\filters\PageCache;
 use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\Cookie;
@@ -36,15 +42,23 @@ use linslin\yii2\curl\Curl;
  * @package app\controllers
  *
  * @property City $city
+ * @property City[] $cities
+ * @property Region[] $regions
  */
 class SiteController extends Controller
 {
     private $_city;
+    private $_cities;
+    private $_regions;
 
     public function init()
     {
         parent::init();
-        Yii::$app->view->params['city'] = $this->city;
+
+        ArrayHelper::setValue(Yii::$app->view->params, 'city', $this->city);
+        ArrayHelper::setValue(Yii::$app->view->params, 'cities', $this->cities);
+        ArrayHelper::setValue(Yii::$app->view->params, 'regions', $this->regions);
+
         if (!Yii::$app->request->cookies->has('is-city')) {
             Yii::$app->response->cookies->add(new Cookie([
                 'name' => 'is-city',
@@ -57,6 +71,38 @@ class SiteController extends Controller
         }
     }
 
+//    public function actionPage($alias='', $category='', $tag='', $page='')
+//    {
+//        $model = Page::findOne(compact('alias', 'category', 'tag', 'page'));
+//        return dump($model);
+//        //return $this->render('page', compact('model'));
+//    }
+
+//    public function actionUniOffers()
+//    {
+//        $curl = new Curl();
+//        $curl->setHeaders(['Content-Type' => 'application/json']);
+//        $curl->setOption(CURLOPT_USERPWD, 'bezkreditov@bezkreditov.com:3MKuz04k');
+//        $data = $curl->get('https://unicom24.ru/api/universal/v1/doc/');
+//        return $this->asJson($data);
+//    }
+//
+//    public function actionSaveOffer($id)
+//    {
+//        $id = (int) $id;
+//        $unicom = new PageUnicom();
+//        return $this->asJson($unicom->saveOffer($id));
+//    }
+
+//    private function createPageModel($class)
+//    {
+//        try {
+//            return Yii::createObject($class);;
+//        } catch (InvalidConfigException $e) {
+//            throw new NotFoundHttpException();
+//        }
+//    }
+
     /**
      * @return string
      */
@@ -68,15 +114,30 @@ class SiteController extends Controller
     }
 
     /**
-     * КОРНЕВЫЕ СТРАНИЦЫ
+     * PAGE
      */
-    public function actionIndex(string $view = 'index')
+    public function actionIndex($alias='', $category='', $page='')
     {
-        $city = City::findOne(['alias' => 'index']);
-        return $this->render($view, [
-            'city' => $this->city,
+        $pageNum = $page;
+        $page = Page::findPage([
+            'alias' => $alias,
+            'category' => $category,
+            'pageNum' => $pageNum,
         ]);
+        ArrayHelper::setValue(Yii::$app->view->params, 'page', $page);
+        return $this->render($page->model->view, ['page' => $page]);
     }
+
+//    /**
+//     * КОРНЕВЫЕ СТРАНИЦЫ
+//     */
+//    public function actionIndex(string $view = 'index')
+//    {
+//        $city = City::findOne(['alias' => 'index']);
+//        return $this->render($view, [
+//            'city' => $this->city,
+//        ]);
+//    }
 
     /**
      * ОФФЕРЫ
@@ -362,9 +423,6 @@ class SiteController extends Controller
         throw new NotFoundHttpException();
     }
 
-    /**
-     * @return City
-     */
     protected function getCity()
     {
         if ($this->_city === null) {
@@ -374,6 +432,22 @@ class SiteController extends Controller
             }
         }
         return $this->_city;
+    }
+
+    protected function getCities()
+    {
+        if ($this->_cities === null) {
+            $this->_cities = City::allCities();
+        }
+        return $this->_cities;
+    }
+
+    protected function getRegions()
+    {
+        if ($this->_regions === null) {
+            $this->_regions = Region::findAllRegions();
+        }
+        return $this->_regions;
     }
 
     /**

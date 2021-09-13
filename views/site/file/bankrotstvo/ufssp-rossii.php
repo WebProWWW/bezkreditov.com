@@ -1,10 +1,17 @@
 <?php
 
+use yii\helpers\ArrayHelper;
+
 /* @var $city app\models\City */
 /* @var $this yii\web\View */
+/* @var $page app\models\Page */
 
-$this->title = 'Управление Федеральной службы судебных приставов по г. '.$city->name;
+$city = ArrayHelper::getValue($this->params, 'city');
+// $this->title = $page->child->title;
 
+//dump($this->params['regions'], false);
+
+/*
 $this->params['description'] = 'Управления службы приставов действуют в каждом регионе и городе федерального значения. Они координируют деятельность районных и межрайонных отделов, являются вышестоящими органами для рассмотрения жалоб, осуществляют иные функции.';
 
 $this->params['breadcrumbs'] = [
@@ -98,3 +105,4 @@ $mapLonLat = $department->longitude . ',' . $department->latitude;
         <?= $this->render('-form-consult') ?>
     </div>
 </div>
+*/

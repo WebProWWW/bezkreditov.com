@@ -3,7 +3,6 @@
 use app\models\City;
 use app\models\User;
 use app\models\Region;
-use app\models\Page;
 use app\assets\MainAsset;
 use app\helpers\Url;
 use app\widgets\FormAjax;
@@ -17,17 +16,31 @@ use yii\helpers\StringHelper;
 /* @var $cities City[] */
 /* @var $city City */
 /* @var $user User */
-/* @var $page Page */
 
 MainAsset::register($this);
 
-$page = ArrayHelper::getValue($this->params, 'page');
-$city = ArrayHelper::getValue($this->params, 'city');
-$cities = ArrayHelper::getValue($this->params, 'cities', []);
-$regions = ArrayHelper::getValue($this->params, 'regions', []);
+$cities = City::allCities();
+ArrayHelper::setValue($this->params, 'cities', $cities);
+
+$regions = Region::findAllRegions();
+ArrayHelper::setValue($this->params, 'regions', $regions);
+
+$city = $this->params['city'];
+
+$title = $this->title ?: 'Без кредитов - г.' . $city->name;
+$title = str_replace('&nbsp;', ' ', $title);
+$title = Html::encode($title);
+
+$keywords = ArrayHelper::getValue($this->params, 'keywords', '');
+
+$description = ArrayHelper::getValue($this->params, 'description', '');
+$description = str_replace('&nbsp;', ' ', $description);
+$description = Html::encode($description);
+$description = StringHelper::truncate($description, 160);
+
 $urlBase = Url::base(true);
-$title = ($this->title ?: 'Городской портал «Без Кредитов»') . ' г.' . $city->name;
 $currentUrl = ArrayHelper::getValue($this->params, 'currentUrl', $urlBase);
+
 $user = Yii::$app->user->isGuest ? null : Yii::$app->user->identity;
 
 $this->registerJsVar('appModel', [
@@ -36,7 +49,6 @@ $this->registerJsVar('appModel', [
     'regions' => $regions,
     'homeUrl' => Url::home(),
 ]);
-
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -49,15 +61,15 @@ $this->registerJsVar('appModel', [
     <meta name="format-detection" content="email=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <?php $this->registerCsrfMetaTags() ?>
-    <title><?= $title; ?></title>
-    <meta name="keywords" content="<?= $page->keywords ?>">
-    <meta name="description" content="<?= $page->description ?>">
+    <title><?= $title ?></title>
+    <meta name="keywords" content="<?= $keywords ?>">
+    <meta name="description" content="<?= $description ?>">
     <meta property="og:locale" content="ru_RU">
     <meta property="og:url" content="<?= $currentUrl ?>">
     <meta property="og:title" content="<?= $title ?>">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Без кредитов">
-    <meta property="og:description" content="<?= $page->description ?>">
+    <meta property="og:description" content="<?= $description ?>">
     <?php $this->head() ?>
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?= Yii::$app->request->hostInfo ?>/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?= Yii::$app->request->hostInfo ?>/apple-touch-icon-114x114.png">
@@ -96,6 +108,11 @@ $this->registerJsVar('appModel', [
                                     грамотности, помогаем правильно брать кредиты и
                                     <br>
                                     избавиться от долгов если вы попали в сложную ситуацию.
+                                    <!--
+                                    Городской портал «Без Кредитов» - помогает жителям
+                                    <br>
+                                    избавиться от долгов и начать свою жизнь с чистого лица
+                                    -->
                                 </span>
                             </span>
                         </span>
@@ -172,7 +189,7 @@ $this->registerJsVar('appModel', [
 </header>
 <?php endif; ?>
 
-<?php if ($breadcrumbs = ArrayHelper::getValue($this->params, 'breadcrumbs')): ?>
+<?php if ($breadcrumbs = ArrayHelper::getValue($this->params, 'breadcrumbs', [])): ?>
 <div class="divider"></div>
 
 <div class="container">
@@ -207,7 +224,7 @@ $this->registerJsVar('appModel', [
             <a class="nav-ln col-12 col-sm-6 col-md-4 col-lg-auto" href="<?= Url::toView('obratnaya-svyaz') ?>">
                 Контакты
             </a>
-            <a class="nav-ln col-12 col-sm-6 col-md-4 col-lg-auto" href="<?= Url::to(['site/index', 'alias' => 'karta-sajta']) ?>">
+            <a class="nav-ln col-12 col-sm-6 col-md-4 col-lg-auto" href="javascript:;">
                 Карта сайта
             </a>
             <a class="nav-ln col-12 col-sm-6 col-md-4 col-lg-auto" href="/reklama-na-sajte.pdf" target="_blank">
@@ -407,19 +424,11 @@ $this->registerJsVar('appModel', [
 <?php $this->endBody() ?>
 
 <?php if (Yii::$app->session->getFlash('is-city', false)): ?>
-    <script>
-        if ('function' === typeof window.isCity) {
-            window.isCity()
-        }
-    </script>
+    <script>if ("function"==typeof window.isCity) { window.isCity() };</script>
 <?php endif; ?>
 
 <?php if (Yii::$app->session->getFlash('is-activated')): ?>
-    <script>
-        $.fancybox.open({
-            src: '#activate-success'
-        });
-    </script>
+    <script>$.fancybox.open({ src: '#activate-success'});</script>
 <?php endif; ?>
 
 </body>

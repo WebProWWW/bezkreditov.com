@@ -22,6 +22,9 @@ use Throwable;
  */
 class Region extends ActiveRecord
 {
+
+    private $_lastNews;
+
     /**
      * {@inheritdoc}
      */
@@ -106,15 +109,20 @@ class Region extends ActiveRecord
      */
     public function getLastNews()
     {
-        return $this->hasMany(News::class, ['id' => 'news_id'])
-            ->via('newsRegions')
-            ->orderBy(['date' => SORT_DESC])
-            ->limit(3);
+        if ($this->_lastNews === null) {
+            $this->_lastNews = Yii::$app->cache->getOrSet('app-top-news', function () {
+                return $this->hasMany(News::class, ['id' => 'news_id'])
+                    ->via('newsRegions')
+                    ->orderBy(['date' => SORT_DESC])
+                    ->limit(3);
+            }, 0);
+        }
+        return $this->_lastNews;
     }
 
     /**
      * @param int $currentNewsId
-     * @return News[]|ActiveQuery
+     * @return News[]
      */
     public function lastNews(int $currentNewsId)
     {
@@ -131,23 +139,11 @@ class Region extends ActiveRecord
      */
     public static function findAllRegions()
     {
-        try {
-            return self::getDb()->cache(function () {
-                return self::find()
-                    ->where(['not', ['code' => 99]])
-                    ->orderBy(['region_name' => SORT_ASC])
-                    ->all();
-            });
-        } catch (Throwable $e) {}
-        return [];
-//        $regions = Yii::$app->cache->get('all-regions');
-//        if ($regions === false) {
-//            $regions = self::find()
-//                ->where(['not', ['code' => 99]])
-//                ->orderBy(['region_name' => SORT_ASC])
-//                ->all();
-//            Yii::$app->cache->set('all-regions', $regions, 3600 * 24 * 365);
-//        }
-//        return $regions;
+        return Yii::$app->cache->getOrSet('app-all-regions', function () {
+            return self::find()
+                ->where(['not', ['code' => 99]])
+                ->orderBy(['region_name' => SORT_ASC])
+                ->all();
+        }, 0);
     }
 }

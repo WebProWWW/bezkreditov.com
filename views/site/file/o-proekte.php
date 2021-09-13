@@ -1,23 +1,17 @@
 <?php
 
 use app\helpers\Url;
-use app\assets\MainAsset;
 
 /* @var $this yii\web\View */
-/* @var $city app\models\City */
+/* @var $page app\models\Page */
 
-$this->title = 'О проекте';
-$this->params['description'] = 'Городской портал Без Кредитов - помогает жителям Москвы и Московской области выбрать правильную компанию по банкротству физических лиц и избавиться от долгов и начать свою жизнь с чистого лица.';
-$this->params['breadcrumbs'] = ['О проекте'];
+$this->title = $page->title;
+$this->params['description'] = $page->description;
+$this->params['breadcrumbs'] = [$page->label];
 $this->params['is-footer'] = false;
 $this->params['is-header'] = true;
 
-// $offerJs = '/js/vue-app-offer.min.js?rnd=' . time();
-
-// $this->registerJsFile($offerJs, ['depends' => MainAsset::class]);
-
 ?>
-
 <section class="section mt-auto">
     <div class="container">
         <div class="row mb-4">

@@ -167,21 +167,25 @@ class Material extends ActiveRecord implements ModelInterface
     }
 
     /**
-     * @param int $limit
-     * @param int|string $sort
-     * @return Material[]
+     * @return Material[][]
      */
-    public static function lastMaterials(int $limit = 3, $sort = SORT_DESC)
+    public static function lastMaterials()
     {
-        //->orderBy(['created_at' => SORT_DESC])
-        $orderBy = [];
-        if ($sort === SORT_DESC) $orderBy = ['created_at' => SORT_DESC];
-        if ($sort === SORT_ASC) $orderBy = ['created_at' => SORT_ASC];
-        if ($sort === 'rand') $orderBy = 'rand()';
-        return self::find()
-            ->orderBy($orderBy)
-            ->limit($limit)
-            ->all();
+        $sort = [SORT_DESC, SORT_ASC, 'SORT_RANDOM'];
+        $materials = [];
+        foreach ($sort as $type) {
+            $orderBy = [];
+            if ($type === SORT_DESC) $orderBy = ['created_at' => SORT_DESC];
+            if ($type === SORT_ASC) $orderBy = ['created_at' => SORT_ASC];
+            if ($type === 'SORT_RANDOM') $orderBy = 'rand()';
+            $materials[] = Yii::$app->cache->getOrSet('app-last-material-'.$type, function () use ($orderBy) {
+                return self::find()
+                    ->orderBy($orderBy)
+                    ->limit(3)
+                    ->all();
+            }, 0);
+        }
+        return $materials;
     }
 
     /**

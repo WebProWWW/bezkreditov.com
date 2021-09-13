@@ -15,7 +15,51 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 (function () {
-  // alert 'asdasdasdd'
+  /*
+  currentOfferIndex = 0
+  offersLength = 0
+  offers = []
+   saveFullOffers = () ->
+      offer = offers[currentOfferIndex]
+      $.ajax
+          url: 'http://bez-dolgov.loc/site/save-offer'
+          data:
+              id: offer.id
+      .done (data) ->
+          $('#offers-source-count').html "Обновлено предложении <strong>#{currentOfferIndex + 1}</strong> из <strong>#{offersLength}</strong>"
+          $('#offers-done-list').append """
+              <div class="row">
+                  <div class="col">
+                      #{data.status}
+                  </div>
+                  <div class="col">
+                      #{data.id}
+                  </div>
+                  <div class="col">
+                      #{data.offer_id}
+                  </div>
+                  <div class="col">
+                      #{data.name}
+                  </div>
+                  <div class="col">
+                      #{data.errors}
+                  </div>
+              </div>"""
+          if (currentOfferIndex < offersLength)
+              currentOfferIndex++
+              saveFullOffers()
+   $('.js-parse-offers').one 'click', (e) ->
+      e.preventDefault()
+      $.ajax
+          url: 'http://bez-dolgov.loc/site/uni-offers'
+          dataType: 'json'
+      .done (data) ->
+          data = JSON.parse data
+          offers = data.offers
+          offersLength = offers.length
+          saveFullOffers()
+      off
+    */
   var $mainNavLn, AjaxForm, CardMoreReview, CirclePercent, CostCalculator, Fssp, JsSearch, SelectSearch, Test, fileInputChanged, hHashNav, hashScroll;
 
   $.fn.hasAttr = function (name) {
